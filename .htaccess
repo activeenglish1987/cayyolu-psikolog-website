@@ -31,6 +31,15 @@ RewriteRule ^(wp-)?sitemap(_index)?\.xml$ /sitemap.xml [R=301,L]
 RewriteRule ^(page|post|category)-sitemap\.xml$ /sitemap.xml [R=301,L]
 RewriteRule ^iletisim-2/?$ /iletisim/ [R=301,L]
 
+# Kaldırılan çeviri yazılar -> özgün makaleler
+RewriteRule ^aa-copy/?$ /cocuklarda-kaygi-ebeveyn-rehberi/ [R=301,L]
+RewriteRule ^cocuklar-kayiplar-sonucu-buyuyebilir-mi/?$ /cocuklarda-yas-ve-kayip/ [R=301,L]
+RewriteRule ^iliskilerde-buyumeye-odaklanin/?$ /evlilikte-iletisim-sorunlari/ [R=301,L]
+RewriteRule ^kafamin-icindeki-muazzam-dunya/?$ /yalnizlik-hissi-ve-sosyal-geri-cekilme/ [R=301,L]
+RewriteRule ^toksik-yonetimi-anlamak-ve-onlemek/?$ /is-stresi-ve-tukenmislik/ [R=301,L]
+RewriteRule ^travmatik-stres/?$ /travma-sonrasi-stres-belirtileri/ [R=301,L]
+RewriteRule ^yogun-psikoterapi/?$ /ilk-terapi-seansi-rehberi/ [R=301,L]
+
 # ?p=123 ve ?page_id=123 gibi eski kısa adresler ana sayfaya
 RewriteCond %{QUERY_STRING} (^|&)(p|page_id)=\d+ [NC]
 RewriteRule ^$ /? [R=301,L]

@@ -10,6 +10,7 @@ from urllib.parse import quote
 import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from landing import LANDINGS, BOOST
+from makaleler import MAKALELER
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, '_kaynak')
@@ -764,6 +765,13 @@ def blog_index(posts, path, title='Blog'):
 # ---------------------------------------------------------------- ana akış
 def main():
     recs = json.load(open(os.path.join(SRC, 'icerik.json'), encoding='utf-8'))
+    # Başka kaynaklardan çevrilmiş eski yazılar yayından kaldırıldı; yerlerine özgün makaleler geldi
+    removed = {m['eski'] for m in MAKALELER}
+    recs = [r for r in recs if r['path'] not in removed]
+    for m in MAKALELER:
+        recs.append({'type': 'post', 'path': m['path'], 'slug': m['path'].strip('/'), 'title': m['title'], 'date': '2026-09-30',
+                     'modified': '2026-09-30', 'html': m['html'], 'excerpt': '', 'seo_title': m['seo_title'], 'seo_desc': m['desc'],
+                     'thumb': '/' + m['thumb'], 'categories': ['Blog'], 'faqs': m.get('faqs', [])})
     posts = sorted([r for r in recs if r['type'] == 'post'], key=lambda r: r['date'], reverse=True)
     rojin = next(r for r in recs if r['path'] == '/psikolog-rojin-nazik/')
     special = {'/': None, '/uzmanlarimiz/': experts_page, '/iletisim/': contact_page, '/basinda-biz/': press_page,
@@ -803,12 +811,16 @@ def main():
         else:
             after = related_block('Hizmetlerimiz', service_cards())
         kicker = expert['role'] if expert else ('Blog' if r['type'] == 'post' else '')
+        extra_ld = None
+        if r.get('faqs'):
+            body += '<h2>Sık sorulan sorular</h2>' + faq_html(r['faqs'])
+            extra_ld = [faq_ld(r['faqs'])]
         if boost:
             after = related_block('Çevre semtler', '<div class="area-chips">%s</div>' % ''.join('<a class="area-chip" href="%s">%s %s psikolog</a>' % (q, ICON['pin'], esc(a)) for a, q in AREAS if q != p)) + after
             write(p, article_page(r, body, crumbs, kicker='RN Psikoloji · Yaşamkent ofisi', lead=boost['lead'], extra_after=after,
                                   extra_ld=[faq_ld(boost['faqs'])], desc=boost['desc'], title_tag=boost['title']))
         else:
-            write(p, article_page(r, body, crumbs, kicker=kicker, expert=expert, hero_img=hero, extra_after=after))
+            write(p, article_page(r, body, crumbs, kicker=kicker, expert=expert, hero_img=hero, extra_after=after, extra_ld=extra_ld))
         pages.append((p, r.get('modified')))
     # anahtar kelime sayfaları
     for cfg in LANDINGS:
