@@ -200,6 +200,7 @@ FOCUS = [
     ('/cayyolu-cift-terapisi/', 'Çift Terapisi'),
     ('/cayyolu-aile-terapisi/', 'Aile Terapisi'),
     ('/cayyolu-psikolojik-danismanlik-merkezi/', 'Psikolojik Danışmanlık Merkezi'),
+    ('/cayyolu-psikolog-fiyatlari/', 'Psikolog Fiyatları'),
 ]
 
 ICON = {
@@ -399,7 +400,12 @@ def business_ld():
             'geo': {'@type': 'GeoCoordinates', 'latitude': GEO[0], 'longitude': GEO[1]},
             'openingHoursSpecification': [{'@type': 'OpeningHoursSpecification', 'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], 'opens': '09:00', 'closes': '20:00'}],
             'areaServed': ['Çayyolu', 'Ümitköy', 'Yaşamkent', 'Konutkent', 'İncek', 'Ankara'],
-            'sameAs': [IG_ROJIN]}
+            'sameAs': [IG_ROJIN],
+            'founder': {'@type': 'Person', '@id': 'https://www.psikologrojinnazik.com/#rojin-nazik', 'name': 'Rojin Nazik', 'jobTitle': 'Psikolog',
+                        'url': SITE + '/psikolog-rojin-nazik/', 'sameAs': ['https://www.psikologrojinnazik.com/rojin-nazik-biyografi/', IG_ROJIN]},
+            'employee': [{'@type': 'Person', 'name': 'Elif Erdoğan', 'jobTitle': 'Psikolog', 'url': SITE + '/psikolog-elif-erdogan/',
+                          'sameAs': ['https://psikologeliferdogan.com/', IG_ELIF]},
+                         {'@type': 'Person', 'name': 'Hazal Akşahin', 'jobTitle': 'Klinik Psikolog', 'url': SITE + '/psikolog-hazal-aksahin/'}]}
 
 def ld(*objs):
     return '<script type="application/ld+json">%s</script>' % json.dumps({'@context': 'https://schema.org', '@graph': list(objs)}, ensure_ascii=False)

@@ -353,6 +353,40 @@ LANDINGS = [
  ],
 },
 {
+ 'path': '/cayyolu-psikolog-fiyatlari/',
+ 'kw': 'Çayyolu psikolog fiyatları',
+ 'h1': 'Çayyolu Psikolog Fiyatları ve Seans Ücretleri',
+ 'title': 'Çayyolu Psikolog Fiyatları 2026 | Seans Ücretleri – RN Psikoloji',
+ 'desc': "Çayyolu, Yaşamkent ve Konutkent'te psikolog seans ücretleri: bireysel, çift, aile, çocuk ve ergen görüşmelerinde ücreti belirleyen etkenler ve güncel bilgi. Tel: 0552 418 79 73.",
+ 'lead': "Seans ücretleri uzmana ve görüşme türüne göre değişir. Güncel ücret bilgisini arayarak ya da WhatsApp'tan yazarak birkaç dakika içinde öğrenebilirsiniz; bu sayfada ücreti belirleyen etkenleri özetledik.",
+ 'body': """
+<h2>Psikolog ücretlerini neler belirler?</h2>
+<p>Psikolojik danışmanlık ücretleri her merkezde ve her uzmanda farklıdır. Bu farklılığın arkasında birkaç temel etken vardır. Ücret karşılaştırırken yalnızca rakama değil, uzmanın unvanına, deneyim alanına ve etik çerçeveye de bakmanızı öneririz.</p>
+<ul class="topic-grid">
+<li><b>Görüşme türü:</b> bireysel, çift, aile ya da çocuk-ergen görüşmesi</li>
+<li><b>Uzmanın deneyimi:</b> çalışma yılı, uzmanlık alanı ve aldığı eğitimler</li>
+<li><b>Değerlendirme ihtiyacı:</b> psikolojik test ve değerlendirme uygulanıp uygulanmayacağı</li>
+<li><b>Görüşme şekli:</b> yüz yüze ya da online görüşme</li>
+</ul>
+%(cta)s
+<h2>Görüşme türlerine göre kısa bilgi</h2>
+<p><b>Bireysel görüşmeler:</b> Kaygı, stres, özgüven ve yaşam geçişleri gibi konularda yetişkinlerle yapılan görüşmelerdir. Ücret, görüşmeyi yürüten uzmana göre belirlenir.</p>
+<p><b>Çift ve aile görüşmeleri:</b> Birden fazla kişinin katıldığı ve hazırlığı daha kapsamlı olan görüşmelerdir. Bu nedenle ücretleri genellikle bireysel görüşmelerden bir miktar farklıdır.</p>
+<p><b>Çocuk ve ergen görüşmeleri:</b> Çocukla yapılan görüşmelerin yanında ebeveyn görüşmelerini de içerir. Süreç, çocuğun yaşına ve ihtiyacına göre planlanır.</p>
+<p><b>Psikolojik test ve değerlendirme:</b> Uygulanacak teste ve değerlendirmenin kapsamına göre ayrıca bilgi verilir.</p>
+<h2>Güncel ücret bilgisini nasıl öğrenirim?</h2>
+<p>Ücretler dönemsel olarak güncellendiği için en doğru bilgiyi telefonda veya WhatsApp'ta paylaşıyoruz. Görüşme türünü ve varsa tercih ettiğiniz uzmanı belirtmeniz yeterli. Kurucu psikoloğumuzun güncel ücret tablosunu <a href="https://www.psikologrojinnazik.com/ankara-psikolog-fiyatlari/" target="_blank" rel="noopener">Ankara psikolog fiyatları</a> sayfasında da inceleyebilirsiniz.</p>
+<h2>Ücretsiz bilgi, şeffaf süreç</h2>
+<p>Randevu öncesinde ücret, görüşme sıklığı ve süreç hakkında aklınızdaki soruları sormaktan çekinmeyin. İlk görüşmeden önce ücretlendirmeyi net olarak bilirsiniz; sürpriz bir ücretlendirme yapılmaz. Randevu değişikliği ve iptal koşulları da randevu oluşturulurken sizinle paylaşılır.</p>
+""",
+ 'faqs': [
+  ("Çayyolu'nda psikolog seans ücreti ne kadar?", "Ücret, görüşme türüne ve görüşmeyi yürüten uzmana göre değişir. Güncel ücret bilgisini 0552 418 79 73 numarasını arayarak ya da WhatsApp'tan yazarak hemen öğrenebilirsiniz."),
+  ("İlk görüşme ücreti farklı mı?", "İlk görüşme de aynı görüşme türünün ücretine göre planlanır. Ayrıntıları randevu sırasında sizinle paylaşıyoruz."),
+  ("Çift terapisi ücreti bireysel görüşmeden farklı mı?", "Çift ve aile görüşmeleri birden fazla kişinin katıldığı görüşmeler olduğu için ücretleri bireysel görüşmelerden farklı olabilir."),
+  ("Online görüşme ücreti farklı mı?", "Online görüşmeler de görüşme türüne göre ücretlendirilir. Güncel bilgi için bize yazabilirsiniz."),
+ ],
+},
+{
  'path': '/cayyolu-psikolojik-danismanlik-merkezi/',
  'kw': 'Çayyolu psikolojik danışmanlık merkezi',
  'h1': 'Çayyolu Psikolojik Danışmanlık Merkezi',
