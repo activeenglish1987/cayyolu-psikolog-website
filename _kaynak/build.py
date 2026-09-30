@@ -675,11 +675,41 @@ TRUST = '''<section class="trust-strip" aria-label="Neden RN Psikoloji"><ul>
 <li><b>Pzt – Cmt</b>09:00 – 20:00 · ücretsiz otopark</li>
 </ul></section>'''
 
+# ---------------------------------------------------------------- kardeş sitelere konu bağlantıları
+RN = 'https://www.psikologrojinnazik.com'
+EL = 'https://psikologeliferdogan.com'
+SISTER = {
+ '/cayyolu-cocuk-psikologu/': [(RN + '/ayrilma-kaygisi/', 'Çocuklarda ayrılma kaygısı'), (RN + '/sosyal-kaygi/', 'Sosyal kaygı'), (EL + '/hizmetler/oyun-terapisi', 'Oyun terapisi – Psikolog Elif Erdoğan'), (RN + '/ankara-cocuk-psikologu/', 'Ankara çocuk psikoloğu')],
+ '/cayyolu-cift-terapisi/': [(RN + '/cift-iliski-terapisi/', 'Ankara çift terapisi – Psikolog Rojin Nazik'), (EL + '/blog/cift-terapisine-ne-zaman-basvurulmali', 'Çift terapisine ne zaman başvurulmalı?')],
+ '/cayyolu-aile-terapisi/': [(RN + '/ankara-aile-terapisti/', 'Ankara aile terapisti'), (RN + '/internet-bagimliligi/', 'Ekran ve internet bağımlılığı')],
+ '/cayyolu-psikolojik-danismanlik-merkezi/': [(RN + '/', 'Psikolog Rojin Nazik'), (EL + '/', 'Psikolog Elif Erdoğan')],
+ '/cayyolu-psikolog-fiyatlari/': [(RN + '/ankara-psikolog-fiyatlari/', 'Ankara psikolog fiyatları 2026')],
+ '/cocuklarda-kaygi-ebeveyn-rehberi/': [(RN + '/ayrilma-kaygisi/', 'Ayrılma kaygısı'), (RN + '/sosyal-kaygi/', 'Sosyal kaygı')],
+ '/cocuklarda-yas-ve-kayip/': [(RN + '/yas-terapisi/', 'Yas terapisi – Psikolog Rojin Nazik')],
+ '/evlilikte-iletisim-sorunlari/': [(EL + '/blog/iliskilerde-iletisim-problemleri', 'İlişkilerde iletişim problemleri – Psikolog Elif Erdoğan'), (RN + '/cift-iliski-terapisi/', 'Ankara çift terapisi')],
+ '/yalnizlik-hissi-ve-sosyal-geri-cekilme/': [(RN + '/sosyal-kaygi/', 'Sosyal kaygı'), (RN + '/depresyon-nedir/', 'Depresyon')],
+ '/is-stresi-ve-tukenmislik/': [(RN + '/is-yerinde-tukenmislik-sendromu/', 'İş yerinde tükenmişlik sendromu'), (RN + '/ofke-kontrolu/', 'Öfke kontrolü')],
+ '/travma-sonrasi-stres-belirtileri/': [(RN + '/travma-sonrasi-stres-bozuklugu/', 'Travma sonrası stres bozukluğu'), (RN + '/yas-terapisi/', 'Yas terapisi')],
+ '/ilk-terapi-seansi-rehberi/': [(RN + '/ankara-psikolog-tavsiyesi/', 'Ankara psikolog tavsiyesi'), (RN + '/psikolog-tani-koyabilir-mi/', 'Psikolog tanı koyabilir mi?')],
+ '/kaygi-sorunlari/': [(RN + '/anksiyete-bozukluklari/', 'Anksiyete bozuklukları'), (RN + '/panik-atak/', 'Panik atak'), (EL + '/blog/kaygi-mi-kaygi-bozuklugu-mu', 'Kaygı mı, kaygı bozukluğu mu?')],
+ '/cocuk-ergen-danismanligi/': [(RN + '/sinav-kaygisi/', 'Sınav kaygısı'), (EL + '/hizmetler/ergen-psikoterapisi', 'Ergen psikoterapisi – Psikolog Elif Erdoğan')],
+ '/umitkoy-psikolog/': [(RN + '/ankara-psikolog/', 'Ankara psikolog – Psikolog Rojin Nazik')],
+ '/yasamkent-psikolog/': [(RN + '/ankara-psikolog/', 'Ankara psikolog – Psikolog Rojin Nazik'), (EL + '/', 'Psikolog Elif Erdoğan')],
+ '/beysukent-psikolog/': [(RN + '/sinav-kaygisi/', 'Sınav kaygısı'), (RN + '/sosyal-kaygi/', 'Sosyal kaygı')],
+ '/incek-psikolog/': [(RN + '/ayrilma-kaygisi/', 'Çocuklarda ayrılma kaygısı')],
+ '/ankara-psikolog/': [(RN + '/kizilay-psikolog/', 'Kızılay psikolog'), (RN + '/ankara-psikolog-fiyatlari/', 'Ankara psikolog fiyatları')],
+}
+def sister_html(path):
+    items = SISTER.get(path)
+    if not items: return ''
+    return '<aside class="route-box"><h3>İlgili kaynaklar</h3><ul>%s</ul></aside>' % ''.join(
+        '<li><a href="%s" target="_blank" rel="noopener">%s</a></li>' % (u, esc(t)) for u, t in items)
+
 # ---------------------------------------------------------------- anahtar kelime sayfaları
 def landing_page(cfg):
     rec = {'type': 'page', 'path': cfg['path'], 'title': cfg['h1'], 'date': '2026-09-30', 'modified': '2026-09-30'}
     body = cfg['body'] % {'cta': inline_cta('Merhaba, %s sayfanızdan ulaşıyorum, randevu bilgisi almak istiyorum.' % cfg['h1'])}
-    body += '<h2>Sık sorulan sorular</h2>' + faq_html(cfg['faqs'])
+    body += sister_html(cfg['path']) + '<h2>Sık sorulan sorular</h2>' + faq_html(cfg['faqs'])
     near = [(a, p) for a, p in AREAS if p != cfg['path']]
     after = '''<section class="section section-alt"><div class="wrap">%s%s</div></section>
 <section class="section"><div class="wrap office-grid">%s<div class="office-photos">%s%s</div></div></section>
@@ -812,6 +842,7 @@ def main():
             after = related_block('Hizmetlerimiz', service_cards())
         kicker = expert['role'] if expert else ('Blog' if r['type'] == 'post' else '')
         extra_ld = None
+        body += sister_html(p)
         if r.get('faqs'):
             body += '<h2>Sık sorulan sorular</h2>' + faq_html(r['faqs'])
             extra_ld = [faq_ld(r['faqs'])]
