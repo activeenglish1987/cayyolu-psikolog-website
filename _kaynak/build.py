@@ -27,7 +27,7 @@ MAP_URL = 'https://www.google.com/maps/search/?api=1&query=' + quote('Dumlupına
 IG_ROJIN = 'https://www.instagram.com/psikologrojinnazik/'
 IG_ELIF = 'https://www.instagram.com/psikolog_eliferdogan/'
 GTM = 'GTM-KMR7XRJQ'
-ASSET_V = '2'
+ASSET_V = '3'
 
 def wa(msg):
     return 'https://wa.me/%s?text=%s' % (WA_NUM, quote(msg))
@@ -533,7 +533,7 @@ def home_page(recs, posts):
             if len(ps[k]) > 60 and len(ps[k + 1]) < 40:
                 reviews.append((ps[k], ps[k + 1]))
     REVIEWS[:] = reviews
-    hero_img = opt('assets/img/rojin-nazik-acilis.jpg', 800, 'hero-rojin-portre')
+    hero_img = opt('assets/img/rojin-nazik-acilis-2.jpg', 840, 'hero-rojin-studyo')
     office1 = opt('wp-content/uploads/2024/05/seans-odasi-1.jpg', 900, 'seans-odasi')
     office2 = opt('wp-content/uploads/2024/05/prev01.webp', 900, 'bekleme-alani')
     press = [('wp-content/uploads/2024/05/cnn-1.png', 'CNN Türk'), ('wp-content/uploads/2024/05/milliyet-1.png', 'Milliyet'),
@@ -565,7 +565,7 @@ def home_page(recs, posts):
     </div>
     <div class="hero-media">
       <div class="hero-photo">%(hero_img)s</div>
-      <a class="hero-badge" href="/psikolog-rojin-nazik/"><span class="hb-k">Kurucu Psikolog</span><b>Rojin Nazik</b><span class="hb-s">15+ yıl deneyim · 3 kitap · TV programları</span></a>
+      <a class="hero-badge" href="/psikolog-rojin-nazik/"><span class="hb-k">Kurucu Psikolog</span><b>Rojin Nazik</b><span class="hb-s">AB Psikologlar Derneği Genel Başkanı · 3 kitap · TV programları</span></a>
     </div>
   </div>
 </section>
