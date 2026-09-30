@@ -28,7 +28,7 @@ MAP_URL = 'https://www.google.com/maps/search/?api=1&query=' + quote('Dumlupına
 IG_ROJIN = 'https://www.instagram.com/psikologrojinnazik/'
 IG_ELIF = 'https://www.instagram.com/psikolog_eliferdogan/'
 GTM = 'GTM-KMR7XRJQ'
-ASSET_V = '3'
+ASSET_V = '4'
 
 def wa(msg):
     return 'https://wa.me/%s?text=%s' % (WA_NUM, quote(msg))
@@ -263,6 +263,7 @@ def head(title, desc, path, extra_ld='', og_img='/assets/img/opt/og-1200.webp', 
 <link rel="stylesheet" href="/assets/css/site.css?v=%(v)s">
 <script src="/assets/js/ads-conversion.js?v=2" defer></script>
 <script src="/assets/js/site.js?v=%(v)s" defer></script>
+<script src="//code.jivosite.com/widget/qUPsGwSDuo" async></script>
 %(ld)s
 </head>''' % {'gtm': GTM, 'title': esc(title), 'desc': esc(desc), 'robots': robots, 'canon': canon, 'brand': esc(BRAND),
               'site': SITE, 'og': og_img, 'v': ASSET_V, 'ld': extra_ld}

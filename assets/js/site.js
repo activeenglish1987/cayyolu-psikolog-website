@@ -33,3 +33,24 @@
     if (open) els[i].classList.add('is-open');
   }
 })();
+
+/* Jivo sohbet simgesi mobilde alttaki Ara/WhatsApp çubuğunun üstünde dursun */
+(function () {
+  var OFFSET = 76, handled = [];
+  function mobile() { return window.innerWidth < 1024; }
+  function candidate(el) {
+    if (handled.indexOf(el) !== -1 || el.closest('.sticky-bar')) return false;
+    var cs; try { cs = getComputedStyle(el); } catch (e) { return false; }
+    if (cs.position !== 'fixed') return false;
+    var r = el.getBoundingClientRect();
+    if (r.width < 36 || r.width > 110 || r.height < 36 || r.height > 110) return false;
+    return (window.innerWidth - r.right) < 60 && (window.innerHeight - r.bottom) < 60;
+  }
+  function apply(el) {
+    handled.push(el);
+    var set = function () { if (mobile()) el.style.setProperty('bottom', OFFSET + 'px', 'important'); else el.style.removeProperty('bottom'); };
+    set(); window.addEventListener('resize', set);
+  }
+  function scan() { var all = document.querySelectorAll('body > *, jdiv, jdiv *'); for (var i = 0; i < all.length; i++) if (candidate(all[i])) apply(all[i]); }
+  var n = 0, t = setInterval(function () { scan(); if (++n > 20) clearInterval(t); }, 1000);
+})();
