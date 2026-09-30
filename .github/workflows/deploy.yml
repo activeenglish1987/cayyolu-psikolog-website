@@ -1,5 +1,6 @@
 # main dalına her gönderimde siteyi cPanel'e (FTP) yükler.
 # Gerekli depo sırları: FTP_SERVER, FTP_USERNAME, FTP_PASSWORD
+# İsteğe bağlı: FTP_DIR (varsayılan public_html/ – cPanel ana hesabı için)
 name: Siteyi yayına al
 
 on:
@@ -39,7 +40,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           security: loose
-          server-dir: ./
+          server-dir: ${{ secrets.FTP_DIR || 'public_html/' }}
           exclude: |
             **/.git*
             **/.git*/**
