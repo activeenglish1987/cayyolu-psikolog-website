@@ -1,0 +1,58 @@
+# RN Psikoloji Çayyolu – statik site (Apache / cPanel)
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+AddDefaultCharset UTF-8
+AddType image/webp .webp
+AddType image/svg+xml .svg
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# HTTPS + www
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ https://www.cayyolupsikolog.com.tr/$1 [R=301,L]
+
+# Kaynak klasörü dışarı kapalı
+RewriteRule ^_kaynak(/|$) - [F,L]
+RewriteRule ^\.git(/|$) - [F,L]
+
+# Eski WordPress adresleri
+RewriteRule ^elementor-hf(/.*)?$ / [R=301,L]
+RewriteRule ^author(/.*)?$ /hakkimizda/ [R=301,L]
+RewriteRule ^category/uncategorized/?$ /blog/ [R=301,L]
+RewriteRule ^(.+/)?feed/?$ /blog/ [R=301,L]
+RewriteRule ^wp-json(/.*)?$ / [R=301,L]
+RewriteRule ^wp-login\.php$ / [R=301,L]
+RewriteRule ^wp-admin(/.*)?$ / [R=301,L]
+RewriteRule ^(wp-)?sitemap(_index)?\.xml$ /sitemap.xml [R=301,L]
+RewriteRule ^(page|post|category)-sitemap\.xml$ /sitemap.xml [R=301,L]
+RewriteRule ^iletisim-2/?$ /iletisim/ [R=301,L]
+
+# ?p=123 ve ?page_id=123 gibi eski kısa adresler ana sayfaya
+RewriteCond %{QUERY_STRING} (^|&)(p|page_id)=\d+ [NC]
+RewriteRule ^$ /? [R=301,L]
+
+# Sonda eğik çizgi (klasör adresleri)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/)$
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}/index.html -f
+RewriteRule ^(.*)$ /$1/ [R=301,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set X-Frame-Options "SAMEORIGIN"
+<FilesMatch "\.(css|js|webp|jpe?g|png|svg|woff2?)$">
+Header set Cache-Control "public, max-age=31536000"
+</FilesMatch>
+<FilesMatch "\.(html|xml|txt)$">
+Header set Cache-Control "public, max-age=600"
+</FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript application/json image/svg+xml text/xml application/xml text/plain
+</IfModule>

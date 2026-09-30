@@ -1,0 +1,4 @@
+*.xml.bak
+_kaynak/*.xml
+_kaynak/contact.html
+.DS_Store
