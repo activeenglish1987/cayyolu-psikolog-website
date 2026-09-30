@@ -17,6 +17,7 @@ RewriteRule ^(.*)$ https://www.cayyolupsikolog.com.tr/$1 [R=301,L]
 # Kaynak klasörü dışarı kapalı
 RewriteRule ^_kaynak(/|$) - [F,L]
 RewriteRule ^\.git(/|$) - [F,L]
+RewriteRule ^\.ftp-deploy-sync-state\.json$ - [F,L]
 
 # Eski WordPress adresleri
 RewriteRule ^elementor-hf(/.*)?$ / [R=301,L]
