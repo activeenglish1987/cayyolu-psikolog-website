@@ -3,6 +3,7 @@
    Üç sitede ortak dosya. */
 (function () {
   var WA = '905524187973';
+  var POS = (document.currentScript && document.currentScript.getAttribute('data-pos')) || 'top';
   var day, mins;
   try {
     var parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Istanbul', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date());
@@ -24,6 +25,8 @@
     + '.ah-bar a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center}'
     + '.ah-bar b{background:#17A34A;border-radius:999px;padding:5px 12px;white-space:nowrap}'
     + '.ah-bar button{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:0;color:#fff;font-size:20px;line-height:1;cursor:pointer;padding:6px;opacity:.75}'
+    + '.ah-bar.ah-bottom{position:fixed;left:12px;right:84px;bottom:calc(86px + env(safe-area-inset-bottom));z-index:9998;border-radius:16px;box-shadow:0 10px 30px -10px rgba(0,0,0,.45);padding:10px 40px 10px 12px;font-size:13.5px}'
+    + '@media(min-width:861px){.ah-bar.ah-bottom{left:24px;right:auto;bottom:24px;max-width:430px}}'
     + '.ah-inline{display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding:10px 16px;border-radius:999px;background:#17A34A;color:#fff!important;font:700 15px/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none}'
     + '.ah-inline:hover{filter:brightness(.95)}';
 
@@ -41,12 +44,12 @@
     var dismissed = false;
     try { dismissed = sessionStorage.getItem('ah_kapat') === '1'; } catch (e) {}
     if (!dismissed) {
-      var bar = document.createElement('div'); bar.className = 'ah-bar'; bar.setAttribute('role', 'note');
+      var bar = document.createElement('div'); bar.className = 'ah-bar' + (POS === 'bottom' ? ' ah-bottom' : ''); bar.setAttribute('role', 'note');
       bar.appendChild(wa('<span>🌙 Şu an mesai dışındayız.</span><b>' + (when === 'Pazartesi sabahı' ? 'Pazartesi' : 'Sabah') + ' ilk sizi arayalım →</b>', '', 'after_hours_bar'));
       var x = document.createElement('button'); x.type = 'button'; x.setAttribute('aria-label', 'Kapat'); x.innerHTML = '×';
       x.onclick = function () { bar.parentNode && bar.parentNode.removeChild(bar); try { sessionStorage.setItem('ah_kapat', '1'); } catch (e) {} };
       bar.appendChild(x);
-      document.body.insertBefore(bar, document.body.firstChild);
+      if (POS === 'bottom') document.body.appendChild(bar); else document.body.insertBefore(bar, document.body.firstChild);
     }
     // "Açık / kapalı" yazan alanların altına düğme
     var spots = document.querySelectorAll('[data-open-status]');
