@@ -4,6 +4,38 @@ Her makale: path, eski (yönlendirilecek eski WordPress adresi), title, seo_titl
 
 MAKALELER = [
 {
+ 'path': '/yurt-disi-online-ebeveyn-danismanligi/',
+ 'date': '2026-10-01',
+ 'title': 'Yurt Dışında Yaşayan Türk Aileler İçin Online Ebeveyn Danışmanlığı',
+ 'seo_title': 'Yurt Dışındaki Türk Ailelere Online Çocuk ve Ebeveyn Danışmanlığı | RN Psikoloji',
+ 'desc': "Almanya, Hollanda, İngiltere ve diğer ülkelerde çocuk büyüten Türk ailelere Türkçe online ebeveyn danışmanlığı: iki dil, iki kültür, okul uyumu ve ergenlik. RN Psikoloji Çayyolu.",
+ 'thumb': 'assets/img/ofis-salon.webp',
+ 'html': '''
+<p>Yurt dışında çocuk büyütmek; iki dil, iki kültür ve çoğu zaman uzakta kalan bir aile desteğiyle yürüyen özel bir deneyimdir. Okulda bir kültür, evde başka bir kültür yaşayan çocukların ihtiyaçlarını anlamak ve onlara doğru destek olmak her zaman kolay değildir. Türkçe online ebeveyn danışmanlığı, bu sorulara kendi dilinizde ve kültürünüzü bilen bir uzmanla yanıt aramanızı sağlar.</p>
+<h2>Yurt dışındaki ailelerin sık sorduğu konular</h2>
+<ul>
+<li><b>İki dillilik:</b> çocuğun Türkçeyi reddetmesi, dil karışıklığı, okul dilinde zorlanma</li>
+<li><b>Kimlik ve aidiyet:</b> “Ben Türk müyüm, Alman mıyım?” soruları, iki kültür arasında kalma</li>
+<li><b>Okul uyumu:</b> farklı eğitim sistemine uyum, akran ilişkileri, dışlanma</li>
+<li><b>Ergenlik:</b> ailenin değerleri ile çevrenin değerleri arasındaki çatışma, özerklik talepleri</li>
+<li><b>Taşınma ve göç:</b> yeni ülkeye taşınan çocuğun yaşadığı kayıp ve uyum süreci</li>
+<li><b>Aile desteğinin uzakta olması:</b> büyükanne-büyükbaba özlemi, ebeveynlerin yalnızlığı ve yorgunluğu</li>
+</ul>
+<h2>İki dil ve iki kültürle büyüyen çocuklar</h2>
+<p>İki dilli büyümek uzun vadede çocuğa önemli kazanımlar sağlar; ancak bazı dönemlerde çocuk ana dilini konuşmak istemeyebilir ya da iki kültür arasında sıkışmış hissedebilir. Bu dönemlerde baskı yerine merak ve kabul göstermek, Türkçeyi oyun, kitap ve aile ilişkileri üzerinden keyifli kılmak işe yarar. Çocuğun her iki kültürü de kimliğinin bir parçası olarak görebilmesi, aidiyet duygusunu güçlendirir.</p>
+<h2>Ergenlik ve değer çatışmaları</h2>
+<p>Yurt dışında büyüyen ergenler, arkadaş çevrelerindeki özgürlükler ile ailedeki beklentiler arasında gerilim yaşayabilir. Yasaklar ve sert tartışmalar çoğu zaman ilişkiyi zedeler. Gencin bakış açısını anlamaya çalışan, sınırları birlikte ve gerekçeleriyle konuşan bir iletişim, ilişkiyi korurken değerlerin de aktarılmasına yardımcı olur.</p>
+<h2>Online ebeveyn danışmanlığı nasıl ilerler?</h2>
+<p>Görüşmeler bulunduğunuz ülkenin saatine göre planlanır ve güvenli bir görüntülü görüşme bağlantısıyla Türkçe yapılır. İlk görüşmede ailenin durumu, çocuğun gelişim öyküsü ve sizi düşündüren konular ele alınır; ardından evde uygulanabilecek somut adımlar birlikte belirlenir. Ergenlerle doğrudan online görüşmeler de planlanabilir; küçük yaştaki çocuklarla ise çoğunlukla ebeveyn görüşmeleri üzerinden çalışılır. Türkiye'ye geldiğiniz dönemlerde Yaşamkent ofisimizde yüz yüze görüşme de mümkündür.</p>
+<p>Yetişkinler ve çiftler için Türkçe online terapi hakkında: <a href="https://www.psikologrojinnazik.com/yurt-disi-online-turk-psikolog/" target="_blank" rel="noopener">Yurt dışında Türk psikolog – Psikolog Rojin Nazik</a>. Ebeveynlik konuları için ayrıca <a href="/cocuklarda-kaygi-ebeveyn-rehberi/">çocuklarda kaygı</a> ve <a href="/cayyolu-cocuk-psikologu/">çocuk ve ergen danışmanlığı</a> sayfalarımıza göz atabilirsiniz.</p>
+''',
+ 'faqs': [
+  ("Hangi ülkelerden online görüşme yapılabiliyor?", "İnternet bağlantısı olan her ülkeden görüşme yapılabilir. Almanya, Hollanda, Belçika, Avusturya, İsviçre, İngiltere, Fransa, İskandinav ülkeleri, ABD ve Kanada'daki aileler Türkçe online danışmanlık için bize ulaşabilir."),
+  ("Çocuğum Türkçe konuşmak istemiyor, ne yapmalıyım?", "Baskı yerine Türkçeyi keyifli etkinliklerle (oyun, kitap, aile görüşmeleri) hayatın içine katmak daha etkilidir. Durum aile içinde gerginlik yaratıyorsa ebeveyn danışmanlığı destek olabilir."),
+  ("Saat farkı nasıl ayarlanıyor?", "Randevular bulunduğunuz ülkenin saat dilimine göre planlanır; uygun saati WhatsApp'tan birlikte belirleriz."),
+ ],
+},
+{
  'path': '/cocuklarda-uyku-sorunlari/',
  'date': '2026-10-01',
  'title': 'Çocuklarda Uyku Sorunları: Ebeveynler İçin Pratik Rehber',

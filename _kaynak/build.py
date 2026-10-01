@@ -263,6 +263,7 @@ def head(title, desc, path, extra_ld='', og_img='/assets/img/opt/og-1200.webp', 
 <link rel="stylesheet" href="/assets/css/site.css?v=%(v)s">
 <script src="/assets/js/ads-conversion.js?v=2" defer></script>
 <script src="/assets/js/site.js?v=%(v)s" defer></script>
+<script src="/assets/js/after-hours.js?v=1" defer></script>
 <script src="//code.jivosite.com/widget/qUPsGwSDuo" async></script>
 %(ld)s
 </head>''' % {'gtm': GTM, 'title': esc(title), 'desc': esc(desc), 'robots': robots, 'canon': canon, 'brand': esc(BRAND),
@@ -686,6 +687,8 @@ SISTER = {
  '/cayyolu-psikolojik-danismanlik-merkezi/': [(RN + '/', 'Psikolog Rojin Nazik'), (EL + '/', 'Psikolog Elif Erdoğan')],
  '/cayyolu-psikolog-fiyatlari/': [(RN + '/ankara-psikolog-fiyatlari/', 'Ankara psikolog fiyatları 2026')],
  '/cocuklarda-kaygi-ebeveyn-rehberi/': [(RN + '/ayrilma-kaygisi/', 'Ayrılma kaygısı'), (RN + '/sosyal-kaygi/', 'Sosyal kaygı')],
+ '/yurt-disi-online-ebeveyn-danismanligi/': [(RN + '/yurt-disi-online-turk-psikolog/', 'Yurt dışında Türk psikolog – Türkçe online terapi'), (EL + '/blog/yurt-disinda-online-cift-terapisi', 'Yurt dışında online çift terapisi – Psikolog Elif Erdoğan')],
+ '/online-terapi/': [(RN + '/yurt-disi-online-turk-psikolog/', 'Yurt dışından Türkçe online terapi'), (RN + '/online-terapi/', 'Online terapi – Psikolog Rojin Nazik')],
  '/cocuklarda-uyku-sorunlari/': [(RN + '/ayrilma-kaygisi/', 'Ayrılma kaygısı'), (RN + '/okul-reddi/', 'Okul reddi'), (RN + '/uyku-bozukluklari/', 'Uyku bozuklukları')],
  '/cocuklarda-yas-ve-kayip/': [(RN + '/yas-terapisi/', 'Yas terapisi – Psikolog Rojin Nazik')],
  '/evlilikte-iletisim-sorunlari/': [(EL + '/blog/iliskilerde-iletisim-problemleri', 'İlişkilerde iletişim problemleri – Psikolog Elif Erdoğan'), (RN + '/cift-iliski-terapisi/', 'Ankara çift terapisi')],
