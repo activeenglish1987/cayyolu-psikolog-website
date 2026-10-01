@@ -4,6 +4,43 @@ Her makale: path, eski (yönlendirilecek eski WordPress adresi), title, seo_titl
 
 MAKALELER = [
 {
+ 'path': '/cocuklarda-uyku-sorunlari/',
+ 'date': '2026-10-01',
+ 'title': 'Çocuklarda Uyku Sorunları: Ebeveynler İçin Pratik Rehber',
+ 'seo_title': 'Çocuklarda Uyku Sorunları ve Uyku Düzeni Rehberi | RN Psikoloji Çayyolu',
+ 'desc': "Çocuk yalnız uyuyamıyor, gece sık uyanıyor ya da kâbus görüyorsa ne yapmalı? Okul döneminde uyku düzeni, ekran ve kaygıyla ilişkisi; Çayyolu ve Yaşamkent'teki aileler için rehber.",
+ 'thumb': 'assets/img/ofis-koltuk.webp',
+ 'html': '''
+<p>Okulların açılmasıyla birlikte pek çok ailede uyku düzeni yeniden gündeme gelir. Yatağa gitmek istemeyen, yalnız uyuyamayan, gece sık uyanan ya da kâbuslarla ağlayarak uyanan çocuklar hem kendileri hem de aileleri için yorucu bir döngü oluşturabilir. Uyku sorunlarının çoğu, düzen ve tutarlılıkla belirgin şekilde iyileşebilir.</p>
+<h2>Sık görülen uyku sorunları</h2>
+<ul>
+<li><b>Uykuya dalmakta zorlanma:</b> yatakta uzun süre dönme, sürekli su isteme, “bir şey daha” pazarlıkları</li>
+<li><b>Yalnız uyuyamama:</b> ebeveyn olmadan uykuya geçememe, gece ebeveyn yatağına gelme</li>
+<li><b>Gece uyanmaları:</b> sık uyanıp ebeveyni çağırma</li>
+<li><b>Kâbuslar ve gece korkuları:</b> korkuyla uyanma, karanlık ve yalnız kalma korkusu</li>
+<li><b>Geç yatma:</b> özellikle ekran kullanımıyla uzayan akşamlar</li>
+</ul>
+<h2>Uykuyu etkileyen etkenler</h2>
+<p><b>Kaygı:</b> Okul, arkadaşlık ya da ailedeki değişiklikler gün içinde dile gelmese de akşam yatağa girildiğinde belirginleşebilir. <b>Ekranlar:</b> Yatmadan hemen önce tablet ve telefon kullanımı uykuya geçişi geciktirir. <b>Düzensiz saatler:</b> Hafta sonu ile hafta içi arasındaki büyük farklar biyolojik saati karıştırır. <b>Ebeveyn tutarsızlığı:</b> Bir gece birlikte uyuyup ertesi gece kesin hayır demek, çocuğun pazarlığı sürdürmesine yol açabilir.</p>
+<h2>Evde uygulanabilecek öneriler</h2>
+<ul>
+<li>Her gün benzer saatte yatma ve kalkma; hafta sonu farkını küçük tutun.</li>
+<li>Yatmadan önce 20–30 dakikalık sakin bir rutin oluşturun: banyo, pijama, kitap, sarılma.</li>
+<li>Yatak odasını ekransız alan yapın; ekranları yatmadan önce kapatın.</li>
+<li>Korkuları küçümsemeyin; gece lambası ya da sevdiği bir oyuncak güven verebilir.</li>
+<li>Yalnız uyumaya geçişi kademeli yapın: yatağın yanında oturmak, sonra kapıya yakın durmak gibi adımlarla.</li>
+<li>Gece uyanmalarında kısa, sakin ve sıkıcı bir tutum sergileyin; uzun konuşmalar uykuyu böler.</li>
+</ul>
+<h2>Ne zaman destek alınmalı?</h2>
+<p>Uyku sorunları haftalardır sürüyor, çocuğun gündüz enerjisini, okul performansını ya da ruh hâlini etkiliyorsa; yoğun korkular ve kaygı eşlik ediyorsa bir uzmanla görüşmek faydalı olur. Horlama, nefes durması ya da gün içinde aşırı uykululuk gibi belirtilerde önce çocuk doktoruna başvurulmalıdır. Psikolojik görüşmelerde uyku sorununu sürdüren kaygılar ve aile içi düzen birlikte ele alınır; ebeveyn görüşmeleri sürecin önemli bir parçasıdır.</p>
+<p>RN Psikoloji Çayyolu'nda çocuk ve ergen görüşmeleri yapılmaktadır. Ayrıntılar için <a href="/cayyolu-cocuk-psikologu/">Çayyolu çocuk ve ergen psikoloğu</a> ve <a href="/cocuklarda-kaygi-ebeveyn-rehberi/">çocuklarda kaygı</a> sayfalarımıza göz atabilirsiniz.</p>
+''',
+ 'faqs': [
+  ("Çocuğum kaç yaşında yalnız uyumalı?", "Kesin bir yaş yoktur; ailenin koşulları ve çocuğun hazır oluşu önemlidir. Geçişi kademeli ve tutarlı yapmak en işlevsel yoldur."),
+  ("Kâbus gören çocuğa ne yapmalıyım?", "Sakin bir şekilde yanında olun, güvende olduğunu hatırlatın ve uzun konuşmalardan kaçının. Kâbuslar sıklaştıysa ve gündüz kaygı da eşlik ediyorsa uzman desteği faydalı olabilir."),
+ ],
+},
+{
  'path': '/cocuklarda-kaygi-ebeveyn-rehberi/',
  'eski': '/aa-copy/',
  'title': 'Çocuklarda Kaygı: Ebeveynler İçin Rehber',

@@ -181,6 +181,8 @@ LANDINGS = [
 <li>Beysukent'ten Eskişehir Yolu bağlantısıyla kısa bir sürüş mesafesindedir.</li>
 <li>Ücretsiz otopark mevcuttur.</li>
 </ul></div>
+<h2>Bilkent, Beytepe ve Koru'dan gelenler için</h2>
+<p>Ofisimiz yalnızca Beysukent'e değil, Bilkent, Beytepe ve Koru'ya da yakındır. Üniversite yerleşkelerinde okuyan öğrenciler, akademisyenler ve Koru'daki siteler ile Eskişehir Yolu üzerindeki iş merkezlerinde çalışanlar Yaşamkent ofisimize kısa sürede ulaşabilir. Ders ve iş programına uygun saatleri telefonda birlikte planlayabiliriz; şehir dışı dönemlerde görüşmelere <a href="/online-terapi/">online</a> devam etmek de mümkündür.</p>
 <h2>Beysukent'ten en sık başvurulan konular</h2>
 <ul class="topic-grid">
 <li><b>Üniversite dönemi:</b> uyum, yalnızlık, akademik baskı</li>

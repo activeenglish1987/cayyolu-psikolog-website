@@ -686,6 +686,7 @@ SISTER = {
  '/cayyolu-psikolojik-danismanlik-merkezi/': [(RN + '/', 'Psikolog Rojin Nazik'), (EL + '/', 'Psikolog Elif Erdoğan')],
  '/cayyolu-psikolog-fiyatlari/': [(RN + '/ankara-psikolog-fiyatlari/', 'Ankara psikolog fiyatları 2026')],
  '/cocuklarda-kaygi-ebeveyn-rehberi/': [(RN + '/ayrilma-kaygisi/', 'Ayrılma kaygısı'), (RN + '/sosyal-kaygi/', 'Sosyal kaygı')],
+ '/cocuklarda-uyku-sorunlari/': [(RN + '/ayrilma-kaygisi/', 'Ayrılma kaygısı'), (RN + '/okul-reddi/', 'Okul reddi'), (RN + '/uyku-bozukluklari/', 'Uyku bozuklukları')],
  '/cocuklarda-yas-ve-kayip/': [(RN + '/yas-terapisi/', 'Yas terapisi – Psikolog Rojin Nazik')],
  '/evlilikte-iletisim-sorunlari/': [(EL + '/blog/iliskilerde-iletisim-problemleri', 'İlişkilerde iletişim problemleri – Psikolog Elif Erdoğan'), (RN + '/cift-iliski-terapisi/', 'Ankara çift terapisi')],
  '/yalnizlik-hissi-ve-sosyal-geri-cekilme/': [(RN + '/sosyal-kaygi/', 'Sosyal kaygı'), (RN + '/depresyon-nedir/', 'Depresyon')],
@@ -797,11 +798,11 @@ def blog_index(posts, path, title='Blog'):
 def main():
     recs = json.load(open(os.path.join(SRC, 'icerik.json'), encoding='utf-8'))
     # Başka kaynaklardan çevrilmiş eski yazılar yayından kaldırıldı; yerlerine özgün makaleler geldi
-    removed = {m['eski'] for m in MAKALELER}
+    removed = {m['eski'] for m in MAKALELER if m.get('eski')}
     recs = [r for r in recs if r['path'] not in removed]
     for m in MAKALELER:
-        recs.append({'type': 'post', 'path': m['path'], 'slug': m['path'].strip('/'), 'title': m['title'], 'date': '2026-09-30',
-                     'modified': '2026-09-30', 'html': m['html'], 'excerpt': '', 'seo_title': m['seo_title'], 'seo_desc': m['desc'],
+        recs.append({'type': 'post', 'path': m['path'], 'slug': m['path'].strip('/'), 'title': m['title'], 'date': m.get('date', '2026-09-30'),
+                     'modified': m.get('date', '2026-09-30'), 'html': m['html'], 'excerpt': '', 'seo_title': m['seo_title'], 'seo_desc': m['desc'],
                      'thumb': '/' + m['thumb'], 'categories': ['Blog'], 'faqs': m.get('faqs', [])})
     posts = sorted([r for r in recs if r['type'] == 'post'], key=lambda r: r['date'], reverse=True)
     rojin = next(r for r in recs if r['path'] == '/psikolog-rojin-nazik/')
