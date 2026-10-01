@@ -9,7 +9,7 @@ from html.parser import HTMLParser
 from urllib.parse import quote
 import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from landing import LANDINGS, BOOST
+from landing import LANDINGS, BOOST, EXTRA
 from makaleler import MAKALELER
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -194,7 +194,6 @@ AREAS = [
     ('İncek', '/incek-psikolog/'),
     ('Beysukent', '/beysukent-psikolog/'),
     ('Alacaatlı', '/alacaatli-psikolog/'),
-    ('Ankara', '/ankara-psikolog/'),
 ]
 FOCUS = [
     ('/cayyolu-cocuk-psikologu/', 'Çocuk ve Ergen Psikoloğu'),
@@ -402,7 +401,7 @@ def business_ld():
                         'addressLocality': 'Çankaya', 'addressRegion': 'Ankara', 'postalCode': '06810', 'addressCountry': 'TR'},
             'geo': {'@type': 'GeoCoordinates', 'latitude': GEO[0], 'longitude': GEO[1]},
             'openingHoursSpecification': [{'@type': 'OpeningHoursSpecification', 'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], 'opens': '09:00', 'closes': '20:00'}],
-            'areaServed': ['Çayyolu', 'Ümitköy', 'Yaşamkent', 'Konutkent', 'İncek', 'Ankara'],
+            'areaServed': ['Çayyolu', 'Ümitköy', 'Yaşamkent', 'Konutkent', 'İncek', 'Beysukent', 'Alacaatlı', 'Ankara'],
             'sameAs': [IG_ROJIN],
             'founder': {'@type': 'Person', '@id': 'https://www.psikologrojinnazik.com/#rojin-nazik', 'name': 'Rojin Nazik', 'jobTitle': 'Psikolog',
                         'url': SITE + '/psikolog-rojin-nazik/', 'sameAs': ['https://www.psikologrojinnazik.com/rojin-nazik-biyografi/', IG_ROJIN]},
@@ -684,6 +683,7 @@ SISTER = {
  '/cayyolu-cocuk-psikologu/': [(RN + '/ayrilma-kaygisi/', 'Çocuklarda ayrılma kaygısı'), (RN + '/sosyal-kaygi/', 'Sosyal kaygı'), (EL + '/hizmetler/oyun-terapisi', 'Oyun terapisi – Psikolog Elif Erdoğan'), (RN + '/ankara-cocuk-psikologu/', 'Ankara çocuk psikoloğu')],
  '/cayyolu-cift-terapisi/': [(RN + '/cift-iliski-terapisi/', 'Ankara çift terapisi – Psikolog Rojin Nazik'), (EL + '/blog/cift-terapisine-ne-zaman-basvurulmali', 'Çift terapisine ne zaman başvurulmalı?')],
  '/cayyolu-aile-terapisi/': [(RN + '/ankara-aile-terapisti/', 'Ankara aile terapisti'), (RN + '/internet-bagimliligi/', 'Ekran ve internet bağımlılığı')],
+ '/ankara-psikolog-cayyolu-kizilay-umitkoy-yasamkent-incek-ve-cevresinde-guvenilir-psikolojik-destek/': [(RN + '/', 'Ankara psikolog – Psikolog Rojin Nazik'), (RN + '/kizilay-psikolog/', 'Kızılay psikolog')],
  '/cayyolu-psikolojik-danismanlik-merkezi/': [(RN + '/', 'Psikolog Rojin Nazik'), (EL + '/', 'Psikolog Elif Erdoğan')],
  '/cayyolu-psikolog-fiyatlari/': [(RN + '/ankara-psikolog-fiyatlari/', 'Ankara psikolog fiyatları 2026')],
  '/cocuklarda-kaygi-ebeveyn-rehberi/': [(RN + '/ayrilma-kaygisi/', 'Ayrılma kaygısı'), (RN + '/sosyal-kaygi/', 'Sosyal kaygı')],
@@ -698,11 +698,16 @@ SISTER = {
  '/ilk-terapi-seansi-rehberi/': [(RN + '/ankara-psikolog-tavsiyesi/', 'Ankara psikolog tavsiyesi'), (RN + '/psikolog-tani-koyabilir-mi/', 'Psikolog tanı koyabilir mi?')],
  '/kaygi-sorunlari/': [(RN + '/anksiyete-bozukluklari/', 'Anksiyete bozuklukları'), (RN + '/panik-atak/', 'Panik atak'), (EL + '/blog/kaygi-mi-kaygi-bozuklugu-mu', 'Kaygı mı, kaygı bozukluğu mu?')],
  '/cocuk-ergen-danismanligi/': [(RN + '/sinav-kaygisi/', 'Sınav kaygısı'), (EL + '/hizmetler/ergen-psikoterapisi', 'Ergen psikoterapisi – Psikolog Elif Erdoğan')],
- '/umitkoy-psikolog/': [(RN + '/ankara-psikolog/', 'Ankara psikolog – Psikolog Rojin Nazik')],
- '/yasamkent-psikolog/': [(RN + '/ankara-psikolog/', 'Ankara psikolog – Psikolog Rojin Nazik'), (EL + '/', 'Psikolog Elif Erdoğan')],
+ '/umitkoy-psikolog/': [(RN + '/', 'Ankara psikolog – Psikolog Rojin Nazik')],
+ '/yasamkent-psikolog/': [(RN + '/', 'Ankara psikolog – Psikolog Rojin Nazik'), (EL + '/', 'Psikolog Elif Erdoğan')],
  '/beysukent-psikolog/': [(RN + '/sinav-kaygisi/', 'Sınav kaygısı'), (RN + '/sosyal-kaygi/', 'Sosyal kaygı')],
  '/incek-psikolog/': [(RN + '/ayrilma-kaygisi/', 'Çocuklarda ayrılma kaygısı')],
- '/ankara-psikolog/': [(RN + '/kizilay-psikolog/', 'Kızılay psikolog'), (RN + '/ankara-psikolog-fiyatlari/', 'Ankara psikolog fiyatları')],
+}
+RETITLE = {
+ '/ankara-psikolog-cayyolu-kizilay-umitkoy-yasamkent-incek-ve-cevresinde-guvenilir-psikolojik-destek/': {
+   'title': "Batı Ankara'da Psikolojik Destek: Çayyolu, Ümitköy, Yaşamkent ve İncek",
+   'seo_title': "Batı Ankara'da Psikolojik Destek | Çayyolu, Ümitköy, Yaşamkent, İncek",
+   'seo_desc': "Çayyolu, Ümitköy, Yaşamkent, Konutkent ve İncek'te yaşayanlar için RN Psikoloji Yaşamkent ofisinde yüz yüze psikolojik danışmanlık. Randevu: 0552 418 79 73."},
 }
 def sister_html(path):
     items = SISTER.get(path)
@@ -714,7 +719,12 @@ def sister_html(path):
 def landing_page(cfg):
     rec = {'type': 'page', 'path': cfg['path'], 'title': cfg['h1'], 'date': '2026-09-30', 'modified': '2026-09-30'}
     body = cfg['body'] % {'cta': inline_cta('Merhaba, %s sayfanızdan ulaşıyorum, randevu bilgisi almak istiyorum.' % cfg['h1'])}
-    body += sister_html(cfg['path']) + '<h2>Sık sorulan sorular</h2>' + faq_html(cfg['faqs'])
+    ex = EXTRA.get(cfg['path'])
+    faqs = cfg['faqs'] + (ex['faqs'] if ex else [])
+    if ex:
+        rec['modified'] = '2026-10-01'
+        body += ex['html']
+    body += sister_html(cfg['path']) + '<h2>Sık sorulan sorular</h2>' + faq_html(faqs)
     near = [(a, p) for a, p in AREAS if p != cfg['path']]
     after = '''<section class="section section-alt"><div class="wrap">%s%s</div></section>
 <section class="section"><div class="wrap office-grid">%s<div class="office-photos">%s%s</div></div></section>
@@ -728,7 +738,13 @@ def landing_page(cfg):
         ''.join('<a class="area-chip" href="%s">%s %s psikolog</a>' % (p, ICON['pin'], esc(a)) for a, p in near),
         ''.join('<a class="area-chip" href="%s">%s Çayyolu %s</a>' % (p, ICON['arrow'], esc(t)) for p, t in FOCUS if p != cfg['path']))
     return article_page(rec, body, [('Ana Sayfa', '/'), (cfg['h1'], None)], kicker='RN Psikoloji · Yaşamkent ofisi',
-                        lead=cfg['lead'], extra_after=after, extra_ld=[faq_ld(cfg['faqs'])], desc=cfg['desc'], title_tag=cfg['title'])
+                        lead=cfg['lead'], extra_after=after, extra_ld=[faq_ld(faqs), service_ld(cfg)], desc=cfg['desc'], title_tag=cfg['title'])
+
+def service_ld(cfg):
+    area = cfg['kw'].replace(' psikolog', '').replace(' Psikolog', '')
+    return {'@type': 'Service', 'name': cfg['h1'], 'serviceType': 'Psikolojik danışmanlık', 'url': SITE + cfg['path'],
+            'provider': {'@id': SITE + '/#isletme'},
+            'areaServed': {'@type': 'Place', 'name': '%s, Ankara' % area} if 'psikolog' in cfg['kw'].lower() and len(cfg['kw'].split()) == 2 else {'@type': 'City', 'name': 'Ankara'}}
 
 # ---------------------------------------------------------------- diğer özel sayfalar
 def experts_page(rec):
@@ -807,6 +823,17 @@ def main():
         recs.append({'type': 'post', 'path': m['path'], 'slug': m['path'].strip('/'), 'title': m['title'], 'date': m.get('date', '2026-09-30'),
                      'modified': m.get('date', '2026-09-30'), 'html': m['html'], 'excerpt': '', 'seo_title': m['seo_title'], 'seo_desc': m['desc'],
                      'thumb': '/' + m['thumb'], 'categories': ['Blog'], 'faqs': m.get('faqs', [])})
+    # 'Ankara psikolog' ana kelimesi Rojin Nazik ana sayfasına bırakıldı (yamyamlığı önlemek için)
+    moved = {'/ankara-psikolog/': RN + '/',
+             '/ankara-psikolog-tavsiyesi-2025-cayyolu-ve-yakin-bolgelerde-guvenilir-terapi-hizmeti/': RN + '/ankara-psikolog-tavsiyesi/'}
+    recs = [r for r in recs if r['path'] not in moved]
+    for r in recs:
+        h = r.get('html') or ''
+        for a, b in moved.items():
+            h = h.replace('href="%s"' % a, 'href="%s"' % b).replace('href="%s%s"' % (SITE, a), 'href="%s"' % b)
+        r['html'] = h
+        if r['path'] in RETITLE:
+            r.update(RETITLE[r['path']]); r['modified'] = '2026-10-01'
     posts = sorted([r for r in recs if r['type'] == 'post'], key=lambda r: r['date'], reverse=True)
     rojin = next(r for r in recs if r['path'] == '/psikolog-rojin-nazik/')
     special = {'/': None, '/uzmanlarimiz/': experts_page, '/iletisim/': contact_page, '/basinda-biz/': press_page,
@@ -860,7 +887,7 @@ def main():
         pages.append((p, r.get('modified')))
     # anahtar kelime sayfaları
     for cfg in LANDINGS:
-        write(cfg['path'], landing_page(cfg)); pages.append((cfg['path'], '2026-09-30'))
+        write(cfg['path'], landing_page(cfg)); pages.append((cfg['path'], '2026-10-01' if cfg['path'] in EXTRA else '2026-09-30'))
     # Elif Erdoğan – yeni sayfa
     elif_rec = {'type': 'page', 'path': '/psikolog-elif-erdogan/', 'title': 'Psikolog Elif Erdoğan', 'date': '2026-09-30', 'modified': '2026-09-30', 'html': ELIF_BODY}
     ex = EXPERTS[1]

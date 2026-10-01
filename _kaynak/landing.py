@@ -470,3 +470,51 @@ BOOST = {
   ],
  },
 }
+
+# 2026-10-01: semt sayfalarına ek bölümler (her semte özgü) + ek sorular
+EXTRA = {
+ '/yasamkent-psikolog/': {
+  'html': '''<h2>Yaşamkent psikolog: iş çıkışı ve cumartesi randevusu</h2>
+<p>Yaşamkent'te yaşayanların büyük kısmı gün içinde şehrin merkezine ya da Eskişehir Yolu üzerindeki iş merkezlerine gidip geliyor. Bu yüzden görüşmeleri iş çıkışına ya da hafta sonuna sığdırmak çoğu zaman tek seçenek oluyor. Ofisimizde Pazartesi'den Cumartesi'ye 09:00 – 20:00 arasında randevu verdiğimiz için akşam saatlerinde ya da Cumartesi günü gelmeniz mümkün. Çocuğu olan aileler için okul çıkışı saatleri de planlanabiliyor.</p>
+<h2>Yaşamkent'te psikolog fiyatları</h2>
+<p>Ücret; görüşmenin türüne (bireysel, çift, aile, çocuk ve ergen) ve görüşeceğiniz uzmana göre değişir. Güncel bilgiyi telefonda ya da WhatsApp'ta açıkça paylaşıyoruz; genel bir fikir edinmek için <a href="/cayyolu-psikolog-fiyatlari/">Çayyolu ve Yaşamkent psikolog fiyatları</a> sayfamıza göz atabilirsiniz.</p>''',
+  'faqs': [("Yaşamkent'te akşam saatlerinde görüşme yapılabiliyor mu?", "Evet. Pazartesi – Cumartesi 20:00'ye kadar randevu verilmektedir; iş çıkışı saatleri için önceden yazmanız yeterli."),
+           ("Yaşamkent'ten online görüşme de yapabilir miyim?", "Evet. Ofise gelemediğiniz dönemlerde görüşmeleri online olarak sürdürmek mümkündür.")],
+ },
+ '/umitkoy-psikolog/': {
+  'html': '''<h2>Ümitköy psikolog: öğrenciler ve çalışan aileler için esnek saatler</h2>
+<p>Ümitköy, ODTÜ, Bilkent ve Hacettepe Beytepe kampüslerine yakınlığı nedeniyle hem üniversite öğrencilerinin hem de çocuklu ailelerin yoğun yaşadığı bir semt. Sınav ve tez dönemleri, yurt dışı başvuruları, iş temposu ve çocukların okul düzeni aynı evin içinde üst üste binebiliyor. Akşam 20:00'ye kadar ve Cumartesi günleri randevu verebildiğimiz için ders ya da mesai saatlerinizi aksatmadan görüşmeye gelebilirsiniz.</p>
+<p>Yetişkinlerde kaygı, panik, tükenmişlik ve ilişki sorunları; gençlerde sınav kaygısı, sosyal kaygı ve motivasyon; çocuklarda ise uyum ve davranış konuları en sık başvuru nedenleri arasında. Psikologlar tanı koymaz ve ilaç yazmaz; ilaç değerlendirmesi gereken durumlarda sizi bir psikiyatri uzmanına yönlendiririz.</p>''',
+  'faqs': [("Ümitköy'de üniversite öğrencileriyle görüşüyor musunuz?", "Evet. Sınav kaygısı, ders motivasyonu, aileden ayrı yaşama ve ilişki konularında genç yetişkinlerle görüşmeler yapılmaktadır."),
+           ("Ümitköy'den gelmek yerine online görüşebilir miyim?", "Evet, uygun durumlarda görüşmeler online da yapılabilir; ilk görüşmede birlikte karar verilir.")],
+ },
+ '/incek-psikolog/': {
+  'html': '''<h2>İncek psikolog: yeni yerleşen aileler için</h2>
+<p>İncek son yıllarda hızla büyüyen, yeni sitelerin ve genç ailelerin yoğun olduğu bir bölge. Yeni bir eve ve okula taşınmak, kardeş doğumu, işe dönüş ya da şehir değiştirmek gibi geçişler hem çocuklarda hem yetişkinlerde uyku, öfke, kaygı ve uyum sorunlarıyla kendini gösterebiliyor. Bu dönemlerde kısa ve odaklı bir destek bile aile içindeki gerginliği belirgin biçimde azaltabiliyor.</p>
+<p>İncek'ten gelen ailelerle en sık çocuklarda <a href="/cocuklarda-uyku-sorunlari/">uyku sorunları</a>, <a href="/cocuklarda-kaygi-ebeveyn-rehberi/">kaygı</a> ve okula uyum; yetişkinlerde ise ilişki ve ebeveynlik yükü üzerine çalışıyoruz. Çocuk görüşmelerinde ebeveynlerle düzenli bilgi paylaşımı yapılır.</p>
+<h2>İncek psikolog fiyatları</h2>
+<p>Ücretler görüşmenin türüne ve uzmana göre değişir; güncel bilgi için arayabilir ya da WhatsApp'tan yazabilirsiniz. Genel bilgi: <a href="/cayyolu-psikolog-fiyatlari/">psikolog fiyatları</a>.</p>''',
+  'faqs': [("İncek'te çocuk psikoloğu arıyorum, ilk adım ne olmalı?", "İlk görüşmeye genellikle ebeveynler gelir; çocuğun gelişim öyküsü ve yaşanan sorun konuşulur, ardından çocukla görüşmelerin nasıl planlanacağı belirlenir."),
+           ("İncek'ten cumartesi randevusu alabilir miyim?", "Evet, Cumartesi günleri de 09:00 – 20:00 arasında randevu verilmektedir.")],
+ },
+ '/konutkent-psikolog/': {
+  'html': '''<h2>Konutkent psikolog fiyatları</h2>
+<p>Konutkent'te psikolog ücretleri; görüşmenin bireysel, çift, aile ya da çocuk-ergen görüşmesi olmasına ve uzmanın deneyimine göre değişir. Güncel ücreti telefonda ve WhatsApp'ta açıkça paylaşıyoruz; sürpriz bir ek ücretle karşılaşmazsınız. Genel aralıklar için <a href="/cayyolu-psikolog-fiyatlari/">Çayyolu, Konutkent ve Yaşamkent psikolog fiyatları</a> sayfasına bakabilirsiniz.</p>
+<h2>Konutkent'te yürüme mesafesinde olmanın avantajı</h2>
+<p>Ofisimiz doğrudan Konutkent'te, Dumlupınar Bulvarı üzerinde. Konutkent'te oturanlar için bu, görüşmeye araç çıkarmadan yürüyerek gelebilmek, çocuğu okuldan aldıktan sonra randevuya yetişebilmek ve görüşmeleri düzenli sürdürebilmek demek. Düzenli devam, psikolojik danışmanlıkta ilerlemenin en önemli koşullarından biri.</p>''',
+  'faqs': [("Konutkent'te psikolog ücreti ne kadar?", "Ücret, görüşme türüne ve uzmana göre değişir. Güncel bilgiyi 0552 418 79 73 numarasından ya da WhatsApp'tan öğrenebilirsiniz."),
+           ("Konutkent'te çift terapisi yapıyor musunuz?", "Evet. Çift ve evlilik görüşmeleri ofisimizde yüz yüze ya da uygun durumlarda online yapılmaktadır.")],
+ },
+ '/beysukent-psikolog/': {
+  'html': '''<h2>Bilkent ve Beysukent'te psikolog fiyatları</h2>
+<p>Öğrenciler ve genç yetişkinler için ücret çoğu zaman belirleyici bir konu. Ücret görüşme türüne ve uzmana göre değişir; güncel bilgiyi telefonda ya da WhatsApp'ta açıkça paylaşıyoruz. Genel bilgi için <a href="/cayyolu-psikolog-fiyatlari/">psikolog fiyatları</a> sayfamıza bakabilirsiniz. Ücretsiz ya da düşük ücretli seçenekler arıyorsanız üniversitelerin psikolojik danışmanlık birimleri de iyi bir başlangıç noktasıdır.</p>''',
+  'faqs': [("Bilkent'te okuyorum, ofisinize gelmek kolay mı?", "Ofisimiz Konutkent'te, Dumlupınar Bulvarı üzerindedir; Bilkent ve Beytepe'den Eskişehir Yolu üzerinden kısa sürede ulaşılır. Online görüşme seçeneği de vardır.")],
+ },
+ '/alacaatli-psikolog/': {
+  'html': '''<h2>Alacaatlı'da yaşayan aileler için psikolojik destek</h2>
+<p>Alacaatlı, Çayyolu'nun batısında yeni sitelerle hızla gelişen ve çocuklu ailelerin yoğun olduğu bir bölge. Taşınma, okul değişikliği, iş ve ev arasında sıkışan bir gündelik tempo; yetişkinlerde stres ve ilişki sorunlarını, çocuklarda ise uyum ve davranış konularını gündeme getirebiliyor. Ofisimiz Alacaatlı'ya yakın olduğu için görüşmeleri günlük düzeninizi bozmadan sürdürebilirsiniz.</p>
+<h2>Alacaatlı psikolog fiyatları</h2>
+<p>Ücretler görüşme türüne ve uzmana göre değişir. Güncel bilgi için arayabilir ya da WhatsApp'tan yazabilirsiniz; genel bilgi için <a href="/cayyolu-psikolog-fiyatlari/">psikolog fiyatları</a> sayfamıza bakabilirsiniz.</p>''',
+  'faqs': [("Alacaatlı'dan akşam saatinde gelebilir miyim?", "Evet. Pazartesi – Cumartesi 20:00'ye kadar randevu verilmektedir.")],
+ },
+}
