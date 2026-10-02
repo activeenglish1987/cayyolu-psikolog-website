@@ -404,7 +404,7 @@ def business_ld():
             'areaServed': ['Çayyolu', 'Ümitköy', 'Yaşamkent', 'Konutkent', 'İncek', 'Beysukent', 'Alacaatlı', 'Ankara'],
             'sameAs': [IG_ROJIN],
             'founder': {'@type': 'Person', '@id': 'https://www.psikologrojinnazik.com/#rojin-nazik', 'name': 'Rojin Nazik', 'jobTitle': 'Psikolog',
-                        'url': SITE + '/psikolog-rojin-nazik/', 'sameAs': ['https://www.psikologrojinnazik.com/rojin-nazik-biyografi/', IG_ROJIN]},
+                        'url': SITE + '/psikolog-rojin-nazik/', 'sameAs': ['https://www.wikidata.org/wiki/Q141626009', 'https://www.psikologrojinnazik.com/rojin-nazik-biyografi/', IG_ROJIN]},
             'employee': [{'@type': 'Person', 'name': 'Elif Erdoğan', 'jobTitle': 'Psikolog', 'url': SITE + '/psikolog-elif-erdogan/',
                           'sameAs': ['https://psikologeliferdogan.com/', IG_ELIF]},
                          {'@type': 'Person', 'name': 'Hazal Akşahin', 'jobTitle': 'Klinik Psikolog', 'url': SITE + '/psikolog-hazal-aksahin/'}]}
