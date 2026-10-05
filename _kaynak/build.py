@@ -187,7 +187,7 @@ EXPERTS = [
      'ig': '', 'ig_handle': ''},
 ]
 AREAS = [
-    ('Çayyolu', '/cayyolu-psikolog/'),
+    ('Çayyolu', '/'),
     ('Ümitköy', '/umitkoy-psikolog/'),
     ('Yaşamkent', '/yasamkent-psikolog/'),
     ('Konutkent', '/konutkent-psikolog/'),
@@ -551,11 +551,12 @@ def home_page(recs, posts):
     books = [('wp-content/uploads/2024/05/bir-hayatla-evlenmek.webp', 'Bir Hayatla Evlenmek'), ('wp-content/uploads/2024/05/bir-odanin-otesi-500x500-1.webp', 'Bir Odanın Ötesi'), ('wp-content/uploads/2024/05/dengeyi-yakalamak.webp', 'Dengeyi Yakalamak')]
     books_html = ''.join('<figure class="book">%s<figcaption>%s</figcaption></figure>' % (img(opt(p, 420), n + ' – Rojin Nazik'), esc(n)) for p, n in books)
     reviews_html = ''.join('<figure class="review"><blockquote>%s</blockquote><figcaption>%s</figcaption></figure>' % (esc(t), esc(n)) for t, n in reviews[:5])
-    areas_html = ''.join('<a class="area-chip" href="%s">%s %s psikolog</a>' % (p, ICON['pin'], esc(a)) for a, p in AREAS) + \
+    areas_html = ''.join('<a class="area-chip" href="%s">%s %s psikolog</a>' % (p, ICON['pin'], esc(a)) for a, p in AREAS if p != '/') + \
         ''.join('<a class="area-chip" href="%s">%s Çayyolu %s</a>' % (p, ICON['arrow'], esc(t)) for p, t in FOCUS)
     latest = ''.join(blog_card(p) for p in posts[:3])
-    title = 'Çayyolu Psikolog | RN Psikoloji Çayyolu Şubesi – Ümitköy, Yaşamkent'
-    desc = "RN Psikoloji Çayyolu: Yaşamkent'teki ofisimizde Çayyolu, Ümitköy, Konutkent ve İncek'e yakın; çocuk, ergen, yetişkin, çift ve aile danışmanlığı. Randevu: 0552 418 79 73."
+    # WordPress döneminde yıllarca 1. sırada duran başlık korunur (2026-10-05)
+    title = 'Çayyolu Psikolog | Ankara Çayyolu Psikolog – RN Psikoloji'
+    desc = "Çayyolu psikolog arıyorsanız: RN Psikoloji Çayyolu'nda çocuk, ergen, yetişkin, çift ve aile danışmanlığı. Ümitköy, Yaşamkent, Konutkent ve İncek'e yakın. Randevu: 0552 418 79 73."
     return head(title, desc, '/', ld(business_ld(), {'@type': 'WebSite', 'name': BRAND, 'url': SITE + '/'}, faq_ld())) + nav_html('/') + '''
 <section class="hero">
   <div class="wrap hero-grid">
@@ -825,7 +826,9 @@ def main():
                      'thumb': '/' + m['thumb'], 'categories': ['Blog'], 'faqs': m.get('faqs', [])})
     # 'Ankara psikolog' ana kelimesi Rojin Nazik ana sayfasına bırakıldı (yamyamlığı önlemek için)
     moved = {'/ankara-psikolog/': RN + '/',
-             '/ankara-psikolog-tavsiyesi-2025-cayyolu-ve-yakin-bolgelerde-guvenilir-terapi-hizmeti/': RN + '/ankara-psikolog-tavsiyesi/'}
+             '/ankara-psikolog-tavsiyesi-2025-cayyolu-ve-yakin-bolgelerde-guvenilir-terapi-hizmeti/': RN + '/ankara-psikolog-tavsiyesi/',
+             # 'Çayyolu psikolog' tek sayfada toplanır: yıllardır sıralanan ana sayfa (2026-10-05)
+             '/cayyolu-psikolog/': '/'}
     recs = [r for r in recs if r['path'] not in moved]
     for r in recs:
         h = r.get('html') or ''
