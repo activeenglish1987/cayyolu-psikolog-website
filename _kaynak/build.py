@@ -450,7 +450,19 @@ def article_page(rec, body_html, crumbs, kicker='', expert=None, lead='', hero_i
     d = desc or rec.get('seo_desc') or plain(body_html, 155)
     tt = title_tag or rec.get('seo_title') or (title if len(title) > 42 else '%s | %s' % (title, BRAND))
     hero_fig = ('<figure class="article-hero-img">%s</figure>' % img(hero_img, title, eager=True)) if hero_img else ''
-    meta = ('<p class="article-meta">%s · %s</p>' % (esc(BRAND), fmt_date(rec['date']))) if rec.get('type') == 'post' else ''
+    # Sorumlu uzman (E-E-A-T): içerik RN Psikoloji kurucusu Psikolog Rojin Nazik'in sorumluluğunda yayımlanır
+    resp = 'Sorumlu uzman: <a href="/psikolog-rojin-nazik/">Psikolog Rojin Nazik</a>, RN Psikoloji kurucusu'
+    if rec.get('type') == 'post':
+        meta = '<p class="article-meta">%s · %s</p>' % (resp, fmt_date(rec.get('modified') or rec['date']))
+    elif rec.get('landing'):
+        meta = '<p class="article-meta">%s · Son güncelleme: %s</p>' % (resp, fmt_date(rec.get('modified') or rec['date']))
+    else:
+        meta = ''
+    if rec.get('type') == 'post' or rec.get('landing'):
+        lds.append({'@type': 'WebPage', '@id': SITE + rec['path'] + '#sayfa', 'url': SITE + rec['path'], 'inLanguage': 'tr-TR',
+                    'dateModified': rec.get('modified') or rec['date'],
+                    'accountablePerson': {'@type': 'Person', '@id': 'https://www.psikologrojinnazik.com/#rojin-nazik', 'name': 'Rojin Nazik', 'jobTitle': 'Psikolog',
+                                          'url': SITE + '/psikolog-rojin-nazik/', 'sameAs': ['https://www.psikologrojinnazik.com/rojin-nazik-biyografi/', 'https://www.wikidata.org/wiki/Q141626009']}})
     return head(tt, d, rec['path'], ld(*lds)) + nav_html(rec['path']) + '''
 <section class="page-hero">
   <div class="wrap">
@@ -716,7 +728,7 @@ def sister_html(path):
 
 # ---------------------------------------------------------------- anahtar kelime sayfaları
 def landing_page(cfg):
-    rec = {'type': 'page', 'path': cfg['path'], 'title': cfg['h1'], 'date': '2026-09-30', 'modified': '2026-09-30'}
+    rec = {'type': 'page', 'landing': True, 'path': cfg['path'], 'title': cfg['h1'], 'date': '2026-09-30', 'modified': cfg.get('mod') or '2026-09-30'}
     body = cfg['body'] % {'cta': inline_cta('Merhaba, %s sayfanızdan ulaşıyorum, randevu bilgisi almak istiyorum.' % cfg['h1'])}
     ex = EXTRA.get(cfg['path'])
     faqs = cfg['faqs'] + (ex['faqs'] if ex else [])
