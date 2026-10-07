@@ -191,6 +191,8 @@ AREAS = [
     ('İncek', '/incek-psikolog/'),
     ('Beysukent', '/beysukent-psikolog/'),
     ('Alacaatlı', '/alacaatli-psikolog/'),
+    ('Bilkent', '/bilkent-psikolog/'),
+    ('Eryaman', '/eryaman-psikolog/'),
 ]
 FOCUS = [
     ('/cayyolu-cocuk-psikologu/', 'Çocuk ve Ergen Psikoloğu'),
@@ -888,7 +890,7 @@ def main():
         pages.append((p, r.get('modified')))
     # anahtar kelime sayfaları
     for cfg in LANDINGS:
-        write(cfg['path'], landing_page(cfg)); pages.append((cfg['path'], '2026-10-01' if cfg['path'] in EXTRA else '2026-09-30'))
+        write(cfg['path'], landing_page(cfg)); pages.append((cfg['path'], cfg.get('mod') or ('2026-10-01' if cfg['path'] in EXTRA else '2026-09-30')))
     # Elif Erdoğan – yeni sayfa
     elif_rec = {'type': 'page', 'path': '/psikolog-elif-erdogan/', 'title': 'Psikolog Elif Erdoğan', 'date': '2026-09-30', 'modified': '2026-09-30', 'html': ELIF_BODY}
     ex = EXPERTS[1]

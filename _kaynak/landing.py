@@ -181,8 +181,8 @@ LANDINGS = [
 <li>Beysukent'ten Eskişehir Yolu bağlantısıyla kısa bir sürüş mesafesindedir.</li>
 <li>Ücretsiz otopark mevcuttur.</li>
 </ul></div>
-<h2>Bilkent, Beytepe ve Koru'dan gelenler için</h2>
-<p>Ofisimiz yalnızca Beysukent'e değil, Bilkent, Beytepe ve Koru'ya da yakındır. Üniversite yerleşkelerinde okuyan öğrenciler, akademisyenler ve Koru'daki siteler ile Eskişehir Yolu üzerindeki iş merkezlerinde çalışanlar Yaşamkent ofisimize kısa sürede ulaşabilir. Ders ve iş programına uygun saatleri telefonda birlikte planlayabiliriz; şehir dışı dönemlerde görüşmelere <a href="/online-terapi/">online</a> devam etmek de mümkündür.</p>
+<h2>Koru ve çevresinden gelenler için</h2>
+<p>Ofisimiz Beysukent'in yanı sıra Koru'ya da yakındır; Bilkent ve Beytepe için ayrıca <a href="/bilkent-psikolog/">Bilkent psikolog</a> sayfamıza bakabilirsiniz. Üniversite yerleşkelerinde okuyan öğrenciler, akademisyenler ve Koru'daki siteler ile Eskişehir Yolu üzerindeki iş merkezlerinde çalışanlar Yaşamkent ofisimize kısa sürede ulaşabilir. Ders ve iş programına uygun saatleri telefonda birlikte planlayabiliriz; şehir dışı dönemlerde görüşmelere <a href="/online-terapi/">online</a> devam etmek de mümkündür.</p>
 <h2>Beysukent'ten en sık başvurulan konular</h2>
 <ul class="topic-grid">
 <li><b>Üniversite dönemi:</b> uyum, yalnızlık, akademik baskı</li>
@@ -203,6 +203,82 @@ LANDINGS = [
   ("Üniversite öğrencileriyle görüşüyor musunuz?", "Evet. Uyum, kaygı, ilişkiler ve gelecek planlaması gibi konularda genç yetişkinlerle görüşmeler yapılır."),
   ("Sınav kaygısı için destek alabilir miyim?", "Evet. Lise ve üniversite öğrencilerinde sınav kaygısı sık başvuru nedenlerindendir; kaygıyı yönetmeye yönelik çalışılır."),
   ("Randevu almak için ne yapmalıyım?", "0552 418 79 73 numarasını arayabilir ya da WhatsApp'tan yazabilirsiniz."),
+ ],
+},
+{
+ 'path': '/bilkent-psikolog/',
+ 'kw': 'Bilkent psikolog',
+ 'mod': '2026-10-07',
+ 'h1': 'Bilkent ve Beytepe Psikolog',
+ 'title': 'Bilkent Psikolog | Beytepe, Üniversite Öğrencileri – RN Psikoloji',
+ 'desc': "Bilkent ve Beytepe'ye yakın Yaşamkent ofisimizde üniversite öğrencileri, akademisyenler ve yetişkinlerle yüz yüze ya da online görüşme. Randevu: 0552 418 79 73.",
+ 'lead': "Bilkent ve Hacettepe Beytepe yerleşkelerine yakın Yaşamkent ofisimizde; öğrenciler, akademisyenler ve bölgede yaşayan yetişkinler için randevulu psikolojik danışmanlık.",
+ 'body': """
+<h2>Bilkent ve Beytepe'den gelen danışanlarımız</h2>
+<p>Bilkent ve Beytepe çevresi; üniversite öğrencileri, akademisyenler ve sitelerde yaşayan ailelerden oluşan bir bölge. Başvurular da bu yapıyı yansıtıyor: Akademik baskı ve sınav dönemleri, şehre ve yurda uyum, yalnızlık, ilişkiler ve gelecek kaygısı en sık konuşulan konular arasında.</p>
+<p>RN Psikoloji'nin Yaşamkent ofisi, Eskişehir Yolu bağlantısıyla Bilkent ve Beytepe'ye kısa bir sürüş mesafesindedir. Ders ve iş programına uygun saatleri birlikte planlarız; dönem arası ya da şehir dışındayken görüşmelere <a href="/online-terapi/">online</a> devam etmek mümkündür.</p>
+<div class="route-box"><h3>Bilkent ve Beytepe'den ulaşım</h3><ul>
+<li>Ofisimiz Konutkent, Dumlupınar Bulvarı No:399 Kat:28'dedir.</li>
+<li>Eskişehir Yolu üzerinden kısa bir sürüş mesafesindedir; ücretsiz otopark mevcuttur.</li>
+<li>Pazartesi – Cumartesi 09:00 – 20:00 arasında, akşam saatleri dahil randevu verilir.</li>
+</ul></div>
+<h2>Üniversite döneminde sık başvurulan konular</h2>
+<ul class="topic-grid">
+<li><b>Akademik baskı:</b> sınav dönemleri, erteleme, motivasyon kaybı</li>
+<li><b>Uyum:</b> yeni şehir, yurt ve ev hayatı, yalnızlık</li>
+<li><b>Kaygı ve panik:</b> sunum, sınav ve sosyal ortamlarda kaygı</li>
+<li><b>İlişkiler:</b> romantik ilişkiler, ayrılık, aile ile iletişim</li>
+<li><b>Gelecek kaygısı:</b> bölüm, kariyer ve karar verme</li>
+<li><b>Akademisyenler:</b> iş yükü, tükenmişlik, iş–aile dengesi</li>
+</ul>
+%(cta)s
+<h2>Gizlilik ve öğrenciler</h2>
+<p>Görüşmelerde konuşulanlar etik kurallar çerçevesinde gizli tutulur; 18 yaşını doldurmuş bir öğrencinin görüşmeleri hakkında aileyle bilgi paylaşılmaz. Üniversitelerin psikolojik danışmanlık birimleri de değerli bir kaynaktır; daha düzenli ve uzun soluklu bir çalışma ya da kampüs dışında bir alan isteyenler için ofisimiz bir seçenek sunar.</p>
+<h2>Uzman seçimi ve randevu</h2>
+<p>Yetişkin ve çift görüşmeleri için <a href="/psikolog-rojin-nazik/">Psikolog Rojin Nazik</a>, genç yetişkin ve ergenlerle çalışmak için <a href="/psikolog-elif-erdogan/">Psikolog Elif Erdoğan</a> ile görüşebilirsiniz. Komşu semtler için <a href="/beysukent-psikolog/">Beysukent</a> ve <a href="/umitkoy-psikolog/">Ümitköy</a> sayfalarımıza da göz atabilirsiniz.</p>
+""",
+ 'faqs': [
+  ("Bilkent ve Beytepe'ye en yakın ofisiniz nerede?", "Konutkent, Dumlupınar Bulvarı No:399 Kat:28 Daire:121 adresindeki Yaşamkent ofisimiz, Eskişehir Yolu üzerinden kısa bir sürüş mesafesindedir."),
+  ("Üniversite öğrencileriyle görüşüyor musunuz?", "Evet. Akademik baskı, uyum, kaygı, ilişkiler ve gelecek planlaması gibi konularda öğrencilerle görüşmeler yapılır."),
+  ("Görüşmelerim aileme bildirilir mi?", "Hayır. 18 yaşını doldurmuş danışanların görüşmeleri etik kurallar çerçevesinde gizli tutulur ve izniniz olmadan kimseyle paylaşılmaz."),
+  ("Dönem arasında şehir dışındayken görüşmeye devam edebilir miyim?", "Evet. Görüşmelere online olarak devam etmek mümkündür."),
+ ],
+},
+{
+ 'path': '/eryaman-psikolog/',
+ 'kw': 'Eryaman psikolog',
+ 'mod': '2026-10-07',
+ 'h1': 'Eryaman ve Etimesgut Psikolog',
+ 'title': 'Eryaman Psikolog | Etimesgut, Yüz Yüze ve Online – RN Psikoloji',
+ 'desc': "Eryaman ve Etimesgut'a yakın Yaşamkent ofisimizde yetişkin, çift, aile, çocuk ve ergen görüşmeleri; ücretsiz otopark, akşam ve Cumartesi randevusu. 0552 418 79 73.",
+ 'lead': "Eryaman ve Etimesgut'tan gelen danışanlar için Yaşamkent ofisimizde yüz yüze; yoğun günlerde online psikolojik danışmanlık.",
+ 'body': """
+<h2>Eryaman ve Etimesgut'tan gelen danışanlarımız</h2>
+<p>Eryaman ve Etimesgut, genç ailelerin ve çalışan yetişkinlerin yoğun olduğu, hızla büyüyen semtler. Başvurularda iş ve aile sorumluluklarını dengelemenin yarattığı stres, çift ilişkisi, ebeveynlik ve çocukların okul uyumu öne çıkıyor.</p>
+<p>RN Psikoloji'nin Yaşamkent ofisi, Eryaman ve Etimesgut'a araçla kısa bir sürüş mesafesindedir. Akşam saatleri ve Cumartesi randevusu, iş çıkışı gelmek isteyenler için kolaylık sağlar; yoğun dönemlerde görüşmeler <a href="/online-terapi/">online</a> da yapılabilir.</p>
+<div class="route-box"><h3>Eryaman ve Etimesgut'tan ulaşım</h3><ul>
+<li>Ofisimiz Konutkent, Dumlupınar Bulvarı No:399 Kat:28'dedir.</li>
+<li>Araçla kısa bir sürüş mesafesindedir; ücretsiz otopark mevcuttur.</li>
+<li>Pazartesi – Cumartesi 09:00 – 20:00 arasında randevu verilir.</li>
+</ul></div>
+<h2>Eryaman ve Etimesgut'tan sık başvurulan konular</h2>
+<ul class="topic-grid">
+<li><b>Çift ve evlilik:</b> iletişim, sık tartışma, güven</li>
+<li><b>Ebeveynlik:</b> öfke nöbetleri, ekran, kardeş kıskançlığı</li>
+<li><b>Çocuk ve ergen:</b> okul uyumu, sınav kaygısı</li>
+<li><b>Yetişkin:</b> kaygı, iş stresi, tükenmişlik</li>
+<li><b>Aile:</b> aile içi iletişim, yaşam değişiklikleri</li>
+<li><b>Online görüşme:</b> yoğun programlar için</li>
+</ul>
+%(cta)s
+<h2>Uzman seçimi ve randevu</h2>
+<p>Yetişkin, çift ve aile görüşmeleri için <a href="/psikolog-rojin-nazik/">Psikolog Rojin Nazik</a>; çocuklarla oyun terapisi ve ergenlerle görüşmeler için <a href="/psikolog-elif-erdogan/">Psikolog Elif Erdoğan</a> ile çalışabilirsiniz. Çocuğunuz için destek arıyorsanız <a href="/cayyolu-cocuk-psikologu/">çocuk psikoloğu</a> sayfamıza da göz atabilirsiniz.</p>
+""",
+ 'faqs': [
+  ("Eryaman'a en yakın ofisiniz nerede?", "Konutkent, Dumlupınar Bulvarı No:399 Kat:28 Daire:121 adresindeki Yaşamkent ofisimiz Eryaman ve Etimesgut'a araçla kısa bir sürüş mesafesindedir."),
+  ("Akşam ya da Cumartesi randevusu alabilir miyim?", "Evet. Pazartesi – Cumartesi 09:00 – 20:00 arasında, iş çıkışı saatleri dahil randevu verilir."),
+  ("Çocuğum için görüşme yapıyor musunuz?", "Evet. Küçük çocuklarla oyun terapisi, ergenlerle görüşmeler ve ebeveyn danışmanlığı yapılır; ilk görüşme genellikle ebeveynlerle olur."),
+  ("Online görüşme mümkün mü?", "Evet. Yetişkin, çift ve ebeveyn görüşmeleri online olarak da yapılabilir."),
  ],
 },
 {
