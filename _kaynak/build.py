@@ -182,9 +182,6 @@ EXPERTS = [
     {'path': '/psikolog-elif-erdogan/', 'name': 'Psikolog Elif Erdoğan', 'role': 'Psikolog',
      'areas': 'Yetişkin · Ergen · Çift · Oyun terapisi', 'img': 'assets/img/team-elif-erdogan.webp',
      'ig': IG_ELIF, 'ig_handle': '@psikolog_eliferdogan'},
-    {'path': '/psikolog-hazal-aksahin/', 'name': 'Klinik Psikolog Hazal Akşahin', 'role': 'Klinik Psikolog',
-     'areas': 'Çocuk · Ergen · Yetişkin', 'img': 'wp-content/uploads/2024/11/hazal-aksahin.jpg',
-     'ig': '', 'ig_handle': ''},
 ]
 AREAS = [
     ('Çayyolu', '/'),
@@ -406,8 +403,7 @@ def business_ld():
             'founder': {'@type': 'Person', '@id': 'https://www.psikologrojinnazik.com/#rojin-nazik', 'name': 'Rojin Nazik', 'jobTitle': 'Psikolog',
                         'url': SITE + '/psikolog-rojin-nazik/', 'sameAs': ['https://www.wikidata.org/wiki/Q141626009', 'https://www.psikologrojinnazik.com/rojin-nazik-biyografi/', IG_ROJIN]},
             'employee': [{'@type': 'Person', 'name': 'Elif Erdoğan', 'jobTitle': 'Psikolog', 'url': SITE + '/psikolog-elif-erdogan/',
-                          'sameAs': ['https://psikologeliferdogan.com/', IG_ELIF]},
-                         {'@type': 'Person', 'name': 'Hazal Akşahin', 'jobTitle': 'Klinik Psikolog', 'url': SITE + '/psikolog-hazal-aksahin/'}]}
+                          'sameAs': ['https://psikologeliferdogan.com/', IG_ELIF]}]}
 
 def ld(*objs):
     return '<script type="application/ld+json">%s</script>' % json.dumps({'@context': 'https://schema.org', '@graph': list(objs)}, ensure_ascii=False)
@@ -751,7 +747,7 @@ def service_ld(cfg):
 def experts_page(rec):
     body = '<p class="page-lead">RN Psikoloji Çayyolu şubesinde çocuk, ergen, yetişkin ve çift görüşmeleri yürüten uzmanlarımız.</p>' + expert_cards()
     bc, bld = breadcrumb([('Ana Sayfa', '/'), ('Uzmanlarımız', None)])
-    return head('Uzmanlarımız | %s' % BRAND, 'RN Psikoloji Çayyolu uzmanları: Psikolog Rojin Nazik, Psikolog Elif Erdoğan ve Klinik Psikolog Hazal Akşahin.', rec['path'], ld(business_ld(), bld)) + nav_html(rec['path']) + '''
+    return head('Uzmanlarımız | %s' % BRAND, 'RN Psikoloji Çayyolu uzmanları: Psikolog Rojin Nazik ve Psikolog Elif Erdoğan.', rec['path'], ld(business_ld(), bld)) + nav_html(rec['path']) + '''
 <section class="page-hero"><div class="wrap">%s<h1>Uzmanlarımız</h1><div class="btn-row hero-btns">%s%s</div>%s</div></section>
 <section class="section section-tight"><div class="wrap">%s</div></section>''' % (bc, btn_call(), btn_wa(), OPEN_STATUS, body) + footer_html()
 
@@ -784,15 +780,15 @@ def press_page(rec):
              ('wp-content/uploads/2024/12/01.09.2023-Yesilpinar-Psi.Hazal-Aksahin-1-scaled-1.jpg', 'Yeşilpınar')]
     g1 = ''.join('<figure class="press-item">%s<figcaption>%s</figcaption></figure>' % (img(opt(p, 720), 'Psikolog Rojin Nazik – ' + n), esc(n)) for p, n in items)
     g2 = ''.join('<figure class="press-item">%s<figcaption>%s</figcaption></figure>' % (img(opt(p, 720), 'Klinik Psikolog Hazal Akşahin – ' + n), esc(n)) for p, n in hazal)
-    body = '<h2>Psikolog Rojin Nazik</h2><p>Psikolog Rojin Nazik, CNN Türk, Beyaz TV ve ulusal gazetelerde psikoloji üzerine röportajlar veriyor; bilimsel bilgiyi toplumla buluşturmayı amaçlıyor.</p><div class="press-grid page">%s</div><h2>Klinik Psikolog Hazal Akşahin</h2><div class="press-grid page">%s</div><p>Daha fazla yayın için: <a href="https://www.psikologrojinnazik.com/basinda-biz/" target="_blank" rel="noopener">psikologrojinnazik.com/basinda-biz</a></p>' % (g1, g2)
+    body = '<h2>Psikolog Rojin Nazik</h2><p>Psikolog Rojin Nazik, CNN Türk, Beyaz TV ve ulusal gazetelerde psikoloji üzerine röportajlar veriyor; bilimsel bilgiyi toplumla buluşturmayı amaçlıyor.</p><div class="press-grid page">%s</div><p>Daha fazla yayın için: <a href="https://www.psikologrojinnazik.com/basinda-biz/" target="_blank" rel="noopener">psikologrojinnazik.com/basinda-biz</a></p>' % g1
     return article_page(dict(rec, title='Basında Biz'), body, [('Ana Sayfa', '/'), ('Basında Biz', None)], kicker='Basında RN Psikoloji',
                         lead='Psikolog Rojin Nazik ve ekibimizin televizyon ve gazete yayınları.',
-                        desc='Basında RN Psikoloji: Psikolog Rojin Nazik ve Klinik Psikolog Hazal Akşahin\'in TV programları ve gazete röportajları.', title_tag='Basında Biz | %s' % BRAND)
+                        desc='Basında RN Psikoloji: Psikolog Rojin Nazik\'in TV programları ve gazete röportajları.', title_tag='Basında Biz | %s' % BRAND)
 
 def books_page(rec):
     books = [('wp-content/uploads/2024/05/bir-hayatla-evlenmek.webp', 'Bir Hayatla Evlenmek'), ('wp-content/uploads/2024/05/bir-odanin-otesi-500x500-1.webp', 'Bir Odanın Ötesi'),
              ('wp-content/uploads/2024/05/dengeyi-yakalamak.webp', 'Dengeyi Yakalamak')]
-    soon = [('wp-content/uploads/2024/12/COK-YAKINDA.png', 'Çok yakında'), ('wp-content/uploads/2024/12/hazal.png', 'Çok yakında')]
+    soon = [('wp-content/uploads/2024/12/COK-YAKINDA.png', 'Çok yakında')]
     g = ''.join('<figure class="book big">%s<figcaption>%s</figcaption></figure>' % (img(opt(p, 520), n + ' – Psikolog Rojin Nazik'), esc(n)) for p, n in books)
     s = ''.join('<figure class="book big">%s<figcaption>%s</figcaption></figure>' % (img(opt(p, 520), n), esc(n)) for p, n in soon)
     body = '<h2>Psikolog Rojin Nazik\'in kitapları</h2><div class="books-grid">%s</div><h2>Yeni kitaplar</h2><div class="books-grid">%s</div><p>Kitaplar hakkında daha fazla bilgi: <a href="https://www.psikologrojinnazik.com/kitaplarim/" target="_blank" rel="noopener">psikologrojinnazik.com/kitaplarim</a></p>' % (g, s)
@@ -828,7 +824,9 @@ def main():
     moved = {'/ankara-psikolog/': RN + '/',
              '/ankara-psikolog-tavsiyesi-2025-cayyolu-ve-yakin-bolgelerde-guvenilir-terapi-hizmeti/': RN + '/ankara-psikolog-tavsiyesi/',
              # 'Çayyolu psikolog' tek sayfada toplanır: yıllardır sıralanan ana sayfa (2026-10-05)
-             '/cayyolu-psikolog/': '/'}
+             '/cayyolu-psikolog/': '/',
+             # Hazal Akşahin artık ekipte değil (2026-10-07)
+             '/psikolog-hazal-aksahin/': '/uzmanlarimiz/'}
     recs = [r for r in recs if r['path'] not in moved]
     for r in recs:
         h = r.get('html') or ''

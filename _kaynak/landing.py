@@ -34,7 +34,7 @@ LANDINGS = [
 </ul>
 %(cta)s
 <h2>Size uygun uzmanı nasıl belirliyoruz?</h2>
-<p>Ofisimizde görüşme yürüten psikologlarımız farklı yaş gruplarında ve farklı konularda deneyim sahibidir. Yetişkin bireysel görüşmeler ve çift çalışmaları için kurucu psikoloğumuz <a href="/psikolog-rojin-nazik/">Psikolog Rojin Nazik</a>; ergen, çift görüşmeleri ve oyun terapisi için <a href="/psikolog-elif-erdogan/">Psikolog Elif Erdoğan</a>; çocuk ve ergen görüşmeleri için <a href="/psikolog-hazal-aksahin/">Klinik Psikolog Hazal Akşahin</a> ile randevu alabilirsiniz. Hangisinin size uygun olduğundan emin değilseniz, kısaca durumunuzu anlatmanız yeterli.</p>
+<p>Ofisimizde görüşme yürüten psikologlarımız farklı yaş gruplarında ve farklı konularda deneyim sahibidir. Yetişkin bireysel görüşmeler ve çift çalışmaları için kurucu psikoloğumuz <a href="/psikolog-rojin-nazik/">Psikolog Rojin Nazik</a>; ergen, çift görüşmeleri ve oyun terapisi için <a href="/psikolog-elif-erdogan/">Psikolog Elif Erdoğan</a> ile randevu alabilirsiniz. Hangisinin size uygun olduğundan emin değilseniz, kısaca durumunuzu anlatmanız yeterli.</p>
 <h2>İlk görüşmede neler olur?</h2>
 <p>İlk görüşme bir tanışma ve değerlendirme görüşmesidir. Sizi buraya getiren konu, ne zamandır sürdüğü, günlük hayatınızı nasıl etkilediği ve görüşmelerden beklentileriniz konuşulur. Görüşmenin sonunda nasıl bir yol izleneceği, görüşmelerin sıklığı ve süreç hakkında net bir bilgi alırsınız. Her şey gizlilik ilkesi çerçevesinde yürütülür.</p>
 <h2>Ümitköy psikolog ücretleri</h2>
@@ -76,7 +76,7 @@ LANDINGS = [
 </ul>
 %(cta)s
 <h2>Neden RN Psikoloji?</h2>
-<p>RN Psikoloji, kurucusu <a href="/psikolog-rojin-nazik/">Psikolog Rojin Nazik</a>'in uzun yıllara dayanan danışmanlık deneyimi üzerine kurulu. Rojin Nazik'in televizyon programlarına katılımları, gazete röportajları ve yayımlanmış kitapları, psikolojiyi herkesin anlayabileceği bir dille aktarma çabasının parçası. Ekibimizde <a href="/psikolog-elif-erdogan/">Psikolog Elif Erdoğan</a> ve <a href="/psikolog-hazal-aksahin/">Klinik Psikolog Hazal Akşahin</a> de görüşme yürütüyor.</p>
+<p>RN Psikoloji, kurucusu <a href="/psikolog-rojin-nazik/">Psikolog Rojin Nazik</a>'in uzun yıllara dayanan danışmanlık deneyimi üzerine kurulu. Rojin Nazik'in televizyon programlarına katılımları, gazete röportajları ve yayımlanmış kitapları, psikolojiyi herkesin anlayabileceği bir dille aktarma çabasının parçası. Ekibimizde <a href="/psikolog-elif-erdogan/">Psikolog Elif Erdoğan</a> de görüşme yürütüyor.</p>
 <p>Her başvuruyu kendi koşulları içinde değerlendiriyor, hazır kalıplar yerine kişiye özel bir görüşme planı oluşturuyoruz. Bilimsel temelli yöntemleri esas alıyor, gizliliği ve etik ilkeleri sürecin merkezinde tutuyoruz.</p>
 <h2>Randevu nasıl alınır?</h2>
 <p>Telefonla aradığınızda ya da WhatsApp'tan yazdığınızda size birkaç kısa soru sorarız: görüşmeyi kimin için istediğiniz, genel olarak hangi konuda destek aradığınız ve hangi gün ve saatlerin size uyduğu. Buna göre uygun uzman ve randevu saati belirlenir. Mesai dışında yazdığınız mesajlara ilk mesai saatinde dönüş yapılır.</p>
@@ -85,7 +85,7 @@ LANDINGS = [
   ("Yaşamkent ofisiniz tam olarak nerede?", "Konutkent, Dumlupınar Bulvarı No:399 Kat:28 Daire:121, Çankaya / Ankara adresindeyiz. Yol tarifi için sayfadaki “Yol tarifi al” bağlantısını kullanabilirsiniz."),
   ("Yaşamkent'te hangi günler görüşme yapılıyor?", "Pazartesi – Cumartesi, 09:00 – 20:00 saatleri arasında randevu ile görüşme yapılır."),
   ("Otopark var mı?", "Evet, ücretsiz otopark mevcuttur."),
-  ("Çocuğum için hangi uzmanla görüşmeliyim?", "Çocuk ve ergen görüşmeleri için Psikolog Elif Erdoğan ve Klinik Psikolog Hazal Akşahin ile randevu alabilirsiniz. Kısaca durumu paylaşırsanız size uygun uzmanı öneririz."),
+  ("Çocuğum için hangi uzmanla görüşmeliyim?", "Çocuk ve ergen görüşmeleri için Psikolog Elif Erdoğan ile randevu alabilirsiniz. Kısaca durumu paylaşırsanız size uygun uzmanı öneririz."),
   ("Ücret bilgisini nasıl öğrenebilirim?", "WhatsApp'tan yazarak ya da 0552 418 79 73 numarasını arayarak güncel ücret bilgisini öğrenebilirsiniz."),
  ],
 },
@@ -118,7 +118,7 @@ LANDINGS = [
 <h2>Görüşmeler nasıl ilerler?</h2>
 <p>İlk görüşmede sizi dinler, başvuru nedeninizi ve beklentilerinizi birlikte netleştiririz. Sonraki görüşmelerde belirlenen hedefler doğrultusunda, kişiye özel ve bilimsel temelli bir yol izlenir. Görüşmelerin sıklığı ve süreci ihtiyacınıza göre planlanır; her aşamada sorularınızı rahatça sorabilirsiniz.</p>
 <h2>Uzmanlarımız</h2>
-<p>Kurucumuz <a href="/psikolog-rojin-nazik/">Psikolog Rojin Nazik</a> yetişkin, çift ve aile görüşmeleri yürütür. <a href="/psikolog-elif-erdogan/">Psikolog Elif Erdoğan</a> yetişkin, ergen ve çift görüşmeleri ile oyun terapisi alanında; <a href="/psikolog-hazal-aksahin/">Klinik Psikolog Hazal Akşahin</a> çocuk, ergen ve yetişkin görüşmelerinde çalışır.</p>
+<p>Kurucumuz <a href="/psikolog-rojin-nazik/">Psikolog Rojin Nazik</a> yetişkin, çift ve aile görüşmeleri yürütür. <a href="/psikolog-elif-erdogan/">Psikolog Elif Erdoğan</a> yetişkin, ergen ve çift görüşmeleri ile oyun terapisi alanında çalışır.</p>
 ''',
  'faqs': [
   ("Konutkent'te ofisiniz hangi binada?", "Dumlupınar Bulvarı No:399, Kat:28, Daire:121 adresindeyiz. Yol tarifi bağlantısıyla doğrudan navigasyon başlatabilirsiniz."),
@@ -154,7 +154,7 @@ LANDINGS = [
 </ul>
 %(cta)s
 <h2>Çocuğunuz için doğru uzman</h2>
-<p>Çocuk ve ergen görüşmelerinde ilk adım genellikle ebeveynle yapılan bir ön görüşmedir. Çocuğunuzun gelişim öyküsü, okul ve evdeki durumu dinlenir; ardından çocuğunuzla yaşına uygun yöntemlerle, küçük yaş grubunda oyun terapisi yaklaşımıyla görüşmeler planlanır. Bu alanda <a href="/psikolog-elif-erdogan/">Psikolog Elif Erdoğan</a> ve <a href="/psikolog-hazal-aksahin/">Klinik Psikolog Hazal Akşahin</a> ile çalışabilirsiniz. Yetişkin, çift ve aile görüşmeleri için kurucumuz <a href="/psikolog-rojin-nazik/">Psikolog Rojin Nazik</a> ile randevu alabilirsiniz.</p>
+<p>Çocuk ve ergen görüşmelerinde ilk adım genellikle ebeveynle yapılan bir ön görüşmedir. Çocuğunuzun gelişim öyküsü, okul ve evdeki durumu dinlenir; ardından çocuğunuzla yaşına uygun yöntemlerle, küçük yaş grubunda oyun terapisi yaklaşımıyla görüşmeler planlanır. Bu alanda <a href="/psikolog-elif-erdogan/">Psikolog Elif Erdoğan</a> ile çalışabilirsiniz. Yetişkin, çift ve aile görüşmeleri için kurucumuz <a href="/psikolog-rojin-nazik/">Psikolog Rojin Nazik</a> ile randevu alabilirsiniz.</p>
 <h2>Randevu ve bilgi</h2>
 <p>Hangi uzmanın size uygun olduğunu bilmiyorsanız sorun değil. Arayın ya da WhatsApp'tan kısaca yazın; ihtiyacınıza göre yönlendirme yapalım. Güncel ücret bilgisini de aynı şekilde öğrenebilirsiniz.</p>
 ''',
@@ -277,7 +277,7 @@ LANDINGS = [
 <li><b>Ebeveyn geri bildirimi:</b> Düzenli aralıklarla sizinle süreç paylaşılır, evde uygulanabilecek öneriler konuşulur.</li>
 </ol>
 <h2>Çocuk ve ergen görüşmesi yapan uzmanlarımız</h2>
-<p><a href="/psikolog-elif-erdogan/">Psikolog Elif Erdoğan</a> çocuklarla oyun terapisi yaklaşımıyla, ergenlerle ise yapılandırılmış ve bilimsel temelli yöntemlerle çalışır. <a href="/psikolog-hazal-aksahin/">Klinik Psikolog Hazal Akşahin</a> çocuk ve ergen görüşmeleri yürütür. Ebeveyn ve aile görüşmeleri için kurucumuz <a href="/psikolog-rojin-nazik/">Psikolog Rojin Nazik</a> ile de randevu alabilirsiniz. Daha fazla bilgi için <a href="/cocuk-ergen-danismanligi/">Çocuk ve Ergen Danışmanlığı</a> sayfamıza göz atabilirsiniz.</p>
+<p><a href="/psikolog-elif-erdogan/">Psikolog Elif Erdoğan</a> çocuklarla oyun terapisi yaklaşımıyla, ergenlerle ise yapılandırılmış ve bilimsel temelli yöntemlerle çalışır. Ebeveyn ve aile görüşmeleri için kurucumuz <a href="/psikolog-rojin-nazik/">Psikolog Rojin Nazik</a> ile de randevu alabilirsiniz. Daha fazla bilgi için <a href="/cocuk-ergen-danismanligi/">Çocuk ve Ergen Danışmanlığı</a> sayfamıza göz atabilirsiniz.</p>
 ''',
  'faqs': [
   ("Çocuğumu ilk görüşmeye getirmeli miyim?", "Genellikle ilk görüşme yalnızca ebeveynlerle yapılır. Çocuğunuzla görüşmeler bu ön görüşmeden sonra planlanır."),
@@ -345,7 +345,7 @@ LANDINGS = [
 <h2>Görüşmeler nasıl planlanır?</h2>
 <p>İlk görüşmede aileden kimlerin katılacağı, başvuru nedeni ve beklentiler konuşulur. Sonraki görüşmeler ihtiyaca göre tüm aileyle, yalnızca ebeveynlerle ya da aile üyeleriyle ayrı ayrı yapılabilir. Görüşme planı ve sıklığı sizinle birlikte belirlenir.</p>
 <h2>Uzmanlarımız</h2>
-<p>Aile ve ebeveyn görüşmeleri için kurucumuz <a href="/psikolog-rojin-nazik/">Psikolog Rojin Nazik</a> ile randevu alabilirsiniz; çocuk ve ergen boyutu olan durumlarda <a href="/psikolog-elif-erdogan/">Psikolog Elif Erdoğan</a> ve <a href="/psikolog-hazal-aksahin/">Klinik Psikolog Hazal Akşahin</a> de sürece dahil olabilir. Genel bilgi için <a href="/aile-terapisi/">Aile Terapisi</a> sayfamıza da bakabilirsiniz.</p>
+<p>Aile ve ebeveyn görüşmeleri için kurucumuz <a href="/psikolog-rojin-nazik/">Psikolog Rojin Nazik</a> ile randevu alabilirsiniz; çocuk ve ergen boyutu olan durumlarda <a href="/psikolog-elif-erdogan/">Psikolog Elif Erdoğan</a> de sürece dahil olabilir. Genel bilgi için <a href="/aile-terapisi/">Aile Terapisi</a> sayfamıza da bakabilirsiniz.</p>
 ''',
  'faqs': [
   ("Aile görüşmesine herkesin katılması şart mı?", "Hayır. Görüşmeler ihtiyaca göre tüm aileyle, yalnızca ebeveynlerle ya da bireysel olarak planlanabilir."),
