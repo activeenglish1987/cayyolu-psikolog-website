@@ -415,7 +415,27 @@ def breadcrumb(items):
     data = {'@type': 'BreadcrumbList', 'itemListElement': [{'@type': 'ListItem', 'position': i + 1, 'name': t, **({'item': SITE + p} if p else {})} for i, (t, p) in enumerate(items)]}
     return '<nav class="crumbs" aria-label="Sayfa yolu"><ol>%s</ol></nav>' % lis, data
 
+# Kurucu Psikolog Rojin Nazik'in klinik gözlemleri (2026-10-07, Rojin Nazik'in kendi notlarından; Rojin sitesindeki
+# alıntılarla aynı anlamda, farklı cümlelerle aktarılır ki iki site birbirinin kopyası görünmesin)
+GOZLEM = {
+ '/cayyolu-cift-terapisi/': ('Çift görüşmelerinde sık karşılaşılan durum', "Kurucumuz Psikolog Rojin Nazik'e göre çiftler çoğunlukla “konuşamıyoruz” ya da “hep aynı kavgayı ediyoruz” diyerek başvuruyor. Seanslarda ise asıl meselenin konuşamamak değil, bugünkü küçük bir tartışmanın geçmişte birikmiş kırgınlıklara bağlanması olduğu görülüyor: Tepkinin altında çoğu zaman uzun süredir duyulmadığını hissetmek yatıyor."),
+ '/cayyolu-cocuk-psikologu/': ('Ebeveynlerin sık kaçırdığı işaret', "Psikolog Rojin Nazik, ebeveynlerin çoğunlukla çocuğun davranışına odaklandığını, davranışın neyi anlatmaya çalıştığının ise geri planda kaldığını gözlemliyor. “Söz dinlemiyor” ya da “çok öfkeli” diye başlayan görüşmelerde belirleyici soru, davranışın ne zaman arttığı ve çocuğun o dönemde neler yaşadığı oluyor; çocuk bazen söyleyemediğini davranışıyla anlatıyor."),
+ '/kaygi-sorunlari/': ('Kaygıda değişim nereden başlıyor?', "Psikolog Rojin Nazik'in gözlemine göre önemli değişimlerden biri, kişinin kaygıyla savaşmayı bırakıp kendi düşünce, beden ve davranış döngüsünü tanımaya başlamasıyla geliyor. Kaçınılan durumların ve güvende hissetmek için geliştirilen küçük alışkanlıkların kaygıyı nasıl sürdürdüğünü fark etmek bu sürecin önemli bir parçası; her danışanın döngüsü farklı olduğu için çalışma o kişiye özgü yapıyı anlamakla başlıyor."),
+ '/bosanma-sonrasi-danismanlik/': ('Boşanma sürecinde en zor dönem', "Psikolog Rojin Nazik, boşanan kişilerin yalnızca eşlerinden değil, birlikte hayal ettikleri gelecekten de ayrıldığını vurguluyor. Karar verilmiş olsa bile “doğru mu yaptım?” sorgulaması sık başlıyor; bu yüzden en zor dönem çoğu zaman karar öncesi değil, kararın ardından gelen belirsizlik ve hayatı yeniden düzenleme süreci oluyor."),
+ '/ilk-terapi-seansi-rehberi/': ('İlk görüşmeden önce en sık çekince', "Psikolog Rojin Nazik'e göre ilk kez gelenlerin en sık kaygısı “Ne anlatacağım, nereden başlayacağım?” sorusu. Kimi her şeyi sırayla ve düzgün anlatması gerektiğini düşünüyor, kimi yargılanmaktan çekiniyor; görüşme ilerledikçe bunun bir sınav ya da performans olmadığını fark edenler çok daha rahat konuşabiliyor."),
+}
+
+def gozlem_html(path):
+    h, t = GOZLEM[path]
+    return ('<aside class="gozlem" style="margin:26px 0;padding:18px 20px;border-radius:16px;background:#F3F6FB;border-left:4px solid #14264A">'
+            '<p style="margin:0 0 8px;font-weight:700">Uzman gözlemi · %s</p><p style="margin:0;line-height:1.7">%s</p>'
+            '<p style="margin:10px 0 0;font-size:14px;opacity:.8"><a href="/psikolog-rojin-nazik/">Psikolog Rojin Nazik</a> · RN Psikoloji kurucusu, Psikolog ve Aile Danışmanı</p></aside>') % (esc(h), esc(t))
+
 def write(path, content):
+    if path in GOZLEM and 'class="gozlem"' not in content:
+        for anchor in ('<h2>Sık sorulan sorular</h2>', '</article>'):
+            if anchor in content:
+                content = content.replace(anchor, gozlem_html(path) + anchor, 1); break
     dest = os.path.join(ROOT, path.strip('/'), 'index.html') if path != '/' else os.path.join(ROOT, 'index.html')
     os.makedirs(os.path.dirname(dest), exist_ok=True)
     open(dest, 'w', encoding='utf-8').write(content)
