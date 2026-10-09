@@ -374,10 +374,10 @@ def expert_cards(exclude=None):
     <p class="expert-role">%(role)s</p>
     <h3><a href="%(path)s">%(name)s</a></h3>
     <p class="expert-areas">%(areas)s</p>
-    %(fast)s<div class="expert-actions"><a class="btn btn-line btn-sm" href="%(path)s">Profili İncele</a>%(wa)s</div>
+    <div class="expert-actions"><a class="btn btn-line btn-sm" href="%(path)s">Profili İncele</a>%(wa)s</div>
     %(ig)s
   </div>
-</article>''' % {'fast': ('<p class="expert-fast" style="margin:4px 0 10px;font-size:13.5px;font-weight:700;color:#11733f">⚡ Hafta içi gündüz: çoğu zaman aynı hafta randevu</p>' if e['path'] == '/psikolog-elif-erdogan/' else ''), 'feat': feat, 'path': e['path'], 'img': img(photo, e['name']), 'role': esc(e['role']), 'name': esc(e['name']),
+</article>''' % {'feat': feat, 'path': e['path'], 'img': img(photo, e['name']), 'role': esc(e['role']), 'name': esc(e['name']),
                  'areas': esc(e['areas']), 'ig': ig,
                  'wa': btn_wa('Merhaba, %s ile görüşme için randevu bilgisi almak istiyorum.' % e['name'], 'Randevu', 'btn btn-wa btn-sm')})
     return '<div class="expert-grid">%s</div>' % ''.join(out)
