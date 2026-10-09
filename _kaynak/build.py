@@ -801,22 +801,22 @@ def contact_page(rec):
         'h_faq': section_head('Randevu öncesi', 'Sık sorulan sorular'), 'faq': faq_html()} + footer_html()
 
 def press_page(rec):
-    items = [('wp-content/uploads/2024/05/cnn-1.png', 'CNN Türk – İşin Uzmanı'), ('wp-content/uploads/2024/05/cnn-1.webp', 'CNN Türk'),
-             ('wp-content/uploads/2024/05/cnn-2.webp', 'CNN Türk'), ('wp-content/uploads/2024/05/beyaz-tv.webp', 'Beyaz TV'),
-             ('wp-content/uploads/2024/05/milliyet-1.png', 'Milliyet'), ('wp-content/uploads/2024/05/sabah-1.png', 'Sabah'),
-             ('wp-content/uploads/2024/05/posta-1.png', 'Posta'), ('wp-content/uploads/2024/05/haberler.com_.png', 'Haberler.com'),
+    items = [('wp-content/uploads/2024/05/cnn-1.png', 'CNN Türk – İşin Uzmanı'), ('wp-content/uploads/2024/05/milliyet-1.png', 'Milliyet'),
+             ('wp-content/uploads/2024/05/sabah-1.png', 'Sabah'), ('wp-content/uploads/2024/05/posta-1.png', 'Posta'),
+             ('wp-content/uploads/2024/05/cnn-1.webp', 'CNN Türk'), ('wp-content/uploads/2024/05/cnn-2.webp', 'CNN Türk'),
+             ('wp-content/uploads/2024/05/beyaz-tv.webp', 'Beyaz TV'), ('wp-content/uploads/2024/05/haberler.com_.png', 'Haberler.com'),
              ('wp-content/uploads/2024/05/acunn-1.png', 'Acunn'), ('wp-content/uploads/2024/05/slider-odul-1.jpg', 'Yılın En İyi Psikoloğu ödülü')]
     items += [('assets/img/basin/%s' % f, 'Gazete haberi') for f in sorted(os.listdir(os.path.join(ROOT, 'assets/img/basin')))]
     g1 = ''.join('<figure class="press-item">%s<figcaption>%s</figcaption></figure>' % (img(opt(p, 720), 'Psikolog Rojin Nazik – ' + n), esc(n)) for p, n in items)
-    news = [('Milliyet', 'Psikolog Rojin Nazik sınav stresini aşmanın yollarını anlattı', 'https://www.milliyet.com.tr/pembenar/psikolog-rojin-nazik-sinav-stresini-asmanin-yollarini-anlatti-6441751'),
+    news = [('CNN Türk', 'Kaygı bozukluğu nedir?', 'https://www.cnnturk.com/saglik/kaygi-bozuklugu-nedir'),
+            ('Milliyet', 'Psikolog Rojin Nazik sınav stresini aşmanın yollarını anlattı', 'https://www.milliyet.com.tr/pembenar/psikolog-rojin-nazik-sinav-stresini-asmanin-yollarini-anlatti-6441751'),
+            ('Sabah', 'Depresyon nedir? Depresyona yol açan faktörler nelerdir?', 'https://www.sabah.com.tr/roza/ruh-sagligi/depresyon-nedir-depresyona-yol-acan-faktorler-nelerdir'),
             ('Posta', 'Psikolog Rojin Nazik: Kendinizi sevin', 'https://www.posta.com.tr/saglik/zihin-sagligi/psikolog-rojin-nazik-kendinizi-sevin-2306122'),
             ('Cumhuriyet', 'Çocuklarda ve ergenlerde psikolojiye dikkat edilmeli', 'https://www.cumhuriyet.com.tr/saglik/cocuklarda-ve-ergenlerde-psikolojiye-dikkat-edilmeli-1994237'),
             ('Cumhuriyet', 'Mevsimsel depresyon neden olur? Nelere dikkat etmeliyiz?', 'https://www.cumhuriyet.com.tr/saglik/mevsimsel-depresyon-neden-olur-nelere-dikkat-etmeliyiz-2008222'),
-            ('CNN Türk', 'Kaygı bozukluğu nedir?', 'https://www.cnnturk.com/saglik/kaygi-bozuklugu-nedir'),
-            ('Sabah', 'Depresyon nedir? Depresyona yol açan faktörler nelerdir?', 'https://www.sabah.com.tr/roza/ruh-sagligi/depresyon-nedir-depresyona-yol-acan-faktorler-nelerdir'),
             ('Haberler.com', 'Psikolog Rojin Nazik psiko-diyetin önemini anlattı', 'https://www.haberler.com/guncel/psikolog-rojin-nazik-psiko-diyetin-onemini-anlatti-13966347-haberi/'),
-            ('Lezzet', 'Uzmanlar uyarıyor: Çocuklara deprem haberleri izletmeyin', 'https://www.lezzet.com.tr/lezzetten-haberler/cocuklara-deprem-haberleri-izletmeyin'),
-            ('Psychology Times', 'Psikolog seçerken sorulması gereken 7 soru', 'https://psychologytimes.com.tr/psikolog-secerken-7-soru/')]
+            ('Psychology Times', 'Psikolog seçerken sorulması gereken 7 soru', 'https://psychologytimes.com.tr/psikolog-secerken-7-soru/'),
+            ('Lezzet', 'Uzmanlar uyarıyor: Çocuklara deprem haberleri izletmeyin', 'https://www.lezzet.com.tr/lezzetten-haberler/cocuklara-deprem-haberleri-izletmeyin')]
     news_html = ''.join('<li><a href="%s" target="_blank" rel="noopener"><strong>%s</strong> – %s</a></li>' % (esc(u), esc(o), esc(t)) for o, t, u in news)
     body = ('<h2>Psikolog Rojin Nazik</h2><p>Kurucumuz Psikolog Rojin Nazik, CNN Türk, Beyaz TV ve ulusal gazetelerde psikoloji üzerine röportajlar veriyor; bilimsel bilgiyi toplumla buluşturmayı amaçlıyor.</p><div class="press-grid page">%s</div>'
             '<h2>Haberlerden seçmeler</h2><ul>%s</ul>'
