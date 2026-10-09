@@ -72,6 +72,28 @@
     };
     if (extra) for (var k in extra) if (Object.prototype.hasOwnProperty.call(extra, k)) payload[k] = extra[k];
     w.dataLayer.push(payload);
+    sendAdsConversion(eventName);
+  }
+
+  /* ---------- 2b. Google Ads dönüşümü (gtag) ----------
+     Etiketler Google Ads > Hedefler > Dönüşümler > [işlem] > Etiket kurulumu
+     ekranındaki "Dönüşüm etiketi"dir. Etiket boşsa dönüşüm gönderilmez. */
+  var ADS = {
+    id: CFG.adsId || 'AW-11469933181',
+    labels: CFG.adsLabels || { phone_call_click: 't-kJCIrB7pYdEP2Upd0q', whatsapp_click: 'zO3TCK2h-JYdEP2Upd0q' },
+    values: { phone_call_click: 100, whatsapp_click: 60 }
+  };
+  var adsSent = {};
+  function sendAdsConversion(eventName) {
+    var label = ADS.labels[eventName];
+    if (!label || typeof w.gtag !== 'function' || adsSent[eventName]) return;
+    adsSent[eventName] = true;
+    w.gtag('event', 'conversion', {
+      send_to: ADS.id + '/' + label,
+      value: ADS.values[eventName] || 1,
+      currency: 'TRY',
+      transport_type: 'beacon'
+    });
   }
   w.adsTrack = track;
 

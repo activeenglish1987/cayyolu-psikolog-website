@@ -260,7 +260,9 @@ def head(title, desc, path, extra_ld='', og_img='/assets/img/opt/og-1200.webp', 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap"></noscript>
 <link rel="stylesheet" href="/assets/css/site.css?v=%(v)s">
-<script src="/assets/js/ads-conversion.js?v=2" defer></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11469933181"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-11469933181',{url_passthrough:true});</script>
+<script src="/assets/js/ads-conversion.js?v=5" defer></script>
 <script src="/assets/js/site.js?v=%(v)s" defer></script>
 <script src="/assets/js/after-hours.js?v=1" data-pos="bottom" defer></script>
 <script>(function(){var d=0;function l(){if(d)return;d=1;var s=document.createElement('script');s.src='//code.jivosite.com/widget/qUPsGwSDuo';s.async=true;document.head.appendChild(s)}['scroll','pointerdown','keydown','touchstart'].forEach(function(e){addEventListener(e,l,{once:true,passive:true})});setTimeout(l,8000)})();</script>
