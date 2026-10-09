@@ -11,6 +11,8 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from landing import LANDINGS, BOOST, EXTRA
 from semt_notlari import SEMT_NOTLARI, UZMAN, SEMT_NOT_TARIHI
+from sss import SSS_SAYFA
+LANDINGS.append(SSS_SAYFA)
 for _c in LANDINGS:
     if _c['path'] in SEMT_NOTLARI: _c['mod'] = SEMT_NOT_TARIHI
 from makaleler import MAKALELER
@@ -320,7 +322,7 @@ def footer_html():
       <p>Çayyolu, Ümitköy, Konutkent, Yaşamkent ve İncek'e yakın ofisimizde yüz yüze psikolojik danışmanlık.</p>
       <p class="footer-note">RN Psikoloji Çayyolu şubesinde çalışan uzmanlar klinik tanı veya tedavi hizmeti vermez; günlük yaşamda karşılaşılan zorluklar karşısında psikolojik destek ve danışmanlık hizmeti sunar. Tanı gerektiren durumlarda psikiyatriste yönlendirme yapılır.</p>
     </div>
-    <div><h3>Uzmanlarımız</h3><ul>%(exp)s</ul><h3 class="mt">Bölgeler</h3><ul>%(areas)s</ul><h3 class="mt">Kurumsal</h3><ul><li><a href="/hakkimizda/">Hakkımızda</a></li><li><a href="/basinda-biz/">Basında Biz</a></li><li><a href="/kitaplarimiz/">Kitaplarımız</a></li><li><a href="/konferanslar/">Konferanslar</a></li><li><a href="/galeri/">Galeri</a></li><li><a href="/danisanlar-icin-el-kitabi/">Danışanlar İçin El Kitabı</a></li><li><a href="/blog/">Blog</a></li></ul></div>
+    <div><h3>Uzmanlarımız</h3><ul>%(exp)s</ul><h3 class="mt">Bölgeler</h3><ul>%(areas)s</ul><h3 class="mt">Kurumsal</h3><ul><li><a href="/hakkimizda/">Hakkımızda</a></li><li><a href="/basinda-biz/">Basında Biz</a></li><li><a href="/kitaplarimiz/">Kitaplarımız</a></li><li><a href="/konferanslar/">Konferanslar</a></li><li><a href="/galeri/">Galeri</a></li><li><a href="/randevu-sik-sorulan-sorular/">Sık sorulan sorular</a></li><li><a href="/danisanlar-icin-el-kitabi/">Danışanlar İçin El Kitabı</a></li><li><a href="/blog/">Blog</a></li></ul></div>
     <div><h3>Hizmetler</h3><ul>%(svc)s</ul><h3 class="mt">Çayyolu'nda</h3><ul>%(focus)s</ul></div>
     <div><h3>İletişim</h3>
       <p class="footer-line">%(pin)s<span>%(addr)s</span></p>
