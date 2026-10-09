@@ -807,14 +807,20 @@ def press_page(rec):
              ('wp-content/uploads/2024/05/posta-1.png', 'Posta'), ('wp-content/uploads/2024/05/haberler.com_.png', 'Haberler.com'),
              ('wp-content/uploads/2024/05/acunn-1.png', 'Acunn'), ('wp-content/uploads/2024/05/slider-odul-1.jpg', 'Yılın En İyi Psikoloğu ödülü')]
     items += [('assets/img/basin/%s' % f, 'Gazete haberi') for f in sorted(os.listdir(os.path.join(ROOT, 'assets/img/basin')))]
-    hazal = [('wp-content/uploads/2024/12/08.09.2023-Milliyet-Psi.Hazal-Aksahin-scaled-1.jpg', 'Milliyet'),
-             ('wp-content/uploads/2024/12/19.11.2023-Cumhuriyet-Psi.Hazal-Aksahin-scaled-1.jpg', 'Cumhuriyet'),
-             ('wp-content/uploads/2024/12/15.10.2023-Haber-Psi.Hazal-Aksahin-scaled-1.jpg', 'Haber'),
-             ('wp-content/uploads/2024/12/01.10.2023-Bolge-Psi.Hazal-Aksahin-1.jpg', 'Bölge'),
-             ('wp-content/uploads/2024/12/01.09.2023-Yesilpinar-Psi.Hazal-Aksahin-1-scaled-1.jpg', 'Yeşilpınar')]
     g1 = ''.join('<figure class="press-item">%s<figcaption>%s</figcaption></figure>' % (img(opt(p, 720), 'Psikolog Rojin Nazik – ' + n), esc(n)) for p, n in items)
-    g2 = ''.join('<figure class="press-item">%s<figcaption>%s</figcaption></figure>' % (img(opt(p, 720), 'Klinik Psikolog Hazal Akşahin – ' + n), esc(n)) for p, n in hazal)
-    body = '<h2>Psikolog Rojin Nazik</h2><p>Psikolog Rojin Nazik, CNN Türk, Beyaz TV ve ulusal gazetelerde psikoloji üzerine röportajlar veriyor; bilimsel bilgiyi toplumla buluşturmayı amaçlıyor.</p><div class="press-grid page">%s</div><p>Daha fazla yayın için: <a href="https://www.psikologrojinnazik.com/basinda-biz/" target="_blank" rel="noopener">psikologrojinnazik.com/basinda-biz</a></p>' % g1
+    news = [('Milliyet', 'Psikolog Rojin Nazik sınav stresini aşmanın yollarını anlattı', 'https://www.milliyet.com.tr/pembenar/psikolog-rojin-nazik-sinav-stresini-asmanin-yollarini-anlatti-6441751'),
+            ('Posta', 'Psikolog Rojin Nazik: Kendinizi sevin', 'https://www.posta.com.tr/saglik/zihin-sagligi/psikolog-rojin-nazik-kendinizi-sevin-2306122'),
+            ('Cumhuriyet', 'Çocuklarda ve ergenlerde psikolojiye dikkat edilmeli', 'https://www.cumhuriyet.com.tr/saglik/cocuklarda-ve-ergenlerde-psikolojiye-dikkat-edilmeli-1994237'),
+            ('Cumhuriyet', 'Mevsimsel depresyon neden olur? Nelere dikkat etmeliyiz?', 'https://www.cumhuriyet.com.tr/saglik/mevsimsel-depresyon-neden-olur-nelere-dikkat-etmeliyiz-2008222'),
+            ('CNN Türk', 'Kaygı bozukluğu nedir?', 'https://www.cnnturk.com/saglik/kaygi-bozuklugu-nedir'),
+            ('Sabah', 'Depresyon nedir? Depresyona yol açan faktörler nelerdir?', 'https://www.sabah.com.tr/roza/ruh-sagligi/depresyon-nedir-depresyona-yol-acan-faktorler-nelerdir'),
+            ('Haberler.com', 'Psikolog Rojin Nazik psiko-diyetin önemini anlattı', 'https://www.haberler.com/guncel/psikolog-rojin-nazik-psiko-diyetin-onemini-anlatti-13966347-haberi/'),
+            ('Lezzet', 'Uzmanlar uyarıyor: Çocuklara deprem haberleri izletmeyin', 'https://www.lezzet.com.tr/lezzetten-haberler/cocuklara-deprem-haberleri-izletmeyin'),
+            ('Psychology Times', 'Psikolog seçerken sorulması gereken 7 soru', 'https://psychologytimes.com.tr/psikolog-secerken-7-soru/')]
+    news_html = ''.join('<li><a href="%s" target="_blank" rel="noopener"><strong>%s</strong> – %s</a></li>' % (esc(u), esc(o), esc(t)) for o, t, u in news)
+    body = ('<h2>Psikolog Rojin Nazik</h2><p>Kurucumuz Psikolog Rojin Nazik, CNN Türk, Beyaz TV ve ulusal gazetelerde psikoloji üzerine röportajlar veriyor; bilimsel bilgiyi toplumla buluşturmayı amaçlıyor.</p><div class="press-grid page">%s</div>'
+            '<h2>Haberlerden seçmeler</h2><ul>%s</ul>'
+            '<p>Tüm haber, röportaj ve TV yayınları için <a href="https://www.psikologrojinnazik.com/basinda-biz/">Psikolog Rojin Nazik\'in basın arşivi</a> sayfasına bakabilirsiniz.</p>') % (g1, news_html)
     return article_page(dict(rec, title='Basında Biz'), body, [('Ana Sayfa', '/'), ('Basında Biz', None)], kicker='Basında RN Psikoloji',
                         lead='Psikolog Rojin Nazik ve ekibimizin televizyon ve gazete yayınları.',
                         desc='Basında RN Psikoloji: Psikolog Rojin Nazik\'in TV programları ve gazete röportajları.', title_tag='Basında Biz | %s' % BRAND)
