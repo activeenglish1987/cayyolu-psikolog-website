@@ -28,7 +28,7 @@ MAP_URL = 'https://www.google.com/maps/search/?api=1&query=' + quote('Dumlupına
 IG_ROJIN = 'https://www.instagram.com/psikologrojinnazik/'
 IG_ELIF = 'https://www.instagram.com/psikolog_eliferdogan/'
 GTM = 'GTM-KMR7XRJQ'
-ASSET_V = '4'
+ASSET_V = '5'
 
 def wa(msg):
     return 'https://wa.me/%s?text=%s' % (WA_NUM, quote(msg))

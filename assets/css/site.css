@@ -355,7 +355,7 @@ body.menu-open{overflow:hidden}
 @media (min-width:1024px){.footer-grid{grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px}}
 
 /* mobil sabit arama çubuğu */
-.sticky-bar{position:fixed;left:0;right:0;bottom:0;z-index:45;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid var(--line);box-shadow:0 -8px 24px -12px rgba(20,38,74,.3)}
+.sticky-bar{position:fixed;left:0;right:0;bottom:0;z-index:45;display:grid;grid-template-columns:1.6fr 1fr;gap:8px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid var(--line);box-shadow:0 -8px 24px -12px rgba(20,38,74,.3)}
 .sticky-bar a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:50px;border-radius:14px;font:700 16px/1 var(--ff-h);text-decoration:none;color:#fff}
 .sticky-bar svg{width:20px;height:20px}
 .sb-call{background:var(--navy)}
