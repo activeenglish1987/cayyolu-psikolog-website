@@ -8,4 +8,6 @@ başka bir sitede tekrar edilmez. 28 Ekim sonrası içerik turlarında ihtiyaca 
 - İncek: Alt. 3 Akademik başarı baskısı (Elif) · Alt. 4 Ebeveynlerde tükenmişlik (Rojin) · Alt. 5 Çocukların duygularını ifade etmesi (Elif)
 - Yaşamkent (Rojin): Alt. 3 Kendini sürekli güçlü göstermek · Alt. 4 Çiftlerde iletişim kopukluğu · Alt. 5 Kendine zaman ayıramamak
 - Beysukent/Bilkent (Elif): Alt. 5 Dışarıdan başarılı, içeride kaygılı
-- Henüz notu olmayan semt sayfaları: Alacaatlı, Eryaman, Çayyolu ana sayfa
+- Alacaatlı (Rojin): Alt. 2 Evlilikte sessiz uzaklaşma · Alt. 3 Mükemmel aile olma baskısı · Alt. 5 Dışarıdan düzenli, içeride yorgun
+- Eryaman: Alt. 2 Günlük yaşamda tükenmişlik (Rojin) · Alt. 3 Çocuklarda sınav kaygısı (Elif) · Alt. 5 Sosyal kaygı ve özgüven (Elif)
+- Henüz notu olmayan: Çayyolu ana sayfa (dondurma sonrası değerlendirilecek)
