@@ -403,7 +403,7 @@ def business_ld():
                         'addressLocality': 'Çankaya', 'addressRegion': 'Ankara', 'postalCode': '06810', 'addressCountry': 'TR'},
             'geo': {'@type': 'GeoCoordinates', 'latitude': GEO[0], 'longitude': GEO[1]},
             'openingHoursSpecification': [{'@type': 'OpeningHoursSpecification', 'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], 'opens': '09:00', 'closes': '20:00'}],
-            'areaServed': ['Çayyolu', 'Ümitköy', 'Yaşamkent', 'Konutkent', 'İncek', 'Beysukent', 'Alacaatlı', 'Ankara'],
+            'areaServed': ['Çayyolu', 'Ümitköy', 'Yaşamkent', 'Konutkent', 'İncek', 'Beysukent', 'Alacaatlı', 'Bilkent', 'Eryaman', 'Ankara'],
             'sameAs': [IG_ROJIN],
             'founder': {'@type': 'Person', '@id': 'https://www.psikologrojinnazik.com/#rojin-nazik', 'name': 'Rojin Nazik', 'jobTitle': 'Psikolog',
                         'url': SITE + '/psikolog-rojin-nazik/', 'sameAs': ['https://www.wikidata.org/wiki/Q141626009', 'https://www.psikologrojinnazik.com/rojin-nazik-biyografi/', IG_ROJIN]},
