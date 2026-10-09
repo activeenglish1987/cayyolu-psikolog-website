@@ -10,6 +10,9 @@ from urllib.parse import quote
 import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from landing import LANDINGS, BOOST, EXTRA
+from semt_notlari import SEMT_NOTLARI, UZMAN, SEMT_NOT_TARIHI
+for _c in LANDINGS:
+    if _c['path'] in SEMT_NOTLARI: _c['mod'] = SEMT_NOT_TARIHI
 from makaleler import MAKALELER
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -434,7 +437,21 @@ def gozlem_html(path):
             '<p style="margin:0 0 8px;font-weight:700">Uzman gözlemi · %s</p><p style="margin:0;line-height:1.7">%s</p>'
             '<p style="margin:10px 0 0;font-size:14px;opacity:.8"><a href="/psikolog-rojin-nazik/">Psikolog Rojin Nazik</a> · RN Psikoloji kurucusu, Psikolog ve Aile Danışmanı</p></aside>') % (esc(h), esc(t))
 
+def semt_notlari_html(path):
+    out = []
+    for who, h, t in SEMT_NOTLARI[path]:
+        name, url, role = UZMAN[who]
+        out.append('<aside class="gozlem uzman-notu" style="margin:22px 0;padding:18px 20px;border-radius:16px;background:#F3F6FB;border-left:4px solid #14264A">'
+                   '<p style="margin:0 0 8px;font-weight:700">%s\'in notu · %s</p><blockquote style="margin:0;line-height:1.7;font-style:italic">“%s”</blockquote>'
+                   '<p style="margin:10px 0 0;font-size:14px;opacity:.85"><a href="%s">%s</a> · %s</p></aside>' % (esc(name), esc(h), esc(t), url, esc(name), esc(role)))
+    return '<div class="uzman-notlari">%s</div>' % ''.join(out)
+
 def write(path, content):
+    if path in SEMT_NOTLARI and 'uzman-notu' not in content:
+        a = content.find('<article')
+        h2s = [i for i in range(a, len(content)) if content.startswith('<h2', i)][:2] if a >= 0 else []
+        if len(h2s) == 2:
+            content = content[:h2s[1]] + semt_notlari_html(path) + content[h2s[1]:]
     if path in GOZLEM and 'class="gozlem"' not in content:
         for anchor in ('<h2>Sık sorulan sorular</h2>', '</article>'):
             if anchor in content:
@@ -756,7 +773,7 @@ def landing_page(cfg):
     ex = EXTRA.get(cfg['path'])
     faqs = cfg['faqs'] + (ex['faqs'] if ex else [])
     if ex:
-        rec['modified'] = '2026-10-01'
+        rec['modified'] = cfg.get('mod') or '2026-10-01'
         body += ex['html']
     body += sister_html(cfg['path']) + '<h2>Sık sorulan sorular</h2>' + faq_html(faqs)
     near = [(a, p) for a, p in AREAS if p != cfg['path']]
