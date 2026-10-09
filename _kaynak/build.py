@@ -28,7 +28,7 @@ MAP_URL = 'https://www.google.com/maps/search/?api=1&query=' + quote('Dumlupına
 IG_ROJIN = 'https://www.instagram.com/psikologrojinnazik/'
 IG_ELIF = 'https://www.instagram.com/psikolog_eliferdogan/'
 GTM = 'GTM-KMR7XRJQ'
-ASSET_V = '5'
+ASSET_V = '6'
 
 def wa(msg):
     return 'https://wa.me/%s?text=%s' % (WA_NUM, quote(msg))
@@ -212,7 +212,8 @@ ICON = {
  'arrow': '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 }
 
-def btn_call(label='Hemen Ara', cls='btn btn-call'):
+def btn_call(label=None, cls='btn btn-call'):
+    label = label or 'Hemen Ara · %s' % PHONE
     return '<a class="%s" href="tel:%s">%s<span>%s</span></a>' % (cls, PHONE_RAW, ICON['phone'], label)
 
 def btn_wa(msg='Merhaba, randevu bilgisi almak istiyorum.', label="WhatsApp'tan Bilgi Al", cls='btn btn-wa'):
@@ -303,7 +304,7 @@ def footer_html():
     return '''</main>
 <section class="cta-band">
   <div class="wrap cta-band-inner">
-    <div><p class="eyebrow light">İlk adım</p><h2>Randevu ve bilgi için bize ulaşın.</h2><p>Pazartesi – Cumartesi 09:00 – 20:00 · Yaşamkent ofisi</p></div>
+    <div><p class="eyebrow light">İlk adım</p><h2>Randevu ve bilgi için bize ulaşın.</h2><p>Kurucumuz Psikolog Rojin Nazik ve ekibi · Pazartesi – Cumartesi 09:00 – 20:00 · Yaşamkent ofisi</p></div>
     <div class="btn-row">%(call)s%(wa)s</div>
   </div>
 </section>
@@ -447,7 +448,7 @@ def side_card(expert=None):
         who = '<p class="side-who">%s ile görüşmek için</p>' % esc(expert['name'])
         msg = 'Merhaba, %s ile görüşme için randevu bilgisi almak istiyorum.' % expert['name']
     else:
-        ig = ''; who = '<p class="side-who">Randevu ve bilgi için</p>'; msg = 'Merhaba, randevu bilgisi almak istiyorum.'
+        ig = ''; who = '<p class="side-who">Randevu ve bilgi için</p><p class="side-trust">Kurucumuz <a href="/psikolog-rojin-nazik/">Psikolog Rojin Nazik</a>: 15+ yıl deneyim · 3 kitap · CNN Türk, Milliyet ve Sabah\'ta uzman konuk</p>'; msg = 'Merhaba, randevu bilgisi almak istiyorum.'
     return '''<aside class="side-card">
   %(who)s
   <a class="side-phone" href="tel:%(raw)s">%(phone)s</a>
@@ -456,7 +457,7 @@ def side_card(expert=None):
   <p class="office-line small">%(pin)s<span>Yaşamkent ofisi · Pazartesi – Cumartesi 09:00 – 20:00</span></p>
   <a class="text-link" href="%(dir)s" target="_blank" rel="noopener">Yol tarifi al %(arrow)s</a>
   %(ig)s
-</aside>''' % {'who': who, 'raw': PHONE_RAW, 'phone': PHONE, 'open': OPEN_STATUS, 'call': btn_call(), 'wa': btn_wa(msg),
+</aside>''' % {'who': who, 'raw': PHONE_RAW, 'phone': PHONE, 'open': OPEN_STATUS, 'call': btn_call('Hemen Ara'), 'wa': btn_wa(msg),
                'pin': ICON['pin'], 'dir': DIR_URL, 'arrow': ICON['arrow'], 'ig': ig}
 
 def article_page(rec, body_html, crumbs, kicker='', expert=None, lead='', hero_img=None, extra_after='', extra_ld=None, desc=None, title_tag=None):
@@ -597,14 +598,14 @@ def home_page(recs, posts):
       <div class="btn-row hero-btns">%(call)s%(wa)s</div>
       %(open)s
       <ul class="hero-facts">
-        <li>Kurucu: <b>Psikolog Rojin Nazik</b></li>
+        <li>Kurucu: <b>Psikolog Rojin Nazik</b> · CNN Türk, Milliyet, Sabah'ta uzman konuk</li>
         <li>Pazartesi – Cumartesi · 09:00 – 20:00</li>
         <li>Ücretsiz otopark</li>
       </ul>
     </div>
     <div class="hero-media">
       <div class="hero-photo">%(hero_img)s</div>
-      <a class="hero-badge" href="/psikolog-rojin-nazik/"><span class="hb-k">Kurucu Psikolog</span><b>Rojin Nazik</b><span class="hb-s">AB Psikologlar Derneği Genel Başkanı · 3 kitap · TV programları</span></a>
+      <a class="hero-badge" href="/psikolog-rojin-nazik/"><span class="hb-k">Kurucu Psikolog</span><b>Rojin Nazik</b><span class="hb-s">15+ yıl deneyim · 3 kitap · CNN Türk, Milliyet, Sabah · AB Psikologlar Derneği Genel Başkanı</span></a>
     </div>
   </div>
 </section>

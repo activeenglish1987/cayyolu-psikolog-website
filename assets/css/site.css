@@ -375,3 +375,12 @@ body.menu-open{overflow:hidden}
 /* menü açıkken başlık bulanıklığı kapatılır (sabit panel tam ekran olsun) */
 body.menu-open .site-header{backdrop-filter:none;-webkit-backdrop-filter:none;background:#fff}
 body.menu-open .sticky-bar{display:none}
+
+/* Dönüşüm önceliği: telefon birincil, WhatsApp ikincil (çerçeveli) */
+.btn-wa{background:#fff;color:#128C4A;border:2px solid var(--wa);box-shadow:none}
+.btn-wa:hover{background:var(--wa);color:#fff}
+.btn-call{font-weight:800}
+.side-trust{font-size:13.5px;line-height:1.5;color:var(--muted,#5b6475);margin:4px 0 10px}
+.article-layout>*{min-width:0}
+.btn-row{flex-wrap:wrap}
+.btn-row .btn{max-width:100%}
