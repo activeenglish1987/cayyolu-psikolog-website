@@ -29,6 +29,8 @@
   var RN = SITE === 'rojin' ? '' : 'https://psikologrojinnazik.com';
   var FOTO = CFG.foto || (RN || '') + '/images/brand/rojin-nazik-portrait-800.webp';
   var TEL = 'tel:+905524187973', TEL_TXT = '0552 418 79 73', WA = '905524187973';
+  // Telefonu açan gerçek kişi. Fotoğraf gelene kadar baş harf gösterilir: PUSULA_CFG.seldaFoto
+  var SELDA = 'Selda Hanım', SELDA_FOTO = CFG.seldaFoto || '';
   var REDUCED = w.matchMedia && w.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- Seçenekler (anahtarlar sunucudaki listeyle birebir aynı) ---------- */
@@ -121,6 +123,9 @@
   }
 
   function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function seldaAvatar() {
+    return SELDA_FOTO ? '<img class="pu-av" src="' + esc(SELDA_FOTO) + '" alt="' + SELDA + '">' : '<span class="pu-av" aria-hidden="true">S</span>';
+  }
   function titret() { try { if (navigator.vibrate) navigator.vibrate(8); } catch (e) {} }
 
   /* ---------- Görünüm ---------- */
@@ -201,6 +206,8 @@
     + '.pu-facts{margin-top:14px;display:grid;gap:8px}'
     + '.pu-fact{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:14px;background:#fff;border:1px solid var(--pu-line);font-size:14px;line-height:1.45}'
     + '.pu-fact b{color:var(--pu-a2)}'
+    + '.pu-selda{align-items:center;background:linear-gradient(135deg,#fff,var(--pu-bg))}'
+    + '.pu-av{width:44px;height:44px;border-radius:50%;flex:none;object-fit:cover;display:grid;place-items:center;font-weight:800;font-size:18px;color:#fff;background:linear-gradient(135deg,var(--pu-a),var(--pu-hl));box-shadow:0 0 0 3px #fff,0 0 0 5px var(--pu-call)}'
     + '.pu-note{margin:14px 2px 0;font-size:12px;color:var(--pu-mut);line-height:1.5}'
     + '.pu-foot{position:relative;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(255,255,255,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--pu-line)}'
     + '.pu-foot[hidden]{display:none}'
@@ -419,9 +426,8 @@
         + '<figure class="pu-q"><p>' + esc(not[2]) + '</p><small><span>Psikolog Rojin Nazik · ' + esc(not[1]) + '</span><a href="' + RN + not[0] + '" target="_blank" rel="noopener">Notun tamamı →</a></small></figure>'
         + '<section class="pu-ai" aria-live="polite"><div class="pu-ai-h"><i></i><span>Size özel ilk görüşme yol haritası</span></div><div class="pu-ai-b"></div></section>'
         + '<div class="pu-facts">'
-        + '<div class="pu-fact"><span>💳</span><span><b>Seans ücreti:</b> 3.000–6.000 TL aralığında. Net ücret telefonda söylenir.</span></div>'
         + '<div class="pu-fact"><span>📍</span><span>' + esc(SUBE[s.yer]) + '</span></div>'
-        + '<div class="pu-fact"><span>📞</span><span><b>İlk adım tek telefon:</b> Asistanımız size en yakın uygun saati hemen söyler. Ne anlatacağınızı düşünmenize gerek yok.</span></div>'
+        + '<div class="pu-fact pu-selda">' + seldaAvatar() + '<span><b>Telefonu ' + SELDA + ' açar.</b> Size en yakın uygun saati ve ücret bilgisini hemen söyler. Ne anlatacağınızı düşünmenize gerek yok; bu yol haritasını okumanız yeterli.</span></div>'
         + '</div>'
         + '<p class="pu-note">Bu yol haritası genel bilgilendirmedir; tanı ya da tedavi önerisi değildir. Acil bir durumda 112\'yi arayın.</p>', 100, true);
       istek = tut;
@@ -468,9 +474,9 @@
     var waMsg = 'Merhaba, sitenizdeki yol haritasını inceledim. ' + (m.acik ? 'Randevu almak istiyorum.' : (m.pazartesi ? 'Pazartesi sabahı' : 'Sabah') + ' aranmak istiyorum.');
     var waHref = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(waMsg);
     foot.innerHTML = m.acik
-      ? '<a class="pu-call" href="' + TEL + '"><span>📞</span><span>Hemen Ara · ' + TEL_TXT + '<small>Size uygun saati şimdi söyleyelim</small></span></a>'
+      ? '<a class="pu-call" href="' + TEL + '"><span>📞</span><span>' + SELDA + '\'ı Arayın<small>' + TEL_TXT + ' · uygun saati ve ücreti hemen söylesin</small></span></a>'
         + '<a class="pu-sub" href="' + waHref + '" target="_blank" rel="noopener">Yazmayı tercih ederim (WhatsApp)</a>'
-      : '<a class="pu-call" href="' + waHref + '" target="_blank" rel="noopener"><span>🌙</span><span>' + (m.pazartesi ? 'Pazartesi' : 'Sabah') + ' ilk sizi arayalım<small>Mesai dışındayız · WhatsApp\'tan bir mesaj yeterli</small></span></a>'
+      : '<a class="pu-call" href="' + waHref + '" target="_blank" rel="noopener"><span>🌙</span><span>' + (m.pazartesi ? 'Pazartesi' : 'Sabah') + ' ' + SELDA + ' ilk sizi arasın<small>Mesai dışındayız · WhatsApp\'tan bir mesaj yeterli</small></span></a>'
         + '<a class="pu-sub" href="' + TEL + '">Yine de ara · ' + TEL_TXT + '</a>';
     foot.hidden = false;
   }
@@ -526,6 +532,22 @@
   });
   // Bağlantıyla doğrudan açılış: sayfa.html#yol-haritasi
   function hashKontrol() { if (location.hash === '#yol-haritasi') ac('baglanti'); }
+
+  /* ---------- Reklamdan gelen ziyaretçi: mesai saatinde tek hedef arama ----------
+     Google Ads tıklaması (gclid/gbraid/wbraid; ads-conversion.js 90 gün saklar) + mesai açık:
+     sohbet balonu yüklenmez (sayfadaki Jivo yükleyicisi window.__jivoKapali'ya bakar),
+     Instagram rozetleri gizlenir. Mesai dışında sohbet açık kalır (talep kaçmasın). */
+  function reklamdan() {
+    if (/[?&](gclid|gbraid|wbraid)=/.test(location.search)) return true;
+    try { var a = JSON.parse(localStorage.getItem('ads_attribution') || 'null'); return !!(a && a.exp > Date.now() && (a.gclid || a.gbraid || a.wbraid)); } catch (e) { return false; }
+  }
+  if (reklamdan() && mesai().acik) {
+    w.__jivoKapali = true;
+    d.documentElement.classList.add('rn-reklam');
+    var rs = d.createElement('style');
+    rs.textContent = 'html.rn-reklam .rn-ig-float,html.rn-reklam .rn-ig,html.rn-reklam .instagram-ribbon,html.rn-reklam jdiv{display:none!important}';
+    (d.head || d.documentElement).appendChild(rs);
+  }
 
   w.Pusula = { ac: ac };
   if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', function () { yerlestir(); hashKontrol(); });
