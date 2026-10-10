@@ -271,7 +271,7 @@ def head(title, desc, path, extra_ld='', og_img='/assets/img/opt/og-1200.webp', 
 <script src="/assets/js/site.js?v=%(v)s" defer></script>
 <script src="/assets/js/after-hours.js?v=2" data-pos="bottom" defer></script>
 <script>window.PUSULA_CFG={site:'cayyolu',foto:'/assets/img/opt/psikolog-rojin-nazik-720.webp',heroSecici:'.hero-btns'};</script>
-<script src="/assets/js/pusula.js?v=5" defer></script>
+<script src="/assets/js/pusula.js?v=6" defer></script>
 %(ld)s
 </head>''' % {'gtm': GTM, 'title': esc(title), 'desc': esc(desc), 'robots': robots, 'canon': canon, 'brand': esc(BRAND),
               'site': SITE, 'og': og_img, 'v': ASSET_V, 'ld': extra_ld}
@@ -971,6 +971,9 @@ def main():
     # Google Ads'e özel sade açılış sayfaları (noindex; site haritasına eklenmez) — _kaynak/reklam.py
     import reklam
     print('reklam sayfaları:', ', '.join(reklam.cayyolu_yaz(ROOT)))
+    # Kendini değerlendirme testleri (asıl adres Rojin'de; canonical) — _kaynak/testler.py
+    import testler
+    print('testler:', ', '.join(testler.bagimsiz_yaz(ROOT, 'cayyolu')))
     # sitemap + robots
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for p, mod in pages:

@@ -658,9 +658,13 @@
       function mesaj(t, sinif) { var b = d.createElement('div'); b.className = 'pu-sb-m' + (sinif ? ' ' + sinif : ''); b.textContent = t; govde.appendChild(b); govde.scrollTop = govde.scrollHeight; return b; }
       function secenekler(kaydirma) {
         var c = d.createElement('div'); c.className = 'pu-sb-c';
-        c.innerHTML = '<button type="button" class="vurgu" data-yh>✨ Bana özel yol haritası (60 sn)</button>' + SORULAR.map(function (q) { return '<button type="button" data-q="' + q[0] + '">' + esc(q[1]) + '</button>'; }).join('');
+        var testVar = !/^\/(randevu|kaygi-testi|depresyon-testi)\//.test(location.pathname);
+        c.innerHTML = '<button type="button" class="vurgu" data-yh>✨ Bana özel yol haritası (60 sn)</button>'
+          + (testVar ? '<button type="button" data-test="/kaygi-testi/">🧭 Kaygı testi</button><button type="button" data-test="/depresyon-testi/">🧭 Depresyon testi</button>' : '') + SORULAR.map(function (q) { return '<button type="button" data-q="' + q[0] + '">' + esc(q[1]) + '</button>'; }).join('');
         govde.appendChild(c); if (kaydirma !== false) govde.scrollTop = govde.scrollHeight;
         c.querySelector('[data-yh]').onclick = function () { panelAc(); ac('soru_kutusu'); };
+        var ts = c.querySelectorAll('[data-test]');
+        for (var t = 0; t < ts.length; t++) ts[t].onclick = function () { olay('soru_test', { test: this.getAttribute('data-test') }); location.href = this.getAttribute('data-test'); };
         var bs = c.querySelectorAll('[data-q]');
         for (var i = 0; i < bs.length; i++) bs[i].onclick = function () {
           var id = this.getAttribute('data-q'), q = SORULAR.filter(function (x) { return x[0] === id; })[0];
