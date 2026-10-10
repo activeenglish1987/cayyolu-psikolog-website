@@ -189,10 +189,19 @@ def govde(S, P):
 </main>
 <footer class="w dip">%(marka)s · Psikologlar tanı koymaz ve ilaç yazmaz. Acil bir durumda 112'yi arayın.</footer>
 <script>(function(){try{var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Istanbul',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()),g=function(t){for(var i=0;i<p.length;i++)if(p[i].type===t)return p[i].value},d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(g('weekday')),m=(+g('hour')%%24)*60+(+g('minute'));var e=document.querySelector('.acik');if(d>=1&&d<=6&&m>=540&&m<1200)e.innerHTML='<i></i>Şu an açığız · Telefonu Selda Hanım açar';else{e.innerHTML='<i style="background:#F59E0B;box-shadow:0 0 0 4px rgba(245,158,11,.2)"></i>Şu an mesai dışındayız · Pazartesi–Cumartesi 09:00–20:00';e.style.color='var(--mut)'}}catch(x){}})();</script>
+<script>/* Aranan kelimeye göre başlık (mesaj uyumu). Google Ads > Hesap ayarları > "Nihai URL son eki": kw={keyword}
+   Yalnız hazır tablodaki kalıplar kullanılır; aranan kelime sayfaya olduğu gibi yazılmaz. */
+(function(){try{var q=new URLSearchParams(location.search),k=(q.get('kw')||q.get('utm_term')||q.get('keyword')||'').toLocaleLowerCase('tr-TR').replace(/[+_]/g,' ');if(!k)return;
+var Y=[[/kızılay|kizilay/,'Kızılay'],[/çankaya|cankaya/,'Çankaya'],[/yaşamkent|yasamkent/,'Yaşamkent'],[/çayyolu|cayyolu/,'Çayyolu'],[/ümitköy|umitkoy/,'Ümitköy'],[/konutkent/,'Konutkent'],[/incek/,'İncek'],[/beysukent/,'Beysukent'],[/bilkent/,'Bilkent'],[/eryaman/,'Eryaman'],[/ankara/,'Ankara']];
+var K=[[/ergen|genç|genc/,'Ergen Psikoloğu'],[/çocuk|cocuk|pedagog|oyun terap/,'Çocuk Psikoloğu'],[/çift|cift|evlilik|ilişki|iliski/,'Çift Terapisi'],[/aile/,'Aile Danışmanı'],[/panik/,'Panik Atak Desteği'],[/kaygı|kaygi|anksiyete/,'Kaygı İçin Psikolog'],[/depresyon/,'Depresyon İçin Psikolog'],[/takıntı|takinti|okb/,'Takıntı (OKB) İçin Psikolog'],[/travma/,'Travma İçin Psikolog'],[/boşanma|bosanma/,'Boşanma Danışmanlığı'],[/online|çevrimiçi|cevrimici|internet/,'Online Psikolog'],[/kadın psikolog|kadin psikolog/,'Kadın Psikolog'],[/psikoterapist|terapist/,'Psikoterapist'],[/psikolojik danışman|psikolojik danisman/,'Psikolojik Danışmanlık']];
+var bul=function(L){for(var i=0;i<L.length;i++)if(L[i][0].test(k))return L[i][1];return ''};var y=bul(Y),c=bul(K);if(!y&&!c)return;
+y=y||'%(kwyer)s';c=c||'Psikolog';var h=document.querySelector('h1');h.textContent=y+' ';var e=document.createElement('em');e.textContent=c;h.appendChild(e);
+document.title=y+' '+c+' | %(marka)s';(window.dataLayer=window.dataLayer||[]).push({event:'lp_baslik_uyumu',lp_baslik:y+' '+c});}catch(x){}})();</script>
 <div class="bar" data-cta-area="lp_bar"><a class="ara" href="tel:%(tel)s">📞 Selda Hanım'ı Ara</a><a class="w2" href="%(wa)s" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a></div>''' % {
         'logo': S['logo'], 'tel': TEL, 'teltxt': TEL_TXT, 'h1': esc(P['h1']), 'h1b': esc(P['h1b']), 'alt': esc(P['alt']),
         'wa': wa, 'foto': S['foto'], 'etiket': etiketler, 'ekip': ekip, 'konular': konular, 'adimlar': adimlar,
-        'not': esc(P['not'][1]), 'notb': esc(P['not'][0]), 'subeler': subeler, 'sss': sss, 'marka': esc(S['marka'])}
+        'not': esc(P['not'][1]), 'notb': esc(P['not'][0]), 'subeler': subeler, 'sss': sss, 'marka': esc(S['marka']),
+        'kwyer': 'Çayyolu' if S['ad'] == 'cayyolu' else 'Ankara'}
 
 
 def baslik(P, S):
