@@ -201,6 +201,9 @@
     + '.pu-ai ul{margin:0;padding:0 0 0 2px;list-style:none;display:grid;gap:7px}'
     + '.pu-ai li{position:relative;padding-left:20px;font-size:15px;line-height:1.55}'
     + '.pu-ai li:before{content:"";position:absolute;left:3px;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--pu-hl)}'
+    + '.pu-bekle{color:var(--pu-mut)!important;margin:12px 0 10px!important}'
+    + '.pu-sk{display:block;height:12px;border-radius:8px;margin:9px 0;background:linear-gradient(90deg,var(--pu-line),#fff,var(--pu-line));background-size:200% 100%;animation:pu-sk 1.4s linear infinite}'
+    + '@keyframes pu-sk{to{background-position:-200% 0}}'
     + '.pu-cur{display:inline-block;width:2px;height:1.05em;background:var(--pu-a);vertical-align:-2px;margin-left:2px;animation:pu-blink .9s step-end infinite}'
     + '@keyframes pu-blink{50%{opacity:0}}'
     + '.pu-facts{margin-top:14px;display:grid;gap:8px}'
@@ -301,7 +304,7 @@
   function ileri(fn) { adimlar.push(fn); fn(); }
   function geri() { adimlar.pop(); var f = adimlar[adimlar.length - 1]; if (f) f(); }
 
-  var GUVEN = '<div class="pu-safe"><span>🔒</span><span>İsim ya da telefon istemiyoruz. Seçimleriniz kaydedilmez; yol haritanız yapay zekâ ile anonim olarak hazırlanır.</span></div>';
+  var GUVEN = '<div class="pu-safe"><span>🔒</span><span>İsim ya da telefon istemiyoruz. Seçimleriniz kaydedilmez.</span></div>';
 
   function adimKim() {
     adimlar = [adimKim];
@@ -406,7 +409,6 @@
     var bekle = REDUCED ? 300 : 2200;
     var hazirMi = setInterval(function () {
       if (Date.now() - basla < bekle) return;
-      if (!metin && !bitti) return;
       clearInterval(hazirMi); clearInterval(tik);
       sonucCiz();
     }, 120);
@@ -447,7 +449,8 @@
         var kaynak = metin.replace(/\n?§YEDEK[\s\S]*$/, '');
         if (yedek && yazilan && kaynak.indexOf(yazilan) !== 0) yazilan = '';
         if (yazilan.length < kaynak.length) yazilan = kaynak.slice(0, yazilan.length + hiz);
-        var cizim = ciz(yazilan) + (bitti && yazilan.length >= kaynak.length ? '' : '<span class="pu-cur"></span>');
+        var cizim = yazilan ? ciz(yazilan) + (bitti && yazilan.length >= kaynak.length ? '' : '<span class="pu-cur"></span>')
+          : '<p class="pu-bekle">Seçimlerinize göre hazırlanıyor<span class="pu-cur"></span></p><i class="pu-sk"></i><i class="pu-sk"></i><i class="pu-sk" style="width:62%"></i>';
         if (cizim !== son) { hedef.innerHTML = cizim; son = cizim; }
         if (bitti && yazilan.length >= kaynak.length) { kutu.classList.add('done'); return; }
         requestAnimationFrame(adim);
