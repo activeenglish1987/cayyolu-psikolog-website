@@ -628,18 +628,27 @@
       + '.pu-sb-form button{padding:12px;border-radius:12px;border:0;background:var(--pu-a2);color:#fff;font:inherit;font-weight:800;cursor:pointer}'
       + '.pu-sb-form small{font-size:11.5px;color:var(--pu-mut)}.pu-sb-form small a{color:var(--pu-mut)}'
       + '.pu-sb-form .err{color:#B42318;font-size:13px}'
+      + '.pu-sb{transition:opacity .25s,transform .25s}.pu-sb.gizli{opacity:0;transform:translateY(12px);pointer-events:none}'
       + 'html.pu-lock .pu-sb{display:none}';
     var st = d.createElement('style'); st.textContent = css; d.head.appendChild(st);
 
     var kutu = el('<div class="pu-sb" data-cta-area="soru_kutusu"><button type="button" class="pu-sb-btn" aria-label="Soru sorun">' + seldaAvatar() + '<i></i><span class="t">Soru sorun</span></button></div>');
     d.body.appendChild(kutu);
     var panel = null, davet = null, etkilesti = false;
+    // Telefonda balon, giriş bölümündeki arama düğmelerinin üstüne binmesin: ilk ekran geçilince görünür
+    function balonKonum() {
+      var gizle = innerWidth < 861 && (scrollY || pageYOffset || 0) < 520 && !panel && !davet;
+      kutu.classList.toggle('gizli', gizle);
+    }
+    balonKonum();
+    w.addEventListener('scroll', balonKonum, { passive: true });
+    w.addEventListener('resize', balonKonum);
 
-    function kapatDavet() { if (davet) { var x = davet; davet = null; x.classList.remove('on'); setTimeout(function () { if (x.parentNode) x.parentNode.removeChild(x); }, 350); } }
+    function kapatDavet() { if (davet) { var x = davet; davet = null; x.classList.remove('on'); setTimeout(function () { if (x.parentNode) x.parentNode.removeChild(x); balonKonum(); }, 350); } }
 
     function panelAc(kaynak) {
       kapatDavet(); etkilesti = true;
-      if (panel) { panel.parentNode.removeChild(panel); panel = null; return; }
+      if (panel) { panel.parentNode.removeChild(panel); panel = null; balonKonum(); return; }
       olay('soru_kutusu_acildi', { pusula_kaynak: kaynak || 'balon' });
       var mm = mesai();
       panel = el('<div class="pu-sb-p" role="dialog" aria-label="Soru sorun"><div class="pu-sb-h">' + seldaAvatar() + '<div><b>RN Psikoloji</b><small>' + (mm.acik ? '🟢 Şu an açığız · Telefonu Selda Hanım açar' : '🌙 Mesai dışı · Sabah 09:00\'da arıyoruz') + '</small></div><button type="button" class="x" aria-label="Kapat">×</button></div><div class="pu-sb-b"></div><div class="pu-sb-f"></div></div>');
@@ -726,7 +735,7 @@
       try { sessionStorage.setItem('pu_davet', '1'); } catch (e) {}
       olay('davet_gosterildi', { neden: neden });
       davet = el('<div class="pu-sb-tz" role="note"><b>' + (mesai().acik ? 'Şu an açığız 👋' : 'Merhaba 👋') + '</b>' + esc(metin) + '<button type="button" aria-label="Kapat">×</button></div>');
-      kutu.appendChild(davet);
+      kutu.appendChild(davet); kutu.classList.remove('gizli');
       requestAnimationFrame(function () { requestAnimationFrame(function () { if (davet) davet.classList.add('on'); }); });
       davet.onclick = function (e) { if (e.target.tagName === 'BUTTON') { kapatDavet(); return; } kapatDavet(); ac('davet'); };
       setTimeout(kapatDavet, 18000);
