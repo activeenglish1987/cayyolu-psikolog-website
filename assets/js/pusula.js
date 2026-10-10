@@ -3,12 +3,12 @@
    ------------------------------------------------------------
    Ziyaretçi 3–4 dokunuşla kim için / hangi konuda / nerede sorularını
    seçer; Psikolog Rojin Nazik'in kartı, o konudaki gerçek notu ve
-   Claude'un yazdığı kişiye özel "ilk görüşme yol haritası" açılır.
+   kişiye özel "ilk görüşme yol haritası" açılır.
    Tek hedef: telefonla aramak.
 
    - İsim, telefon, serbest metin ALINMAZ; hiçbir şey kaydedilmez.
-   - Yapay zekâ yanıt vermezse hazır metinle aynen çalışır.
-   - Güvende hissetmiyorum seçeneği yapay zekâya gitmez: 112 ekranı.
+   - Sunucu yanıt vermezse hazır metinle aynen çalışır.
+   - Güvende hissetmiyorum seçeneği sunucuya gitmez: 112 ekranı.
    - Aramalar ads-conversion.js tarafından data-cta-area="pusula"
      olarak sayılır (Google Ads "Tıkla ve ara" dönüşümü).
 
@@ -95,7 +95,7 @@
     cift: 'Psikolog ve aile danışmanı olarak çift ve evlilik görüşmeleri yapar.'
   };
 
-  /* ---------- Yapay zekâ yanıt vermezse: hazır yol haritaları ---------- */
+  /* ---------- Sunucu yanıt vermezse: hazır yol haritaları ---------- */
   var YEDEK = {
     kendim: '## Sizi anlıyoruz\nYaşadığınız şeyi bir uzmanla konuşmayı düşünmeniz önemli bir adım. Pek çok kişi benzer duygularla başvuruyor ve ilk görüşmede her şeyi bir anda anlatmak zorunda değil.\n## İlk görüşmede neler olur\n- Ne yaşadığınızı, ne zamandır sürdüğünü ve gününüzü nasıl etkilediğini konuşursunuz.\n- Sizi zorlayan durumların hangi anlarda arttığına birlikte bakılır.\n- Görüşmenin sonunda nasıl bir çalışma planıyla ilerlenebileceği konuşulur.\n## Görüşmeden önce küçük hazırlık\n- Son haftalarda sizi en çok zorlayan iki üç anı kısaca not edin.\n- Terapiden ne beklediğinizi tek cümleyle yazmayı deneyin.\n- Aklınıza gelen soruları telefonunuza kaydedin; görüşmede sormak rahatlatır.\n## Telefonda sorabilecekleriniz\n- Bana en yakın uygun saat hangisi?\n- İlk görüşme yüz yüze mi online mı daha uygun olur?',
     cocugum: '## Sizi anlıyoruz\nÇocuğunuzdaki değişikliği fark edip destek aramanız ona verebileceğiniz en değerli şeylerden biri. Pek çok aile benzer sorularla başvuruyor.\n## İlk görüşmede neler olur\n- İlk görüşme genellikle sizinle, ebeveynlerle yapılır.\n- Davranışın ne zaman başladığı ve hangi durumlarda arttığı konuşulur.\n- Çocuğunuzla görüşmelerin nasıl ilerleyeceği birlikte planlanır.\n## Görüşmeden önce küçük hazırlık\n- Davranışın öncesinde ve sonrasında neler olduğunu birkaç gün not edin.\n- Çocuğunuza, duygularını konuşabileceği ve oyun oynayabileceği biriyle tanışacağını sade bir dille anlatabilirsiniz.\n- Okuldan ya da bakımını üstlenen kişilerden gelen gözlemleri yanınızda getirin.\n## Telefonda sorabilecekleriniz\n- İlk görüşmeye çocuğumla mı gelmeliyim, yalnız mı?\n- Bize en yakın uygun saat hangisi?',
@@ -434,11 +434,11 @@
         + '<p class="pu-note">Bu yol haritası genel bilgilendirmedir; tanı ya da tedavi önerisi değildir. Acil bir durumda 112\'yi arayın.</p>', 100, true);
       istek = tut;
       cta();
-      olay('pusula_sonuc', { pusula_kaynak_metin: yedek ? 'hazir' : 'yapay_zeka' });
+      olay('pusula_sonuc', { pusula_kaynak_metin: yedek ? 'hazir' : 'kisiye_ozel' });
       yaz();
     }
 
-    // Akan metni harf harf yaz (yapay zekâ akarken de, önbellekten gelince de aynı his)
+    // Akan metni harf harf yaz (sunucudan akarken de, önbellekten gelince de aynı his)
     function yaz() {
       var kutu = body.querySelector('.pu-ai'), hedef = body.querySelector('.pu-ai-b');
       if (!hedef) return;
