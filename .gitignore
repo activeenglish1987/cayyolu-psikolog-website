@@ -2,3 +2,4 @@
 _kaynak/*.xml
 _kaynak/contact.html
 .DS_Store
+__pycache__/
