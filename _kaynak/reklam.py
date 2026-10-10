@@ -1,0 +1,256 @@
+# -*- coding: utf-8 -*-
+"""Google Ads'e özel sade açılış sayfaları (Rojin Nazik ve Çayyolu sitelerinde ortak şablon).
+
+- Arama motorlarına kapalı (noindex), site haritasında ve menüde yok: SEO'ya dokunmaz,
+  yalnız reklamdan gelen ziyaretçi görür. Reklamların "Nihai URL"si bu sayfalardır.
+- Tek hedef telefonla aramak: menü yok, dışarı giden bağlantı yok; başlık aranan kelimeyle aynı.
+- Ücret yazılmaz (avukat görüşü); telefonu Selda Hanım açar.
+- Dönüşümler sitenin kendi ads-conversion.js'i ile sayılır; Pusula ve mesai dışı formu da çalışır.
+
+Rojin sitesinde: python3 _araclar/reklam.py   (sayfaları randevu/ altına yazar)
+Çayyolu sitesinde: build.py içinden çağrılır (_kaynak/reklam.py).
+"""
+import html, os, sys
+
+esc = lambda x: html.escape(x or '', quote=True)
+TEL = '+905524187973'
+TEL_TXT = '0552 418 79 73'
+WA = '905524187973'
+
+ROJIN = {
+    'ad': 'rojin', 'marka': 'Psikolog Rojin Nazik', 'site': 'https://www.psikologrojinnazik.com',
+    'logo': '<img src="/images/brand/logo-rojin-nazik.png" alt="Psikolog Rojin Nazik" height="38" style="height:38px;width:auto">',
+    'foto': '/images/brand/rojin-nazik-portrait-800.webp',
+    'renk': {'a': '#6B3A8C', 'a2': '#3d1e54', 'hl': '#C9A06B', 'bg': '#FBF8F2', 'ink': '#2A1F2D', 'mut': '#6b5f73', 'line': '#E8DFD0'},
+    'baslik_font': "Georgia,'Times New Roman',serif",
+}
+CAYYOLU = {
+    'ad': 'cayyolu', 'marka': 'RN Psikoloji Çayyolu', 'site': 'https://www.cayyolupsikolog.com.tr',
+    'logo': '<span style="display:inline-flex;align-items:center;gap:10px;font-weight:700;color:#14264A"><span style="width:38px;height:38px;border-radius:10px;background:#14264A;color:#fff;display:grid;place-items:center;font-size:15px">RN</span><span style="line-height:1.15">RN Psikoloji<small style="display:block;font-weight:500;font-size:12px;color:#566179">Çayyolu Şubesi</small></span></span>',
+    'foto': '/assets/img/opt/psikolog-rojin-nazik-720.webp',
+    'renk': {'a': '#14264A', 'a2': '#14264A', 'hl': '#E9A23B', 'bg': '#F2F6FB', 'ink': '#18223A', 'mut': '#566179', 'line': '#DCE4F0'},
+    'baslik_font': "system-ui,-apple-system,'Segoe UI',sans-serif",
+}
+
+ROJIN_ETIKET = ['15+ yıllık mesleki deneyim', 'Şema terapi eğitimi', 'AB Psikologlar Derneği Genel Başkanı', '3 kitap yazarı']
+SUBELER = [
+    ('Yaşamkent / Çayyolu', 'Konutkent, Dumlupınar Blv. No:399 Kat:28 D:121, Çankaya', 'Pazartesi–Cumartesi · ücretsiz otopark'),
+    ('Kızılay', 'Atatürk Blv. No:127 Kat:8, Bakanlıklar', 'Pazartesi günleri'),
+    ('Online', 'Türkiye ve yurt dışından görüntülü görüşme', 'Pazartesi–Cumartesi'),
+]
+ADIMLAR = [
+    ('Arayın', 'Telefonu Selda Hanım açar. İhtiyacınızı kısaca dinler; her şeyi anlatmanız gerekmez.'),
+    ('Size uygun saat', 'Gün, saat ve şubeyi birlikte belirlersiniz; ücret bilgisini de aynı aramada öğrenirsiniz.'),
+    ('İlk görüşme', 'Tanışma ve değerlendirme görüşmesi: ne yaşadığınız konuşulur, çalışma planı birlikte oluşturulur.'),
+]
+ORTAK_SSS = [
+    ('Ücret ne kadar?', 'Seans ücretini Selda Hanım telefonda net olarak söyler; aynı aramada size uygun saati de öğrenirsiniz.'),
+    ('Görüşmeler gizli mi?', 'Evet. Görüşmelerde konuşulanlar gizlidir; yasal zorunluluk ve can güvenliği gibi istisnalar ilk görüşmede açıkça anlatılır.'),
+    ('Online görüşme yapılıyor mu?', 'Evet. Ankara dışından ya da yurt dışından görüntülü görüşme yapılabilir.'),
+    ('Psikolog ilaç yazar mı?', 'Hayır. Psikologlar tanı koymaz ve ilaç yazmaz; gerekli durumlarda psikiyatri uzmanına yönlendirme yapılır.'),
+]
+
+# Her reklam grubu için bir sayfa: başlık aranan kelimeyle aynı olmalı (mesaj uyumu)
+SAYFALAR = {
+    'rojin': [
+        {'yol': '/randevu/ankara-psikolog/', 'h1': 'Ankara Psikolog', 'h1b': 'Rojin Nazik',
+         'alt': "Yaşamkent ve Kızılay'da yüz yüze, dilerseniz online psikolojik danışmanlık. Kendinizi rahatça anlatabileceğiniz, acele edilmeyen bir ortam.",
+         'konular': ['Kaygı, stres ve panik atak', 'Depresif duygular ve isteksizlik', 'İlişki, evlilik ve aile sorunları', 'Yas, boşanma ve zor yaşam dönemleri', 'Öfke, özgüven ve tekrar eden düşünceler', 'Çocuk ve ergen danışmanlığı'],
+         'not': ('‘Psikoloğa gitmeli miyim?’ diye soranlara', 'Psikoloğa başvurmak için kişinin hayatının tamamen kontrolden çıkmasını beklemesi gerektiğini düşünmüyorum. Aynı düşünce, duygu veya ilişki döngüsünün tekrar ettiğini fark ediyor ve bunun içinden çıkmakta zorlanıyorsa bunu konuşmak için yeterli bir neden olabilir.')},
+        {'yol': '/randevu/cocuk-psikologu/', 'h1': 'Ankara Çocuk ve Ergen', 'h1b': 'Psikoloğu',
+         'alt': 'Okul, kaygı, öfke ve uyum sorunlarında çocuk ve ergen görüşmeleri; küçük yaşta oyun terapisi ve ebeveyn danışmanlığı. Yaşamkent, Kızılay ve online.',
+         'konular': ['Öfke nöbetleri ve davranış sorunları', 'Okul, ders ve sınav kaygısı', 'Korkular, ayrılma kaygısı ve uyku sorunları', 'Boşanma sürecinde çocuk', 'Ergenlikte iletişim, içe kapanma, ekran kullanımı', 'Küçük yaşta oyun terapisi (Psikolog Elif Erdoğan)'],
+         'ekip': 'Küçük yaştaki çocuklarla oyun terapisi ve psikolojik test için ekibimizde Psikolog Elif Erdoğan da çalışıyor; size uygun uzmanı Selda Hanım birlikte belirler.',
+         'not': ('Anne-babaların en sık kaçırdığı nokta', 'Ben davranışın ne zaman başladığına, hangi durumlarda arttığına ve çocuğun o dönemde hayatında neler yaşadığına bakmayı önemli buluyorum. Çünkü bazı çocuklar ifade etmekte zorlandıkları duyguları davranışları üzerinden gösterebiliyor.'),
+         'sss': [('İlk görüşmeye çocuğumla mı gelmeliyim?', 'Çocuklarda ilk görüşme genellikle ebeveynle yapılır; ardından çocuğun yaşına uygun görüşmeler planlanır. Telefonda Selda Hanım size durumunuza göre yol gösterir.')]},
+        {'yol': '/randevu/cift-terapisi/', 'h1': 'Ankara Çift ve', 'h1b': 'Evlilik Terapisi',
+         'alt': 'İletişim sorunları, sık tartışma, güven ve uzaklaşma için çift ve evlilik görüşmeleri. Yaşamkent ve Kızılay’da yüz yüze ya da online.',
+         'konular': ['İletişim kuramama, sık tartışma', 'Güven sorunu ve aldatılma sonrası süreç', 'Birbirinden uzaklaşma', 'Evlilik öncesi danışmanlık', 'Boşanma kararı ve sonrası', 'Ebeveynlik ve aile içi çatışma'],
+         'not': ('Çift görüşmelerinde en sık duyduğum cümle', '‘Ben defalarca söyledim ama beni anlamadı’ cümlesini çift görüşmelerinde oldukça sık duyuyorum. Tartışmanın içindeki öfkenin altında bazen ‘beni önemse’, ‘yanımda olduğunu hissettir’ veya ‘beni anlamaya çalış’ gibi çok daha temel bir ihtiyaç bulunabiliyor.'),
+         'sss': [('İkimizin birlikte gelmesi mi gerekiyor?', 'Çift görüşmelerine genellikle birlikte başlanır; gerekirse bireysel görüşmeler de planlanır. İlk adımı biriniz atabilir.')]},
+        {'yol': '/randevu/kaygi-panik-atak/', 'h1': 'Kaygı ve Panik Atak', 'h1b': 'Psikolojik Destek · Ankara',
+         'alt': 'Kaygı, panik atak, sosyal kaygı ve takılan düşünceler için bilişsel davranışçı yaklaşımla psikolojik destek. Yaşamkent, Kızılay ve online.',
+         'konular': ['Panik atak ve beklenti kaygısı', 'Yaygın kaygı ve sürekli endişe', 'Sosyal kaygı', 'Sınav ve performans kaygısı', 'Takılan düşünceler, aşırı düşünme', 'Bedensel belirtilerle gelen kaygı'],
+         'not': ('Panik atakta en sık korkulan şey', 'Panik yaşayan kişilerde bedensel belirtilerin kendisinden çok, bu belirtilere verilen anlamın kişiyi zorladığını sık görüyorum. Bu nedenle görüşmelerde kişinin yalnızca ne hissettiğine değil, hissettiği şeyi nasıl yorumladığına da bakıyorum.')},
+    ],
+    'cayyolu': [
+        {'yol': '/randevu/cayyolu-psikolog/', 'h1': 'Çayyolu ve Yaşamkent', 'h1b': 'Psikolog',
+         'alt': "RN Psikoloji'nin Yaşamkent ofisinde yüz yüze psikolojik danışmanlık: Çayyolu, Ümitköy, Konutkent, İncek ve Beysukent'e yakın, ücretsiz otopark.",
+         'konular': ['Kaygı, stres ve panik atak', 'İlişki, evlilik ve aile sorunları', 'Çocuk ve ergen danışmanlığı', 'Yas, boşanma ve zor yaşam dönemleri', 'Depresif duygular ve isteksizlik', 'Online görüşme seçeneği'],
+         'ekip': 'Kurucu Psikolog Rojin Nazik ve Psikolog Elif Erdoğan bu ofiste görüşme yapıyor; size uygun uzmanı Selda Hanım birlikte belirler.',
+         'not': ('İlk kez gelenler en çok neden çekiniyor?', 'İlk görüşmeye gelen kişilerde en sık gördüğüm kaygılardan biri, ‘Ne anlatacağım, nereden başlayacağım?’ düşüncesi. İlk görüşme ilerledikçe bunun bir sınav olmadığını ve her şeyi bir anda anlatmak zorunda olmadıklarını fark ettiklerinde daha rahatlayabildiklerini görüyorum.')},
+        {'yol': '/randevu/cocuk-psikologu/', 'h1': 'Çayyolu Çocuk ve Ergen', 'h1b': 'Psikoloğu',
+         'alt': 'Yaşamkent ofisinde çocuk ve ergen görüşmeleri, küçük yaşta oyun terapisi ve ebeveyn danışmanlığı. Çayyolu, Ümitköy ve Konutkent’e yakın.',
+         'konular': ['Öfke ve davranış sorunları', 'Okul, ders ve sınav kaygısı', 'Korkular, ayrılma kaygısı, uyku', 'Boşanma sürecinde çocuk', 'Ergenlikte iletişim ve içe kapanma', 'Oyun terapisi ve psikolojik test (Psikolog Elif Erdoğan)'],
+         'ekip': 'Küçük yaştaki çocuklarla oyun terapisi ve psikolojik test için Psikolog Elif Erdoğan da bu ofiste çalışıyor; size uygun uzmanı Selda Hanım birlikte belirler.',
+         'not': ('Ebeveynlere ilk önerim', 'Ebeveynlerden ilk istediğim şeylerden biri, çocuğun davranışını hemen değiştirmeye çalışmadan önce onu biraz daha dikkatli gözlemlemeleri oluyor. Özellikle bir davranışın öncesinde ve sonrasında neler yaşandığı çok önemli ipuçları verebiliyor.'),
+         'sss': [('İlk görüşmeye çocuğumla mı gelmeliyim?', 'Çocuklarda ilk görüşme genellikle ebeveynle yapılır; ardından çocuğun yaşına uygun görüşmeler planlanır.')]},
+        {'yol': '/randevu/cift-terapisi/', 'h1': 'Çayyolu Çift ve', 'h1b': 'Evlilik Terapisi',
+         'alt': 'Yaşamkent ofisinde çift ve evlilik görüşmeleri: iletişim, güven, sık tartışma ve uzaklaşma. Çayyolu, Ümitköy ve Konutkent’e yakın, ücretsiz otopark.',
+         'konular': ['İletişim kuramama, sık tartışma', 'Güven sorunu', 'Birbirinden uzaklaşma', 'Evlilik öncesi danışmanlık', 'Boşanma kararı ve sonrası', 'Ebeveynlik ve aile içi çatışma'],
+         'not': ('Çiftlerde en sık gördüğüm sorun', 'Çiftlerin çoğu ‘iletişim kuramıyoruz’ diyerek geliyor. Görüşmeler ilerledikçe çoğu zaman sorunun yalnızca iletişim olmadığını; uzun süredir konuşulmamış kırgınlıkların, anlaşılmama hissinin ve tekrar eden ilişki döngülerinin biriktiğini görüyorum.'),
+         'sss': [('İkimizin birlikte gelmesi mi gerekiyor?', 'Çift görüşmelerine genellikle birlikte başlanır; gerekirse bireysel görüşmeler de planlanır.')]},
+    ],
+}
+
+
+def css(S):
+    r = S['renk']
+    return ('''<style>
+:root{--a:%(a)s;--a2:%(a2)s;--hl:%(hl)s;--bg:%(bg)s;--ink:%(ink)s;--mut:%(mut)s;--line:%(line)s;--call:#16A34A}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;padding-bottom:calc(84px + env(safe-area-inset-bottom))}
+a{color:var(--a)}
+.w{max-width:980px;margin:0 auto;padding:0 18px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
+.top a.t{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--ink);font-weight:700;font-size:14px;text-decoration:none}
+.hero{display:grid;gap:22px;padding:8px 0 26px}
+@media(min-width:860px){.hero{grid-template-columns:1.15fr .85fr;align-items:center;padding:30px 0 46px}}
+.ey{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--a)}
+h1{font-family:%(f)s;font-weight:600;font-size:clamp(32px,8vw,52px);line-height:1.08;margin:8px 0 12px;color:var(--a2);letter-spacing:-.01em}
+h1 em{font-style:italic;color:var(--a)}
+.alt{color:var(--mut);font-size:17px;margin:0 0 18px}
+.acik{display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;color:#166534;margin:0 0 12px}
+.acik i{width:9px;height:9px;border-radius:50%%;background:#22C55E;box-shadow:0 0 0 4px rgba(34,197,94,.18)}
+.hero-actions{display:grid;gap:10px;max-width:440px}
+.ara{display:flex;align-items:center;justify-content:center;gap:10px;padding:17px 18px;border-radius:16px;background:var(--call);color:#fff!important;font-weight:800;font-size:18px;text-decoration:none;box-shadow:0 14px 30px -12px rgba(22,163,74,.7)}
+.ara small{display:block;font-size:12.5px;font-weight:600;opacity:.92}
+.wa{display:block;text-align:center;font-size:14.5px;font-weight:600;color:var(--mut)!important;text-decoration:underline;text-underline-offset:3px;padding:4px}
+.puan{margin-top:14px;font-size:14px;color:var(--mut)}.puan b{color:var(--ink)}.puan span{color:#E5A50A;letter-spacing:1px}
+.foto{position:relative;max-width:420px;width:100%%;justify-self:center}
+.foto img{width:100%%;height:auto;max-height:440px;object-fit:cover;object-position:50%% 20%%;border-radius:24px;display:block;box-shadow:0 24px 50px -28px rgba(0,0,0,.45)}
+@media(max-width:859px){.foto{order:-1;max-width:none}.foto img{max-height:210px}}
+.kart{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px;margin:0 0 16px}
+h2{font-family:%(f)s;font-weight:600;font-size:24px;line-height:1.25;margin:0 0 12px;color:var(--a2)}
+.etiket{display:flex;flex-wrap:wrap;gap:8px;margin:0}
+.etiket span{padding:7px 12px;border-radius:999px;background:var(--bg);border:1px solid var(--line);font-size:13.5px;font-weight:700;color:var(--a2)}
+.konu{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+@media(min-width:700px){.konu{grid-template-columns:1fr 1fr}}
+.konu li{padding:10px 12px 10px 34px;border-radius:12px;background:var(--bg);position:relative;font-weight:600;font-size:15px}
+.konu li:before{content:"✓";position:absolute;left:12px;top:10px;color:var(--call);font-weight:800}
+.adim{display:grid;gap:10px;counter-reset:a}
+@media(min-width:760px){.adim{grid-template-columns:repeat(3,1fr)}}
+.adim div{padding:14px;border-radius:14px;background:var(--bg)}
+.adim b{display:flex;align-items:center;gap:8px;color:var(--a2)}
+.adim b:before{counter-increment:a;content:counter(a);width:26px;height:26px;border-radius:50%%;display:grid;place-items:center;background:var(--a);color:#fff;font-size:13px}
+.adim p{margin:6px 0 0;font-size:14.5px;color:var(--mut)}
+blockquote{margin:0;padding:16px 18px;border-left:4px solid var(--hl);background:var(--bg);border-radius:0 14px 14px 0;font-style:italic;line-height:1.7}
+.qk{margin-top:8px;font-size:13px;color:var(--mut)}
+.sube{display:grid;gap:10px}@media(min-width:760px){.sube{grid-template-columns:repeat(3,1fr)}}
+.sube div{padding:14px;border-radius:14px;background:var(--bg);font-size:14.5px}.sube b{display:block;color:var(--a2)}
+details{border-bottom:1px solid var(--line);padding:12px 0}details:last-child{border:0}
+summary{cursor:pointer;font-weight:700;list-style:none}summary::-webkit-details-marker{display:none}
+summary:after{content:"+";float:right;color:var(--a)}details[open] summary:after{content:"–"}
+details p{margin:8px 0 0;color:var(--mut)}
+.son{text-align:center;background:linear-gradient(135deg,var(--a2),var(--a));color:#fff;border:0}
+.son h2{color:#fff}.son p{opacity:.9;margin:0 0 14px}.son .ara{max-width:420px;margin:0 auto}
+.dip{padding:18px 0 26px;font-size:12.5px;color:var(--mut);text-align:center}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:9990;display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid var(--line);backdrop-filter:blur(10px)}
+.bar .ara{flex:1;padding:14px;font-size:16.5px;box-shadow:none}
+.bar .w2{display:grid;place-items:center;width:54px;border-radius:14px;border:2px solid #25D366;color:#128C4A;text-decoration:none;font-size:22px}
+@media(min-width:860px){.bar{display:none}body{padding-bottom:0}}
+</style>''' % dict(r, f=S['baslik_font']))
+
+
+def govde(S, P):
+    """Sayfanın <body> içeriği (head hariç)."""
+    etiketler = ''.join('<span>%s</span>' % esc(t) for t in ROJIN_ETIKET)
+    konular = ''.join('<li>%s</li>' % esc(k) for k in P['konular'])
+    adimlar = ''.join('<div><b>%s</b><p>%s</p></div>' % (esc(a), esc(b)) for a, b in ADIMLAR)
+    subeler = ''.join('<div><b>%s</b>%s<br><small>%s</small></div>' % (esc(a), esc(b), esc(c)) for a, b, c in SUBELER)
+    sss = ''.join('<details><summary>%s</summary><p>%s</p></details>' % (esc(q), esc(c)) for q, c in (P.get('sss', []) + ORTAK_SSS))
+    wa_msg = 'Merhaba, %s için randevu bilgisi almak istiyorum.' % (P['h1'] + ' ' + P['h1b']).replace(' · Ankara', '')
+    wa = 'https://wa.me/%s?text=%s' % (WA, html.escape(__import__('urllib.parse').parse.quote(wa_msg)))
+    ekip = ('<p style="margin:12px 0 0;color:var(--mut);font-size:15px">%s</p>' % esc(P['ekip'])) if P.get('ekip') else ''
+    return '''<header class="w top">%(logo)s<a class="t" href="tel:%(tel)s" data-cta-area="lp_header">📞 %(teltxt)s</a></header>
+<main class="w">
+<section class="hero">
+<div>
+<div class="ey">Psikolog Rojin Nazik · RN Psikoloji</div>
+<h1>%(h1)s <em>%(h1b)s</em></h1>
+<p class="alt">%(alt)s</p>
+<div class="acik" data-open-status><i></i>Telefonu Selda Hanım açar · Pazartesi–Cumartesi 09:00–20:00</div>
+<div class="hero-actions" data-cta-area="lp_hero">
+<a class="ara" href="tel:%(tel)s"><span>📞</span><span>Hemen Ara · %(teltxt)s<small>Uygun saati ve ücreti Selda Hanım hemen söylesin</small></span></a>
+<a class="wa" href="%(wa)s" target="_blank" rel="noopener">WhatsApp'tan yazmayı tercih ederim</a>
+</div>
+<div class="puan"><span>★★★★★</span> <b>5.0</b> · Doktorsitesi'nde 169 danışan değerlendirmesi</div>
+</div>
+<div class="foto"><img src="%(foto)s" alt="Psikolog Rojin Nazik" width="720" height="900" fetchpriority="high"></div>
+</section>
+<section class="kart"><h2>Psikolog Rojin Nazik</h2><div class="etiket">%(etiket)s</div>
+<p style="margin:12px 0 0;color:var(--mut);font-size:15px">CNN Türk, Milliyet ve Sabah'ta uzman konuk; Psychology Times kurucusu.</p>%(ekip)s</section>
+<section class="kart"><h2>Hangi konularda destek alabilirsiniz?</h2><ul class="konu">%(konular)s</ul></section>
+<section class="kart"><h2>Randevu 3 adımda</h2><div class="adim">%(adimlar)s</div></section>
+<section class="kart"><h2>Rojin Nazik'in notu</h2><blockquote>“%(not)s”</blockquote><div class="qk">Psikolog Rojin Nazik · %(notb)s</div></section>
+<section class="kart"><h2>Görüşme yerleri</h2><div class="sube">%(subeler)s</div></section>
+<section class="kart"><h2>Sık sorulanlar</h2>%(sss)s</section>
+<section class="kart son"><h2>İlk adım tek bir telefon</h2><p>Selda Hanım size en yakın uygun saati söylesin.</p><a class="ara" href="tel:%(tel)s" data-cta-area="lp_son"><span>📞</span><span>Hemen Ara · %(teltxt)s</span></a></section>
+</main>
+<footer class="w dip">%(marka)s · Psikologlar tanı koymaz ve ilaç yazmaz. Acil bir durumda 112'yi arayın.</footer>
+<script>(function(){try{var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Istanbul',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()),g=function(t){for(var i=0;i<p.length;i++)if(p[i].type===t)return p[i].value},d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(g('weekday')),m=(+g('hour')%%24)*60+(+g('minute'));var e=document.querySelector('.acik');if(d>=1&&d<=6&&m>=540&&m<1200)e.innerHTML='<i></i>Şu an açığız · Telefonu Selda Hanım açar';else{e.innerHTML='<i style="background:#F59E0B;box-shadow:0 0 0 4px rgba(245,158,11,.2)"></i>Şu an mesai dışındayız · Pazartesi–Cumartesi 09:00–20:00';e.style.color='var(--mut)'}}catch(x){}})();</script>
+<div class="bar" data-cta-area="lp_bar"><a class="ara" href="tel:%(tel)s">📞 Selda Hanım'ı Ara</a><a class="w2" href="%(wa)s" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a></div>''' % {
+        'logo': S['logo'], 'tel': TEL, 'teltxt': TEL_TXT, 'h1': esc(P['h1']), 'h1b': esc(P['h1b']), 'alt': esc(P['alt']),
+        'wa': wa, 'foto': S['foto'], 'etiket': etiketler, 'ekip': ekip, 'konular': konular, 'adimlar': adimlar,
+        'not': esc(P['not'][1]), 'notb': esc(P['not'][0]), 'subeler': subeler, 'sss': sss, 'marka': esc(S['marka'])}
+
+
+def baslik(P, S):
+    return '%s %s | %s' % (P['h1'], P['h1b'], S['marka'])
+
+
+def aciklama(P):
+    return P['alt'][:155]
+
+
+# ---------------------------------------------------------------- Rojin sitesi: bağımsız çalıştırma
+ROJIN_HEAD = '''<!doctype html><html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KMR7XRJQ');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11469933181"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-11469933181',{url_passthrough:true});</script>
+<title>%(title)s</title>
+<meta name="description" content="%(desc)s">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#3d1e54">
+<link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" as="image" href="%(foto)s" fetchpriority="high">
+%(css)s
+<script src="/assets/js/ads-conversion.js?v=5" defer></script>
+<script src="/assets/js/after-hours.js?v=2" data-pos="bottom" defer></script>
+<script src="/assets/js/pusula.js?v=5" defer></script>
+</head><body>'''
+
+
+def rojin_yaz(kok):
+    S = ROJIN
+    for P in SAYFALAR['rojin']:
+        h = ROJIN_HEAD % {'title': esc(baslik(P, S)), 'desc': esc(aciklama(P)), 'foto': S['foto'], 'css': css(S)}
+        dosya = os.path.join(kok, P['yol'].strip('/'), 'index.html')
+        os.makedirs(os.path.dirname(dosya), exist_ok=True)
+        open(dosya, 'w', encoding='utf-8').write(h + govde(S, P) + '\n</body></html>\n')
+        print('yazıldı', P['yol'])
+
+
+# ---------------------------------------------------------------- Çayyolu sitesi: build.py içinden
+CAYYOLU_HEAD = ROJIN_HEAD.replace('<meta name="theme-color" content="#3d1e54">', '<meta name="theme-color" content="#14264A">').replace(
+    '<link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png">', '<link rel="icon" href="/favicon.svg" type="image/svg+xml">').replace(
+    '<script src="/assets/js/pusula.js?v=5" defer></script>',
+    "<script>window.PUSULA_CFG={site:'cayyolu',foto:'/assets/img/opt/psikolog-rojin-nazik-720.webp'};</script>\n<script src=\"/assets/js/pusula.js?v=5\" defer></script>")
+
+
+def cayyolu_yaz(kok):
+    S = CAYYOLU
+    yollar = []
+    for P in SAYFALAR['cayyolu']:
+        h = CAYYOLU_HEAD % {'title': esc(baslik(P, S)), 'desc': esc(aciklama(P)), 'foto': S['foto'], 'css': css(S)}
+        dosya = os.path.join(kok, P['yol'].strip('/'), 'index.html')
+        os.makedirs(os.path.dirname(dosya), exist_ok=True)
+        open(dosya, 'w', encoding='utf-8').write(h + govde(S, P) + '\n</body></html>\n')
+        yollar.append(P['yol'])
+    return yollar
+
+
+if __name__ == '__main__':
+    rojin_yaz(sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(os.path.dirname(os.path.abspath(__file__))))

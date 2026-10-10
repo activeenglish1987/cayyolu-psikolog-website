@@ -968,6 +968,9 @@ def main():
     open(os.path.join(ROOT, '404.html'), 'w', encoding='utf-8').write(
         head('Sayfa bulunamadı | %s' % BRAND, 'Aradığınız sayfa bulunamadı.', '/404.html', noindex=True) + nav_html('') +
         '<section class="page-hero"><div class="wrap"><h1>Sayfa bulunamadı</h1><p class="page-lead">Aradığınız sayfa taşınmış olabilir. Ana sayfaya dönebilir ya da bize doğrudan ulaşabilirsiniz.</p><div class="btn-row hero-btns">%s%s</div><p><a class="text-link" href="/">Ana sayfa %s</a></p></div></section>' % (btn_call(), btn_wa(), ICON['arrow']) + footer_html())
+    # Google Ads'e özel sade açılış sayfaları (noindex; site haritasına eklenmez) — _kaynak/reklam.py
+    import reklam
+    print('reklam sayfaları:', ', '.join(reklam.cayyolu_yaz(ROOT)))
     # sitemap + robots
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for p, mod in pages:
