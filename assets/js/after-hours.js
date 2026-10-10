@@ -2,12 +2,12 @@
    "Sabah Selda Hanım sizi arasın" düğmesi gösterir. Tıklanınca küçük bir pencere açılır:
    ziyaretçi cep numarasını bırakır, talep reklam kimliğiyle (gclid) birlikte psikologunubul
    panelindeki talepler listesine düşer ve sabah ilk iş aranır. WhatsApp ikinci seçenek olarak kalır.
-   Rojin Nazik ve Çayyolu sitelerinde ortak dosya (Elif sitesinde eski sürüm). */
+   Rojin Nazik, Çayyolu ve Elif Erdoğan sitelerinde ortak dosya. */
 (function () {
   var WA = '905524187973';
   var API = 'https://www.psikologunubul.com.tr/api/talep';
   var AYDINLATMA = 'https://www.psikologunubul.com.tr/kvkk-aydinlatma';
-  var SITE = /cayyolu/.test(location.hostname) ? 'cayyolu' : 'rojin';
+  var SITE = /cayyolu/.test(location.hostname) ? 'cayyolu' : /eliferdogan/.test(location.hostname) ? 'elif' : 'rojin';
   var POS = (document.currentScript && document.currentScript.getAttribute('data-pos')) || 'top';
   var day, mins;
   try {

@@ -15,7 +15,7 @@
    Ayar (isteğe bağlı, bu dosyadan ÖNCE):
      window.PUSULA_CFG = { site: 'rojin' | 'cayyolu', api: '...', foto: '...' }
    Sayfada herhangi bir öğeye data-pusula eklemek onu açar.
-   Rojin ve Çayyolu sitelerinde aynı dosya kullanılır.
+   Rojin, Çayyolu ve Elif Erdoğan sitelerinde aynı dosya kullanılır.
    ============================================================ */
 (function () {
   'use strict';
@@ -24,10 +24,13 @@
   w.__pusula = true;
 
   var CFG = w.PUSULA_CFG || {};
-  var SITE = CFG.site === 'cayyolu' ? 'cayyolu' : 'rojin';
+  var SITE = CFG.site === 'cayyolu' || CFG.site === 'elif' ? CFG.site : 'rojin';
   var API = CFG.api || 'https://www.psikologunubul.com.tr/api/pusula';
   var RN = SITE === 'rojin' ? '' : 'https://psikologrojinnazik.com';
-  var FOTO = CFG.foto || (RN || '') + '/images/brand/rojin-nazik-portrait-800.webp';
+  var EE = SITE === 'elif' ? '' : 'https://psikologeliferdogan.com';
+  // Sitenin ana uzmanı (giriş düğmesi, bant, hatırlatma fotoğrafı)
+  var FOTO = CFG.foto || (SITE === 'elif' ? '/assets/elif/team-elif-erdogan.webp' : RN + '/images/brand/rojin-nazik-portrait-800.webp');
+  var ELIF_FOTO = CFG.elifFoto || (SITE === 'elif' ? FOTO : SITE === 'cayyolu' ? '/assets/img/team-elif-erdogan.webp' : '/images/brand/elif-erdogan-720.webp');
   var TEL = 'tel:+905524187973', TEL_TXT = '0552 418 79 73', WA = '905524187973';
   // Telefonu açan gerçek kişi. Fotoğraf gelene kadar baş harf gösterilir: PUSULA_CFG.seldaFoto
   var SELDA = 'Selda Hanım', SELDA_FOTO = CFG.seldaFoto || '';
@@ -41,7 +44,7 @@
     { k: 'cift', i: '💞', t: 'Eşim / partnerim ve ben', s: 'Çift ve ilişki görüşmesi' }
   ];
   var KONU = {
-    kendim: [['kaygi', 'Kaygı ve stres'], ['panik', 'Panik atak'], ['mutsuzluk', 'Mutsuzluk, isteksizlik'], ['iliski', 'İlişki sorunları'], ['ayrilik', 'Boşanma / ayrılık'], ['yas', 'Yas ve kayıp'], ['ofke', 'Öfke'], ['ozguven', 'Özgüven'], ['dusunce', 'Aşırı düşünme'], ['diger', 'Adını tam koyamıyorum']],
+    kendim: [['kaygi', 'Kaygı ve stres'], ['panik', 'Panik atak'], ['mutsuzluk', 'Mutsuzluk, isteksizlik'], ['iliski', 'İlişki sorunları'], ['ayrilik', 'Boşanma / ayrılık'], ['yas', 'Yas ve kayıp'], ['ofke', 'Öfke'], ['ozguven', 'Özgüven'], ['dusunce', 'Aşırı düşünme'], ['test', 'Psikolojik test / MMPI'], ['diger', 'Adını tam koyamıyorum']],
     cocugum: [['davranis', 'Öfke ve davranış'], ['okul', 'Okul ve ders'], ['korku', 'Kaygı ve korkular'], ['uyku', 'Uyku sorunları'], ['bosanma', 'Boşanma sürecinde çocuğum'], ['ayrilma', 'Ayrılma kaygısı, okula başlama'], ['diger', 'Adını tam koyamıyorum']],
     ergen: [['iletisim', 'Bizimle konuşmuyor'], ['sinav', 'Sınav kaygısı'], ['icekapanma', 'İçe kapanma'], ['ofke', 'Öfke'], ['ekran', 'Telefon / ekran'], ['ozguven', 'Özgüven'], ['diger', 'Adını tam koyamıyorum']],
     cift: [['iletisim', 'İletişim kuramıyoruz'], ['tartisma', 'Sık tartışıyoruz'], ['guven', 'Güven sorunu'], ['uzaklasma', 'Birbirimizden uzaklaştık'], ['evlilikoncesi', 'Evlilik öncesi'], ['bosanma', 'Boşanma kararı'], ['diger', 'Adını tam koyamıyoruz']]
@@ -83,11 +86,59 @@
     online: ['/online-terapi/', 'Online terapi yüz yüzeden nasıl farklı?', 'Bazı danışanların kendi ortamlarından katıldıklarında daha rahat konuşabildiklerini, bazılarının ise yüz yüze görüşmede kendisini daha iyi hissettiğini gözlemliyorum. Online görüşmenin uygunluğunu kişinin ihtiyacı ve koşulları üzerinden değerlendiriyorum.']
   };
   var NOT_ESLE = {
-    kendim: { kaygi: 'kaygi1', panik: 'panik', mutsuzluk: 'degisim', iliski: 'cift3', ayrilik: 'bosanma1', yas: 'gitmeli', ofke: 'degisim', ozguven: 'terapi', dusunce: 'kaygi2', diger: 'ilk' },
+    kendim: { kaygi: 'kaygi1', panik: 'panik', mutsuzluk: 'degisim', iliski: 'cift3', ayrilik: 'bosanma1', yas: 'gitmeli', ofke: 'degisim', ozguven: 'terapi', dusunce: 'kaygi2', test: 'terapi', diger: 'ilk' },
     cocugum: { davranis: 'cocuk1', okul: 'cocuk2', korku: 'cocuk3', uyku: 'cocuk2', bosanma: 'bosanma2', ayrilma: 'cocuk3', diger: 'cocuk1' },
     ergen: { iletisim: 'ergen1', sinav: 'ergen2', icekapanma: 'ergen2', ofke: 'ergen1', ekran: 'ergen1', ozguven: 'ergen2', diger: 'ergen1' },
     cift: { iletisim: 'cift1', tartisma: 'cift3', guven: 'cift2', uzaklasma: 'uzak', evlilikoncesi: 'cift2', bosanma: 'bosanma1', diger: 'cift1' }
   };
+  /* ---------- Psikolog Elif Erdoğan'ın sitesinde yayımlanmış kendi notları ---------- */
+  var ENOT = {
+    oyun1: ['/hizmetler/oyun-terapisi', 'Oyunu nasıl değerlendiriyorum?', 'Çocuk bazen söyleyemediği veya adını koyamadığı bir duyguyu oyununda, seçimlerinde veya tekrar eden temalarında gösterebiliyor. Bu nedenle oyunu yalnızca çocuğun eğlendiği bir bölüm olarak değil, onu anlamanın yollarından biri olarak değerlendiriyorum.'],
+    oyun2: ['/hizmetler/oyun-terapisi', 'Ailelerin en sık yanlış anladığı konu', 'Oyun terapisiyle ilgili ailelerin en sık yanlış anlayabildiği konulardan biri, çocuğun görüşme sırasında yalnızca oyun oynadığının düşünülmesi. Oysa oyun, çocukların duygularını ve yaşadıklarını ifade edebildiği doğal yollardan biridir.'],
+    oyun3: ['/hizmetler/oyun-terapisi', 'Süreç yalnızca çocukla değil', 'Çocuğun yaşadığı güçlükleri anlamak için aile ilişkilerini ve günlük yaşam koşullarını da değerlendirmek gerekebiliyor. Bu nedenle ebeveynlerle iş birliğine ve gerekli durumlarda ebeveyn görüşmelerine önem veriyorum.'],
+    ergen1: ['/hizmetler/ergen-psikoterapisi', 'Ergenlerle ilk görüşmede', 'Ergenlerle yaptığım ilk görüşmelerde en çok önem verdiğim konu, kendilerini yargılanmadan ifade edebilecekleri bir ortam oluşturmak. Bu nedenle hemen sorunlara odaklanmak yerine önce birbirimizi tanımaya ve güven ilişkisi kurmaya özen gösteriyorum.'],
+    ergen2: ['/hizmetler/ergen-psikoterapisi', 'Davranışın öncesine bakmak', 'İçe kapanma, öfke veya derslerden uzaklaşmanın kendisine odaklanmak yerine bunun hangi dönemlerde arttığına ve öncesinde neler olduğuna bakmak daha fazla bilgi verebiliyor. Bu nedenle ergeni yalnızca ‘değişmesi gereken kişi’ olarak değerlendirmemeye dikkat ediyorum.'],
+    ergen3: ['/hizmetler/ergen-psikoterapisi', 'Gizlilik ve güven', 'Görüşmenin başında gizliliğin sınırlarını, güvenlik ve yasal sorumluluklarla ilgili istisnaları yaşlarına uygun şekilde açıklamayı önemsiyorum. Gencin kendisini güvende hissedebilmesi, görüşme sürecinin önemli parçalarından biri.'],
+    cift: ['/hizmetler/cift-iliski-danismanligi', 'Çiftlerde sık gördüğüm döngü', 'Bir tarafın kendisini anlatmak için daha fazla üzerine gitmesi, diğer tarafın ise gerilimi azaltmak için daha fazla geri çekilmesi. İki taraf da çoğu zaman ilişkiyi korumaya çalışırken birbirlerinde tam ters etkiyi oluşturabiliyor.'],
+    mmpi1: ['/blog/mmpi-testi-nedir', 'MMPI hakkında en yanlış beklenti', 'MMPI konusunda en sık karşılaştığım yanlış beklentilerden biri testin kişiye tek başına kesin bir tanı koyacağı düşüncesi. Test benim için kişiyi bir etikete yerleştiren değil, değerlendirmeyi destekleyen araçlardan biridir.'],
+    mmpi2: ['/blog/mmpi-testi-nedir', 'Doğru cevap kaygısı', 'Bu testte amaç başarılı olmak ya da doğru cevapları bulmak değil, kişinin kendisini mümkün olduğunca doğru yansıtabilmesi. Bu nedenle uygulama öncesinde testin amacı ve nasıl yanıtlanması gerektiği hakkında bilgilendirme yapmayı önemsiyorum.']
+  };
+  var ENOT_ESLE = {
+    kendim: { test: 'mmpi1', iliski: 'cift', diger: 'mmpi2' },
+    cocugum: { davranis: 'oyun1', okul: 'oyun3', korku: 'oyun1', uyku: 'oyun3', bosanma: 'oyun3', ayrilma: 'oyun2', diger: 'oyun2' },
+    ergen: { iletisim: 'ergen1', sinav: 'ergen2', icekapanma: 'ergen2', ofke: 'ergen2', ekran: 'ergen1', ozguven: 'ergen1', diger: 'ergen3' },
+    cift: { iletisim: 'cift', tartisma: 'cift', guven: 'cift', uzaklasma: 'cift', evlilikoncesi: 'cift', bosanma: 'cift', diger: 'cift' }
+  };
+  var ENEDEN = {
+    kendim: 'Yetişkinlerle bilişsel ve davranışçı yaklaşımla çalışır; MMPI dahil psikolojik test ve değerlendirme uygular.',
+    cocugum: 'Çocuklarla oyun terapisi ve gelişimsel değerlendirme araçlarıyla çalışır; ebeveynlerle iş birliğine önem verir.',
+    ergen: 'Ergenlerle önce yargılanmadan konuşulabilen, güvenli bir ilişki kurmayı önemser.',
+    cift: 'Çiftlerle tekrar eden ilişki döngülerini görünür kılmaya odaklanarak çalışır.'
+  };
+
+  // Hangi uzman önerilir? Elif sitesi: yalnız Elif Erdoğan.
+  // Rojin ve Çayyolu: ağırlık Rojin Nazik'te; küçük çocuk (oyun terapisi), ergen sınav kaygısı ve
+  // psikolojik test (MMPI) Elif Erdoğan'a.
+  function uzmanSec(x) {
+    if (SITE === 'elif') return 'elif';
+    if (x.konu === 'test') return 'elif';
+    if (x.kim === 'cocugum' && x.yas === '3-6') return 'elif';
+    if (x.kim === 'ergen' && x.konu === 'sinav') return 'elif';
+    return 'rojin';
+  }
+  function uzmanProfil(u, x) {
+    if (u === 'elif') {
+      var en = ENOT[ENOT_ESLE[x.kim][x.konu]];
+      return { ad: 'Psikolog Elif Erdoğan', kisa: 'Elif Hanım', unvan: 'Psikolog · RN Psikoloji', foto: ELIF_FOTO, notlar: 'Elif Erdoğan\'ın notları taranıyor',
+        etiket: ['Bilişsel davranışçı terapi (DATEM)', 'Oyun terapisi', 'MMPI ve psikolojik test', 'Yetişkin · ergen · çift'],
+        neden: ENEDEN[x.kim], not: en, notTaban: EE };
+    }
+    var rn = NOT[(x.yer === 'online' && x.konu === 'diger') ? 'online' : NOT_ESLE[x.kim][x.konu]] || NOT.ilk;
+    return { ad: 'Psikolog Rojin Nazik', kisa: 'Rojin Hanım', unvan: 'Psikolog ve Aile Danışmanı · RN Psikoloji kurucusu', foto: SITE === 'rojin' ? FOTO : RN + '/images/brand/rojin-nazik-portrait-800.webp',
+      etiket: ['15+ yıllık mesleki deneyim', 'Şema terapi eğitimi', '3 kitap yazarı', 'AB Psikologlar Derneği Genel Başkanı'],
+      neden: NEDEN[x.kim], not: rn, notTaban: RN, notlar: 'Rojin Nazik\'in notları taranıyor' };
+  }
+
   var NEDEN = {
     kendim: 'Yetişkinlerle bireysel görüşmelerde bilişsel davranışçı yaklaşım ve şema terapi eğitimiyle çalışır.',
     cocugum: 'Çocuk danışmanlığında ebeveynle birlikte çalışır; ilk görüşme genellikle sizinle yapılır.',
@@ -131,6 +182,8 @@
   /* ---------- Görünüm ---------- */
   var TEMA = SITE === 'cayyolu'
     ? '--pu-a:#14264A;--pu-a2:#2C4A86;--pu-hl:#E9A23B;--pu-bg:#F2F6FB;--pu-ink:#18223A;--pu-mut:#566179;--pu-line:#DCE4F0;'
+    : SITE === 'elif'
+    ? '--pu-a:#0e9e79;--pu-a2:#062b20;--pu-hl:#34D399;--pu-bg:#F3FBF7;--pu-ink:#062b20;--pu-mut:#4b635a;--pu-line:#D5EDE3;'
     : '--pu-a:#6B3A8C;--pu-a2:#3d1e54;--pu-hl:#C9A06B;--pu-bg:#FBF8F2;--pu-ink:#2A1F2D;--pu-mut:#766b78;--pu-line:#E8DFD0;';
   var CSS = ''
     + '.pu-root{' + TEMA + '--pu-call:#16A34A;position:fixed;inset:0;z-index:2147483000;display:flex;align-items:flex-end;justify-content:center;font-family:inherit;color:var(--pu-ink)}'
@@ -364,12 +417,13 @@
     var konuEtiket = (KONU[s.kim].filter(function (x) { return x[0] === s.konu; })[0] || [])[1] || '';
     var kimEtiket = KIM.filter(function (x) { return x.k === s.kim; })[0].t;
     var yerEtiket = YER.filter(function (x) { return x.k === s.yer; })[0].t;
-    olay('pusula_analiz');
+    var uz = uzmanSec(s), U = uzmanProfil(uz, s);
+    olay('pusula_analiz', { pusula_uzman: uz });
 
     // 1) Analiz ekranı
-    goster('<div class="pu-orbw"><div class="pu-orb"><img src="' + esc(FOTO) + '" alt=""></div></div>'
+    goster('<div class="pu-orbw"><div class="pu-orb"><img src="' + esc(U.foto) + '" alt=""></div></div>'
       + '<h2 class="pu-h" style="text-align:center">Yol haritanız hazırlanıyor</h2>'
-      + '<ul class="pu-lines"><li><i>✓</i>Seçimleriniz eşleştiriliyor</li><li><i>✓</i>Rojin Nazik\'in notları taranıyor</li><li><i>✓</i>İlk görüşme planınız yazılıyor</li></ul>', 92, false);
+      + '<ul class="pu-lines"><li><i>✓</i>Seçimleriniz eşleştiriliyor</li><li><i>✓</i>' + esc(U.notlar) + '</li><li><i>✓</i>İlk görüşme planınız yazılıyor</li></ul>', 92, false);
     var li = body.querySelectorAll('.pu-lines li'), n = 0;
     var tik = setInterval(function () {
       if (n > 0) li[n - 1].classList.add('ok');
@@ -384,7 +438,7 @@
     function yedegeGec() { if (!yedek) { yedek = true; metin = YEDEK[s.kim]; bitti = true; } }
 
     try {
-      fetch(API, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ kim: s.kim, konu: s.konu, yas: s.yas, yer: s.yer }), signal: ctrl && ctrl.signal })
+      fetch(API, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ kim: s.kim, konu: s.konu, yas: s.yas, yer: s.yer, uzman: uz }), signal: ctrl && ctrl.signal })
         .then(function (r) {
           if (!r.ok) throw new Error('durum ' + r.status);
           if (!r.body || !r.body.getReader || !w.TextDecoder) return r.text().then(function (t) { metin = t; bitti = true; });
@@ -416,16 +470,16 @@
     istek.abort = function () { clearInterval(hazirMi); eski(); };
 
     function sonucCiz() {
-      var not = NOT[(s.yer === 'online' && s.konu === 'diger') ? 'online' : NOT_ESLE[s.kim][s.konu]] || NOT.ilk;
+      var not = U.not;
       var ozet = [kimEtiket, yasEtiket, konuEtiket, yerEtiket].filter(Boolean).join(' · ');
       // goster() açık isteği iptal eder; akış sürerken sonuç kartına geçiyoruz, istek yaşamalı
       var tut = istek; istek = null;
       goster('<div class="pu-ey">Yol haritanız hazır</div>'
         + '<p class="pu-p" style="margin:6px 0 14px">' + esc(ozet) + '</p>'
-        + '<div class="pu-exp"><div class="pu-ph"><img src="' + esc(FOTO) + '" alt="Psikolog Rojin Nazik"></div><div><small>Sizin için önerilen uzman</small><b>Psikolog Rojin Nazik</b><span>Psikolog ve Aile Danışmanı · RN Psikoloji kurucusu</span></div></div>'
-        + '<div class="pu-tags"><em>15+ yıllık mesleki deneyim</em><em>Şema terapi eğitimi</em><em>3 kitap yazarı</em><em>AB Psikologlar Derneği Genel Başkanı</em></div>'
-        + '<p class="pu-why">' + esc(NEDEN[s.kim]) + '</p>'
-        + '<figure class="pu-q"><p>' + esc(not[2]) + '</p><small><span>Psikolog Rojin Nazik · ' + esc(not[1]) + '</span><a href="' + RN + not[0] + '" target="_blank" rel="noopener">Notun tamamı →</a></small></figure>'
+        + '<div class="pu-exp"><div class="pu-ph"><img src="' + esc(U.foto) + '" alt="' + esc(U.ad) + '"></div><div><small>Sizin için önerilen uzman</small><b>' + esc(U.ad) + '</b><span>' + esc(U.unvan) + '</span></div></div>'
+        + '<div class="pu-tags">' + U.etiket.map(function (t) { return '<em>' + esc(t) + '</em>'; }).join('') + '</div>'
+        + '<p class="pu-why">' + esc(U.neden) + '</p>'
+        + (not ? '<figure class="pu-q"><p>' + esc(not[2]) + '</p><small><span>' + esc(U.ad) + ' · ' + esc(not[1]) + '</span><a href="' + U.notTaban + not[0] + '" target="_blank" rel="noopener">Notun tamamı →</a></small></figure>' : '')
         + '<section class="pu-ai" aria-live="polite"><div class="pu-ai-h"><i></i><span>Size özel ilk görüşme yol haritası</span></div><div class="pu-ai-b"></div></section>'
         + '<div class="pu-facts">'
         + '<div class="pu-fact"><span>📍</span><span>' + esc(SUBE[s.yer]) + '</span></div>'
@@ -434,7 +488,7 @@
         + '<p class="pu-note">Bu yol haritası genel bilgilendirmedir; tanı ya da tedavi önerisi değildir. Acil bir durumda 112\'yi arayın.</p>', 100, true);
       istek = tut;
       cta();
-      olay('pusula_sonuc', { pusula_kaynak_metin: yedek ? 'hazir' : 'kisiye_ozel' });
+      olay('pusula_sonuc', { pusula_uzman: uz, pusula_kaynak_metin: yedek ? 'hazir' : 'kisiye_ozel' });
       yaz();
     }
 
@@ -491,6 +545,18 @@
 
   function yerlestir() {
     stilEkle();
+    yerlestirOgeler();
+    // Tek sayfalı sitede (Elif) içerik sonradan çizilir ve sayfa değişince yeniden çizilir: eksilen öğeyi geri koy
+    if (w.MutationObserver) {
+      var bekleyen = false;
+      new MutationObserver(function () {
+        if (bekleyen) return; bekleyen = true;
+        setTimeout(function () { bekleyen = false; yerlestirOgeler(); }, 400);
+      }).observe(d.body, { childList: true, subtree: true });
+    }
+  }
+
+  function yerlestirOgeler() {
     // 1) Giriş bölümündeki arama düğmelerinin altına
     var hero = d.querySelector(CFG.heroSecici || '.hero-actions, .hero .cta-row, .hero-ctas');
     if (hero && !d.querySelector('.pu-launch')) {
@@ -499,11 +565,13 @@
     }
     // 2) Sayfa sonunda, alt bilgiden önce bant
     var ft = d.querySelector('footer, .site-footer');
-    if (ft && !d.querySelector('.pu-band')) {
+    if (ft && !d.querySelector('.pu-band') && !(root && root.contains(ft))) {
       var bant = el('<section class="pu-band" aria-label="Size özel yol haritası"><div class="pu-band-in"><img src="' + esc(FOTO) + '" alt="" loading="lazy"><div class="pu-band-t"><b>Nereden başlayacağınızı bilmiyor musunuz?</b><span>3 dokunuşta size özel ilk görüşme yol haritanızı görün. İsim ya da telefon istemiyoruz.</span></div><button type="button" data-pusula="bant">Yol haritamı göster →</button></div></section>');
       ft.parentNode.insertBefore(bant, ft);
     }
     // 3) Sayfanın ortasına gelince bir kez, nazik bir hatırlatma
+    if (w.__puToastIzle) return;
+    w.__puToastIzle = true;
     var gosterildi = false;
     try { gosterildi = sessionStorage.getItem('pu_toast') === '1'; } catch (e) {}
     if (!gosterildi) {
@@ -548,7 +616,7 @@
     w.__jivoKapali = true;
     d.documentElement.classList.add('rn-reklam');
     var rs = d.createElement('style');
-    rs.textContent = 'html.rn-reklam .rn-ig-float,html.rn-reklam .rn-ig,html.rn-reklam .instagram-ribbon,html.rn-reklam jdiv{display:none!important}';
+    rs.textContent = 'html.rn-reklam .rn-ig-float,html.rn-reklam .rn-ig,html.rn-reklam .instagram-ribbon,html.rn-reklam .el-ig-float,html.rn-reklam .el-ig,html.rn-reklam jdiv{display:none!important}';
     (d.head || d.documentElement).appendChild(rs);
   }
 
