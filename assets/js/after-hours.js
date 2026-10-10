@@ -37,6 +37,8 @@
     + '@media(min-width:861px){.ah-bar.ah-bottom{left:24px;right:auto;bottom:24px;max-width:430px}}'
     + '.ah-inline{display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding:10px 16px;border-radius:999px;border:0;cursor:pointer;background:#17A34A;color:#fff!important;font:700 15px/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none}'
     + '.ah-inline:hover{filter:brightness(.95)}'
+    // Şerit açıkken sol alttaki Instagram simgesi gizlenir (üst üste binmesin)
+    + 'html.ah-acik .rn-ig-float,html.ah-acik .el-ig-float{display:none!important}'
     + '.ah-sheet{position:fixed;inset:0;z-index:2147483001;display:flex;align-items:flex-end;justify-content:center;background:rgba(18,12,24,.55);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:#18223A}'
     + '@media(min-width:700px){.ah-sheet{align-items:center}}'
     + '.ah-card{position:relative;width:100%;max-width:440px;background:#fff;border-radius:24px 24px 0 0;padding:22px 20px calc(20px + env(safe-area-inset-bottom));box-shadow:0 -16px 50px rgba(0,0,0,.25)}'
@@ -121,6 +123,17 @@
     return b;
   }
 
+  // Sayfanın alttaki sabit arama çubuğunun (varsa) gerçek yüksekliği: şerit onun üstüne yerleşir
+  function altCubuk() {
+    var m = 0, L = document.querySelectorAll('.rn-sticky-bar,.sticky-bar,.mobile-cta-bar,.mobile-leadbar,.bar');
+    for (var i = 0; i < L.length; i++) {
+      var cs = getComputedStyle(L[i]); if (cs.position !== 'fixed' || cs.display === 'none' || cs.visibility === 'hidden' || +cs.opacity === 0) continue;
+      var r = L[i].getBoundingClientRect(); if (r.height < 20 || r.bottom < innerHeight - 40) continue;
+      m = Math.max(m, innerHeight - r.top);
+    }
+    return m;
+  }
+
   function init() {
     var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
     var dismissed = false;
@@ -129,9 +142,16 @@
       var bar = document.createElement('div'); bar.className = 'ah-bar' + (POS === 'bottom' ? ' ah-bottom' : ''); bar.setAttribute('role', 'note');
       bar.appendChild(btn('<span>🌙 Şu an mesai dışındayız.</span><b>' + kisa + ' Selda Hanım sizi arasın →</b>', 'ah-go', 'after_hours_bar'));
       var x = document.createElement('button'); x.type = 'button'; x.className = 'ah-x'; x.setAttribute('aria-label', 'Kapat'); x.innerHTML = '×';
-      x.onclick = function () { bar.parentNode && bar.parentNode.removeChild(bar); try { sessionStorage.setItem('ah_kapat', '1'); } catch (e) {} };
+      x.onclick = function () { bar.parentNode && bar.parentNode.removeChild(bar); document.documentElement.classList.remove('ah-acik'); try { sessionStorage.setItem('ah_kapat', '1'); } catch (e) {} };
       bar.appendChild(x);
-      if (POS === 'bottom') document.body.appendChild(bar); else document.body.insertBefore(bar, document.body.firstChild);
+      if (POS === 'bottom') {
+        document.body.appendChild(bar);
+        document.documentElement.classList.add('ah-acik');
+        var yer = function () { var h = altCubuk(); bar.style.bottom = h ? (h + 10) + 'px' : ''; };
+        var bekle = false, tetik = function () { if (bekle) return; bekle = true; requestAnimationFrame(function () { bekle = false; yer(); }); };
+        yer(); setTimeout(yer, 800); setTimeout(yer, 2500);
+        window.addEventListener('scroll', tetik, { passive: true }); window.addEventListener('resize', tetik);
+      } else document.body.insertBefore(bar, document.body.firstChild);
     }
     // "Açık / kapalı" yazan alanların altına düğme
     var spots = document.querySelectorAll('[data-open-status]');

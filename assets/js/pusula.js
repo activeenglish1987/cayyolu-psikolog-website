@@ -639,9 +639,22 @@
     function balonKonum() {
       var gizle = innerWidth < 861 && (scrollY || pageYOffset || 0) < 520 && !panel && !davet;
       kutu.classList.toggle('gizli', gizle);
+      // Alttaki sabit arama çubuğu (her sitede farklı yükseklik) varsa balon onun üstünde durur
+      var h = altCubuk(); kutu.style.bottom = h ? (h + 12) + 'px' : '';
     }
+    function altCubuk() {
+      var m = 0, L = d.querySelectorAll('.rn-sticky-bar,.sticky-bar,.mobile-cta-bar,.mobile-leadbar,.bar');
+      for (var i = 0; i < L.length; i++) {
+        var cs = getComputedStyle(L[i]); if (cs.position !== 'fixed' || cs.display === 'none' || cs.visibility === 'hidden' || +cs.opacity === 0) continue;
+        var r = L[i].getBoundingClientRect(); if (r.height < 20 || r.bottom < innerHeight - 40) continue;
+        m = Math.max(m, innerHeight - r.top);
+      }
+      return m;
+    }
+    setTimeout(balonKonum, 800); setTimeout(balonKonum, 2500);
     balonKonum();
-    w.addEventListener('scroll', balonKonum, { passive: true });
+    var bkBekle = false;
+    w.addEventListener('scroll', function () { if (bkBekle) return; bkBekle = true; requestAnimationFrame(function () { bkBekle = false; balonKonum(); }); }, { passive: true });
     w.addEventListener('resize', balonKonum);
 
     function kapatDavet() { if (davet) { var x = davet; davet = null; x.classList.remove('on'); setTimeout(function () { if (x.parentNode) x.parentNode.removeChild(x); balonKonum(); }, 350); } }
