@@ -169,7 +169,7 @@
       var g = function (t) { for (var i = 0; i < p.length; i++) if (p[i].type === t) return p[i].value; return ''; };
       var day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(g('weekday'));
       var m = (parseInt(g('hour'), 10) % 24) * 60 + parseInt(g('minute'), 10);
-      return { acik: day >= 1 && day <= 6 && m >= 540 && m < 1200, pazartesi: (day === 6 && m >= 1200) || day === 0 };
+      return { acik: day >= 1 && day <= 6 && m >= 540 && m < 1200, pazartesi: (day === 6 && m >= 1200) || day === 0, sabahOnce: m < 540 };
     } catch (e) { return { acik: true }; }
   }
 
@@ -286,15 +286,8 @@
     + '.pu-band-t{flex:1;min-width:200px;position:relative;z-index:1}'
     + '.pu-band-t b{display:block;font-size:19px;line-height:1.3}.pu-band-t span{display:block;opacity:.88;font-size:14px;margin-top:4px}'
     + '.pu-band button{position:relative;z-index:1;padding:14px 20px;border-radius:999px;border:0;background:#fff;color:var(--pu-a2);font:inherit;font-weight:800;font-size:15px;cursor:pointer}'
-    + '.pu-toast{' + TEMA + 'position:fixed;left:12px;right:12px;bottom:calc(150px + env(safe-area-inset-bottom));z-index:9997;display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:18px;background:#fff;box-shadow:0 18px 44px -14px rgba(0,0,0,.35);border:1px solid var(--pu-line);transform:translateY(30px);opacity:0;transition:all .45s cubic-bezier(.2,.9,.25,1);font-family:inherit;color:var(--pu-ink)}'
-    + '.pu-toast.on{transform:none;opacity:1}'
-    + '@media(min-width:861px){.pu-toast{left:auto;right:24px;bottom:110px;max-width:380px}}'
-    + '.pu-toast img{width:46px;height:46px;border-radius:50%;object-fit:cover;flex:none}'
-    + '.pu-toast button.go{flex:1;text-align:left;border:0;background:none;font:inherit;cursor:pointer;color:inherit;padding:0}'
-    + '.pu-toast b{display:block;font-size:14.5px;color:var(--pu-a2)}.pu-toast span{display:block;font-size:12.5px;color:var(--pu-mut)}'
-    + '.pu-toast button.x{border:0;background:none;font-size:20px;color:var(--pu-mut);cursor:pointer;padding:4px 6px}'
     + 'html.pu-lock,html.pu-lock body{overflow:hidden!important}'
-    + '@media(prefers-reduced-motion:reduce){.pu-root *,.pu-launch,.pu-toast{animation:none!important;transition:none!important}}';
+    + '@media(prefers-reduced-motion:reduce){.pu-root *,.pu-launch,.pu-sb *{animation:none!important;transition:none!important}}';
 
   var stil = false;
   function stilEkle() {
@@ -569,30 +562,185 @@
       var bant = el('<section class="pu-band" aria-label="Size özel yol haritası"><div class="pu-band-in"><img src="' + esc(FOTO) + '" alt="" loading="lazy"><div class="pu-band-t"><b>Nereden başlayacağınızı bilmiyor musunuz?</b><span>3 dokunuşta size özel ilk görüşme yol haritanızı görün. İsim ya da telefon istemiyoruz.</span></div><button type="button" data-pusula="bant">Yol haritamı göster →</button></div></section>');
       ft.parentNode.insertBefore(bant, ft);
     }
-    // 3) Sayfanın ortasına gelince bir kez, nazik bir hatırlatma
-    if (w.__puToastIzle) return;
-    w.__puToastIzle = true;
-    var gosterildi = false;
-    try { gosterildi = sessionStorage.getItem('pu_toast') === '1'; } catch (e) {}
-    if (!gosterildi) {
-      var izle = function () {
-        var h = d.documentElement.scrollHeight - innerHeight;
-        if (h > 600 && (scrollY || pageYOffset) / h > 0.45) { w.removeEventListener('scroll', izle); tost(); }
-      };
-      w.addEventListener('scroll', izle, { passive: true });
-    }
+    // 3) Sağ altta "Soru sorun" kutusu (eski canlı sohbetin yerine) ve sayfaya göre akıllı davet
+    if (w.__puSoru) return;
+    w.__puSoru = true;
+    soruKur();
   }
 
-  function tost() {
-    try { sessionStorage.setItem('pu_toast', '1'); } catch (e) {}
-    if (root && root.parentNode) return;
-    var t = el('<div class="pu-toast" role="note"><img src="' + esc(FOTO) + '" alt=""><button type="button" class="go" data-pusula="toast"><b>Size özel yol haritanız 60 saniyede</b><span>Uzmanınızı ve ilk görüşmenizi görün →</span></button><button type="button" class="x" aria-label="Kapat">×</button></div>');
-    d.body.appendChild(t);
-    requestAnimationFrame(function () { requestAnimationFrame(function () { t.classList.add('on'); }); });
-    var kaldir = function () { t.classList.remove('on'); setTimeout(function () { if (t.parentNode) t.parentNode.removeChild(t); }, 400); };
-    t.querySelector('.x').onclick = kaldir;
-    t.querySelector('.go').addEventListener('click', kaldir);
-    setTimeout(kaldir, 14000);
+  /* ---------- Soru sorun kutusu ----------
+     Sık sorulan sorulara anında yanıt; her yanıtın sonunda arama düğmesi; isteyen numarasını bırakır,
+     talep psikologunubul paneline düşer (mesai içinde "şimdi", dışında "sabah 09:00"). Canlı kişi gibi
+     davranmaz: yanıtlar RN Psikoloji'nin hazır bilgileridir, telefonu Selda Hanım açar. */
+  var TALEP_API = CFG.talepApi || 'https://www.psikologunubul.com.tr/api/talep';
+  var AYDINLATMA = 'https://www.psikologunubul.com.tr/kvkk-aydinlatma';
+  var EKIP = SITE === 'elif' ? 'Psikolog Elif Erdoğan' : 'Psikolog Rojin Nazik ve Psikolog Elif Erdoğan';
+  var SORULAR = [
+    ['ucret', 'Ücret ne kadar?', 'Seans ücretini Selda Hanım telefonda net olarak söylüyor. Aynı aramada ilk görüşmenin nasıl ilerleyeceğini ve size uygun saati de öğrenirsiniz.'],
+    ['randevu', 'En yakın randevu ne zaman?', 'Boş saatler gün içinde değiştiği için en doğru bilgiyi Selda Hanım verir. Aradığınızda size uygun iki saat önerir.'],
+    ['adres', 'Adres ve ulaşım', 'Yaşamkent / Çayyolu: Konutkent, Dumlupınar Blv. No:399 Kat:28 D:121 (ücretsiz otopark, Pazartesi–Cumartesi). Kızılay: Atatürk Blv. No:127 Kat:8, Bakanlıklar (Pazartesi günleri).'],
+    ['online', 'Online görüşme var mı?', 'Evet. Ankara dışından ya da yurt dışından görüntülü görüşme yapılabiliyor. Bağlantı bilgisi randevu sonrası iletiliyor.'],
+    ['ilk', 'İlk görüşmede ne olur?', 'İlk görüşme bir tanışma ve değerlendirme görüşmesidir: ne yaşadığınız, ne zamandır sürdüğü ve gününüzü nasıl etkilediği konuşulur, çalışma planı birlikte oluşturulur. Her şeyi bir anda anlatmanız gerekmez.'],
+    ['cocuk', 'Çocuğum / ergenim için', 'Çocuklarda ilk görüşme genellikle ebeveynle yapılır; ardından çocuğun yaşına uygun görüşmeler planlanır. Küçük çocuklarla oyun terapisi, ergenlerle güvenli ve yargısız bir görüşme ortamı önceliklidir.'],
+    ['gizlilik', 'Görüşmeler gizli mi?', 'Evet. Görüşmelerde konuşulanlar gizlidir; yalnız yasal zorunluluk ve can güvenliği gibi istisnalar vardır, bunlar ilk görüşmede açıkça anlatılır.'],
+    ['ekip', 'Kimlerle görüşebilirim?', 'Ekibimizde ' + EKIP + ' var. Hangi uzmanın size daha uygun olduğunu Selda Hanım ihtiyacınıza göre birlikte belirler.'],
+    ['saat', 'Çalışma saatleri', 'Pazartesi–Cumartesi 09:00–20:00. Mesai dışında numaranızı bırakırsanız Selda Hanım sabah ilk iş sizi arar.']
+  ];
+  var KONU_DAVET = [
+    [/cocuk|pedagog|okul|oyun-terapisi|bosanmayi-cocuga|kardes/, 'Çocuğunuz için 60 saniyede bir yol haritası çıkaralım mı?'],
+    [/ergen|sinav|genc/, 'Genciniz için 60 saniyede bir yol haritası çıkaralım mı?'],
+    [/cift|evlilik|iliski|aldatil|bosanma/, 'İlişkiniz için 60 saniyede bir yol haritası çıkaralım mı?'],
+    [/kaygi|anksiyete|panik|fobi|takinti|okb|stres/, 'Kaygınız için nereden başlayacağınızı 60 saniyede görelim mi?'],
+    [/fiyat|ucret/, 'Ücret ve uygun saat için Selda Hanım\'ı arayabilirsiniz, ya da önce 60 saniyelik yol haritanıza bakın.'],
+    [/test|mmpi/, 'Psikolojik test için 60 saniyede yol haritanızı görelim mi?']
+  ];
+
+  function soruKur() {
+    var m = mesai();
+    var css = ''
+      + '.pu-sb{' + TEMA + '--pu-call:#16A34A;position:fixed;right:14px;bottom:calc(88px + env(safe-area-inset-bottom));z-index:9996;font-family:inherit;color:var(--pu-ink)}'
+      + '@media(min-width:861px){.pu-sb{right:24px;bottom:24px}}'
+      + '.pu-sb-btn{position:relative;display:flex;align-items:center;gap:8px;height:56px;padding:0 6px 0 6px;border-radius:999px;border:0;cursor:pointer;background:var(--pu-a2);color:#fff;box-shadow:0 14px 30px -10px rgba(0,0,0,.45);font:inherit;font-weight:700;font-size:14px}'
+      + '.pu-sb-btn .pu-av{width:44px;height:44px;font-size:17px;box-shadow:0 0 0 2px #fff}'
+      + '.pu-sb-btn span.t{display:none;padding-right:12px}'
+      + '@media(min-width:861px){.pu-sb-btn span.t{display:inline}}'
+      + '.pu-sb-btn i{position:absolute;left:38px;top:6px;width:12px;height:12px;border-radius:50%;background:' + (m.acik ? '#22C55E' : '#F59E0B') + ';border:2px solid var(--pu-a2)}'
+      + '.pu-sb-tz{position:absolute;right:0;bottom:66px;width:min(300px,calc(100vw - 28px));padding:12px 34px 12px 14px;border-radius:16px 16px 4px 16px;background:#fff;border:1px solid var(--pu-line);box-shadow:0 18px 40px -16px rgba(0,0,0,.4);font-size:14px;line-height:1.45;cursor:pointer;opacity:0;transform:translateY(10px);transition:all .35s cubic-bezier(.2,.9,.25,1)}'
+      + '.pu-sb-tz.on{opacity:1;transform:none}'
+      + '.pu-sb-tz b{display:block;color:var(--pu-a2);margin-bottom:2px}'
+      + '.pu-sb-tz button{position:absolute;right:6px;top:6px;border:0;background:none;font-size:18px;color:var(--pu-mut);cursor:pointer;padding:2px 6px}'
+      + '.pu-sb-p{position:absolute;right:0;bottom:66px;width:min(370px,calc(100vw - 28px));max-height:min(600px,calc(100vh - 170px));display:flex;flex-direction:column;border-radius:20px;background:var(--pu-bg);border:1px solid var(--pu-line);box-shadow:0 24px 60px -18px rgba(0,0,0,.45);overflow:hidden}'
+      + '.pu-sb-h{display:flex;align-items:center;gap:10px;padding:12px 12px 12px 14px;background:linear-gradient(135deg,var(--pu-a2),var(--pu-a));color:#fff}'
+      + '.pu-sb-h b{display:block;font-size:15px}.pu-sb-h small{display:block;font-size:12px;opacity:.9}'
+      + '.pu-sb-h .pu-av{width:40px;height:40px;font-size:16px;box-shadow:0 0 0 2px #fff}'
+      + '.pu-sb-h .x{margin-left:auto;width:34px;height:34px;border-radius:50%;border:0;background:rgba(255,255,255,.18);color:#fff;font-size:20px;cursor:pointer}'
+      + '.pu-sb-b{flex:1;overflow-y:auto;padding:14px 12px;display:flex;flex-direction:column;gap:8px}'
+      + '.pu-sb-m{max-width:88%;padding:10px 12px;border-radius:14px 14px 14px 4px;background:#fff;border:1px solid var(--pu-line);font-size:14.5px;line-height:1.5;animation:pu-in .3s both}'
+      + '.pu-sb-m.ben{align-self:flex-end;border-radius:14px 14px 4px 14px;background:var(--pu-a);color:#fff;border-color:var(--pu-a)}'
+      + '.pu-sb-m.yaz{color:var(--pu-mut);font-size:13px}'
+      + '.pu-sb-c{display:flex;flex-wrap:wrap;gap:6px;padding:4px 0}'
+      + '.pu-sb-c button{padding:8px 11px;border-radius:999px;border:1.5px solid var(--pu-line);background:#fff;font:inherit;font-size:13.5px;font-weight:600;color:var(--pu-ink);cursor:pointer}'
+      + '.pu-sb-c button.vurgu{border-color:var(--pu-a);color:var(--pu-a2)}'
+      + '.pu-sb-f{padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--pu-line);display:grid;gap:7px}'
+      + '.pu-sb-f a.ara{display:flex;justify-content:center;align-items:center;gap:8px;padding:13px;border-radius:12px;background:var(--pu-call);color:#fff!important;font-weight:800;font-size:15.5px;text-decoration:none}'
+      + '.pu-sb-f button.geri{border:0;background:none;color:var(--pu-mut);font:inherit;font-size:13.5px;font-weight:600;text-decoration:underline;cursor:pointer;padding:2px}'
+      + '.pu-sb-form{display:grid;gap:7px}.pu-sb-form input{padding:12px;border-radius:12px;border:1.5px solid var(--pu-line);font:600 16px inherit}'
+      + '.pu-sb-form button{padding:12px;border-radius:12px;border:0;background:var(--pu-a2);color:#fff;font:inherit;font-weight:800;cursor:pointer}'
+      + '.pu-sb-form small{font-size:11.5px;color:var(--pu-mut)}.pu-sb-form small a{color:var(--pu-mut)}'
+      + '.pu-sb-form .err{color:#B42318;font-size:13px}'
+      + 'html.pu-lock .pu-sb{display:none}';
+    var st = d.createElement('style'); st.textContent = css; d.head.appendChild(st);
+
+    var kutu = el('<div class="pu-sb" data-cta-area="soru_kutusu"><button type="button" class="pu-sb-btn" aria-label="Soru sorun">' + seldaAvatar() + '<i></i><span class="t">Soru sorun</span></button></div>');
+    d.body.appendChild(kutu);
+    var panel = null, davet = null, etkilesti = false;
+
+    function kapatDavet() { if (davet) { var x = davet; davet = null; x.classList.remove('on'); setTimeout(function () { if (x.parentNode) x.parentNode.removeChild(x); }, 350); } }
+
+    function panelAc(kaynak) {
+      kapatDavet(); etkilesti = true;
+      if (panel) { panel.parentNode.removeChild(panel); panel = null; return; }
+      olay('soru_kutusu_acildi', { pusula_kaynak: kaynak || 'balon' });
+      var mm = mesai();
+      panel = el('<div class="pu-sb-p" role="dialog" aria-label="Soru sorun"><div class="pu-sb-h">' + seldaAvatar() + '<div><b>RN Psikoloji</b><small>' + (mm.acik ? '🟢 Şu an açığız · Telefonu Selda Hanım açar' : '🌙 Mesai dışı · Sabah 09:00\'da arıyoruz') + '</small></div><button type="button" class="x" aria-label="Kapat">×</button></div><div class="pu-sb-b"></div><div class="pu-sb-f"></div></div>');
+      kutu.appendChild(panel);
+      panel.querySelector('.x').onclick = function () { panelAc(); };
+      var govde = panel.querySelector('.pu-sb-b'), alt = panel.querySelector('.pu-sb-f');
+      function mesaj(t, sinif) { var b = d.createElement('div'); b.className = 'pu-sb-m' + (sinif ? ' ' + sinif : ''); b.textContent = t; govde.appendChild(b); govde.scrollTop = govde.scrollHeight; return b; }
+      function secenekler(kaydirma) {
+        var c = d.createElement('div'); c.className = 'pu-sb-c';
+        c.innerHTML = '<button type="button" class="vurgu" data-yh>✨ Bana özel yol haritası (60 sn)</button>' + SORULAR.map(function (q) { return '<button type="button" data-q="' + q[0] + '">' + esc(q[1]) + '</button>'; }).join('');
+        govde.appendChild(c); if (kaydirma !== false) govde.scrollTop = govde.scrollHeight;
+        c.querySelector('[data-yh]').onclick = function () { panelAc(); ac('soru_kutusu'); };
+        var bs = c.querySelectorAll('[data-q]');
+        for (var i = 0; i < bs.length; i++) bs[i].onclick = function () {
+          var id = this.getAttribute('data-q'), q = SORULAR.filter(function (x) { return x[0] === id; })[0];
+          titret(); if (c.parentNode) c.parentNode.removeChild(c);
+          mesaj(q[1], 'ben');
+          var y = mesaj('yazıyor…', 'yaz');
+          olay('soru_secildi', { soru: id });
+          setTimeout(function () {
+            if (y.parentNode) y.parentNode.removeChild(y);
+            var cevap = mesaj(q[2]); secenekler(false);
+            govde.scrollTop = Math.max(0, cevap.offsetTop - govde.offsetTop - 70); // soru ve cevap görünsün
+          }, REDUCED ? 0 : 650);
+        };
+      }
+      mesaj('Merhaba 👋 Merak ettiğiniz soruyu seçin, hemen yanıtlayalım. İsterseniz numaranızı bırakın, Selda Hanım sizi arasın.');
+      secenekler();
+      altCiz();
+      function altCiz() {
+        var m2 = mesai();
+        alt.innerHTML = (m2.acik ? '<a class="ara" href="' + TEL + '">📞 Selda Hanım\'ı Arayın</a>' : '')
+          + '<button type="button" class="geri">' + (m2.acik ? 'Numaramı bırakayım, beni arasınlar' : '📞 Sabah 09:00\'da beni arayın') + '</button>'
+          + (m2.acik ? '' : '<a class="ara" style="background:none;color:var(--pu-mut)!important;font-weight:600;font-size:13px;text-decoration:underline;padding:0" href="' + TEL + '">Yine de ara · ' + TEL_TXT + '</a>');
+        alt.querySelector('.geri').onclick = function () { formCiz(m2); };
+      }
+      function formCiz(m2) {
+        var saat = m2.acik ? null : (m2.pazartesi ? 'Pazartesi 09:00' : (m2.sabahOnce ? 'Bugün 09:00' : 'Yarın 09:00'));
+        alt.innerHTML = '<form class="pu-sb-form" novalidate><input type="tel" inputmode="tel" autocomplete="tel" placeholder="05xx xxx xx xx" aria-label="Cep telefonunuz" maxlength="20"><div class="err" aria-live="polite"></div><button type="submit">' + (m2.acik ? '📞 Beni arayın' : '📞 Sabah beni arayın') + '</button><small>Numaranızı yalnızca sizi aramak için kullanırız. <a href="' + AYDINLATMA + '" target="_blank" rel="noopener">Aydınlatma metni</a></small></form>';
+        var f = alt.querySelector('form'), inp = f.querySelector('input'), err = f.querySelector('.err'), btn = f.querySelector('button');
+        try { inp.focus(); } catch (e) {}
+        f.onsubmit = function (e) {
+          e.preventDefault();
+          var dg = inp.value.replace(/\D/g, '').replace(/^90/, '').replace(/^0/, '');
+          if (!/^5\d{9}$/.test(dg)) { err.textContent = 'Lütfen 05 ile başlayan cep numaranızı yazın.'; return; }
+          btn.disabled = true; err.textContent = '';
+          var a = {}; try { a = JSON.parse(localStorage.getItem('ads_attribution') || '{}') || {}; } catch (x) {}
+          var at = { site: SITE, landing: (a.landing_page || location.pathname).slice(0, 120) };
+          ['gclid', 'gbraid', 'wbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].forEach(function (k) { if (a[k]) at[k] = a[k]; });
+          var body = { phone: '0' + dg, when: m2.acik ? 'simdi' : 'saat', landing: (location.hostname + location.pathname).slice(0, 120), attribution: at };
+          if (saat) body.at = saat;
+          fetch(TALEP_API, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) })
+            .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+            .then(function (x) {
+              if (!x.ok || !x.j || !x.j.ok) throw new Error((x.j && x.j.error) || 'hata');
+              olay('callback_request', { cta_area: 'soru_kutusu' });
+              mesaj(m2.acik ? '✅ Talebiniz alındı. Selda Hanım birkaç dakika içinde sizi arayacak.' : '✅ Talebiniz alındı. Selda Hanım sabah 09:00\'dan itibaren sizi arayacak.');
+              alt.innerHTML = m2.acik ? '<a class="ara" href="' + TEL + '">📞 Beklemeden arayın</a>' : '';
+            })
+            .catch(function (ex) { btn.disabled = false; err.textContent = (ex && ex.message && ex.message !== 'hata' && ex.message.indexOf('etch') < 0 ? ex.message : 'Şu an gönderilemedi, lütfen arayın: ' + TEL_TXT); });
+        };
+      }
+    }
+    kutu.querySelector('.pu-sb-btn').onclick = function () { panelAc('balon'); };
+
+    // Ziyaretçi aradı, yazdı ya da Pusula'yı açtıysa davet gösterilmez
+    d.addEventListener('click', function (e) { var t = e.target && e.target.closest && e.target.closest('a[href^="tel:"],a[href*="wa.me"],[data-pusula]'); if (t) etkilesti = true; }, true);
+
+    /* Akıllı davet: ilk 12 sn hiçbir şey çıkmaz; sonra önce hangisi olursa:
+       sayfanın %40'ını (uzun sayfada ~2,5 ekran boyunu) okumak, 35 sn kalmak (reklamdan gelende 20 sn), masaüstünde sayfadan çıkmaya
+       yönelmek ya da telefonda okuduktan sonra hızla yukarı kaydırmak. Ziyaret başına bir kez,
+       sayfanın konusuna göre metin; tıklayınca doğrudan Pusula açılır. */
+    var gosterildi = false;
+    try { gosterildi = sessionStorage.getItem('pu_davet') === '1'; } catch (e) {}
+    if (gosterildi) return;
+    var hazir = false, okudu = false, enDerin = 0, sonY = scrollY || 0;
+    var reklam = reklamdan();
+    var yol = location.pathname.toLowerCase();
+    var metin = 'Nereden başlayacağınızı 60 saniyede birlikte bulalım mı?';
+    for (var k = 0; k < KONU_DAVET.length; k++) if (KONU_DAVET[k][0].test(yol)) { metin = KONU_DAVET[k][1]; break; }
+    function dene(neden) {
+      if (gosterildi || etkilesti || !hazir || panel || (root && root.parentNode)) return;
+      gosterildi = true;
+      try { sessionStorage.setItem('pu_davet', '1'); } catch (e) {}
+      olay('davet_gosterildi', { neden: neden });
+      davet = el('<div class="pu-sb-tz" role="note"><b>' + (mesai().acik ? 'Şu an açığız 👋' : 'Merhaba 👋') + '</b>' + esc(metin) + '<button type="button" aria-label="Kapat">×</button></div>');
+      kutu.appendChild(davet);
+      requestAnimationFrame(function () { requestAnimationFrame(function () { if (davet) davet.classList.add('on'); }); });
+      davet.onclick = function (e) { if (e.target.tagName === 'BUTTON') { kapatDavet(); return; } kapatDavet(); ac('davet'); };
+      setTimeout(kapatDavet, 18000);
+    }
+    setTimeout(function () { hazir = true; if (okudu) dene('okuma'); }, 12000);
+    setTimeout(function () { dene('sure'); }, reklam ? 20000 : 35000);
+    w.addEventListener('scroll', function () {
+      var h = d.documentElement.scrollHeight - innerHeight, y = scrollY || pageYOffset || 0;
+      if (h > 0) enDerin = Math.max(enDerin, y / h);
+      if (enDerin >= 0.4 || y >= innerHeight * 2.5) { okudu = true; dene('okuma'); }
+      if (okudu && sonY - y > 600) dene('yukari'); // telefonda okuduktan sonra hızla yukarı: çıkmaya yakın
+      sonY = y;
+    }, { passive: true });
+    d.addEventListener('mouseout', function (e) { if (!e.relatedTarget && e.clientY <= 0) dene('cikis'); });
   }
 
   d.addEventListener('click', function (e) {
