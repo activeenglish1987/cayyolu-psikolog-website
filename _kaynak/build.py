@@ -270,6 +270,8 @@ def head(title, desc, path, extra_ld='', og_img='/assets/img/opt/og-1200.webp', 
 <script src="/assets/js/ads-conversion.js?v=5" defer></script>
 <script src="/assets/js/site.js?v=%(v)s" defer></script>
 <script src="/assets/js/after-hours.js?v=1" data-pos="bottom" defer></script>
+<script>window.PUSULA_CFG={site:'cayyolu',foto:'/assets/img/opt/psikolog-rojin-nazik-720.webp',heroSecici:'.hero-btns'};</script>
+<script src="/assets/js/pusula.js?v=1" defer></script>
 <script>(function(){var d=0;function l(){if(d)return;d=1;var s=document.createElement('script');s.src='//code.jivosite.com/widget/qUPsGwSDuo';s.async=true;document.head.appendChild(s)}['scroll','pointerdown','keydown','touchstart'].forEach(function(e){addEventListener(e,l,{once:true,passive:true})});setTimeout(l,8000)})();</script>
 %(ld)s
 </head>''' % {'gtm': GTM, 'title': esc(title), 'desc': esc(desc), 'robots': robots, 'canon': canon, 'brand': esc(BRAND),
