@@ -824,13 +824,37 @@ def contact_page(rec):
         'h_faq': section_head('Randevu öncesi', 'Sık sorulan sorular'), 'faq': faq_html()} + footer_html()
 
 def press_page(rec):
+    # Logolu kartlar (eski WordPress görselleri). "Yılın En İyi Psikoloğu" yazılı ödül görseli bilerek çıkarıldı.
     items = [('wp-content/uploads/2024/05/cnn-1.png', 'CNN Türk – İşin Uzmanı'), ('wp-content/uploads/2024/05/milliyet-1.png', 'Milliyet'),
              ('wp-content/uploads/2024/05/sabah-1.png', 'Sabah'), ('wp-content/uploads/2024/05/posta-1.png', 'Posta'),
-             ('wp-content/uploads/2024/05/cnn-1.webp', 'CNN Türk'), ('wp-content/uploads/2024/05/cnn-2.webp', 'CNN Türk'),
-             ('wp-content/uploads/2024/05/beyaz-tv.webp', 'Beyaz TV'), ('wp-content/uploads/2024/05/haberler.com_.png', 'Haberler.com'),
-             ('wp-content/uploads/2024/05/acunn-1.png', 'Acunn'), ('wp-content/uploads/2024/05/slider-odul-1.jpg', 'Yılın En İyi Psikoloğu ödülü')]
-    items += [('assets/img/basin/%s' % f, 'Gazete haberi') for f in sorted(os.listdir(os.path.join(ROOT, 'assets/img/basin')))]
+             ('wp-content/uploads/2024/05/beyaz-tv.webp', 'Beyaz TV · Duyduk Duymadık'), ('wp-content/uploads/2024/05/acunn-1.png', 'Acunn')]
+    # Basılı gazete sayfaları: gazete · tarih · başlık (taramalardan okundu)
+    kupur = [('milliyet-rojin.jpg', 'Milliyet', '13 Kasım 2022', 'Ergenlik dönemindeki çocukların psikolojilerine dikkat!'),
+             ('aksam-rojin.jpg', 'Akşam Cumartesi', '25 Haziran 2022', 'Stresin olumsuz etkileri nelerdir?'),
+             ('vatan-rojin.jpg', 'Vatan', '29 Ocak 2023', 'Aşırı düşünmek neden olur? Tehlikeleri nelerdir?'),
+             ('yesil-rojin.jpg', 'Yeşil', '1 Ekim 2023', 'Aşırı düşünmek neden olur?'),
+             ('guncel-rojin.jpg', 'Güncel', '1 Ekim 2023', 'Aşırı düşünmek neden olur?'),
+             ('haber-rojin.jpg', 'Haber', '1 Ekim 2023', 'Çocuklar da ve ergenler de psikolojiye dikkat edilmeli!'),
+             ('izgazete-rojin.jpg', 'İzgazete', '6 Kasım 2022', 'Ergen psikolojisinde terapilerin önemi'),
+             ('degisim-rojin.jpg', 'Değişim', '6 Kasım 2022', 'Çocuklar da ve ergenler de psikolojiye dikkat edilmeli!'),
+             ('hatay-rojin.jpg', 'Hatay', '6 Kasım 2022', 'Çocuklar da ve ergenler de psikolojiye dikkat edilmeli!'),
+             ('avrupa-rojin.jpg', 'Avrupa', '17 Temmuz 2022', 'Uyku bozukluğuna dikkat! Uyku bozukluğu neden olur?'),
+             ('asi-rojin2.jpg', 'Asi', '26 Haziran 2022', 'Neden stres yaparız?'),
+             ('asi-rojin.jpg', 'Asi', '12 Haziran 2022', 'Depresyona yol açan faktörler')]
     g1 = ''.join('<figure class="press-item">%s<figcaption>%s</figcaption></figure>' % (img(opt(p, 720), 'Psikolog Rojin Nazik – ' + n), esc(n)) for p, n in items)
+    g2 = ''.join('<figure class="press-item">%s<figcaption><strong>%s</strong> · %s<br>%s</figcaption></figure>' % (
+        img(opt('assets/img/basin/' + f, 720), '%s gazetesi (%s): %s' % (g, t, h)), esc(g), esc(t), esc(h)) for f, g, t, h in kupur)
+    vids = [('fw1zD6zr62k', 'CNN Türk · İşin Uzmanı', 'Panik atak nedir, belirtileri nelerdir?'),
+            ('QaMYPc-FUw4', 'CNN Türk · İşin Uzmanı', 'Bilişsel davranışçı terapi teknikleri'),
+            ('ZEPbGUV6MSE', 'Beyaz TV · Duyduk Duymadık', 'Programın konuk uzmanı')]
+    v_html = ''.join('<figure class="bz-v"><button type="button" class="bz-vd" data-yt="%s" aria-label="%s – videoyu oynat"><img src="/assets/basin/video-%s.webp" alt="%s programında Psikolog Rojin Nazik" width="640" height="360" loading="lazy" decoding="async"><i></i></button><figcaption><strong>%s</strong> · %s</figcaption></figure>' % (v, esc(t), v, esc(k), esc(k), esc(t)) for v, k, t in vids)
+    v_css = ('<style>.bz-vs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:18px 0 8px}@media(max-width:760px){.bz-vs{grid-template-columns:1fr}}'
+             '.bz-v{margin:0}.bz-v figcaption{font-size:14px;margin-top:8px}.bz-vd{all:unset;box-sizing:border-box;cursor:pointer;position:relative;display:block;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#111}'
+             '.bz-vd img,.bz-vd iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0;margin:0}'
+             '.bz-vd i{position:absolute;left:50%;top:50%;width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;background:rgba(255,255,255,.94)}'
+             '.bz-vd i:after{content:"";position:absolute;left:23px;top:17px;border-left:17px solid #14264A;border-top:12px solid transparent;border-bottom:12px solid transparent}</style>'
+             '<script>document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest(".bz-vd");if(!b||b.querySelector("iframe"))return;var f=document.createElement("iframe");'
+             'f.src="https://www.youtube-nocookie.com/embed/"+b.getAttribute("data-yt")+"?autoplay=1&rel=0";f.title=b.getAttribute("aria-label");f.allow="autoplay; encrypted-media; picture-in-picture; fullscreen";f.allowFullscreen=true;b.innerHTML="";b.appendChild(f);});</script>')
     news = [('CNN Türk', 'Kaygı bozukluğu nedir?', 'https://www.cnnturk.com/saglik/kaygi-bozuklugu-nedir'),
             ('Milliyet', 'Psikolog Rojin Nazik sınav stresini aşmanın yollarını anlattı', 'https://www.milliyet.com.tr/pembenar/psikolog-rojin-nazik-sinav-stresini-asmanin-yollarini-anlatti-6441751'),
             ('Sabah', 'Depresyon nedir? Depresyona yol açan faktörler nelerdir?', 'https://www.sabah.com.tr/roza/ruh-sagligi/depresyon-nedir-depresyona-yol-acan-faktorler-nelerdir'),
@@ -841,9 +865,13 @@ def press_page(rec):
             ('Psychology Times', 'Psikolog seçerken sorulması gereken 7 soru', 'https://psychologytimes.com.tr/psikolog-secerken-7-soru/'),
             ('Lezzet', 'Uzmanlar uyarıyor: Çocuklara deprem haberleri izletmeyin', 'https://www.lezzet.com.tr/lezzetten-haberler/cocuklara-deprem-haberleri-izletmeyin')]
     news_html = ''.join('<li><a href="%s" target="_blank" rel="noopener"><strong>%s</strong> – %s</a></li>' % (esc(u), esc(o), esc(t)) for o, t, u in news)
-    body = ('<h2>Psikolog Rojin Nazik</h2><p>Kurucumuz Psikolog Rojin Nazik, CNN Türk, Beyaz TV ve ulusal gazetelerde psikoloji üzerine röportajlar veriyor; bilimsel bilgiyi toplumla buluşturmayı amaçlıyor.</p><div class="press-grid page">%s</div>'
+    body = v_css + ('<h2>Psikolog Rojin Nazik</h2><p>Kurucumuz Psikolog Rojin Nazik, CNN Türk, Beyaz TV ve TV8 INT programlarında konuk uzman; söyleşileri Milliyet, Akşam, Takvim ve Vatan gibi gazetelerde yayımlandı.</p>'
+            '<h2>Ekranda</h2><div class="bz-vs">%s</div>'
+            '<div class="btn-row" style="margin:18px 0 6px">%s%s</div>'
+            '<h2>Gazete sayfalarında</h2><div class="press-grid page">%s</div>'
+            '<h2>Yayınlardan</h2><div class="press-grid page">%s</div>'
             '<h2>Haberlerden seçmeler</h2><ul>%s</ul>'
-            '<p>Tüm haber, röportaj ve TV yayınları için <a href="https://www.psikologrojinnazik.com/basinda-biz/">Psikolog Rojin Nazik\'in basın arşivi</a> sayfasına bakabilirsiniz.</p>') % (g1, news_html)
+            '<p>Tüm haber, röportaj ve TV yayınları için <a href="https://www.psikologrojinnazik.com/basinda-biz/">Psikolog Rojin Nazik\'in basın arşivi</a> sayfasına bakabilirsiniz.</p>') % (v_html, btn_call(), btn_wa(), g2, g1, news_html)
     return article_page(dict(rec, title='Basında Biz'), body, [('Ana Sayfa', '/'), ('Basında Biz', None)], kicker='Basında RN Psikoloji',
                         lead='Psikolog Rojin Nazik ve ekibimizin televizyon ve gazete yayınları.',
                         desc='Basında RN Psikoloji: Psikolog Rojin Nazik\'in TV programları ve gazete röportajları.', title_tag='Basında Biz | %s' % BRAND)
