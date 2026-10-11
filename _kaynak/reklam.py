@@ -258,7 +258,7 @@ ROJIN_HEAD = '''<!doctype html><html lang="tr"><head><meta charset="utf-8">
 <link rel="preload" as="image" href="%(foto)s" fetchpriority="high">
 %(css)s
 <script src="/assets/js/ads-conversion.js?v=5" defer></script>
-<script src="/assets/js/after-hours.js?v=3" data-pos="bottom" defer></script>
+<script src="/assets/js/after-hours.js?v=5" data-pos="bottom" defer></script>
 <script src="/assets/js/pusula.js?v=8" defer></script>
 </head><body>'''
 

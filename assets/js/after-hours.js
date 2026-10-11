@@ -39,6 +39,10 @@
     + '.ah-inline:hover{filter:brightness(.95)}'
     // Şerit açıkken sol alttaki Instagram simgesi gizlenir (üst üste binmesin)
     + 'html.ah-acik .rn-ig-float,html.ah-acik .el-ig-float{display:none!important}'
+    // Sayfadaki "Selda Hanım sizi arasın" düğmesi ekrandayken yüzen şerit gizlenir (aynı teklif iki kez görünmesin)
+    + '.ah-bar.ah-bottom{transition:opacity .2s,transform .2s}.ah-bar.ah-bottom.ah-sakla{opacity:0;transform:translateY(12px);pointer-events:none}'
+    // Telefonda şerit görünürken Soru balonu çekilir: altta tek teklif kalsın
+    + '@media(max-width:860px){html.ah-gorunur .pu-sb-btn{display:none!important}.ah-bar.ah-bottom{padding:7px 38px 7px 8px}.ah-bar.ah-bottom .ah-go>span{display:none}.ah-bar.ah-bottom b{display:block;padding:8px 12px}}'
     + '.ah-sheet{position:fixed;inset:0;z-index:2147483001;display:flex;align-items:flex-end;justify-content:center;background:rgba(18,12,24,.55);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:#18223A}'
     + '@media(min-width:700px){.ah-sheet{align-items:center}}'
     + '.ah-card{position:relative;width:100%;max-width:440px;background:#fff;border-radius:24px 24px 0 0;padding:22px 20px calc(20px + env(safe-area-inset-bottom));box-shadow:0 -16px 50px rgba(0,0,0,.25)}'
@@ -158,6 +162,24 @@
     for (var i = 0; i < spots.length; i++) {
       if (spots[i].nextElementSibling && spots[i].nextElementSibling.classList && spots[i].nextElementSibling.classList.contains('ah-inline')) continue;
       spots[i].parentNode.insertBefore(btn('📞 ' + kisa + ' Selda Hanım sizi arasın', 'ah-inline', 'after_hours_inline'), spots[i].nextSibling);
+    }
+    if (bar && POS === 'bottom' && bar.parentNode) {
+      var gorunen = 0, root = document.documentElement;
+      var durum = function () {
+        var sakla = gorunen > 0 || !bar.parentNode;
+        bar.classList.toggle('ah-sakla', sakla);
+        root.classList.toggle('ah-gorunur', !sakla);
+      };
+      var inl = document.querySelectorAll('.ah-inline');
+      if (inl.length && 'IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (es) {
+          es.forEach(function (e) { var o = !!e.target.__ahGor; if (e.isIntersecting !== o) { gorunen += e.isIntersecting ? 1 : -1; e.target.__ahGor = e.isIntersecting; } });
+          durum();
+        });
+        for (var j = 0; j < inl.length; j++) io.observe(inl[j]);
+      }
+      durum();
+      x.addEventListener('click', function () { root.classList.remove('ah-gorunur'); });
     }
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
