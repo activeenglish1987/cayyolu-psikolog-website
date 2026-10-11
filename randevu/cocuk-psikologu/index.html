@@ -58,6 +58,15 @@ summary:after{content:"+";float:right;color:var(--a)}details[open] summary:after
 details p{margin:8px 0 0;color:var(--mut)}
 .son{text-align:center;background:linear-gradient(135deg,var(--a2),var(--a));color:#fff;border:0}
 .son h2{color:#fff}.son p{opacity:.9;margin:0 0 14px}.son .ara{max-width:420px;margin:0 auto}
+.gos .lg{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 14px;padding:0;list-style:none}
+.gos .lg li{height:44px;padding:6px 10px;border:1px solid var(--line);border-radius:10px;background:#fff;display:flex;align-items:center}
+.gos .lg img{max-height:30px;max-width:96px;width:auto;height:auto;display:block}.gos .lg .tv8{font:900 15px/1 Arial,sans-serif;color:#fff;background:#111;padding:5px 7px;border-radius:5px}
+.gos .vd{all:unset;box-sizing:border-box;cursor:pointer;position:relative;display:block;width:100%;aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#111}
+.gos .vd img,.gos .vd iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0}
+.gos .vd i{position:absolute;left:50%;top:50%;width:62px;height:62px;margin:-31px 0 0 -31px;border-radius:50%;background:rgba(255,255,255,.94);box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.gos .vd i:after{content:"";position:absolute;left:25px;top:19px;border-left:18px solid var(--a);border-top:12px solid transparent;border-bottom:12px solid transparent}
+.gos .vk{margin:8px 0 0;font-size:14px;color:var(--mut)}.gos .vk b{color:var(--a2)}
+.gos .say{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}.gos .say div{padding:10px;border-radius:12px;background:var(--bg);text-align:center;font-size:12.5px;color:var(--mut);font-weight:600}.gos .say b{display:block;font-size:20px;color:var(--a2)}
 .dip{padding:18px 0 26px;font-size:12.5px;color:var(--mut);text-align:center}
 .bar{position:fixed;left:0;right:0;bottom:0;z-index:9990;display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid var(--line);backdrop-filter:blur(10px)}
 .bar .ara{flex:1;padding:14px;font-size:16.5px;box-shadow:none}
@@ -84,6 +93,7 @@ details p{margin:8px 0 0;color:var(--mut)}
 </div>
 <div class="foto"><img src="/assets/img/opt/psikolog-rojin-nazik-720.webp" alt="Psikolog Rojin Nazik" width="720" height="900" fetchpriority="high"></div>
 </section>
+<section class="kart gos"><h2>Ekranda ve basında</h2><ul class="lg"><li><img src="/assets/basin/logo/cnnturk.webp" alt="CNN TÜRK" width="146" height="120" loading="lazy" decoding="async"></li><li><img src="/assets/basin/logo/beyaztv.webp" alt="Beyaz TV" width="204" height="70" loading="lazy" decoding="async"></li><li><span class="tv8">TV8 INT</span></li><li><img src="/assets/basin/logo/milliyet.webp" alt="Milliyet" width="480" height="87" loading="lazy" decoding="async"></li><li><img src="/assets/basin/logo/aksam.webp" alt="Akşam" width="480" height="103" loading="lazy" decoding="async"></li><li><img src="/assets/basin/logo/takvim.webp" alt="Takvim" width="460" height="120" loading="lazy" decoding="async"></li><li><img src="/assets/basin/logo/vatan.webp" alt="Vatan" width="480" height="102" loading="lazy" decoding="async"></li></ul><button type="button" class="vd" data-yt="6eg7skd0824" aria-label="Sınav stresi ve psikolojik dayanıklılık – videoyu oynat"><img src="/assets/basin/video-6eg7skd0824.webp" alt="Video programında Psikolog Rojin Nazik" width="640" height="360" loading="lazy" decoding="async"><i></i></button><p class="vk"><b>Video</b> · Sınav stresi ve psikolojik dayanıklılık</p><div class="say"><div><b>7</b>TV ve video yayını</div><div><b>19</b>gazete sayfası</div><div><b>3</b>kitap</div></div></section>
 <section class="kart"><h2>Psikolog Rojin Nazik</h2><div class="etiket"><span>15+ yıllık mesleki deneyim</span><span>Şema terapi eğitimi</span><span>AB Psikologlar Derneği Genel Başkanı</span><span>3 kitap yazarı</span></div>
 <p style="margin:12px 0 0;color:var(--mut);font-size:15px">CNN Türk, Milliyet ve Sabah'ta uzman konuk; Psychology Times kurucusu.</p><p style="margin:12px 0 0;color:var(--mut);font-size:15px">Küçük yaştaki çocuklarla oyun terapisi ve psikolojik test için Psikolog Elif Erdoğan da bu ofiste çalışıyor; size uygun uzmanı Selda Hanım birlikte belirler.</p></section>
 <section class="kart"><h2>Hangi konularda destek alabilirsiniz?</h2><ul class="konu"><li>Öfke ve davranış sorunları</li><li>Okul, ders ve sınav kaygısı</li><li>Korkular, ayrılma kaygısı, uyku</li><li>Boşanma sürecinde çocuk</li><li>Ergenlikte iletişim ve içe kapanma</li><li>Oyun terapisi ve psikolojik test (Psikolog Elif Erdoğan)</li></ul></section>
@@ -103,5 +113,6 @@ var K=[[/ergen|genç|genc/,'Ergen Psikoloğu'],[/çocuk|cocuk|pedagog|oyun terap
 var bul=function(L){for(var i=0;i<L.length;i++)if(L[i][0].test(k))return L[i][1];return ''};var y=bul(Y),c=bul(K);if(!y&&!c)return;
 y=y||'Çayyolu';c=c||'Psikolog';var h=document.querySelector('h1');h.textContent=y+' ';var e=document.createElement('em');e.textContent=c;h.appendChild(e);
 document.title=y+' '+c+' | RN Psikoloji Çayyolu';(window.dataLayer=window.dataLayer||[]).push({event:'lp_baslik_uyumu',lp_baslik:y+' '+c});}catch(x){}})();</script>
+<script>(function(){var b=document.querySelector('.gos .vd');if(!b)return;b.addEventListener('click',function(){var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+b.getAttribute('data-yt')+'?autoplay=1&rel=0';f.title=b.getAttribute('aria-label');f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;b.innerHTML='';b.appendChild(f);(window.dataLayer=window.dataLayer||[]).push({event:'lp_video_oynat',video:b.getAttribute('data-yt')});},{once:true});})();</script>
 <div class="bar" data-cta-area="lp_bar"><a class="ara" href="tel:+905524187973">📞 Selda Hanım'ı Ara</a><a class="w2" href="https://wa.me/905524187973?text=Merhaba%2C%20%C3%87ayyolu%20%C3%87ocuk%20ve%20Ergen%20Psikolo%C4%9Fu%20i%C3%A7in%20randevu%20bilgisi%20almak%20istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp">💬</a></div>
 </body></html>

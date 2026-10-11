@@ -50,42 +50,53 @@ ORTAK_SSS = [
     ('Psikolog ilaç yazar mı?', 'Hayır. Psikologlar tanı koymaz ve ilaç yazmaz; gerekli durumlarda psikiyatri uzmanına yönlendirme yapılır.'),
 ]
 
+# "Ekranda ve basında" bölümü: logolar gerçek gazete sayfalarından kırpıldı (_araclar/basin.py, assets/basin/).
+# Çayyolu sitesine de aynı dosyalar kopyalanır. Video tıklanınca sayfada oynar; dışarı bağlantı yok.
+VIDEOLAR = {
+    'fw1zD6zr62k': ('CNN Türk · İşin Uzmanı', 'Panik atak nedir, belirtileri nelerdir?'),
+    'QaMYPc-FUw4': ('CNN Türk · İşin Uzmanı', 'Bilişsel davranışçı terapi teknikleri'),
+    'ZEPbGUV6MSE': ('Beyaz TV · Duyduk Duymadık', 'Programın konuk uzmanı'),
+    '6eg7skd0824': ('Video', 'Sınav stresi ve psikolojik dayanıklılık'),
+}
+LOGOLAR = [('CNN TÜRK', 'cnnturk', 146, 120), ('Beyaz TV', 'beyaztv', 204, 70), ('Milliyet', 'milliyet', 480, 87),
+           ('Akşam', 'aksam', 480, 103), ('Takvim', 'takvim', 460, 120), ('Vatan', 'vatan', 480, 102)]
+
 # Her reklam grubu için bir sayfa: başlık aranan kelimeyle aynı olmalı (mesaj uyumu)
 SAYFALAR = {
     'rojin': [
-        {'yol': '/randevu/ankara-psikolog/', 'h1': 'Ankara Psikolog', 'h1b': 'Rojin Nazik',
+        {'yol': '/randevu/ankara-psikolog/', 'video': 'QaMYPc-FUw4', 'h1': 'Ankara Psikolog', 'h1b': 'Rojin Nazik',
          'alt': "Yaşamkent ve Kızılay'da yüz yüze, dilerseniz online psikolojik danışmanlık. Kendinizi rahatça anlatabileceğiniz, acele edilmeyen bir ortam.",
          'konular': ['Kaygı, stres ve panik atak', 'Depresif duygular ve isteksizlik', 'İlişki, evlilik ve aile sorunları', 'Yas, boşanma ve zor yaşam dönemleri', 'Öfke, özgüven ve tekrar eden düşünceler', 'Çocuk ve ergen danışmanlığı'],
          'not': ('‘Psikoloğa gitmeli miyim?’ diye soranlara', 'Psikoloğa başvurmak için kişinin hayatının tamamen kontrolden çıkmasını beklemesi gerektiğini düşünmüyorum. Aynı düşünce, duygu veya ilişki döngüsünün tekrar ettiğini fark ediyor ve bunun içinden çıkmakta zorlanıyorsa bunu konuşmak için yeterli bir neden olabilir.')},
-        {'yol': '/randevu/cocuk-psikologu/', 'h1': 'Ankara Çocuk ve Ergen', 'h1b': 'Psikoloğu',
+        {'yol': '/randevu/cocuk-psikologu/', 'video': '6eg7skd0824', 'h1': 'Ankara Çocuk ve Ergen', 'h1b': 'Psikoloğu',
          'alt': 'Okul, kaygı, öfke ve uyum sorunlarında çocuk ve ergen görüşmeleri; küçük yaşta oyun terapisi ve ebeveyn danışmanlığı. Yaşamkent, Kızılay ve online.',
          'konular': ['Öfke nöbetleri ve davranış sorunları', 'Okul, ders ve sınav kaygısı', 'Korkular, ayrılma kaygısı ve uyku sorunları', 'Boşanma sürecinde çocuk', 'Ergenlikte iletişim, içe kapanma, ekran kullanımı', 'Küçük yaşta oyun terapisi (Psikolog Elif Erdoğan)'],
          'ekip': 'Küçük yaştaki çocuklarla oyun terapisi ve psikolojik test için ekibimizde Psikolog Elif Erdoğan da çalışıyor; size uygun uzmanı Selda Hanım birlikte belirler.',
          'not': ('Anne-babaların en sık kaçırdığı nokta', 'Ben davranışın ne zaman başladığına, hangi durumlarda arttığına ve çocuğun o dönemde hayatında neler yaşadığına bakmayı önemli buluyorum. Çünkü bazı çocuklar ifade etmekte zorlandıkları duyguları davranışları üzerinden gösterebiliyor.'),
          'sss': [('İlk görüşmeye çocuğumla mı gelmeliyim?', 'Çocuklarda ilk görüşme genellikle ebeveynle yapılır; ardından çocuğun yaşına uygun görüşmeler planlanır. Telefonda Selda Hanım size durumunuza göre yol gösterir.')]},
-        {'yol': '/randevu/cift-terapisi/', 'h1': 'Ankara Çift ve', 'h1b': 'Evlilik Terapisi',
+        {'yol': '/randevu/cift-terapisi/', 'video': 'ZEPbGUV6MSE', 'h1': 'Ankara Çift ve', 'h1b': 'Evlilik Terapisi',
          'alt': 'İletişim sorunları, sık tartışma, güven ve uzaklaşma için çift ve evlilik görüşmeleri. Yaşamkent ve Kızılay’da yüz yüze ya da online.',
          'konular': ['İletişim kuramama, sık tartışma', 'Güven sorunu ve aldatılma sonrası süreç', 'Birbirinden uzaklaşma', 'Evlilik öncesi danışmanlık', 'Boşanma kararı ve sonrası', 'Ebeveynlik ve aile içi çatışma'],
          'not': ('Çift görüşmelerinde en sık duyduğum cümle', '‘Ben defalarca söyledim ama beni anlamadı’ cümlesini çift görüşmelerinde oldukça sık duyuyorum. Tartışmanın içindeki öfkenin altında bazen ‘beni önemse’, ‘yanımda olduğunu hissettir’ veya ‘beni anlamaya çalış’ gibi çok daha temel bir ihtiyaç bulunabiliyor.'),
          'sss': [('İkimizin birlikte gelmesi mi gerekiyor?', 'Çift görüşmelerine genellikle birlikte başlanır; gerekirse bireysel görüşmeler de planlanır. İlk adımı biriniz atabilir.')]},
-        {'yol': '/randevu/kaygi-panik-atak/', 'h1': 'Kaygı ve Panik Atak', 'h1b': 'Psikolojik Destek · Ankara',
+        {'yol': '/randevu/kaygi-panik-atak/', 'video': 'fw1zD6zr62k', 'h1': 'Kaygı ve Panik Atak', 'h1b': 'Psikolojik Destek · Ankara',
          'alt': 'Kaygı, panik atak, sosyal kaygı ve takılan düşünceler için bilişsel davranışçı yaklaşımla psikolojik destek. Yaşamkent, Kızılay ve online.',
          'konular': ['Panik atak ve beklenti kaygısı', 'Yaygın kaygı ve sürekli endişe', 'Sosyal kaygı', 'Sınav ve performans kaygısı', 'Takılan düşünceler, aşırı düşünme', 'Bedensel belirtilerle gelen kaygı'],
          'not': ('Panik atakta en sık korkulan şey', 'Panik yaşayan kişilerde bedensel belirtilerin kendisinden çok, bu belirtilere verilen anlamın kişiyi zorladığını sık görüyorum. Bu nedenle görüşmelerde kişinin yalnızca ne hissettiğine değil, hissettiği şeyi nasıl yorumladığına da bakıyorum.')},
     ],
     'cayyolu': [
-        {'yol': '/randevu/cayyolu-psikolog/', 'h1': 'Çayyolu ve Yaşamkent', 'h1b': 'Psikolog',
+        {'yol': '/randevu/cayyolu-psikolog/', 'video': 'QaMYPc-FUw4', 'h1': 'Çayyolu ve Yaşamkent', 'h1b': 'Psikolog',
          'alt': "RN Psikoloji'nin Yaşamkent ofisinde yüz yüze psikolojik danışmanlık: Çayyolu, Ümitköy, Konutkent, İncek ve Beysukent'e yakın, ücretsiz otopark.",
          'konular': ['Kaygı, stres ve panik atak', 'İlişki, evlilik ve aile sorunları', 'Çocuk ve ergen danışmanlığı', 'Yas, boşanma ve zor yaşam dönemleri', 'Depresif duygular ve isteksizlik', 'Online görüşme seçeneği'],
          'ekip': 'Kurucu Psikolog Rojin Nazik ve Psikolog Elif Erdoğan bu ofiste görüşme yapıyor; size uygun uzmanı Selda Hanım birlikte belirler.',
          'not': ('İlk kez gelenler en çok neden çekiniyor?', 'İlk görüşmeye gelen kişilerde en sık gördüğüm kaygılardan biri, ‘Ne anlatacağım, nereden başlayacağım?’ düşüncesi. İlk görüşme ilerledikçe bunun bir sınav olmadığını ve her şeyi bir anda anlatmak zorunda olmadıklarını fark ettiklerinde daha rahatlayabildiklerini görüyorum.')},
-        {'yol': '/randevu/cocuk-psikologu/', 'h1': 'Çayyolu Çocuk ve Ergen', 'h1b': 'Psikoloğu',
+        {'yol': '/randevu/cocuk-psikologu/', 'video': '6eg7skd0824', 'h1': 'Çayyolu Çocuk ve Ergen', 'h1b': 'Psikoloğu',
          'alt': 'Yaşamkent ofisinde çocuk ve ergen görüşmeleri, küçük yaşta oyun terapisi ve ebeveyn danışmanlığı. Çayyolu, Ümitköy ve Konutkent’e yakın.',
          'konular': ['Öfke ve davranış sorunları', 'Okul, ders ve sınav kaygısı', 'Korkular, ayrılma kaygısı, uyku', 'Boşanma sürecinde çocuk', 'Ergenlikte iletişim ve içe kapanma', 'Oyun terapisi ve psikolojik test (Psikolog Elif Erdoğan)'],
          'ekip': 'Küçük yaştaki çocuklarla oyun terapisi ve psikolojik test için Psikolog Elif Erdoğan da bu ofiste çalışıyor; size uygun uzmanı Selda Hanım birlikte belirler.',
          'not': ('Ebeveynlere ilk önerim', 'Ebeveynlerden ilk istediğim şeylerden biri, çocuğun davranışını hemen değiştirmeye çalışmadan önce onu biraz daha dikkatli gözlemlemeleri oluyor. Özellikle bir davranışın öncesinde ve sonrasında neler yaşandığı çok önemli ipuçları verebiliyor.'),
          'sss': [('İlk görüşmeye çocuğumla mı gelmeliyim?', 'Çocuklarda ilk görüşme genellikle ebeveynle yapılır; ardından çocuğun yaşına uygun görüşmeler planlanır.')]},
-        {'yol': '/randevu/cift-terapisi/', 'h1': 'Çayyolu Çift ve', 'h1b': 'Evlilik Terapisi',
+        {'yol': '/randevu/cift-terapisi/', 'video': 'ZEPbGUV6MSE', 'h1': 'Çayyolu Çift ve', 'h1b': 'Evlilik Terapisi',
          'alt': 'Yaşamkent ofisinde çift ve evlilik görüşmeleri: iletişim, güven, sık tartışma ve uzaklaşma. Çayyolu, Ümitköy ve Konutkent’e yakın, ücretsiz otopark.',
          'konular': ['İletişim kuramama, sık tartışma', 'Güven sorunu', 'Birbirinden uzaklaşma', 'Evlilik öncesi danışmanlık', 'Boşanma kararı ve sonrası', 'Ebeveynlik ve aile içi çatışma'],
          'not': ('Çiftlerde en sık gördüğüm sorun', 'Çiftlerin çoğu ‘iletişim kuramıyoruz’ diyerek geliyor. Görüşmeler ilerledikçe çoğu zaman sorunun yalnızca iletişim olmadığını; uzun süredir konuşulmamış kırgınlıkların, anlaşılmama hissinin ve tekrar eden ilişki döngülerinin biriktiğini görüyorum.'),
@@ -144,6 +155,15 @@ summary:after{content:"+";float:right;color:var(--a)}details[open] summary:after
 details p{margin:8px 0 0;color:var(--mut)}
 .son{text-align:center;background:linear-gradient(135deg,var(--a2),var(--a));color:#fff;border:0}
 .son h2{color:#fff}.son p{opacity:.9;margin:0 0 14px}.son .ara{max-width:420px;margin:0 auto}
+.gos .lg{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 14px;padding:0;list-style:none}
+.gos .lg li{height:44px;padding:6px 10px;border:1px solid var(--line);border-radius:10px;background:#fff;display:flex;align-items:center}
+.gos .lg img{max-height:30px;max-width:96px;width:auto;height:auto;display:block}.gos .lg .tv8{font:900 15px/1 Arial,sans-serif;color:#fff;background:#111;padding:5px 7px;border-radius:5px}
+.gos .vd{all:unset;box-sizing:border-box;cursor:pointer;position:relative;display:block;width:100%%;aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#111}
+.gos .vd img,.gos .vd iframe{position:absolute;inset:0;width:100%%;height:100%%;object-fit:cover;border:0}
+.gos .vd i{position:absolute;left:50%%;top:50%%;width:62px;height:62px;margin:-31px 0 0 -31px;border-radius:50%%;background:rgba(255,255,255,.94);box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.gos .vd i:after{content:"";position:absolute;left:25px;top:19px;border-left:18px solid var(--a);border-top:12px solid transparent;border-bottom:12px solid transparent}
+.gos .vk{margin:8px 0 0;font-size:14px;color:var(--mut)}.gos .vk b{color:var(--a2)}
+.gos .say{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}.gos .say div{padding:10px;border-radius:12px;background:var(--bg);text-align:center;font-size:12.5px;color:var(--mut);font-weight:600}.gos .say b{display:block;font-size:20px;color:var(--a2)}
 .dip{padding:18px 0 26px;font-size:12.5px;color:var(--mut);text-align:center}
 .bar{position:fixed;left:0;right:0;bottom:0;z-index:9990;display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid var(--line);backdrop-filter:blur(10px)}
 .bar .ara{flex:1;padding:14px;font-size:16.5px;box-shadow:none}
@@ -161,6 +181,15 @@ def govde(S, P):
     sss = ''.join('<details><summary>%s</summary><p>%s</p></details>' % (esc(q), esc(c)) for q, c in (P.get('sss', []) + ORTAK_SSS))
     wa_msg = 'Merhaba, %s için randevu bilgisi almak istiyorum.' % (P['h1'] + ' ' + P['h1b']).replace(' · Ankara', '')
     wa = 'https://wa.me/%s?text=%s' % (WA, html.escape(__import__('urllib.parse').parse.quote(wa_msg)))
+    vid = P.get('video', 'QaMYPc-FUw4'); vk = VIDEOLAR[vid]
+    logolar = ''.join('<li><img src="/assets/basin/logo/%s.webp" alt="%s" width="%d" height="%d" loading="lazy" decoding="async"></li>' % (k, esc(a), w, h) for a, k, w, h in LOGOLAR[:2])
+    logolar += '<li><span class="tv8">TV8 INT</span></li>'
+    logolar += ''.join('<li><img src="/assets/basin/logo/%s.webp" alt="%s" width="%d" height="%d" loading="lazy" decoding="async"></li>' % (k, esc(a), w, h) for a, k, w, h in LOGOLAR[2:])
+    gosteri = ('<section class="kart gos"><h2>Ekranda ve basında</h2><ul class="lg">%s</ul>'
+               '<button type="button" class="vd" data-yt="%s" aria-label="%s – videoyu oynat"><img src="/assets/basin/video-%s.webp" alt="%s programında Psikolog Rojin Nazik" width="640" height="360" loading="lazy" decoding="async"><i></i></button>'
+               '<p class="vk"><b>%s</b> · %s</p>'
+               '<div class="say"><div><b>7</b>TV ve video yayını</div><div><b>19</b>gazete sayfası</div><div><b>3</b>kitap</div></div></section>') % (
+        logolar, vid, esc(vk[1]), vid, esc(vk[0]), esc(vk[0]), esc(vk[1]))
     ekip = ('<p style="margin:12px 0 0;color:var(--mut);font-size:15px">%s</p>' % esc(P['ekip'])) if P.get('ekip') else ''
     return '''<header class="w top">%(logo)s<a class="t" href="tel:%(tel)s" data-cta-area="lp_header">📞 %(teltxt)s</a></header>
 <main class="w">
@@ -178,6 +207,7 @@ def govde(S, P):
 </div>
 <div class="foto"><img src="%(foto)s" alt="Psikolog Rojin Nazik" width="720" height="900" fetchpriority="high"></div>
 </section>
+%(gosteri)s
 <section class="kart"><h2>Psikolog Rojin Nazik</h2><div class="etiket">%(etiket)s</div>
 <p style="margin:12px 0 0;color:var(--mut);font-size:15px">CNN Türk, Milliyet ve Sabah'ta uzman konuk; Psychology Times kurucusu.</p>%(ekip)s</section>
 <section class="kart"><h2>Hangi konularda destek alabilirsiniz?</h2><ul class="konu">%(konular)s</ul></section>
@@ -197,9 +227,10 @@ var K=[[/ergen|genç|genc/,'Ergen Psikoloğu'],[/çocuk|cocuk|pedagog|oyun terap
 var bul=function(L){for(var i=0;i<L.length;i++)if(L[i][0].test(k))return L[i][1];return ''};var y=bul(Y),c=bul(K);if(!y&&!c)return;
 y=y||'%(kwyer)s';c=c||'Psikolog';var h=document.querySelector('h1');h.textContent=y+' ';var e=document.createElement('em');e.textContent=c;h.appendChild(e);
 document.title=y+' '+c+' | %(marka)s';(window.dataLayer=window.dataLayer||[]).push({event:'lp_baslik_uyumu',lp_baslik:y+' '+c});}catch(x){}})();</script>
+<script>(function(){var b=document.querySelector('.gos .vd');if(!b)return;b.addEventListener('click',function(){var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+b.getAttribute('data-yt')+'?autoplay=1&rel=0';f.title=b.getAttribute('aria-label');f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;b.innerHTML='';b.appendChild(f);(window.dataLayer=window.dataLayer||[]).push({event:'lp_video_oynat',video:b.getAttribute('data-yt')});},{once:true});})();</script>
 <div class="bar" data-cta-area="lp_bar"><a class="ara" href="tel:%(tel)s">📞 Selda Hanım'ı Ara</a><a class="w2" href="%(wa)s" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a></div>''' % {
         'logo': S['logo'], 'tel': TEL, 'teltxt': TEL_TXT, 'h1': esc(P['h1']), 'h1b': esc(P['h1b']), 'alt': esc(P['alt']),
-        'wa': wa, 'foto': S['foto'], 'etiket': etiketler, 'ekip': ekip, 'konular': konular, 'adimlar': adimlar,
+        'wa': wa, 'foto': S['foto'], 'gosteri': gosteri, 'etiket': etiketler, 'ekip': ekip, 'konular': konular, 'adimlar': adimlar,
         'not': esc(P['not'][1]), 'notb': esc(P['not'][0]), 'subeler': subeler, 'sss': sss, 'marka': esc(S['marka']),
         'kwyer': 'Çayyolu' if S['ad'] == 'cayyolu' else 'Ankara'}
 
