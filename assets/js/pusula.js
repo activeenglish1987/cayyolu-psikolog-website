@@ -136,6 +136,7 @@
     var rn = NOT[(x.yer === 'online' && x.konu === 'diger') ? 'online' : NOT_ESLE[x.kim][x.konu]] || NOT.ilk;
     return { ad: 'Psikolog Rojin Nazik', kisa: 'Rojin Hanım', unvan: 'Psikolog ve Aile Danışmanı · RN Psikoloji kurucusu', foto: SITE === 'rojin' ? FOTO : RN + '/images/brand/rojin-nazik-portrait-800.webp',
       etiket: ['15+ yıllık mesleki deneyim', 'Şema terapi eğitimi', '3 kitap yazarı', 'AB Psikologlar Derneği Genel Başkanı'],
+      medya: 'CNN Türk ve Beyaz TV’de konuk uzman · Milliyet, Akşam, Takvim’de söyleşileri yayımlandı',
       neden: NEDEN[x.kim], not: rn, notTaban: RN, notlar: 'Rojin Nazik\'in notları taranıyor' };
   }
 
@@ -236,6 +237,7 @@
     + '.pu-exp small{font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--pu-a)}'
     + '.pu-exp b{display:block;font-size:19px;color:var(--pu-a2);margin-top:2px}'
     + '.pu-exp span{display:block;font-size:13px;color:var(--pu-mut)}'
+    + '.pu-exp .pu-tv{margin-top:5px;font-size:12.5px;font-weight:700;color:var(--pu-a2);line-height:1.35}'
     + '.pu-tags{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0}'
     + '.pu-tags em{font-style:normal;font-size:12px;font-weight:700;padding:6px 10px;border-radius:999px;background:#fff;border:1px solid var(--pu-line);color:var(--pu-a2)}'
     + '.pu-why{margin:12px 2px 0;font-size:14.5px;line-height:1.55}'
@@ -469,7 +471,7 @@
       var tut = istek; istek = null;
       goster('<div class="pu-ey">Yol haritanız hazır</div>'
         + '<p class="pu-p" style="margin:6px 0 14px">' + esc(ozet) + '</p>'
-        + '<div class="pu-exp"><div class="pu-ph"><img src="' + esc(U.foto) + '" alt="' + esc(U.ad) + '"></div><div><small>Sizin için önerilen uzman</small><b>' + esc(U.ad) + '</b><span>' + esc(U.unvan) + '</span></div></div>'
+        + '<div class="pu-exp"><div class="pu-ph"><img src="' + esc(U.foto) + '" alt="' + esc(U.ad) + '"></div><div><small>Sizin için önerilen uzman</small><b>' + esc(U.ad) + '</b><span>' + esc(U.unvan) + '</span>' + (U.medya ? '<span class="pu-tv">📺 ' + esc(U.medya) + '</span>' : '') + '</div></div>'
         + '<div class="pu-tags">' + U.etiket.map(function (t) { return '<em>' + esc(t) + '</em>'; }).join('') + '</div>'
         + '<p class="pu-why">' + esc(U.neden) + '</p>'
         + (not ? '<figure class="pu-q"><p>' + esc(not[2]) + '</p><small><span>' + esc(U.ad) + ' · ' + esc(not[1]) + '</span><a href="' + U.notTaban + not[0] + '" target="_blank" rel="noopener">Notun tamamı →</a></small></figure>' : '')
