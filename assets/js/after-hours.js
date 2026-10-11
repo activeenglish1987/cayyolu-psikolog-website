@@ -41,8 +41,8 @@
     + 'html.ah-acik .rn-ig-float,html.ah-acik .el-ig-float{display:none!important}'
     // Sayfadaki "Selda Hanım sizi arasın" düğmesi ekrandayken yüzen şerit gizlenir (aynı teklif iki kez görünmesin)
     + '.ah-bar.ah-bottom{transition:opacity .2s,transform .2s}.ah-bar.ah-bottom.ah-sakla{opacity:0;transform:translateY(12px);pointer-events:none}'
-    // Telefonda şerit görünürken Soru balonu çekilir: altta tek teklif kalsın
-    + '@media(max-width:860px){html.ah-gorunur .pu-sb-btn{display:none!important}.ah-bar.ah-bottom{padding:7px 38px 7px 8px}.ah-bar.ah-bottom .ah-go>span{display:none}.ah-bar.ah-bottom b{display:block;padding:8px 12px}}'
+    // Telefonda şerit tek satır (balon şeridin sağında yer alır, gizlenmez)
+    + '@media(max-width:860px){.ah-bar.ah-bottom{padding:7px 38px 7px 8px}.ah-bar.ah-bottom .ah-go>span{display:none}.ah-bar.ah-bottom b{display:block;padding:8px 12px}}'
     + '.ah-sheet{position:fixed;inset:0;z-index:2147483001;display:flex;align-items:flex-end;justify-content:center;background:rgba(18,12,24,.55);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:#18223A}'
     + '@media(min-width:700px){.ah-sheet{align-items:center}}'
     + '.ah-card{position:relative;width:100%;max-width:440px;background:#fff;border-radius:24px 24px 0 0;padding:22px 20px calc(20px + env(safe-area-inset-bottom));box-shadow:0 -16px 50px rgba(0,0,0,.25)}'
