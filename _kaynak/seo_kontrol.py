@@ -26,7 +26,7 @@ SAHIP = {
         'ankara cocuk psikolog': ('/ankara-cocuk-psikologu/', []),
         'ankara ergen psikolog': ('/ankara-ergen-psikologu/', []),
         'ankara yetiskin psikolog': ('/ankara-yetiskin-psikologu/', []),
-        'ankara aile terapist': ('/ankara-aile-terapisti/', []),
+        'ankara aile terapi': ('/ankara-aile-terapisti/', []),
         'kizilay psikolog': ('/kizilay-psikolog/', []),
         'cankaya psikolog': ('/ankara-cankaya-psikolog/', []),
         'psikolog fiyat': ('/ankara-psikolog-fiyatlari/', []),
