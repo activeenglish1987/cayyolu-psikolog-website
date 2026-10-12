@@ -421,7 +421,7 @@ LANDINGS = [
 <h2>Görüşmeler nasıl planlanır?</h2>
 <p>İlk görüşmede aileden kimlerin katılacağı, başvuru nedeni ve beklentiler konuşulur. Sonraki görüşmeler ihtiyaca göre tüm aileyle, yalnızca ebeveynlerle ya da aile üyeleriyle ayrı ayrı yapılabilir. Görüşme planı ve sıklığı sizinle birlikte belirlenir.</p>
 <h2>Uzmanlarımız</h2>
-<p>Aile ve ebeveyn görüşmeleri için kurucumuz <a href="/psikolog-rojin-nazik/">Psikolog Rojin Nazik</a> ile randevu alabilirsiniz; çocuk ve ergen boyutu olan durumlarda <a href="/psikolog-elif-erdogan/">Psikolog Elif Erdoğan</a> de sürece dahil olabilir. Genel bilgi için <a href="/aile-terapisi/">Aile Terapisi</a> sayfamıza da bakabilirsiniz.</p>
+<p>Aile ve ebeveyn görüşmeleri için kurucumuz <a href="/psikolog-rojin-nazik/">Psikolog Rojin Nazik</a> ile randevu alabilirsiniz; çocuk ve ergen boyutu olan durumlarda <a href="/psikolog-elif-erdogan/">Psikolog Elif Erdoğan</a> de sürece dahil olabilir.</p>
 ''',
  'faqs': [
   ("Aile görüşmesine herkesin katılması şart mı?", "Hayır. Görüşmeler ihtiyaca göre tüm aileyle, yalnızca ebeveynlerle ya da bireysel olarak planlanabilir."),

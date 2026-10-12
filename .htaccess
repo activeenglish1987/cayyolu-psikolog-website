@@ -34,6 +34,7 @@ RewriteRule ^wp-admin(/.*)?$ / [R=301,L]
 RewriteRule ^(wp-)?sitemap(_index)?\.xml$ /sitemap.xml [R=301,L]
 RewriteRule ^(page|post|category)-sitemap\.xml$ /sitemap.xml [R=301,L]
 RewriteRule ^iletisim-2/?$ /iletisim/ [R=301,L]
+RewriteRule ^aile-terapisi/?$ /cayyolu-aile-terapisi/ [R=301,L]
 
 # Kaldırılan çeviri yazılar -> özgün makaleler
 RewriteRule ^aa-copy/?$ /cocuklarda-kaygi-ebeveyn-rehberi/ [R=301,L]

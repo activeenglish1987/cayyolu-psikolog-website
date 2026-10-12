@@ -173,7 +173,7 @@ SERVICES = [
     ('/bireysel-danismanlik/', 'Bireysel Danışmanlık', 'Kaygı, stres, özgüven ve yaşam geçişlerinde bire bir destek.', 'Yetişkin'),
     ('/cift-iliski-terapisi/', 'Çift ve İlişki Terapisi', 'İletişim, güven ve yakınlık konularında çift görüşmeleri.', 'Çiftler'),
     ('/cocuk-ergen-danismanligi/', 'Çocuk ve Ergen Danışmanlığı', 'Okul, duygu düzenleme ve gelişim süreçlerinde destek; oyun terapisi.', 'Çocuk · Ergen'),
-    ('/aile-terapisi/', 'Aile Terapisi', 'Aile içi iletişim, sınırlar ve kuşak çatışmaları.', 'Aile'),
+    ('/cayyolu-aile-terapisi/', 'Aile Terapisi', 'Aile içi iletişim, sınırlar ve kuşak çatışmaları.', 'Aile'),
     ('/evlilik-oncesi-danismanlik/', 'Evlilik Öncesi Danışmanlık', 'Evliliğe hazırlık, beklentiler ve ortak hedefler.', 'Çiftler'),
     ('/bosanma-sonrasi-danismanlik/', 'Boşanma Sonrası Danışmanlık', 'Ayrılık ve boşanma sürecinde duygusal destek.', 'Yetişkin'),
     ('/kaygi-sorunlari/', 'Kaygı Sorunları', 'Yoğun kaygı, panik ve sosyal kaygıda psikolojik destek.', 'Yetişkin'),
@@ -762,6 +762,17 @@ RETITLE = {
    'title': "Batı Ankara'da Psikolojik Destek: Çayyolu, Ümitköy, Yaşamkent ve İncek",
    'seo_title': "Batı Ankara'da Psikolojik Destek | Çayyolu, Ümitköy, Yaşamkent, İncek",
    'seo_desc': "Çayyolu, Ümitköy, Yaşamkent, Konutkent ve İncek'te yaşayanlar için RN Psikoloji Yaşamkent ofisinde yüz yüze psikolojik danışmanlık. Randevu: 0552 418 79 73."},
+ # 'Çayyolu psikolog' kelimesi yalnız ana sayfada: aşağıdaki yazılar başlıkta onunla yarışmasın (2026-10-12)
+ '/cayyolu-psikolog-cocuk-ergen-aile-ve-bireysel-terapi-hizmetleri/': {
+   'title': "Çayyolu'da Çocuk, Ergen, Aile ve Bireysel Terapi",
+   'seo_title': "Çayyolu'da Çocuk, Ergen, Aile ve Bireysel Terapi | RN Psikoloji"},
+ '/cayyolu-psikolog-depresyon-panik-atak-sosyal-fobi-sinav-kaygisi-ve-travma-terapisi/': {
+   'title': "Çayyolu'da Depresyon, Panik Atak, Kaygı ve Travma Terapisi",
+   'seo_title': "Çayyolu'da Depresyon, Panik Atak, Kaygı ve Travma Terapisi"},
+ # Başlıkta 'en iyi' ve eskimiş yıl vardı
+ '/cayyolu-psikolog-tavsiyesi-2025-en-iyi-ozel-ve-kadin-terapist-arayanlara-rehber/': {
+   'title': "Çayyolu'da Psikolog Seçme Rehberi",
+   'seo_title': "Çayyolu'da Psikolog Seçme Rehberi | RN Psikoloji"},
 }
 def sister_html(path):
     items = SISTER.get(path)
@@ -917,7 +928,9 @@ def main():
              # 'Çayyolu psikolog' tek sayfada toplanır: yıllardır sıralanan ana sayfa (2026-10-05)
              '/cayyolu-psikolog/': '/',
              # Hazal Akşahin artık ekipte değil (2026-10-07)
-             '/psikolog-hazal-aksahin/': '/uzmanlarimiz/'}
+             '/psikolog-hazal-aksahin/': '/uzmanlarimiz/',
+             # İki aile terapisi sayfası birbirini zayıflatıyordu; yerel ve güncel olan kalır (2026-10-12)
+             '/aile-terapisi/': '/cayyolu-aile-terapisi/'}
     recs = [r for r in recs if r['path'] not in moved]
     for r in recs:
         h = r.get('html') or ''
