@@ -369,7 +369,7 @@ def footer_html():
       <a class="text-link light" href="%(dir)s" target="_blank" rel="noopener">Yol tarifi al %(arrow)s</a>
     </div>
   </div>
-  <div class="wrap footer-bottom"><span>© 2026 %(brand)s</span><span><a href="https://www.psikologrojinnazik.com/" target="_blank" rel="noopener">psikologrojinnazik.com</a> · <a href="https://www.psikologeliferdogan.com/" target="_blank" rel="noopener">psikologeliferdogan.com</a></span></div>
+  <div class="wrap footer-bottom"><span>© 2026 %(brand)s · <a href="/kvkk/">KVKK</a> · <a href="/gizlilik/">Gizlilik</a></span><span><a href="https://www.psikologrojinnazik.com/" target="_blank" rel="noopener">psikologrojinnazik.com</a> · <a href="https://www.psikologeliferdogan.com/" target="_blank" rel="noopener">psikologeliferdogan.com</a></span></div>
 </footer>
 <div class="sticky-bar" role="navigation" aria-label="Hızlı iletişim">%(call2)s%(wa2)s</div>
 </body>
@@ -1044,6 +1044,16 @@ def main():
     # blog listeleri
     write('/blog/', blog_index(posts, '/blog/')); pages.append(('/blog/', None))
     write('/category/blog/', blog_index(posts, '/category/blog/', 'Blog Yazıları')); pages.append(('/category/blog/', None))
+    # KVKK aydınlatma metni ve gizlilik özeti (ortak metin: _kaynak/kvkk.py, Rojin sitesindekiyle aynı veri sorumlusu)
+    import kvkk
+    write('/kvkk/', article_page({'title': 'KVKK Aydınlatma Metni', 'path': '/kvkk/', 'date': '2026-10-13', 'modified': '2026-10-13', 'type': 'page'},
+                                 kvkk.kvkk_govde(BRAND, 'cayyolupsikolog.com.tr', EMAIL), [('Ana Sayfa', '/'), ('KVKK Aydınlatma Metni', None)],
+                                 desc='RN Psikoloji Çayyolu kişisel verilerin korunması (KVKK) aydınlatma metni: veri sorumlusu, işlenen veriler, amaçlar ve haklarınız.',
+                                 title_tag='KVKK Aydınlatma Metni | %s' % BRAND)); pages.append(('/kvkk/', '2026-10-13'))
+    write('/gizlilik/', article_page({'title': 'Gizlilik Politikası', 'path': '/gizlilik/', 'date': '2026-10-13', 'modified': '2026-10-13', 'type': 'page'},
+                                     kvkk.gizlilik_govde('/kvkk/'), [('Ana Sayfa', '/'), ('Gizlilik Politikası', None)],
+                                     desc='RN Psikoloji Çayyolu gizlilik yaklaşımı: hangi bilgileri neden istediğimiz ve nasıl koruduğumuz.',
+                                     title_tag='Gizlilik Politikası | %s' % BRAND)); pages.append(('/gizlilik/', '2026-10-13'))
     # 404
     open(os.path.join(ROOT, '404.html'), 'w', encoding='utf-8').write(
         head('Sayfa bulunamadı | %s' % BRAND, 'Aradığınız sayfa bulunamadı.', '/404.html', noindex=True) + nav_html('') +

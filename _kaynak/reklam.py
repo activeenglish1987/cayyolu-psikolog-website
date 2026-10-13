@@ -31,8 +31,7 @@ CAYYOLU = {
     'foto': '/assets/img/opt/psikolog-rojin-nazik-720.webp',
     'renk': {'a': '#14264A', 'a2': '#14264A', 'hl': '#E9A23B', 'bg': '#F2F6FB', 'ink': '#18223A', 'mut': '#566179', 'line': '#DCE4F0'},
     'baslik_font': "system-ui,-apple-system,'Segoe UI',sans-serif",
-    # Çayyolu sitesinde ayrı KVKK sayfası yok; aynı işletmenin (RN Psikoloji) metinleri
-    'kvkk': 'https://www.psikologrojinnazik.com/kvkk/', 'gizlilik': 'https://www.psikologrojinnazik.com/gizlilik/',
+    'kvkk': '/kvkk/', 'gizlilik': '/gizlilik/',
 }
 
 # Telefonun açıldığı saatler (Google Ads reklam ve arama öğesi zaman planı da aynı). Pazar kapalı.
@@ -364,7 +363,7 @@ ROJIN_HEAD = '''<!doctype html><html lang="tr"><head><meta charset="utf-8">
 <script src="/assets/js/after-hours.js?v=7" data-pos="bottom" defer></script>
 <script>window.PUSULA_CFG=Object.assign(window.PUSULA_CFG||{},{heroSecici:'.lp-pu'});</script>
 <script src="/assets/js/pusula.js?v=9" defer></script>
-<script src="/assets/js/vitrin.js?v=5" defer></script>
+<script src="/assets/js/vitrin.js?v=6" defer></script>
 </head><body>'''
 
 
@@ -383,7 +382,7 @@ CAYYOLU_HEAD = ROJIN_HEAD.replace('<meta name="theme-color" content="#3d1e54">',
     '<link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png">', '<link rel="icon" href="/favicon.svg" type="image/svg+xml">').replace(
     '<script src="/assets/js/pusula.js?v=9" defer></script>',
     "<script>window.PUSULA_CFG={site:'cayyolu',foto:'/assets/img/opt/psikolog-rojin-nazik-720.webp'};</script>\n<script src=\"/assets/js/pusula.js?v=9\" defer></script>").replace(
-    '<script src="/assets/js/vitrin.js?v=5" defer></script>\n', '')  # vitrin.js yalnız Rojin sitesinde
+    '<script src="/assets/js/vitrin.js?v=6" defer></script>\n', '')  # vitrin.js yalnız Rojin sitesinde
 
 
 def cayyolu_yaz(kok):
