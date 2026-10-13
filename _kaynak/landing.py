@@ -216,10 +216,11 @@ LANDINGS = [
  'body': """
 <h2>Bilkent ve Beytepe'den gelen danışanlarımız</h2>
 <p>Bilkent ve Beytepe çevresi; üniversite öğrencileri, akademisyenler ve sitelerde yaşayan ailelerden oluşan bir bölge. Başvurular da bu yapıyı yansıtıyor: Akademik baskı ve sınav dönemleri, şehre ve yurda uyum, yalnızlık, ilişkiler ve gelecek kaygısı en sık konuşulan konular arasında.</p>
-<p>RN Psikoloji'nin Yaşamkent ofisi, Eskişehir Yolu bağlantısıyla Bilkent ve Beytepe'ye kısa bir sürüş mesafesindedir. Ders ve iş programına uygun saatleri birlikte planlarız; dönem arası ya da şehir dışındayken görüşmelere <a href="/online-terapi/">online</a> devam etmek mümkündür.</p>
+<p>RN Psikoloji'nin Yaşamkent ofisi, Bilkent ve Beytepe ile aynı bulvar (Eskişehir Yolu) üzerindedir; M2 metrosuyla Koru'ya, oradan otobüs ya da taksiyle kısa sürede ulaşılır. Ders ve iş programına uygun saatleri birlikte planlarız; dönem arası ya da şehir dışındayken görüşmelere <a href="/online-terapi/">online</a> devam etmek mümkündür.</p>
 <div class="route-box"><h3>Bilkent ve Beytepe'den ulaşım</h3><ul>
-<li>Ofisimiz Konutkent, Dumlupınar Bulvarı No:399 Kat:28'dedir.</li>
-<li>Eskişehir Yolu üzerinden kısa bir sürüş mesafesindedir; ücretsiz otopark mevcuttur.</li>
+<li>Ofisimiz Konutkent, Dumlupınar Bulvarı No:399 Kat:28'dedir. Bilkent ve ODTÜ ile aynı bulvar (Eskişehir Yolu) üzerindedir.</li>
+<li><b>Metroyla:</b> M2 Kızılay–Koru hattında Bilkent ya da Beytepe durağından Koru yönüne binip son durak Koru'da inin. Koru metro çıkışındaki EGO duraklarından otobüsle ya da kısa bir taksi yolculuğuyla Konutkent'e ulaşabilirsiniz. Güncel hat ve saatleri EGO CEP'TE uygulamasından kontrol edebilirsiniz.</li>
+<li><b>Araçla:</b> Eskişehir Yolu (Dumlupınar Bulvarı) üzerinden Koru yönüne devam edin; binada ücretsiz otopark mevcuttur.</li>
 <li>Pazartesi – Cumartesi 09:00 – 20:00 arasında, akşam saatleri dahil randevu verilir.</li>
 </ul></div>
 <h2>Üniversite döneminde sık başvurulan konular</h2>
@@ -255,11 +256,12 @@ LANDINGS = [
  'body': """
 <h2>Eryaman ve Etimesgut'tan gelen danışanlarımız</h2>
 <p>Eryaman ve Etimesgut, genç ailelerin ve çalışan yetişkinlerin yoğun olduğu, hızla büyüyen semtler. Başvurularda iş ve aile sorumluluklarını dengelemenin yarattığı stres, çift ilişkisi, ebeveynlik ve çocukların okul uyumu öne çıkıyor.</p>
-<p>RN Psikoloji'nin Yaşamkent ofisi, Eryaman ve Etimesgut'a araçla kısa bir sürüş mesafesindedir. Akşam saatleri ve Cumartesi randevusu, iş çıkışı gelmek isteyenler için kolaylık sağlar; yoğun dönemlerde görüşmeler <a href="/online-terapi/">online</a> da yapılabilir.</p>
+<p>RN Psikoloji'nin Yaşamkent ofisi, Eryaman'dan araçla, trafiğe bağlı olarak genellikle 20–30 dakikalık mesafededir. Akşam saatleri ve Cumartesi randevusu, iş çıkışı gelmek isteyenler için kolaylık sağlar; yoğun dönemlerde görüşmeler <a href="/online-terapi/">online</a> da yapılabilir.</p>
 <div class="route-box"><h3>Eryaman ve Etimesgut'tan ulaşım</h3><ul>
 <li>Ofisimiz Konutkent, Dumlupınar Bulvarı No:399 Kat:28'dedir.</li>
-<li>Araçla kısa bir sürüş mesafesindedir; ücretsiz otopark mevcuttur.</li>
-<li>Pazartesi – Cumartesi 09:00 – 20:00 arasında randevu verilir.</li>
+<li><b>Araçla:</b> Eryaman'da bulunduğunuz noktaya göre yaklaşık 17–23 km; trafiğe bağlı olarak genellikle 20–30 dakika sürer. Binada ücretsiz otopark mevcuttur.</li>
+<li><b>Toplu taşımayla:</b> Eryaman'dan Çayyolu–Konutkent yönüne aktarmalı güzergâhlar bulunur; bulunduğunuz yere en uygun hattı EGO CEP'TE uygulamasından ya da harita uygulamanızdan planlayabilirsiniz.</li>
+<li>Pazartesi – Cumartesi 09:00 – 20:00 arasında randevu verilir; akşam ve Cumartesi saatleri iş çıkışı gelmek isteyenler için uygundur.</li>
 </ul></div>
 <h2>Eryaman ve Etimesgut'tan sık başvurulan konular</h2>
 <ul class="topic-grid">
@@ -275,7 +277,7 @@ LANDINGS = [
 <p>Yetişkin, çift ve aile görüşmeleri için <a href="/psikolog-rojin-nazik/">Psikolog Rojin Nazik</a>; çocuklarla oyun terapisi ve ergenlerle görüşmeler için <a href="/psikolog-elif-erdogan/">Psikolog Elif Erdoğan</a> ile çalışabilirsiniz. Çocuğunuz için destek arıyorsanız <a href="/cayyolu-cocuk-psikologu/">çocuk psikoloğu</a> sayfamıza da göz atabilirsiniz.</p>
 """,
  'faqs': [
-  ("Eryaman'a en yakın ofisiniz nerede?", "Konutkent, Dumlupınar Bulvarı No:399 Kat:28 Daire:121 adresindeki Yaşamkent ofisimiz Eryaman ve Etimesgut'a araçla kısa bir sürüş mesafesindedir."),
+  ("Eryaman'a en yakın ofisiniz nerede?", "Konutkent, Dumlupınar Bulvarı No:399 Kat:28 Daire:121 adresindeki Yaşamkent ofisimiz Eryaman'dan araçla, trafiğe bağlı olarak genellikle 20–30 dakikalık mesafededir."),
   ("Akşam ya da Cumartesi randevusu alabilir miyim?", "Evet. Pazartesi – Cumartesi 09:00 – 20:00 arasında, iş çıkışı saatleri dahil randevu verilir."),
   ("Çocuğum için görüşme yapıyor musunuz?", "Evet. Küçük çocuklarla oyun terapisi, ergenlerle görüşmeler ve ebeveyn danışmanlığı yapılır; ilk görüşme genellikle ebeveynlerle olur."),
   ("Online görüşme mümkün mü?", "Evet. Yetişkin, çift ve ebeveyn görüşmeleri online olarak da yapılabilir."),
