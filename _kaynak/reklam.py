@@ -283,7 +283,7 @@ def govde(S, P):
                      '</div><p style="margin:12px 0 0;color:var(--mut);font-size:15px">Size hangi psikoloğun uygun olduğunu Selda Hanım telefonda birlikte belirler.</p></section>')
         ofis = ('<div class="of"><img src="/assets/lp/ofis-salon.webp" alt="RN Psikoloji ofisinden bekleme alanı" width="600" height="800" loading="lazy" decoding="async">'
                 '<img src="/assets/lp/ofis-koltuk.webp" alt="RN Psikoloji ofisinden görüşme alanı" width="600" height="800" loading="lazy" decoding="async"></div>')
-    return '''<header class="w top">%(logo)s<a class="t" href="tel:%(tel)s" data-cta-area="lp_header">📞 %(teltxt)s</a></header>
+    return '''<header class="w top"><a class="lgo" href="/" aria-label="%(marka)s – ana sayfa" style="display:inline-flex;text-decoration:none">%(logo)s</a><a class="t" href="tel:%(tel)s" data-cta-area="lp_header">📞 %(teltxt)s</a></header>
 <section class="hero"><div class="w hi">
 <div>
 <div class="ey">Psikolog Rojin Nazik · RN Psikoloji</div>
