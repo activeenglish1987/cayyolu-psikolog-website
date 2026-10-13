@@ -930,7 +930,9 @@ def main():
              # Hazal Akşahin artık ekipte değil (2026-10-07)
              '/psikolog-hazal-aksahin/': '/uzmanlarimiz/',
              # İki aile terapisi sayfası birbirini zayıflatıyordu; yerel ve güncel olan kalır (2026-10-12)
-             '/aile-terapisi/': '/cayyolu-aile-terapisi/'}
+             '/aile-terapisi/': '/cayyolu-aile-terapisi/',
+             # Ali Bahadır ekipte değil (2026-10-13)
+             '/hipnoterapist-ali-bahadir/': '/uzmanlarimiz/'}
     recs = [r for r in recs if r['path'] not in moved]
     for r in recs:
         h = r.get('html') or ''
