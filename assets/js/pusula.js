@@ -163,14 +163,15 @@
     w.dataLayer.push(p);
   }
 
-  /* ---------- Mesai durumu (Pzt–Cmt 09:00–20:00, İstanbul) ---------- */
+  /* ---------- Telefon mesaisi (hafta içi 10:00–19:00, Cumartesi 10:00–18:00, İstanbul; ofis seansları 09:00–20:00) ---------- */
   function mesai() {
     try {
       var p = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Istanbul', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date());
       var g = function (t) { for (var i = 0; i < p.length; i++) if (p[i].type === t) return p[i].value; return ''; };
       var day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(g('weekday'));
       var m = (parseInt(g('hour'), 10) % 24) * 60 + parseInt(g('minute'), 10);
-      return { acik: day >= 1 && day <= 6 && m >= 540 && m < 1200, pazartesi: (day === 6 && m >= 1200) || day === 0, sabahOnce: m < 540 };
+      var kap = day === 6 ? 1080 : 1140;
+      return { acik: day >= 1 && day <= 6 && m >= 600 && m < kap, pazartesi: (day === 6 && m >= kap) || day === 0, sabahOnce: m < 600 };
     } catch (e) { return { acik: true }; }
   }
 
@@ -572,7 +573,7 @@
 
   /* ---------- Soru sorun kutusu ----------
      Sık sorulan sorulara anında yanıt; her yanıtın sonunda arama düğmesi; isteyen numarasını bırakır,
-     talep psikologunubul paneline düşer (mesai içinde "şimdi", dışında "sabah 09:00"). Canlı kişi gibi
+     talep psikologunubul paneline düşer (mesai içinde "şimdi", dışında "sabah 10:00"). Canlı kişi gibi
      davranmaz: yanıtlar RN Psikoloji'nin hazır bilgileridir, telefonu Selda Hanım açar. */
   var TALEP_API = CFG.talepApi || 'https://www.psikologunubul.com.tr/api/talep';
   var AYDINLATMA = 'https://www.psikologunubul.com.tr/kvkk-aydinlatma';
@@ -586,7 +587,7 @@
     ['cocuk', 'Çocuğum / ergenim için', 'Çocuklarda ilk görüşme genellikle ebeveynle yapılır; ardından çocuğun yaşına uygun görüşmeler planlanır. Küçük çocuklarla oyun terapisi, ergenlerle güvenli ve yargısız bir görüşme ortamı önceliklidir.'],
     ['gizlilik', 'Görüşmeler gizli mi?', 'Evet. Görüşmelerde konuşulanlar gizlidir; yalnız yasal zorunluluk ve can güvenliği gibi istisnalar vardır, bunlar ilk görüşmede açıkça anlatılır.'],
     ['ekip', 'Kimlerle görüşebilirim?', 'Ekibimizde ' + EKIP + ' var. Hangi uzmanın size daha uygun olduğunu Selda Hanım ihtiyacınıza göre birlikte belirler.'],
-    ['saat', 'Çalışma saatleri', 'Pazartesi–Cumartesi 09:00–20:00. Mesai dışında numaranızı bırakırsanız Selda Hanım sabah ilk iş sizi arar.']
+    ['saat', 'Çalışma saatleri', 'Görüşmeler Pazartesi–Cumartesi 09:00–20:00. Telefon: hafta içi 10:00–19:00, Cumartesi 10:00–18:00. Bu saatler dışında numaranızı bırakırsanız Selda Hanım sabah ilk iş sizi arar.']
   ];
   var KONU_DAVET = [
     [/cocuk|pedagog|okul|oyun-terapisi|bosanmayi-cocuga|kardes/, 'Çocuğunuz için 60 saniyede bir yol haritası çıkaralım mı?'],
@@ -666,7 +667,7 @@
       if (panel) { panel.parentNode.removeChild(panel); panel = null; balonKonum(); return; }
       olay('soru_kutusu_acildi', { pusula_kaynak: kaynak || 'balon' });
       var mm = mesai();
-      panel = el('<div class="pu-sb-p" role="dialog" aria-label="Soru sorun"><div class="pu-sb-h">' + seldaAvatar() + '<div><b>RN Psikoloji</b><small>' + (mm.acik ? '🟢 Şu an açığız · Telefonu Selda Hanım açar' : '🌙 Mesai dışı · Sabah 09:00\'da arıyoruz') + '</small></div><button type="button" class="x" aria-label="Kapat">×</button></div><div class="pu-sb-b"></div><div class="pu-sb-f"></div></div>');
+      panel = el('<div class="pu-sb-p" role="dialog" aria-label="Soru sorun"><div class="pu-sb-h">' + seldaAvatar() + '<div><b>RN Psikoloji</b><small>' + (mm.acik ? '🟢 Şu an açığız · Telefonu Selda Hanım açar' : '🌙 Mesai dışı · Sabah 10:00\'da arıyoruz') + '</small></div><button type="button" class="x" aria-label="Kapat">×</button></div><div class="pu-sb-b"></div><div class="pu-sb-f"></div></div>');
       kutu.appendChild(panel);
       panel.querySelector('.x').onclick = function () { panelAc(); };
       var govde = panel.querySelector('.pu-sb-b'), alt = panel.querySelector('.pu-sb-f');
@@ -700,12 +701,12 @@
       function altCiz() {
         var m2 = mesai();
         alt.innerHTML = (m2.acik ? '<a class="ara" href="' + TEL + '">📞 Selda Hanım\'ı Arayın</a>' : '')
-          + '<button type="button" class="geri">' + (m2.acik ? 'Numaramı bırakayım, beni arasınlar' : '📞 Sabah 09:00\'da beni arayın') + '</button>'
+          + '<button type="button" class="geri">' + (m2.acik ? 'Numaramı bırakayım, beni arasınlar' : '📞 Sabah 10:00\'da beni arayın') + '</button>'
           + (m2.acik ? '' : '<a class="ara" style="background:none;color:var(--pu-mut)!important;font-weight:600;font-size:13px;text-decoration:underline;padding:0" href="' + TEL + '">Yine de ara · ' + TEL_TXT + '</a>');
         alt.querySelector('.geri').onclick = function () { formCiz(m2); };
       }
       function formCiz(m2) {
-        var saat = m2.acik ? null : (m2.pazartesi ? 'Pazartesi 09:00' : (m2.sabahOnce ? 'Bugün 09:00' : 'Yarın 09:00'));
+        var saat = m2.acik ? null : (m2.pazartesi ? 'Pazartesi 10:00' : (m2.sabahOnce ? 'Bugün 10:00' : 'Yarın 10:00'));
         alt.innerHTML = '<form class="pu-sb-form" novalidate><input type="tel" inputmode="tel" autocomplete="tel" placeholder="05xx xxx xx xx" aria-label="Cep telefonunuz" maxlength="20"><div class="err" aria-live="polite"></div><button type="submit">' + (m2.acik ? '📞 Beni arayın' : '📞 Sabah beni arayın') + '</button><small>Numaranızı yalnızca sizi aramak için kullanırız. <a href="' + AYDINLATMA + '" target="_blank" rel="noopener">Aydınlatma metni</a></small></form>';
         var f = alt.querySelector('form'), inp = f.querySelector('input'), err = f.querySelector('.err'), btn = f.querySelector('button');
         try { inp.focus(); } catch (e) {}
@@ -724,7 +725,7 @@
             .then(function (x) {
               if (!x.ok || !x.j || !x.j.ok) throw new Error((x.j && x.j.error) || 'hata');
               olay('callback_request', { cta_area: 'soru_kutusu' });
-              mesaj(m2.acik ? '✅ Talebiniz alındı. Selda Hanım birkaç dakika içinde sizi arayacak.' : '✅ Talebiniz alındı. Selda Hanım sabah 09:00\'dan itibaren sizi arayacak.');
+              mesaj(m2.acik ? '✅ Talebiniz alındı. Selda Hanım birkaç dakika içinde sizi arayacak.' : '✅ Talebiniz alındı. Selda Hanım sabah 10:00\'dan itibaren sizi arayacak.');
               alt.innerHTML = m2.acik ? '<a class="ara" href="' + TEL + '">📞 Beklemeden arayın</a>' : '';
             })
             .catch(function (ex) { btn.disabled = false; err.textContent = (ex && ex.message && ex.message !== 'hata' && ex.message.indexOf('etch') < 0 ? ex.message : 'Şu an gönderilemedi, lütfen arayın: ' + TEL_TXT); });

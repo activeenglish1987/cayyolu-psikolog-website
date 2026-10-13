@@ -15,7 +15,7 @@
     });
   }
 
-  // Pazartesi – Cumartesi 09:00 – 20:00 (İstanbul saati)
+  // Telefon mesaisi: hafta içi 10:00–19:00, Cumartesi 10:00–18:00 (İstanbul). Ofis seansları 09:00–20:00.
   var els = document.querySelectorAll('[data-open-status]');
   if (!els.length) return;
   var day = 0, mins = 0;
@@ -25,7 +25,7 @@
     day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(get('weekday'));
     mins = (parseInt(get('hour'), 10) % 24) * 60 + parseInt(get('minute'), 10);
   } catch (e) { return; }
-  var open = day >= 1 && day <= 6 && mins >= 540 && mins < 1200;
+  var open = day >= 1 && day <= 6 && mins >= 600 && mins < (day === 6 ? 1080 : 1140);
   var text = open ? 'Şu an açığız · Telefonu Selda Hanım açar.' : "Şu an mesai dışındayız. WhatsApp'tan mesaj bırakabilirsiniz, ilk mesaide dönüş yapılır.";
   for (var i = 0; i < els.length; i++) {
     els[i].innerHTML = '<span class="dot"></span><span></span>';

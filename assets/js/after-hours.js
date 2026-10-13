@@ -1,4 +1,5 @@
-/* Mesai dışı yakalama: Pazartesi–Cumartesi 09:00–20:00 (İstanbul) dışında
+/* Mesai dışı yakalama: telefon saatleri (hafta içi 10:00–19:00, Cumartesi 10:00–18:00, İstanbul) dışında.
+   Ofis 09:00–20:00 arası seans verir; bu dosya yalnız TELEFONUN açıldığı saatlere bakar.
    "Sabah Selda Hanım sizi arasın" düğmesi gösterir. Tıklanınca küçük bir pencere açılır:
    ziyaretçi cep numarasını bırakır, talep reklam kimliğiyle (gclid) birlikte psikologunubul
    panelindeki talepler listesine düşer ve sabah ilk iş aranır. WhatsApp ikinci seçenek olarak kalır.
@@ -16,16 +17,17 @@
     day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(get('weekday'));
     mins = (parseInt(get('hour'), 10) % 24) * 60 + parseInt(get('minute'), 10);
   } catch (e) { return; }
-  var open = day >= 1 && day <= 6 && mins >= 540 && mins < 1200;
+  var ACILIS = 600, KAPANIS = day === 6 ? 1080 : 1140; // 10:00; hafta içi 19:00, Cumartesi 18:00
+  var open = day >= 1 && day <= 6 && mins >= ACILIS && mins < KAPANIS;
   if (open) return;
 
   // Ne zaman aranacağı: akşam/gece ise "yarın sabah", Cumartesi akşamı ve Pazar "Pazartesi sabahı"
   var when = 'sabah';
-  if ((day === 6 && mins >= 1200) || day === 0) when = 'Pazartesi sabahı';
-  else if (mins < 540) when = 'bu sabah';
+  if ((day === 6 && mins >= KAPANIS) || day === 0) when = 'Pazartesi sabahı';
+  else if (mins < ACILIS) when = 'bu sabah';
   var kisa = when === 'Pazartesi sabahı' ? 'Pazartesi' : 'Sabah';
   // Panelde arama hatırlatması bu saate kurulur (psikologunubul lib/hours.ts callbackAtFrom)
-  var saat = when === 'Pazartesi sabahı' ? 'Pazartesi 09:00' : when === 'bu sabah' ? 'Bugün 09:00' : 'Yarın 09:00';
+  var saat = when === 'Pazartesi sabahı' ? 'Pazartesi 10:00' : when === 'bu sabah' ? 'Bugün 10:00' : 'Yarın 10:00';
   var msg = 'Merhaba, mesai dışında yazıyorum. ' + kisa + ' aranmak istiyorum. Konu: ';
   var waHref = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg);
 
@@ -83,7 +85,7 @@
     s.setAttribute('role', 'dialog');
     s.setAttribute('aria-modal', 'true');
     s.innerHTML = '<div class="ah-card"><button type="button" class="ah-x" aria-label="Kapat">×</button>'
-      + '<h3>' + kisa + ' 09:00\'da sizi arayalım</h3>'
+      + '<h3>' + kisa + ' 10:00\'da sizi arayalım</h3>'
       + '<div class="ah-who"><i>S</i><span><b>Selda Hanım</b> ' + when + ' ilk iş sizi arar, size uygun saati ve ücret bilgisini söyler.</span></div>'
       + '<form novalidate><input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="05xx xxx xx xx" aria-label="Cep telefonunuz" maxlength="20">'
       + '<input name="hp" type="text" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true">'
@@ -107,7 +109,7 @@
         .then(function (x) {
           if (!x.ok || !x.j || !x.j.ok) throw new Error((x.j && x.j.error) || 'hata');
           track('callback_request', { cta_area: area });
-          s.querySelector('.ah-card').innerHTML = '<button type="button" class="ah-x" aria-label="Kapat">×</button><div class="ah-ok"><div style="font-size:40px">✅</div><b>Talebiniz alındı</b><p>Selda Hanım ' + when + ' 09:00\'dan itibaren sizi arayacak. İyi dinlenmeler.</p></div>';
+          s.querySelector('.ah-card').innerHTML = '<button type="button" class="ah-x" aria-label="Kapat">×</button><div class="ah-ok"><div style="font-size:40px">✅</div><b>Talebiniz alındı</b><p>Selda Hanım ' + when + ' 10:00\'dan itibaren sizi arayacak. İyi dinlenmeler.</p></div>';
           s.querySelector('.ah-x').onclick = kapat;
         })
         .catch(function (ex) {
