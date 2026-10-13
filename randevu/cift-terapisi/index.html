@@ -86,6 +86,7 @@ details p{margin:8px 0 0;color:var(--mut)}
 .ek b{display:block;color:var(--a2)}.ek small{color:var(--mut);font-size:13px}
 .of{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.of img{width:100%;height:200px;object-fit:cover;border-radius:14px;display:block}
 @media(min-width:760px){.of img{height:280px}}
+.ic p{margin:0 0 10px;color:var(--ink);font-size:15.5px}.ic p:last-child{margin:0}
 .bar{transition:transform .25s,opacity .25s}
 .dip{padding:18px 0 26px;font-size:12.5px;color:var(--mut);text-align:center}
 .bar{position:fixed;left:0;right:0;bottom:0;z-index:9990;display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid var(--line);backdrop-filter:blur(10px)}
@@ -118,6 +119,7 @@ details p{margin:8px 0 0;color:var(--mut)}
 <p style="margin:12px 0 0;color:var(--mut);font-size:15px">CNN Türk, Milliyet ve Sabah'ta uzman konuk; Psychology Times kurucusu.</p></section>
 
 <section class="kart"><h2>Hangi konularda destek alabilirsiniz?</h2><ul class="konu"><li>İletişim kuramama, sık tartışma</li><li>Güven sorunu</li><li>Birbirinden uzaklaşma</li><li>Evlilik öncesi danışmanlık</li><li>Boşanma kararı ve sonrası</li><li>Ebeveynlik ve aile içi çatışma</li></ul></section>
+
 <section class="kart"><h2>Randevu 3 adımda</h2><div class="adim"><div><b>Arayın</b><p>Telefonu Selda Hanım açar. İhtiyacınızı kısaca dinler; her şeyi anlatmanız gerekmez.</p></div><div><b>Size uygun saat</b><p>Gün, saat ve şubeyi birlikte belirlersiniz; ücret bilgisini de aynı aramada öğrenirsiniz.</p></div><div><b>İlk görüşme</b><p>Tanışma ve değerlendirme görüşmesi: ne yaşadığınız konuşulur, çalışma planı birlikte oluşturulur.</p></div></div></section>
 
 <section class="kart"><h2>Rojin Nazik'in notu</h2><blockquote>“Çiftlerin çoğu ‘iletişim kuramıyoruz’ diyerek geliyor. Görüşmeler ilerledikçe çoğu zaman sorunun yalnızca iletişim olmadığını; uzun süredir konuşulmamış kırgınlıkların, anlaşılmama hissinin ve tekrar eden ilişki döngülerinin biriktiğini görüyorum.”</blockquote><div class="qk">Psikolog Rojin Nazik · Çiftlerde en sık gördüğüm sorun</div></section>
@@ -131,7 +133,7 @@ details p{margin:8px 0 0;color:var(--mut)}
    Yalnız hazır tablodaki kalıplar kullanılır; aranan kelime sayfaya olduğu gibi yazılmaz. */
 (function(){try{var q=new URLSearchParams(location.search),k=(q.get('kw')||q.get('utm_term')||q.get('keyword')||'').toLocaleLowerCase('tr-TR').replace(/[+_]/g,' ');if(!k)return;
 var Y=[[/kızılay|kizilay/,'Kızılay'],[/çankaya|cankaya/,'Çankaya'],[/yaşamkent|yasamkent/,'Yaşamkent'],[/çayyolu|cayyolu/,'Çayyolu'],[/ümitköy|umitkoy/,'Ümitköy'],[/konutkent/,'Konutkent'],[/incek/,'İncek'],[/beysukent/,'Beysukent'],[/bilkent/,'Bilkent'],[/eryaman/,'Eryaman'],[/ankara/,'Ankara']];
-var K=[[/ergen|genç|genc/,'Ergen Psikoloğu'],[/çocuk|cocuk|pedagog|oyun terap/,'Çocuk Psikoloğu'],[/çift|cift|evlilik|ilişki|iliski/,'Çift Terapisi'],[/aile/,'Aile Danışmanı'],[/panik/,'Panik Atak Desteği'],[/kaygı|kaygi|anksiyete/,'Kaygı İçin Psikolog'],[/depresyon/,'Depresyon İçin Psikolog'],[/takıntı|takinti|okb/,'Takıntı (OKB) İçin Psikolog'],[/travma/,'Travma İçin Psikolog'],[/boşanma|bosanma/,'Boşanma Danışmanlığı'],[/online|çevrimiçi|cevrimici|internet/,'Online Psikolog'],[/kadın psikolog|kadin psikolog/,'Kadın Psikolog'],[/psikoterapist|terapist/,'Psikoterapist'],[/psikolojik danışman|psikolojik danisman/,'Psikolojik Danışmanlık']];
+var K=[[/evlilik terapist/,'Evlilik Terapisti'],[/evlilik danışman|evlilik danisman/,'Evlilik Danışmanı'],[/evlilik terap/,'Evlilik Terapisi'],[/ilişki terapist|iliski terapist/,'İlişki Terapisti'],[/çift terapist|cift terapist/,'Çift Terapisti'],[/aile terap/,'Aile Terapisi'],[/bireysel terap/,'Bireysel Terapi'],[/bireysel danışman|bireysel danisman/,'Bireysel Danışmanlık'],[/randevu/,'Psikolog Randevusu'],[/ergen|genç|genc/,'Ergen Psikoloğu'],[/çocuk|cocuk|pedagog|oyun terap/,'Çocuk Psikoloğu'],[/çift|cift|evlilik|ilişki|iliski/,'Çift Terapisi'],[/aile/,'Aile Danışmanı'],[/panik/,'Panik Atak Desteği'],[/kaygı|kaygi|anksiyete/,'Kaygı İçin Psikolog'],[/depresyon/,'Depresyon İçin Psikolog'],[/takıntı|takinti|okb/,'Takıntı (OKB) İçin Psikolog'],[/travma/,'Travma İçin Psikolog'],[/boşanma|bosanma/,'Boşanma Danışmanlığı'],[/online|çevrimiçi|cevrimici|internet/,'Online Psikolog'],[/kadın psikolog|kadin psikolog/,'Kadın Psikolog'],[/psikoterapist|terapist/,'Psikoterapist'],[/psikolojik danışman|psikolojik danisman/,'Psikolojik Danışmanlık']];
 var bul=function(L){for(var i=0;i<L.length;i++)if(L[i][0].test(k))return L[i][1];return ''};var y=bul(Y),c=bul(K);if(!y&&!c)return;
 y=y||'Çayyolu';c=c||'Psikolog';var h=document.querySelector('h1');h.textContent=y+' ';var e=document.createElement('em');e.textContent=c;h.appendChild(e);
 document.title=y+' '+c+' | RN Psikoloji Çayyolu';(window.dataLayer=window.dataLayer||[]).push({event:'lp_baslik_uyumu',lp_baslik:y+' '+c});}catch(x){}})();</script>

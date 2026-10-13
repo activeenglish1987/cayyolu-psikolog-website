@@ -81,6 +81,14 @@ KITAPLAR = [('bir-hayatla-evlenmek', 'Bir Hayatla Evlenmek'), ('bir-odanin-otesi
 SAYFALAR = {
     'rojin': [
         {'yol': '/randevu/ankara-psikolog/', 'video': 'QaMYPc-FUw4', 'h1': 'Ankara Psikolog', 'h1b': 'Rojin Nazik',
+         # Reklam grubu kelimeleri: ankara psikolog, psikolog ankara, ankara psikolog randevu, psikolog randevu ankara, online psikolog ankara,
+         # ankara bireysel terapi, ankara psikolojik danışmanlık, ankara psikolog merkezleri, ankara daki psikologlar, ankara psikolog tavsiye
+         'icerik': ("Ankara'da psikolog randevusu", [
+             "Ankara psikolog arayışınızda Psikolog Rojin Nazik ve ekibiyle Yaşamkent (Çayyolu) ve Kızılay ofislerinde yüz yüze görüşebilir, Ankara dışındaysanız online psikolog görüşmesi yapabilirsiniz. RN Psikoloji Danışmanlık Merkezi'nde bireysel terapi, çift ve aile terapisi, çocuk ve ergen danışmanlığı yapılıyor.",
+             "Psikolog randevusu için telefonu Selda Hanım açar. Hangi konuda psikolojik danışmanlık almak istediğinizi kısaca dinler; size uygun psikoloğu, şubeyi ve saati birlikte belirlersiniz.",
+             "Ankara'daki psikologlar arasında seçim yaparken uzmanın hangi konularla çalıştığına, yaklaşımına ve kendinizi rahat hissedip hissetmediğinize bakmanızı öneririz. Psikolog Rojin Nazik bilişsel davranışçı ve şema terapi yaklaşımlarıyla çalışıyor; tanışmadan önce TV programlarını izleyebilir, yazılarını okuyabilirsiniz."]),
+         'sss': [('Bireysel terapi nasıl ilerler?', 'İlk görüşmede ne yaşadığınız ve neye ihtiyaç duyduğunuz birlikte değerlendirilir. Sonrasında genellikle haftalık veya iki haftada bir yapılan görüşmelerle, birlikte belirlediğiniz hedefler doğrultusunda ilerlenir.'),
+                 ('Psikolog randevusu ne kadar sürede alınır?', 'Uygun gün ve saati Selda Hanım telefonda hemen söyler; yüz yüze ya da online seçeneklerden size uygun olanı birlikte belirlersiniz.')],
          'alt': "Yaşamkent ve Kızılay'da yüz yüze, dilerseniz online psikolojik danışmanlık. Kendinizi rahatça anlatabileceğiniz, acele edilmeyen bir ortam.",
          'konular': ['Kaygı, stres ve panik atak', 'Depresif duygular ve isteksizlik', 'İlişki, evlilik ve aile sorunları', 'Yas, boşanma ve zor yaşam dönemleri', 'Öfke, özgüven ve tekrar eden düşünceler', 'Çocuk ve ergen danışmanlığı'],
          'not': ('‘Psikoloğa gitmeli miyim?’ diye soranlara', 'Psikoloğa başvurmak için kişinin hayatının tamamen kontrolden çıkmasını beklemesi gerektiğini düşünmüyorum. Aynı düşünce, duygu veya ilişki döngüsünün tekrar ettiğini fark ediyor ve bunun içinden çıkmakta zorlanıyorsa bunu konuşmak için yeterli bir neden olabilir.')},
@@ -88,15 +96,28 @@ SAYFALAR = {
          'alt': 'Okul, kaygı, öfke ve uyum sorunlarında çocuk ve ergen görüşmeleri; küçük yaşta oyun terapisi ve ebeveyn danışmanlığı. Yaşamkent, Kızılay ve online.',
          'konular': ['Öfke nöbetleri ve davranış sorunları', 'Okul, ders ve sınav kaygısı', 'Korkular, ayrılma kaygısı ve uyku sorunları', 'Boşanma sürecinde çocuk', 'Ergenlikte iletişim, içe kapanma, ekran kullanımı', 'Küçük yaşta oyun terapisi (Psikolog Elif Erdoğan)'],
          'ekip': 'Küçük yaştaki çocuklarla oyun terapisi ve psikolojik test için ekibimizde Psikolog Elif Erdoğan da çalışıyor; size uygun uzmanı Selda Hanım birlikte belirler.',
+         'icerik': ("Ankara'da çocuk psikoloğu ve ergen psikoloğu", [
+             "Çocuk psikoloğu görüşmelerinde çocuğun yaşına uygun yöntemlerle çalışılır; küçük yaşta oyun terapisi, ebeveyn danışmanlığı ve gerektiğinde psikolojik testler kullanılır.",
+             "Ergen psikoloğu ile yapılan ergen terapisi görüşmelerinde okul, arkadaşlık, aileyle iletişim, ekran kullanımı ve içe kapanma gibi konular gencin kendi diliyle konuşulur. Ankara'da Yaşamkent ve Kızılay ofislerinde yüz yüze ya da online görüşme yapılabilir."]),
          'not': ('Anne-babaların en sık kaçırdığı nokta', 'Ben davranışın ne zaman başladığına, hangi durumlarda arttığına ve çocuğun o dönemde hayatında neler yaşadığına bakmayı önemli buluyorum. Çünkü bazı çocuklar ifade etmekte zorlandıkları duyguları davranışları üzerinden gösterebiliyor.'),
          'sss': [('İlk görüşmeye çocuğumla mı gelmeliyim?', 'Çocuklarda ilk görüşme genellikle ebeveynle yapılır; ardından çocuğun yaşına uygun görüşmeler planlanır. Telefonda Selda Hanım size durumunuza göre yol gösterir.')]},
-        {'yol': '/randevu/cift-terapisi/', 'video': 'ZEPbGUV6MSE', 'h1': 'Ankara Çift ve', 'h1b': 'Evlilik Terapisi',
-         'alt': 'İletişim sorunları, sık tartışma, güven ve uzaklaşma için çift ve evlilik görüşmeleri. Yaşamkent ve Kızılay’da yüz yüze ya da online.',
+        {'yol': '/randevu/cift-terapisi/', 'video': 'ZEPbGUV6MSE', 'h1': 'Ankara Çift Terapisi', 'h1b': 've Aile Terapisi',
+         'alt': 'İletişim sorunları, sık tartışma, güven ve uzaklaşma için çift terapisi, evlilik ve aile terapisi görüşmeleri. Yaşamkent ve Kızılay’da yüz yüze ya da online.',
+         # Reklam grubu kelimeleri: çift terapisi ankara, ankara çift terapisti, ankara evlilik terapisti, evlilik terapisi ankara,
+         # evlilik danışmanı ankara, ankara ilişki terapisti, aile terapisi ankara
+         'icerik': ("Ankara'da çift terapisi, evlilik ve aile terapisi", [
+             "Çift terapisi; sık tartışma, iletişim kuramama, güven sorunları ve birbirinden uzaklaşma gibi konularda iki kişinin birlikte çalıştığı görüşmelerdir. Evli çiftlerle yapılan evlilik terapisinin yanında, evlenmeye hazırlanan çiftler için evlilik öncesi danışmanlık da yapılır.",
+             "Aile terapisinde ebeveynlik, aile içi çatışmalar, boşanma süreci ve çocukla iletişim gibi konular, gerektiğinde ailenin birden fazla üyesiyle birlikte ele alınır.",
+             "Ankara'da çift terapisti, evlilik terapisti ya da ilişki terapisti arıyorsanız Psikolog Rojin Nazik ile Yaşamkent ve Kızılay ofislerinde yüz yüze, isterseniz online görüşebilirsiniz. Evlilik danışmanı randevusu için Selda Hanım'ı aramanız yeterli; size uygun saati birlikte belirlersiniz."]),
          'konular': ['İletişim kuramama, sık tartışma', 'Güven sorunu ve aldatılma sonrası süreç', 'Birbirinden uzaklaşma', 'Evlilik öncesi danışmanlık', 'Boşanma kararı ve sonrası', 'Ebeveynlik ve aile içi çatışma'],
          'not': ('Çift görüşmelerinde en sık duyduğum cümle', '‘Ben defalarca söyledim ama beni anlamadı’ cümlesini çift görüşmelerinde oldukça sık duyuyorum. Tartışmanın içindeki öfkenin altında bazen ‘beni önemse’, ‘yanımda olduğunu hissettir’ veya ‘beni anlamaya çalış’ gibi çok daha temel bir ihtiyaç bulunabiliyor.'),
-         'sss': [('İkimizin birlikte gelmesi mi gerekiyor?', 'Çift görüşmelerine genellikle birlikte başlanır; gerekirse bireysel görüşmeler de planlanır. İlk adımı biriniz atabilir.')]},
+         'sss': [('İkimizin birlikte gelmesi mi gerekiyor?', 'Çift görüşmelerine genellikle birlikte başlanır; gerekirse bireysel görüşmeler de planlanır. İlk adımı biriniz atabilir.'),
+                 ('Çift terapisi ile aile terapisi arasındaki fark nedir?', 'Çift terapisinde iki partnerin ilişkisi ele alınır. Aile terapisinde ise ebeveynler ve gerektiğinde çocuklarla birlikte, ailenin tamamını etkileyen konular konuşulur.')]},
         {'yol': '/randevu/kaygi-panik-atak/', 'video': 'fw1zD6zr62k', 'gazete': ['aksam-cumartesi-2022-06', 'vatan-2023-01', 'star-stres'], 'h1': 'Kaygı ve Panik Atak', 'h1b': 'Psikolojik Destek · Ankara',
          'alt': 'Kaygı, panik atak, sosyal kaygı ve takılan düşünceler için bilişsel davranışçı yaklaşımla psikolojik destek. Yaşamkent, Kızılay ve online.',
+         'icerik': ("Ankara'da bireysel terapi ve psikolojik destek", [
+             "Bireysel terapi, kaygı, panik atak, stres ve zorlayıcı duygularla baş etmek için bir psikologla bire bir yapılan görüşmelerdir. Bireysel danışmanlıkta ne yaşadığınız, düşünce ve davranış örüntüleriniz birlikte ele alınır.",
+             "Ankara'da duygusal destek ve bireysel terapi için Psikolog Rojin Nazik ile Yaşamkent ve Kızılay ofislerinde yüz yüze, isterseniz online görüşebilirsiniz. Randevu için Selda Hanım'ı aramanız yeterli."]),
          'konular': ['Panik atak ve beklenti kaygısı', 'Yaygın kaygı ve sürekli endişe', 'Sosyal kaygı', 'Sınav ve performans kaygısı', 'Takılan düşünceler, aşırı düşünme', 'Bedensel belirtilerle gelen kaygı'],
          'not': ('Panik atakta en sık korkulan şey', 'Panik yaşayan kişilerde bedensel belirtilerin kendisinden çok, bu belirtilere verilen anlamın kişiyi zorladığını sık görüyorum. Bu nedenle görüşmelerde kişinin yalnızca ne hissettiğine değil, hissettiği şeyi nasıl yorumladığına da bakıyorum.')},
     ],
@@ -199,6 +220,7 @@ details p{margin:8px 0 0;color:var(--mut)}
 .ek b{display:block;color:var(--a2)}.ek small{color:var(--mut);font-size:13px}
 .of{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.of img{width:100%%;height:200px;object-fit:cover;border-radius:14px;display:block}
 @media(min-width:760px){.of img{height:280px}}
+.ic p{margin:0 0 10px;color:var(--ink);font-size:15.5px}.ic p:last-child{margin:0}
 .bar{transition:transform .25s,opacity .25s}
 .dip{padding:18px 0 26px;font-size:12.5px;color:var(--mut);text-align:center}
 .bar{position:fixed;left:0;right:0;bottom:0;z-index:9990;display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid var(--line);backdrop-filter:blur(10px)}
@@ -240,6 +262,7 @@ def govde(S, P):
     if rojin:  # logolar sayfanın üstündeki akan şeritte (vitrin.js); burada tekrar edilmez
         gosteri = gosteri.replace('<ul class="lg"></ul>', '')
     ekip = ('<p style="margin:12px 0 0;color:var(--mut);font-size:15px">%s</p>' % esc(P['ekip'])) if P.get('ekip') else ''
+    icerik = ('<section class="kart ic"><h2>%s</h2>%s</section>' % (esc(P['icerik'][0]), ''.join('<p>%s</p>' % esc(x) for x in P['icerik'][1]))) if P.get('icerik') else ''
     kitaplar = puan_kart = ekip_kart = ofis = ''
     puan = '<span>★★★★★</span> <b>5.0</b> · Doktorsitesi\'nde 169 danışan değerlendirmesi'
     if rojin:
@@ -277,6 +300,7 @@ def govde(S, P):
 <p style="margin:12px 0 0;color:var(--mut);font-size:15px">CNN Türk, Milliyet ve Sabah'ta uzman konuk; Psychology Times kurucusu.</p>%(ekip)s%(kitaplar)s</section>
 %(puan_kart)s
 <section class="kart"><h2>Hangi konularda destek alabilirsiniz?</h2><ul class="konu">%(konular)s</ul></section>
+%(icerik)s
 <section class="kart"><h2>Randevu 3 adımda</h2><div class="adim">%(adimlar)s</div></section>
 %(ekip_kart)s
 <section class="kart"><h2>Rojin Nazik'in notu</h2><blockquote>“%(not)s”</blockquote><div class="qk">Psikolog Rojin Nazik · %(notb)s</div></section>
@@ -290,7 +314,7 @@ def govde(S, P):
    Yalnız hazır tablodaki kalıplar kullanılır; aranan kelime sayfaya olduğu gibi yazılmaz. */
 (function(){try{var q=new URLSearchParams(location.search),k=(q.get('kw')||q.get('utm_term')||q.get('keyword')||'').toLocaleLowerCase('tr-TR').replace(/[+_]/g,' ');if(!k)return;
 var Y=[[/kızılay|kizilay/,'Kızılay'],[/çankaya|cankaya/,'Çankaya'],[/yaşamkent|yasamkent/,'Yaşamkent'],[/çayyolu|cayyolu/,'Çayyolu'],[/ümitköy|umitkoy/,'Ümitköy'],[/konutkent/,'Konutkent'],[/incek/,'İncek'],[/beysukent/,'Beysukent'],[/bilkent/,'Bilkent'],[/eryaman/,'Eryaman'],[/ankara/,'Ankara']];
-var K=[[/ergen|genç|genc/,'Ergen Psikoloğu'],[/çocuk|cocuk|pedagog|oyun terap/,'Çocuk Psikoloğu'],[/çift|cift|evlilik|ilişki|iliski/,'Çift Terapisi'],[/aile/,'Aile Danışmanı'],[/panik/,'Panik Atak Desteği'],[/kaygı|kaygi|anksiyete/,'Kaygı İçin Psikolog'],[/depresyon/,'Depresyon İçin Psikolog'],[/takıntı|takinti|okb/,'Takıntı (OKB) İçin Psikolog'],[/travma/,'Travma İçin Psikolog'],[/boşanma|bosanma/,'Boşanma Danışmanlığı'],[/online|çevrimiçi|cevrimici|internet/,'Online Psikolog'],[/kadın psikolog|kadin psikolog/,'Kadın Psikolog'],[/psikoterapist|terapist/,'Psikoterapist'],[/psikolojik danışman|psikolojik danisman/,'Psikolojik Danışmanlık']];
+var K=[[/evlilik terapist/,'Evlilik Terapisti'],[/evlilik danışman|evlilik danisman/,'Evlilik Danışmanı'],[/evlilik terap/,'Evlilik Terapisi'],[/ilişki terapist|iliski terapist/,'İlişki Terapisti'],[/çift terapist|cift terapist/,'Çift Terapisti'],[/aile terap/,'Aile Terapisi'],[/bireysel terap/,'Bireysel Terapi'],[/bireysel danışman|bireysel danisman/,'Bireysel Danışmanlık'],[/randevu/,'Psikolog Randevusu'],[/ergen|genç|genc/,'Ergen Psikoloğu'],[/çocuk|cocuk|pedagog|oyun terap/,'Çocuk Psikoloğu'],[/çift|cift|evlilik|ilişki|iliski/,'Çift Terapisi'],[/aile/,'Aile Danışmanı'],[/panik/,'Panik Atak Desteği'],[/kaygı|kaygi|anksiyete/,'Kaygı İçin Psikolog'],[/depresyon/,'Depresyon İçin Psikolog'],[/takıntı|takinti|okb/,'Takıntı (OKB) İçin Psikolog'],[/travma/,'Travma İçin Psikolog'],[/boşanma|bosanma/,'Boşanma Danışmanlığı'],[/online|çevrimiçi|cevrimici|internet/,'Online Psikolog'],[/kadın psikolog|kadin psikolog/,'Kadın Psikolog'],[/psikoterapist|terapist/,'Psikoterapist'],[/psikolojik danışman|psikolojik danisman/,'Psikolojik Danışmanlık']];
 var bul=function(L){for(var i=0;i<L.length;i++)if(L[i][0].test(k))return L[i][1];return ''};var y=bul(Y),c=bul(K);if(!y&&!c)return;
 y=y||'%(kwyer)s';c=c||'Psikolog';var h=document.querySelector('h1');h.textContent=y+' ';var e=document.createElement('em');e.textContent=c;h.appendChild(e);
 document.title=y+' '+c+' | %(marka)s';(window.dataLayer=window.dataLayer||[]).push({event:'lp_baslik_uyumu',lp_baslik:y+' '+c});}catch(x){}})();</script>
@@ -305,7 +329,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'){var d=docum
         'wa': wa, 'foto': S['foto'], 'gosteri': gosteri, 'etiket': etiketler, 'ekip': ekip, 'konular': konular, 'adimlar': adimlar,
         'not': esc(P['not'][1]), 'notb': esc(P['not'][0]), 'subeler': subeler, 'sss': sss, 'marka': esc(S['marka']),
         'kwyer': 'Çayyolu' if S['ad'] == 'cayyolu' else 'Ankara', 'saat': SAAT_TXT, 'puan': puan, 'kitaplar': kitaplar,
-        'puan_kart': puan_kart, 'ekip_kart': ekip_kart, 'ofis': ofis}
+        'puan_kart': puan_kart, 'icerik': icerik, 'ekip_kart': ekip_kart, 'ofis': ofis}
 
 
 def baslik(P, S):
