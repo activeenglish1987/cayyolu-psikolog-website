@@ -349,7 +349,8 @@ def aciklama(P):
 ROJIN_HEAD = '''<!doctype html><html lang="tr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KMR7XRJQ');</script>
+<script>/* GTM ertelenir: ziyaretçinin ilk dokunuşu/tuşu ya da sayfa yüklendikten 4 sn sonra yüklenir (oluşturmayı ve etkileşimi yavaşlatmasın). Dönüşümler ve reklam tıklama kimliği gtag (AW) ile anında sayılır; GTM'deki etiketler yalnız dönüşüm bağlayıcıdır. */
+(function(w,d,i){w.dataLayer=w.dataLayer||[];var y=0;function f(){if(y)return;y=1;w.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});var j=d.createElement('script');j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i;d.head.appendChild(j);}['pointerdown','keydown','touchstart','wheel'].forEach(function(e){w.addEventListener(e,f,{once:true,passive:true})});w.addEventListener('load',function(){setTimeout(f,4000)});})(window,document,'GTM-KMR7XRJQ');</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11469933181"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-11469933181',{url_passthrough:true});</script>
 <title>%(title)s</title>
@@ -363,7 +364,7 @@ ROJIN_HEAD = '''<!doctype html><html lang="tr"><head><meta charset="utf-8">
 <script src="/assets/js/after-hours.js?v=7" data-pos="bottom" defer></script>
 <script>window.PUSULA_CFG=Object.assign(window.PUSULA_CFG||{},{heroSecici:'.lp-pu'});</script>
 <script src="/assets/js/pusula.js?v=9" defer></script>
-<script src="/assets/js/vitrin.js?v=4" defer></script>
+<script src="/assets/js/vitrin.js?v=5" defer></script>
 </head><body>'''
 
 
@@ -382,7 +383,7 @@ CAYYOLU_HEAD = ROJIN_HEAD.replace('<meta name="theme-color" content="#3d1e54">',
     '<link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png">', '<link rel="icon" href="/favicon.svg" type="image/svg+xml">').replace(
     '<script src="/assets/js/pusula.js?v=9" defer></script>',
     "<script>window.PUSULA_CFG={site:'cayyolu',foto:'/assets/img/opt/psikolog-rojin-nazik-720.webp'};</script>\n<script src=\"/assets/js/pusula.js?v=9\" defer></script>").replace(
-    '<script src="/assets/js/vitrin.js?v=4" defer></script>\n', '')  # vitrin.js yalnız Rojin sitesinde
+    '<script src="/assets/js/vitrin.js?v=5" defer></script>\n', '')  # vitrin.js yalnız Rojin sitesinde
 
 
 def cayyolu_yaz(kok):
