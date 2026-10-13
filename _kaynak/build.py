@@ -818,9 +818,17 @@ def sister_html(path):
         '<li><a href="%s" target="_blank" rel="noopener">%s</a></li>' % (u, esc(t)) for u, t in items)
 
 # ---------------------------------------------------------------- anahtar kelime sayfaları
+def route_btns():
+    return ('<div class="btn-row route-btns">'
+            '<a class="btn btn-line" href="%(u)s&travelmode=transit" target="_blank" rel="noopener" data-cta-area="yol_tarifi_toplu">%(pin)s<span>Toplu taşımayla yol tarifi</span></a>'
+            '<a class="btn btn-line" href="%(u)s&travelmode=driving" target="_blank" rel="noopener" data-cta-area="yol_tarifi_arac">%(pin)s<span>Araçla yol tarifi</span></a></div>') % {'u': DIR_URL, 'pin': ICON['pin']}
+
 def landing_page(cfg):
     rec = {'type': 'page', 'landing': True, 'path': cfg['path'], 'title': cfg['h1'], 'date': '2026-09-30', 'modified': cfg.get('mod') or '2026-09-30'}
     body = cfg['body'] % {'cta': inline_cta('Merhaba, %s sayfanızdan ulaşıyorum, randevu bilgisi almak istiyorum.' % cfg['h1'])}
+    # Ulaşım kutusuna Google Haritalar yol tarifi: ziyaretçinin kendi konumundan güncel toplu taşıma ve araç tarifi
+    # (hat numarası ya da süre tahminle yazılmaz; Google'ın güncel verisi kullanılır)
+    body = re.sub(r'(<div class="route-box">.*?</ul>)(</div>)', lambda m: m.group(1) + route_btns() + m.group(2), body, count=1, flags=re.S)
     ex = EXTRA.get(cfg['path'])
     faqs = cfg['faqs'] + (ex['faqs'] if ex else [])
     if ex:

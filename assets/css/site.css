@@ -384,3 +384,5 @@ body.menu-open .sticky-bar{display:none}
 .article-layout>*{min-width:0}
 .btn-row{flex-wrap:wrap}
 .btn-row .btn{max-width:100%}
+
+.route-box .route-btns{margin-top:12px;gap:8px}.route-box .route-btns .btn{background:#fff}
