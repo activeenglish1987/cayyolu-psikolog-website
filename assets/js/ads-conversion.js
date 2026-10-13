@@ -3,6 +3,7 @@
    ------------------------------------------------------------
    Google Tag Manager'a (dataLayer) şu olayları gönderir:
      phone_call_click     tel: bağlantısına tıklama
+     callback_request     numarasını bırakıp "beni arayın" dedi (window.adsTrack ile, after-hours.js ve pusula.js)
      whatsapp_click       wa.me / WhatsApp bağlantısına tıklama
      instagram_click      Instagram profil bağlantısına tıklama
      chat_started         Jivo sohbetinde ilk mesaj gönderildi
@@ -80,8 +81,10 @@
      ekranındaki "Dönüşüm etiketi"dir. Etiket boşsa dönüşüm gönderilmez. */
   var ADS = {
     id: CFG.adsId || 'AW-11469933181',
-    labels: CFG.adsLabels || { phone_call_click: 't-kJCIrB7pYdEP2Upd0q', whatsapp_click: 'zO3TCK2h-JYdEP2Upd0q' },
-    values: { phone_call_click: 100, whatsapp_click: 60 }
+    // callback_request: ziyaretçi "beni arayın" diyerek numarasını bıraktı (Selda Hanım kutusu ve mesai dışı formu).
+    // Ayrı bir dönüşüm işlemi açılıp etiketi verilene kadar telefon dönüşümü olarak sayılır (gerçek bir telefon talebidir).
+    labels: CFG.adsLabels || { phone_call_click: 't-kJCIrB7pYdEP2Upd0q', whatsapp_click: 'zO3TCK2h-JYdEP2Upd0q', callback_request: 't-kJCIrB7pYdEP2Upd0q' },
+    values: { phone_call_click: 100, whatsapp_click: 60, callback_request: 120 }
   };
   var adsSent = {};
   function sendAdsConversion(eventName) {

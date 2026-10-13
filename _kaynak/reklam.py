@@ -166,6 +166,10 @@ h1 em{font-style:italic;color:var(--a)}
 .hero-actions{display:grid;gap:10px;max-width:440px}
 .ara{display:flex;align-items:center;justify-content:center;gap:10px;padding:17px 18px;border-radius:16px;background:var(--call);color:#fff!important;font-weight:800;font-size:18px;text-decoration:none;box-shadow:0 14px 30px -12px rgba(22,163,74,.7)}
 .ara small{display:block;font-size:12.5px;font-weight:600;opacity:.92}
+.ara .nw{font-weight:800;white-space:nowrap}
+@media(max-width:420px){.hero .ara{font-size:clamp(15px,4.5vw,18px);padding:13px 14px;gap:8px}.hero .ara small{font-size:12px}}
+.wa.geri{all:unset;box-sizing:border-box;cursor:pointer;display:block;width:100%%;text-align:center;font-size:14.5px;font-weight:600;color:var(--mut);text-decoration:underline;text-underline-offset:3px;padding:2px 4px}
+.guven{margin:10px 0 0;font-size:13.5px;line-height:1.5;color:var(--mut);max-width:440px}
 .wa{display:block;text-align:center;font-size:14.5px;font-weight:600;color:var(--mut)!important;text-decoration:underline;text-underline-offset:3px;padding:4px}
 .puan{margin-top:14px;font-size:14px;color:var(--mut)}.puan b{color:var(--ink)}.puan span{color:#E5A50A;letter-spacing:1px}
 .foto{position:relative;max-width:420px;width:100%%;justify-self:center}
@@ -290,9 +294,11 @@ def govde(S, P):
 <p class="alt">%(alt)s</p>
 <div class="acik" data-open-status><i></i>Telefonu Selda Hanım açar · %(saat)s</div>
 <div class="hero-actions" data-cta-area="lp_hero">
-<a class="ara" href="tel:%(tel)s"><span>📞</span><span>Hemen Ara · %(teltxt)s<small>Uygun saati ve ücreti Selda Hanım hemen söylesin</small></span></a>
+<a class="ara" href="tel:%(tel)s"><span>📞</span><span><b class="nw">Hemen Ara · %(teltxt)s</b><small>Uygun saati ve ücreti Selda Hanım hemen söylesin</small></span></a>
 <a class="wa" href="%(wa)s" target="_blank" rel="noopener">WhatsApp'tan yazmayı tercih ederim</a>
+<button type="button" class="wa geri" data-selda-geri="lp_hero">Numaramı bırakayım, Selda Hanım beni arasın</button>
 </div>
+<p class="guven">Aramanız sizi randevuya bağlamaz. Ne söyleyeceğinizi düşünmeyin; “Randevu bilgisi almak istiyorum” demeniz yeterli.</p>
 <div class="puan">%(puan)s</div>
 </div>
 <div class="foto portrait-card"><img src="%(foto)s" alt="Psikolog Rojin Nazik" width="720" height="900" fetchpriority="high"></div>
@@ -359,10 +365,10 @@ ROJIN_HEAD = '''<!doctype html><html lang="tr"><head><meta charset="utf-8">
 <link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" as="image" href="%(foto)s" fetchpriority="high">
 %(css)s
-<script src="/assets/js/ads-conversion.js?v=5" defer></script>
-<script src="/assets/js/after-hours.js?v=7" data-pos="bottom" defer></script>
+<script src="/assets/js/ads-conversion.js?v=6" defer></script>
+<script src="/assets/js/after-hours.js?v=8" data-pos="bottom" defer></script>
 <script>window.PUSULA_CFG=Object.assign(window.PUSULA_CFG||{},{heroSecici:'.lp-pu'});</script>
-<script src="/assets/js/pusula.js?v=9" defer></script>
+<script src="/assets/js/pusula.js?v=10" defer></script>
 <script src="/assets/js/vitrin.js?v=6" defer></script>
 </head><body>'''
 
@@ -380,8 +386,8 @@ def rojin_yaz(kok):
 # ---------------------------------------------------------------- Çayyolu sitesi: build.py içinden
 CAYYOLU_HEAD = ROJIN_HEAD.replace('<meta name="theme-color" content="#3d1e54">', '<meta name="theme-color" content="#14264A">').replace(
     '<link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png">', '<link rel="icon" href="/favicon.svg" type="image/svg+xml">').replace(
-    '<script src="/assets/js/pusula.js?v=9" defer></script>',
-    "<script>window.PUSULA_CFG={site:'cayyolu',foto:'/assets/img/opt/psikolog-rojin-nazik-720.webp'};</script>\n<script src=\"/assets/js/pusula.js?v=9\" defer></script>").replace(
+    '<script src="/assets/js/pusula.js?v=10" defer></script>',
+    "<script>window.PUSULA_CFG={site:'cayyolu',foto:'/assets/img/opt/psikolog-rojin-nazik-720.webp'};</script>\n<script src=\"/assets/js/pusula.js?v=10\" defer></script>").replace(
     '<script src="/assets/js/vitrin.js?v=6" defer></script>\n', '')  # vitrin.js yalnız Rojin sitesinde
 
 

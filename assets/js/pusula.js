@@ -724,7 +724,9 @@
             .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
             .then(function (x) {
               if (!x.ok || !x.j || !x.j.ok) throw new Error((x.j && x.j.error) || 'hata');
-              olay('callback_request', { cta_area: 'soru_kutusu' });
+              // Numara bırakma gerçek bir talep: Google Ads'e de dönüşüm olarak gitsin (ads-conversion.js)
+              if (typeof w.adsTrack === 'function') w.adsTrack('callback_request', { cta_area: 'soru_kutusu', pusula_site: SITE });
+              else olay('callback_request', { cta_area: 'soru_kutusu' });
               mesaj(m2.acik ? '✅ Talebiniz alındı. Selda Hanım birkaç dakika içinde sizi arayacak.' : '✅ Talebiniz alındı. Selda Hanım sabah 10:00\'dan itibaren sizi arayacak.');
               alt.innerHTML = m2.acik ? '<a class="ara" href="' + TEL + '">📞 Beklemeden arayın</a>' : '';
             })
@@ -733,6 +735,14 @@
       }
     }
     kutu.querySelector('.pu-sb-btn').onclick = function () { panelAc('balon'); };
+    // Sayfadaki [data-selda-geri] düğmesi kutuyu "numaramı bırakayım" adımıyla açar (reklam sayfalarında aramaya çekinenler için)
+    w.SeldaKutusu = {
+      geriArama: function (kaynak) {
+        if (!panel) panelAc(kaynak || 'disaridan');
+        balonKonum();
+        var g = panel && panel.querySelector('.pu-sb-f .geri'); if (g) g.click();
+      }
+    };
 
     // Ziyaretçi aradı, yazdı ya da Pusula'yı açtıysa davet gösterilmez
     d.addEventListener('click', function (e) { var t = e.target && e.target.closest && e.target.closest('a[href^="tel:"],a[href*="wa.me"],[data-pusula]'); if (t) etkilesti = true; }, true);
@@ -773,6 +783,8 @@
   }
 
   d.addEventListener('click', function (e) {
+    var sg = e.target && e.target.closest && e.target.closest('[data-selda-geri]');
+    if (sg && w.SeldaKutusu) { e.preventDefault(); w.SeldaKutusu.geriArama(sg.getAttribute('data-selda-geri') || 'sayfa'); return; }
     var t = e.target && e.target.closest && e.target.closest('[data-pusula]');
     if (!t) return;
     e.preventDefault();

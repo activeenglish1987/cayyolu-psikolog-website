@@ -31,6 +31,10 @@ h1 em{font-style:italic;color:var(--a)}
 .hero-actions{display:grid;gap:10px;max-width:440px}
 .ara{display:flex;align-items:center;justify-content:center;gap:10px;padding:17px 18px;border-radius:16px;background:var(--call);color:#fff!important;font-weight:800;font-size:18px;text-decoration:none;box-shadow:0 14px 30px -12px rgba(22,163,74,.7)}
 .ara small{display:block;font-size:12.5px;font-weight:600;opacity:.92}
+.ara .nw{font-weight:800;white-space:nowrap}
+@media(max-width:420px){.hero .ara{font-size:clamp(15px,4.5vw,18px);padding:13px 14px;gap:8px}.hero .ara small{font-size:12px}}
+.wa.geri{all:unset;box-sizing:border-box;cursor:pointer;display:block;width:100%;text-align:center;font-size:14.5px;font-weight:600;color:var(--mut);text-decoration:underline;text-underline-offset:3px;padding:2px 4px}
+.guven{margin:10px 0 0;font-size:13.5px;line-height:1.5;color:var(--mut);max-width:440px}
 .wa{display:block;text-align:center;font-size:14.5px;font-weight:600;color:var(--mut)!important;text-decoration:underline;text-underline-offset:3px;padding:4px}
 .puan{margin-top:14px;font-size:14px;color:var(--mut)}.puan b{color:var(--ink)}.puan span{color:#E5A50A;letter-spacing:1px}
 .foto{position:relative;max-width:420px;width:100%;justify-self:center}
@@ -96,11 +100,11 @@ main .pu-launch-w{margin:0 0 16px}
 .bar .w2{display:grid;place-items:center;width:54px;border-radius:14px;border:2px solid #25D366;color:#128C4A;text-decoration:none;font-size:22px}
 @media(min-width:860px){.bar{display:none}body{padding-bottom:0}}
 </style>
-<script src="/assets/js/ads-conversion.js?v=5" defer></script>
-<script src="/assets/js/after-hours.js?v=7" data-pos="bottom" defer></script>
+<script src="/assets/js/ads-conversion.js?v=6" defer></script>
+<script src="/assets/js/after-hours.js?v=8" data-pos="bottom" defer></script>
 <script>window.PUSULA_CFG=Object.assign(window.PUSULA_CFG||{},{heroSecici:'.lp-pu'});</script>
 <script>window.PUSULA_CFG={site:'cayyolu',foto:'/assets/img/opt/psikolog-rojin-nazik-720.webp'};</script>
-<script src="/assets/js/pusula.js?v=9" defer></script>
+<script src="/assets/js/pusula.js?v=10" defer></script>
 </head><body><header class="w top"><a class="lgo" href="/" aria-label="RN Psikoloji Çayyolu – ana sayfa" style="display:inline-flex;text-decoration:none"><span style="display:inline-flex;align-items:center;gap:10px;font-weight:700;color:#14264A"><span style="width:38px;height:38px;border-radius:10px;background:#14264A;color:#fff;display:grid;place-items:center;font-size:15px">RN</span><span style="line-height:1.15">RN Psikoloji<small style="display:block;font-weight:500;font-size:12px;color:#566179">Çayyolu Şubesi</small></span></span></a><a class="t" href="tel:+905524187973" data-cta-area="lp_header">📞 0552 418 79 73</a></header>
 <section class="hero"><div class="w hi">
 <div>
@@ -109,9 +113,11 @@ main .pu-launch-w{margin:0 0 16px}
 <p class="alt">Yaşamkent ofisinde çocuk ve ergen görüşmeleri, küçük yaşta oyun terapisi ve ebeveyn danışmanlığı. Çayyolu, Ümitköy ve Konutkent’e yakın.</p>
 <div class="acik" data-open-status><i></i>Telefonu Selda Hanım açar · Hafta içi 10:00–19:00 · Cumartesi 10:00–18:00</div>
 <div class="hero-actions" data-cta-area="lp_hero">
-<a class="ara" href="tel:+905524187973"><span>📞</span><span>Hemen Ara · 0552 418 79 73<small>Uygun saati ve ücreti Selda Hanım hemen söylesin</small></span></a>
+<a class="ara" href="tel:+905524187973"><span>📞</span><span><b class="nw">Hemen Ara · 0552 418 79 73</b><small>Uygun saati ve ücreti Selda Hanım hemen söylesin</small></span></a>
 <a class="wa" href="https://wa.me/905524187973?text=Merhaba%2C%20%C3%87ayyolu%20%C3%87ocuk%20ve%20Ergen%20Psikolo%C4%9Fu%20i%C3%A7in%20randevu%20bilgisi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp'tan yazmayı tercih ederim</a>
+<button type="button" class="wa geri" data-selda-geri="lp_hero">Numaramı bırakayım, Selda Hanım beni arasın</button>
 </div>
+<p class="guven">Aramanız sizi randevuya bağlamaz. Ne söyleyeceğinizi düşünmeyin; “Randevu bilgisi almak istiyorum” demeniz yeterli.</p>
 <div class="puan"><span>★★★★★</span> <b>5.0</b> · Doktorsitesi'nde 169 danışan değerlendirmesi</div>
 </div>
 <div class="foto portrait-card"><img src="/assets/img/opt/psikolog-rojin-nazik-720.webp" alt="Psikolog Rojin Nazik" width="720" height="900" fetchpriority="high"></div>

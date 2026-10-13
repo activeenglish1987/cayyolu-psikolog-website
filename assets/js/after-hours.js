@@ -64,6 +64,11 @@
     + '.ah-ok{text-align:center;padding:10px 0 4px}.ah-ok b{display:block;font-size:20px;color:#14264A;margin:8px 0 6px}';
 
   function track(ev, extra) {
+    // Numara bırakma gerçek bir talep: Google Ads'e de dönüşüm olarak gitsin (ads-conversion.js)
+    if (ev === 'callback_request' && typeof window.adsTrack === 'function') {
+      var e = { site: SITE }; if (extra) for (var q in extra) e[q] = extra[q];
+      window.adsTrack(ev, e); return;
+    }
     window.dataLayer = window.dataLayer || [];
     var p = { event: ev, cta_area: 'after_hours', page_path: location.pathname, site: SITE };
     if (extra) for (var k in extra) p[k] = extra[k];
