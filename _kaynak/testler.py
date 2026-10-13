@@ -233,7 +233,7 @@ h1{font-size:clamp(28px,6vw,40px);line-height:1.15;margin:22px 0 10px;color:%(a2
 <main class="w"><h1>%(h1)s</h1><p class="lead">%(lead)s</p>%(form)s%(notu)s%(bilgi)s
 <p class="ts-not" style="margin-top:20px">Diğer test: %(diger)s</p>
 <p class="ts-not">Kaynak: %(kaynak)s Ölçek serbestçe kullanılabilir; buradaki Türkçe ifadeler bilgilendirme amaçlıdır. Bu test tanı koymaz. Acil bir durumda 112'yi arayın.</p></main>
-<footer class="w dip"><a href="%(ana)s">%(marka)s</a> · Telefonu Selda Hanım açar · Pazartesi–Cumartesi 09:00–20:00</footer>%(betik)s</body></html>
+<footer class="w dip"><a href="%(ana)s">%(marka)s</a> · Telefonu Selda Hanım açar · hafta içi 10:00–19:00, Cumartesi 10:00–18:00</footer>%(betik)s</body></html>
 """) % {'gtm': GTM_HEAD, 'title': esc(T['title'].replace('Psikolog Rojin Nazik', M['marka'])), 'desc': esc(T['desc']), 'canon': SITE + T['yol'], 'ikon': M['ikon'],
          'cizgi': M['cizgi'], 'a': M['a'], 'a2': M['a2'], 'mut': M['mut'], 'css': css, 'betikler': M['betikler'], 'ana': M['ana'], 'logo': M['logo'],
          'h1': esc(T['h1']), 'lead': esc(T['lead']), 'form': form_html(T), 'notu': notu, 'bilgi': bilgi, 'diger': diger, 'kaynak': esc(T['kaynak']),
