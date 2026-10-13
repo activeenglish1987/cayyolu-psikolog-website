@@ -79,12 +79,32 @@ def size_of(url):
     except Exception:
         return None
 
-def img(url, alt, cls='', eager=False, sizes=None):
+def kucuk_surum(url, w):
+    """/assets/img/opt/x-900.webp için w genişliğinde bir kopya (x-900-w480.webp) üretir; yoksa None."""
+    if not url.startswith('/assets/img/opt/') or not url.endswith('.webp'):
+        return None
+    src = os.path.join(ROOT, url.lstrip('/'))
+    wh = size_of(url)
+    if not wh or wh[0] <= w:
+        return None
+    out = url[:-5] + '-w%d.webp' % w
+    dest = os.path.join(ROOT, out.lstrip('/'))
+    if not os.path.exists(dest):
+        from PIL import Image
+        with Image.open(src) as im:
+            im.convert('RGB').resize((w, round(im.height * w / im.width)), Image.LANCZOS).save(dest, 'WEBP', quality=74, method=6)
+    return out
+
+def img(url, alt, cls='', eager=False, sizes=None, kucuk=None):
     wh = size_of(url)
     dim = ' width="%d" height="%d"' % wh if wh else ''
     load = ' fetchpriority="high"' if eager else ' loading="lazy" decoding="async"'
     c = ' class="%s"' % cls if cls else ''
-    return '<img src="%s" alt="%s"%s%s%s>' % (url, esc(alt), dim, load, c)
+    ss = ''
+    k = kucuk_surum(url, kucuk) if kucuk and wh else None
+    if k:
+        ss = ' srcset="%s %dw, %s %dw" sizes="%s"' % (k, kucuk, url, wh[0], sizes or '100vw')
+    return '<img src="%s"%s alt="%s"%s%s%s>' % (url, ss, esc(alt), dim, load, c)
 
 # ---------------------------------------------------------------- içerik temizleme
 ALLOWED = {'h2', 'h3', 'h4', 'p', 'ul', 'ol', 'li', 'strong', 'b', 'em', 'i', 'a', 'img', 'figure',
@@ -224,7 +244,8 @@ def btn_call(label=None, cls='btn btn-call'):
 def btn_wa(msg='Merhaba, randevu bilgisi almak istiyorum.', label="WhatsApp'tan Bilgi Al", cls='btn btn-wa'):
     return '<a class="%s" href="%s" target="_blank" rel="noopener">%s<span>%s</span></a>' % (cls, wa(msg), ICON['wa'], label)
 
-OPEN_STATUS = '<div class="open-status" data-open-status></div>'
+# Başlangıçta dolu gelir (yeri ayrılı kalsın, sayfa kaymasın); site.js saate göre metni değiştirir
+OPEN_STATUS = '<div class="open-status" data-open-status><span class="dot"></span><span>Telefonu Selda Hanım açar · hafta içi 10:00–19:00, Cumartesi 10:00–18:00</span></div>'
 
 def inline_cta(msg='Merhaba, randevu bilgisi almak istiyorum.', title='Randevu için hemen ulaşın'):
     return '<aside class="inline-cta"><p><strong>%s</strong>Pazartesi – Cumartesi 09:00 – 20:00 · Yaşamkent ofisi · Ücretsiz otopark</p><div class="btn-row">%s%s</div></aside>' % (
@@ -247,7 +268,8 @@ def head(title, desc, path, extra_ld='', og_img='/assets/img/opt/og-1200.webp', 
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','%(gtm)s');</script>
+<script>/* GTM ertelenir: ziyaretçinin ilk dokunuşu/tuşu ya da sayfa yüklendikten 4 sn sonra yüklenir. Dönüşümler gtag (AW) ile anında sayılır. */
+(function(w,d,i){w.dataLayer=w.dataLayer||[];var y=0;function f(){if(y)return;y=1;w.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});var j=d.createElement('script');j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i;d.head.appendChild(j);}['pointerdown','keydown','touchstart','wheel'].forEach(function(e){w.addEventListener(e,f,{once:true,passive:true})});w.addEventListener('load',function(){setTimeout(f,4000)});})(window,document,'%(gtm)s');</script>
 <title>%(title)s</title>
 <meta name="description" content="%(desc)s">
 <meta name="robots" content="%(robots)s">
@@ -264,17 +286,30 @@ def head(title, desc, path, extra_ld='', og_img='/assets/img/opt/og-1200.webp', 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap"></noscript>
-<link rel="stylesheet" href="/assets/css/site.css?v=%(v)s">
+<style>%(css)s</style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11469933181"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-11469933181',{url_passthrough:true});</script>
 <script src="/assets/js/ads-conversion.js?v=5" defer></script>
 <script src="/assets/js/site.js?v=%(v)s" defer></script>
 <script src="/assets/js/after-hours.js?v=7" data-pos="bottom" defer></script>
-<script>window.PUSULA_CFG={site:'cayyolu',foto:'/assets/img/opt/psikolog-rojin-nazik-720.webp',heroSecici:'.hero-btns'};</script>
+<script>window.PUSULA_CFG={site:'cayyolu',foto:'/assets/img/opt/psikolog-rojin-nazik-720.webp',heroSecici:'.pu-yer'};</script>
 <script src="/assets/js/pusula.js?v=9" defer></script>
 %(ld)s
 </head>''' % {'gtm': GTM, 'title': esc(title), 'desc': esc(desc), 'robots': robots, 'canon': canon, 'brand': esc(BRAND),
-              'site': SITE, 'og': og_img, 'v': ASSET_V, 'ld': extra_ld}
+              'site': SITE, 'og': og_img, 'v': ASSET_V, 'ld': extra_ld, 'css': site_css()}
+
+_CSS = None
+def site_css():
+    """assets/css/site.css küçültülüp her sayfaya gömülür (PageSpeed: oluşturmayı engelleyen istek kalmasın).
+    Düzenlenecek yer yine assets/css/site.css; build.py her çalıştığında sayfalara yeniden gömülür."""
+    global _CSS
+    if _CSS is None:
+        css = open(os.path.join(ROOT, 'assets', 'css', 'site.css'), encoding='utf-8').read()
+        css = re.sub(r'/\*.*?\*/', '', css, flags=re.S)
+        css = re.sub(r'\s+', ' ', css)
+        css = re.sub(r'\s*([{};,>])\s*', r'\1', css)
+        _CSS = css.replace(';}', '}').strip()
+    return _CSS
 
 def nav_html(current):
     svc_links = ''.join('<a href="%s">%s</a>' % (p, esc('Çayyolu ' + t)) for p, t in FOCUS[:3]) + ''.join('<a href="%s">%s</a>' % (p, esc(t)) for p, t, _, _ in SERVICES)
@@ -297,7 +332,7 @@ def nav_html(current):
       <a href="/iletisim/"%(c_i)s>İletişim</a>
     </nav>
     <div class="header-cta">
-      <a class="header-phone" href="tel:%(raw)s">%(ic)s<span>%(phone)s</span></a>
+      <a class="header-phone" href="tel:%(raw)s" aria-label="Ara: %(phone)s">%(ic)s<span>%(phone)s</span></a>
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="ana-menu" aria-label="Menüyü aç"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -349,7 +384,7 @@ def office_card(compact=False):
     return '''<div class="office-card">
   <div class="office-info">
     <p class="eyebrow">Ofisimiz</p>
-    <h3>Yaşamkent / Çayyolu</h3>
+    <h2 class="office-title">Yaşamkent / Çayyolu</h2>
     <p class="office-line">%(pin)s<span>%(addr)s</span></p>
     <p class="office-line">%(clock)s<span><b>Pazartesi – Cumartesi</b> · 09:00 – 20:00, randevulu görüşme</span></p>
     <p class="office-line">%(car)s<span>Ücretsiz otopark mevcut</span></p>
@@ -522,6 +557,7 @@ def article_page(rec, body_html, crumbs, kicker='', expert=None, lead='', hero_i
   <article class="prose">%(fig)s%(body)s</article>
   %(side)s
 </div>
+<div class="wrap"><div class="pu-yer"></div></div>
 %(after)s
 ''' % {'bc': bc_html, 'kicker': ('<p class="eyebrow">%s</p>' % esc(kicker)) if kicker else '', 'title': esc(title),
        'lead': ('<p class="page-lead">%s</p>' % lead) if lead else '', 'meta': meta, 'call': btn_call(),
@@ -647,6 +683,7 @@ def home_page(recs, posts):
   </div>
 </section>
 
+<div class="wrap"><div class="pu-yer"></div></div>
 <section class="section section-alt" id="hizmetler">
   <div class="wrap">
     %(h_svc)s
@@ -710,8 +747,8 @@ def home_page(recs, posts):
     <p class="center-note"><a class="text-link" href="/blog/">Tüm yazılar %(arrow)s</a></p>
   </div>
 </section>
-''' % {'call': btn_call(), 'wa': btn_wa(), 'open': OPEN_STATUS, 'hero_img': img(hero_img, 'Psikolog Rojin Nazik, RN Psikoloji Çayyolu', eager=True),
-       'trust': TRUST, 'office': office_card(), 'o1': img(office1, 'RN Psikoloji Çayyolu seans odası'), 'o2': img(office2, 'RN Psikoloji Çayyolu bekleme alanı'),
+''' % {'call': btn_call(), 'wa': btn_wa(), 'open': OPEN_STATUS, 'hero_img': img(hero_img, 'Psikolog Rojin Nazik, RN Psikoloji Çayyolu', eager=True, kucuk=600, sizes='(max-width: 900px) 100vw, 560px'),
+       'trust': TRUST, 'office': office_card(), 'o1': img(office1, 'RN Psikoloji Çayyolu seans odası', kucuk=480, sizes='(max-width: 900px) 50vw, 420px'), 'o2': img(office2, 'RN Psikoloji Çayyolu bekleme alanı', kucuk=480, sizes='(max-width: 900px) 50vw, 420px'),
        'h_exp': section_head('Uzmanlarımız', 'Size uygun uzmanla görüşün', 'Çocuk, ergen, yetişkin ve çift görüşmelerinde deneyimli psikologlarımız.'),
        'experts': expert_cards(), 'h_svc': section_head('Hizmetler', 'Hangi konuda destek almak istersiniz?'), 'services': service_cards(),
        'wa_help': wa('Merhaba, hangi hizmetin bana uygun olduğunu öğrenmek istiyorum.'),
