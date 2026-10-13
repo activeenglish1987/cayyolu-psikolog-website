@@ -34,7 +34,7 @@ h1 em{font-style:italic;color:var(--a)}
 .puan{margin-top:14px;font-size:14px;color:var(--mut)}.puan b{color:var(--ink)}.puan span{color:#E5A50A;letter-spacing:1px}
 .foto{position:relative;max-width:420px;width:100%;justify-self:center}
 .foto img{width:100%;height:auto;max-height:440px;object-fit:cover;object-position:50% 20%;border-radius:24px;display:block;box-shadow:0 24px 50px -28px rgba(0,0,0,.45)}
-@media(max-width:859px){.foto{order:-1;max-width:none}.foto img{max-height:210px}}
+@media(max-width:859px){.foto{order:-1;max-width:none}.foto img{height:clamp(120px,24vh,210px);max-height:none}.hi{gap:14px}.ey{display:none}h1{font-size:clamp(28px,7.6vw,40px);margin:0 0 8px}.alt{font-size:15.5px;line-height:1.5;margin:0 0 12px}.acik{margin:0 0 10px}.top{padding:8px 0}}
 .kart{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px;margin:0 0 16px}
 h2{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:600;font-size:24px;line-height:1.25;margin:0 0 12px;color:var(--a2)}
 .etiket{display:flex;flex-wrap:wrap;gap:8px;margin:0}
@@ -86,6 +86,7 @@ details p{margin:8px 0 0;color:var(--mut)}
 .ek b{display:block;color:var(--a2)}.ek small{color:var(--mut);font-size:13px}
 .of{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.of img{width:100%;height:200px;object-fit:cover;border-radius:14px;display:block}
 @media(min-width:760px){.of img{height:280px}}
+main .pu-launch-w{margin:0 0 16px}
 .ic p{margin:0 0 10px;color:var(--ink);font-size:15.5px}.ic p:last-child{margin:0}
 .bar{transition:transform .25s,opacity .25s}
 .dip{padding:18px 0 26px;font-size:12.5px;color:var(--mut);text-align:center}
@@ -96,6 +97,7 @@ details p{margin:8px 0 0;color:var(--mut)}
 </style>
 <script src="/assets/js/ads-conversion.js?v=5" defer></script>
 <script src="/assets/js/after-hours.js?v=6" data-pos="bottom" defer></script>
+<script>window.PUSULA_CFG=Object.assign(window.PUSULA_CFG||{},{heroSecici:'.lp-pu'});</script>
 <script>window.PUSULA_CFG={site:'cayyolu',foto:'/assets/img/opt/psikolog-rojin-nazik-720.webp'};</script>
 <script src="/assets/js/pusula.js?v=8" defer></script>
 </head><body><header class="w top"><span style="display:inline-flex;align-items:center;gap:10px;font-weight:700;color:#14264A"><span style="width:38px;height:38px;border-radius:10px;background:#14264A;color:#fff;display:grid;place-items:center;font-size:15px">RN</span><span style="line-height:1.15">RN Psikoloji<small style="display:block;font-weight:500;font-size:12px;color:#566179">Çayyolu Şubesi</small></span></span><a class="t" href="tel:+905524187973" data-cta-area="lp_header">📞 0552 418 79 73</a></header>
@@ -120,6 +122,7 @@ details p{margin:8px 0 0;color:var(--mut)}
 
 <section class="kart"><h2>Hangi konularda destek alabilirsiniz?</h2><ul class="konu"><li>Kaygı, stres ve panik atak</li><li>İlişki, evlilik ve aile sorunları</li><li>Çocuk ve ergen danışmanlığı</li><li>Yas, boşanma ve zor yaşam dönemleri</li><li>Depresif duygular ve isteksizlik</li><li>Online görüşme seçeneği</li></ul></section>
 
+<div class="lp-pu"></div>
 <section class="kart"><h2>Randevu 3 adımda</h2><div class="adim"><div><b>Arayın</b><p>Telefonu Selda Hanım açar. İhtiyacınızı kısaca dinler; her şeyi anlatmanız gerekmez.</p></div><div><b>Size uygun saat</b><p>Gün, saat ve şubeyi birlikte belirlersiniz; ücret bilgisini de aynı aramada öğrenirsiniz.</p></div><div><b>İlk görüşme</b><p>Tanışma ve değerlendirme görüşmesi: ne yaşadığınız konuşulur, çalışma planı birlikte oluşturulur.</p></div></div></section>
 
 <section class="kart"><h2>Rojin Nazik'in notu</h2><blockquote>“İlk görüşmeye gelen kişilerde en sık gördüğüm kaygılardan biri, ‘Ne anlatacağım, nereden başlayacağım?’ düşüncesi. İlk görüşme ilerledikçe bunun bir sınav olmadığını ve her şeyi bir anda anlatmak zorunda olmadıklarını fark ettiklerinde daha rahatlayabildiklerini görüyorum.”</blockquote><div class="qk">Psikolog Rojin Nazik · İlk kez gelenler en çok neden çekiniyor?</div></section>
@@ -127,7 +130,7 @@ details p{margin:8px 0 0;color:var(--mut)}
 <section class="kart"><h2>Sık sorulanlar</h2><details><summary>Ücret ne kadar?</summary><p>Seans ücretini Selda Hanım telefonda net olarak söyler; aynı aramada size uygun saati de öğrenirsiniz.</p></details><details><summary>Görüşmeler gizli mi?</summary><p>Evet. Görüşmelerde konuşulanlar gizlidir; yasal zorunluluk ve can güvenliği gibi istisnalar ilk görüşmede açıkça anlatılır.</p></details><details><summary>Online görüşme yapılıyor mu?</summary><p>Evet. Ankara dışından ya da yurt dışından görüntülü görüşme yapılabilir.</p></details><details><summary>Psikolog ilaç yazar mı?</summary><p>Hayır. Psikologlar tanı koymaz ve ilaç yazmaz; gerekli durumlarda psikiyatri uzmanına yönlendirme yapılır.</p></details></section>
 <section class="kart son"><h2>İlk adım tek bir telefon</h2><p>Selda Hanım size en yakın uygun saati söylesin.</p><a class="ara" href="tel:+905524187973" data-cta-area="lp_son"><span>📞</span><span>Hemen Ara · 0552 418 79 73</span></a></section>
 </main>
-<footer class="w dip">RN Psikoloji Çayyolu · Psikologlar tanı koymaz ve ilaç yazmaz. Acil bir durumda 112'yi arayın.</footer>
+<footer class="w dip">RN Psikoloji Çayyolu · Psikologlar tanı koymaz ve ilaç yazmaz. Acil bir durumda 112'yi arayın.<br><a href="https://www.psikologrojinnazik.com/kvkk/">KVKK aydınlatma metni</a> · <a href="https://www.psikologrojinnazik.com/gizlilik/">Gizlilik</a></footer>
 <script>(function(){try{var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Istanbul',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()),g=function(t){for(var i=0;i<p.length;i++)if(p[i].type===t)return p[i].value},d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(g('weekday')),m=(+g('hour')%24)*60+(+g('minute'));var e=document.querySelector('.acik');if((d>=1&&d<=5&&m>=600&&m<1140)||(d===6&&m>=600&&m<1080))e.innerHTML='<i></i>Şu an açığız · Telefonu Selda Hanım açar';else{e.innerHTML='<i style="background:#F59E0B;box-shadow:0 0 0 4px rgba(245,158,11,.2)"></i>Şu an mesai dışındayız · Hafta içi 10:00–19:00 · Cumartesi 10:00–18:00';e.style.color='var(--mut)'}}catch(x){}})();</script>
 <script>/* Aranan kelimeye göre başlık (mesaj uyumu). Google Ads > Hesap ayarları > "Nihai URL son eki": kw={keyword}
    Yalnız hazır tablodaki kalıplar kullanılır; aranan kelime sayfaya olduğu gibi yazılmaz. */

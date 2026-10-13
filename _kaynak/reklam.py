@@ -23,6 +23,7 @@ ROJIN = {
     'foto': '/images/brand/rojin-nazik-portrait-800.webp',
     'renk': {'a': '#6B3A8C', 'a2': '#3d1e54', 'hl': '#C9A06B', 'bg': '#FBF8F2', 'ink': '#2A1F2D', 'mut': '#6b5f73', 'line': '#E8DFD0'},
     'baslik_font': "Georgia,'Times New Roman',serif",
+    'kvkk': '/kvkk/', 'gizlilik': '/gizlilik/',
 }
 CAYYOLU = {
     'ad': 'cayyolu', 'marka': 'RN Psikoloji Çayyolu', 'site': 'https://www.cayyolupsikolog.com.tr',
@@ -30,6 +31,8 @@ CAYYOLU = {
     'foto': '/assets/img/opt/psikolog-rojin-nazik-720.webp',
     'renk': {'a': '#14264A', 'a2': '#14264A', 'hl': '#E9A23B', 'bg': '#F2F6FB', 'ink': '#18223A', 'mut': '#566179', 'line': '#DCE4F0'},
     'baslik_font': "system-ui,-apple-system,'Segoe UI',sans-serif",
+    # Çayyolu sitesinde ayrı KVKK sayfası yok; aynı işletmenin (RN Psikoloji) metinleri
+    'kvkk': 'https://www.psikologrojinnazik.com/kvkk/', 'gizlilik': 'https://www.psikologrojinnazik.com/gizlilik/',
 }
 
 # Telefonun açıldığı saatler (Google Ads reklam ve arama öğesi zaman planı da aynı). Pazar kapalı.
@@ -168,7 +171,7 @@ h1 em{font-style:italic;color:var(--a)}
 .puan{margin-top:14px;font-size:14px;color:var(--mut)}.puan b{color:var(--ink)}.puan span{color:#E5A50A;letter-spacing:1px}
 .foto{position:relative;max-width:420px;width:100%%;justify-self:center}
 .foto img{width:100%%;height:auto;max-height:440px;object-fit:cover;object-position:50%% 20%%;border-radius:24px;display:block;box-shadow:0 24px 50px -28px rgba(0,0,0,.45)}
-@media(max-width:859px){.foto{order:-1;max-width:none}.foto img{max-height:210px}}
+@media(max-width:859px){.foto{order:-1;max-width:none}.foto img{height:clamp(120px,24vh,210px);max-height:none}.hi{gap:14px}.ey{display:none}h1{font-size:clamp(28px,7.6vw,40px);margin:0 0 8px}.alt{font-size:15.5px;line-height:1.5;margin:0 0 12px}.acik{margin:0 0 10px}.top{padding:8px 0}}
 .kart{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px;margin:0 0 16px}
 h2{font-family:%(f)s;font-weight:600;font-size:24px;line-height:1.25;margin:0 0 12px;color:var(--a2)}
 .etiket{display:flex;flex-wrap:wrap;gap:8px;margin:0}
@@ -220,6 +223,7 @@ details p{margin:8px 0 0;color:var(--mut)}
 .ek b{display:block;color:var(--a2)}.ek small{color:var(--mut);font-size:13px}
 .of{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.of img{width:100%%;height:200px;object-fit:cover;border-radius:14px;display:block}
 @media(min-width:760px){.of img{height:280px}}
+main .pu-launch-w{margin:0 0 16px}
 .ic p{margin:0 0 10px;color:var(--ink);font-size:15.5px}.ic p:last-child{margin:0}
 .bar{transition:transform .25s,opacity .25s}
 .dip{padding:18px 0 26px;font-size:12.5px;color:var(--mut);text-align:center}
@@ -301,6 +305,7 @@ def govde(S, P):
 %(puan_kart)s
 <section class="kart"><h2>Hangi konularda destek alabilirsiniz?</h2><ul class="konu">%(konular)s</ul></section>
 %(icerik)s
+<div class="lp-pu"></div>
 <section class="kart"><h2>Randevu 3 adımda</h2><div class="adim">%(adimlar)s</div></section>
 %(ekip_kart)s
 <section class="kart"><h2>Rojin Nazik'in notu</h2><blockquote>“%(not)s”</blockquote><div class="qk">Psikolog Rojin Nazik · %(notb)s</div></section>
@@ -308,7 +313,7 @@ def govde(S, P):
 <section class="kart"><h2>Sık sorulanlar</h2>%(sss)s</section>
 <section class="kart son"><h2>İlk adım tek bir telefon</h2><p>Selda Hanım size en yakın uygun saati söylesin.</p><a class="ara" href="tel:%(tel)s" data-cta-area="lp_son"><span>📞</span><span>Hemen Ara · %(teltxt)s</span></a></section>
 </main>
-<footer class="w dip">%(marka)s · Psikologlar tanı koymaz ve ilaç yazmaz. Acil bir durumda 112'yi arayın.</footer>
+<footer class="w dip">%(marka)s · Psikologlar tanı koymaz ve ilaç yazmaz. Acil bir durumda 112'yi arayın.<br><a href="%(kvkk)s">KVKK aydınlatma metni</a> · <a href="%(gizlilik)s">Gizlilik</a></footer>
 <script>(function(){try{var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Istanbul',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()),g=function(t){for(var i=0;i<p.length;i++)if(p[i].type===t)return p[i].value},d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(g('weekday')),m=(+g('hour')%%24)*60+(+g('minute'));var e=document.querySelector('.acik');if((d>=1&&d<=5&&m>=600&&m<1140)||(d===6&&m>=600&&m<1080))e.innerHTML='<i></i>Şu an açığız · Telefonu Selda Hanım açar';else{e.innerHTML='<i style="background:#F59E0B;box-shadow:0 0 0 4px rgba(245,158,11,.2)"></i>Şu an mesai dışındayız · %(saat)s';e.style.color='var(--mut)'}}catch(x){}})();</script>
 <script>/* Aranan kelimeye göre başlık (mesaj uyumu). Google Ads > Hesap ayarları > "Nihai URL son eki": kw={keyword}
    Yalnız hazır tablodaki kalıplar kullanılır; aranan kelime sayfaya olduğu gibi yazılmaz. */
@@ -329,7 +334,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'){var d=docum
         'wa': wa, 'foto': S['foto'], 'gosteri': gosteri, 'etiket': etiketler, 'ekip': ekip, 'konular': konular, 'adimlar': adimlar,
         'not': esc(P['not'][1]), 'notb': esc(P['not'][0]), 'subeler': subeler, 'sss': sss, 'marka': esc(S['marka']),
         'kwyer': 'Çayyolu' if S['ad'] == 'cayyolu' else 'Ankara', 'saat': SAAT_TXT, 'puan': puan, 'kitaplar': kitaplar,
-        'puan_kart': puan_kart, 'icerik': icerik, 'ekip_kart': ekip_kart, 'ofis': ofis}
+        'puan_kart': puan_kart, 'icerik': icerik, 'kvkk': S['kvkk'], 'gizlilik': S['gizlilik'], 'ekip_kart': ekip_kart, 'ofis': ofis}
 
 
 def baslik(P, S):
@@ -356,6 +361,7 @@ ROJIN_HEAD = '''<!doctype html><html lang="tr"><head><meta charset="utf-8">
 %(css)s
 <script src="/assets/js/ads-conversion.js?v=5" defer></script>
 <script src="/assets/js/after-hours.js?v=6" data-pos="bottom" defer></script>
+<script>window.PUSULA_CFG=Object.assign(window.PUSULA_CFG||{},{heroSecici:'.lp-pu'});</script>
 <script src="/assets/js/pusula.js?v=8" defer></script>
 <script src="/assets/js/vitrin.js?v=4" defer></script>
 </head><body>'''
