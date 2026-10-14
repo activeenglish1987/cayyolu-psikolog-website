@@ -11,10 +11,12 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from landing import LANDINGS, BOOST, EXTRA
 from semt_notlari import SEMT_NOTLARI, UZMAN, SEMT_NOT_TARIHI
+from merkez_notlari import MERKEZ_NOTLARI, MERKEZ_NOT_TARIHI
 from sss import SSS_SAYFA
 LANDINGS.append(SSS_SAYFA)
 for _c in LANDINGS:
     if _c['path'] in SEMT_NOTLARI: _c['mod'] = SEMT_NOT_TARIHI
+    if _c['path'] in MERKEZ_NOTLARI: _c['mod'] = MERKEZ_NOT_TARIHI
 from makaleler import MAKALELER
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -484,7 +486,24 @@ def semt_notlari_html(path):
                    '<p style="margin:10px 0 0;font-size:14px;opacity:.85"><a href="%s">%s</a> · %s</p></aside>' % (esc(name), esc(h), esc(t), url, esc(name), esc(role)))
     return '<div class="uzman-notlari">%s</div>' % ''.join(out)
 
+def merkez_notu_html(path):
+    h, t = MERKEZ_NOTLARI[path]
+    return ('<aside class="gozlem merkez-notu" style="margin:24px 0;padding:18px 20px;border-radius:16px;background:#F3F6FB;border-left:4px solid #14264A">'
+            '<p style="margin:0 0 4px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#566179">RN Psikoloji Çayyolu · uzman gözlemi</p>'
+            '<h2 style="margin:0 0 10px;font-size:20px;line-height:1.35">%s</h2>'
+            '<blockquote style="margin:0;line-height:1.7;font-style:italic">“%s”</blockquote>'
+            '<p style="margin:10px 0 0;font-size:14px;opacity:.85"><a href="/uzmanlarimiz/">RN Psikoloji Çayyolu uzman ekibi</a> · Yaşamkent ofisi</p></aside>') % (esc(h), esc(t))
+
 def write(path, content):
+    if path in MERKEZ_NOTLARI and 'merkez-notu' not in content:
+        a = content.find('<article')
+        if a >= 0:
+            h2s = [i for i in range(a, len(content)) if content.startswith('<h2', i)][:2]
+            if len(h2s) == 2: yer = h2s[1]
+            else:
+                yer = content.find('<h2>Sık sorulan sorular</h2>', a)
+                if yer < 0: yer = content.find('</article>', a)
+            if yer >= 0: content = content[:yer] + merkez_notu_html(path) + content[yer:]
     if path in SEMT_NOTLARI and 'uzman-notu' not in content:
         a = content.find('<article')
         h2s = [i for i in range(a, len(content)) if content.startswith('<h2', i)][:2] if a >= 0 else []
@@ -963,6 +982,8 @@ def main():
     # Başka kaynaklardan çevrilmiş eski yazılar yayından kaldırıldı; yerlerine özgün makaleler geldi
     removed = {m['eski'] for m in MAKALELER if m.get('eski')}
     recs = [r for r in recs if r['path'] not in removed]
+    for r in recs:
+        if r['path'] in MERKEZ_NOTLARI: r['modified'] = MERKEZ_NOT_TARIHI
     for m in MAKALELER:
         recs.append({'type': 'post', 'path': m['path'], 'slug': m['path'].strip('/'), 'title': m['title'], 'date': m.get('date', '2026-09-30'),
                      'modified': m.get('date', '2026-09-30'), 'html': m['html'], 'excerpt': '', 'seo_title': m['seo_title'], 'seo_desc': m['desc'],
@@ -985,7 +1006,7 @@ def main():
             h = h.replace('href="%s"' % a, 'href="%s"' % b).replace('href="%s%s"' % (SITE, a), 'href="%s"' % b)
         r['html'] = h
         if r['path'] in RETITLE:
-            r.update(RETITLE[r['path']]); r['modified'] = '2026-10-01'
+            r.update(RETITLE[r['path']]); r['modified'] = MERKEZ_NOT_TARIHI if r['path'] in MERKEZ_NOTLARI else '2026-10-01'
     posts = sorted([r for r in recs if r['type'] == 'post'], key=lambda r: r['date'], reverse=True)
     rojin = next(r for r in recs if r['path'] == '/psikolog-rojin-nazik/')
     special = {'/': None, '/uzmanlarimiz/': experts_page, '/iletisim/': contact_page, '/basinda-biz/': press_page,
