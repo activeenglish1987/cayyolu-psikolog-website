@@ -45,7 +45,7 @@ SUBELER = [
 ADIMLAR = [
     ('Arayın', 'Telefonu Selda Hanım açar. İhtiyacınızı kısaca dinler; her şeyi anlatmanız gerekmez.'),
     ('Size uygun saat', 'Gün, saat ve şubeyi birlikte belirlersiniz; ücret bilgisini de aynı aramada öğrenirsiniz.'),
-    ('İlk görüşme', 'Tanışma ve değerlendirme görüşmesi: ne yaşadığınız konuşulur, çalışma planı birlikte oluşturulur.'),
+    ('İlk görüşme', 'Yaklaşık 50 dakikalık tanışma ve değerlendirme görüşmesi: ne yaşadığınız konuşulur, çalışma planı birlikte oluşturulur.'),
 ]
 ORTAK_SSS = [
     ('Ücret ne kadar?', 'Seans ücretini Selda Hanım telefonda net olarak söyler; aynı aramada size uygun saati de öğrenirsiniz.'),
@@ -91,7 +91,7 @@ SAYFALAR = {
          'icerik': ("Ankara'da psikolog randevusu", [
              "Ankara psikolog arayışınızda Psikolog Rojin Nazik ve ekibiyle Yaşamkent (Çayyolu) ve Kızılay ofislerinde yüz yüze görüşebilir, Ankara dışındaysanız online psikolog görüşmesi yapabilirsiniz. RN Psikoloji Danışmanlık Merkezi'nde bireysel terapi, çift ve aile terapisi, çocuk ve ergen danışmanlığı yapılıyor.",
              "Psikolog randevusu için telefonu Selda Hanım açar. Hangi konuda psikolojik danışmanlık almak istediğinizi kısaca dinler; size uygun psikoloğu, şubeyi ve saati birlikte belirlersiniz.",
-             "Ankara'daki psikologlar arasında seçim yaparken uzmanın hangi konularla çalıştığına, yaklaşımına ve kendinizi rahat hissedip hissetmediğinize bakmanızı öneririz. Psikolog Rojin Nazik bilişsel davranışçı ve şema terapi yaklaşımlarıyla çalışıyor; tanışmadan önce TV programlarını izleyebilir, yazılarını okuyabilirsiniz."]),
+             "Ankara'daki psikologlar arasında seçim yaparken uzmanın hangi konularla çalıştığına, yaklaşımına ve kendinizi rahat hissedip hissetmediğinize bakmanızı öneririz. Psikolog Rojin Nazik bilişsel davranışçı ve bilişsel varoluşçu yaklaşımlarla çalışıyor, şema terapi eğitimi de almış; tanışmadan önce TV programlarını izleyebilir, yazılarını okuyabilirsiniz."]),
          'sss': [('Bireysel terapi nasıl ilerler?', 'İlk görüşmede ne yaşadığınız ve neye ihtiyaç duyduğunuz birlikte değerlendirilir. Sonrasında genellikle haftalık veya iki haftada bir yapılan görüşmelerle, birlikte belirlediğiniz hedefler doğrultusunda ilerlenir.'),
                  ('Psikolog randevusu ne kadar sürede alınır?', 'Uygun gün ve saati Selda Hanım telefonda hemen söyler; yüz yüze ya da online seçeneklerden size uygun olanı birlikte belirlersiniz.')],
          'alt': "Yaşamkent ve Kızılay'da yüz yüze, dilerseniz online psikolojik danışmanlık. Kendinizi rahatça anlatabileceğiniz, acele edilmeyen bir ortam.",

@@ -426,7 +426,7 @@ def service_cards():
         p, esc(tag), esc(t), esc(d), ICON['arrow']) for p, t, d, tag in SERVICES) + '</div>'
 
 FAQS = [
-    ('İlk görüşme nasıl ilerliyor?', 'Telefon veya WhatsApp üzerinden ulaşırsınız; uygun uzman, gün ve saat birlikte belirlenir. İlk görüşmede başvuru nedeniniz, beklentileriniz ve yaşam öykünüz dinlenir; ardından size uygun görüşme planı oluşturulur.'),
+    ('İlk görüşme nasıl ilerliyor?', 'Telefon veya WhatsApp üzerinden ulaşırsınız; uygun uzman, gün ve saat birlikte belirlenir. Yaklaşık 50 dakika süren ilk görüşmede başvuru nedeniniz, beklentileriniz ve yaşam öykünüz dinlenir; ardından size uygun görüşme planı oluşturulur.'),
     ('Ofisiniz nerede?', 'Ofisimiz Yaşamkent\'te, Konutkent Dumlupınar Bulvarı No:399 Kat:28 Daire:121 adresindedir. Çayyolu, Ümitköy, Konutkent, İncek ve Alacaatlı\'ya yakındır; ücretsiz otopark vardır.'),
     ('Hangi gün ve saatlerde görüşme yapılıyor?', 'Görüşmeler Pazartesi – Cumartesi 09:00 – 20:00 saatleri arasında randevu ile yapılır.'),
     ('Hangi uzmanla görüşeceğime nasıl karar verebilirim?', 'Başvuru nedeninizi kısaca paylaşmanız yeterli; çocuk, ergen, yetişkin veya çift görüşmesi olmasına göre size uygun uzman önerilir. Uzmanlarımızın profillerini <a href="/uzmanlarimiz/">Uzmanlarımız</a> sayfasında inceleyebilirsiniz.'),
@@ -648,7 +648,7 @@ HOME_REHBER = """<h2>Çayyolu'nda psikolog seçerken</h2>
 </ul>
 <h3>İlk görüşmede ne olur, ücret nasıl öğrenilir?</h3>
 <ul>
-<li>İlk görüşme tanışma ve değerlendirme görüşmesidir: ne yaşadığınız konuşulur, nasıl ilerleneceği birlikte planlanır.</li>
+<li>İlk görüşme yaklaşık 50 dakika süren bir tanışma ve değerlendirme görüşmesidir: ne yaşadığınız konuşulur, nasıl ilerleneceği birlikte planlanır.</li>
 <li>Seans ücretini Selda Hanım telefonda söyler; <a href="/cayyolu-psikolog-fiyatlari/">ücreti belirleyen etkenleri</a> de okuyabilirsiniz.</li>
 <li>Psikologlar tanı koymaz ve ilaç yazmaz; gerektiğinde psikiyatri uzmanına yönlendirme yapılır. Acil bir durumda 112'yi arayın.</li>
 </ul>"""
