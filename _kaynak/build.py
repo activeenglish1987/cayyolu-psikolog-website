@@ -371,6 +371,7 @@ def footer_html():
       <a class="text-link light" href="%(dir)s" target="_blank" rel="noopener">Yol tarifi al %(arrow)s</a>
     </div>
   </div>
+  <p class="wrap" style="margin:0 auto 10px;font-size:13px;opacity:.8">Kendinizin ya da bir başkasının güvenliği için acil bir durum varsa 112'yi arayın.</p>
   <div class="wrap footer-bottom"><span>© 2026 %(brand)s · <a href="/kvkk/">KVKK</a> · <a href="/gizlilik/">Gizlilik</a></span><span><a href="https://www.psikologrojinnazik.com/" target="_blank" rel="noopener">psikologrojinnazik.com</a> · <a href="https://www.psikologeliferdogan.com/" target="_blank" rel="noopener">psikologeliferdogan.com</a></span></div>
 </footer>
 <div class="sticky-bar" role="navigation" aria-label="Hızlı iletişim">%(call2)s%(wa2)s</div>
