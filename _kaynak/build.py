@@ -800,7 +800,7 @@ def home_page(recs, posts):
   </div>
 </section>
 ''' % {'call': btn_call(), 'wa': btn_wa(), 'open': OPEN_STATUS, 'hero_img': img(hero_img, 'Psikolog Rojin Nazik, RN Psikoloji Çayyolu', eager=True, kucuk=600, sizes='(max-width: 900px) 100vw, 560px'),
-       'trust': TRUST, 'office': office_card(), 'o1': img(office1, 'RN Psikoloji Çayyolu seans odası', kucuk=480, sizes='(max-width: 900px) 50vw, 420px'), 'o2': img(office2, 'RN Psikoloji Çayyolu bekleme alanı', kucuk=480, sizes='(max-width: 900px) 50vw, 420px'),
+       'trust': TRUST, 'office': office_card(), 'o1': img(office1, 'RN Psikoloji Çayyolu seans odası', kucuk=560, sizes='(max-width: 900px) calc(50vw - 24px), 420px'), 'o2': img(office2, 'RN Psikoloji Çayyolu bekleme alanı', kucuk=560, sizes='(max-width: 900px) calc(50vw - 24px), 420px'),
        'h_exp': section_head('Uzmanlarımız', 'Size uygun uzmanla görüşün', 'Çocuk, ergen, yetişkin ve çift görüşmelerinde deneyimli psikologlarımız.'),
        'experts': expert_cards(), 'h_svc': section_head('Hizmetler', 'Hangi konuda destek almak istersiniz?'), 'services': service_cards(),
        'wa_help': wa('Merhaba, hangi hizmetin bana uygun olduğunu öğrenmek istiyorum.'),
