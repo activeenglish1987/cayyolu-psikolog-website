@@ -18,11 +18,15 @@ RewriteRule ^(.*)$ https://www.cayyolupsikolog.com.tr/$1 [R=301,L]
 RewriteRule ^_kaynak(/|$) - [F,L]
 RewriteRule ^\.git(/|$) - [F,L]
 RewriteRule ^\.ftp-deploy-sync-state\.json$ - [F,L]
+RewriteRule ^yayin-kontrol\.txt$ - [F,L]
+# Ekipte olmayan eski uzmana ait eski görseller kaldırıldı (2026-10-14): sunucuda kalsalar da 410 döner
+RewriteRule ^(wp-content|assets)/.*hazal.*\.(jpe?g|png|webp)$ - [G,NC,L]
 
 # Eski WordPress adresleri
 RewriteRule ^elementor-hf(/.*)?$ / [R=301,L]
 RewriteRule ^author(/.*)?$ /hakkimizda/ [R=301,L]
 RewriteRule ^category/uncategorized/?$ /blog/ [R=301,L]
+RewriteRule ^category/blog/?$ /blog/ [R=301,L]
 RewriteRule ^(.+/)?feed/?$ /blog/ [R=301,L]
 RewriteRule ^wp-json(/.*)?$ / [R=301,L]
 RewriteRule ^ankara-psikolog/?$ https://www.psikologrojinnazik.com/ [R=301,L]

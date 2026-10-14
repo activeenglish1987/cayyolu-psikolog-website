@@ -1113,7 +1113,7 @@ def main():
     pages.append((elif_rec['path'], '2026-09-30'))
     # blog listeleri
     write('/blog/', blog_index(posts, '/blog/')); pages.append(('/blog/', None))
-    write('/category/blog/', blog_index(posts, '/category/blog/', 'Blog Yazıları')); pages.append(('/category/blog/', None))
+    # /category/blog/ eski WordPress adresi: /blog/ ile aynı içerik olduğu için .htaccess'te /blog/'a 301 (2026-10-14)
     # KVKK aydınlatma metni ve gizlilik özeti (ortak metin: _kaynak/kvkk.py, Rojin sitesindekiyle aynı veri sorumlusu)
     import kvkk
     write('/kvkk/', article_page({'title': 'KVKK Aydınlatma Metni', 'path': '/kvkk/', 'date': '2026-10-13', 'modified': '2026-10-13', 'type': 'page'},
