@@ -104,7 +104,7 @@ MAKALELER = [
  'faqs': [
   ("Çocuğumdaki kaygı normal mi?", "Belirli dönemlerde yaşanan kısa süreli kaygı normaldir. Kaygı haftalarca sürüyor, okulu, uykuyu ya da arkadaş ilişkilerini etkiliyorsa bir uzmanla görüşmek faydalı olur."),
   ("Kaygılı çocuğu kaygı verici durumlardan uzak tutmalı mıyım?", "Tamamen uzak tutmak kısa vadede rahatlatır ama kaygıyı büyütebilir. Çocuğun başarabileceği küçük adımlarla ilerlemek daha etkilidir."),
-  ("İlk görüşmeye çocuğumu getirmeli miyim?", "Genellikle ilk görüşme ebeveynlerle yapılır; çocukla görüşmeler bu ön görüşmeden sonra planlanır."),
+  ("Yaşamkent ofisindeki ilk görüşmeye çocuğumla mı gelmeliyim?", "Genellikle ilk görüşme ebeveynlerle yapılır; çocukla görüşmeler bu ön görüşmeden sonra planlanır."),
  ],
 },
 {
@@ -166,7 +166,7 @@ MAKALELER = [
 <p>RN Psikoloji Çayyolu'nda çift ve evlilik görüşmeleri yapılmaktadır. Ayrıntılar için <a href="/cayyolu-cift-terapisi/">Çayyolu çift terapisi</a> ve <a href="/evlilik-oncesi-danismanlik/">evlilik öncesi danışmanlık</a> sayfalarımıza göz atabilirsiniz.</p>
 ''',
  'faqs': [
-  ("Eşim çift terapisine gelmek istemiyor, ne yapabilirim?", "Bireysel görüşmelerle başlamak mümkündür. İlişkide sizin tarafınızdan neler değişebileceği üzerine çalışmak da ilişkiye olumlu yansıyabilir."),
+  ("Partnerim çift görüşmesine gelmek istemezse tek başıma başlayabilir miyim?", "Bireysel görüşmelerle başlamak mümkündür. İlişkide sizin tarafınızdan neler değişebileceği üzerine çalışmak da ilişkiye olumlu yansıyabilir."),
   ("Çift terapisinde terapist taraf tutar mı?", "Hayır. Terapist iki tarafa da eşit mesafede durur ve ilişkinin kendisine odaklanır."),
  ],
 },

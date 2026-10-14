@@ -362,7 +362,7 @@ LANDINGS = [
   ("Hangi yaştaki çocuklarla çalışıyorsunuz?", "Okul öncesi dönemden ergenlik sonuna kadar çocuk ve gençlerle yaşlarına uygun yöntemlerle çalışılır."),
   ("Ergen çocuğum görüşmeye gelmek istemiyor, ne yapmalıyım?", "Bu sık karşılaşılan bir durumdur. Öncelikle ebeveynlerle görüşerek gencin sürece nasıl dahil edilebileceği birlikte planlanır."),
   ("Görüşmelerde konuşulanlar bizimle paylaşılır mı?", "Çocuğun ve gencin güveni için görüşme içerikleri ayrıntılı olarak aktarılmaz; ancak ebeveynlere sürecin genel gidişatı ve evde yapılabilecekler hakkında düzenli bilgi verilir. Güvenliği ilgilendiren durumlar bunun dışındadır."),
-  ("Randevu nasıl alınır?", "0552 418 79 73 numarasını arayabilir ya da WhatsApp'tan yazabilirsiniz."),
+  ("Çayyolu'ndan randevu almak için ne yapmalıyım?", "0552 418 79 73 numarasını arayabilir ya da WhatsApp'tan yazabilirsiniz."),
  ],
 },
 {
@@ -429,7 +429,7 @@ LANDINGS = [
   ("Aile görüşmesine herkesin katılması şart mı?", "Hayır. Görüşmeler ihtiyaca göre tüm aileyle, yalnızca ebeveynlerle ya da bireysel olarak planlanabilir."),
   ("Boşanma sürecinde çocuklar için destek veriyor musunuz?", "Evet. Boşanmanın çocuklara nasıl anlatılacağı ve yeni düzene uyum sürecinde hem ebeveynlerle hem de çocuklarla görüşülür."),
   ("Ergen çocuğumuzla sürekli tartışıyoruz, aile görüşmesi uygun mu?", "Ergen – ebeveyn çatışmaları aile görüşmelerinin en sık konularındandır. Gençle ve ebeveynlerle ayrı ve ortak görüşmeler planlanabilir."),
-  ("Randevu nasıl alınır?", "0552 418 79 73 numarasını arayabilir ya da WhatsApp'tan yazabilirsiniz."),
+  ("Çayyolu'ndan randevu almak için ne yapmalıyım?", "0552 418 79 73 numarasını arayabilir ya da WhatsApp'tan yazabilirsiniz."),
  ],
 },
 {
@@ -544,7 +544,7 @@ BOOST = {
    ("Çayyolu'na en yakın ofisiniz nerede?", "Konutkent, Dumlupınar Bulvarı No:399 Kat:28 Daire:121 adresindeki Yaşamkent ofisimiz Çayyolu'na birkaç dakika mesafededir."),
    ("Çayyolu'nda hafta sonu psikolog randevusu alabilir miyim?", "Cumartesi günleri de 09:00 – 20:00 arasında randevu verilmektedir."),
    ("Otopark var mı?", "Evet, ücretsiz otopark mevcuttur."),
-   ("Randevu nasıl alınır?", "0552 418 79 73 numarasını arayabilir ya da WhatsApp'tan yazabilirsiniz."),
+   ("Çayyolu'ndan randevu almak için ne yapmalıyım?", "0552 418 79 73 numarasını arayabilir ya da WhatsApp'tan yazabilirsiniz."),
   ],
  },
 }

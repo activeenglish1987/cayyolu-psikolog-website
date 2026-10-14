@@ -14,6 +14,7 @@ from semt_notlari import SEMT_NOTLARI, UZMAN, SEMT_NOT_TARIHI
 from merkez_notlari import MERKEZ_NOTLARI, MERKEZ_NOT_TARIHI
 MERKEZ_ERKEN = {'/kaygi-sorunlari/'}
 from sss import SSS_SAYFA
+from uzman_sss import UZMAN_SSS, UZMAN_SORULARI, UZMAN_SATIRI, UZMAN_SSS_TARIHI
 LANDINGS.append(SSS_SAYFA)
 for _c in LANDINGS:
     if _c['path'] in SEMT_NOTLARI: _c['mod'] = SEMT_NOT_TARIHI
@@ -437,7 +438,8 @@ FAQS = [
 ]
 
 def faq_html(faqs=FAQS):
-    return '<div class="faq">' + ''.join('<details><summary>%s</summary><div class="faq-a"><p>%s</p></div></details>' % (esc(q), a) for q, a in faqs) + '</div>'
+    # Uzman onaylı sorularda cevabın altına "Uzman kontrolü" satırı (uzman_sss.py)
+    return '<div class="faq">' + ''.join('<details><summary>%s</summary><div class="faq-a"><p>%s</p>%s</div></details>' % (esc(q), a, UZMAN_SATIRI if q in UZMAN_SORULARI else '') for q, a in faqs) + '</div>'
 
 def faq_ld(faqs=FAQS):
     return {'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': plain(a)}} for q, a in faqs]}
@@ -880,7 +882,7 @@ def landing_page(cfg):
     # (hat numarası ya da süre tahminle yazılmaz; Google'ın güncel verisi kullanılır)
     body = re.sub(r'(<div class="route-box">.*?</ul>)(</div>)', lambda m: m.group(1) + route_btns() + m.group(2), body, count=1, flags=re.S)
     ex = EXTRA.get(cfg['path'])
-    faqs = cfg['faqs'] + (ex['faqs'] if ex else [])
+    faqs = UZMAN_SSS.get(cfg['path'], []) + cfg['faqs'] + (ex['faqs'] if ex else [])
     if ex:
         rec['modified'] = cfg.get('mod') or '2026-10-01'
         body += ex['html']
@@ -897,6 +899,8 @@ def landing_page(cfg):
         section_head('Yakın bölgeler', 'Çevre semtlerden danışanlarımız'),
         ''.join('<a class="area-chip" href="%s">%s %s psikolog</a>' % (p, ICON['pin'], esc(a)) for a, p in near),
         ''.join('<a class="area-chip" href="%s">%s Çayyolu %s</a>' % (p, ICON['arrow'], esc(t)) for p, t in FOCUS if p != cfg['path']))
+    if cfg['path'] in UZMAN_SSS:
+        rec['modified'] = UZMAN_SSS_TARIHI
     return article_page(rec, body, [('Ana Sayfa', '/'), (cfg['h1'], None)], kicker='RN Psikoloji · Yaşamkent ofisi',
                         lead=cfg['lead'], extra_after=after, extra_ld=[faq_ld(faqs), service_ld(cfg)], desc=cfg['desc'], title_tag=cfg['title'])
 
@@ -1052,6 +1056,12 @@ def main():
         body = clean_html(r['html'])
         expert = next((e for e in EXPERTS if e['path'] == p), None)
         boost = BOOST.get(p)
+        if p in UZMAN_SSS:
+            r = dict(r, modified=UZMAN_SSS_TARIHI)
+            if boost:
+                boost = dict(boost, faqs=UZMAN_SSS[p] + boost['faqs'])
+            else:
+                r['faqs'] = UZMAN_SSS[p] + list(r.get('faqs') or [])
         if boost:
             body = boost['intro'] % {'cta': inline_cta()} + body + '<h2>Sık sorulan sorular</h2>' + faq_html(boost['faqs'])
             r = dict(r, title=boost['h1'])

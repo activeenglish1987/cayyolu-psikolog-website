@@ -244,6 +244,7 @@ body.menu-open{overflow:hidden}
 .faq details[open] summary::after{content:"–"}
 .faq-a{padding:0 18px 16px;color:var(--muted)}
 .faq-a p:last-child{margin:0}
+.faq-a .faq-uzman{margin:8px 0 0;font-size:13px}
 
 /* makale metni */
 .prose{min-width:0}
