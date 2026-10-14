@@ -924,7 +924,7 @@ def contact_page(rec):
     return head('İletişim ve Randevu | %s' % BRAND, "RN Psikoloji Çayyolu iletişim: Yaşamkent ofisi, görüşmeler Pazartesi – Cumartesi 09:00 – 20:00. Telefon ve WhatsApp: 0552 418 79 73. Yol tarifi ve randevu.", rec['path'], ld(business_ld(), bld, faq_ld())) + nav_html(rec['path']) + '''
 <section class="page-hero"><div class="wrap">%(bc)s<p class="eyebrow">İletişim ve randevu</p><h1>Bize ulaşın</h1><p class="page-lead">Randevu ve bilgi için arayın ya da WhatsApp'tan yazın. Telefon hafta içi 10:00 – 19:00, Cumartesi 10:00 – 18:00 arası açık; görüşmeler Pazartesi – Cumartesi 09:00 – 20:00 arasında yapılır.</p>
 <div class="btn-row hero-btns">%(call)s%(wa)s</div>%(open)s
-<p class="contact-phone"><a href="tel:%(raw)s">%(phone)s</a> · <a href="mailto:%(email)s">%(email)s</a></p></div></section>
+<p class="contact-phone"><a href="tel:%(raw)s">%(phone)s</a> · <a href="mailto:%(email)s">%(email)s</a></p><p class="contact-note" style="margin-top:10px;font-size:14px">Bu telefon hattı danışan randevuları içindir. Basın, TV programı, reklam ve iş birliği teklifleri için lütfen e-posta ile yazın: <a href="mailto:%(email)s">%(email)s</a></p></div></section>
 <section class="section section-tight"><div class="wrap office-grid">%(office)s<div class="office-photos single">%(o1)s</div></div></section>
 <section class="section section-alt"><div class="wrap">%(h_exp)s%(experts)s</div></section>
 <section class="section"><div class="wrap narrow">%(h_faq)s%(faq)s</div></section>''' % {
