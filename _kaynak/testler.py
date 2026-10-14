@@ -133,7 +133,7 @@ if(kriz)h+='<div class="ts-kriz" role="alert"><b>Kendinize zarar verme düşünc
 h+='<h2>'+V.ad+' sonucunuz</h2><div class="ts-puan">'+t+' <small style="font-size:18px;color:#6b5f73">/ '+max+'</small></div><div class="ts-bar"><i style="width:'+Math.round(t/max*100)+'%%"></i></div>';
 h+='<p><b>'+b[3]+'</b> Bu sonuç bir tanı değildir; son iki haftadaki belirtilerinizin yoğunluğu hakkında genel bir fikir verir.</p>';
 h+='<p>'+(dusuk?'Sizi zorlayan bir durum varsa bunu konuşmak için yüksek bir puan gerekmez.':'Bu belirtiler günlük hayatınızı etkiliyorsa bir uzmanla konuşmak faydalı olabilir. İlk görüşmede ne yaşadığınız ve sizi nasıl etkilediği konuşulur, çalışma planı birlikte oluşturulur.')+'</p>';
-h+='<a class="ts-ara" href="tel:+905524187973" data-cta-area="test_sonuc">📞 Selda Hanım\\'ı Arayın · 0552 418 79 73</a><p class="ts-not">Telefonu Selda Hanım açar; uygun saati ve ücret bilgisini söyler. Pazartesi–Cumartesi 09:00–20:00.</p>';
+h+='<a class="ts-ara" href="tel:+905524187973" data-cta-area="test_sonuc">📞 Selda Hanım\\'ı Arayın · 0552 418 79 73</a><p class="ts-not">Telefonu Selda Hanım açar; uygun saati ve ücret bilgisini söyler. Hafta içi 10:00–19:00, Cumartesi 10:00–18:00.</p>';
 out.innerHTML=h;out.hidden=false;var k=out.querySelector('[data-112]');if(k)k.onclick=function(ev){ev.preventDefault();location.href='tel:112'};
 out.scrollIntoView({behavior:'smooth',block:'start'});
 (window.dataLayer=window.dataLayer||[]).push({event:'test_tamamlandi',test:V.olcek,test_duzey:b[2]});});

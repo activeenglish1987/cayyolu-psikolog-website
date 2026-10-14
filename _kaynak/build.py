@@ -200,7 +200,7 @@ SERVICES = [
     ('/bosanma-sonrasi-danismanlik/', 'Boşanma Sonrası Danışmanlık', 'Ayrılık ve boşanma sürecinde duygusal destek.', 'Yetişkin'),
     ('/kaygi-sorunlari/', 'Kaygı Sorunları', 'Yoğun kaygı, panik ve sosyal kaygıda psikolojik destek.', 'Yetişkin'),
     ('/yetiskinler-icin/', 'Yetişkinler İçin', 'Yetişkinlere yönelik bireysel görüşme alanları.', 'Yetişkin'),
-    ('/online-terapi/', 'Online Terapi', 'Ankara dışında olanlar için online görüşme seçeneği.', 'Online'),
+    ('/online-terapi/', 'Online Terapi', 'Ankara dışından ya da ofise gelemediğiniz dönemlerde online görüşme.', 'Online'),
 ]
 EXPERTS = [
     {'path': '/psikolog-rojin-nazik/', 'name': 'Psikolog Rojin Nazik', 'role': 'Kurucu Psikolog',
@@ -250,7 +250,7 @@ def btn_wa(msg='Merhaba, randevu bilgisi almak istiyorum.', label="WhatsApp'tan 
 OPEN_STATUS = '<div class="open-status" data-open-status><span class="dot"></span><span>Telefonu Selda Hanım açar · hafta içi 10:00–19:00, Cumartesi 10:00–18:00</span></div>'
 
 def inline_cta(msg='Merhaba, randevu bilgisi almak istiyorum.', title='Randevu için hemen ulaşın'):
-    return '<aside class="inline-cta"><p><strong>%s</strong>Pazartesi – Cumartesi 09:00 – 20:00 · Yaşamkent ofisi · Ücretsiz otopark</p><div class="btn-row">%s%s</div></aside>' % (
+    return '<aside class="inline-cta"><p><strong>%s</strong>Telefon hafta içi 10:00–19:00, Cumartesi 10:00–18:00 · Yaşamkent ofisi · Ücretsiz otopark</p><div class="btn-row">%s%s</div></aside>' % (
         esc(title), btn_call(), btn_wa(msg))
 
 def with_mid_cta(body, expert=None):
@@ -349,7 +349,7 @@ def footer_html():
     return '''</main>
 <section class="cta-band">
   <div class="wrap cta-band-inner">
-    <div><p class="eyebrow light">İlk adım</p><h2>Randevu ve bilgi için bize ulaşın.</h2><p>Kurucumuz Psikolog Rojin Nazik ve ekibi · Pazartesi – Cumartesi 09:00 – 20:00 · Yaşamkent ofisi</p></div>
+    <div><p class="eyebrow light">İlk adım</p><h2>Randevu ve bilgi için bize ulaşın.</h2><p>Kurucumuz Psikolog Rojin Nazik ve ekibi · Yaşamkent ofisi · Telefon hafta içi 10:00–19:00, Cumartesi 10:00–18:00</p></div>
     <div class="btn-row">%(call)s%(wa)s</div>
   </div>
 </section>
@@ -429,7 +429,8 @@ FAQS = [
     ('İlk görüşme nasıl ilerliyor?', 'Telefon veya WhatsApp üzerinden ulaşırsınız; uygun uzman, gün ve saat birlikte belirlenir. Yaklaşık 50 dakika süren ilk görüşmede başvuru nedeniniz, beklentileriniz ve yaşam öykünüz dinlenir; ardından size uygun görüşme planı oluşturulur.'),
     ('Ofisiniz nerede?', 'Ofisimiz Yaşamkent\'te, Konutkent Dumlupınar Bulvarı No:399 Kat:28 Daire:121 adresindedir. Çayyolu, Ümitköy, Konutkent, İncek ve Alacaatlı\'ya yakındır; ücretsiz otopark vardır.'),
     ('Hangi gün ve saatlerde görüşme yapılıyor?', 'Görüşmeler Pazartesi – Cumartesi 09:00 – 20:00 saatleri arasında randevu ile yapılır.'),
-    ('Hangi uzmanla görüşeceğime nasıl karar verebilirim?', 'Başvuru nedeninizi kısaca paylaşmanız yeterli; çocuk, ergen, yetişkin veya çift görüşmesi olmasına göre size uygun uzman önerilir. Uzmanlarımızın profillerini <a href="/uzmanlarimiz/">Uzmanlarımız</a> sayfasında inceleyebilirsiniz.'),
+    ('Hangi uzmanla görüşeceğime nasıl karar verebilirim?', 'Başvuru nedeninizi kısaca paylaşmanız yeterli; çocuk, ergen, yetişkin veya çift görüşmesi olmasına göre size uygun uzman önerilir. Belirli bir uzmanla görüşmek isterseniz bunu telefonda söylemeniz yeterli. İki uzmanımız da yüz yüze ve online görüşme yapar; ücret görüşme türüne ve uzmana göre değişebilir, telefonda net olarak söylenir. Profilleri <a href="/uzmanlarimiz/">Uzmanlarımız</a> sayfasında inceleyebilirsiniz.'),
+    ('Seanslar ne kadar sürer?', 'Bireysel görüşmeler genellikle 45–50 dakika, çift ve aile görüşmeleri 60–90 dakika, çocuk görüşmeleri yaşa göre yaklaşık 45 dakika sürer. İlk görüşme yaklaşık 50 dakikadır.'),
     ('Ücret bilgisine nasıl ulaşabilirim?', 'Güncel ücret bilgisini WhatsApp\'tan yazarak ya da <a href="tel:%s">%s</a> numarasını arayarak öğrenebilirsiniz.' % (PHONE_RAW, PHONE)),
     ('Randevumu nasıl değiştirebilirim?', 'Randevu değişikliği için WhatsApp\'tan yazabilir ya da <a href="tel:%s">%s</a> numarasını arayabilirsiniz.' % (PHONE_RAW, PHONE)),
 ]
@@ -914,8 +915,8 @@ def experts_page(rec):
 def contact_page(rec):
     bc, bld = breadcrumb([('Ana Sayfa', '/'), ('İletişim', None)])
     o1 = opt('wp-content/uploads/2024/05/seans-odasi-1.jpg', 900, 'seans-odasi')
-    return head('İletişim ve Randevu | %s' % BRAND, "RN Psikoloji Çayyolu iletişim: Yaşamkent ofisi, Pazartesi – Cumartesi 09:00 – 20:00. Telefon ve WhatsApp: 0552 418 79 73. Yol tarifi ve randevu.", rec['path'], ld(business_ld(), bld, faq_ld())) + nav_html(rec['path']) + '''
-<section class="page-hero"><div class="wrap">%(bc)s<p class="eyebrow">İletişim ve randevu</p><h1>Bize ulaşın</h1><p class="page-lead">Randevu ve bilgi için arayın ya da WhatsApp'tan yazın. Pazartesi – Cumartesi 09:00 – 20:00.</p>
+    return head('İletişim ve Randevu | %s' % BRAND, "RN Psikoloji Çayyolu iletişim: Yaşamkent ofisi, görüşmeler Pazartesi – Cumartesi 09:00 – 20:00. Telefon ve WhatsApp: 0552 418 79 73. Yol tarifi ve randevu.", rec['path'], ld(business_ld(), bld, faq_ld())) + nav_html(rec['path']) + '''
+<section class="page-hero"><div class="wrap">%(bc)s<p class="eyebrow">İletişim ve randevu</p><h1>Bize ulaşın</h1><p class="page-lead">Randevu ve bilgi için arayın ya da WhatsApp'tan yazın. Telefon hafta içi 10:00 – 19:00, Cumartesi 10:00 – 18:00 arası açık; görüşmeler Pazartesi – Cumartesi 09:00 – 20:00 arasında yapılır.</p>
 <div class="btn-row hero-btns">%(call)s%(wa)s</div>%(open)s
 <p class="contact-phone"><a href="tel:%(raw)s">%(phone)s</a> · <a href="mailto:%(email)s">%(email)s</a></p></div></section>
 <section class="section section-tight"><div class="wrap office-grid">%(office)s<div class="office-photos single">%(o1)s</div></div></section>
