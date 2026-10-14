@@ -387,3 +387,6 @@ body.menu-open .sticky-bar{display:none}
 .btn-row .btn{max-width:100%}
 
 .route-box .route-btns{margin-top:12px;gap:8px}.route-box .route-btns .btn{background:#fff}
+
+/* Erişilebilirlik: alt bilgi bağlantıları yalnız renkle ayırt edilmesin (PageSpeed, 14 Ekim 2026) */
+.footer-bottom a{text-decoration:underline;text-underline-offset:2px}

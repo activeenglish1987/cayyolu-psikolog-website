@@ -264,7 +264,7 @@ def with_mid_cta(body, expert=None):
     k = idx[len(idx) // 2]
     return body[:k] + inline_cta(msg) + body[k:]
 
-def head(title, desc, path, extra_ld='', og_img='/assets/img/opt/og-1200.webp', noindex=False):
+def head(title, desc, path, extra_ld='', og_img='/assets/img/opt/og-1200.webp', noindex=False, preload=''):
     canon = SITE + path
     robots = 'noindex, follow' if noindex else 'index, follow, max-image-preview:large'
     return '''<!doctype html>
@@ -287,10 +287,7 @@ def head(title, desc, path, extra_ld='', og_img='/assets/img/opt/og-1200.webp', 
 <meta property="og:image" content="%(site)s%(og)s">
 <meta name="theme-color" content="#14264A">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap"></noscript>
-<style>%(css)s</style>
+%(preload)s<style>%(css)s</style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11469933181"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-11469933181',{url_passthrough:true});</script>
 <script src="/assets/js/ads-conversion.js?v=6" defer></script>
@@ -300,7 +297,7 @@ def head(title, desc, path, extra_ld='', og_img='/assets/img/opt/og-1200.webp', 
 <script src="/assets/js/pusula.js?v=10" defer></script>
 %(ld)s
 </head>''' % {'gtm': GTM, 'title': esc(title), 'desc': esc(desc), 'robots': robots, 'canon': canon, 'brand': esc(BRAND),
-              'site': SITE, 'og': og_img, 'v': ASSET_V, 'ld': extra_ld, 'css': site_css()}
+              'site': SITE, 'og': og_img, 'v': ASSET_V, 'ld': extra_ld, 'css': site_css(), 'preload': preload}
 
 _CSS = None
 def site_css():
@@ -308,7 +305,8 @@ def site_css():
     Düzenlenecek yer yine assets/css/site.css; build.py her çalıştığında sayfalara yeniden gömülür."""
     global _CSS
     if _CSS is None:
-        css = open(os.path.join(ROOT, 'assets', 'css', 'site.css'), encoding='utf-8').read()
+        # Fontlar kendi sunucumuzdan (Google Fonts'a bağlantı yok; yalnız latin + latin-ext, font-display: swap)
+        css = open(os.path.join(ROOT, 'assets', 'fonts', 'fonts.css'), encoding='utf-8').read() + '\n' + open(os.path.join(ROOT, 'assets', 'css', 'site.css'), encoding='utf-8').read()
         css = re.sub(r'/\*.*?\*/', '', css, flags=re.S)
         css = re.sub(r'\s+', ' ', css)
         css = re.sub(r'\s*([{};,>])\s*', r'\1', css)
@@ -374,7 +372,7 @@ def footer_html():
     </div>
   </div>
   <p class="wrap" style="margin:0 auto 10px;font-size:13px;opacity:.8">Kendinizin ya da bir başkasının güvenliği için acil bir durum varsa 112'yi arayın.</p>
-  <div class="wrap footer-bottom"><span>© 2026 %(brand)s · <a href="/kvkk/">KVKK</a> · <a href="/gizlilik/">Gizlilik</a></span><span><a href="https://www.psikologrojinnazik.com/" target="_blank" rel="noopener">psikologrojinnazik.com</a> · <a href="https://www.psikologeliferdogan.com/" target="_blank" rel="noopener">psikologeliferdogan.com</a></span></div>
+  <div class="wrap footer-bottom"><span>© 2026 %(brand)s · <a href="/kvkk/">KVKK</a> · <a href="/gizlilik/">Gizlilik</a></span><span><a href="https://www.psikologrojinnazik.com/" target="_blank" rel="noopener">psikologrojinnazik.com</a> · <a href="https://psikologeliferdogan.com/" target="_blank" rel="noopener">psikologeliferdogan.com</a></span></div>
 </footer>
 <div class="sticky-bar" role="navigation" aria-label="Hızlı iletişim">%(call2)s%(wa2)s</div>
 </body>
@@ -415,7 +413,7 @@ def expert_cards(exclude=None):
     <p class="expert-role">%(role)s</p>
     <h3><a href="%(path)s">%(name)s</a></h3>
     <p class="expert-areas">%(areas)s</p>
-    <div class="expert-actions"><a class="btn btn-line btn-sm" href="%(path)s">Profili İncele</a>%(wa)s</div>
+    <div class="expert-actions"><a class="btn btn-line btn-sm" href="%(path)s" aria-label="%(name)s profilini incele">Profili İncele</a>%(wa)s</div>
     %(ig)s
   </div>
 </article>''' % {'feat': feat, 'path': e['path'], 'img': img(photo, e['name']), 'role': esc(e['role']), 'name': esc(e['name']),
@@ -623,7 +621,7 @@ ELIF_BODY = '''
 </ul>
 <h3>Çalışma yaklaşımı</h3>
 <p>Görüşmelerde bilimsel temelli, yapılandırılmış bir süreç izlenir. İlk görüşmede başvuru nedeni ve beklentiler ele alınır; ardından ihtiyaca göre çalışma hedefleri ve uygun yöntemler birlikte belirlenir.</p>
-<p>Psikolog Elif Erdoğan'ın kişisel web sitesi: <a href="https://www.psikologeliferdogan.com/" target="_blank" rel="noopener">psikologeliferdogan.com</a></p>
+<p>Psikolog Elif Erdoğan'ın kişisel web sitesi: <a href="https://psikologeliferdogan.com/" target="_blank" rel="noopener">psikologeliferdogan.com</a></p>
 '''
 
 def section_head(eyebrow, title, lead=''):
@@ -699,7 +697,9 @@ def home_page(recs, posts):
     # WordPress döneminde yıllarca 1. sırada duran başlık korunur (2026-10-05)
     title = 'Çayyolu Psikolog | Ankara Çayyolu Psikolog – RN Psikoloji'
     desc = "Çayyolu psikolog arıyorsanız: RN Psikoloji Çayyolu'nda çocuk, ergen, yetişkin, çift ve aile danışmanlığı. Ümitköy, Yaşamkent, Konutkent ve İncek'e yakın. Randevu: 0552 418 79 73."
-    return head(title, desc, '/', ld(business_ld(), {'@type': 'WebSite', 'name': BRAND, 'url': SITE + '/'}, faq_ld())) + nav_html('/') + '''
+    k700 = kucuk_surum(hero_img, 700)
+    on_yukle = ('<link rel="preload" as="image" href="%s" imagesrcset="%s 700w, %s 837w" imagesizes="(max-width: 900px) calc(100vw - 32px), 560px" fetchpriority="high">\n' % (hero_img, k700, hero_img)) if k700 else ''
+    return head(title, desc, '/', ld(business_ld(), {'@type': 'WebSite', 'name': BRAND, 'url': SITE + '/'}, faq_ld()), preload=on_yukle) + nav_html('/') + '''
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
@@ -799,7 +799,7 @@ def home_page(recs, posts):
     <p class="center-note"><a class="text-link" href="/blog/">Tüm yazılar %(arrow)s</a></p>
   </div>
 </section>
-''' % {'call': btn_call(), 'wa': btn_wa(), 'open': OPEN_STATUS, 'hero_img': img(hero_img, 'Psikolog Rojin Nazik, RN Psikoloji Çayyolu', eager=True, kucuk=600, sizes='(max-width: 900px) 100vw, 560px'),
+''' % {'call': btn_call(), 'wa': btn_wa(), 'open': OPEN_STATUS, 'hero_img': img(hero_img, 'Psikolog Rojin Nazik, RN Psikoloji Çayyolu', eager=True, kucuk=700, sizes='(max-width: 900px) calc(100vw - 32px), 560px'),
        'trust': TRUST, 'office': office_card(), 'o1': img(office1, 'RN Psikoloji Çayyolu seans odası', kucuk=560, sizes='(max-width: 900px) calc(50vw - 24px), 420px'), 'o2': img(office2, 'RN Psikoloji Çayyolu bekleme alanı', kucuk=560, sizes='(max-width: 900px) calc(50vw - 24px), 420px'),
        'h_exp': section_head('Uzmanlarımız', 'Size uygun uzmanla görüşün', 'Çocuk, ergen, yetişkin ve çift görüşmelerinde deneyimli psikologlarımız.'),
        'experts': expert_cards(), 'h_svc': section_head('Hizmetler', 'Hangi konuda destek almak istersiniz?'), 'services': service_cards(),
