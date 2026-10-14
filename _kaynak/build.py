@@ -624,6 +624,34 @@ def section_head(eyebrow, title, lead=''):
     return '<div class="section-head"><p class="eyebrow">%s</p><h2>%s</h2>%s</div>' % (esc(eyebrow), title, ('<p>%s</p>' % lead) if lead else '')
 
 # ---------------------------------------------------------------- ana sayfa
+# Ana sayfa rehberi (14 Ekim 2026): WordPress'ten kalan genel "psikolog seçmenin önemi" metni (~670 kelime, sahte madde işaretleri)
+# yerine bu merkeze özgü, kısa ve gerçek listeli bölüm. Bilgiler sitenin diğer sayfalarıyla aynı; yeni iddia yok.
+HOME_REHBER = """<h2>Çayyolu'nda psikolog seçerken</h2>
+<p>Çayyolu psikolog arayışında en çok işe yarayan soru şu: Konum, uzmanlık alanı ve görüşme düzeni size uyuyor mu? RN Psikoloji Çayyolu için bu bilgileri tek yerde topladık.</p>
+<h3>Hangi konuda hangi uzman?</h3>
+<ul>
+<li><a href="/psikolog-rojin-nazik/">Psikolog Rojin Nazik</a>: yetişkinlerle bireysel görüşmeler, <a href="/cayyolu-cift-terapisi/">çift ve evlilik</a> görüşmeleri, aile danışmanlığı.</li>
+<li><a href="/psikolog-elif-erdogan/">Psikolog Elif Erdoğan</a>: <a href="/cayyolu-cocuk-psikologu/">çocuk ve ergen</a> görüşmeleri, oyun terapisi, psikolojik test ve bilişsel davranışçı terapi.</li>
+<li>Hangisinin size uygun olduğunu telefonda Selda Hanım ile birlikte belirlersiniz.</li>
+</ul>
+<h3>Ofis nerede, nasıl gelinir?</h3>
+<ul>
+<li>Adres: Konutkent, Dumlupınar Bulvarı No:399 Kat:28 Daire:121, Çankaya.</li>
+<li>Çayyolu, <a href="/umitkoy-psikolog/">Ümitköy</a>, <a href="/yasamkent-psikolog/">Yaşamkent</a>, <a href="/incek-psikolog/">İncek</a> ve <a href="/beysukent-psikolog/">Beysukent</a>'e kısa bir sürüş mesafesinde; ücretsiz otopark var.</li>
+</ul>
+<h3>Görüşme saatleri ve online seçenek</h3>
+<ul>
+<li>Görüşmeler Pazartesi–Cumartesi 09:00–20:00 arasında, randevuyla yapılır.</li>
+<li>Telefon hafta içi 10:00–19:00, Cumartesi 10:00–18:00 arası açıktır.</li>
+<li>Ofise gelemediğiniz dönemlerde <a href="/online-terapi/">online görüşme</a> yapılabilir.</li>
+</ul>
+<h3>İlk görüşmede ne olur, ücret nasıl öğrenilir?</h3>
+<ul>
+<li>İlk görüşme tanışma ve değerlendirme görüşmesidir: ne yaşadığınız konuşulur, nasıl ilerleneceği birlikte planlanır.</li>
+<li>Seans ücretini Selda Hanım telefonda söyler; <a href="/cayyolu-psikolog-fiyatlari/">ücreti belirleyen etkenleri</a> de okuyabilirsiniz.</li>
+<li>Psikologlar tanı koymaz ve ilaç yazmaz; gerektiğinde psikiyatri uzmanına yönlendirme yapılır. Acil bir durumda 112'yi arayın.</li>
+</ul>"""
+
 REVIEWS = []
 
 def reviews_html(n=5):
@@ -755,7 +783,6 @@ def home_page(recs, posts):
   <div class="wrap narrow prose home-guide">
     <p class="eyebrow">Rehber</p>
     %(guide_open)s
-    <details class="more"><summary>Rehberin devamını okuyun</summary>%(guide_more)s</details>
   </div>
 </section>
 
@@ -776,7 +803,7 @@ def home_page(recs, posts):
        'h_steps': section_head('Görüşme süreci', 'İlk adım nasıl işler?'),
        'h_area': section_head('Bölgeler', 'Çayyolu ve çevresinde psikolog', 'Yaşamkent ofisimize yakın semtlerden danışanlarımız için hazırladığımız rehberler.'), 'areas': areas_html,
        'h_faq': section_head('Randevu öncesi', 'Sık sorulan sorular'), 'faq': faq_html(),
-       'guide_open': guide_open, 'guide_more': guide_more,
+       'guide_open': HOME_REHBER,
        'h_blog': section_head('Blog', 'Son yazılar'), 'latest': latest} + footer_html()
 
 TRUST = '''<section class="trust-strip" aria-label="Neden RN Psikoloji"><ul>
