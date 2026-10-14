@@ -79,6 +79,9 @@ KUPUR = {  # anahtar: (gazete, tarih, başlık) - basin.py KUPURLER'den
 GAZETE_SIRA = ['milliyet-2022-11', 'aksam-cumartesi-2022-06', 'vatan-2023-01', 'takvim-2022-07', 'izgazete-2022-11', 'star-stres', 'zafer-2022-06', 'yesil-2023-10']
 KITAPLAR = [('bir-hayatla-evlenmek', 'Bir Hayatla Evlenmek'), ('bir-odanin-otesi', 'Bir Odanın Ötesi'), ('dengeyi-yakalamak', 'Dengeyi Yakalamak')]
 
+KONULAR_GENEL = ['Kaygı, stres ve panik atak', 'İlişki, evlilik ve aile sorunları', 'Çocuk ve ergen danışmanlığı', 'Yas, boşanma ve zor yaşam dönemleri', 'Depresif duygular ve isteksizlik', 'Online görüşme seçeneği']
+NOT_ILK = ('İlk kez gelenler en çok neden çekiniyor?', 'İlk görüşmeye gelen kişilerde en sık gördüğüm kaygılardan biri, ‘Ne anlatacağım, nereden başlayacağım?’ düşüncesi. İlk görüşme ilerledikçe bunun bir sınav olmadığını ve her şeyi bir anda anlatmak zorunda olmadıklarını fark ettiklerinde daha rahatlayabildiklerini görüyorum.')
+
 # Her reklam grubu için bir sayfa: başlık aranan kelimeyle aynı olmalı (mesaj uyumu)
 SAYFALAR = {
     'rojin': [
@@ -128,18 +131,93 @@ SAYFALAR = {
          'alt': "RN Psikoloji'nin Yaşamkent ofisinde yüz yüze psikolojik danışmanlık: Çayyolu, Ümitköy, Konutkent, İncek ve Beysukent'e yakın, ücretsiz otopark.",
          'konular': ['Kaygı, stres ve panik atak', 'İlişki, evlilik ve aile sorunları', 'Çocuk ve ergen danışmanlığı', 'Yas, boşanma ve zor yaşam dönemleri', 'Depresif duygular ve isteksizlik', 'Online görüşme seçeneği'],
          'ekip': 'Kurucu Psikolog Rojin Nazik ve Psikolog Elif Erdoğan bu ofiste görüşme yapıyor; size uygun uzmanı Selda Hanım birlikte belirler.',
+         # Reklam kelimeleri: çayyolu psikolog, psikolog çayyolu (Rojin kampanyasında bu semtler hariç tutulur)
+         'icerik': ("Çayyolu'nda psikolog randevusu", [
+             "Çayyolu psikolog arayışınızda RN Psikoloji'nin Yaşamkent ofisinde Psikolog Rojin Nazik ve Psikolog Elif Erdoğan ile yüz yüze görüşebilirsiniz. Ofisimiz Konutkent'te, Dumlupınar Bulvarı No:399'da; Çayyolu, Ümitköy, Yaşamkent, İncek ve Beysukent'e yakın, ücretsiz otopark var.",
+             "Bireysel terapi, çift ve evlilik terapisi, aile danışmanlığı, çocuk ve ergen görüşmeleri yapılıyor. Psikolog randevusu için telefonu Selda Hanım açar; hangi konuda destek almak istediğinizi kısaca dinler, size uygun psikoloğu ve saati birlikte belirlersiniz."]),
+         'sss': [('Ofisiniz Çayyolu\'na ne kadar uzak?', 'Ofisimiz Konutkent\'te, Dumlupınar Bulvarı No:399 Kat:28 Daire:121 adresindedir; Çayyolu\'ndan kısa bir sürüş mesafesindedir ve ücretsiz otopark vardır.')],
          'not': ('İlk kez gelenler en çok neden çekiniyor?', 'İlk görüşmeye gelen kişilerde en sık gördüğüm kaygılardan biri, ‘Ne anlatacağım, nereden başlayacağım?’ düşüncesi. İlk görüşme ilerledikçe bunun bir sınav olmadığını ve her şeyi bir anda anlatmak zorunda olmadıklarını fark ettiklerinde daha rahatlayabildiklerini görüyorum.')},
         {'yol': '/randevu/cocuk-psikologu/', 'video': '6eg7skd0824', 'h1': 'Çayyolu Çocuk ve Ergen', 'h1b': 'Psikoloğu',
          'alt': 'Yaşamkent ofisinde çocuk ve ergen görüşmeleri, küçük yaşta oyun terapisi ve ebeveyn danışmanlığı. Çayyolu, Ümitköy ve Konutkent’e yakın.',
          'konular': ['Öfke ve davranış sorunları', 'Okul, ders ve sınav kaygısı', 'Korkular, ayrılma kaygısı, uyku', 'Boşanma sürecinde çocuk', 'Ergenlikte iletişim ve içe kapanma', 'Oyun terapisi ve psikolojik test (Psikolog Elif Erdoğan)'],
          'ekip': 'Küçük yaştaki çocuklarla oyun terapisi ve psikolojik test için Psikolog Elif Erdoğan da bu ofiste çalışıyor; size uygun uzmanı Selda Hanım birlikte belirler.',
+         'icerik': ("Çayyolu'nda çocuk psikoloğu ve ergen psikoloğu", [
+             "Çayyolu çocuk psikoloğu görüşmelerinde çocuğun yaşına uygun yöntemlerle çalışılır; küçük yaşta oyun terapisi, ebeveyn danışmanlığı ve gerektiğinde psikolojik testler kullanılır.",
+             "Ergen psikoloğu görüşmelerinde okul, arkadaşlık, aileyle iletişim, ekran kullanımı ve içe kapanma gibi konular gencin kendi diliyle konuşulur. Görüşmeler Konutkent'teki Yaşamkent ofisimizde yüz yüze ya da online yapılır."]),
          'not': ('Ebeveynlere ilk önerim', 'Ebeveynlerden ilk istediğim şeylerden biri, çocuğun davranışını hemen değiştirmeye çalışmadan önce onu biraz daha dikkatli gözlemlemeleri oluyor. Özellikle bir davranışın öncesinde ve sonrasında neler yaşandığı çok önemli ipuçları verebiliyor.'),
          'sss': [('İlk görüşmeye çocuğumla mı gelmeliyim?', 'Çocuklarda ilk görüşme genellikle ebeveynle yapılır; ardından çocuğun yaşına uygun görüşmeler planlanır.')]},
         {'yol': '/randevu/cift-terapisi/', 'video': 'ZEPbGUV6MSE', 'h1': 'Çayyolu Çift ve', 'h1b': 'Evlilik Terapisi',
          'alt': 'Yaşamkent ofisinde çift ve evlilik görüşmeleri: iletişim, güven, sık tartışma ve uzaklaşma. Çayyolu, Ümitköy ve Konutkent’e yakın, ücretsiz otopark.',
          'konular': ['İletişim kuramama, sık tartışma', 'Güven sorunu', 'Birbirinden uzaklaşma', 'Evlilik öncesi danışmanlık', 'Boşanma kararı ve sonrası', 'Ebeveynlik ve aile içi çatışma'],
+         'icerik': ("Çayyolu'nda çift terapisi ve evlilik danışmanlığı", [
+             "Çayyolu çift terapisi görüşmeleri; sık tartışma, iletişim kuramama, güven sorunları ve birbirinden uzaklaşma gibi konularda iki kişinin birlikte çalıştığı görüşmelerdir. Evlilik öncesi danışmanlık ve aile terapisi de yapılır.",
+             "Evlilik terapisti ya da çift terapisti arıyorsanız Psikolog Rojin Nazik ile Konutkent'teki Yaşamkent ofisimizde yüz yüze, isterseniz online görüşebilirsiniz. Randevu için Selda Hanım'ı aramanız yeterli."]),
          'not': ('Çiftlerde en sık gördüğüm sorun', 'Çiftlerin çoğu ‘iletişim kuramıyoruz’ diyerek geliyor. Görüşmeler ilerledikçe çoğu zaman sorunun yalnızca iletişim olmadığını; uzun süredir konuşulmamış kırgınlıkların, anlaşılmama hissinin ve tekrar eden ilişki döngülerinin biriktiğini görüyorum.'),
          'sss': [('İkimizin birlikte gelmesi mi gerekiyor?', 'Çift görüşmelerine genellikle birlikte başlanır; gerekirse bireysel görüşmeler de planlanır.')]},
+        # Semt sayfaları: Çayyolu kampanyasında her semt kelimesinin nihai URL'si ([ümitköy psikolog] -> /randevu/umitkoy-psikolog/)
+        {'yol': '/randevu/umitkoy-psikolog/', 'video': 'QaMYPc-FUw4', 'h1': 'Ümitköy', 'h1b': 'Psikolog', 'kwyer': 'Ümitköy',
+         'alt': "Ümitköy'e birkaç dakikalık sürüş mesafesindeki ofisimizde yetişkin, çift, çocuk ve ergen görüşmeleri. Ücretsiz otopark, yüz yüze ya da online.",
+         'konular': KONULAR_GENEL,
+         'ekip': 'Kurucu Psikolog Rojin Nazik ve Psikolog Elif Erdoğan bu ofiste görüşme yapıyor; size uygun uzmanı Selda Hanım birlikte belirler.',
+         'icerik': ("Ümitköy'de psikolog randevusu", [
+             "Ümitköy'de psikolog arıyorsanız RN Psikoloji'nin Yaşamkent ofisinde Psikolog Rojin Nazik ve Psikolog Elif Erdoğan ile yüz yüze görüşebilirsiniz. Ofisimiz Konutkent'te, Dumlupınar Bulvarı No:399'dadır; Ümitköy'e birkaç dakikalık sürüş mesafesindedir. Ücretsiz otopark vardır.",
+             "Bireysel terapi, çift ve evlilik terapisi, aile danışmanlığı, çocuk ve ergen görüşmeleri yapılıyor. Psikolog randevusu için Selda Hanım'ı aramanız yeterli; uygun gün ve saati birlikte belirlersiniz. Yoğun günlerde online görüşme de mümkündür."]),
+         'sss': [("Ümitköy'den ofisinize nasıl gelirim?", "Ofisimiz Konutkent, Dumlupınar Bulvarı No:399 Kat:28 Daire:121, Çankaya adresindedir; Ümitköy'e birkaç dakikalık sürüş mesafesindedir. Ücretsiz otopark vardır; Selda Hanım arama sırasında yol tarifini de iletebilir.")],
+         'not': NOT_ILK},
+        {'yol': '/randevu/yasamkent-psikolog/', 'video': 'QaMYPc-FUw4', 'h1': 'Yaşamkent', 'h1b': 'Psikolog', 'kwyer': 'Yaşamkent',
+         'alt': "Dumlupınar Bulvarı üzerinde, Yaşamkent ile Konutkent'in kesiştiği noktadaki ofisimizde yüz yüze psikolojik danışmanlık. Ücretsiz otopark.",
+         'konular': KONULAR_GENEL,
+         'ekip': 'Kurucu Psikolog Rojin Nazik ve Psikolog Elif Erdoğan bu ofiste görüşme yapıyor; size uygun uzmanı Selda Hanım birlikte belirler.',
+         'icerik': ("Yaşamkent'te psikolog randevusu", [
+             "Yaşamkent'te psikolog arıyorsanız RN Psikoloji'nin Yaşamkent ofisinde Psikolog Rojin Nazik ve Psikolog Elif Erdoğan ile yüz yüze görüşebilirsiniz. Ofisimiz Konutkent'te, Dumlupınar Bulvarı No:399'dadır; Yaşamkent ile Konutkent'in kesiştiği noktadadır. Ücretsiz otopark vardır.",
+             "Bireysel terapi, çift ve evlilik terapisi, aile danışmanlığı, çocuk ve ergen görüşmeleri yapılıyor. Psikolog randevusu için Selda Hanım'ı aramanız yeterli; uygun gün ve saati birlikte belirlersiniz. Yoğun günlerde online görüşme de mümkündür."]),
+         'sss': [("Yaşamkent'ten ofisinize nasıl gelirim?", "Ofisimiz Konutkent, Dumlupınar Bulvarı No:399 Kat:28 Daire:121, Çankaya adresindedir; Yaşamkent ile Konutkent'in kesiştiği noktadadır. Ücretsiz otopark vardır; Selda Hanım arama sırasında yol tarifini de iletebilir.")],
+         'not': NOT_ILK},
+        {'yol': '/randevu/konutkent-psikolog/', 'video': 'QaMYPc-FUw4', 'h1': 'Konutkent', 'h1b': 'Psikolog', 'kwyer': 'Konutkent',
+         'alt': "Ofisimiz Konutkent'te, Dumlupınar Bulvarı No:399'da. Yetişkin, çift, çocuk ve ergen görüşmeleri; ücretsiz otopark, yüz yüze ya da online.",
+         'konular': KONULAR_GENEL,
+         'ekip': 'Kurucu Psikolog Rojin Nazik ve Psikolog Elif Erdoğan bu ofiste görüşme yapıyor; size uygun uzmanı Selda Hanım birlikte belirler.',
+         'icerik': ("Konutkent'te psikolog randevusu", [
+             "Konutkent'te psikolog arıyorsanız RN Psikoloji'nin Yaşamkent ofisinde Psikolog Rojin Nazik ve Psikolog Elif Erdoğan ile yüz yüze görüşebilirsiniz. Ofisimiz Konutkent'te, Dumlupınar Bulvarı No:399'dadır; Konutkent'in içindedir. Ücretsiz otopark vardır.",
+             "Bireysel terapi, çift ve evlilik terapisi, aile danışmanlığı, çocuk ve ergen görüşmeleri yapılıyor. Psikolog randevusu için Selda Hanım'ı aramanız yeterli; uygun gün ve saati birlikte belirlersiniz. Yoğun günlerde online görüşme de mümkündür."]),
+         'sss': [("Konutkent'ten ofisinize nasıl gelirim?", "Ofisimiz Konutkent, Dumlupınar Bulvarı No:399 Kat:28 Daire:121, Çankaya adresindedir; Konutkent'in içindedir. Ücretsiz otopark vardır; Selda Hanım arama sırasında yol tarifini de iletebilir.")],
+         'not': NOT_ILK},
+        {'yol': '/randevu/beysukent-psikolog/', 'video': 'QaMYPc-FUw4', 'h1': 'Beysukent', 'h1b': 'Psikolog', 'kwyer': 'Beysukent',
+         'alt': "Beysukent'e kısa bir sürüş mesafesindeki Yaşamkent ofisimizde yetişkin, üniversite öğrencisi, çift ve ergen görüşmeleri. Ücretsiz otopark.",
+         'konular': KONULAR_GENEL,
+         'ekip': 'Kurucu Psikolog Rojin Nazik ve Psikolog Elif Erdoğan bu ofiste görüşme yapıyor; size uygun uzmanı Selda Hanım birlikte belirler.',
+         'icerik': ("Beysukent'te psikolog randevusu", [
+             "Beysukent'te psikolog arıyorsanız RN Psikoloji'nin Yaşamkent ofisinde Psikolog Rojin Nazik ve Psikolog Elif Erdoğan ile yüz yüze görüşebilirsiniz. Ofisimiz Konutkent'te, Dumlupınar Bulvarı No:399'dadır; Beysukent'e kısa bir sürüş mesafesindedir. Ücretsiz otopark vardır.",
+             "Bireysel terapi, çift ve evlilik terapisi, aile danışmanlığı, çocuk ve ergen görüşmeleri yapılıyor. Psikolog randevusu için Selda Hanım'ı aramanız yeterli; uygun gün ve saati birlikte belirlersiniz. Yoğun günlerde online görüşme de mümkündür."]),
+         'sss': [("Beysukent'ten ofisinize nasıl gelirim?", "Ofisimiz Konutkent, Dumlupınar Bulvarı No:399 Kat:28 Daire:121, Çankaya adresindedir; Beysukent'e kısa bir sürüş mesafesindedir. Ücretsiz otopark vardır; Selda Hanım arama sırasında yol tarifini de iletebilir.")],
+         'not': NOT_ILK},
+        {'yol': '/randevu/incek-psikolog/', 'video': 'QaMYPc-FUw4', 'h1': 'İncek', 'h1b': 'Psikolog', 'kwyer': 'İncek',
+         'alt': "İncek'e kısa bir sürüş mesafesindeki Yaşamkent ofisimizde çocuk, ergen, aile, çift ve yetişkin görüşmeleri. Ücretsiz otopark.",
+         'konular': KONULAR_GENEL,
+         'ekip': 'Kurucu Psikolog Rojin Nazik ve Psikolog Elif Erdoğan bu ofiste görüşme yapıyor; size uygun uzmanı Selda Hanım birlikte belirler.',
+         'icerik': ("İncek'te psikolog randevusu", [
+             "İncek'te psikolog arıyorsanız RN Psikoloji'nin Yaşamkent ofisinde Psikolog Rojin Nazik ve Psikolog Elif Erdoğan ile yüz yüze görüşebilirsiniz. Ofisimiz Konutkent'te, Dumlupınar Bulvarı No:399'dadır; İncek'ten kısa bir sürüşle ulaşılır. Ücretsiz otopark vardır.",
+             "Bireysel terapi, çift ve evlilik terapisi, aile danışmanlığı, çocuk ve ergen görüşmeleri yapılıyor. Psikolog randevusu için Selda Hanım'ı aramanız yeterli; uygun gün ve saati birlikte belirlersiniz. Yoğun günlerde online görüşme de mümkündür."]),
+         'sss': [("İncek'ten ofisinize nasıl gelirim?", "Ofisimiz Konutkent, Dumlupınar Bulvarı No:399 Kat:28 Daire:121, Çankaya adresindedir; İncek'ten kısa bir sürüşle ulaşılır. Ücretsiz otopark vardır; Selda Hanım arama sırasında yol tarifini de iletebilir.")],
+         'not': NOT_ILK},
+        {'yol': '/randevu/alacaatli-psikolog/', 'video': 'QaMYPc-FUw4', 'h1': 'Alacaatlı', 'h1b': 'Psikolog', 'kwyer': 'Alacaatlı',
+         'alt': "Alacaatlı'ya kısa bir mesafedeki Yaşamkent ofisimizde yetişkin, çift, aile, çocuk ve ergen görüşmeleri. Ücretsiz otopark.",
+         'konular': KONULAR_GENEL,
+         'ekip': 'Kurucu Psikolog Rojin Nazik ve Psikolog Elif Erdoğan bu ofiste görüşme yapıyor; size uygun uzmanı Selda Hanım birlikte belirler.',
+         'icerik': ("Alacaatlı'da psikolog randevusu", [
+             "Alacaatlı'da psikolog arıyorsanız RN Psikoloji'nin Yaşamkent ofisinde Psikolog Rojin Nazik ve Psikolog Elif Erdoğan ile yüz yüze görüşebilirsiniz. Ofisimiz Konutkent'te, Dumlupınar Bulvarı No:399'dadır; Alacaatlı'ya kısa bir sürüş mesafesindedir. Ücretsiz otopark vardır.",
+             "Bireysel terapi, çift ve evlilik terapisi, aile danışmanlığı, çocuk ve ergen görüşmeleri yapılıyor. Psikolog randevusu için Selda Hanım'ı aramanız yeterli; uygun gün ve saati birlikte belirlersiniz. Yoğun günlerde online görüşme de mümkündür."]),
+         'sss': [("Alacaatlı'dan ofisinize nasıl gelirim?", "Ofisimiz Konutkent, Dumlupınar Bulvarı No:399 Kat:28 Daire:121, Çankaya adresindedir; Alacaatlı'ya kısa bir sürüş mesafesindedir. Ücretsiz otopark vardır; Selda Hanım arama sırasında yol tarifini de iletebilir.")],
+         'not': NOT_ILK},
+        {'yol': '/randevu/bilkent-psikolog/', 'video': 'QaMYPc-FUw4', 'h1': 'Bilkent ve Beytepe', 'h1b': 'Psikolog', 'kwyer': 'Bilkent',
+         'alt': 'Bilkent ve Beytepe yerleşkelerine yakın Yaşamkent ofisimizde öğrenciler, akademisyenler ve yetişkinler için yüz yüze ya da online görüşme.',
+         'konular': KONULAR_GENEL,
+         'ekip': 'Kurucu Psikolog Rojin Nazik ve Psikolog Elif Erdoğan bu ofiste görüşme yapıyor; size uygun uzmanı Selda Hanım birlikte belirler.',
+         'icerik': ("Bilkent ve Beytepe'de psikolog randevusu", [
+             "Bilkent ve Beytepe'de psikolog arıyorsanız RN Psikoloji'nin Yaşamkent ofisinde Psikolog Rojin Nazik ve Psikolog Elif Erdoğan ile yüz yüze görüşebilirsiniz. Ofisimiz Konutkent'te, Dumlupınar Bulvarı No:399'dadır; Eskişehir Yolu üzerinden kısa bir sürüş mesafesindedir. Ücretsiz otopark vardır.",
+             "Bireysel terapi, çift ve evlilik terapisi, aile danışmanlığı, çocuk ve ergen görüşmeleri yapılıyor. Psikolog randevusu için Selda Hanım'ı aramanız yeterli; uygun gün ve saati birlikte belirlersiniz. Yoğun günlerde online görüşme de mümkündür."]),
+         'sss': [("Bilkent ve Beytepe'den ofisinize nasıl gelirim?", 'Ofisimiz Konutkent, Dumlupınar Bulvarı No:399 Kat:28 Daire:121, Çankaya adresindedir; Eskişehir Yolu üzerinden kısa bir sürüş mesafesindedir. Ücretsiz otopark vardır; Selda Hanım arama sırasında yol tarifini de iletebilir.')],
+         'not': NOT_ILK},
     ],
 }
 
@@ -198,7 +276,7 @@ summary{cursor:pointer;font-weight:700;list-style:none}summary::-webkit-details-
 summary:after{content:"+";float:right;color:var(--a)}details[open] summary:after{content:"–"}
 details p{margin:8px 0 0;color:var(--mut)}
 .son{text-align:center;background:linear-gradient(135deg,var(--a2),var(--a));color:#fff;border:0}
-.son h2{color:#fff}.son p{opacity:.9;margin:0 0 14px}.son .ara{max-width:420px;margin:0 auto}
+.son h2{color:#fff}.son p{opacity:.9;margin:0 0 14px}.son .ara{max-width:420px;margin:0 auto;font-size:clamp(15px,4.5vw,18px)}
 .gos .lg{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 14px;padding:0;list-style:none}
 .gos .lg li{height:44px;padding:6px 10px;border:1px solid var(--line);border-radius:10px;background:#fff;display:flex;align-items:center}
 .gos .lg img{max-height:30px;max-width:96px;width:auto;height:auto;display:block}.gos .lg .tv8{font:900 15px/1 Arial,sans-serif;color:#fff;background:#111;padding:5px 7px;border-radius:5px}
@@ -255,12 +333,11 @@ def govde(S, P):
     # Diğer yayınlar: küçük kapaklar; dokununca büyük oynatıcıda açılır
     digerleri = ''.join('<button type="button" data-yt="%s" aria-label="%s – videoyu oynat"><img src="/assets/basin/video-%s.webp" alt="" width="320" height="180" loading="lazy" decoding="async"><span><b>%s</b>%s</span></button>' % (
         v, esc(VIDEOLAR[v][1]), v, esc(VIDEOLAR[v][0]), esc(VIDEOLAR[v][1])) for v in VIDEOLAR if v != vid)
-    gazete = ''
-    if rojin:
-        sira = P.get('gazete', []) + [g for g in GAZETE_SIRA if g not in P.get('gazete', [])]
-        gazete = '<h3>Gazete sayfalarında</h3><div class="gz">%s</div>' % ''.join(
-            '<button type="button" data-g="%s" aria-label="%s, %s: %s – büyüt"><img src="/assets/lp/kupur/%s.webp" alt="" width="264" height="340" loading="lazy" decoding="async"><span><b>%s</b>%s</span></button>' % (
-                g, esc(KUPUR[g][0]), esc(KUPUR[g][1]), esc(KUPUR[g][2]), g, esc(KUPUR[g][0]), esc(KUPUR[g][2])) for g in sira[:8])
+    # Gazete sayfaları iki sitede de (Çayyolu'ya assets/lp ve assets/basin/kupur kopyalandı)
+    sira = P.get('gazete', []) + [g for g in GAZETE_SIRA if g not in P.get('gazete', [])]
+    gazete = '<h3>Gazete sayfalarında</h3><div class="gz">%s</div>' % ''.join(
+        '<button type="button" data-g="%s" aria-label="%s, %s: %s – büyüt"><img src="/assets/lp/kupur/%s.webp" alt="" width="264" height="340" loading="lazy" decoding="async"><span><b>%s</b>%s</span></button>' % (
+            g, esc(KUPUR[g][0]), esc(KUPUR[g][1]), esc(KUPUR[g][2]), g, esc(KUPUR[g][0]), esc(KUPUR[g][2])) for g in sira[:8])
     gosteri = ('<section class="kart gos"><h2>Ekranda ve basında</h2><ul class="lg">%s</ul>'
                '<button type="button" class="vd" data-yt="%s" aria-label="%s – videoyu oynat"><img src="/assets/basin/video-%s.webp" alt="%s programında Psikolog Rojin Nazik" width="640" height="360" loading="lazy" decoding="async"><i></i></button>'
                '<p class="vk"><b>%s</b> · %s</p><div class="vr">%s</div>%s'
@@ -270,22 +347,20 @@ def govde(S, P):
         gosteri = gosteri.replace('<ul class="lg"></ul>', '')
     ekip = ('<p style="margin:12px 0 0;color:var(--mut);font-size:15px">%s</p>' % esc(P['ekip'])) if P.get('ekip') else ''
     icerik = ('<section class="kart ic"><h2>%s</h2>%s</section>' % (esc(P['icerik'][0]), ''.join('<p>%s</p>' % esc(x) for x in P['icerik'][1]))) if P.get('icerik') else ''
-    kitaplar = puan_kart = ekip_kart = ofis = ''
-    puan = '<span>★★★★★</span> <b>5.0</b> · Doktorsitesi\'nde 169 danışan değerlendirmesi'
-    if rojin:
-        puan = '<span>★★★★★</span> <b>5.0</b> Doktorsitesi (169) · <b>4.8</b> Google (120+)'
-        kitaplar = '<div class="kt">%s</div>' % ''.join(
-            '<figure><img src="/assets/lp/kitap-%s.webp" alt="%s – Psikolog Rojin Nazik" width="300" height="300" loading="lazy" decoding="async"><figcaption>%s</figcaption></figure>' % (k, esc(a), esc(a)) for k, a in KITAPLAR)
-        puan_kart = ('<section class="kart"><h2>Danışanlar ne diyor?</h2><div class="pn">'
-                     '<div><b>5.0</b><span>★★★★★</span>Doktorsitesi<small>169 değerlendirme</small></div>'
-                     '<div><b>4.8</b><span>★★★★★</span>Google<small>120\'yi aşkın değerlendirme</small></div></div>'
-                     '<a class="gl" href="https://g.page/psikologrojinnazik" target="_blank" rel="noopener">Google değerlendirmelerini okuyun →</a></section>')
-        ekip_kart = ('<section class="kart"><h2>Ekibimiz</h2><div class="ek">'
-                     '<div><img src="/assets/lp/rojin-nazik.webp" alt="Psikolog Rojin Nazik" width="360" height="450" loading="lazy" decoding="async"><b>Rojin Nazik</b><small>Psikolog · Kurucu</small></div>'
-                     '<div><img src="/assets/lp/elif-erdogan.webp" alt="Psikolog Elif Erdoğan" width="360" height="450" loading="lazy" decoding="async"><b>Elif Erdoğan</b><small>Psikolog · Çocuk, ergen ve oyun terapisi</small></div>'
-                     '</div><p style="margin:12px 0 0;color:var(--mut);font-size:15px">Size hangi psikoloğun uygun olduğunu Selda Hanım telefonda birlikte belirler.</p></section>')
-        ofis = ('<div class="of"><img src="/assets/lp/ofis-salon.webp" alt="RN Psikoloji ofisinden bekleme alanı" width="600" height="800" loading="lazy" decoding="async">'
-                '<img src="/assets/lp/ofis-koltuk.webp" alt="RN Psikoloji ofisinden görüşme alanı" width="600" height="800" loading="lazy" decoding="async"></div>')
+    # Puan, kitaplar, ekip ve ofis iki sitede de (Google profili, Çayyolu sitesinin de ofisi olan Konutkent ofisinin profili)
+    puan = '<span>★★★★★</span> <b>5.0</b> Doktorsitesi (169) · <b>4.8</b> Google (120+)'
+    kitaplar = '<div class="kt">%s</div>' % ''.join(
+        '<figure><img src="/assets/lp/kitap-%s.webp" alt="%s – Psikolog Rojin Nazik" width="300" height="300" loading="lazy" decoding="async"><figcaption>%s</figcaption></figure>' % (k, esc(a), esc(a)) for k, a in KITAPLAR)
+    puan_kart = ('<section class="kart"><h2>Danışanlar ne diyor?</h2><div class="pn">'
+                 '<div><b>5.0</b><span>★★★★★</span>Doktorsitesi<small>169 değerlendirme</small></div>'
+                 '<div><b>4.8</b><span>★★★★★</span>Google<small>120\'yi aşkın değerlendirme</small></div></div>'
+                 '<a class="gl" href="https://g.page/psikologrojinnazik" target="_blank" rel="noopener">Google değerlendirmelerini okuyun →</a></section>')
+    ekip_kart = ('<section class="kart"><h2>Ekibimiz</h2><div class="ek">'
+                 '<div><img src="/assets/lp/rojin-nazik.webp" alt="Psikolog Rojin Nazik" width="360" height="450" loading="lazy" decoding="async"><b>Rojin Nazik</b><small>Psikolog · Kurucu</small></div>'
+                 '<div><img src="/assets/lp/elif-erdogan.webp" alt="Psikolog Elif Erdoğan" width="360" height="450" loading="lazy" decoding="async"><b>Elif Erdoğan</b><small>Psikolog · Çocuk, ergen ve oyun terapisi</small></div>'
+                 '</div><p style="margin:12px 0 0;color:var(--mut);font-size:15px">Size hangi psikoloğun uygun olduğunu Selda Hanım telefonda birlikte belirler.</p></section>')
+    ofis = ('<div class="of"><img src="/assets/lp/ofis-salon.webp" alt="RN Psikoloji ofisinden bekleme alanı" width="600" height="800" loading="lazy" decoding="async">'
+            '<img src="/assets/lp/ofis-koltuk.webp" alt="RN Psikoloji ofisinden görüşme alanı" width="600" height="800" loading="lazy" decoding="async"></div>')
     return '''<header class="w top"><a class="lgo" href="/" aria-label="%(marka)s – ana sayfa" style="display:inline-flex;text-decoration:none">%(logo)s</a><a class="t" href="tel:%(tel)s" data-cta-area="lp_header">📞 %(teltxt)s</a></header>
 <section class="hero"><div class="w hi">
 <div>
@@ -316,7 +391,7 @@ def govde(S, P):
 <section class="kart"><h2>Rojin Nazik'in notu</h2><blockquote>“%(not)s”</blockquote><div class="qk">Psikolog Rojin Nazik · %(notb)s</div></section>
 <section class="kart"><h2>Görüşme yerleri</h2><div class="sube">%(subeler)s</div>%(ofis)s</section>
 <section class="kart"><h2>Sık sorulanlar</h2>%(sss)s</section>
-<section class="kart son"><h2>İlk adım tek bir telefon</h2><p>Selda Hanım size en yakın uygun saati söylesin.</p><a class="ara" href="tel:%(tel)s" data-cta-area="lp_son"><span>📞</span><span>Hemen Ara · %(teltxt)s</span></a></section>
+<section class="kart son"><h2>İlk adım tek bir telefon</h2><p>Selda Hanım size en yakın uygun saati söylesin.</p><a class="ara" href="tel:%(tel)s" data-cta-area="lp_son"><span>📞</span><span><b class="nw">Hemen Ara · %(teltxt)s</b></span></a></section>
 </main>
 <footer class="w dip">%(marka)s · Psikologlar tanı koymaz ve ilaç yazmaz. Acil bir durumda 112'yi arayın.<br><a href="%(kvkk)s">KVKK aydınlatma metni</a> · <a href="%(gizlilik)s">Gizlilik</a></footer>
 <script>(function(){try{var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Istanbul',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()),g=function(t){for(var i=0;i<p.length;i++)if(p[i].type===t)return p[i].value},d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(g('weekday')),m=(+g('hour')%%24)*60+(+g('minute'));var e=document.querySelector('.acik');if((d>=1&&d<=5&&m>=600&&m<1140)||(d===6&&m>=600&&m<1080))e.innerHTML='<i></i>Şu an açığız · Telefonu Selda Hanım açar';else{e.innerHTML='<i style="background:#F59E0B;box-shadow:0 0 0 4px rgba(245,158,11,.2)"></i>Şu an mesai dışındayız · %(saat)s';e.style.color='var(--mut)'}}catch(x){}})();</script>
@@ -338,7 +413,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'){var d=docum
         'logo': S['logo'], 'tel': TEL, 'teltxt': TEL_TXT, 'h1': esc(P['h1']), 'h1b': esc(P['h1b']), 'alt': esc(P['alt']),
         'wa': wa, 'foto': S['foto'], 'gosteri': gosteri, 'etiket': etiketler, 'ekip': ekip, 'konular': konular, 'adimlar': adimlar,
         'not': esc(P['not'][1]), 'notb': esc(P['not'][0]), 'subeler': subeler, 'sss': sss, 'marka': esc(S['marka']),
-        'kwyer': 'Çayyolu' if S['ad'] == 'cayyolu' else 'Ankara', 'saat': SAAT_TXT, 'puan': puan, 'kitaplar': kitaplar,
+        'kwyer': P.get('kwyer') or ('Çayyolu' if S['ad'] == 'cayyolu' else 'Ankara'), 'saat': SAAT_TXT, 'puan': puan, 'kitaplar': kitaplar,
         'puan_kart': puan_kart, 'icerik': icerik, 'kvkk': S['kvkk'], 'gizlilik': S['gizlilik'], 'ekip_kart': ekip_kart, 'ofis': ofis}
 
 
