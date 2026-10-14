@@ -12,6 +12,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from landing import LANDINGS, BOOST, EXTRA
 from semt_notlari import SEMT_NOTLARI, UZMAN, SEMT_NOT_TARIHI
 from merkez_notlari import MERKEZ_NOTLARI, MERKEZ_NOT_TARIHI
+MERKEZ_ERKEN = {'/kaygi-sorunlari/'}
 from sss import SSS_SAYFA
 LANDINGS.append(SSS_SAYFA)
 for _c in LANDINGS:
@@ -501,7 +502,8 @@ def write(path, content):
         a = content.find('<article')
         if a >= 0:
             h2s = [i for i in range(a, len(content)) if content.startswith('<h2', i)][:2]
-            if len(h2s) == 2: yer = h2s[1]
+            if path in MERKEZ_ERKEN and h2s: yer = h2s[0]  # sayfa genel bilgiyle başlıyorsa gözlem en başa
+            elif len(h2s) == 2: yer = h2s[1]
             else:
                 yer = content.find('<h2>Sık sorulan sorular</h2>', a)
                 if yer < 0: yer = content.find('</article>', a)
