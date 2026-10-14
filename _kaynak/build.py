@@ -609,7 +609,7 @@ def blog_card(rec):
 # ---------------------------------------------------------------- özel içerikler
 ELIF_BODY = '''
 <h2>Psikolog Elif Erdoğan</h2>
-<p>Psikolog Elif Erdoğan, RN Psikoloji Çayyolu şubesinde yetişkin, ergen ve çiftlerle yüz yüze görüşmeler yürütür; çocuklarla oyun terapisi yaklaşımıyla çalışır.</p>
+<p>Psikolog Elif Erdoğan, RN Psikoloji Çayyolu şubesinde yetişkin, ergen ve çiftlerle yüz yüze görüşmeler yürütür; Kızılay ofisinde ve online da görüşme yapar; çocuklarla oyun terapisi yaklaşımıyla çalışır.</p>
 <p>Lisans eğitimini Başkent Üniversitesi Psikoloji Bölümü'nde yüksek şeref derecesiyle tamamlamıştır. Bilişsel ve Davranışçı Terapiler alanındaki eğitimlerini DATEM bünyesinde sürdürmüştür. MMPI başta olmak üzere yetişkin ve çocuk değerlendirme araçlarının uygulayıcısıdır.</p>
 <h3>Çalışma alanları</h3>
 <ul>
