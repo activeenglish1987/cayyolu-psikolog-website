@@ -1029,7 +1029,7 @@ def main():
     for m in MAKALELER:
         recs.append({'type': 'post', 'path': m['path'], 'slug': m['path'].strip('/'), 'title': m['title'], 'date': m.get('date', '2026-09-30'),
                      'modified': m.get('date', '2026-09-30'), 'html': m['html'], 'excerpt': '', 'seo_title': m['seo_title'], 'seo_desc': m['desc'],
-                     'thumb': '/' + m['thumb'], 'categories': ['Blog'], 'faqs': m.get('faqs', [])})
+                     'thumb': '/' + m['thumb'], 'categories': ['Blog'], 'faqs': m.get('faqs', []), 'uzman_kontrolu': m.get('uzman_kontrolu')})
     # 'Ankara psikolog' ana kelimesi Rojin Nazik ana sayfasına bırakıldı (yamyamlığı önlemek için)
     moved = {'/ankara-psikolog/': RN + '/',
              '/ankara-psikolog-tavsiyesi-2025-cayyolu-ve-yakin-bolgelerde-guvenilir-terapi-hizmeti/': RN + '/ankara-psikolog-tavsiyesi/',
@@ -1096,6 +1096,9 @@ def main():
         kicker = expert['role'] if expert else ('Blog' if r['type'] == 'post' else '')
         extra_ld = None
         body += sister_html(p)
+        # Uzman onaylı makalelerde metnin sonunda "Uzman kontrolü" satırı (merkez adına Psikolog Rojin Nazik)
+        if r.get('uzman_kontrolu'):
+            body += '<p class="faq-uzman">Uzman kontrolü: <a href="/psikolog-rojin-nazik/">Psikolog Rojin Nazik</a> (merkez adına) · %s</p>' % fmt_date(r['uzman_kontrolu'])
         if r.get('faqs'):
             body += '<h2>Sık sorulan sorular</h2>' + faq_html(r['faqs'])
             extra_ld = [faq_ld(r['faqs'])]

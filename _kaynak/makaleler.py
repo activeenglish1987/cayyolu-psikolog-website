@@ -4,6 +4,77 @@ Her makale: path, eski (yönlendirilecek eski WordPress adresi), title, seo_titl
 
 MAKALELER = [
 {
+ 'path': '/cocuklarla-afet-haberleri-hakkinda-konusmak/',
+ 'date': '2026-10-15',
+ # Psikolog Rojin Nazik merkez adına kontrol edip onayladı (metin olduğu gibi yayımlanır)
+ 'uzman_kontrolu': '2026-10-15',
+ 'title': 'Sel ve Afet Haberleri Karşısında Çocuğunuzla Nasıl Konuşmalısınız?',
+ 'seo_title': 'Çocuklarla Afet Haberleri Hakkında Konuşmak | RN Psikoloji',
+ 'desc': 'Sel ve afet haberleri karşısında çocuğunuzla nasıl konuşmalı? Yaşa göre örnek cümleler, ekran süresi, normal tepkiler ve ne zaman destek almalı.',
+ 'thumb': 'assets/img/ofis-salon.webp',
+ 'html': '''
+<p>Son günlerde televizyonda ve sosyal medyada sel görüntüleri, suya gömülen araçlar, tatil edilen okullar konuşuluyor. Biz yetişkinler haberleri izlerken çoğu zaman yanımızda bir çocuğun da olduğunu fark etmeyiz. Oysa çocuklar, yetişkinlerin sandığından çok daha fazlasını görür, duyar ve kendi içlerinde anlamlandırmaya çalışır.</p>
+<p>Afet bizden uzak bir şehirde yaşansa bile çocuk için "orada olan, burada da olabilir" düşüncesi çok kolay oluşur. Bu yazıda, böyle dönemlerde çocuğunuzla nasıl konuşabileceğinizi ve neye dikkat etmeniz gerektiğini ele alıyoruz.</p>
+<h2>Çocuklar afet haberlerini nasıl algılar?</h2>
+<p>Çocukların yaşına göre tepkileri değişir:</p>
+<ul>
+<li><b>Okul öncesi (3–6 yaş):</b> Gördüklerini kendi dünyasına taşır. Yağmur yağdığında "evimiz de su altında kalacak mı?" diye sorabilir. Aynı görüntüyü tekrar tekrar görmek, olayın defalarca yaşandığını düşündürebilir.</li>
+<li><b>İlkokul çağı (7–11 yaş):</b> Neden olduğunu, kimin suçlu olduğunu, kendisinin güvende olup olmadığını merak eder. Sorular somut ve çoktur.</li>
+<li><b>Ergenler (12 yaş ve üzeri):</b> Haberlere sosyal medyadan, çoğu zaman sizden önce ulaşır. Kaygısını öfke, alay ya da ilgisizlik görünümüyle saklayabilir.</li>
+</ul>
+<h2>Konuşmaya nasıl başlamalı?</h2>
+<p><b>Önce dinleyin.</b> "Haberlerde neler gördün? Sen ne düşündün?" diye sorarak başlayın. Çocuğunuzun ne bildiğini ve neyden korktuğunu öğrenmeden açıklama yapmak, aklında olmayan yeni korkular ekleyebilir.</p>
+<p><b>Kısa ve dürüst olun.</b> "İstanbul'da çok fazla yağmur yağdı, bazı yollar suyla doldu. Yetkililer insanlara yardım ediyor" gibi yaşına uygun, sakin bir anlatım yeterlidir. Ayrıntı, sayı ve dramatik görüntü gerekmez.</p>
+<p><b>Güvende olduğunu hissettirin.</b> Çocuğun asıl sorusu çoğu zaman "Ben güvende miyim?" sorusudur. "Biz şu an evimizdeyiz, güvendeyiz. Böyle durumlarda neler yapılacağını büyükler biliyor" demek rahatlatıcıdır.</p>
+<p><b>Duygusunu adlandırmasına yardım edin.</b> "Bu görüntüler seni korkutmuş olabilir, bu çok normal" demek, çocuğun duygusunu kabul ettiğinizi gösterir. "Korkacak bir şey yok" demek ise duyguyu kapatabilir.</p>
+<p><b>Yardım edenleri gösterin.</b> Afet haberlerinde yardım eden itfaiyecileri, gönüllüleri, komşuları konuşmak çocuğa dünyanın iyi insanlarla dolu olduğunu hatırlatır.</p>
+<h2>Yaşa göre örnek cümleler</h2>
+<p>Ne söyleyeceğinizi bilmemek çok olağan. Şu cümleler başlangıç için yol gösterebilir:</p>
+<ul>
+<li><b>Küçük çocuklar için:</b> "Başka bir şehirde çok yağmur yağdı. Orada insanlara yardım eden pek çok kişi var. Biz evimizdeyiz ve güvendeyiz. Sormak istediğin bir şey olursa bana her zaman sorabilirsin."</li>
+<li><b>İlkokul çağı için:</b> "Çok kısa sürede çok fazla yağmur yağınca su yollara taştı. Bu yüzden okullar tatil edildi, insanların güvende kalması için. Bizim mahallemizde de böyle bir durum için neler yapılabileceğini birlikte konuşabiliriz."</li>
+<li><b>Ergenler için:</b> "Bu görüntüler insanı gerçekten sarsıyor. Sen ne hissettin? Sosyal medyada gördüğün bir şey seni rahatsız ettiyse birlikte konuşabiliriz."</li>
+</ul>
+<p>Cevabını bilmediğiniz bir soru gelirse "Bunu bilmiyorum, ama birlikte öğrenebiliriz" demek de dürüst ve güven verici bir cevaptır.</p>
+<h2>Ekran süresini sınırlayın</h2>
+<p>Aynı sel görüntülerinin gün boyu tekrar tekrar izlenmesi, özellikle küçük çocuklarda kaygıyı artırır. Bu dönemde:</p>
+<ul>
+<li>Haberleri çocuklar yanınızda değilken izlemeyi tercih edin,</li>
+<li>Sosyal medyada otomatik oynayan videolara dikkat edin,</li>
+<li>Ergenlerle, gördükleri içerikleri birlikte konuşmak için zaman ayırın.</li>
+</ul>
+<h2>Hazırlık da bir rahatlama yoludur</h2>
+<p>Çocuklar için kontrol duygusu çok önemlidir. Yaşına uygun basit bir "aile hazırlık planı" yapmak kaygıyı azaltabilir: acil durumda kimi arayacağını bilmek, evde el feneri olduğunu görmek, ailenin buluşma noktasını konuşmak gibi. Bunu korkutucu bir ders gibi değil, "ailecek hazırlıklı olmayı seviyoruz" havasında yapın.</p>
+<h2>Hangi tepkiler normaldir?</h2>
+<p>Afet haberlerinden sonraki birkaç gün içinde çocuklarda şunlar görülebilir:</p>
+<ul>
+<li>Yağmur ya da gök gürültüsünden korkma,</li>
+<li>Geceleri yalnız uyumak istememe, kâbuslar,</li>
+<li>Ebeveyne daha çok yapışma, ayrılmakta zorlanma,</li>
+<li>Aynı soruları tekrar tekrar sorma,</li>
+<li>Oyunlarında afeti canlandırma.</li>
+</ul>
+<p>Bu tepkiler çoğunlukla geçicidir. Sabırlı ve tutarlı bir tutumla genellikle birkaç hafta içinde azalır. Oyunda afeti canlandırmak, çocuğun yaşadığını işleme biçimi olabilir; bunu engellemek yerine oyunun sonunda "herkes güvende" diye bitmesine yardım edebilirsiniz.</p>
+<h2>Kendi kaygınızı da fark edin</h2>
+<p>Çocuklar duyguyu en çok ebeveynlerinden öğrenir. Sizin kaygınız yüksekse, çocuğunuz bunu ses tonunuzdan, yüz ifadenizden hisseder. Kendi duygularınızı da konuşabileceğiniz bir yetişkin bulmak, çocuğunuza sakin bir zemin sunmanızı kolaylaştırır.</p>
+<h2>Ne zaman destek almalı?</h2>
+<p>Şu durumlarda bir çocuk ve ergen psikoloğuyla görüşmek faydalı olabilir:</p>
+<ul>
+<li>Korkular ve uyku sorunları birkaç haftadan uzun sürüyorsa,</li>
+<li>Çocuğunuz okula gitmek ya da sizden ayrılmak istemiyorsa,</li>
+<li>Gündelik oyun, iştah ve arkadaşlıklarında belirgin bir değişiklik varsa,</li>
+<li>Ergeniniz içine kapandıysa ya da öfke patlamaları arttıysa,</li>
+<li>Aileniz afetten doğrudan etkilendiyse ya da bir yakınınızı kaybettiyseniz.</li>
+</ul>
+<p>Acil bir durumda ya da biri kendine zarar verme riski taşıyorsa lütfen hemen <b>112</b>'yi arayın.</p>
+<p>Çocuklarda kaygı hakkında daha ayrıntılı bilgi için <a href="/cocuklarda-kaygi-ebeveyn-rehberi/">çocuklarda kaygı ebeveyn rehberimize</a> göz atabilirsiniz.</p>
+<h2>Son söz</h2>
+<p>Afetleri çocuklarımızdan tamamen saklayamayız; ama onlara güvenli bir şekilde anlamlandırmaları için eşlik edebiliriz. Sakin bir ses, dürüst bir cevap ve "seninle birlikteyim" mesajı, çoğu zaman en güçlü destektir.</p>
+<p>Çayyolu, Ümitköy, Yaşamkent ve çevresinde çocuğunuzun kaygılarını birlikte konuşmak isterseniz, merkezimizde sizinle görüşmekten memnuniyet duyarız.</p>
+<p><em>Bu yazı bilgilendirme amaçlıdır; psikolojik değerlendirme ya da tedavinin yerini tutmaz.</em></p>
+''',
+},
+{
  'path': '/yurt-disi-online-ebeveyn-danismanligi/',
  'date': '2026-10-01',
  'title': 'Yurt Dışında Yaşayan Türk Aileler İçin Online Ebeveyn Danışmanlığı',
@@ -97,6 +168,7 @@ MAKALELER = [
 <p><b>Öngörülebilir bir düzen kurun:</b> Düzenli uyku saatleri, yemek zamanları ve günlük rutinler çocuğa güven duygusu verir.</p>
 <p><b>Kendi kaygınızı fark edin:</b> Çocuklar ebeveynlerinin tepkilerini yakından izler. Sakin ve tutarlı kalmak, çocuğun da kendini düzenlemesine yardımcı olur.</p>
 <p><b>Güvence döngüsüne dikkat edin:</b> Aynı soruya defalarca güvence vermek kaygıyı besleyebilir. Bir kez sakin bir cevap verip ardından çocuğun kendi baş etme yollarını hatırlatmak daha işlevseldir.</p>
+<p>Sel, deprem gibi afet haberlerinin gündemde olduğu dönemlerde çocuğunuzla nasıl konuşabileceğinize dair öneriler için <a href="/cocuklarla-afet-haberleri-hakkinda-konusmak/">çocuklarla afet haberleri hakkında konuşmak</a> yazımıza göz atabilirsiniz.</p>
 <h2>Ne zaman çocuk psikoloğuna başvurmalı?</h2>
 <p>Kaygı birkaç haftadan uzun sürüyor, okula devamı ya da arkadaş ilişkilerini etkiliyor, bedensel yakınmalar sık tekrarlıyor ya da siz ebeveyn olarak nasıl yardım edeceğinizi bilemiyorsanız bir uzmanla görüşmek faydalı olur. Görüşmeler genellikle ebeveynle yapılan bir ön görüşmeyle başlar; küçük yaştaki çocuklarla <a href="/cayyolu-cocuk-psikologu/">oyun terapisi</a> yaklaşımıyla çalışılır.</p>
 <p>RN Psikoloji Çayyolu şubesinde çocuk ve ergen görüşmeleri yapılmaktadır. Yaşamkent'teki ofisimiz Çayyolu, Ümitköy, Konutkent ve İncek'e yakındır. Ayrıntılar için <a href="/cayyolu-cocuk-psikologu/">Çayyolu çocuk ve ergen psikoloğu</a> sayfamıza göz atabilirsiniz.</p>
