@@ -47,6 +47,8 @@ ADIMLAR = [
     ('Size uygun saat', 'Gün, saat ve şubeyi birlikte belirlersiniz; ücret bilgisini de aynı aramada öğrenirsiniz.'),
     ('İlk görüşme', 'Yaklaşık 50 dakikalık tanışma ve değerlendirme görüşmesi: ne yaşadığınız konuşulur, çalışma planı birlikte oluşturulur.'),
 ]
+# Reklam sayfasında adımlar tek satırlık (uzun açıklama 'Daha fazla bilgi' içinde)
+ADIMLAR_KISA = [('Arayın', 'Selda Hanım açar'), ('Saati seçin', 'Gün, saat ve şube'), ('İlk görüşme', 'Yaklaşık 50 dakika')]
 ORTAK_SSS = [
     ('Ücret ne kadar?', 'Seans ücretini Selda Hanım telefonda net olarak söyler; aynı aramada size uygun saati de öğrenirsiniz.'),
     ('Görüşmeler gizli mi?', 'Evet. Görüşmelerde konuşulanlar gizlidir; yasal zorunluluk ve can güvenliği gibi istisnalar ilk görüşmede açıkça anlatılır.'),
@@ -257,16 +259,14 @@ h1 em{font-style:italic;color:var(--a)}
 h2{font-family:%(f)s;font-weight:600;font-size:24px;line-height:1.25;margin:0 0 12px;color:var(--a2)}
 .etiket{display:flex;flex-wrap:wrap;gap:8px;margin:0}
 .etiket span{padding:7px 12px;border-radius:999px;background:var(--bg);border:1px solid var(--line);font-size:13.5px;font-weight:700;color:var(--a2)}
-.konu{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-@media(min-width:700px){.konu{grid-template-columns:1fr 1fr}}
-.konu li{padding:10px 12px 10px 34px;border-radius:12px;background:var(--bg);position:relative;font-weight:600;font-size:15px}
-.konu li:before{content:"✓";position:absolute;left:12px;top:10px;color:var(--call);font-weight:800}
-.adim{display:grid;gap:10px;counter-reset:a}
-@media(min-width:760px){.adim{grid-template-columns:repeat(3,1fr)}}
-.adim div{padding:14px;border-radius:14px;background:var(--bg)}
-.adim b{display:flex;align-items:center;gap:8px;color:var(--a2)}
-.adim b:before{counter-increment:a;content:counter(a);width:26px;height:26px;border-radius:50%%;display:grid;place-items:center;background:var(--a);color:#fff;font-size:13px}
-.adim p{margin:6px 0 0;font-size:14.5px;color:var(--mut)}
+.konu{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.konu li{padding:9px 14px;border-radius:999px;background:var(--bg);border:1px solid var(--line);font-weight:700;font-size:14px;color:var(--a2)}
+.adim{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;counter-reset:a;text-align:center}
+.adim div{padding:14px 6px;border-radius:16px;background:var(--bg)}
+.adim b{display:block;color:var(--a2);font-size:14.5px}
+.adim b:before{counter-increment:a;content:counter(a);display:grid;place-items:center;width:34px;height:34px;margin:0 auto 8px;border-radius:50%%;background:var(--a);color:#fff;font-size:15px}
+.adim p{margin:4px 0 0;font-size:12.5px;color:var(--mut);line-height:1.35}
+.fazla>summary{font-size:16px;padding:4px 0}.fazla h3{font-size:16px;margin:16px 0 6px;color:var(--a2)}.fazla p{color:var(--mut);font-size:15px;line-height:1.65}
 blockquote{margin:0;padding:16px 18px;border-left:4px solid var(--hl);background:var(--bg);border-radius:0 14px 14px 0;font-style:italic;line-height:1.7}
 .qk{margin-top:8px;font-size:13px;color:var(--mut)}
 .sube{display:grid;gap:10px}@media(min-width:760px){.sube{grid-template-columns:repeat(3,1fr)}}
@@ -321,7 +321,8 @@ def govde(S, P):
     rojin = S['ad'] == 'rojin'
     etiketler = ''.join('<span>%s</span>' % esc(t) for t in ROJIN_ETIKET)
     konular = ''.join('<li>%s</li>' % esc(k) for k in P['konular'])
-    adimlar = ''.join('<div><b>%s</b><p>%s</p></div>' % (esc(a), esc(b)) for a, b in ADIMLAR)
+    adimlar = ''.join('<div><b>%s</b><p>%s</p></div>' % (esc(a), esc(b)) for a, b in ADIMLAR_KISA)
+    adimlar_uzun = ''.join('<p><b>%s.</b> %s</p>' % (esc(a), esc(b)) for a, b in ADIMLAR)
     subeler = ''.join('<div><b>%s</b>%s<br><small>%s</small></div>' % (esc(a), esc(b), esc(c)) for a, b, c in SUBELER)
     sss = ''.join('<details><summary>%s</summary><p>%s</p></details>' % (esc(q), esc(c)) for q, c in (P.get('sss', []) + ORTAK_SSS))
     wa_msg = 'Merhaba, %s için randevu bilgisi almak istiyorum.' % (P['h1'] + ' ' + P['h1b']).replace(' · Ankara', '')
@@ -346,7 +347,8 @@ def govde(S, P):
     if rojin:  # logolar sayfanın üstündeki akan şeritte (vitrin.js); burada tekrar edilmez
         gosteri = gosteri.replace('<ul class="lg"></ul>', '')
     ekip = ('<p style="margin:12px 0 0;color:var(--mut);font-size:15px">%s</p>' % esc(P['ekip'])) if P.get('ekip') else ''
-    icerik = ('<section class="kart ic"><h2>%s</h2>%s</section>' % (esc(P['icerik'][0]), ''.join('<p>%s</p>' % esc(x) for x in P['icerik'][1]))) if P.get('icerik') else ''
+    # Uzun metinler sayfayı yazı yazı yapmasın: kapalı "Daha fazla bilgi" içinde (Google ve merak eden için duruyor)
+    icerik = ('<h3>%s</h3>%s' % (esc(P['icerik'][0]), ''.join('<p>%s</p>' % esc(x) for x in P['icerik'][1]))) if P.get('icerik') else ''
     # Puan, kitaplar, ekip ve ofis iki sitede de (Google profili, Çayyolu sitesinin de ofisi olan Konutkent ofisinin profili)
     puan = '<span>★★★★★</span> <b>5.0</b> Doktorsitesi (169) · <b>4.8</b> Google (120+)'
     kitaplar = '<div class="kt">%s</div>' % ''.join(
@@ -358,7 +360,7 @@ def govde(S, P):
     ekip_kart = ('<section class="kart"><h2>Ekibimiz</h2><div class="ek">'
                  '<div><img src="/assets/lp/rojin-nazik.webp" alt="Psikolog Rojin Nazik" width="360" height="450" loading="lazy" decoding="async"><b>Rojin Nazik</b><small>Psikolog · Kurucu</small></div>'
                  '<div><img src="/assets/lp/elif-erdogan.webp" alt="Psikolog Elif Erdoğan" width="360" height="450" loading="lazy" decoding="async"><b>Elif Erdoğan</b><small>Psikolog · Çocuk, ergen ve oyun terapisi</small></div>'
-                 '</div><p style="margin:12px 0 0;color:var(--mut);font-size:15px">Size hangi psikoloğun uygun olduğunu Selda Hanım telefonda birlikte belirler.</p></section>')
+                 '</div></section>')
     ofis = ('<div class="of"><img src="/assets/lp/ofis-salon.webp" alt="RN Psikoloji ofisinden bekleme alanı" width="600" height="800" loading="lazy" decoding="async">'
             '<img src="/assets/lp/ofis-koltuk.webp" alt="RN Psikoloji ofisinden görüşme alanı" width="600" height="800" loading="lazy" decoding="async"></div>')
     return '''<header class="w top"><a class="lgo" href="/" aria-label="%(marka)s – ana sayfa" style="display:inline-flex;text-decoration:none">%(logo)s</a><a class="t" href="tel:%(tel)s" data-cta-area="lp_header">📞 %(teltxt)s</a></header>
@@ -380,17 +382,17 @@ def govde(S, P):
 </div></section>
 <main class="w">
 %(gosteri)s
-<section class="kart"><h2>Psikolog Rojin Nazik</h2><div class="etiket">%(etiket)s</div>
-<p style="margin:12px 0 0;color:var(--mut);font-size:15px">CNN Türk, Milliyet ve Sabah'ta uzman konuk; Psychology Times kurucusu.</p>%(ekip)s%(kitaplar)s</section>
 %(puan_kart)s
 <section class="kart"><h2>Hangi konularda destek alabilirsiniz?</h2><ul class="konu">%(konular)s</ul></section>
-%(icerik)s
-<div class="lp-pu"></div>
 <section class="kart"><h2>Randevu 3 adımda</h2><div class="adim">%(adimlar)s</div></section>
+<div class="lp-pu"></div>
+<section class="kart"><h2>Psikolog Rojin Nazik</h2><div class="etiket">%(etiket)s</div>%(ekip)s%(kitaplar)s</section>
 %(ekip_kart)s
-<section class="kart"><h2>Rojin Nazik'in notu</h2><blockquote>“%(not)s”</blockquote><div class="qk">Psikolog Rojin Nazik · %(notb)s</div></section>
 <section class="kart"><h2>Görüşme yerleri</h2><div class="sube">%(subeler)s</div>%(ofis)s</section>
-<section class="kart"><h2>Sık sorulanlar</h2>%(sss)s</section>
+<section class="kart"><details class="fazla"><summary>Daha fazla bilgi ve sık sorulanlar</summary>
+%(icerik)s<h3>Randevu nasıl ilerler?</h3>%(adimlar_uzun)s
+<h3>Rojin Nazik'in notu: %(notb)s</h3><p>“%(not)s”</p>
+<h3>Sık sorulanlar</h3>%(sss)s</details></section>
 <section class="kart son"><h2>İlk adım tek bir telefon</h2><p>Selda Hanım size en yakın uygun saati söylesin.</p><a class="ara" href="tel:%(tel)s" data-cta-area="lp_son"><span>📞</span><span><b class="nw">Hemen Ara · %(teltxt)s</b></span></a></section>
 </main>
 <footer class="w dip">%(marka)s · Psikologlar tanı koymaz ve ilaç yazmaz. Acil bir durumda 112'yi arayın.<br><a href="%(kvkk)s">KVKK aydınlatma metni</a> · <a href="%(gizlilik)s">Gizlilik</a></footer>
@@ -414,7 +416,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'){var d=docum
         'wa': wa, 'foto': S['foto'], 'gosteri': gosteri, 'etiket': etiketler, 'ekip': ekip, 'konular': konular, 'adimlar': adimlar,
         'not': esc(P['not'][1]), 'notb': esc(P['not'][0]), 'subeler': subeler, 'sss': sss, 'marka': esc(S['marka']),
         'kwyer': P.get('kwyer') or ('Çayyolu' if S['ad'] == 'cayyolu' else 'Ankara'), 'saat': SAAT_TXT, 'puan': puan, 'kitaplar': kitaplar,
-        'puan_kart': puan_kart, 'icerik': icerik, 'kvkk': S['kvkk'], 'gizlilik': S['gizlilik'], 'ekip_kart': ekip_kart, 'ofis': ofis}
+        'puan_kart': puan_kart, 'icerik': icerik, 'adimlar_uzun': adimlar_uzun, 'kvkk': S['kvkk'], 'gizlilik': S['gizlilik'], 'ekip_kart': ekip_kart, 'ofis': ofis}
 
 
 def baslik(P, S):
@@ -444,7 +446,7 @@ ROJIN_HEAD = '''<!doctype html><html lang="tr"><head><meta charset="utf-8">
 <script src="/assets/js/after-hours.js?v=8" data-pos="bottom" defer></script>
 <script>window.PUSULA_CFG=Object.assign(window.PUSULA_CFG||{},{heroSecici:'.lp-pu'});</script>
 <script src="/assets/js/pusula.js?v=10" defer></script>
-<script src="/assets/js/vitrin.js?v=6" defer></script>
+<script src="/assets/js/vitrin.js?v=7" defer></script>
 </head><body>'''
 
 
@@ -463,7 +465,7 @@ CAYYOLU_HEAD = ROJIN_HEAD.replace('<meta name="theme-color" content="#3d1e54">',
     '<link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png">', '<link rel="icon" href="/favicon.svg" type="image/svg+xml">').replace(
     '<script src="/assets/js/pusula.js?v=10" defer></script>',
     "<script>window.PUSULA_CFG={site:'cayyolu',foto:'/assets/img/opt/psikolog-rojin-nazik-720.webp'};</script>\n<script src=\"/assets/js/pusula.js?v=10\" defer></script>").replace(
-    '<script src="/assets/js/vitrin.js?v=6" defer></script>\n', '')  # vitrin.js yalnız Rojin sitesinde
+    '<script src="/assets/js/vitrin.js?v=7" defer></script>\n', '')  # vitrin.js yalnız Rojin sitesinde
 
 
 def cayyolu_yaz(kok):
