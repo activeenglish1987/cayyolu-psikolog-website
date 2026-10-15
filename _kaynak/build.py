@@ -159,8 +159,15 @@ class Clean(HTMLParser):
         if self.skip: return
         self.out.append(esc(data).replace('&#x27;', "'"))
 
+# WordPress içeriğindeki artık var olmayan dış bağlantılar → güncel adresleri (canlı taramada 404 çıkanlar)
+OLU_LINK = {
+    'https://www.psikologrojinnazik.com/ankara-en-iyi-piskolog/': 'https://www.psikologrojinnazik.com/bireysel-danismanlik/',
+}
+
 def clean_html(raw):
     raw = re.sub(r'<!--.*?-->', '', raw or '', flags=re.S)
+    for eski, yeni in OLU_LINK.items():
+        raw = raw.replace(eski, yeni)
     p = Clean(); p.feed(raw); p.close()
     while p.stack: p.out.append('</%s>' % p.stack.pop())
     h = ''.join(p.out)
