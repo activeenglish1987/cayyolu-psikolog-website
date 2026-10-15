@@ -445,7 +445,7 @@ ROJIN_HEAD = '''<!doctype html><html lang="tr"><head><meta charset="utf-8">
 <script src="/assets/js/ads-conversion.js?v=6" defer></script>
 <script src="/assets/js/after-hours.js?v=8" data-pos="bottom" defer></script>
 <script>window.PUSULA_CFG=Object.assign(window.PUSULA_CFG||{},{heroSecici:'.lp-pu'});</script>
-<script src="/assets/js/pusula.js?v=10" defer></script>
+<script src="/assets/js/pusula.js?v=11" defer></script>
 <script src="/assets/js/vitrin.js?v=8" defer></script>
 </head><body>'''
 
@@ -463,8 +463,8 @@ def rojin_yaz(kok):
 # ---------------------------------------------------------------- Çayyolu sitesi: build.py içinden
 CAYYOLU_HEAD = ROJIN_HEAD.replace('<meta name="theme-color" content="#3d1e54">', '<meta name="theme-color" content="#14264A">').replace(
     '<link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png">', '<link rel="icon" href="/favicon.svg" type="image/svg+xml">').replace(
-    '<script src="/assets/js/pusula.js?v=10" defer></script>',
-    "<script>window.PUSULA_CFG={site:'cayyolu',foto:'/assets/img/opt/psikolog-rojin-nazik-720.webp'};</script>\n<script src=\"/assets/js/pusula.js?v=10\" defer></script>").replace(
+    '<script src="/assets/js/pusula.js?v=11" defer></script>',
+    "<script>window.PUSULA_CFG={site:'cayyolu',foto:'/assets/img/opt/psikolog-rojin-nazik-720.webp'};</script>\n<script src=\"/assets/js/pusula.js?v=11\" defer></script>").replace(
     '<script src="/assets/js/vitrin.js?v=8" defer></script>\n', '')  # vitrin.js yalnız Rojin sitesinde
 
 

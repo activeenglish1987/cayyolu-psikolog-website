@@ -640,10 +640,19 @@
     var panel = null, davet = null, etkilesti = false;
     // Telefonda balon, giriş bölümündeki arama düğmelerinin üstüne binmesin: ilk ekran geçilince görünür
     function balonKonum() {
-      var gizle = innerWidth < 861 && (scrollY || pageYOffset || 0) < 520 && !panel && !davet;
+      // Sayfa sonundaki mor çağrı bölümünde de gizlenir: orada zaten Ara/WhatsApp düğmeleri var, balon yazının üstüne biner
+      var gizle = innerWidth < 861 && !panel && (sonCtaUstunde() || (!davet && (scrollY || pageYOffset || 0) < 520));
       kutu.classList.toggle('gizli', gizle);
       // Alttaki sabit arama çubuğu (her sitede farklı yükseklik) varsa balon onun üstünde durur
       var h = altCubuk(); kutu.style.bottom = h ? (h + 12) + 'px' : '';
+    }
+    function sonCtaUstunde() {
+      var b = kutu.getBoundingClientRect(), L = d.querySelectorAll('.cta-purple,.final-cta,[data-cta-area="final-cta"]');
+      for (var i = 0; i < L.length; i++) {
+        var r = (L[i].closest('section') || L[i]).getBoundingClientRect();
+        if (r.height && r.top < b.bottom && r.bottom > b.top) return true;
+      }
+      return false;
     }
     function altCubuk() {
       var m = 0, L = d.querySelectorAll('.rn-sticky-bar,.sticky-bar,.mobile-cta-bar,.mobile-leadbar,.bar');
