@@ -4,6 +4,65 @@ Her makale: path, eski (yönlendirilecek eski WordPress adresi), title, seo_titl
 
 MAKALELER = [
 {
+ 'path': '/ergen-cocuk-odasindan-cikmiyor/',
+ 'date': '2026-10-16',
+ # Psikolog Rojin Nazik merkez adına kontrol edip onayladı (metin olduğu gibi yayımlanır)
+ 'uzman_kontrolu': '2026-10-16',
+ 'title': 'Ergen Çocuğum Odasına Kapandı: Olağan Ergenlik mi, Destek Gerektiren Bir Durum mu?',
+ 'seo_title': 'Ergen Odasından Çıkmıyor: Ne Zaman Endişelenmeli? | RN Psikoloji',
+ 'desc': "Ergen çocuğunuz odasından çıkmıyor, konuşmuyor mu? Olağan ergenlik ile destek gerektiren içe kapanmayı ayırt etmenize yardımcı işaretler.",
+ 'thumb': 'assets/img/ofis-salon.webp',
+ 'html': '''
+<p>Bir zamanlar okuldan gelince bütün gününü anlatan çocuğunuz, şimdi eve girer girmez odasına geçiyor, kapıyı kapatıyor. Sorularınıza "iyi", "bilmem", "bir şey yok" diye kısa cevaplar veriyor. Akşam yemeğine zorla geliyor, telefonundan başını kaldırmıyor. Pek çok ebeveyn bu noktada aynı soruyu sorar: "Bu normal mi, yoksa bir şeyler mi oluyor?"</p>
+<p>Bu yazıda, ergenlikte beklenen geri çekilme ile daha dikkat gerektiren içe kapanmayı ayırt etmenize yardımcı olacak işaretleri ve evde neler yapabileceğinizi anlatıyoruz.</p>
+<h2>Ergenlikte biraz uzaklaşmak neden olağandır?</h2>
+<p>Ergenlik, çocuğun ailesinden ayrı bir kimlik geliştirdiği dönemdir. Bu süreçte genç:</p>
+<ul>
+<li>Kendine ait bir alan ve mahremiyet ister,</li>
+<li>Arkadaşlarının görüşlerini aileninkinden daha önemli bulabilir,</li>
+<li>Duygularını anlatmak yerine kendi içinde düşünmeyi tercih edebilir,</li>
+<li>Uyku düzeni biyolojik olarak geç saatlere kayabilir.</li>
+</ul>
+<p>Yani odasında daha çok vakit geçirmek, ailesiyle eskisi kadar paylaşmamak tek başına bir sorun işareti değildir. Önemli olan, bu değişimin gencin hayatının geri kalanını nasıl etkilediğidir.</p>
+<h2>Dikkat gerektiren işaretler</h2>
+<p>Aşağıdaki durumlardan birkaçı <b>iki haftadan uzun süredir</b> devam ediyorsa, daha yakından bakmak faydalı olur:</p>
+<ul>
+<li><b>Arkadaşlarından da uzaklaşma:</b> Yalnızca ailesinden değil, eskiden görüştüğü arkadaşlarından da kopmuşsa.</li>
+<li><b>Sevdiği şeylerden vazgeçme:</b> Spor, müzik, oyun gibi eskiden keyif aldığı etkinliklere ilgisini kaybetmişse.</li>
+<li><b>Okulda belirgin değişiklik:</b> Notlarda ani düşüş, okula gitmek istememe, sık devamsızlık.</li>
+<li><b>Uyku ve iştahta büyük değişim:</b> Çok az ya da çok fazla uyuma, yemek yemeyi reddetme ya da aşırı yeme.</li>
+<li><b>Sürekli mutsuz, öfkeli ya da gergin görünme:</b> Küçük şeylere aşırı tepki verme, sık ağlama.</li>
+<li><b>Kendisi hakkında olumsuz konuşma:</b> "Hiçbir şeyi beceremiyorum", "Kimse beni sevmiyor" gibi cümleler.</li>
+<li><b>Ekrana tamamen çekilme:</b> Gerçek hayattaki her etkinliğin yerini telefonun ya da oyunun alması.</li>
+</ul>
+<p>Bu işaretler bir tanı anlamına gelmez; ama gencin zorlandığı ve desteğe ihtiyaç duyabileceği konusunda önemli ipuçlarıdır.</p>
+<h2>Evde neler yapabilirsiniz?</h2>
+<p><b>Sorgulamak yerine yanında olun.</b> "Neyin var, neden konuşmuyorsun?" soruları çoğu genci daha da kapatır. Bunun yerine birlikte araba yolculuğu, yemek hazırlama ya da yürüyüş gibi yan yana vakit geçirdiğiniz anlar yaratın. Ergenler, yüz yüze oturup konuşmaktan çok, yan yana bir şey yaparken açılır.</p>
+<p><b>Kısa ve yargısız cümleler kurun.</b> "Son zamanlarda biraz yorgun görünüyorsun, konuşmak istersen buradayım" demek kapıyı açık bırakır.</p>
+<p><b>Dinlerken hemen çözüm sunmayın.</b> Genç bir sorununu anlattığında önce duygusunu kabul edin: "Bu gerçekten can sıkıcı olmalı." Çözüm önerileri, anlaşıldığını hissettikten sonra daha kolay kabul edilir.</p>
+<p><b>Mahremiyetine saygı gösterin ama ilgiyi kesmeyin.</b> Odasına kapanmasına izin vermek, onunla ilgilenmemek anlamına gelmez. Ortak yemekler, haftalık aile zamanı gibi küçük ama düzenli buluşmaları sürdürün.</p>
+<p><b>Ekran kurallarını birlikte belirleyin.</b> Telefonu tamamen yasaklamak yerine, yatmadan önce ekranların ortak alanda bırakılması gibi birlikte konuşulmuş kurallar daha işe yarar.</p>
+<p><b>Kendi stresinize de dikkat edin.</b> Gencin geri çekilmesi ebeveynde kaygı, kırgınlık ya da öfke uyandırabilir. Bu duygularla baş etmek için eşinizle, güvendiğiniz biriyle ya da bir uzmanla konuşmak, gence daha sakin yaklaşmanızı kolaylaştırır.</p>
+<h2>Ergen danışmanlığı nasıl işler?</h2>
+<p>Ergenlerle çalışmada genellikle önce ebeveynle bir tanışma görüşmesi, ardından gençle bireysel görüşmeler yapılır. Gencin anlattıklarının gizliliği korunur; yalnızca güvenliğini tehdit eden bir durum varsa aile bilgilendirilir. Bu güvence, gencin terapiye güvenmesi için çok önemlidir.</p>
+<p>Görüşmelerde gencin duygularını tanıması ve ifade etmesi, okul ve arkadaş ilişkilerindeki zorluklarla baş etmesi, kendine dair olumsuz düşüncelerini fark etmesi üzerinde çalışılır. Gerektiğinde aileyle ortak görüşmeler de planlanır.</p>
+<p>Çayyolu, Ümitköy, Yaşamkent, Konutkent ve İncek çevresinde yaşayan aileler için <a href="/cocuk-ergen-danismanligi/">çocuk ve ergen danışmanlığı</a> sayfamızda çalışma biçimimizi bulabilirsiniz. İlk görüşmede neler olduğunu merak ediyorsanız <a href="/ilk-terapi-seansi-rehberi/">ilk terapi seansı rehberimize</a> göz atabilirsiniz.</p>
+<h2>Ne zaman destek almalı?</h2>
+<p>Şu durumlarda bir çocuk ve ergen alanında çalışan psikologla görüşmek faydalı olabilir:</p>
+<ul>
+<li>Yukarıdaki işaretlerden birkaçı iki haftadan uzun süredir devam ediyorsa,</li>
+<li>Okul, arkadaşlık ve aile ilişkilerinden birden fazlası etkilenmeye başladıysa,</li>
+<li>Gencinizle konuşmaya çalıştığınız her seferde tartışmaya dönüyorsa,</li>
+<li>Genç, kendisi destek almak istediğini söylüyorsa,</li>
+<li>Siz bir ebeveyn olarak ne yapacağınızı bilemediğinizi hissediyorsanız.</li>
+</ul>
+<p>Gencinizin kendine zarar verdiğini fark ederseniz, ölmek ya da yok olmak istediğine dair cümleler kuruyorsa bunu ciddiye alın: Sakin kalarak onunla konuşun, yalnız bırakmayın ve vakit kaybetmeden bir uzmana başvurun. Acil bir tehlike varsa hemen <b>112</b>'yi arayın.</p>
+<h2>Son söz</h2>
+<p>Ergenlik, hem gençler hem de ebeveynler için yeni bir dengenin kurulduğu bir dönem. Kapalı bir kapı her zaman bir sorun anlamına gelmez; ama içerideki gencin zorlandığını hissediyorsanız, bunu birlikte anlamaya çalışmak için destek almak iyi bir adımdır. Görüşme seçeneklerini konuşmak isterseniz bize ulaşabilirsiniz.</p>
+<p><em>Bu yazı bilgilendirme amaçlıdır; psikolojik değerlendirme ya da tedavinin yerini tutmaz.</em></p>
+''',
+},
+{
  'path': '/cocuklarla-afet-haberleri-hakkinda-konusmak/',
  'date': '2026-10-15',
  # Psikolog Rojin Nazik merkez adına kontrol edip onayladı (metin olduğu gibi yayımlanır)
@@ -68,6 +127,7 @@ MAKALELER = [
 </ul>
 <p>Acil bir durumda ya da biri kendine zarar verme riski taşıyorsa lütfen hemen <b>112</b>'yi arayın.</p>
 <p>Çocuklarda kaygı hakkında daha ayrıntılı bilgi için <a href="/cocuklarda-kaygi-ebeveyn-rehberi/">çocuklarda kaygı ebeveyn rehberimize</a> göz atabilirsiniz.</p>
+<p>Gencinizin içine kapanmasının olağan ergenlik mi yoksa destek gerektiren bir durum mu olduğunu ayırt etmek için <a href="/ergen-cocuk-odasindan-cikmiyor/">ergen çocuğum odasına kapandı</a> yazımıza bakabilirsiniz.</p>
 <h2>Son söz</h2>
 <p>Afetleri çocuklarımızdan tamamen saklayamayız; ama onlara güvenli bir şekilde anlamlandırmaları için eşlik edebiliriz. Sakin bir ses, dürüst bir cevap ve "seninle birlikteyim" mesajı, çoğu zaman en güçlü destektir.</p>
 <p>Çayyolu, Ümitköy, Yaşamkent ve çevresinde çocuğunuzun kaygılarını birlikte konuşmak isterseniz, merkezimizde sizinle görüşmekten memnuniyet duyarız.</p>
