@@ -4,6 +4,65 @@ Her makale: path, eski (yönlendirilecek eski WordPress adresi), title, seo_titl
 
 MAKALELER = [
 {
+ 'path': '/cocugum-arkadas-edinemiyor/',
+ 'date': '2026-10-19',
+ # Psikolog Rojin Nazik merkez adına kontrol edip onayladı (metin olduğu gibi yayımlanır)
+ 'uzman_kontrolu': '2026-10-19',
+ 'title': 'Çocuğum Arkadaş Edinemiyor: Ne Zaman Endişelenmeli, Nasıl Destek Olmalı?',
+ 'seo_title': 'Çocuğum Arkadaş Edinemiyor: Ne Zaman Endişelenmeli? | RN Psikoloji',
+ 'desc': 'Çocuğunuz okulda yalnız mı kalıyor? Utangaçlık ile destek gerektiren durumları ayırt etmenize yardım eden işaretler ve evde yapabilecekleriniz.',
+ 'thumb': 'assets/img/ofis-koltuk.webp',
+ 'html': '''
+<p>Okul çıkışında diğer çocuklar gruplar hâlinde gülüşerek çıkarken sizin çocuğunuz tek başına yürüyor. Teneffüste ne yaptığını sorduğunuzda "Hiç, oturdum" diyor. Doğum günü davetleri gelmiyor ya da gelse de gitmek istemiyor. Pek çok anne baba bu tabloyu görünce içi sızlayarak aynı soruyu sorar: "Çocuğum neden arkadaş edinemiyor, bir sorun mu var?"</p>
+<p>Bu yazıda çocukların arkadaşlık kurmakta neden zorlanabileceğini, hangi durumlarda bir uzmana danışmanın iyi olacağını ve evde nasıl destek olabileceğinizi anlatıyoruz.</p>
+<h2>Her çocuğun sosyal temposu farklıdır</h2>
+<p>Bazı çocuklar yeni bir ortama girer girmez herkesle tanışır, bazıları ise önce uzaktan izlemeyi tercih eder. İçe dönük ya da az sayıda yakın arkadaşla mutlu olan bir çocuk, "sorunlu" değildir. Önemli olan arkadaş sayısı değil, çocuğun ilişkilerinden memnun olup olmadığı ve yalnızlığın onu üzüp üzmediğidir.</p>
+<p>Yeni bir okul, sınıf ya da semt değişikliği de geçici bir uyum dönemi yaratabilir. Bu dönemde çocuğun birkaç hafta ya da ay boyunca çekingen davranması olağandır.</p>
+<h2>Arkadaşlık kurmayı zorlaştırabilecek durumlar</h2>
+<ul>
+<li><b>Utangaçlık ve sosyal kaygı:</b> Reddedilme korkusu, yanlış bir şey söyleme endişesi çocuğu gruptan uzak tutabilir.</li>
+<li><b>Sosyal becerilerin henüz gelişmemesi:</b> Sıra beklemek, oyuna katılmak, kaybetmeyi kabullenmek, karşısındakinin duygusunu okumak öğrenilen becerilerdir. Bazı çocuklar bunları daha yavaş öğrenir.</li>
+<li><b>Dikkat ve dürtü kontrolü zorlukları:</b> Sırasını beklemekte zorlanan, oyunu sürekli kendi kurallarına göre yönlendirmek isteyen çocuklar arkadaşları tarafından dışlanabilir.</li>
+<li><b>Farklı ilgi alanları:</b> Yaşıtlarından farklı şeylere ilgi duyan çocuklar ortak bir zemin bulmakta zorlanabilir.</li>
+<li><b>Zorbalık:</b> Alay edilen, dışlanan ya da hedef alınan bir çocuk, kendini korumak için tamamen geri çekilebilir.</li>
+<li><b>Evdeki stres:</b> Taşınma, ayrılık, kayıp ya da kardeş doğumu gibi değişiklikler çocuğun enerjisini sosyal ilişkilerden çekebilir.</li>
+</ul>
+<p>Bu etkenlerin hangisinin çocuğunuzu etkilediğini anlamak, ona nasıl yardım edeceğinizi belirler. Bazı durumlarda bunu ayırt etmek bir uzmanın değerlendirmesini gerektirir.</p>
+<h2>Dikkat gerektiren işaretler</h2>
+<p>Aşağıdakilerden birkaçı birkaç haftadan uzun süredir devam ediyorsa daha yakından bakmak faydalı olur:</p>
+<ul>
+<li>Çocuğunuz yalnızlıktan açıkça yakınıyor, "Kimse beni sevmiyor" diyorsa,</li>
+<li>Okula gitmek istemiyor, sabahları karın ağrısı ya da baş ağrısından şikâyet ediyorsa,</li>
+<li>Eşyaları sık sık kayboluyor, kırılıyor ya da üzerinde açıklayamadığı izler varsa,</li>
+<li>Eskiden sevdiği etkinliklerden uzaklaştıysa,</li>
+<li>Öfke patlamaları ya da ağlama nöbetleri arttıysa,</li>
+<li>Göz teması kurmak, sırayla konuşmak, oyun kurallarını anlamak gibi becerilerde yaşıtlarından belirgin biçimde farklıysa.</li>
+</ul>
+<h2>Evde nasıl destek olabilirsiniz?</h2>
+<p><b>Dinleyin, hemen çözmeye çalışmayın.</b> "Bugün teneffüste ne oldu?" diye merakla sorun. Anlattıklarını küçümsemeden dinlemek, çocuğunuzun size açılmasını kolaylaştırır.</p>
+<p><b>Küçük ve güvenli fırsatlar yaratın.</b> Kalabalık bir doğum günü yerine, evde tek bir arkadaşla kısa bir oyun buluşması çok daha kolaydır. Çocuğunuzun sevdiği bir etkinliği (lego, resim, top) merkeze almak, sohbet baskısını azaltır.</p>
+<p><b>Becerileri oyunla çalışın.</b> Evde rol yaparak "Oyununuza katılabilir miyim?" demeyi, kaybettiğinde ne yapacağını, bir arkadaşı hakkında soru sormayı birlikte deneyebilirsiniz.</p>
+<p><b>İlgi alanına göre ortam seçin.</b> Spor, müzik, satranç, izcilik gibi yapılandırılmış etkinlikler, ortak bir ilgi etrafında arkadaşlık kurmayı kolaylaştırır.</p>
+<p><b>Okulla işbirliği yapın.</b> Öğretmen ve okul rehber öğretmeni, sınıftaki durumu sizden daha yakından görür. Grup çalışmalarında çocuğunuzun uyumlu bir arkadaşla eşleştirilmesi gibi küçük adımlar büyük fark yaratabilir. Zorbalıktan şüpheleniyorsanız okulu vakit kaybetmeden bilgilendirin.</p>
+<p><b>Kardeş, kuzen ve komşu çocuklarıyla pratik yapın.</b> Tanıdık ve güvenli ilişkiler, çocuğun okulda deneyeceği becerilerin provası gibidir. Oyun sırasında araya girmek yerine uzaktan izleyin; sonrasında "Arkadaşın üzüldüğünde ona sarılman çok güzeldi" gibi somut ve olumlu geri bildirimler verin. Neyi iyi yaptığını bilmek, çocuğun o davranışı tekrar etmesini kolaylaştırır.</p>
+<p><b>Kendi kaygınızı yönetin.</b> Çocuğunuzun yalnız kalması sizi çok üzebilir; ama bu kaygıyı ona yansıtmamaya çalışın. "Neden hiç arkadaşın yok?" gibi sorular baskı yaratır.</p>
+<h2>Ne zaman destek almalı?</h2>
+<p>Şu durumlarda çocuk ve ergenlerle çalışan bir psikologla görüşmek faydalı olabilir:</p>
+<ul>
+<li>Yukarıdaki işaretler haftalardır sürüyor ve çocuğunuzun mutluluğunu etkiliyorsa,</li>
+<li>Okula gitmek istememe ya da bedensel şikâyetler artıyorsa,</li>
+<li>Sosyal becerilerdeki farklılıklar dikkatinizi çekiyor ve nedenini anlamak istiyorsanız,</li>
+<li>Zorbalığa uğradığını düşünüyorsanız,</li>
+<li>Siz bir ebeveyn olarak nasıl yardım edeceğinizi bilemiyorsanız.</li>
+</ul>
+<p>Görüşmelerde çocuğun güçlü yönleri ve zorlandığı alanlar birlikte değerlendirilir; gerekiyorsa oyun temelli çalışmalarla sosyal beceriler desteklenir ve ebeveynlere evde uygulayabilecekleri öneriler verilir. Çayyolu, Ümitköy, Yaşamkent ve çevresindeki aileler için çalışma biçimimizi <a href="/cocuk-ergen-danismanligi/">çocuk ve ergen danışmanlığı</a> sayfamızda bulabilirsiniz. Kaygının arkadaşlık ilişkilerini nasıl etkilediğini merak ediyorsanız <a href="/cocuklarda-kaygi-ebeveyn-rehberi/">çocuklarda kaygı ebeveyn rehberimize</a> göz atabilirsiniz.</p>
+<p>Çocuğunuz kendine zarar verdiğinden ya da ölmek istediğinden söz ediyorsa bunu ciddiye alın, onu yalnız bırakmayın ve vakit kaybetmeden bir uzmana başvurun. Acil bir tehlike varsa hemen <b>112</b>'yi arayın.</p>
+<h2>Son söz</h2>
+<p>Her çocuk kendi hızında arkadaşlık kurmayı öğrenir. Sizin sabırlı ve güven veren varlığınız bu sürecin en önemli dayanağıdır. Çocuğunuzun yalnızlığının arkasında ne olduğunu birlikte anlamak isterseniz, merkezimizde sizinle görüşmekten memnuniyet duyarız.</p>
+<p><em>Bu yazı bilgilendirme amaçlıdır; psikolojik değerlendirme ya da tedavinin yerini tutmaz.</em></p>
+''',
+},
+{
  'path': '/ergen-cocuk-odasindan-cikmiyor/',
  'date': '2026-10-16',
  # Psikolog Rojin Nazik merkez adına kontrol edip onayladı (metin olduğu gibi yayımlanır)
@@ -229,6 +288,7 @@ MAKALELER = [
 <p><b>Kendi kaygınızı fark edin:</b> Çocuklar ebeveynlerinin tepkilerini yakından izler. Sakin ve tutarlı kalmak, çocuğun da kendini düzenlemesine yardımcı olur.</p>
 <p><b>Güvence döngüsüne dikkat edin:</b> Aynı soruya defalarca güvence vermek kaygıyı besleyebilir. Bir kez sakin bir cevap verip ardından çocuğun kendi baş etme yollarını hatırlatmak daha işlevseldir.</p>
 <p>Sel, deprem gibi afet haberlerinin gündemde olduğu dönemlerde çocuğunuzla nasıl konuşabileceğinize dair öneriler için <a href="/cocuklarla-afet-haberleri-hakkinda-konusmak/">çocuklarla afet haberleri hakkında konuşmak</a> yazımıza göz atabilirsiniz.</p>
+<p>Kaygı bazen çocuğun arkadaş edinmesini de zorlaştırır. Bu konuyu <a href="/cocugum-arkadas-edinemiyor/">çocuğum arkadaş edinemiyor</a> yazımızda ayrıca ele aldık.</p>
 <h2>Ne zaman çocuk psikoloğuna başvurmalı?</h2>
 <p>Kaygı birkaç haftadan uzun sürüyor, okula devamı ya da arkadaş ilişkilerini etkiliyor, bedensel yakınmalar sık tekrarlıyor ya da siz ebeveyn olarak nasıl yardım edeceğinizi bilemiyorsanız bir uzmanla görüşmek faydalı olur. Görüşmeler genellikle ebeveynle yapılan bir ön görüşmeyle başlar; küçük yaştaki çocuklarla <a href="/cayyolu-cocuk-psikologu/">oyun terapisi</a> yaklaşımıyla çalışılır.</p>
 <p>RN Psikoloji Çayyolu şubesinde çocuk ve ergen görüşmeleri yapılmaktadır. Yaşamkent'teki ofisimiz Çayyolu, Ümitköy, Konutkent ve İncek'e yakındır. Ayrıntılar için <a href="/cayyolu-cocuk-psikologu/">Çayyolu çocuk ve ergen psikoloğu</a> sayfamıza göz atabilirsiniz.</p>
