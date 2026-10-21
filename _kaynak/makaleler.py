@@ -4,6 +4,63 @@ Her makale: path, eski (yönlendirilecek eski WordPress adresi), title, seo_titl
 
 MAKALELER = [
 {
+ 'path': '/ortak-yazili-sinav-kaygisi/',
+ 'date': '2026-10-21',
+ # Psikolog Rojin Nazik merkez adına kontrol edip onayladı (metin olduğu gibi yayımlanır)
+ 'uzman_kontrolu': '2026-10-21',
+ 'title': 'Okullarda Ortak Yazılı Sınavlar Başlıyor: Çocuğunuzu Kaygısını Büyütmeden Nasıl Desteklersiniz?',
+ 'seo_title': 'Ortak Yazılı Sınavlar: Çocuğunuzu Nasıl Desteklersiniz? | RN Psikoloji',
+ 'desc': 'Ortaokul ve liselerde ortak yazılı sınavlar başlıyor. Yeni sisteme uyum ve not kaygısı karşısında çocuğunuza evde nasıl destek olabilirsiniz?',
+ 'thumb': 'assets/img/ofis-salon.webp',
+ 'html': '''
+<p>Bu dönemden itibaren ortaokullarda 5, 6 ve 7. sınıflarda, liselerde ise 9, 10 ve 11. sınıflarda pek çok derste "ortak yazılı sınav" sistemi uygulanmaya başlıyor. Bakanlığın açıklamasına göre sınavlarda beceri temelli, açık uçlu sorular yer alacak; öğrenciler yalnız toplam puanlarını değil, hangi konularda güçlü olduklarını ve hangi alanlarda desteğe ihtiyaç duyduklarını da görebilecek.</p>
+<p>Her yeni sistem, beraberinde belirsizlik getirir. "Sorular zor olacak mı?", "Öğretmenim değil başkası mı hazırlayacak?", "Ya kötü not alırsam?" gibi sorular, özellikle zaten sınav kaygısı yaşayan çocuklarda kaygıyı artırabilir. Bu yazıda, yeni döneme uyum sürecinde çocuğunuza evde nasıl destek olabileceğinizi anlatıyoruz.</p>
+<h2>Değişim neden kaygı yaratır?</h2>
+<p>Çocuklar ve gençler, neyle karşılaşacaklarını bildiklerinde kendilerini daha güvende hisseder. Yeni bir sınav sistemi, bu öngörülebilirliği bir süreliğine azaltır. Ayrıca:</p>
+<ul>
+<li>Açık uçlu sorular, ezberden çok anlama ve ifade etme becerisi ister. Bu, bazı çocuklar için yeni bir alışkanlık demektir.</li>
+<li>Ortak sınav fikri, "herkesle karşılaştırılacağım" düşüncesini doğurabilir.</li>
+<li>Yetişkinlerin konuşmalarından duyulan kaygılı cümleler ("Bu sistem çok zor olacak") çocuğa da geçer.</li>
+</ul>
+<h2>Kaygının işaretleri</h2>
+<p>Sınav dönemlerinde biraz heyecan ve gerginlik olağandır, hatta odaklanmaya yardım eder. Ancak şu işaretler kaygının çocuğu zorlamaya başladığını gösterebilir:</p>
+<ul>
+<li>Sınavdan önceki günlerde uyku sorunları, kâbuslar,</li>
+<li>Karın ağrısı, baş ağrısı, bulantı gibi bedensel şikâyetler,</li>
+<li>Ders çalışmaya oturamamak ya da tam tersine saatlerce bırakamamak,</li>
+<li>"Ben zaten yapamam", "Kesin düşük alacağım" gibi cümleler,</li>
+<li>Sınav sabahı okula gitmek istememe,</li>
+<li>Sınavda bildiği soruları bile hatırlayamama.</li>
+</ul>
+<h2>Evde nasıl destek olabilirsiniz?</h2>
+<p><b>Bilgiyi sakin bir dille paylaşın.</b> Sistemin ne olduğunu çocuğunuzun yaşına uygun biçimde anlatın: "Bu yıl yazılılarda bazı sorular okul genelinde ortak olacak. Amaç ne öğrendiğini görmek ve hangi konularda desteğe ihtiyacın olduğunu bulmak." Belirsizlik azaldıkça kaygı da azalır. Merak ettiği soruları öğretmenine sormasını teşvik edin; okulun yapacağı bilgilendirmeleri birlikte takip edin.</p>
+<p><b>Kendi kaygınızı ona yüklemeyin.</b> Yeni sistem hakkındaki endişelerinizi çocuğunuzun yanında değil, diğer yetişkinlerle konuşun. Çocuklar, ebeveynlerinin ses tonundan çok şey okur.</p>
+<p><b>Notu değil, çabayı ve öğrenmeyi konuşun.</b> "Kaç aldın?" yerine "Hangi soruda zorlandın, birlikte bakalım mı?" diye sormak, sınavı bir yargı olmaktan çıkarıp öğrenme fırsatına dönüştürür.</p>
+<p><b>Açık uçlu sorulara alışmaya yardım edin.</b> Ders çalışırken çocuğunuzdan konuyu size kendi cümleleriyle anlatmasını isteyin. "Bunu küçük kardeşine nasıl anlatırdın?" sorusu, açık uçlu sorulara harika bir hazırlıktır.</p>
+<p><b>Düzenli ve dengeli bir program kurun.</b> Son geceye bırakılan yoğun çalışma yerine, kısa ve düzenli tekrarlar hem öğrenmeyi hem de güven duygusunu artırır. Uyku, beslenme ve hareketi ihmal etmeyin.</p>
+<p><b>Sınav sabahını sakin tutun.</b> Sınav sabahı son dakika tekrarı, sorular ve uyarılar yerine kısa ve güven veren bir cümle yeter: "Hazırlandın, elinden geleni yap. Sonuç ne olursa olsun seninleyiz."</p>
+<p><b>Sonuçlardan sonra da yanında olun.</b> Düşük bir not geldiğinde hemen ceza ya da kıyaslama yerine, birlikte neyin zor geldiğini konuşun. Yeni sistemde konu bazında geri bildirim verileceği için, bu bilgiyi destek planı için kullanabilirsiniz.</p>
+<h2>Kardeşler ve karşılaştırma</h2>
+<p>Ortak sınav sonuçları, sınıf ya da okul geneliyle karşılaştırma yapmayı kolaylaştırabilir. Ancak çocuğunuzu kardeşiyle, kuzenleriyle ya da sınıf arkadaşlarıyla kıyaslamak motivasyonu artırmaz; çoğu zaman utanç ve kaygı yaratır. Her çocuğun öğrenme hızı ve güçlü olduğu alanlar farklıdır. Çocuğunuzu ancak kendi önceki performansıyla karşılaştırın ve küçük ilerlemeleri de fark ettiğinizi gösterin.</p>
+<h2>Ergenlerde dikkat edilmesi gerekenler</h2>
+<p>Lise öğrencileri sınav sonuçlarını gelecek kaygılarıyla daha fazla ilişkilendirebilir. Ergen çocuğunuzla konuşurken onun bağımsızlığına saygı gösterin; çalışma planını onunla birlikte yapın, yerine siz yapmayın. Sosyal medyada dolaşan "sistem çok zor" türü içeriklerin kaygıyı artırabileceğini konuşun.</p>
+<h2>Ne zaman destek almalı?</h2>
+<p>Şu durumlarda çocuk ve ergenlerle çalışan bir psikologla görüşmek faydalı olabilir:</p>
+<ul>
+<li>Sınav kaygısı uyku, iştah ya da okula gitme isteğini belirgin biçimde etkiliyorsa,</li>
+<li>Bedensel şikâyetler sık tekrarlıyor ve tıbbi bir neden bulunmuyorsa,</li>
+<li>Çocuğunuz bildiği konularda sınavda donup kalıyorsa,</li>
+<li>Kaygı sınav dönemleri dışında da sürüyorsa,</li>
+<li>Siz bir ebeveyn olarak nasıl yaklaşacağınızı bilemiyorsanız.</li>
+</ul>
+<p>Çocuklarda kaygının genel işaretleri için <a href="/cocuklarda-kaygi-ebeveyn-rehberi/">çocuklarda kaygı ebeveyn rehberimize</a> göz atabilirsiniz. Çayyolu, Ümitköy, Yaşamkent ve çevresindeki aileler için çalışma biçimimizi <a href="/cocuk-ergen-danismanligi/">çocuk ve ergen danışmanlığı</a> sayfamızda bulabilirsiniz.</p>
+<p>Çocuğunuz kendine zarar vermekten ya da yaşamak istemediğinden söz ediyorsa bunu ciddiye alın, onu yalnız bırakmayın ve vakit kaybetmeden bir uzmana başvurun. Acil bir durumda hemen <b>112</b>'yi arayın.</p>
+<h2>Son söz</h2>
+<p>Yeni sistemler hem çocuklar hem de ebeveynler için bir uyum süreci gerektirir. Bu süreçte çocuğunuzun en çok ihtiyaç duyduğu şey, sonucu ne olursa olsun yanında olduğunuzu bilmektir. Çocuğunuzun sınav kaygısını birlikte konuşmak isterseniz, merkezimizde sizinle görüşmekten memnuniyet duyarız.</p>
+<p><em>Bu yazı bilgilendirme amaçlıdır; psikolojik değerlendirme ya da tedavinin yerini tutmaz.</em></p>
+''',
+},
+{
  'path': '/cocugum-arkadas-edinemiyor/',
  'date': '2026-10-19',
  # Psikolog Rojin Nazik merkez adına kontrol edip onayladı (metin olduğu gibi yayımlanır)
@@ -288,7 +345,7 @@ MAKALELER = [
 <p><b>Kendi kaygınızı fark edin:</b> Çocuklar ebeveynlerinin tepkilerini yakından izler. Sakin ve tutarlı kalmak, çocuğun da kendini düzenlemesine yardımcı olur.</p>
 <p><b>Güvence döngüsüne dikkat edin:</b> Aynı soruya defalarca güvence vermek kaygıyı besleyebilir. Bir kez sakin bir cevap verip ardından çocuğun kendi baş etme yollarını hatırlatmak daha işlevseldir.</p>
 <p>Sel, deprem gibi afet haberlerinin gündemde olduğu dönemlerde çocuğunuzla nasıl konuşabileceğinize dair öneriler için <a href="/cocuklarla-afet-haberleri-hakkinda-konusmak/">çocuklarla afet haberleri hakkında konuşmak</a> yazımıza göz atabilirsiniz.</p>
-<p>Kaygı bazen çocuğun arkadaş edinmesini de zorlaştırır. Bu konuyu <a href="/cocugum-arkadas-edinemiyor/">çocuğum arkadaş edinemiyor</a> yazımızda ayrıca ele aldık.</p>
+<p>Okullarda yeni başlayan ortak yazılı sınavlar döneminde çocuğunuza nasıl destek olabileceğinizi <a href="/ortak-yazili-sinav-kaygisi/">bu yazımızda</a> anlattık. Kaygı bazen çocuğun arkadaş edinmesini de zorlaştırır. Bu konuyu <a href="/cocugum-arkadas-edinemiyor/">çocuğum arkadaş edinemiyor</a> yazımızda ayrıca ele aldık.</p>
 <h2>Ne zaman çocuk psikoloğuna başvurmalı?</h2>
 <p>Kaygı birkaç haftadan uzun sürüyor, okula devamı ya da arkadaş ilişkilerini etkiliyor, bedensel yakınmalar sık tekrarlıyor ya da siz ebeveyn olarak nasıl yardım edeceğinizi bilemiyorsanız bir uzmanla görüşmek faydalı olur. Görüşmeler genellikle ebeveynle yapılan bir ön görüşmeyle başlar; küçük yaştaki çocuklarla <a href="/cayyolu-cocuk-psikologu/">oyun terapisi</a> yaklaşımıyla çalışılır.</p>
 <p>RN Psikoloji Çayyolu şubesinde çocuk ve ergen görüşmeleri yapılmaktadır. Yaşamkent'teki ofisimiz Çayyolu, Ümitköy, Konutkent ve İncek'e yakındır. Ayrıntılar için <a href="/cayyolu-cocuk-psikologu/">Çayyolu çocuk ve ergen psikoloğu</a> sayfamıza göz atabilirsiniz.</p>
