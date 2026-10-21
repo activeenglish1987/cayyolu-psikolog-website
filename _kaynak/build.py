@@ -870,6 +870,63 @@ RETITLE = {
    'title': "Çayyolu'da Psikolog Seçme Rehberi",
    'seo_title': "Çayyolu'da Psikolog Seçme Rehberi | RN Psikoloji"},
 }
+
+# Başlıklar 70 karakteri aşıyordu (Google kesiyor); EMDR geçen başlıklar düzeltildi: ekipte EMDR yok (2026-10-21)
+RETITLE['/ankara-psikolog-cayyolu-kizilay-umitkoy-yasamkent-incek-ve-cevresinde-guvenilir-psikolojik-destek/']['seo_title'] = "Batı Ankara'da Psikolojik Destek | Çayyolu ve Çevresi"
+for _yol, _bas in {
+    '/ankara-bati-yakasi-psikolog-hizmeti-yasamkent-umitkoy-alacaatli-konutkent-incek-ve-bilkent/': {'seo_title': "Ankara Batı Yakası Psikolog | Yaşamkent ve Ümitköy | RN Psikoloji"},
+    '/ankarada-psikologa-nasil-karar-verilir-emdrdan-oyun-terapisine-en-dogru-tercihi-yapin/': {
+        'title': "Ankara'da Psikoloğa Nasıl Karar Verilir? Terapi Türleri Rehberi",
+        'seo_title': "Ankara'da Psikoloğa Nasıl Karar Verilir? | RN Psikoloji",
+        'seo_desc': "Terapiye başlamak istiyor ama nereden başlayacağınızı bilmiyor musunuz? İhtiyacınızı netleştirmek, terapi türlerini tanımak ve uzman seçerken bakılacaklar.",
+        'excerpt': "Terapiye başlamak istiyor ama nereden başlayacağınızı bilmiyor musunuz? İhtiyacınızı netleştirmek ve uzman seçerken bakılacaklar."},
+    '/ankarada-size-uygun-psikologu-secin-guvenilir-kadin-terapist-genc-ve-deneyimli-uzmanlar/': {'seo_title': "Size Uygun Psikolog: Kadın Terapist Seçeneği | RN Psikoloji"},
+    '/cayyolu-bireysel-terapi-hizmetleri-ozguven-ofke-travma-bosanma-ve-yas-sureclerinde-uzman-destegi/': {'seo_title': "Çayyolu Bireysel Terapi: Öfke, Travma, Boşanma, Yas | RN Psikoloji"},
+    '/cayyolu-ozel-terapi-alanlari-iliski-stres-dikkat-eksikligi-tik-uyku-ve-annelik-kaygisi-uzerine-psikolojik-destek/': {'seo_title': "Çayyolu Özel Terapi Alanları: Stres, Uyku, Annelik Kaygısı"},
+    '/cayyolu-psikolojik-danismanlik-umitkoy-yasamkent-konutkent-ve-incekte-terapi-arayanlara-rehber/': {'seo_title': "Çayyolu Psikolojik Danışmanlık Rehberi | RN Psikoloji"},
+    '/cayyolu-terapi-hizmetleri-emdr-bdt-sema-terapi-mindfulness-ve-daha-fazlasi/': {
+        'title': "Çayyolu Terapi Hizmetleri: BDT, Şema Terapi ve Daha Fazlası",
+        'seo_title': "Çayyolu Terapi Hizmetleri ve Yaklaşımlar | RN Psikoloji",
+        'seo_desc': "RN Psikoloji Çayyolu'da bireysel, çift, çocuk ve ergen terapisinde kullanılan yaklaşımlar: bilişsel davranışçı terapi, şema terapi, oyun terapisi ve daha fazlası."},
+    '/cayyolu-ve-cevresinde-uzman-terapi-hizmetleri-cocuk-terapisi-cift-terapisi-oyun-terapisi-ve-daha-fazlasi/': {'seo_title': "Çayyolu Uzman Terapi: Çocuk, Çift ve Oyun Terapisi | RN Psikoloji"},
+}.items():
+    RETITLE.setdefault(_yol, {}).update({**_bas, 'modified': '2026-10-21'})
+
+# Ekipte EMDR eğitimi/uygulaması yok: eski WordPress içeriğindeki "EMDR uygulanır/uzmanı" ifadeleri yayından çıkarılır (2026-10-21)
+def emdr_temizle(h, duz=False):
+    if not h or not re.search(r'(?i)emdr', h): return h
+    if not duz:
+        # EMDR başlıklı bölüm: başlıktan bir sonraki başlığa kadar
+        h = re.sub(r'(?is)<h([1-6])[^>]*>(?:(?!</h\1>).)*?emdr.*?</h\1>.*?(?=<h[1-6][\s>]|\Z)', '', h)
+    for kalip, yeni in [(r'EMDR\s+uzmanı,\s*', ''), (r'\s*ya da EMDR uzmanı', ''), (r'EMDR,\s*', ''), (r',\s*EMDR(?=\s*(?:,|ve\b|gibi|<|\n|$))', ''),
+                        (r'\s+ve\s+EMDR(?=\s*(?:gibi|<|\.|,|\n|$))', ''), (r'EMDR\s+ve\s+', '')]:
+        h = re.sub('(?i)' + kalip, yeni, h)
+    if duz:
+        return ' '.join(c for c in re.split(r'(?<=[.?!…])\s+', h) if not re.search(r'(?i)emdr', c))
+    # WordPress içeriği başlıkları emojili paragraf olarak yazmış ("💥 EMDR Terapisi Kimlere Uygulanır?"): böyle bir
+    # paragraf EMDR içeriyorsa, ardından gelen paragraflar bir sonraki emojili paragrafa kadar o bölümdür ve birlikte çıkar
+    parcalar = re.split(r'(?is)(<p[^>]*>.*?</p>)', h)
+    out, sil = [], False
+    for parca in parcalar:
+        m = re.match(r'(?is)<p[^>]*>(.*?)</p>$', parca)
+        if m:
+            ilk = re.sub(r'<[^>]+>', '', re.split(r'(?i)<br\s*/?>', m.group(1))[0]).strip()
+            if ilk and not re.match(r'[\w"“‘(]', ilk[0]):
+                sil = bool(re.search(r'(?i)emdr', ilk))
+            elif re.search(r'(?i)emdr', ilk) and ilk.endswith('?'):
+                sil = True
+            if sil: continue
+        out.append(parca)
+    h = ''.join(out)
+    # kalan: EMDR geçen madde ve paragraf cümleleri
+    h = re.sub(r'(?is)<li[^>]*>(?:(?!</li>).)*?emdr(?:(?!</li>).)*?</li>', '', h)
+    def _p(m):
+        ic = m.group(2)
+        cum = [c for c in re.split(r'(?<=[.?!])\s+', ic) if not re.search(r'(?i)emdr', re.sub(r'<[^>]+>', '', c))]
+        return (m.group(1) + ' '.join(cum) + '</p>') if cum else ''
+    h = re.sub(r'(?is)(<p[^>]*>)((?:(?!</p>).)*?emdr(?:(?!</p>).)*?)</p>', _p, h)
+    return h
+
 def sister_html(path):
     items = SISTER.get(path)
     if not items: return ''
@@ -1046,9 +1103,11 @@ def main():
         h = r.get('html') or ''
         for a, b in moved.items():
             h = h.replace('href="%s"' % a, 'href="%s"' % b).replace('href="%s%s"' % (SITE, a), 'href="%s"' % b)
-        r['html'] = h
+        r['html'] = emdr_temizle(h)
+        for _k in ('excerpt', 'seo_desc'):
+            if r.get(_k): r[_k] = emdr_temizle(r[_k], duz=True)
         if r['path'] in RETITLE:
-            r.update(RETITLE[r['path']]); r['modified'] = MERKEZ_NOT_TARIHI if r['path'] in MERKEZ_NOTLARI else '2026-10-01'
+            r.update(RETITLE[r['path']]); r['modified'] = RETITLE[r['path']].get('modified') or (MERKEZ_NOT_TARIHI if r['path'] in MERKEZ_NOTLARI else '2026-10-01')
     posts = sorted([r for r in recs if r['type'] == 'post'], key=lambda r: r['date'], reverse=True)
     rojin = next(r for r in recs if r['path'] == '/psikolog-rojin-nazik/')
     special = {'/': None, '/uzmanlarimiz/': experts_page, '/iletisim/': contact_page, '/basinda-biz/': press_page,

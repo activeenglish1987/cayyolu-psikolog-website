@@ -254,7 +254,7 @@ MAKALELER = [
  'path': '/yurt-disi-online-ebeveyn-danismanligi/',
  'date': '2026-10-01',
  'title': 'Yurt Dışında Yaşayan Türk Aileler İçin Online Ebeveyn Danışmanlığı',
- 'seo_title': 'Yurt Dışındaki Türk Ailelere Online Çocuk ve Ebeveyn Danışmanlığı | RN Psikoloji',
+ 'seo_title': 'Yurt Dışındaki Türk Ailelere Online Ebeveyn Danışmanlığı',
  'desc': "Almanya, Hollanda, İngiltere ve diğer ülkelerde çocuk büyüten Türk ailelere Türkçe online ebeveyn danışmanlığı: iki dil, iki kültür, okul uyumu ve ergenlik. RN Psikoloji Çayyolu.",
  'thumb': 'assets/img/ofis-salon.webp',
  'html': '''
