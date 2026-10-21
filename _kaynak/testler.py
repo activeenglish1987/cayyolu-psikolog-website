@@ -26,7 +26,7 @@ SECENEK = ['Hiç', 'Birkaç gün', 'Günlerin yarısından fazlası', 'Neredeyse
 TESTLER = [
     {
         'yol': '/kaygi-testi/', 'ad': 'Kaygı Testi', 'olcek': 'GAD-7',
-        'title': 'Kaygı Testi (GAD-7): 2 Dakikada Kaygı Düzeyinizi Görün | Psikolog Rojin Nazik',
+        'title': 'Kaygı Testi (GAD-7): 2 Dakikada Kaygı Düzeyiniz | Rojin Nazik',
         'desc': 'Uluslararası kullanılan GAD-7 ölçeğine dayanan 7 soruluk kısa kaygı testi. Cevaplarınız kaydedilmez; sonuç tanı değildir. Ankara’da psikolojik destek için Psikolog Rojin Nazik.',
         'h1': 'Kaygı Testi (GAD-7)',
         'lead': 'Son iki haftada kaygıyla ilgili belirtileri ne sıklıkta yaşadığınızı 7 kısa soruyla görün. Cevaplarınız hiçbir yere gönderilmez ve kaydedilmez; sonuç bir tanı değildir.',
@@ -56,7 +56,7 @@ TESTLER = [
     },
     {
         'yol': '/depresyon-testi/', 'ad': 'Depresyon Testi', 'olcek': 'PHQ-9',
-        'title': 'Depresyon Testi (PHQ-9): 9 Soruda Ruh Halinizi Değerlendirin | Psikolog Rojin Nazik',
+        'title': 'Depresyon Testi (PHQ-9): 9 Soruda Değerlendirme | Rojin Nazik',
         'desc': 'Uluslararası kullanılan PHQ-9 ölçeğine dayanan 9 soruluk kısa depresyon testi. Cevaplarınız kaydedilmez; sonuç tanı değildir. Ankara’da psikolojik destek için Psikolog Rojin Nazik.',
         'h1': 'Depresyon Testi (PHQ-9)',
         'lead': 'Son iki haftada ruh halinizle ilgili belirtileri ne sıklıkta yaşadığınızı 9 kısa soruyla görün. Cevaplarınız hiçbir yere gönderilmez ve kaydedilmez; sonuç bir tanı değildir.',
@@ -234,7 +234,7 @@ h1{font-size:clamp(28px,6vw,40px);line-height:1.15;margin:22px 0 10px;color:%(a2
 <p class="ts-not" style="margin-top:20px">Diğer test: %(diger)s</p>
 <p class="ts-not">Kaynak: %(kaynak)s Ölçek serbestçe kullanılabilir; buradaki Türkçe ifadeler bilgilendirme amaçlıdır. Bu test tanı koymaz. Acil bir durumda 112'yi arayın.</p></main>
 <footer class="w dip"><a href="%(ana)s">%(marka)s</a> · Telefonu Selda Hanım açar · hafta içi 10:00–19:00, Cumartesi 10:00–18:00</footer>%(betik)s</body></html>
-""") % {'gtm': GTM_HEAD, 'title': esc(T['title'].replace('Psikolog Rojin Nazik', M['marka'])), 'desc': esc(T['desc']), 'canon': SITE + T['yol'], 'ikon': M['ikon'],
+""") % {'gtm': GTM_HEAD, 'title': esc(T['title'].replace('| Rojin Nazik', '| ' + ('Rojin Nazik' if M['marka'] == 'Psikolog Rojin Nazik' else M['marka']))), 'desc': esc(T['desc']), 'canon': SITE + T['yol'], 'ikon': M['ikon'],
          'cizgi': M['cizgi'], 'a': M['a'], 'a2': M['a2'], 'mut': M['mut'], 'css': css, 'betikler': M['betikler'], 'ana': M['ana'], 'logo': M['logo'],
          'h1': esc(T['h1']), 'lead': esc(T['lead']), 'form': form_html(T), 'notu': notu, 'bilgi': bilgi, 'diger': diger, 'kaynak': esc(T['kaynak']),
          'marka': esc(M['marka']), 'betik': betik(T)}
