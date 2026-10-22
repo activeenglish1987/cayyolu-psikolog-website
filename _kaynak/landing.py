@@ -323,7 +323,7 @@ LANDINGS = [
  'path': '/cayyolu-cocuk-psikologu/',
  'kw': 'Çayyolu çocuk psikoloğu',
  'h1': 'Çayyolu Çocuk ve Ergen Psikoloğu',
- 'title': 'Çayyolu Çocuk Psikoloğu | Ergen Psikoloğu, Oyun Terapisi – RN Psikoloji',
+ 'title': 'Çayyolu Çocuk Psikoloğu | Ergen ve Oyun Terapisi – RN Psikoloji',
  'desc': "Çayyolu'nda çocuk ve ergen psikoloğu: oyun terapisi, okul uyumu, sınav kaygısı, öfke ve ebeveyn danışmanlığı. Yaşamkent ofisi. Randevu: 0552 418 79 73.",
  'lead': "Çocuğunuzun ya da ergen yaştaki gencinizin duygusal ve davranışsal zorlanmalarında, yaşına uygun yöntemlerle çalışan psikologlarımızla yanınızdayız. Oyun terapisi, ergen görüşmeleri ve ebeveyn danışmanlığı.",
  'body': '''

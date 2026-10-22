@@ -286,7 +286,7 @@ MAKALELER = [
  'path': '/cocuklarda-uyku-sorunlari/',
  'date': '2026-10-01',
  'title': 'Çocuklarda Uyku Sorunları: Ebeveynler İçin Pratik Rehber',
- 'seo_title': 'Çocuklarda Uyku Sorunları ve Uyku Düzeni Rehberi | RN Psikoloji Çayyolu',
+ 'seo_title': 'Çocuklarda Uyku Sorunları ve Uyku Düzeni | RN Psikoloji',
  'desc': "Çocuk yalnız uyuyamıyor, gece sık uyanıyor ya da kâbus görüyorsa ne yapmalı? Okul döneminde uyku düzeni, ekran ve kaygıyla ilişkisi; Çayyolu ve Yaşamkent'teki aileler için rehber.",
  'thumb': 'assets/img/ofis-koltuk.webp',
  'html': '''
@@ -360,7 +360,7 @@ MAKALELER = [
  'path': '/cocuklarda-yas-ve-kayip/',
  'eski': '/cocuklar-kayiplar-sonucu-buyuyebilir-mi/',
  'title': 'Çocuklarda Yas: Kayıp Sonrası Çocuğa Nasıl Destek Olunur?',
- 'seo_title': 'Çocuklarda Yas ve Kayıp: Ebeveynler Nasıl Destek Olmalı? | RN Psikoloji',
+ 'seo_title': 'Çocuklarda Yas ve Kayıp: Ebeveyn Rehberi | RN Psikoloji',
  'desc': "Bir yakının kaybından sonra çocuklar yası nasıl yaşar, ölüm çocuğa nasıl anlatılır, hangi durumlarda uzman desteği gerekir? Ebeveynler için sade bir rehber.",
  'thumb': 'assets/img/ofis-salon.webp',
  'html': '''
