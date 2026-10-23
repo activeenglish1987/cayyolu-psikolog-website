@@ -4,6 +4,66 @@ Her makale: path, eski (yönlendirilecek eski WordPress adresi), title, seo_titl
 
 MAKALELER = [
 {
+ 'path': '/7-yasinda-cocukta-kaygi/',
+ 'date': '2026-10-23',
+ # Psikolog Rojin Nazik merkez adına kontrol edip onayladı (metin olduğu gibi yayımlanır)
+ 'uzman_kontrolu': '2026-10-23',
+ 'title': '7 Yaşındaki Çocuğum Çok Kaygılı: İlkokul Çağında Kaygı ve Ne Zaman Destek Almalı?',
+ 'seo_title': '7 Yaşında Çocukta Kaygı: Ne Zaman Destek Almalı? | RN Psikoloji',
+ 'desc': 'Çocuğunuz okul sabahları karın ağrısından yakınıyor, sizden ayrılmak istemiyor mu? İlkokul çağında kaygının işaretleri ve evde yapılabilecekler.',
+ 'thumb': 'assets/img/ofis-koltuk.webp',
+ 'html': '''
+<p>Sabahları okula hazırlanırken başlayan karın ağrısı. Okul kapısında annesine sarılıp bırakmak istemeyen bir çocuk. Akşamları "Yarın sınav var mı?", "Ya servis gelmezse?", "Sen beni almaya gelecek misin?" soruları. İlkokulun ilk yıllarında pek çok çocuk benzer kaygılar yaşar ve pek çok ebeveyn aynı soruyu sorar: "Bu normal mi, yoksa çocuğum fazla mı kaygılı?"</p>
+<p>Bu yazıda 6-8 yaş arasındaki çocuklarda kaygının nasıl göründüğünü, evde neler yapabileceğinizi ve hangi durumlarda bir çocuk psikoloğuyla görüşmenin faydalı olacağını anlatıyoruz.</p>
+<h2>Bu yaşta kaygı neden artar?</h2>
+<p>Yedi yaş civarı, çocuğun dünyasının hızla genişlediği bir dönemdir. Okul düzeni, kurallar, öğretmen beklentileri, arkadaş ilişkileri ve ilk sınavlar aynı anda hayatına girer. Bu yaşta çocuklar:</p>
+<ul>
+<li>Tehlikeleri ve olasılıkları daha iyi anlamaya başlar, ama bunları değerlendirecek deneyime henüz sahip değildir,</li>
+<li>"Başarılı olmak" ve "hata yapmak" kavramlarını önemsemeye başlar,</li>
+<li>Ebeveynden ayrı geçen sürenin uzamasıyla ayrılık endişesi yaşayabilir,</li>
+<li>Yetişkinlerin konuşmalarından ve haberlerden duyduklarını kendi dünyalarına taşır.</li>
+</ul>
+<p>Biraz kaygı, bu değişime verilen olağan bir tepkidir ve çoğu çocukta zamanla azalır.</p>
+<h2>Kaygı bu yaşta nasıl görünür?</h2>
+<p>Küçük çocuklar kaygıyı çoğu zaman sözle değil, bedenle ve davranışla gösterir:</p>
+<ul>
+<li><b>Bedensel şikâyetler:</b> Özellikle okul sabahları karın ağrısı, baş ağrısı, bulantı.</li>
+<li><b>Ayrılmakta zorlanma:</b> Okulda, servis kapısında ya da arkadaş evinde ebeveynden ayrılamama.</li>
+<li><b>Sürekli güvence isteme:</b> Aynı soruları tekrar tekrar sorma, "Emin misin?" diye üsteleme.</li>
+<li><b>Uyku sorunları:</b> Yalnız uyuyamama, gece uyanmaları, kâbuslar.</li>
+<li><b>Mükemmeliyetçilik:</b> Hata yapınca yoğun ağlama, ödevi defalarca silip yeniden yazma.</li>
+<li><b>Kaçınma:</b> Yeni ortamlardan, doğum günlerinden ya da derste söz almaktan kaçınma.</li>
+<li><b>Huzursuzluk ve öfke:</b> Kaygı bazen sinirlilik ve öfke nöbetleri şeklinde de görülebilir.</li>
+</ul>
+<p>Bedensel şikâyetler sık tekrarlıyorsa önce çocuk doktoruna danışmak, tıbbi bir nedenin olmadığından emin olmak önemlidir.</p>
+<h2>Evde nasıl destek olabilirsiniz?</h2>
+<p><b>Duygusunu adlandırmasına yardım edin.</b> "Okula giderken içinde kelebekler uçuşuyor gibi mi oluyor? Buna endişe deniyor ve herkes zaman zaman hisseder" demek, çocuğun yaşadığını anlamasını kolaylaştırır.</p>
+<p><b>Hemen rahatlatmak yerine dinleyin.</b> "Korkacak bir şey yok" demek iyi niyetli olsa da duyguyu kapatabilir. Önce "Seni ne endişelendiriyor?" diye sorun, sonra birlikte çözüm düşünün.</p>
+<p><b>Kaçınmayı değil, küçük adımları destekleyin.</b> Kaygı duyulan durumdan tamamen kaçmak, kaygıyı kalıcı hâle getirir. Örneğin okul kapısında ayrılmak zorsa, önce birlikte sınıfa kadar yürüyüp sonraki günlerde mesafeyi kısaltabilirsiniz.</p>
+<p><b>Öngörülebilir bir düzen kurun.</b> Sabah ve akşam rutinleri, kim tarafından ne zaman alınacağını bilmek, çocuğun güven duygusunu artırır.</p>
+<p><b>Endişe zamanı belirleyin.</b> Gün boyu tekrar tekrar sorulan endişeli soruları her seferinde uzun uzun yanıtlamak yerine, akşamları 10 dakikalık bir "endişe sohbeti" zamanı ayırabilirsiniz. Çocuğunuz gün içinde aklına geleni bu zamana saklamayı öğrenir; kaygı da günün tamamına yayılmaz.</p>
+<p><b>Vedalaşmayı kısa ve net tutun.</b> Uzun vedalar kaygıyı artırır. "Okul bitince kapıda olacağım" gibi kısa, sıcak ve tutarlı bir veda yeterlidir; sözünüzü tutmanız ise güvenin temelidir.</p>
+<p><b>Kendi kaygınızı gözden geçirin.</b> Çocuklar ebeveynlerinin endişesini çok kolay fark eder. Sakin bir tutum, çocuğa "bu durumla baş edilebilir" mesajını verir.</p>
+<p><b>Basit sakinleşme oyunları öğretin.</b> "Balon nefesi" (burnundan derin nefes alıp balon şişirir gibi yavaşça vermek) ya da sevdiği bir oyuncağı cebinde taşımak, zor anlarda kullanabileceği araçlardır.</p>
+<p><b>Okulla iş birliği yapın.</b> Sınıf öğretmeni ve okulun rehber öğretmeni, çocuğunuzun gün içinde nasıl olduğunu sizden daha yakından görür. Sabah ayrılıkları için bir karşılama rutini oluşturmak (örneğin sınıfa girerken öğretmenine küçük bir görev vermesi) ya da derste söz almakta zorlanıyorsa önce küçük grup içinde konuşmasına fırsat tanınması, okulda atılabilecek basit ama etkili adımlardır. Öğretmenle aynı dili konuşmanız, çocuğun kendini hem evde hem okulda güvende hissetmesini sağlar.</p>
+<p>Kaygının farklı yaşlardaki görünümleri ve ebeveynler için ayrıntılı öneriler için <a href="/cocuklarda-kaygi-ebeveyn-rehberi/">çocuklarda kaygı ebeveyn rehberimize</a> göz atabilirsiniz.</p>
+<h2>Ne zaman destek almalı?</h2>
+<p>Şu durumlarda çocuk ve ergenlerle çalışan bir psikologla görüşmek faydalı olabilir:</p>
+<ul>
+<li>Kaygı birkaç haftadır sürüyor ve giderek artıyorsa,</li>
+<li>Çocuğunuz okula gitmeyi sık sık reddediyorsa,</li>
+<li>Bedensel şikâyetler tekrarlıyor ve tıbbi bir neden bulunamadıysa,</li>
+<li>Kaygı arkadaş ilişkilerini, uykuyu ya da aile hayatını belirgin biçimde etkiliyorsa,</li>
+<li>Siz bir ebeveyn olarak nasıl destek olacağınızı bilemiyorsanız.</li>
+</ul>
+<p>Küçük çocuklarla görüşmeler genellikle oyun temelli yürütülür; anne babalar da sürece dahil edilerek evde uygulanabilecek yöntemler birlikte belirlenir. Çayyolu, Ümitköy, Yaşamkent ve çevresindeki aileler için çalışma biçimimizi <a href="/cayyolu-cocuk-psikologu/">Çayyolu çocuk psikoloğu</a> sayfamızda bulabilirsiniz.</p>
+<p>Çocuğunuz kendine zarar vermekten söz ediyorsa ya da acil bir tehlike varsa hemen <b>112</b>'yi arayın.</p>
+<h2>Son söz</h2>
+<p>İlkokulun ilk yılları, çocuk için heyecan kadar endişe de getirir. Sabırlı, tutarlı ve güven veren bir ebeveyn tutumu, çoğu çocuğun bu dönemi rahatlıkla atlatmasına yardım eder. Kaygının çocuğunuzun hayatını zorlaştırdığını düşünüyorsanız, birlikte konuşmak için merkezimizde sizinle görüşmekten memnuniyet duyarız.</p>
+<p><em>Bu yazı bilgilendirme amaçlıdır; psikolojik değerlendirme ya da tedavinin yerini tutmaz.</em></p>
+''',
+},
+{
  'path': '/ortak-yazili-sinav-kaygisi/',
  'date': '2026-10-21',
  # Psikolog Rojin Nazik merkez adına kontrol edip onayladı (metin olduğu gibi yayımlanır)
@@ -345,7 +405,7 @@ MAKALELER = [
 <p><b>Kendi kaygınızı fark edin:</b> Çocuklar ebeveynlerinin tepkilerini yakından izler. Sakin ve tutarlı kalmak, çocuğun da kendini düzenlemesine yardımcı olur.</p>
 <p><b>Güvence döngüsüne dikkat edin:</b> Aynı soruya defalarca güvence vermek kaygıyı besleyebilir. Bir kez sakin bir cevap verip ardından çocuğun kendi baş etme yollarını hatırlatmak daha işlevseldir.</p>
 <p>Sel, deprem gibi afet haberlerinin gündemde olduğu dönemlerde çocuğunuzla nasıl konuşabileceğinize dair öneriler için <a href="/cocuklarla-afet-haberleri-hakkinda-konusmak/">çocuklarla afet haberleri hakkında konuşmak</a> yazımıza göz atabilirsiniz.</p>
-<p>Okullarda yeni başlayan ortak yazılı sınavlar döneminde çocuğunuza nasıl destek olabileceğinizi <a href="/ortak-yazili-sinav-kaygisi/">bu yazımızda</a> anlattık. Kaygı bazen çocuğun arkadaş edinmesini de zorlaştırır. Bu konuyu <a href="/cocugum-arkadas-edinemiyor/">çocuğum arkadaş edinemiyor</a> yazımızda ayrıca ele aldık.</p>
+<p>Okullarda yeni başlayan ortak yazılı sınavlar döneminde çocuğunuza nasıl destek olabileceğinizi <a href="/ortak-yazili-sinav-kaygisi/">bu yazımızda</a> anlattık. İlkokulun ilk yıllarındaki kaygıyı ayrıca <a href="/7-yasinda-cocukta-kaygi/">7 yaşında çocukta kaygı</a> yazımızda ele aldık. Kaygı bazen çocuğun arkadaş edinmesini de zorlaştırır. Bu konuyu <a href="/cocugum-arkadas-edinemiyor/">çocuğum arkadaş edinemiyor</a> yazımızda ayrıca ele aldık.</p>
 <h2>Ne zaman çocuk psikoloğuna başvurmalı?</h2>
 <p>Kaygı birkaç haftadan uzun sürüyor, okula devamı ya da arkadaş ilişkilerini etkiliyor, bedensel yakınmalar sık tekrarlıyor ya da siz ebeveyn olarak nasıl yardım edeceğinizi bilemiyorsanız bir uzmanla görüşmek faydalı olur. Görüşmeler genellikle ebeveynle yapılan bir ön görüşmeyle başlar; küçük yaştaki çocuklarla <a href="/cayyolu-cocuk-psikologu/">oyun terapisi</a> yaklaşımıyla çalışılır.</p>
 <p>RN Psikoloji Çayyolu şubesinde çocuk ve ergen görüşmeleri yapılmaktadır. Yaşamkent'teki ofisimiz Çayyolu, Ümitköy, Konutkent ve İncek'e yakındır. Ayrıntılar için <a href="/cayyolu-cocuk-psikologu/">Çayyolu çocuk ve ergen psikoloğu</a> sayfamıza göz atabilirsiniz.</p>
