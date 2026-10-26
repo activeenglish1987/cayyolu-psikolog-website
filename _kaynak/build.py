@@ -1161,7 +1161,16 @@ def main():
              # İki aile terapisi sayfası birbirini zayıflatıyordu; yerel ve güncel olan kalır (2026-10-12)
              '/aile-terapisi/': '/cayyolu-aile-terapisi/',
              # Ali Bahadır ekipte değil (2026-10-13)
-             '/hipnoterapist-ali-bahadir/': '/uzmanlarimiz/'}
+             '/hipnoterapist-ali-bahadir/': '/uzmanlarimiz/',
+             # Eski WordPress'ten kalan, 3 ayda neredeyse hiç gösterim almayan ve hizmet sayfalarını tekrarlayan sayfalar
+             # konusu aynı sayfaya birleştirildi (2026-10-26)
+             '/cayyolu-psikolog-tavsiyesi-2025-en-iyi-ozel-ve-kadin-terapist-arayanlara-rehber/': '/',
+             '/cayyolu-kadin-psikolog-ve-guvenilir-psikolojik-danismanlik-hizmeti-tavsiye-edilen-psikoterapi-merkezi/': '/uzmanlarimiz/',
+             '/cayyolu-ozel-terapi-alanlari-iliski-stres-dikkat-eksikligi-tik-uyku-ve-annelik-kaygisi-uzerine-psikolojik-destek/': '/bireysel-danismanlik/',
+             '/cayyolu-psikolog-depresyon-panik-atak-sosyal-fobi-sinav-kaygisi-ve-travma-terapisi/': '/kaygi-sorunlari/',
+             '/cayyolu-bireysel-terapi-hizmetleri-ozguven-ofke-travma-bosanma-ve-yas-sureclerinde-uzman-destegi/': '/bireysel-danismanlik/',
+             '/ankarada-psikologa-nasil-karar-verilir-emdrdan-oyun-terapisine-en-dogru-tercihi-yapin/': '/ilk-terapi-seansi-rehberi/',
+             '/cayyolu-terapi-hizmetleri-emdr-bdt-sema-terapi-mindfulness-ve-daha-fazlasi/': '/bireysel-danismanlik/'}
     recs = [r for r in recs if r['path'] not in moved]
     for r in recs:
         h = r.get('html') or ''
