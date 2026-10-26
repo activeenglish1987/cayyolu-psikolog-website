@@ -604,6 +604,36 @@ def fmt_date(d):
 def related_block(title, cards_html):
     return '<section class="section section-alt"><div class="wrap"><div class="section-head"><h2>%s</h2></div>%s</div></section>' % (esc(title), cards_html)
 
+KISILIK = ['/kisilik-kavrami/', '/kisilik-oruntuleri-ve-dinamik-yaklasim/', '/kisilik-orgutlenmesi-duzeyi-bozuklugun-siddeti/', '/kaygili-kacingan-ve-fobik-kisilikler/']
+DURAK = set('ve ile bir bu için da de mi mı mu mü ne nasıl nedir neden ki çok daha en gibi olan olarak veya ya her kadar sonra önce sizin size siz çocuğunuz çocuk çocuğun psikolog destek zaman almalı'.split())
+
+def benzer_yazilar(posts, n=3):
+    """Her yazı için konuca en yakın n yazı (başlık + özet + metin kelimeleri). Az bağlantı alan
+    yazılar hafifçe öne alınır; böylece eski yazılar da "Diğer yazılar" kutularında yer bulur."""
+    import math, collections
+    def kel(r):
+        t = (r['title'] + ' ') * 4 + plain(r['html'], 4000)
+        t = html.unescape(t).lower().replace('ı', 'i')
+        return collections.Counter(k[:6] for k in re.findall(r'[a-zçğıöşü]{3,}', t) if k not in DURAK)
+    K = {r['path']: kel(r) for r in posts}
+    df = collections.Counter(k for c in K.values() for k in c)
+    N = len(posts)
+    def vek(c):
+        v = {k: x * math.log(N / df[k]) for k, x in c.items() if df[k] < N * 0.5}
+        u = math.sqrt(sum(x * x for x in v.values())) or 1
+        return {k: x / u for k, x in v.items()}
+    V = {p: vek(c) for p, c in K.items()}
+    gelen = collections.Counter()
+    sonuc = {}
+    for r in posts:
+        p = r['path']
+        puan = sorted(((sum(x * V[q['path']].get(k, 0) for k, x in V[p].items()) * (1.3 if gelen[q['path']] < 2 else 1.0), q['date'], q)
+                       for q in posts if q['path'] != p), key=lambda x: (x[0], x[1]), reverse=True)
+        sonuc[p] = [q for _, _, q in puan[:n]]
+        for q in sonuc[p]:
+            gelen[q['path']] += 1
+    return sonuc
+
 def blog_card(rec):
     th = rec.get('thumb') or ''
     if th and os.path.exists(os.path.join(ROOT, th.lstrip('/'))):
@@ -1109,6 +1139,7 @@ def main():
         if r['path'] in RETITLE:
             r.update(RETITLE[r['path']]); r['modified'] = RETITLE[r['path']].get('modified') or (MERKEZ_NOT_TARIHI if r['path'] in MERKEZ_NOTLARI else '2026-10-01')
     posts = sorted([r for r in recs if r['type'] == 'post'], key=lambda r: r['date'], reverse=True)
+    benzer = benzer_yazilar(posts)
     rojin = next(r for r in recs if r['path'] == '/psikolog-rojin-nazik/')
     special = {'/': None, '/uzmanlarimiz/': experts_page, '/iletisim/': contact_page, '/basinda-biz/': press_page,
                '/kitaplarimiz/': books_page, '/galeri/': gallery_page}
@@ -1148,10 +1179,14 @@ def main():
         if expert:
             after = related_block('Diğer uzmanlarımız', expert_cards(exclude=p))
         elif r['type'] == 'post':
-            others = [x for x in posts if x['path'] != p][:3]
+            others = benzer[p]
             after = related_block('Diğer yazılar', '<div class="blog-grid">%s</div>' % ''.join(blog_card(x) for x in others))
         else:
             after = related_block('Hizmetlerimiz', service_cards())
+        if p in KISILIK:
+            # Kişilik sayfaları birbirine bağlanır (önceden hiçbir sayfadan bağlantı almıyorlardı)
+            after = related_block('Kişilik üzerine diğer sayfalar', '<ul class="ilgili-liste">%s</ul>' % ''.join(
+                '<li><a href="%s">%s</a></li>' % (q, esc(next(x['title'] for x in recs if x['path'] == q))) for q in KISILIK if q != p)) + after
         kicker = expert['role'] if expert else ('Blog' if r['type'] == 'post' else '')
         extra_ld = None
         body += sister_html(p)
