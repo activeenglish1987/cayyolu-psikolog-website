@@ -20,6 +20,10 @@ for _c in LANDINGS:
     if _c['path'] in SEMT_NOTLARI: _c['mod'] = SEMT_NOT_TARIHI
     if _c['path'] in MERKEZ_NOTLARI: _c['mod'] = MERKEZ_NOT_TARIHI
 from makaleler import MAKALELER
+from ekler import EKLER
+for _c in LANDINGS:
+    if _c['path'] in EKLER:
+        _c['body'] += EKLER[_c['path']]['html']; _c['mod'] = EKLER[_c['path']]['tarih']
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, '_kaynak')
@@ -1181,6 +1185,8 @@ def main():
             if r.get(_k): r[_k] = emdr_temizle(r[_k], duz=True)
         if r['path'] in RETITLE:
             r.update(RETITLE[r['path']]); r['modified'] = RETITLE[r['path']].get('modified') or (MERKEZ_NOT_TARIHI if r['path'] in MERKEZ_NOTLARI else '2026-10-01')
+        if r['path'] in EKLER:
+            r['html'] += EKLER[r['path']]['html']; r['modified'] = EKLER[r['path']]['tarih']
     posts = sorted([r for r in recs if r['type'] == 'post'], key=lambda r: r['date'], reverse=True)
     benzer = benzer_yazilar(posts)
     rojin = next(r for r in recs if r['path'] == '/psikolog-rojin-nazik/')
