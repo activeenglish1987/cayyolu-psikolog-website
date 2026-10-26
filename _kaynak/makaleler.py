@@ -4,6 +4,61 @@ Her makale: path, eski (yönlendirilecek eski WordPress adresi), title, seo_titl
 
 MAKALELER = [
 {
+ 'path': '/cocuga-psikologa-gidecegini-anlatmak/',
+ 'date': '2026-10-26',
+ # Psikolog Rojin Nazik merkez adına kontrol edip onayladı (metin olduğu gibi yayımlanır)
+ 'uzman_kontrolu': '2026-10-26',
+ 'title': 'Çocuğuma Psikoloğa Gideceğini Nasıl Anlatırım? Yaşa Göre Öneriler',
+ 'seo_title': 'Çocuğa Psikoloğa Gideceğini Nasıl Anlatmalı? | RN Psikoloji',
+ 'desc': 'Çocuğunuza psikoloğa gideceğini nasıl anlatırsınız? Yaşa göre hazırlık önerileri, söylenecek ve kaçınılacak cümleler.',
+ 'thumb': 'assets/img/ofis-koltuk.webp',
+ 'html': '''
+<p>Çocuğunuzun bir uzmandan destek almasına karar vermek çoğu ebeveyn için kolay bir adım değildir. Kararı verdikten sonra ise yeni bir soru ortaya çıkar: "Bunu çocuğuma nasıl anlatacağım?"</p>
+<p>Çocuğunuza psikoloğa gideceğini nasıl anlattığınız, ilk görüşmeye nasıl bir duyguyla geleceğini önemli ölçüde etkiler. İyi haber şu ki bunun için uzun hazırlıklara gerek yok. Dürüst, sakin ve çocuğun yaşına uygun birkaç cümle genellikle yeterlidir.</p>
+<h2>Neden önceden anlatmak önemli?</h2>
+<p>Çocuklar belirsizlikten hoşlanmaz. Nereye gittiğini bilmeyen bir çocuk kaygılanabilir, hatta görüşmeye girmek istemeyebilir. Önceden anlatmak, çocuğa hem güven verir hem de sürecin bir parçası olduğunu hissettirir. Çocuğu son ana kadar habersiz bırakmak ya da "doktora gidiyoruz" gibi yanıltıcı ifadeler kullanmak ise güveni zedeleyebilir.</p>
+<h2>Yaşa göre nasıl anlatılır?</h2>
+<p><b>Okul öncesi dönem (3–6 yaş).</b> Bu yaştaki çocuklar için kısa ve somut açıklamalar en iyisidir. Örneğin: "Bazen içimizde büyük duygular olur ve bunlarla baş etmek zor olabilir. Duygular hakkında konuşan ve çocuklarla oyun oynayan biriyle tanışacağız." Oyun odasından, oyuncaklardan ve resim yapmaktan söz etmek, çocuğun merakını uyandırabilir.</p>
+<p><b>Okul çağı (7–11 yaş).</b> Bu dönemde çocuklar daha fazla soru sorar. Neden gittiklerini basitçe açıklayabilirsiniz: "Son zamanlarda okula gitmeden önce karnının ağrıdığını fark ettim. Bu konuda çocuklara yardım eden biriyle konuşmak iyi gelebilir." Görüşmenin bir ceza olmadığını, birçok çocuğun benzer desteği aldığını vurgulamak önemlidir.</p>
+<p><b>Ergenlik (12 yaş ve üzeri).</b> Ergenler kendileriyle ilgili kararlarda söz sahibi olmak ister. Onları sürece dâhil etmek, iş birliğini artırır: "Son zamanlarda zorlandığını görüyorum. Konuşabileceğin, tarafsız biriyle görüşmek ister misin? Seçeneklere birlikte bakabiliriz." Gizlilik konusunu da konuşmak faydalıdır: Ergen, söylediklerinin genel olarak aileyle paylaşılmayacağını bilmek ister. Bunun istisnalarını ilk görüşmede uzman açıklar.</p>
+<h2>Söylenebilecek yararlı cümleler</h2>
+<ul>
+<li>"Bu görüşme bir ceza değil; kendini daha iyi hissetmen için."</li>
+<li>"Orada istediğin kadar konuşabilir ya da oyun oynayabilirsin."</li>
+<li>"Birçok çocuk ve genç, duygularıyla ilgili birine danışır."</li>
+<li>"Ben de seninle olacağım; ilk görüşmede birlikte tanışacağız."</li>
+<li>"Sorun sende değil; bazı şeyler hepimizi zorlayabilir."</li>
+</ul>
+<h2>Kaçınılması gereken ifadeler</h2>
+<ul>
+<li>"Uslu durmazsan seni psikoloğa götürürüm." Psikoloğu bir tehdit aracı gibi sunmak, çocuğun gözünde görüşmeyi cezaya dönüştürür.</li>
+<li>"Seni düzeltmeleri için gidiyoruz." Bu cümle, çocuğa "bende bir bozukluk var" mesajı verebilir.</li>
+<li>"Kimseye söyleme." Gizlilik vurgusu utanç duygusu yaratabilir. Bunun yerine çocuğun kimlerle paylaşmak istediğine kendisinin karar verebileceğini söyleyebilirsiniz.</li>
+<li>"Doktora gidiyoruz, iğne yok." Yanıltıcı ya da korkutucu benzetmelerden kaçınmak gerekir.</li>
+</ul>
+<h2>Çocuk gitmek istemezse ne yapmalı?</h2>
+<p>Çocuğun direnç göstermesi oldukça yaygındır. Bu durumda zorlamak yerine kaygısını anlamaya çalışmak işe yarar: "Seni en çok ne endişelendiriyor?" sorusu iyi bir başlangıçtır. Bazen çocuğun korkusu çok somuttur: Konuşmak zorunda kalacağını, anne babasının yanında olmayacağını ya da başının belaya gireceğini düşünebilir. Bu korkuları dinleyip yanıtlamak, direnci azaltabilir.</p>
+<p>İlk görüşmeye tek başına girmek istemeyen çocuklar için ebeveynin bir süre odada kalması mümkün olabilir; bunu önceden uzmanla konuşabilirsiniz. Ergenlerde ise ilk adımı atmak için bir tanışma görüşmesi önermek, "terapiye başlıyoruz" demekten daha kolay kabul görebilir.</p>
+<h2>İlk görüşmede neler olur?</h2>
+<p>Çocuk ve ergen görüşmelerinde ilk adım genellikle ebeveynle yapılan bir ön görüşmedir. Bu görüşmede çocuğun gelişimi, ailedeki durum ve sizi neyin endişelendirdiği konuşulur. Ardından çocukla, yaşına uygun biçimde oyun, resim ya da sohbet yoluyla tanışılır. Sürecin nasıl ilerlediğini <a href="/cayyolu-cocuk-psikologu/">Çayyolu çocuk psikoloğu</a> sayfamızda, ilk görüşmeye nasıl hazırlanabileceğinizi ise <a href="/ilk-terapi-seansi-rehberi/">ilk terapi seansı rehberi</a> yazımızda bulabilirsiniz.</p>
+<h2>Ebeveyn olarak siz de hazırlanın</h2>
+<p>Çocuklar, ebeveynlerinin duygularını çok iyi okur. Siz görüşmeye kaygıyla ya da utançla yaklaşırsanız, çocuğunuz da bu duyguyu hissedebilir. Bu nedenle kendi duygularınızı fark etmek önemlidir. "Bir yerde hata mı yaptım?" diye düşünmek çok doğaldır; ancak destek almak bir başarısızlık değil, çocuğunuza gösterdiğiniz özenin göstergesidir. İlk görüşmeden önce gözlemlerinizi kısaca not almak da faydalı olur: Ne zamandan beri bu değişiklikleri fark ediyorsunuz, hangi durumlarda daha belirgin oluyor, evde ve okulda neler değişti? Bu notlar, uzmanın çocuğunuzu daha iyi anlamasına yardımcı olur.</p>
+<h2>Ne zaman destek almalı?</h2>
+<p>Şu durumlarda bir çocuk ve ergen psikoloğuyla görüşmek faydalı olabilir:</p>
+<ul>
+<li>Çocuğunuzun davranışlarında haftalardır süren belirgin bir değişiklik varsa,</li>
+<li>Uyku, iştah ya da okul performansında uzun süreli sorunlar gözlüyorsanız,</li>
+<li>Yoğun korkular, öfke patlamaları ya da içe kapanma gündelik hayatı etkiliyorsa,</li>
+<li>Boşanma, kayıp, taşınma gibi büyük bir değişimin ardından çocuğunuz zorlanıyorsa,</li>
+<li>Siz de ebeveyn olarak ne yapacağınızı bilemediğinizi hissediyorsanız.</li>
+</ul>
+<p>Çocuğunuz ya da bir yakınınız kendine zarar verme düşüncesinden söz ediyorsa ya da güvende değilse lütfen hemen <b>112</b>'yi arayın.</p>
+<h2>Son söz</h2>
+<p>Çocuğunuza psikoloğa gideceğini anlatırken mükemmel cümleleri bulmanız gerekmez. Sakin, dürüst ve destekleyici bir tutum çoğu zaman yeterlidir. Çayyolu'ndaki merkezimizde, çocuğunuzun ve ailenizin ihtiyaçlarına uygun bir yol haritasını birlikte belirlemek için sizinle görüşebiliriz.</p>
+<p><em>Bu yazı bilgilendirme amaçlıdır; psikolojik değerlendirme ya da tedavinin yerini tutmaz.</em></p>
+''',
+},
+{
  'path': '/7-yasinda-cocukta-kaygi/',
  'date': '2026-10-23',
  # Psikolog Rojin Nazik merkez adına kontrol edip onayladı (metin olduğu gibi yayımlanır)
@@ -222,7 +277,7 @@ MAKALELER = [
 <h2>Ergen danışmanlığı nasıl işler?</h2>
 <p>Ergenlerle çalışmada genellikle önce ebeveynle bir tanışma görüşmesi, ardından gençle bireysel görüşmeler yapılır. Gencin anlattıklarının gizliliği korunur; yalnızca güvenliğini tehdit eden bir durum varsa aile bilgilendirilir. Bu güvence, gencin terapiye güvenmesi için çok önemlidir.</p>
 <p>Görüşmelerde gencin duygularını tanıması ve ifade etmesi, okul ve arkadaş ilişkilerindeki zorluklarla baş etmesi, kendine dair olumsuz düşüncelerini fark etmesi üzerinde çalışılır. Gerektiğinde aileyle ortak görüşmeler de planlanır.</p>
-<p>Çayyolu, Ümitköy, Yaşamkent, Konutkent ve İncek çevresinde yaşayan aileler için <a href="/cocuk-ergen-danismanligi/">çocuk ve ergen danışmanlığı</a> sayfamızda çalışma biçimimizi bulabilirsiniz. İlk görüşmede neler olduğunu merak ediyorsanız <a href="/ilk-terapi-seansi-rehberi/">ilk terapi seansı rehberimize</a> göz atabilirsiniz.</p>
+<p>Çayyolu, Ümitköy, Yaşamkent, Konutkent ve İncek çevresinde yaşayan aileler için <a href="/cocuk-ergen-danismanligi/">çocuk ve ergen danışmanlığı</a> sayfamızda çalışma biçimimizi bulabilirsiniz. İlk görüşmede neler olduğunu merak ediyorsanız <a href="/ilk-terapi-seansi-rehberi/">ilk terapi seansı rehberimize</a> göz atabilirsiniz. Çocuğunuza görüşmeyi nasıl anlatacağınızı <a href="/cocuga-psikologa-gidecegini-anlatmak/">çocuğa psikoloğa gideceğini anlatmak</a> yazımızda ele aldık.</p>
 <h2>Ne zaman destek almalı?</h2>
 <p>Şu durumlarda bir çocuk ve ergen alanında çalışan psikologla görüşmek faydalı olabilir:</p>
 <ul>
