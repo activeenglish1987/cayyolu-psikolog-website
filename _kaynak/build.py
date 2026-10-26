@@ -908,6 +908,7 @@ RETITLE = {
 # Başlıklar 70 karakteri aşıyordu (Google kesiyor); EMDR geçen başlıklar düzeltildi: ekipte EMDR yok (2026-10-21)
 RETITLE['/ankara-psikolog-cayyolu-kizilay-umitkoy-yasamkent-incek-ve-cevresinde-guvenilir-psikolojik-destek/']['seo_title'] = "Batı Ankara'da Psikolojik Destek | Çayyolu ve Çevresi"
 for _yol, _bas in {
+    '/danisanlar-icin-el-kitabi/': {'seo_desc': 'Psikolog ile psikiyatrist arasındaki fark, terapi sürecinde sizi neler bekler ve RN Psikoloji Çayyolu hizmetleri: danışanlar için kısa rehber.', 'modified': '2026-10-26'},
     '/ankara-bati-yakasi-psikolog-hizmeti-yasamkent-umitkoy-alacaatli-konutkent-incek-ve-bilkent/': {'seo_title': "Ankara Batı Yakası Psikolog | RN Psikoloji Çayyolu", 'modified': '2026-10-26'},
     '/ankarada-psikologa-nasil-karar-verilir-emdrdan-oyun-terapisine-en-dogru-tercihi-yapin/': {
         'title': "Ankara'da Psikoloğa Nasıl Karar Verilir? Terapi Türleri Rehberi",
@@ -1180,6 +1181,8 @@ def main():
         h = r.get('html') or ''
         for a, b in moved.items():
             h = h.replace('href="%s"' % a, 'href="%s"' % b).replace('href="%s%s"' % (SITE, a), 'href="%s"' % b)
+        # Eski WordPress'ten metin olarak kalmış, artık olmayan video adresleri (404) temizlenir
+        h = re.sub(r'https?://www\.cayyolupsikolog\.com\.tr/yeni/wp-content/uploads/[^\s<]+?\.(?:mov|mp4)', '', h)
         r['html'] = semt_bagla(emdr_temizle(h), r['path'])
         for _k in ('excerpt', 'seo_desc'):
             if r.get(_k): r[_k] = emdr_temizle(r[_k], duz=True)
