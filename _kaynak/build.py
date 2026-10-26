@@ -904,7 +904,7 @@ RETITLE = {
 # Başlıklar 70 karakteri aşıyordu (Google kesiyor); EMDR geçen başlıklar düzeltildi: ekipte EMDR yok (2026-10-21)
 RETITLE['/ankara-psikolog-cayyolu-kizilay-umitkoy-yasamkent-incek-ve-cevresinde-guvenilir-psikolojik-destek/']['seo_title'] = "Batı Ankara'da Psikolojik Destek | Çayyolu ve Çevresi"
 for _yol, _bas in {
-    '/ankara-bati-yakasi-psikolog-hizmeti-yasamkent-umitkoy-alacaatli-konutkent-incek-ve-bilkent/': {'seo_title': "Ankara Batı Yakası Psikolog | Yaşamkent ve Ümitköy | RN Psikoloji"},
+    '/ankara-bati-yakasi-psikolog-hizmeti-yasamkent-umitkoy-alacaatli-konutkent-incek-ve-bilkent/': {'seo_title': "Ankara Batı Yakası Psikolog | RN Psikoloji Çayyolu", 'modified': '2026-10-26'},
     '/ankarada-psikologa-nasil-karar-verilir-emdrdan-oyun-terapisine-en-dogru-tercihi-yapin/': {
         'title': "Ankara'da Psikoloğa Nasıl Karar Verilir? Terapi Türleri Rehberi",
         'seo_title': "Ankara'da Psikoloğa Nasıl Karar Verilir? | RN Psikoloji",
@@ -923,6 +923,40 @@ for _yol, _bas in {
     RETITLE.setdefault(_yol, {}).update({**_bas, 'modified': '2026-10-21'})
 
 # Ekipte EMDR eğitimi/uygulaması yok: eski WordPress içeriğindeki "EMDR uygulanır/uzmanı" ifadeleri yayından çıkarılır (2026-10-21)
+SEMT_SAYFA = [('Ümitköy', '/umitkoy-psikolog/'), ('Yaşamkent', '/yasamkent-psikolog/'), ('Konutkent', '/konutkent-psikolog/'),
+              ('İncek', '/incek-psikolog/'), ('Beysukent', '/beysukent-psikolog/'), ('Alacaatlı', '/alacaatli-psikolog/'),
+              ('Bilkent', '/bilkent-psikolog/'), ('Eryaman', '/eryaman-psikolog/')]
+
+def semt_bagla(h, path):
+    """Yazı ve eski sayfa metninde bir semt adı geçtiği yerde o semtin sayfasına bağlanır: sayfa başına
+    en çok 2 bağlantı, aynı metin parçasında tek bağlantı (art arda bağlantı listesi oluşmasın),
+    başlık, kalın yazı ve mevcut bağlantıların içi hariç. Semtler sayfaya göre sırayla dağıtılır ki
+    her semt sayfası bağlantı alsın."""
+    import zlib
+    parcalar = re.split(r'(<[^>]+>)', h)
+    icinde = 0
+    eklenen = 0
+    k = zlib.crc32(path.encode()) % len(SEMT_SAYFA)
+    sira = SEMT_SAYFA[k:] + SEMT_SAYFA[:k]
+    bekleyen = [(ad, url) for ad, url in sira if url != path and ('href="%s"' % url) not in h]
+    for i, x in enumerate(parcalar):
+        if x.startswith('<'):
+            if re.match(r'<(a|h[1-6]|b|strong)[\s>]', x):
+                icinde += 1
+            elif re.match(r'</(a|h[1-6]|b|strong)>', x):
+                icinde = max(0, icinde - 1)
+            continue
+        if icinde or eklenen >= 2:
+            continue
+        for ad, url in bekleyen:
+            m = re.search(r'(?<![\wçğıöşüÇĞİÖŞÜ])%s(?:\s+psikolog)?(?![\wçğıöşüÇĞİÖŞÜ])' % re.escape(ad), x)
+            if m:
+                parcalar[i] = x[:m.start()] + '<a href="%s">%s</a>' % (url, m.group(0)) + x[m.end():]
+                bekleyen.remove((ad, url))
+                eklenen += 1
+                break
+    return ''.join(parcalar)
+
 def emdr_temizle(h, duz=False):
     if not h or not re.search(r'(?i)emdr', h): return h
     if not duz:
@@ -1133,7 +1167,7 @@ def main():
         h = r.get('html') or ''
         for a, b in moved.items():
             h = h.replace('href="%s"' % a, 'href="%s"' % b).replace('href="%s%s"' % (SITE, a), 'href="%s"' % b)
-        r['html'] = emdr_temizle(h)
+        r['html'] = semt_bagla(emdr_temizle(h), r['path'])
         for _k in ('excerpt', 'seo_desc'):
             if r.get(_k): r[_k] = emdr_temizle(r[_k], duz=True)
         if r['path'] in RETITLE:
