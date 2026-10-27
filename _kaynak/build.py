@@ -16,6 +16,8 @@ MERKEZ_ERKEN = {'/kaygi-sorunlari/'}
 from sss import SSS_SAYFA
 from uzman_sss import UZMAN_SSS, UZMAN_SORULARI, UZMAN_SATIRI, UZMAN_SSS_TARIHI
 LANDINGS.append(SSS_SAYFA)
+from seminer import SEMINER
+LANDINGS.append(SEMINER)
 for _c in LANDINGS:
     if _c['path'] in SEMT_NOTLARI: _c['mod'] = SEMT_NOT_TARIHI
     if _c['path'] in MERKEZ_NOTLARI: _c['mod'] = MERKEZ_NOT_TARIHI

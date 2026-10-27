@@ -269,7 +269,8 @@ EKLER = {'/alacaatli-psikolog/': {'html': "<h2>Alacaatlı'da çocukların okul v
                                        '<p>Görüşmeye başlamadan önce ya da süreç boyunca kısa notlar tutmak, hem sizin hem de uzmanın çocuğunuzu daha iyi anlamasına yardım eder. Zorlanılan '
                                        'durumların hangi saatlerde, hangi ortamlarda ve kimlerle birlikteyken ortaya çıktığını yazmanız yeterlidir. Örneğin öfke nöbetleri daha çok yorgunken mi, okul '
                                        'çıkışında mı, yoksa ekran süresi bittiğinde mi görülüyor? Uyku, iştah ve oyun düzenindeki değişiklikleri de not edebilirsiniz. Bu gözlemler, görüşmelerde '
-                                       'somut örnekler üzerinden çalışmayı kolaylaştırır ve küçük ilerlemelerin fark edilmesini sağlar.</p>',
+                                       'somut örnekler üzerinden çalışmayı kolaylaştırır ve küçük ilerlemelerin fark edilmesini sağlar.</p><p>Okullar için: <a href="/okul-veli-seminerleri/">veli ve '
+                                       'öğretmen seminerleri</a>.</p>',
                                'sss': [('Çocuğum görüşmede hiç konuşmazsa ne olur?',
                                         'İlk görüşmelerde çocukların sessiz kalması çok olağandır. Oyun, çizim ve etkinlikler çocuğun kendini konuşmadan da ifade etmesine alan açar; güven zamanla '
                                         'oluşur.'),
@@ -424,7 +425,8 @@ EKLER = {'/alacaatli-psikolog/': {'html': "<h2>Alacaatlı'da çocukların okul v
                                         'çocuğunuzun görüşmelere ihtiyacı olup olmadığını değerlendirmek için iyi bir başlangıçtır.</p>\n'
                                         '<p>Çocuk ve ergen danışmanlığının hangi durumlarda gerektiği ve kullanılan yöntemler için ayrıntılı rehber: <a '
                                         'href="https://www.psikologrojinnazik.com/cocuk-ergen-danismanligi/">Çocuk ve ergen danışmanlığı rehberi</a></p><p>Ailede bir kayıp yaşandıysa: <a '
-                                        'href="/cocuklarda-yas-ve-kayip/">Çocuklarda yas ve kayıp: ebeveynler için rehber</a>.</p>',
+                                        'href="/cocuklarda-yas-ve-kayip/">Çocuklarda yas ve kayıp: ebeveynler için rehber</a>.</p><p>Okullar için: <a href="/okul-veli-seminerleri/">veli ve öğretmen '
+                                        'seminerleri</a>.</p>',
                                 'sss': [('İlk görüşmeye çocuğumu da getirmeli miyim?',
                                          'Genellikle ilk görüşme yalnızca ebeveynlerle yapılır; çocukla tanışma görüşmeleri bundan sonra planlanır. Ergenlerde bu sıra durumun özelliğine göre '
                                          'değişebilir.'),
@@ -958,6 +960,11 @@ EKLER = {'/alacaatli-psikolog/': {'html': "<h2>Alacaatlı'da çocukların okul v
                                                        'Dinamik yaklaşım, belirtilerin arkasındaki duygu, ihtiyaç ve ilişki örüntülerine odaklanır. Bazı yaklaşımlar ise daha yapılandırılmış ve '
                                                        'belirli becerilere yönelik çalışır; hangi yaklaşımın uygun olduğu ilk görüşmelerde birlikte değerlendirilir.')],
                                               'tarih': '2026-10-27'},
+ '/konferanslar/': {'html': '<h2>Okullar ve kurumlar için seminerler</h2><p>Okulunuzda veli ve öğretmenlere yönelik seminer planlamak isterseniz <a href="/okul-veli-seminerleri/">okullar için veli '
+                            've öğretmen seminerleri</a> sayfamıza bakabilirsiniz. Şirketler ve kurumlar için seminer konuları <a '
+                            'href="https://www.psikologrojinnazik.com/kurumsal-psikolojik-destek/">kurumlar için psikolojik destek</a> sayfasında yer alır.</p>',
+                    'sss': [],
+                    'tarih': '2026-10-27'},
  '/konutkent-psikolog/': {'html': "<h2>Konutkent'te yaşam değişiklikleri ve yas</h2>\n"
                                   '<p>Taşınma, iş değişikliği, emeklilik, çocukların evden ayrılması ya da bir yakının kaybı gibi büyük değişimler, en güçlü hissettiğimiz anlarda bile bizi '
                                   'sarsabilir. Bu dönemlerde yaşanan hüzün, kaygı ya da boşluk hissi çoğu zaman doğal tepkilerdir. Yine de bu duygular uzun sürdüğünde ya da günlük hayatı '
