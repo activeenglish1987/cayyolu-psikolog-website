@@ -27,7 +27,7 @@ TESTLER = [
     {
         'yol': '/kaygi-testi/', 'ad': 'Kaygı Testi', 'olcek': 'GAD-7',
         'title': 'Kaygı Testi (GAD-7): 2 Dakikada Kaygı Düzeyiniz | Rojin Nazik',
-        'desc': 'Uluslararası kullanılan GAD-7 ölçeğine dayanan 7 soruluk kısa kaygı testi. Cevaplarınız kaydedilmez; sonuç tanı değildir. Ankara’da psikolojik destek için Psikolog Rojin Nazik.',
+        'desc': 'GAD-7 ölçeğine dayanan 7 soruluk kısa kaygı testi. Cevaplarınız kaydedilmez ve sonuç tanı değildir; sonucunuzu nasıl yorumlayacağınızı anlatıyoruz.',
         'h1': 'Kaygı Testi (GAD-7)',
         'lead': 'Son iki haftada kaygıyla ilgili belirtileri ne sıklıkta yaşadığınızı 7 kısa soruyla görün. Cevaplarınız hiçbir yere gönderilmez ve kaydedilmez; sonuç bir tanı değildir.',
         'soru_basi': 'Son 2 hafta içinde aşağıdaki sorunlar sizi ne sıklıkla rahatsız etti?',
@@ -57,7 +57,7 @@ TESTLER = [
     {
         'yol': '/depresyon-testi/', 'ad': 'Depresyon Testi', 'olcek': 'PHQ-9',
         'title': 'Depresyon Testi (PHQ-9): 9 Soruda Değerlendirme | Rojin Nazik',
-        'desc': 'Uluslararası kullanılan PHQ-9 ölçeğine dayanan 9 soruluk kısa depresyon testi. Cevaplarınız kaydedilmez; sonuç tanı değildir. Ankara’da psikolojik destek için Psikolog Rojin Nazik.',
+        'desc': 'PHQ-9 ölçeğine dayanan 9 soruluk kısa depresyon testi. Cevaplarınız kaydedilmez ve sonuç tanı değildir; sonucunuzu nasıl yorumlayacağınızı anlatıyoruz.',
         'h1': 'Depresyon Testi (PHQ-9)',
         'lead': 'Son iki haftada ruh halinizle ilgili belirtileri ne sıklıkta yaşadığınızı 9 kısa soruyla görün. Cevaplarınız hiçbir yere gönderilmez ve kaydedilmez; sonuç bir tanı değildir.',
         'soru_basi': 'Son 2 hafta içinde aşağıdaki sorunlar sizi ne sıklıkla rahatsız etti?',

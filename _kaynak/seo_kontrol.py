@@ -39,6 +39,11 @@ SAHIP = {
         'cayyolu cocuk psikolog': ('/cayyolu-cocuk-psikologu/', []),
         'cayyolu cift terapi': ('/cayyolu-cift-terapisi/', []),
         'cayyolu aile terapi': ('/cayyolu-aile-terapisi/', []),
+        'incek psikolog': ('/incek-psikolog/', []),
+        'beysukent psikolog': ('/beysukent-psikolog/', []),
+        'bilkent psikolog': ('/bilkent-psikolog/', []),
+        'alacaatli psikolog': ('/alacaatli-psikolog/', []),
+        'eryaman psikolog': ('/eryaman-psikolog/', []),
         'ankara psikolog': (None, []),  # Rojin'in kelimesi: Çayyolu'da hiçbir sayfa başlığında olmaz
     },
     'elif': {
@@ -67,6 +72,12 @@ def dosyalar():
         if r.startswith(('_', 'wp-content', 'node_modules', 'assets', '.')): continue
         yield ('/' if r == 'index.html' else '/' + os.path.dirname(r) + '/'), f
 
+# İnce içerik / gelen bağlantı kontrolünden muaf: araç, yasal ve vitrin sayfaları (Rojin)
+INCE_IZINLI = {'/', '/de/', '/kaygi-testi/', '/depresyon-testi/', '/galeri/', '/sertifikalar/', '/ekibimiz/', '/basinda-biz/',
+               '/iletisim/', '/kitaplarim/', '/tv-programlarim/', '/hizmetlerimiz/', '/gizlilik/', '/cerez-politikasi/', '/kvkk/',
+               '/cinsel-islev-bozukluklari/', '/pdr-taban-puanlari/', '/psikoloji-taban-puanlari/', '/turk-psikologlar-dernegi-akreditasyon/'} if SITE == 'rojin' else \
+    {'/', '/kaygi-testi/', '/depresyon-testi/', '/galeri/', '/basinda-biz/', '/iletisim/', '/kitaplarimiz/', '/konferanslar/', '/uzmanlarimiz/',
+     '/hakkimizda/', '/gizlilik/', '/kvkk/', '/onerilenler/', '/blog/', '/psikolog-rojin-nazik/', '/psikolog-elif-erdogan/'} if SITE == 'cayyolu' else set()
 hata, uyari, sayfa = [], [], {}
 for yol, f in dosyalar():
     s = open(f, encoding='utf-8', errors='ignore').read()
@@ -93,6 +104,14 @@ for yol, f in dosyalar():
     if can and can.rstrip('/') != (ALAN + yol).rstrip('/') and not can.startswith(ROJIN):
         hata.append('%s: canonical başka adresi gösteriyor: %s' % (yol, can))
     if len(title) > 70: uyari.append('%s: başlık %d karakter (Google keser)' % (yol, len(title)))
+    # içerik derinliği, açıklama uzunluğu ve gelen bağlantı (27 Ekim denetiminden sonra eklendi)
+    if desc and not 100 <= len(desc) <= 165: uyari.append('%s: açıklama %d karakter (100–165 olmalı)' % (yol, len(desc)))
+    makale = re.search(r'<article.*?</article>', s, re.S)
+    if makale and yol not in INCE_IZINLI:
+        govde = re.sub(r'<nav class="rn-ilgili".*?</nav>|<aside.*?</aside>|<script.*?</script>|<style.*?</style>', '', makale.group(0), flags=re.S)
+        kelime = len(re.sub(r'<[^>]+>', ' ', govde).split())
+        if kelime < 600: uyari.append('%s: içerik ince (%d kelime; en az 600)' % (yol, kelime))
+    sayfa[yol]['linkler'] = set(re.findall(r'href="(?:' + re.escape(ALAN) + r')?(/[^"#?]*)"', s))
 
 for kel, (sahip, izinli) in SAHIP.items():
     rakip = [y for y, d in sayfa.items() if d and y != sahip and y not in izinli
@@ -100,6 +119,14 @@ for kel, (sahip, izinli) in SAHIP.items():
     for y in rakip: hata.append('%s: "%s" kelimesi %s sayfasının; bu sayfanın başlığında/H1\'inde olmamalı' % (y, kel, sahip or 'Rojin sitesi'))
     if sahip and sayfa.get(sahip) and kel not in kucuk(sayfa[sahip]['title']):
         uyari.append('%s: sahibi olduğu "%s" kelimesi başlıkta yok' % (sahip, kel))
+
+gelen = {}
+for y, v in sayfa.items():
+    for l in (v or {}).get('linkler', ()):
+        if l != y: gelen[l] = gelen.get(l, 0) + 1
+for y, v in sayfa.items():
+    if v and y != '/' and y not in INCE_IZINLI and gelen.get(y, 0) < 2:
+        uyari.append('%s: yalnızca %d sayfadan bağlantı alıyor (en az 2)' % (y, gelen.get(y, 0)))
 
 sm = os.path.join(KOK, 'sitemap.xml')
 if os.path.exists(sm):

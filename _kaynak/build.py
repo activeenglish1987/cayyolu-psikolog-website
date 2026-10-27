@@ -20,10 +20,11 @@ for _c in LANDINGS:
     if _c['path'] in SEMT_NOTLARI: _c['mod'] = SEMT_NOT_TARIHI
     if _c['path'] in MERKEZ_NOTLARI: _c['mod'] = MERKEZ_NOT_TARIHI
 from makaleler import MAKALELER
-from ekler import EKLER
+from ekler import EKLER, ACIKLAMA
 for _c in LANDINGS:
     if _c['path'] in EKLER:
         _c['body'] += EKLER[_c['path']]['html']; _c['mod'] = EKLER[_c['path']]['tarih']
+        _c['faqs'] = _c['faqs'] + [tuple(x) for x in EKLER[_c['path']].get('sss', [])]
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, '_kaynak')
@@ -559,7 +560,7 @@ def article_page(rec, body_html, crumbs, kicker='', expert=None, lead='', hero_i
         lds.append({'@type': 'BlogPosting', 'headline': title, 'datePublished': rec['date'], 'dateModified': rec.get('modified') or rec['date'],
                     'author': {'@type': 'Organization', 'name': BRAND}, 'mainEntityOfPage': SITE + rec['path']})
     if extra_ld: lds.extend(extra_ld)
-    d = desc or rec.get('seo_desc') or plain(body_html, 155)
+    d = ACIKLAMA.get(rec.get('path')) or desc or rec.get('seo_desc') or plain(body_html, 155)
     tt = title_tag or rec.get('seo_title') or (title if len(title) > 42 else '%s | %s' % (title, BRAND))
     hero_fig = ('<figure class="article-hero-img">%s</figure>' % img(hero_img, title, eager=True)) if hero_img else ''
     # Sorumlu uzman (E-E-A-T): içerik RN Psikoloji kurucusu Psikolog Rojin Nazik'in sorumluluğunda yayımlanır
@@ -1047,7 +1048,7 @@ def service_ld(cfg):
 def experts_page(rec):
     body = '<p class="page-lead">RN Psikoloji Çayyolu şubesinde çocuk, ergen, yetişkin ve çift görüşmeleri yürüten uzmanlarımız.</p>' + expert_cards()
     bc, bld = breadcrumb([('Ana Sayfa', '/'), ('Uzmanlarımız', None)])
-    return head('Uzmanlarımız | %s' % BRAND, 'RN Psikoloji Çayyolu uzmanları: Psikolog Rojin Nazik ve Psikolog Elif Erdoğan.', rec['path'], ld(business_ld(), bld)) + nav_html(rec['path']) + '''
+    return head('Uzmanlarımız | %s' % BRAND, ACIKLAMA['/uzmanlarimiz/'], rec['path'], ld(business_ld(), bld)) + nav_html(rec['path']) + '''
 <section class="page-hero"><div class="wrap">%s<h1>Uzmanlarımız</h1><div class="btn-row hero-btns">%s%s</div>%s</div></section>
 <section class="section section-tight"><div class="wrap">%s</div></section>''' % (bc, btn_call(), btn_wa(), OPEN_STATUS, body) + footer_html()
 
@@ -1190,6 +1191,7 @@ def main():
             r.update(RETITLE[r['path']]); r['modified'] = RETITLE[r['path']].get('modified') or (MERKEZ_NOT_TARIHI if r['path'] in MERKEZ_NOTLARI else '2026-10-01')
         if r['path'] in EKLER:
             r['html'] += EKLER[r['path']]['html']; r['modified'] = EKLER[r['path']]['tarih']
+            r['ek_sss'] = [tuple(x) for x in EKLER[r['path']].get('sss', [])]
     posts = sorted([r for r in recs if r['type'] == 'post'], key=lambda r: r['date'], reverse=True)
     benzer = benzer_yazilar(posts)
     rojin = next(r for r in recs if r['path'] == '/psikolog-rojin-nazik/')
@@ -1211,6 +1213,11 @@ def main():
                 boost = dict(boost, faqs=UZMAN_SSS[p] + boost['faqs'])
             else:
                 r['faqs'] = UZMAN_SSS[p] + list(r.get('faqs') or [])
+        if r.get('ek_sss'):
+            if boost:
+                boost = dict(boost, faqs=boost['faqs'] + r['ek_sss'])
+            else:
+                r = dict(r, faqs=list(r.get('faqs') or []) + r['ek_sss'])
         if boost:
             body = boost['intro'] % {'cta': inline_cta()} + body + '<h2>Sık sorulan sorular</h2>' + faq_html(boost['faqs'])
             r = dict(r, title=boost['h1'])
