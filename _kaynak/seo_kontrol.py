@@ -48,6 +48,14 @@ SAHIP = {
     },
     'elif': {
         'ankara psikolog': (None, []),  # Rojin'in kelimesi
+        'ankara ergen psikolog': (None, []),  # Rojin'in kelimeleri: Elif'te başlık/H1'de olmaz
+        'ankara yetiskin psikolog': (None, []),
+        'ankara cocuk psikolog': (None, []),
+        'ankara aile terapi': (None, []),
+        'kizilay psikolog': (None, []),
+        'cayyolu psikolog': (None, []),  # Çayyolu sitesinin kelimesi
+        'ankara oyun terapi': ('/hizmetler/oyun-terapisi/', []),
+        'mmpi': ('/blog/mmpi-testi-nedir/', ['/hizmetler/psikolojik-test-degerlendirme/']),
     },
 }[SITE]
 YASAK = re.compile(r'\ben iyi\b|garanti|mucize|kesin çözüm|kesin sonuç', re.I)
@@ -77,7 +85,8 @@ INCE_IZINLI = {'/', '/de/', '/kaygi-testi/', '/depresyon-testi/', '/galeri/', '/
                '/iletisim/', '/kitaplarim/', '/tv-programlarim/', '/hizmetlerimiz/', '/gizlilik/', '/cerez-politikasi/', '/kvkk/',
                '/cinsel-islev-bozukluklari/', '/pdr-taban-puanlari/', '/psikoloji-taban-puanlari/', '/turk-psikologlar-dernegi-akreditasyon/'} if SITE == 'rojin' else \
     {'/', '/kaygi-testi/', '/depresyon-testi/', '/galeri/', '/basinda-biz/', '/iletisim/', '/kitaplarimiz/', '/konferanslar/', '/uzmanlarimiz/',
-     '/hakkimizda/', '/gizlilik/', '/kvkk/', '/onerilenler/', '/blog/', '/psikolog-rojin-nazik/', '/psikolog-elif-erdogan/'} if SITE == 'cayyolu' else set()
+     '/hakkimizda/', '/gizlilik/', '/kvkk/', '/onerilenler/', '/blog/', '/psikolog-rojin-nazik/', '/psikolog-elif-erdogan/'} if SITE == 'cayyolu' else \
+    {'/', '/hakkimizda/', '/iletisim/', '/kaygi-testi/', '/depresyon-testi/', '/kvkk/', '/blog/'} if SITE == 'elif' else set()
 hata, uyari, sayfa = [], [], {}
 for yol, f in dosyalar():
     s = open(f, encoding='utf-8', errors='ignore').read()
@@ -106,12 +115,12 @@ for yol, f in dosyalar():
     if len(title) > 70: uyari.append('%s: başlık %d karakter (Google keser)' % (yol, len(title)))
     # içerik derinliği, açıklama uzunluğu ve gelen bağlantı (27 Ekim denetiminden sonra eklendi)
     if desc and not 100 <= len(desc) <= 165: uyari.append('%s: açıklama %d karakter (100–165 olmalı)' % (yol, len(desc)))
-    makale = re.search(r'<article.*?</article>', s, re.S)
+    makale = re.search(r'<article.*?</article>', alan, re.S) or (re.search(r'.+', alan, re.S) if SITE == 'elif' and alan is not s else None)
     if makale and yol not in INCE_IZINLI:
         govde = re.sub(r'<nav class="rn-ilgili".*?</nav>|<aside.*?</aside>|<script.*?</script>|<style.*?</style>', '', makale.group(0), flags=re.S)
         kelime = len(re.sub(r'<[^>]+>', ' ', govde).split())
         if kelime < 600: uyari.append('%s: içerik ince (%d kelime; en az 600)' % (yol, kelime))
-    sayfa[yol]['linkler'] = set(re.findall(r'href="(?:' + re.escape(ALAN) + r')?(/[^"#?]*)"', s))
+    sayfa[yol]['linkler'] = {l if l.endswith('/') or '.' in l.rsplit('/', 1)[-1] else l + '/' for l in re.findall(r'href="(?:' + re.escape(ALAN) + r')?(/[^"#?]*)"', s)}
 
 for kel, (sahip, izinli) in SAHIP.items():
     rakip = [y for y, d in sayfa.items() if d and y != sahip and y not in izinli
