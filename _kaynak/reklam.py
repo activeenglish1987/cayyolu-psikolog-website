@@ -39,7 +39,7 @@ SAAT_TXT = 'Hafta içi 10:00–19:00 · Cumartesi 10:00–18:00'
 ROJIN_ETIKET = ['15+ yıllık mesleki deneyim', 'Şema terapi eğitimi', 'AB Psikologlar Derneği Genel Başkanı', '3 kitap yazarı']
 SUBELER = [
     ('Yaşamkent / Çayyolu', 'Konutkent, Dumlupınar Blv. No:399 Kat:28 D:121, Çankaya', 'Pazartesi–Cumartesi · ücretsiz otopark'),
-    ('Kızılay', 'Atatürk Blv. No:127 Kat:8, Bakanlıklar', 'Pazartesi günleri'),
+    ('Kızılay', 'Atatürk Blv. No:127 Kat:8, Bakanlıklar', 'Pazartesi – Cumartesi'),
     ('Online', 'Türkiye ve yurt dışından görüntülü görüşme', 'Pazartesi–Cumartesi'),
 ]
 ADIMLAR = [
