@@ -40,6 +40,10 @@ SEMINER = {
 </ul>
 <h2>Rehberlik servisiyle iş birliği</h2>
 <p>Seminerler okulun rehberlik servisinin yerine geçmez; onu destekler. Rehber öğretmenlerin gözlemleri konu seçiminde yol gösterir. Bir öğrenci ya da aile için okul dışından psikolojik destek gerektiğinde, aile kendi kararıyla başvurabilir; okul ile paylaşılacak bilgiler yalnızca ailenin onayıyla ve gerektiği kadar olur.</p>
+<h2>Çayyolu, Ümitköy, İncek ve Yaşamkent'teki okullar için</h2>
+<p>Batı yakasındaki okulların velileri çoğu zaman benzer konularla gelir: yoğun sınav ve kurs temposu, servisle geçen uzun saatler, ekran süresi ve çalışan ebeveynlerin akşam saatlerine sıkışan aile zamanı. Seminer içeriği okulun bulunduğu çevreye ve velilerin gündemine göre uyarlanır. Çayyolu, Ümitköy, İncek, Yaşamkent, Konutkent ve Beysukent'teki okullar için seminerler okulun kendi salonunda yapılabilir; ofisimiz bu semtlere yakın olduğu için takvim esnek planlanabilir.</p>
+<h2>Seminer sonrası veliler için destek yolu</h2>
+<p>Bir seminer pek çok veliye kendi çocuğuyla ilgili yeni sorular düşündürür. Seminerin sonunda velilere, isterlerse kendi kararlarıyla başvurabilecekleri bir destek yolu tanıtılır: çocuk ve ergen görüşmeleri, ebeveyn danışmanlığı ve aile görüşmeleri. Bu başvurular tamamen gönüllüdür ve okul ile hiçbir bilgi paylaşılmaz. Çocuklarla ilgili görüşmelerin nasıl planlandığını <a href="/cayyolu-cocuk-psikologu/">Çayyolu çocuk psikoloğu</a> sayfamızda anlattık.</p>
 <h2>Kimler sunar?</h2>
 <p>Seminerler RN Psikoloji ekibinden psikologlar tarafından verilir. Kurucu psikoloğumuz <a href="/psikolog-rojin-nazik/">Psikolog Rojin Nazik</a> aile ve ebeveynlik konularında, <a href="/psikolog-elif-erdogan/">Psikolog Elif Erdoğan</a> çocuk ve ergenlerle çalışma konularında seminer verir. Tarih ve konu için WhatsApp'tan yazmanız ya da aramanız yeterli.</p>
 ''',
@@ -47,6 +51,7 @@ SEMINER = {
   ("Seminer okulda mı yapılıyor?", "Evet, seminer okulunuzda yapılır. Okulun tercihine göre online seminer de planlanabilir."),
   ("Seminerde velilerin özel bilgileri konuşulur mu?", "Hayır. Seminerler genel örnekler üzerinden ilerler; kimsenin kendi çocuğuyla ilgili özel bilgiyi herkesin önünde paylaşması beklenmez."),
   ("Hangi yaş gruplarına uygun seminer var?", "Okul öncesi, ilkokul, ortaokul ve lise velileri için ayrı içerikler hazırlanabilir; konu ve dil yaş grubuna göre uyarlanır."),
+  ("Seminer sonrasında veliler bireysel destek alabilir mi?", "Evet. İsteyen veliler kendi kararlarıyla çocuk ve ergen görüşmesi, ebeveyn danışmanlığı ya da aile görüşmesi için başvurabilir; okul ile hiçbir bilgi paylaşılmaz."),
   ("Seminer için nasıl iletişime geçebiliriz?", "WhatsApp'tan ya da telefonla okulunuzun adını, yaş grubunu ve ilgilendiğiniz konuyu yazmanız yeterli; uygun tarih ve içerik birlikte planlanır."),
  ],
 }
