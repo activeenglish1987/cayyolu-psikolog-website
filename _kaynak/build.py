@@ -1192,7 +1192,15 @@ def main():
              '/cayyolu-psikolog-depresyon-panik-atak-sosyal-fobi-sinav-kaygisi-ve-travma-terapisi/': '/kaygi-sorunlari/',
              '/cayyolu-bireysel-terapi-hizmetleri-ozguven-ofke-travma-bosanma-ve-yas-sureclerinde-uzman-destegi/': '/bireysel-danismanlik/',
              '/ankarada-psikologa-nasil-karar-verilir-emdrdan-oyun-terapisine-en-dogru-tercihi-yapin/': '/ilk-terapi-seansi-rehberi/',
-             '/cayyolu-terapi-hizmetleri-emdr-bdt-sema-terapi-mindfulness-ve-daha-fazlasi/': '/bireysel-danismanlik/'}
+             '/cayyolu-terapi-hizmetleri-emdr-bdt-sema-terapi-mindfulness-ve-daha-fazlasi/': '/bireysel-danismanlik/',
+             # Semt ve hizmet adlarını sıralayan son 6 eski WordPress sayfası semt/hizmet sayfalarıyla aynı kelimelerde yarışıyordu
+             # (Search Console: 15.–36. sıra, toplam 28 tıklama); gücü ilgili sayfada toplanır (2026-10-28)
+             '/ankara-bati-yakasi-psikolog-hizmeti-yasamkent-umitkoy-alacaatli-konutkent-incek-ve-bilkent/': '/yasamkent-psikolog/',
+             '/ankara-psikolog-cayyolu-kizilay-umitkoy-yasamkent-incek-ve-cevresinde-guvenilir-psikolojik-destek/': '/umitkoy-psikolog/',
+             '/ankarada-size-uygun-psikologu-secin-guvenilir-kadin-terapist-genc-ve-deneyimli-uzmanlar/': '/uzmanlarimiz/',
+             '/cayyolu-psikolog-cocuk-ergen-aile-ve-bireysel-terapi-hizmetleri/': '/cayyolu-aile-terapisi/',
+             '/cayyolu-psikolojik-danismanlik-umitkoy-yasamkent-konutkent-ve-incekte-terapi-arayanlara-rehber/': '/cayyolu-psikolojik-danismanlik-merkezi/',
+             '/cayyolu-ve-cevresinde-uzman-terapi-hizmetleri-cocuk-terapisi-cift-terapisi-oyun-terapisi-ve-daha-fazlasi/': '/cayyolu-cocuk-psikologu/'}
     recs = [r for r in recs if r['path'] not in moved]
     for r in recs:
         h = r.get('html') or ''
