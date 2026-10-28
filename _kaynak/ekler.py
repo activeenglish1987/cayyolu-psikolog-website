@@ -1355,3 +1355,12 @@ EKLER['/cayyolu-cocuk-psikologu/']['html'] += """
 """
 EKLER['/cayyolu-cocuk-psikologu/']['sss'] = EKLER['/cayyolu-cocuk-psikologu/'].get('sss', []) + [
     ["Oyun terapisi ücretleri neye göre değişir?", "Ücret; görüşmenin ebeveyn ya da çocuk görüşmesi olmasına, süresine ve kullanılan yönteme göre değişir. Güncel ücreti WhatsApp'tan yazarak ya da arayarak öğrenebilirsiniz."]]
+
+# 'çayyolu psikiyatrist' (79 gösterim, 10.8) ve 'çayyolu psikiyatri' (22) aramaları: ana sayfaya dokunmadan merkez sayfasında karşılanır (2026-10-28)
+EKLER['/cayyolu-psikolojik-danismanlik-merkezi/']['html'] += """
+<h2>Çayyolu'nda psikiyatrist mi, psikolog mu?</h2>
+<p>Çayyolu'nda destek arayanların sık sorduğu sorulardan biri, bir psikiyatriste mi yoksa bir psikoloğa mı gitmeleri gerektiğidir. Psikiyatrist tıp doktorudur; gerekli gördüğünde ilaç yazabilir. Psikolog ilaç yazmaz; görüşmelerle duygu, düşünce ve ilişki örüntüleri üzerinde çalışır. Merkezimizde psikologlar görüşme yapar. Belirtileriniz çok yoğunsa ya da ilaç desteği gerekebileceğini düşünüyorsanız önce bir psikiyatriste başvurmanızı öneririz; psikiyatri takibi sürerken psikolojik destek de birlikte alınabilir.</p>
+"""
+EKLER['/cayyolu-psikolojik-danismanlik-merkezi/']['sss'] = EKLER['/cayyolu-psikolojik-danismanlik-merkezi/'].get('sss', []) + [
+    ["Çayyolu'nda psikiyatrist var mı?", "Merkezimizde psikologlar görüşme yapar; ilaç yazılmaz. İlaç değerlendirmesi gerekebilecek durumlarda bir psikiyatri uzmanına başvurmanızı öneririz; psikolojik destek bu süreçle birlikte yürütülebilir."]]
+EKLER['/cayyolu-psikolojik-danismanlik-merkezi/']['tarih'] = '2026-10-28'
