@@ -37,7 +37,7 @@ LANDINGS = [
 <p>Ofisimizde görüşme yürüten psikologlarımız farklı yaş gruplarında ve farklı konularda deneyim sahibidir. Yetişkin bireysel görüşmeler ve çift çalışmaları için kurucu psikoloğumuz <a href="/psikolog-rojin-nazik/">Psikolog Rojin Nazik</a>; ergen, çift görüşmeleri ve oyun terapisi için <a href="/psikolog-elif-erdogan/">Psikolog Elif Erdoğan</a> ile randevu alabilirsiniz. Hangisinin size uygun olduğundan emin değilseniz, kısaca durumunuzu anlatmanız yeterli.</p>
 <h2>İlk görüşmede neler olur?</h2>
 <p>İlk görüşme bir tanışma ve değerlendirme görüşmesidir. Sizi buraya getiren konu, ne zamandır sürdüğü, günlük hayatınızı nasıl etkilediği ve görüşmelerden beklentileriniz konuşulur. Görüşmenin sonunda nasıl bir yol izleneceği, görüşmelerin sıklığı ve süreç hakkında net bir bilgi alırsınız. Her şey gizlilik ilkesi çerçevesinde yürütülür.</p>
-<h2>Ümitköy psikolog ücretleri</h2>
+<h2>Ümitköy psikolog fiyatları ve ücretleri</h2>
 <p>Görüşme ücretleri uzmana ve görüşme türüne (bireysel, çift, çocuk-ergen) göre değişir. Güncel ücret bilgisini WhatsApp'tan yazarak ya da arayarak hemen öğrenebilirsiniz; telefonda size uygun gün ve saati de birlikte planlarız.</p>
 ''',
  'faqs': [

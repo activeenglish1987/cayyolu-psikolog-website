@@ -1350,7 +1350,7 @@ for _p in ('/bilkent-psikolog/', '/eryaman-psikolog/', '/umitkoy-psikolog/', '/c
 
 # 'ankara oyun terapisi fiyatları' (Search Console, 48 gösterim) için çocuk sayfasına ücret bölümü (2026-10-28)
 EKLER['/cayyolu-cocuk-psikologu/']['html'] += """
-<h2>Çayyolu oyun terapisi ve çocuk psikoloğu ücretleri</h2>
+<h2>Çayyolu oyun terapisi ve çocuk psikoloğu fiyatları</h2>
 <p>Oyun terapisi ve çocuk görüşmelerinin ücreti; görüşmenin ebeveyn görüşmesi mi yoksa çocukla yapılan görüşme mi olduğuna, görüşme süresine ve kullanılan yönteme göre değişir. Oyun terapisinde süreç genellikle ebeveynlerle yapılan bir ilk görüşmeyle başlar; ardından çocukla düzenli oyun seansları ve aralarda ebeveyn görüşmeleri planlanır. Ücreti nelerin belirlediğini <a href="/cayyolu-psikolog-fiyatlari/">psikolog fiyatları</a> sayfamızda anlattık; güncel ücreti WhatsApp'tan yazarak ya da arayarak öğrenebilirsiniz.</p>
 """
 EKLER['/cayyolu-cocuk-psikologu/']['sss'] = EKLER['/cayyolu-cocuk-psikologu/'].get('sss', []) + [
