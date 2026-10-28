@@ -188,13 +188,30 @@ EKLER = {'/alacaatli-psikolog/': {'html': "<h2>Alacaatlı'da çocukların okul v
                                      '<p>Aile görüşmelerinde büyük değişiklikler hedeflemek yerine, günlük hayatta uygulanabilir küçük adımlarla başlamak çoğu zaman daha işe yarar. Haftada bir '
                                      'ekranların kapalı olduğu bir aile yemeği, sabah hazırlığında tekrar eden tartışmalar için birlikte belirlenen bir düzen ya da her çocukla kısa bir baş başa '
                                      'zaman gibi adımlar, ailedeki havayı fark edilir biçimde değiştirebilir. Bu adımların evde nasıl gittiği bir sonraki görüşmede konuşulur; işe yaramayan noktalar '
-                                     'birlikte yeniden düzenlenir. Böylece değişim, ailenin kendi ritmine uygun biçimde yerleşir.</p>',
+                                     'birlikte yeniden düzenlenir. Böylece değişim, ailenin kendi ritmine uygun biçimde yerleşir.</p><h2>Aile terapisi ile ebeveyn danışmanlığı arasındaki fark</h2>\n'
+                                     '<p>Aile terapisinde odak, ailenin bütünü ve aile üyelerinin birbiriyle kurduğu ilişkidir; görüşmelere çoğu zaman birden fazla aile üyesi katılır. Ebeveyn '
+                                     'danışmanlığında ise anne ve baba (ya da çocuğa bakım veren yetişkinler) tek başına gelir; çocuğun davranışlarını anlamak, sınır koymak ve evdeki iletişimi '
+                                     'düzenlemek üzerine çalışılır. Hangisiyle başlanacağı ilk görüşmede birlikte belirlenir; süreç içinde birinden diğerine geçmek de mümkündür.</p>\n'
+                                     '<h2>Birleşik ailelerde ve yeni aile düzeninde uyum</h2>\n'
+                                     '<p>Boşanma sonrası yeniden evlilik, üvey kardeşler ya da iki evde yaşayan çocuklar, ailenin kurallarını ve rollerini yeniden düşünmeyi gerektirir. Kim hangi '
+                                     'kararı verir, çocuk iki evdeki farklı kurallara nasıl uyum sağlar, yeni eşle ilişki nasıl kurulur gibi sorular bu dönemde sık konuşulur. Aile görüşmeleri, '
+                                     'herkesin kendini duyulmuş hissettiği bir ortamda bu yeni düzeni birlikte kurmaya yardım eder.</p>\n'
+                                     '<h2>Kuşaklar arası ilişkiler</h2>\n'
+                                     '<p>Büyükanne ve büyükbabalarla aynı evde ya da çok yakında yaşamak, çocuk bakımında destek sağlarken ebeveynlik kararlarında görüş ayrılıklarına da yol '
+                                     'açabilir. Yaşlanan anne babaya bakım sorumluluğunun kardeşler arasında nasıl paylaşılacağı da ailelerin sık getirdiği konulardandır. Görüşmelerde suçlu aramak '
+                                     'yerine, herkesin ihtiyacını ve sınırını dile getirebileceği bir iletişim biçimi üzerinde çalışılır.</p>\n',
                              'sss': [('Aile görüşmeleri ne kadar sürer?',
                                       'Aile görüşmelerinin sayısı ve sıklığı ailenin ihtiyacına göre birlikte belirlenir. Düzenli aralıklarla süreç değerlendirilir ve plan buna göre güncellenir.'),
                                      ('Büyükanne ya da büyükbaba da görüşmeye katılabilir mi?',
                                       'Evet. Aile içinde önemli bir rol üstlenen büyükler, ihtiyaç olduğunda görüşmelere davet edilebilir. Kimlerin katılacağı ilk görüşmede birlikte planlanır.'),
                                      ('Çocuğumuz küçükse aile görüşmesine katılabilir mi?',
-                                      'Küçük çocuklar da yaşlarına uygun biçimde, oyun ve çizim gibi etkinliklerle aile görüşmelerine katılabilir. Bazı konular ise yalnızca ebeveynlerle konuşulur.')],
+                                      'Küçük çocuklar da yaşlarına uygun biçimde, oyun ve çizim gibi etkinliklerle aile görüşmelerine katılabilir. Bazı konular ise yalnızca ebeveynlerle konuşulur.'),
+                                     ('Ebeveynler birbiriyle anlaşamıyorsa önce kim gelmeli?',
+                                      'İlk görüşmeye iki ebeveynin birlikte gelmesi çoğu zaman en verimli başlangıçtır. Bu mümkün değilse bir ebeveynle başlanabilir; süreç içinde diğer ebeveynin ve '
+                                      'gerekirse çocuğun katılımı birlikte planlanır.'),
+                                     ('Aile görüşmeleri online yapılabilir mi?',
+                                      'Evet. Aile üyelerinin farklı şehirlerde ya da ülkelerde olduğu durumlarda görüşmeler online planlanabilir; uygun olduğunda yüz yüze ve online görüşmeler '
+                                      'birlikte kullanılır.')],
                              'tarih': '2026-10-27'},
  '/cayyolu-cift-terapisi/': {'html': '<h2>İlk çift görüşmesinde neler olur?</h2>\n'
                                      '<p>İlk görüşme, ilişkinizin bugün nerede durduğunu birlikte anlamak için yapılır. Her iki partnerin de bakış açısını anlatabileceği bir alan açılır; kimin haklı '
