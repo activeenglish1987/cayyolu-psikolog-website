@@ -1329,3 +1329,21 @@ ACIKLAMA = {
     '/kitaplarimiz/': "Kurucu psikoloğumuz Rojin Nazik'in kitapları: Bir Hayatla Evlenmek, Bir Odanın Ötesi ve Dengeyi Yakalamak. Kitaplar hakkında kısa bilgiler.",
     '/uzmanlarimiz/': "RN Psikoloji Çayyolu uzmanları: Psikolog Rojin Nazik ve Psikolog Elif Erdoğan. Uzmanlarımızın çalışma alanları ve görüşme yaptıkları konular.",
 }
+
+# Search Console'da görülen semt + ücret ve semt + psikiyatri aramaları için eksik bölümler (2026-10-28)
+EKLER['/bilkent-psikolog/']['html'] += """
+<h2>Bilkent psikolog fiyatları</h2>
+<p>Görüşme ücretleri uzmana ve görüşme türüne (bireysel, çift, aile) göre değişir. Ücreti nelerin belirlediğini <a href="/cayyolu-psikolog-fiyatlari/">psikolog fiyatları</a> sayfamızda ayrıntılı anlattık; güncel ücreti WhatsApp'tan yazarak ya da arayarak öğrenebilirsiniz. Görüşmelerin sıklığı ilk görüşmede, ders programınız ve ihtiyacınız birlikte düşünülerek planlanır.</p>
+"""
+EKLER['/eryaman-psikolog/']['html'] += """
+<h2>Eryaman psikolog fiyatları</h2>
+<p>Görüşme ücretleri uzmana ve görüşme türüne (bireysel, çift, çocuk-ergen, aile) göre değişir. Ücreti nelerin belirlediğini <a href="/cayyolu-psikolog-fiyatlari/">psikolog fiyatları</a> sayfamızda anlattık; Eryaman ve Etimesgut'tan arayanlar güncel ücreti WhatsApp'tan yazarak ya da telefonla öğrenebilir. Yüz yüze ve online görüşmenin ücret açısından bir farkı olup olmadığını da aynı görüşmede sorabilirsiniz.</p>
+"""
+EKLER['/umitkoy-psikolog/']['sss'] = EKLER['/umitkoy-psikolog/'].get('sss', []) + [
+    ["Ümitköy'de psikiyatrist mi, psikolog mu görmeliyim?",
+     "Psikiyatrist tıp doktorudur; gerekli gördüğünde ilaç yazabilir. Psikolog ilaç yazmaz; görüşmelerle duygu, düşünce ve ilişki örüntüleri üzerinde çalışır. Ofisimizde psikologlar görüşme yapar. Belirtileriniz çok yoğunsa ya da ilaç desteği gerekebileceğini düşünüyorsanız önce bir psikiyatriste başvurmanızı öneririz; psikiyatri takibi sürerken psikolojik destek de birlikte alınabilir."]]
+EKLER['/cayyolu-cocuk-psikologu/']['sss'] = EKLER['/cayyolu-cocuk-psikologu/'].get('sss', []) + [
+    ["Çocuk psikiyatristi ile çocuk psikoloğu arasındaki fark nedir?",
+     "Çocuk ve ergen psikiyatristi tıp doktorudur ve gerektiğinde ilaç yazabilir. Çocuk psikoloğu ilaç yazmaz; oyun, görüşme ve ebeveyn danışmanlığıyla çocuğun duygu ve davranışları üzerinde çalışır. Ofisimizde çocuklarla psikologlar görüşür. Çocuğunuzun belirtileri çok yoğunsa ya da ilaç gerekip gerekmediği sorusu varsa önce bir çocuk ve ergen psikiyatristine başvurmanızı öneririz; iki destek birlikte de yürütülebilir."]]
+for _p in ('/bilkent-psikolog/', '/eryaman-psikolog/', '/umitkoy-psikolog/', '/cayyolu-cocuk-psikologu/'):
+    EKLER[_p]['tarih'] = '2026-10-28'
