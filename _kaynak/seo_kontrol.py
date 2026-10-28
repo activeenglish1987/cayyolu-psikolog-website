@@ -31,6 +31,8 @@ SAHIP = {
         'cankaya psikolog': ('/ankara-cankaya-psikolog/', []),
         'kavaklidere psikolog': ('/kavaklidere-psikolog/', []),
         'dikmen psikolog': ('/dikmen-psikolog/', []),
+        'kecioren psikolog': ('/kecioren-psikolog/', []),
+        'oran psikolog': ('/oran-psikolog/', []),
         'psikolog fiyat': ('/ankara-psikolog-fiyatlari/', []),
     },
     'cayyolu': {
@@ -47,7 +49,7 @@ SAHIP = {
         'alacaatli psikolog': ('/alacaatli-psikolog/', []),
         'eryaman psikolog': ('/eryaman-psikolog/', []),
         'ankara psikolog': (None, []),  # Rojin'in kelimesi: Çayyolu'da hiçbir sayfa başlığında olmaz
-        'kizilay psikolog': (None, []), 'kavaklidere psikolog': (None, []), 'dikmen psikolog': (None, []),  # Rojin'in merkez semtleri
+        'kizilay psikolog': (None, []), 'kavaklidere psikolog': (None, []), 'dikmen psikolog': (None, []), 'kecioren psikolog': (None, []), 'oran psikolog': (None, []),  # Rojin'in merkez semtleri
     },
     'elif': {
         'ankara psikolog': (None, []),  # Rojin'in kelimesi
@@ -68,6 +70,8 @@ SAHIP = {
         'eryaman psikolog': (None, []),
         'kavaklidere psikolog': (None, []),
         'dikmen psikolog': (None, []),
+        'kecioren psikolog': (None, []),
+        'oran psikolog': (None, []),
         'ankara oyun terapi': ('/hizmetler/oyun-terapisi/', []),
         'mmpi': ('/blog/mmpi-testi-nedir/', ['/hizmetler/psikolojik-test-degerlendirme/']),
     },
