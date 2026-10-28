@@ -29,6 +29,8 @@ SAHIP = {
         'ankara aile terapi': ('/ankara-aile-terapisti/', []),
         'kizilay psikolog': ('/kizilay-psikolog/', []),
         'cankaya psikolog': ('/ankara-cankaya-psikolog/', []),
+        'kavaklidere psikolog': ('/kavaklidere-psikolog/', []),
+        'dikmen psikolog': ('/dikmen-psikolog/', []),
         'psikolog fiyat': ('/ankara-psikolog-fiyatlari/', []),
     },
     'cayyolu': {
@@ -45,6 +47,7 @@ SAHIP = {
         'alacaatli psikolog': ('/alacaatli-psikolog/', []),
         'eryaman psikolog': ('/eryaman-psikolog/', []),
         'ankara psikolog': (None, []),  # Rojin'in kelimesi: Çayyolu'da hiçbir sayfa başlığında olmaz
+        'kizilay psikolog': (None, []), 'kavaklidere psikolog': (None, []), 'dikmen psikolog': (None, []),  # Rojin'in merkez semtleri
     },
     'elif': {
         'ankara psikolog': (None, []),  # Rojin'in kelimesi
@@ -54,6 +57,17 @@ SAHIP = {
         'ankara aile terapi': (None, []),
         'kizilay psikolog': (None, []),
         'cayyolu psikolog': (None, []),  # Çayyolu sitesinin kelimesi
+        # Semt kelimeleri Rojin ve Çayyolu'nun; Elif'in sitesi bu sayfalara güç verir, kendisi semt kelimesi tutmaz (28 Ekim)
+        'yasamkent psikolog': (None, []),
+        'umitkoy psikolog': (None, []),
+        'konutkent psikolog': (None, []),
+        'incek psikolog': (None, []),
+        'beysukent psikolog': (None, []),
+        'bilkent psikolog': (None, []),
+        'alacaatli psikolog': (None, []),
+        'eryaman psikolog': (None, []),
+        'kavaklidere psikolog': (None, []),
+        'dikmen psikolog': (None, []),
         'ankara oyun terapi': ('/hizmetler/oyun-terapisi/', []),
         'mmpi': ('/blog/mmpi-testi-nedir/', ['/hizmetler/psikolojik-test-degerlendirme/']),
     },

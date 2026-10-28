@@ -396,7 +396,7 @@ def footer_html():
     </div>
   </div>
   <p class="wrap" style="margin:0 auto 10px;font-size:13px;opacity:.8">Kendinizin ya da bir başkasının güvenliği için acil bir durum varsa 112'yi arayın.</p>
-  <div class="wrap footer-bottom"><span>© 2026 %(brand)s · <a href="/kvkk/">KVKK</a> · <a href="/gizlilik/">Gizlilik</a></span><span><a href="https://www.psikologrojinnazik.com/" target="_blank" rel="noopener">psikologrojinnazik.com</a> · <a href="https://psikologeliferdogan.com/" target="_blank" rel="noopener">psikologeliferdogan.com</a></span></div>
+  <div class="wrap footer-bottom"><span>© 2026 %(brand)s · <a href="/kvkk/">KVKK</a> · <a href="/gizlilik/">Gizlilik</a></span><span><a href="https://www.psikologrojinnazik.com/" target="_blank" rel="noopener">psikologrojinnazik.com</a></span></div>
 </footer>
 <div class="sticky-bar" role="navigation" aria-label="Hızlı iletişim">%(call2)s%(wa2)s</div>
 </body>
@@ -878,29 +878,29 @@ TRUST = '''<section class="trust-strip" aria-label="Neden RN Psikoloji"><ul>
 </ul></section>'''
 
 # ---------------------------------------------------------------- kardeş sitelere konu bağlantıları
+# Ağırlık Rojin Nazik sitesinde: Çayyolu'dan Elif Erdoğan'ın kişisel sitesine bağlantı verilmez (28 Ekim, kullanıcı kararı)
 RN = 'https://www.psikologrojinnazik.com'
 EL = 'https://psikologeliferdogan.com'
 SISTER = {
- '/cayyolu-cocuk-psikologu/': [(RN + '/ayrilma-kaygisi/', 'Çocuklarda ayrılma kaygısı'), (RN + '/sosyal-kaygi/', 'Sosyal kaygı'), (EL + '/hizmetler/oyun-terapisi', 'Oyun terapisi – Psikolog Elif Erdoğan'), (RN + '/ankara-cocuk-psikologu/', 'Ankara çocuk psikoloğu')],
- '/cayyolu-cift-terapisi/': [(RN + '/cift-iliski-terapisi/', 'Ankara çift terapisi – Psikolog Rojin Nazik'), (EL + '/blog/cift-terapisine-ne-zaman-basvurulmali', 'Çift terapisine ne zaman başvurulmalı?')],
+ '/cayyolu-cocuk-psikologu/': [(RN + '/ayrilma-kaygisi/', 'Çocuklarda ayrılma kaygısı'), (RN + '/sosyal-kaygi/', 'Sosyal kaygı'), (RN + '/cocuk-ergen-danismanligi/', 'Çocuk ve ergen danışmanlığı'), (RN + '/ankara-cocuk-psikologu/', 'Ankara çocuk psikoloğu')],
+ '/cayyolu-cift-terapisi/': [(RN + '/cift-iliski-terapisi/', 'Ankara çift terapisi – Psikolog Rojin Nazik'), (RN + '/esim-cift-terapisine-gelmek-istemiyor/', 'Eşim çift terapisine gelmek istemiyor')],
  '/cayyolu-aile-terapisi/': [(RN + '/ankara-aile-terapisti/', 'Ankara aile terapisti'), (RN + '/internet-bagimliligi/', 'Ekran ve internet bağımlılığı')],
- '/ankara-psikolog-cayyolu-kizilay-umitkoy-yasamkent-incek-ve-cevresinde-guvenilir-psikolojik-destek/': [(RN + '/', 'Ankara psikolog – Psikolog Rojin Nazik'), (RN + '/kizilay-psikolog/', 'Kızılay psikolog')],
- '/cayyolu-psikolojik-danismanlik-merkezi/': [(RN + '/', 'Psikolog Rojin Nazik'), (EL + '/', 'Psikolog Elif Erdoğan')],
+ '/cayyolu-psikolojik-danismanlik-merkezi/': [(RN + '/', 'Psikolog Rojin Nazik'), (RN + '/kizilay-psikolog/', 'Kızılay psikolog'), (RN + '/kavaklidere-psikolog/', 'Kavaklıdere psikolog'), (RN + '/dikmen-psikolog/', 'Dikmen psikolog')],
  '/cayyolu-psikolog-fiyatlari/': [(RN + '/ankara-psikolog-fiyatlari/', 'Ankara psikolog fiyatları 2026')],
  '/cocuklarda-kaygi-ebeveyn-rehberi/': [(RN + '/ayrilma-kaygisi/', 'Ayrılma kaygısı'), (RN + '/sosyal-kaygi/', 'Sosyal kaygı')],
- '/yurt-disi-online-ebeveyn-danismanligi/': [(RN + '/yurt-disi-online-turk-psikolog/', 'Yurt dışında Türk psikolog – Türkçe online terapi'), (EL + '/blog/yurt-disinda-online-cift-terapisi', 'Yurt dışında online çift terapisi – Psikolog Elif Erdoğan')],
+ '/yurt-disi-online-ebeveyn-danismanligi/': [(RN + '/yurt-disi-online-turk-psikolog/', 'Yurt dışında Türk psikolog – Türkçe online terapi')],
  '/online-terapi/': [(RN + '/yurt-disi-online-turk-psikolog/', 'Yurt dışından Türkçe online terapi'), (RN + '/online-terapi/', 'Online terapi – Psikolog Rojin Nazik')],
  '/cocuklarda-uyku-sorunlari/': [(RN + '/ayrilma-kaygisi/', 'Ayrılma kaygısı'), (RN + '/okul-reddi/', 'Okul reddi'), (RN + '/uyku-bozukluklari/', 'Uyku bozuklukları')],
  '/cocuklarda-yas-ve-kayip/': [(RN + '/yas-terapisi/', 'Yas terapisi – Psikolog Rojin Nazik')],
- '/evlilikte-iletisim-sorunlari/': [(EL + '/blog/iliskilerde-iletisim-problemleri', 'İlişkilerde iletişim problemleri – Psikolog Elif Erdoğan'), (RN + '/cift-iliski-terapisi/', 'Ankara çift terapisi')],
+ '/evlilikte-iletisim-sorunlari/': [(RN + '/evlilik-ve-aile-danismanligi/', 'Evlilik ve aile danışmanlığı'), (RN + '/cift-iliski-terapisi/', 'Ankara çift terapisi')],
  '/yalnizlik-hissi-ve-sosyal-geri-cekilme/': [(RN + '/sosyal-kaygi/', 'Sosyal kaygı'), (RN + '/depresyon-nedir/', 'Depresyon')],
  '/is-stresi-ve-tukenmislik/': [(RN + '/is-yerinde-tukenmislik-sendromu/', 'İş yerinde tükenmişlik sendromu'), (RN + '/ofke-kontrolu/', 'Öfke kontrolü')],
  '/travma-sonrasi-stres-belirtileri/': [(RN + '/travma-sonrasi-stres-bozuklugu/', 'Travma sonrası stres bozukluğu'), (RN + '/yas-terapisi/', 'Yas terapisi')],
  '/ilk-terapi-seansi-rehberi/': [(RN + '/ankara-psikolog-tavsiyesi/', 'Ankara psikolog tavsiyesi'), (RN + '/psikolog-tani-koyabilir-mi/', 'Psikolog tanı koyabilir mi?')],
- '/kaygi-sorunlari/': [(RN + '/anksiyete-bozukluklari/', 'Anksiyete bozuklukları'), (RN + '/panik-atak/', 'Panik atak'), (EL + '/blog/kaygi-mi-kaygi-bozuklugu-mu', 'Kaygı mı, kaygı bozukluğu mu?')],
- '/cocuk-ergen-danismanligi/': [(RN + '/sinav-kaygisi/', 'Sınav kaygısı'), (EL + '/hizmetler/ergen-psikoterapisi', 'Ergen psikoterapisi – Psikolog Elif Erdoğan')],
+ '/kaygi-sorunlari/': [(RN + '/anksiyete-bozukluklari/', 'Anksiyete bozuklukları'), (RN + '/panik-atak/', 'Panik atak')],
+ '/cocuk-ergen-danismanligi/': [(RN + '/sinav-kaygisi/', 'Sınav kaygısı'), (RN + '/ankara-ergen-psikologu/', 'Ankara ergen psikoloğu')],
  '/umitkoy-psikolog/': [(RN + '/', 'Ankara psikolog – Psikolog Rojin Nazik')],
- '/yasamkent-psikolog/': [(RN + '/', 'Ankara psikolog – Psikolog Rojin Nazik'), (EL + '/', 'Psikolog Elif Erdoğan')],
+ '/yasamkent-psikolog/': [(RN + '/', 'Ankara psikolog – Psikolog Rojin Nazik'), (RN + '/kizilay-psikolog/', 'Kızılay psikolog')],
  '/beysukent-psikolog/': [(RN + '/sinav-kaygisi/', 'Sınav kaygısı'), (RN + '/sosyal-kaygi/', 'Sosyal kaygı')],
  '/incek-psikolog/': [(RN + '/ayrilma-kaygisi/', 'Çocuklarda ayrılma kaygısı')],
 }
