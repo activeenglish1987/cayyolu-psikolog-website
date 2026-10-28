@@ -1347,3 +1347,11 @@ EKLER['/cayyolu-cocuk-psikologu/']['sss'] = EKLER['/cayyolu-cocuk-psikologu/'].g
      "Çocuk ve ergen psikiyatristi tıp doktorudur ve gerektiğinde ilaç yazabilir. Çocuk psikoloğu ilaç yazmaz; oyun, görüşme ve ebeveyn danışmanlığıyla çocuğun duygu ve davranışları üzerinde çalışır. Ofisimizde çocuklarla psikologlar görüşür. Çocuğunuzun belirtileri çok yoğunsa ya da ilaç gerekip gerekmediği sorusu varsa önce bir çocuk ve ergen psikiyatristine başvurmanızı öneririz; iki destek birlikte de yürütülebilir."]]
 for _p in ('/bilkent-psikolog/', '/eryaman-psikolog/', '/umitkoy-psikolog/', '/cayyolu-cocuk-psikologu/'):
     EKLER[_p]['tarih'] = '2026-10-28'
+
+# 'ankara oyun terapisi fiyatları' (Search Console, 48 gösterim) için çocuk sayfasına ücret bölümü (2026-10-28)
+EKLER['/cayyolu-cocuk-psikologu/']['html'] += """
+<h2>Çayyolu oyun terapisi ve çocuk psikoloğu ücretleri</h2>
+<p>Oyun terapisi ve çocuk görüşmelerinin ücreti; görüşmenin ebeveyn görüşmesi mi yoksa çocukla yapılan görüşme mi olduğuna, görüşme süresine ve kullanılan yönteme göre değişir. Oyun terapisinde süreç genellikle ebeveynlerle yapılan bir ilk görüşmeyle başlar; ardından çocukla düzenli oyun seansları ve aralarda ebeveyn görüşmeleri planlanır. Ücreti nelerin belirlediğini <a href="/cayyolu-psikolog-fiyatlari/">psikolog fiyatları</a> sayfamızda anlattık; güncel ücreti WhatsApp'tan yazarak ya da arayarak öğrenebilirsiniz.</p>
+"""
+EKLER['/cayyolu-cocuk-psikologu/']['sss'] = EKLER['/cayyolu-cocuk-psikologu/'].get('sss', []) + [
+    ["Oyun terapisi ücretleri neye göre değişir?", "Ücret; görüşmenin ebeveyn ya da çocuk görüşmesi olmasına, süresine ve kullanılan yönteme göre değişir. Güncel ücreti WhatsApp'tan yazarak ya da arayarak öğrenebilirsiniz."]]
