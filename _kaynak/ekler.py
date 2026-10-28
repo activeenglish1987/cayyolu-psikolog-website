@@ -1281,6 +1281,13 @@ EKLER = {'/alacaatli-psikolog/': {'html': "<h2>Alacaatlı'da çocukların okul v
 # Meta açıklama düzeltmeleri (27 Ekim SEO denetimi): 100–165 karakter, telefon numarası yok.
 # Kaynaktaki açıklamanın yerine geçer (semt, hizmet ve içerik sayfaları).
 ACIKLAMA = {
+    '/umitkoy-psikolog/': "Ümitköy'e birkaç dakika mesafede, ücretsiz otoparklı ofisimizde yetişkin, çift, çocuk ve ergen görüşmeleri. Akşam ve Cumartesi randevu, online seçenek.",
+    '/konutkent-psikolog/': "Konutkent'te Dumlupınar Bulvarı üzerindeki ofisimizde yetişkin, çift, çocuk ve ergen görüşmeleri. Ücretsiz otopark, akşam ve Cumartesi randevu.",
+    '/incek-psikolog/': "İncek'e yakın ofisimizde çocuk, ergen, aile, çift ve yetişkin görüşmeleri. Ücretsiz otopark, akşam ve Cumartesi randevu, online görüşme seçeneği.",
+    '/beysukent-psikolog/': "Beysukent'e yakın ofisimizde yetişkin, üniversite öğrencisi, çift ve ergen görüşmeleri. Akşam ve Cumartesi randevu, yüz yüze ya da online.",
+    '/bilkent-psikolog/': "Bilkent ve Beytepe'ye yakın ofisimizde üniversite öğrencileri, akademisyenler ve yetişkinlerle yüz yüze ya da online görüşme. Akşam randevusu.",
+    '/alacaatli-psikolog/': "Alacaatlı'ya yakın ofisimizde yetişkin, çift, aile, çocuk ve ergen görüşmeleri. Ücretsiz otopark, akşam ve Cumartesi randevu, online seçenek.",
+    '/eryaman-psikolog/': "Eryaman ve Etimesgut'a yakın ofisimizde yetişkin, çift, aile, çocuk ve ergen görüşmeleri; ücretsiz otopark, akşam ve Cumartesi randevusu.",
     '/cayyolu-psikolog-fiyatlari/': "Çayyolu, Yaşamkent ve Konutkent'te psikolog seans ücretleri: bireysel, çift, aile, çocuk ve ergen görüşmelerinde ücreti belirleyen etkenler.",
     '/cayyolu-psikolojik-danismanlik-merkezi/': "RN Psikoloji Çayyolu: bireysel, çift, aile, çocuk ve ergen psikolojik danışmanlık merkezi. Konutkent ofisi, ücretsiz otopark, online görüşme.",
     '/cocuklarda-uyku-sorunlari/': "Çocuk yalnız uyuyamıyor, gece sık uyanıyor ya da kâbus görüyorsa ne yapmalı? Uyku düzeni, ekran ve kaygıyla ilişkisi üzerine ebeveyn rehberi.",
