@@ -372,7 +372,10 @@ EKLER = {'/alacaatli-psikolog/': {'html': "<h2>Alacaatlı'da çocukların okul v
                                                       'değişiklikleriyle ilgili bir konuda destek arıyorsanız bireysel görüşme; partnerinizle yaşadığınız sorunlar için çift görüşmesi; çocuğunuzun '
                                                       'davranışları ya da duyguları sizi düşündürüyorsa çocuk ve ebeveyn görüşmeleri; evde herkesin etkilendiği bir durum varsa aile görüşmesi uygun '
                                                       'olabilir. Kararsız kaldığınızda bunu randevu sırasında söylemeniz yeterlidir; başvuru nedeninize göre en uygun başlangıç birlikte '
-                                                      'belirlenir.</p>',
+                                                      "belirlenir.</p><h2>Çayyolu'nun tüm mahallelerinden ulaşım</h2>\n"
+                                                      "<p>Koru, Ahmet Taner Kışlalı, Alacaatlı ve Çayyolu'nun diğer mahallelerinden gelenler için ofisimiz Dumlupınar Bulvarı üzerinde, "
+                                                      "Konutkent'tedir. Binada ücretsiz otopark bulunur; sayfadaki yol tarifi düğmesi bulunduğunuz yerden güncel tarifi Google Haritalar'da açar. Yüz "
+                                                      'yüze görüşmelerin yanında online görüşme seçeneği de vardır.</p>\n',
                                               'sss': [('İlk görüşmeden önce bir form doldurmam gerekiyor mu?',
                                                        'Hayır. Randevu sırasında yalnızca iletişim bilgileriniz ve kısaca başvuru nedeniniz alınır; gerisi ilk görüşmede konuşulur.'),
                                                       ('Görüşmelerim sırasında uzman değiştirmek mümkün mü?',
@@ -381,7 +384,7 @@ EKLER = {'/alacaatli-psikolog/': {'html': "<h2>Alacaatlı'da çocukların okul v
                                                       ('Bekleme alanında başka danışanlarla karşılaşır mıyım?',
                                                        'Randevular, danışanların birbirleriyle karşılaşmasını en aza indirecek biçimde planlanır. Mahremiyetiniz konusunda bir isteğiniz varsa randevu '
                                                        'alırken belirtebilirsiniz.')],
-                                              'tarih': '2026-10-27'},
+                                              'tarih': '2026-10-28'},
  '/cift-iliski-terapisi/': {'html': '<h2>Çift olarak randevu almak: pratik adımlar</h2>\n'
                                     '<p>Çift görüşmesi için randevuyu iki taraftan biri alabilir. Randevu sırasında kısaca neden başvurduğunuzu ve iki tarafın da gelmeye istekli olup olmadığını '
                                     'paylaşmanız, görüşmenin planlanmasını kolaylaştırır. Çiftlerin ortak boş zamanı bulmak çoğu zaman zor olduğu için akşam ve cumartesi saatleri sık tercih '
@@ -1149,14 +1152,17 @@ EKLER = {'/alacaatli-psikolog/': {'html': "<h2>Alacaatlı'da çocukların okul v
                                 '<h2>İlk görüşmeye gelmeden önce</h2>\n'
                                 '<p>İlk görüşmeye hazırlıklı gelmek zorunda değilsiniz. Yine de aklınızdaki soruları, sizi en çok zorlayan durumları ya da ne zamandır böyle hissettiğinizi kısaca not '
                                 'etmek, ilk görüşmede kendinizi anlatmayı kolaylaştırabilir. Ofisimizde ücretsiz otopark olduğu için park yeri aramanız gerekmez; birkaç dakika erken gelmek görüşmeye '
-                                'daha sakin başlamanızı sağlar.</p>',
+                                'daha sakin başlamanızı sağlar.</p><h2>Mutlukent ve Ümitköy çevresinden gelenler için</h2>\n'
+                                "<p>Ümitköy'e komşu Mutlukent ve çevresindeki sitelerden gelen danışanlarımız için ofisimiz Eskişehir Yolu üzerinden kısa bir sürüş mesafesindedir. Binada ücretsiz "
+                                'otopark vardır; yol tarifi düğmesiyle bulunduğunuz yerden güncel tarifi alabilirsiniz. Okul ve iş çıkışına denk gelen akşam saatleri ile Cumartesi randevuları, '
+                                'çocuklu ve çalışan aileler için en sık tercih edilen saatlerdir.</p>\n',
                         'sss': [("Ümitköy'den gelen danışanlar genellikle hangi saatleri tercih ediyor?",
                                  'Çalışanlar çoğunlukla akşam saatlerini ve cumartesi randevularını tercih ediyor. Size uygun saat, ilk iletişimde birlikte belirlenir.'),
                                 ('Bazı haftalar yüz yüze, bazı haftalar online görüşebilir miyim?',
                                  'Evet. Gelmenin zor olduğu haftalarda görüşmeyi online yapabilir, sonra yüz yüze devam edebilirsiniz.'),
                                 ('Hem kendim hem çocuğum için destek almak istiyorum, nasıl ilerleriz?',
                                  'İhtiyaçlarınız ilk görüşmede konuşulur; sizin ve çocuğunuzun görüşmeleri ayrı planlanır ve gerektiğinde farklı uzmanlarla yürütülür.')],
-                        'tarih': '2026-10-27'},
+                        'tarih': '2026-10-28'},
  '/yalnizlik-hissi-ve-sosyal-geri-cekilme/': {'html': '<h2>Kalabalık içinde yalnızlık</h2>\n'
                                                       '<p>Yalnızlık her zaman tek başına olmakla ilgili değildir. Bir evlilik içinde, kalabalık bir ailede ya da iş yerinde de insan kendini yalnız '
                                                       'hissedebilir. Bu duygu çoğu zaman görülmediğini, anlaşılmadığını ya da gerçekte nasıl hissettiğini paylaşacak kimsesi olmadığını düşünmekten '
@@ -1217,13 +1223,17 @@ EKLER = {'/alacaatli-psikolog/': {'html': "<h2>Alacaatlı'da çocukların okul v
                                   '<h2>Çift ve aile görüşmesine gelmeden önce</h2>\n'
                                   '<p>Çift ya da aile olarak başvuruyorsanız, görüşmeye kimlerin katılacağını önceden konuşmanız işinizi kolaylaştırır. İlk görüşmede her tarafın kendi bakış açısını '
                                   'anlatabileceği bir alan açılır; kimse haklı ya da haksız ilan edilmez. Çocukla ilgili başvurularda ise genellikle önce ebeveynlerle bir ön görüşme yapılır, '
-                                  'ardından çocuğun ihtiyacına göre süreç planlanır.</p>',
+                                  'ardından çocuğun ihtiyacına göre süreç planlanır.</p><h2>Bağlıca, Dodurga ve çevre mahallelerden gelenler için</h2>\n'
+                                  "<p>Ofisimiz Yaşamkent'e komşu Bağlıca, Dodurga ve Konutkent'ten gelenler için de kısa bir sürüş mesafesindedir. Binada ücretsiz otopark bulunur; bu sayfadaki yol "
+                                  "tarifi düğmesi, bulunduğunuz yerden güncel araç ve toplu taşıma tarifini Google Haritalar'da açar. Görüşmeler Pazartesi–Cumartesi 09:00–20:00 arasında yapılır; "
+                                  'akşam ve Cumartesi saatleri, iş ve okul programıyla uyumlu bir düzen kurmayı kolaylaştırır. Gelmenin zor olduğu haftalarda görüşmeyi online sürdürmek de '
+                                  'mümkündür.</p>\n',
                           'sss': [('Eşimle birlikte gelmek istiyoruz ama eşim çekiniyor, ne yapabiliriz?',
                                    'İlk görüşmeye tek başınıza gelmeniz de mümkündür. Eşinizin çekincelerini nasıl konuşabileceğinizi birlikte değerlendirebiliriz.'),
                                   ('Yaşamkent ofisinde görüşmeler ne sıklıkla yapılır?', 'Genellikle haftada bir görüşmeyle başlanır; süreç ilerledikçe sıklık ihtiyacınıza göre birlikte belirlenir.'),
                                   ('Görüşmeye gelirken yanımda bir şey getirmem gerekir mi?',
                                    'Gerekmez. Çocuğunuz için başvuruyorsanız okuldan gelen notlar ya da gözlemleriniz ilk görüşmede faydalı olabilir.')],
-                          'tarih': '2026-10-27'},
+                          'tarih': '2026-10-28'},
  '/yetiskinler-icin/': {'html': '<h2>Yetişkinler hangi konularla başvuruyor?</h2>\n'
                                 '<p>Yetişkin danışanlarımızın başvuru nedenleri çok çeşitlidir. Kimi uzun süredir geçmeyen bir yorgunluk ve isteksizlikle, kimi bir ayrılık ya da kayıp sonrasında, '
                                 'kimi de iş hayatındaki baskı ya da ilişkilerinde tekrar eden sorunlarla gelir. Bazen ortada belirgin bir sorun yoktur; kişi yalnızca kendini daha iyi anlamak, bir '
