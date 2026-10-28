@@ -237,6 +237,16 @@ AREAS = [
     ('Bilkent', '/bilkent-psikolog/'),
     ('Eryaman', '/eryaman-psikolog/'),
 ]
+SEMT_KISA = {
+    '/umitkoy-psikolog/': "Ümitköy'e birkaç dakika mesafede; çalışan aileler için akşam ve Cumartesi randevusu.",
+    '/yasamkent-psikolog/': "Yaşamkent'e en yakın ofisimiz; ücretsiz otopark, yüz yüze ve online görüşme.",
+    '/konutkent-psikolog/': "Ofisimiz Konutkent'te, Dumlupınar Bulvarı üzerinde.",
+    '/incek-psikolog/': "İncek'teki aileler için çocuk, ergen ve ebeveyn görüşmeleri.",
+    '/beysukent-psikolog/': "Beysukent'ten gelen yetişkinler, gençler ve üniversite öğrencileri için.",
+    '/alacaatli-psikolog/': "Alacaatlı'daki aileler için çocuk, çift ve aile görüşmeleri.",
+    '/bilkent-psikolog/': "Bilkent ve Beytepe'deki öğrenciler, akademisyenler ve çalışanlar için yüz yüze ve online görüşme.",
+    '/eryaman-psikolog/': "Eryaman ve Etimesgut'tan gelenler için ücretsiz otoparklı ofis ve online seçenek.",
+}
 FOCUS = [
     ('/cayyolu-cocuk-psikologu/', 'Çocuk ve Ergen Psikoloğu'),
     ('/cayyolu-cift-terapisi/', 'Çift Terapisi'),
@@ -735,7 +745,11 @@ def home_page(recs, posts):
     books = [('wp-content/uploads/2024/05/bir-hayatla-evlenmek.webp', 'Bir Hayatla Evlenmek'), ('wp-content/uploads/2024/05/bir-odanin-otesi-500x500-1.webp', 'Bir Odanın Ötesi'), ('wp-content/uploads/2024/05/dengeyi-yakalamak.webp', 'Dengeyi Yakalamak')]
     books_html = ''.join('<figure class="book">%s<figcaption>%s</figcaption></figure>' % (img(opt(p, 420), n + ' – Rojin Nazik'), esc(n)) for p, n in books)
     reviews_html = ''.join('<figure class="review"><blockquote>%s</blockquote><figcaption>%s</figcaption></figure>' % (esc(t), esc(n)) for t, n in reviews[:5])
-    areas_html = ''.join('<a class="area-chip" href="%s">%s %s psikolog</a>' % (p, ICON['pin'], esc(a)) for a, p in AREAS if p != '/') + \
+    # Ana sayfada semt bağlantıları açıklamalı kart (28 Ekim): sitenin en güçlü sayfasından semt sayfalarına bağlamlı bağlantı
+    areas_html = '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;width:100%%;margin-bottom:14px">%s</div>' % ''.join(
+        '<a href="%s" style="display:block;padding:14px 16px;border:1px solid #E3E8F0;border-radius:14px;background:#fff;text-decoration:none;color:inherit">'
+        '<b style="display:block;margin-bottom:4px">%s %s psikolog</b><span style="font-size:14.5px;color:#5b6475">%s</span></a>' % (p, ICON['pin'], esc(a), esc(SEMT_KISA.get(p, '')))
+        for a, p in AREAS if p != '/') + \
         ''.join('<a class="area-chip" href="%s">%s Çayyolu %s</a>' % (p, ICON['arrow'], esc(t)) for p, t in FOCUS)
     latest = ''.join(blog_card(p) for p in posts[:3])
     # WordPress döneminde yıllarca 1. sırada duran başlık korunur (2026-10-05)
