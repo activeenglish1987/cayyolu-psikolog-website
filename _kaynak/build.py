@@ -905,6 +905,7 @@ SISTER = {
  '/incek-psikolog/': [(RN + '/ayrilma-kaygisi/', 'Çocuklarda ayrılma kaygısı')],
 }
 RETITLE = {
+ '/bireysel-danismanlik/': {'seo_title': 'Çayyolu Bireysel Terapi ve Danışmanlık | RN Psikoloji', 'modified': '2026-10-28'},
  '/ankara-psikolog-cayyolu-kizilay-umitkoy-yasamkent-incek-ve-cevresinde-guvenilir-psikolojik-destek/': {
    'title': "Batı Ankara'da Psikolojik Destek: Çayyolu, Ümitköy, Yaşamkent ve İncek",
    'seo_title': "Batı Ankara'da Psikolojik Destek | Çayyolu, Ümitköy, Yaşamkent, İncek",

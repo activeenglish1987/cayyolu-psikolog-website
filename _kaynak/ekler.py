@@ -1364,3 +1364,49 @@ EKLER['/cayyolu-psikolojik-danismanlik-merkezi/']['html'] += """
 EKLER['/cayyolu-psikolojik-danismanlik-merkezi/']['sss'] = EKLER['/cayyolu-psikolojik-danismanlik-merkezi/'].get('sss', []) + [
     ["Çayyolu'nda psikiyatrist var mı?", "Merkezimizde psikologlar görüşme yapar; ilaç yazılmaz. İlaç değerlendirmesi gerekebilecek durumlarda bir psikiyatri uzmanına başvurmanızı öneririz; psikolojik destek bu süreçle birlikte yürütülebilir."]]
 EKLER['/cayyolu-psikolojik-danismanlik-merkezi/']['tarih'] = '2026-10-28'
+
+# 28 Ekim — Çayyolu müşteri kelimeleri: hizmet + semt, hizmet + fiyat, eksik aramalar (Search Console)
+_UC = "Ücreti nelerin belirlediğini <a href=\"/cayyolu-psikolog-fiyatlari/\">psikolog fiyatları</a> sayfamızda anlattık; güncel ücreti WhatsApp'tan yazarak ya da arayarak öğrenebilirsiniz."
+_OF = "Ofisimiz Konutkent'te, Dumlupınar Bulvarı üzerindedir; ücretsiz otopark vardır ve görüşmeler Pazartesi'den Cumartesi'ye 09:00 – 20:00 arasında randevuyla yapılır."
+def _ekle(yol, html, sss=()):
+    EKLER[yol]['html'] += html
+    EKLER[yol]['sss'] = EKLER[yol].get('sss', []) + [list(x) for x in sss]
+    EKLER[yol]['tarih'] = '2026-10-28'
+
+_ekle('/cayyolu-cift-terapisi/', """
+<h2>Ümitköy, Yaşamkent ve İncek'ten gelen çiftler için</h2>
+<p>Çift görüşmelerine Çayyolu'nun yanı sıra Ümitköy, Yaşamkent, Konutkent, İncek ve Beysukent'ten de pek çok çift geliyor. """ + _OF + """ İki kişinin de çalıştığı ailelerde ortak bir boş saat bulmak çoğu zaman en zor kısımdır; akşam ve Cumartesi randevuları bu yüzden çiftlerin en sık tercih ettiği saatlerdir. Bazı haftalarda biriniz şehir dışındaysa görüşme online da yapılabilir.</p>
+<h2>Çayyolu çift terapisi fiyatları</h2>
+<p>Çift terapisi ücreti; görüşmenin süresine, çift ya da bireysel görüşme olmasına ve yüz yüze ya da online yapılmasına göre değişir. Görüşmelerin hangi sıklıkla yapılacağı ilk görüşmede birlikte planlanır; bu da toplam maliyeti öngörmenizi kolaylaştırır. """ + _UC + """</p>
+""", [("Çayyolu'nda çift terapisi ücretleri neye göre değişir?", "Ücret; görüşmenin süresine, çift ya da bireysel görüşme olmasına ve yüz yüze ya da online yapılmasına göre değişir. Güncel ücreti WhatsApp'tan yazarak ya da arayarak öğrenebilirsiniz.")])
+
+_ekle('/cayyolu-aile-terapisi/', """
+<h2>Ümitköy, Yaşamkent ve İncek'teki aileler için aile terapisi</h2>
+<p>Batı yakasında yaşayan aileler için okul, servis, kurs ve iş arasında geçen günlerde aile görüşmesine zaman ayırmak kolay değildir. """ + _OF + """ Okul çıkışı ve Cumartesi saatleri, çocuklarıyla birlikte gelen ailelerin en çok tercih ettiği saatlerdir. Aile üyelerinden biri farklı bir şehirdeyse görüşmeye online katılabilir.</p>
+<h2>Çayyolu aile terapisi fiyatları</h2>
+<p>Aile terapisi ücreti; görüşmeye katılan aile üyesi sayısına, görüşmenin süresine ve yüz yüze ya da online yapılmasına göre değişir. Bazı durumlarda tüm aileyle yapılan görüşmelerin yanında ebeveynlerle ya da çocukla ayrı görüşmeler de planlanır. """ + _UC + """</p>
+""", [("Çayyolu'nda aile terapisi ücretleri neye göre değişir?", "Ücret; görüşmeye katılan aile üyesi sayısına, süresine ve yüz yüze ya da online yapılmasına göre değişir. Güncel ücreti WhatsApp'tan yazarak ya da arayarak öğrenebilirsiniz.")])
+
+_ekle('/cayyolu-cocuk-psikologu/', """
+<h2>Ümitköy, Yaşamkent, İncek ve Konutkent'ten gelen aileler için çocuk ve ergen psikoloğu</h2>
+<p>Çocuk ve ergen görüşmelerine Çayyolu'nun yanı sıra Ümitköy, Yaşamkent, Konutkent, İncek, Beysukent ve Alacaatlı'dan da aileler geliyor. """ + _OF + """ Okul çıkışına denk gelen saatler ve Cumartesi randevuları, çocukların okulunu aksatmadan görüşmelere devam edebilmesini sağlar.</p>
+<h2>Travma sonrası çocuklarda oyun terapisi</h2>
+<p>Kaza, deprem, yakın birinin kaybı, hastane süreci ya da ailede yaşanan ani bir değişim gibi zorlayıcı olaylardan sonra çocuklar yaşadıklarını çoğu zaman kelimelerle anlatamaz. Uyku sorunları, yeniden altını ıslatma, ebeveynden ayrılamama, öfke patlamaları ya da oyunda aynı sahneyi tekrar tekrar canlandırma bu dönemde görülebilir. Oyun terapisinde çocuk, kendini güvende hissettiği bir ortamda yaşadıklarını oyun yoluyla ifade eder; ebeveynlerle yapılan görüşmelerde ise evde çocuğa nasıl destek olunabileceği konuşulur. Belirtiler yoğunsa ya da uzun sürüyorsa bir çocuk ve ergen psikiyatristine de başvurulması önerilir.</p>
+""", [("Travma yaşamış çocuklar için oyun terapisi uygun mu?", "Zorlayıcı bir olaydan sonra çocuklar yaşadıklarını çoğu zaman oyun yoluyla ifade eder; oyun terapisi bu ifadeye güvenli bir alan açar. Süreç ebeveyn görüşmeleriyle birlikte yürütülür; belirtiler yoğunsa çocuk ve ergen psikiyatristine de başvurulması önerilir.")])
+
+_ekle('/bireysel-danismanlik/', """
+<h2>Çayyolu'nda bireysel terapi: kimler başvuruyor?</h2>
+<p>Bireysel görüşmelere en sık kaygı ve stres, özgüven, ilişki sorunları, iş ve aile arasında sıkışmışlık, kayıp ve yaşam geçişleri gibi konularla başvuruluyor. Çayyolu, Ümitköy, Yaşamkent, Konutkent ve İncek'ten gelen yetişkinler için """ + _OF[0].lower() + _OF[1:] + """ İş çıkışı ve Cumartesi saatleri, çalışan yetişkinlerin görüşmelere düzenli devam edebilmesini kolaylaştırır.</p>
+<h2>Çayyolu bireysel terapi fiyatları</h2>
+<p>Bireysel terapi ücreti; görüşmenin süresine, sıklığına ve yüz yüze ya da online yapılmasına göre değişir. Görüşmelerin hangi sıklıkla yapılacağı ilk görüşmede birlikte belirlenir. """ + _UC + """</p>
+""", [("Çayyolu'nda bireysel terapi ücretleri neye göre değişir?", "Ücret; görüşmenin süresine, sıklığına ve yüz yüze ya da online yapılmasına göre değişir. Güncel ücreti WhatsApp'tan yazarak ya da arayarak öğrenebilirsiniz.")])
+
+_ekle('/beysukent-psikolog/', """
+<h2>Beysukent psikoloji ve psikolojik danışmanlık</h2>
+<p>Beysukent'te psikolojik danışmanlık arayanlar için ofisimiz araçla kısa bir mesafededir. """ + _OF + """ Yetişkinler için bireysel görüşmeler, çiftler için çift terapisi, aileler için çocuk ve ergen görüşmeleri aynı ofiste planlanabilir; bu, bir aile içinde farklı ihtiyaçları olan kişilerin aynı yere gelebilmesini kolaylaştırır.</p>
+""", [("Beysukent'ten ofisinize nasıl gelebilirim?", "Ofisimiz Konutkent'te, Dumlupınar Bulvarı üzerindedir; Beysukent'ten araçla kısa sürede ulaşılır ve ücretsiz otopark vardır. Görüşmeler Pazartesi'den Cumartesi'ye randevuyla yapılır.")])
+
+_ekle('/yasamkent-psikolog/', """
+<h2>Yaşamkent psikolojik danışmanlık merkezi</h2>
+<p>RN Psikoloji'nin batı yakasındaki ofisi Yaşamkent'e en yakın psikolojik danışmanlık merkezlerinden biridir. Merkezimizde yetişkinler, çiftler, aileler, çocuklar ve ergenlerle görüşme yapan psikologlar aynı çatı altında çalışır; bu sayede ilk görüşmede ihtiyacınıza en uygun uzmanla eşleşmeniz kolaylaşır. """ + _OF + """</p>
+""", [("Yaşamkent'te psikolojik danışmanlık merkeziniz var mı?", "Batı yakasındaki ofisimiz Konutkent'te, Dumlupınar Bulvarı üzerindedir ve Yaşamkent'e çok yakındır. Yetişkin, çift, aile, çocuk ve ergen görüşmeleri aynı ofiste yapılır.")])
