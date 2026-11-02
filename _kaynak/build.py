@@ -886,7 +886,7 @@ SISTER = {
  '/cayyolu-cocuk-psikologu/': [(RN + '/ayrilma-kaygisi/', 'Çocuklarda ayrılma kaygısı'), (RN + '/sosyal-kaygi/', 'Sosyal kaygı'), (RN + '/cocuk-ergen-danismanligi/', 'Çocuk ve ergen danışmanlığı'), (RN + '/ankara-cocuk-psikologu/', 'Ankara çocuk psikoloğu')],
  '/cayyolu-cift-terapisi/': [(RN + '/cift-iliski-terapisi/', 'Ankara çift terapisi – Psikolog Rojin Nazik'), (RN + '/esim-cift-terapisine-gelmek-istemiyor/', 'Eşim çift terapisine gelmek istemiyor')],
  '/cayyolu-aile-terapisi/': [(RN + '/ankara-aile-terapisti/', 'Ankara aile terapisti'), (RN + '/internet-bagimliligi/', 'Ekran ve internet bağımlılığı')],
- '/cayyolu-psikolojik-danismanlik-merkezi/': [(RN + '/', 'Psikolog Rojin Nazik'), (RN + '/kizilay-psikolog/', 'Kızılay psikolog'), (RN + '/kavaklidere-psikolog/', 'Kavaklıdere psikolog'), (RN + '/dikmen-psikolog/', 'Dikmen psikolog')],
+ '/cayyolu-psikolojik-danismanlik-merkezi/': [(RN + '/', 'Psikolog Rojin Nazik'), (RN + '/kizilay-psikolog/', 'Kızılay psikolog'), (RN + '/kavaklidere-psikolog/', 'Kavaklıdere psikolog'), (RN + '/dikmen-psikolog/', 'Dikmen psikolog'), (RN + '/ankara-cankaya-psikolog/', 'Çankaya psikolog'), (RN + '/kecioren-psikolog/', 'Keçiören psikolog'), (RN + '/oran-psikolog/', 'Oran psikolog')],
  '/cayyolu-psikolog-fiyatlari/': [(RN + '/ankara-psikolog-fiyatlari/', 'Ankara psikolog fiyatları 2026')],
  '/cocuklarda-kaygi-ebeveyn-rehberi/': [(RN + '/ayrilma-kaygisi/', 'Ayrılma kaygısı'), (RN + '/sosyal-kaygi/', 'Sosyal kaygı')],
  '/yurt-disi-online-ebeveyn-danismanligi/': [(RN + '/yurt-disi-online-turk-psikolog/', 'Yurt dışında Türk psikolog – Türkçe online terapi')],
