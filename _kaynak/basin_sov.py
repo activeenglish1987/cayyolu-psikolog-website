@@ -3,7 +3,7 @@ Rakamlar Rojin /basinda-biz/ sayfasıyla aynı tutulur. Kendi içinde stil; JS y
 import html
 E = lambda x: html.escape(x, quote=True)
 TUM = 'https://www.psikologrojinnazik.com/basinda-biz/'
-SAYAC = [('45', 'çevrimiçi haber'), ('19', 'gazete sayfası'), ('11', 'ulusal yayın'), ('7', 'TV ve video yayını'), ('3', 'kitap')]
+SAYAC = [('46', 'çevrimiçi haber'), ('19', 'gazete sayfası'), ('11', 'ulusal yayın'), ('7', 'TV ve video yayını'), ('3', 'kitap')]
 LOGO = [('CNN TÜRK', 'cnnturk', 146, 120), ('Hürriyet', None, 0, 0), ('Milliyet', 'milliyet', 480, 87), ('Sabah', 'sabah', 292, 105),
         ('Cumhuriyet', None, 0, 0), ('Posta', 'posta', 307, 91), ('Akşam', 'aksam', 480, 103), ('Takvim', 'takvim', 460, 120),
         ('Vatan', 'vatan', 480, 102), ('Beyaz TV', 'beyaztv', 204, 70), ('TV8 INT', None, 0, 0)]
@@ -34,7 +34,7 @@ PT = {
  'sefkat': ('Öz Şefkat Nedir? Kendinize Bir Arkadaşınıza Davrandığınız Gibi Davranmak', 'https://psychologytimes.com.tr/oz-sefkat-nedir-kendinize-bir-arkadasiniza-davrandiginiz-gibi-davranmak/'),
  'gurbet': ('Gurbette Ruh Sağlığı: İki Yer Arasında Yaşamanın Görünmeyen Yükü', 'https://psychologytimes.com.tr/gurbette-ruh-sagligi-iki-yer-arasinda-yasamanin-gorunmeyen-yuku/'),
 }
-PT_SEC = {'rojin': ['sessiz', 'pazar', 'sefkat', 'gurbet', 'bakim'], 'cayyolu': ['ebeveyn', 'yalan', 'erteleme', 'bakim', 'sessiz'], 'elif': ['pazar', 'erteleme', 'sefkat', 'sessiz', 'ebeveyn']}
+PT_SEC = {'rojin': ['sessiz', 'pazar', 'ebeveyn', 'sefkat', 'gurbet'], 'cayyolu': ['ebeveyn', 'yalan', 'erteleme', 'bakim', 'sessiz'], 'elif': ['pazar', 'erteleme', 'sefkat', 'sessiz', 'ebeveyn']}
 SITE = {
  'rojin': dict(baslik='Ulusal basında <em>Psikolog Rojin Nazik</em>', kart=['miras', 'aldatan', 'makyaj', 'uyku', 'travma', 'asiri'], tum='/basinda-biz/',
                alt='Hürriyet’ten CNN Türk’e, ulusal gazetelerde ve televizyon programlarında uzman görüşleriyle.'),
