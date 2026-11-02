@@ -1027,9 +1027,16 @@ def route_btns():
             '<a class="btn btn-line" href="%(u)s&travelmode=transit" target="_blank" rel="noopener" data-cta-area="yol_tarifi_toplu">%(pin)s<span>Toplu taşımayla yol tarifi</span></a>'
             '<a class="btn btn-line" href="%(u)s&travelmode=driving" target="_blank" rel="noopener" data-cta-area="yol_tarifi_arac">%(pin)s<span>Araçla yol tarifi</span></a></div>') % {'u': DIR_URL, 'pin': ICON['pin']}
 
+
+# Gerçek Google İşletme Profili puanı (kullanıcı tarayıcı ölçümü, 2 Kasım 2026: 4,9 · 51 yorum). Şema (AggregateRating) EKLENMEZ.
+GOOGLE_YORUM = ('<p class="g-yorum" style="margin:0 0 18px;font-size:15px"><a href="https://www.google.com/maps/search/?api=1&amp;query=RN+Psikoloji+%C3%87ayyolu+Dumlup%C4%B1nar+Bulvar%C4%B1+399" '
+                'target="_blank" rel="noopener" data-cta-area="google_yorum" style="color:inherit;text-decoration:underline;text-underline-offset:3px">'
+                '★ 4,9 · Google&#39;da 50&#39;den fazla danışan yorumu ↗</a></p>')
+
 def landing_page(cfg):
     rec = {'type': 'page', 'landing': True, 'path': cfg['path'], 'title': cfg['h1'], 'date': '2026-09-30', 'modified': cfg.get('mod') or '2026-09-30'}
     body = cfg['body'] % {'cta': inline_cta('Merhaba, %s sayfanızdan ulaşıyorum, randevu bilgisi almak istiyorum.' % cfg['h1'])}
+    body = GOOGLE_YORUM + body
     # Ulaşım kutusuna Google Haritalar yol tarifi: ziyaretçinin kendi konumundan güncel toplu taşıma ve araç tarifi
     # (hat numarası ya da süre tahminle yazılmaz; Google'ın güncel verisi kullanılır)
     body = re.sub(r'(<div class="route-box">.*?</ul>)(</div>)', lambda m: m.group(1) + route_btns() + m.group(2), body, count=1, flags=re.S)
@@ -1077,12 +1084,13 @@ def contact_page(rec):
 <section class="page-hero"><div class="wrap">%(bc)s<p class="eyebrow">İletişim ve randevu</p><h1>Bize ulaşın</h1><p class="page-lead">Randevu ve bilgi için arayın ya da WhatsApp'tan yazın. Telefon Pazartesi – Cumartesi 10:00 – 19:00 arası açık; görüşmeler Pazartesi – Pazar 09:00 – 22:00 arasında yapılır.</p>
 <div class="btn-row hero-btns">%(call)s%(wa)s</div>%(open)s
 <p class="contact-phone"><a href="tel:%(raw)s">%(phone)s</a> · <a href="mailto:%(email)s">%(email)s</a></p><p class="contact-note" style="margin-top:10px;font-size:14px">Bu telefon hattı danışan randevuları içindir. Basın, TV programı, reklam ve iş birliği teklifleri için lütfen e-posta ile yazın: <a href="mailto:%(email)s">%(email)s</a></p></div></section>
+<section class="section section-tight"><div class="wrap">%(gy)s</div></section>
 <section class="section section-tight"><div class="wrap office-grid">%(office)s<div class="office-photos single">%(o1)s</div></div></section>
 <section class="section section-tight"><div class="wrap narrow"><h2>Yaşamkent ofisi haritası</h2><p>RN Psikoloji Çayyolu · Konutkent, Dumlupınar Bulvarı No:399 Kat:28 D:121, 06810 Çankaya / Ankara</p><div style="position:relative;width:100%%;aspect-ratio:16/9;border-radius:16px;overflow:hidden;margin-top:12px"><iframe title="RN Psikoloji Çayyolu ofisi haritası" src="https://www.google.com/maps?q=RN+Psikoloji+%%C3%%87ayyolu,+Dumlup%%C4%%B1nar+Bulvar%%C4%%B1+No:399,+06810+%%C3%%87ankaya%%2FAnkara&amp;output=embed" style="position:absolute;inset:0;width:100%%;height:100%%;border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></div></section>
 <section class="section section-alt"><div class="wrap">%(h_exp)s%(experts)s</div></section>
 <section class="section"><div class="wrap narrow">%(h_faq)s%(faq)s</div></section>''' % {
         'bc': bc, 'call': btn_call(), 'wa': btn_wa(), 'open': OPEN_STATUS, 'raw': PHONE_RAW, 'phone': PHONE, 'email': EMAIL,
-        'office': office_card(), 'o1': img(o1, 'RN Psikoloji Çayyolu seans odası'),
+        'office': office_card(), 'gy': GOOGLE_YORUM, 'o1': img(o1, 'RN Psikoloji Çayyolu seans odası'),
         'h_exp': section_head('Uzmanlarımız', 'Kiminle görüşmek istersiniz?'), 'experts': expert_cards(),
         'h_faq': section_head('Randevu öncesi', 'Sık sorulan sorular'), 'faq': faq_html()} + footer_html()
 
