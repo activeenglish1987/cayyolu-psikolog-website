@@ -1310,11 +1310,11 @@ def main():
     write('/kvkk/', article_page({'title': 'KVKK Aydınlatma Metni', 'path': '/kvkk/', 'date': '2026-10-13', 'modified': '2026-10-13', 'type': 'page'},
                                  kvkk.kvkk_govde(BRAND, 'cayyolupsikolog.com.tr', EMAIL), [('Ana Sayfa', '/'), ('KVKK Aydınlatma Metni', None)],
                                  desc='RN Psikoloji Çayyolu kişisel verilerin korunması (KVKK) aydınlatma metni: veri sorumlusu, işlenen veriler, amaçlar ve haklarınız.',
-                                 title_tag='KVKK Aydınlatma Metni | %s' % BRAND)); pages.append(('/kvkk/', '2026-10-13'))
+                                 title_tag='KVKK Aydınlatma Metni | %s' % BRAND).replace('index, follow, max-image-preview:large', 'noindex, follow'))  # yasal sayfa: dizine eklenmez (2 Kasım: 'konutkent psikolog'da gizlilik sayfası 1. çıkıyordu)
     write('/gizlilik/', article_page({'title': 'Gizlilik Politikası', 'path': '/gizlilik/', 'date': '2026-10-13', 'modified': '2026-10-13', 'type': 'page'},
                                      kvkk.gizlilik_govde('/kvkk/'), [('Ana Sayfa', '/'), ('Gizlilik Politikası', None)],
                                      desc='RN Psikoloji Çayyolu gizlilik yaklaşımı: hangi bilgileri neden istediğimiz ve nasıl koruduğumuz.',
-                                     title_tag='Gizlilik Politikası | %s' % BRAND)); pages.append(('/gizlilik/', '2026-10-13'))
+                                     title_tag='Gizlilik Politikası | %s' % BRAND).replace('index, follow, max-image-preview:large', 'noindex, follow'))  # yasal sayfa: dizine eklenmez
     # 404
     open(os.path.join(ROOT, '404.html'), 'w', encoding='utf-8').write(
         head('Sayfa bulunamadı | %s' % BRAND, 'Aradığınız sayfa bulunamadı.', '/404.html', noindex=True) + nav_html('') +
