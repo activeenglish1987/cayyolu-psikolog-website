@@ -309,6 +309,7 @@ def head(title, desc, path, extra_ld='', og_img='/assets/img/opt/og-1200.webp', 
 <meta property="og:description" content="%(desc)s">
 <meta property="og:url" content="%(canon)s">
 <meta property="og:image" content="%(site)s%(og)s">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#14264A">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 %(preload)s<style>%(css)s</style>
@@ -1144,6 +1145,7 @@ def books_page(rec):
     g = ''.join('<figure class="book big">%s<figcaption>%s</figcaption></figure>' % (img(opt(p, 520), n + ' – Psikolog Rojin Nazik'), esc(n)) for p, n in books)
     s = ''.join('<figure class="book big">%s<figcaption>%s</figcaption></figure>' % (img(opt(p, 520), n), esc(n)) for p, n in soon)
     body = '<h2>Psikolog Rojin Nazik\'in kitapları</h2><div class="books-grid">%s</div><h2>Yeni kitaplar</h2><div class="books-grid">%s</div><p>Kitaplar hakkında daha fazla bilgi: <a href="https://www.psikologrojinnazik.com/kitaplarim/" target="_blank" rel="noopener">psikologrojinnazik.com/kitaplarim</a></p>' % (g, s)
+    body += '<p>Ruh sağlığı üzerine okuma ve izleme önerilerimiz için <a href="/onerilenler/">önerilen kitaplar ve kaynaklar</a> sayfamıza da göz atabilirsiniz.</p>'
     return article_page(dict(rec, title='Kitaplarımız'), body, [('Ana Sayfa', '/'), ('Kitaplarımız', None)], kicker='Yayınlar',
                         desc='Psikolog Rojin Nazik\'in kitapları: Bir Hayatla Evlenmek, Bir Odanın Ötesi ve Dengeyi Yakalamak.', title_tag='Kitaplarımız | %s' % BRAND)
 

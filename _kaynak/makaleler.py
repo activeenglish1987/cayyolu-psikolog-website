@@ -144,7 +144,7 @@ MAKALELER = [
  # Psikolog Rojin Nazik merkez adına kontrol edip onayladı (metin olduğu gibi yayımlanır)
  'uzman_kontrolu': '2026-10-21',
  'title': 'Okullarda Ortak Yazılı Sınavlar Başlıyor: Çocuğunuzu Kaygısını Büyütmeden Nasıl Desteklersiniz?',
- 'seo_title': 'Ortak Yazılı Sınavlar: Çocuğunuzu Nasıl Desteklersiniz? | RN Psikoloji',
+ 'seo_title': 'Ortak Yazılı Sınav Kaygısı: Çocuğa Destek | RN Psikoloji',
  'desc': 'Ortaokul ve liselerde ortak yazılı sınavlar başlıyor. Yeni sisteme uyum ve not kaygısı karşısında çocuğunuza evde nasıl destek olabilirsiniz?',
  'thumb': 'assets/img/ofis-salon.webp',
  'html': '''
@@ -201,7 +201,7 @@ MAKALELER = [
  # Psikolog Rojin Nazik merkez adına kontrol edip onayladı (metin olduğu gibi yayımlanır)
  'uzman_kontrolu': '2026-10-19',
  'title': 'Çocuğum Arkadaş Edinemiyor: Ne Zaman Endişelenmeli, Nasıl Destek Olmalı?',
- 'seo_title': 'Çocuğum Arkadaş Edinemiyor: Ne Zaman Endişelenmeli? | RN Psikoloji',
+ 'seo_title': 'Çocuğum Arkadaş Edinemiyor: Ne Yapmalı? | RN Psikoloji',
  'desc': 'Çocuğunuz okulda yalnız mı kalıyor? Utangaçlık ile destek gerektiren durumları ayırt etmenize yardım eden işaretler ve evde yapabilecekleriniz.',
  'thumb': 'assets/img/ofis-koltuk.webp',
  'html': '''
@@ -458,7 +458,7 @@ MAKALELER = [
  'path': '/cocuklarda-kaygi-ebeveyn-rehberi/',
  'eski': '/aa-copy/',
  'title': 'Çocuklarda Kaygı: Ebeveynler İçin Rehber',
- 'seo_title': 'Çocuklarda Kaygı Belirtileri ve Ebeveyn Rehberi | RN Psikoloji Çayyolu',
+ 'seo_title': 'Çocuklarda Kaygı Belirtileri: Ebeveyn Rehberi | RN Psikoloji',
  'desc': "Çocuklarda kaygı nasıl anlaşılır, ebeveynler evde neler yapabilir, ne zaman çocuk psikoloğuna başvurulmalı? Çayyolu ve Yaşamkent'teki aileler için pratik rehber.",
  'thumb': 'assets/img/ofis-koltuk.webp',
  'html': '''
@@ -530,7 +530,7 @@ MAKALELER = [
  'path': '/evlilikte-iletisim-sorunlari/',
  'eski': '/iliskilerde-buyumeye-odaklanin/',
  'title': 'Evlilikte İletişim Sorunları: Çiftler İçin 7 Pratik Öneri',
- 'seo_title': 'Evlilikte İletişim Sorunları ve Çözüm Önerileri | RN Psikoloji Çayyolu',
+ 'seo_title': 'Evlilikte İletişim Sorunları ve Çözümleri | RN Psikoloji',
  'desc': "Evlilikte iletişim neden kopar? Tekrarlayan tartışmalar, küslük ve suçlayıcı dil yerine işe yarayan 7 pratik öneri ve çift terapisinin ne zaman gerektiği.",
  'thumb': 'assets/img/books-office-wide.jpg',
  'html': '''
@@ -594,7 +594,7 @@ MAKALELER = [
  'path': '/is-stresi-ve-tukenmislik/',
  'eski': '/toksik-yonetimi-anlamak-ve-onlemek/',
  'title': 'İş Stresi ve Tükenmişlik: Belirtiler ve Baş Etme Yolları',
- 'seo_title': 'İş Stresi ve Tükenmişlik Sendromu: Belirtiler, Baş Etme | RN Psikoloji',
+ 'seo_title': 'İş Stresi ve Tükenmişlik: Belirtiler, Baş Etme | RN Psikoloji',
  'desc': "Tükenmişlik belirtileri nelerdir, iş stresi ne zaman tükenmişliğe dönüşür? Günlük yaşamda uygulanabilir baş etme yolları ve psikolojik desteğin ne zaman gerektiği.",
  'thumb': 'assets/img/ofis-salon.webp',
  'html': '''
@@ -631,7 +631,7 @@ MAKALELER = [
  'path': '/travma-sonrasi-stres-belirtileri/',
  'eski': '/travmatik-stres/',
  'title': 'Travma Sonrası Stres: Belirtiler ve Ne Zaman Yardım Almalı?',
- 'seo_title': 'Travma Sonrası Stres Belirtileri ve Baş Etme Yolları | RN Psikoloji',
+ 'seo_title': 'Travma Sonrası Stres Belirtileri ve Baş Etme | RN Psikoloji',
  'desc': "Kaza, deprem, kayıp ya da şiddet gibi zorlayıcı bir olaydan sonra görülen travmatik stres belirtileri, iyileşme süreci ve psikolojik desteğin ne zaman gerektiği.",
  'thumb': 'assets/img/ofis-koltuk.webp',
  'html': '''

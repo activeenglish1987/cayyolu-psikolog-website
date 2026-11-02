@@ -369,7 +369,7 @@ LANDINGS = [
  'path': '/cayyolu-cift-terapisi/',
  'kw': 'Çayyolu çift terapisi',
  'h1': 'Çayyolu Çift Terapisi ve Evlilik Danışmanlığı',
- 'title': 'Çayyolu Çift Terapisi | Evlilik ve İlişki Danışmanlığı – RN Psikoloji',
+ 'title': 'Çayyolu Çift Terapisi ve Evlilik Danışmanlığı – RN Psikoloji',
  'desc': "Çayyolu ve Yaşamkent'te çift terapisi, evlilik ve ilişki danışmanlığı: iletişim, güven, aldatılma sonrası süreç, evlilik öncesi hazırlık. Randevu: 0552 418 79 73.",
  'lead': "İlişkinizde iletişim koptuysa, aynı tartışmalar tekrar ediyorsa ya da güven sarsıldıysa, çift görüşmeleri iki tarafın da sesinin duyulduğu güvenli bir alan sunar.",
  'body': '''

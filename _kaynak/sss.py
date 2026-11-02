@@ -4,7 +4,7 @@
 SSS_SAYFA = {
  'path': '/randevu-sik-sorulan-sorular/', 'kw': 'Çayyolu psikolog randevu', 'mod': '2026-10-09',
  'h1': 'Randevu ve İlk Görüşme: Sık Sorulan Sorular',
- 'title': 'Randevu ve İlk Görüşme: Sık Sorulan Sorular – RN Psikoloji Çayyolu',
+ 'title': 'Randevu ve İlk Görüşme: Sık Sorulan Sorular – RN Psikoloji',
  'desc': "RN Psikoloji Çayyolu'nda randevu ve ilk görüşme: ilk görüşmede neler yapılır, hangi uzmanla görüşmeli, hızlı randevu, Çayyolu dışından gelmek. Danışanlarımızın en sık soruları.",
  'lead': "Yaşamkent ofisimizde randevu almadan önce en çok merak edilenler: ilk görüşme, uzman seçimi, uygun saatler ve Çayyolu dışından gelmek.",
  'body': """
