@@ -477,7 +477,7 @@ def business_ld():
             'areaServed': ['Çayyolu', 'Ümitköy', 'Yaşamkent', 'Konutkent', 'İncek', 'Beysukent', 'Alacaatlı', 'Bilkent', 'Eryaman', 'Ankara'],
             'sameAs': [IG_ROJIN],
             'founder': {'@type': 'Person', '@id': 'https://www.psikologrojinnazik.com/#rojin-nazik', 'name': 'Rojin Nazik', 'jobTitle': 'Psikolog',
-                        'url': SITE + '/psikolog-rojin-nazik/', 'sameAs': ['https://www.wikidata.org/wiki/Q141626009', 'https://www.psikologrojinnazik.com/rojin-nazik-biyografi/', IG_ROJIN]},
+                        'url': SITE + '/psikolog-rojin-nazik/', 'sameAs': ['https://www.wikidata.org/wiki/Q141626009', 'https://www.psikologrojinnazik.com/rojin-nazik-biyografi/', IG_ROJIN, 'https://www.tiktok.com/@psikologrojinnazik', 'https://www.youtube.com/channel/UCvpDFha6SY2jnBxZ4Ja8FOA', 'https://tr.linkedin.com/in/rojin-nazik-a96137209']},
             'employee': [{'@type': 'Person', 'name': 'Elif Erdoğan', 'jobTitle': 'Psikolog', 'url': SITE + '/psikolog-elif-erdogan/',
                           'sameAs': ['https://psikologeliferdogan.com/', IG_ELIF]}]}
 
@@ -588,7 +588,7 @@ def article_page(rec, body_html, crumbs, kicker='', expert=None, lead='', hero_i
         lds.append({'@type': 'WebPage', '@id': SITE + rec['path'] + '#sayfa', 'url': SITE + rec['path'], 'inLanguage': 'tr-TR',
                     'dateModified': rec.get('modified') or rec['date'],
                     'accountablePerson': {'@type': 'Person', '@id': 'https://www.psikologrojinnazik.com/#rojin-nazik', 'name': 'Rojin Nazik', 'jobTitle': 'Psikolog',
-                                          'url': SITE + '/psikolog-rojin-nazik/', 'sameAs': ['https://www.psikologrojinnazik.com/rojin-nazik-biyografi/', 'https://www.wikidata.org/wiki/Q141626009']}})
+                                          'url': SITE + '/psikolog-rojin-nazik/', 'sameAs': ['https://www.psikologrojinnazik.com/rojin-nazik-biyografi/', 'https://www.wikidata.org/wiki/Q141626009', 'https://www.tiktok.com/@psikologrojinnazik', 'https://www.youtube.com/channel/UCvpDFha6SY2jnBxZ4Ja8FOA', 'https://tr.linkedin.com/in/rojin-nazik-a96137209']}})
     return head(tt, d, rec['path'], ld(*lds)) + nav_html(rec['path']) + '''
 <section class="page-hero">
   <div class="wrap">

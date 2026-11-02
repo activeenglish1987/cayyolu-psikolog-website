@@ -35,6 +35,10 @@ PT = {
  'gurbet': ('Gurbette Ruh Sağlığı: İki Yer Arasında Yaşamanın Görünmeyen Yükü', 'https://psychologytimes.com.tr/gurbette-ruh-sagligi-iki-yer-arasinda-yasamanin-gorunmeyen-yuku/'),
 }
 PT_SEC = {'rojin': ['sessiz', 'pazar', 'ebeveyn', 'sefkat', 'gurbet'], 'cayyolu': ['ebeveyn', 'yalan', 'erteleme', 'bakim', 'sessiz'], 'elif': ['pazar', 'erteleme', 'sefkat', 'sessiz', 'ebeveyn']}
+SOSYAL = [('Instagram', '260 B takipçi', 'https://www.instagram.com/psikologrojinnazik/'),
+          ('TikTok', '112 B+ takipçi', 'https://www.tiktok.com/@psikologrojinnazik'),
+          ('YouTube', 'kanal', 'https://www.youtube.com/channel/UCvpDFha6SY2jnBxZ4Ja8FOA'),
+          ('LinkedIn', 'profil', 'https://tr.linkedin.com/in/rojin-nazik-a96137209')]
 SITE = {
  'rojin': dict(baslik='Ulusal basında <em>Psikolog Rojin Nazik</em>', kart=['miras', 'aldatan', 'makyaj', 'uyku', 'travma', 'asiri'], tum='/basinda-biz/',
                alt='Hürriyet’ten CNN Türk’e, ulusal gazetelerde ve televizyon programlarında uzman görüşleriyle.'),
@@ -75,6 +79,11 @@ CSS = ('<style>.bsov{background:linear-gradient(160deg,#1d1027 0%,#3d1e54 60%,#4
  '.bsov-pt a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 2px;color:#1d1027;text-decoration:none;font-size:15.5px;font-weight:600;line-height:1.35}'
  '.bsov-pt a:hover{color:#6B3A8C}.bsov-pt a i{font-style:normal;color:#6B3A8C;flex:none}'
  '@media(max-width:560px){.bsov-pt{padding:18px 16px 6px}.bsov-pt a{font-size:15px;padding:14px 0}}'
+ '.bsov-sos{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:22px 0 0;padding:0;list-style:none}'
+ '.bsov-sos a{display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.22);color:#fff;text-decoration:none;font-size:14px;background:rgba(255,255,255,.06)}'
+ '.bsov-sos a b{font-weight:700;color:#fff}.bsov-sos a span{color:#E9D3A3}'
+ '.bsov-sos a:hover{background:rgba(255,255,255,.14)}'
+ '@media(max-width:560px){.bsov-sos{display:grid;grid-template-columns:1fr 1fr}.bsov-sos a{flex-direction:column;gap:2px;justify-content:center;padding:10px 8px;font-size:13.5px;border-radius:16px;text-align:center}}'
  '@media(max-width:900px){.bsov-hb{grid-template-columns:1fr 1fr}.bsov-say{grid-template-columns:repeat(3,1fr)}}'
  '@media(max-width:560px){.bsov{padding:48px 16px}.bsov-hb{grid-template-columns:1fr}.bsov-say{grid-template-columns:repeat(2,1fr)}.bsov-say div:last-child{grid-column:span 2}.bsov-lg li{height:46px;padding:0 12px;min-width:0}.bsov-lg img{max-height:24px;max-width:96px}.bsov-lg img[alt="Psychology Times"]{max-width:160px;max-height:27px}.bsov-hb a:nth-child(n+5){display:none}}'
  '</style>')
@@ -83,6 +92,10 @@ def pt_blok(site, logo_yol):
     li = ''.join('<li><a href="%s" target="_blank" rel="noopener"><span>%s</span><i>↗</i></a></li>' % (E(PT[k][1]), E(PT[k][0])) for k in PT_SEC[site])
     return ('<div class="bsov-pt"><div class="bsov-pt-h"><img src="%spsychologytimes.webp" alt="Psychology Times" width="480" height="81" loading="lazy" decoding="async">'
             '<span>Kurucusu olduğu Psychology Times’ta yazıyor · Kasım 2026</span></div><ul>%s</ul></div>') % (logo_yol, li)
+
+def sos_blok():
+    return '<ul class="bsov-sos" aria-label="Resmî hesapları">%s</ul>' % ''.join(
+        '<li><a href="%s" target="_blank" rel="noopener"><b>%s</b><span>%s</span></a></li>' % (E(u), E(a), E(t)) for a, t, u in SOSYAL)
 
 def bant(site, logo_yol='/assets/basin/logo/'):
     c = SITE[site]
@@ -93,7 +106,7 @@ def bant(site, logo_yol='/assets/basin/logo/'):
             '<div class="bsov-k">EKRANDA VE BASINDA</div><h2>%s</h2><p class="bsov-alt">%s</p>'
             '<span class="bsov-unvan">Hürriyet’te: “Avrupa Birliği Psikologlar Derneği Genel Başkanı Psikolog Rojin Nazik”</span>'
             '<ul class="bsov-lg" aria-label="Yer aldığı yayınlar">%s</ul><div class="bsov-say">%s</div><div class="bsov-hb">%s</div>'
-            '%s<a class="bsov-tum" href="%s">Tüm haberler, gazete sayfaları ve TV programları →</a></div></section><!-- BASIN-SOV:SON -->') % (c['baslik'], E(c['alt']), lg, say, hb, pt_blok(site, logo_yol), c['tum'])
+            '%s%s<a class="bsov-tum" href="%s">Tüm haberler, gazete sayfaları ve TV programları →</a></div></section><!-- BASIN-SOV:SON -->') % (c['baslik'], E(c['alt']), lg, say, hb, pt_blok(site, logo_yol), sos_blok(), c['tum'])
 import re
 def yerlestir(s, site, capa, once=True):
     s = re.sub(r'<!-- BASIN-SOV:BAS -->.*?<!-- BASIN-SOV:SON -->', '', s, flags=re.S)
