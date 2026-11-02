@@ -135,7 +135,7 @@
     }
     var rn = NOT[(x.yer === 'online' && x.konu === 'diger') ? 'online' : NOT_ESLE[x.kim][x.konu]] || NOT.ilk;
     return { ad: 'Psikolog Rojin Nazik', kisa: 'Rojin Hanım', unvan: 'Psikolog ve Aile Danışmanı · RN Psikoloji kurucusu', foto: SITE === 'rojin' ? FOTO : RN + '/images/brand/rojin-nazik-portrait-800.webp',
-      etiket: ['15+ yıllık mesleki deneyim', 'Şema terapi eğitimi', '3 kitap yazarı', 'AB Psikologlar Derneği Genel Başkanı'],
+      etiket: ['13 yıllık mesleki deneyim', 'Şema terapi eğitimi', '3 kitap yazarı', 'AB Psikologlar Derneği Genel Başkanı'],
       medya: 'CNN Türk ve Beyaz TV’de konuk uzman · Milliyet, Akşam, Takvim’de söyleşileri yayımlandı',
       neden: NEDEN[x.kim], not: rn, notTaban: RN, notlar: 'Rojin Nazik\'in notları taranıyor' };
   }

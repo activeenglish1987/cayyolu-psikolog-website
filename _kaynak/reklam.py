@@ -36,7 +36,7 @@ CAYYOLU = {
 
 # Telefonun açıldığı saatler (Google Ads reklam ve arama öğesi zaman planı da aynı). Pazar kapalı.
 SAAT_TXT = 'Pazartesi–Cumartesi 10:00–19:00'
-ROJIN_ETIKET = ['15+ yıllık mesleki deneyim', 'Şema terapi eğitimi', 'AB Psikologlar Derneği Genel Başkanı', '3 kitap yazarı']
+ROJIN_ETIKET = ['13 yıllık mesleki deneyim', 'Şema terapi eğitimi', 'AB Psikologlar Derneği Genel Başkanı', '3 kitap yazarı']
 SUBELER = [
     ('Yaşamkent / Çayyolu', 'Konutkent, Dumlupınar Blv. No:399 Kat:28 D:121, Çankaya', 'Pazartesi–Pazar · ücretsiz otopark'),
     ('Kızılay', 'Atatürk Blv. No:127 Kat:8, Bakanlıklar', 'Pazartesi – Pazar'),

@@ -2,7 +2,7 @@
 # Semt sayfalarına uzmanların ilk elden notları (2026-10-09, uzmanların kendi metinleri).
 # Her not yalnızca bu sitede ve tek bir sayfada kullanılır; başka sitede tekrar edilmez.
 UZMAN = {
-    'rojin': ('Psikolog Rojin Nazik', '/psikolog-rojin-nazik/', 'RN Psikoloji kurucusu · Psikolog ve Aile Danışmanı · 15+ yıllık mesleki deneyim'),
+    'rojin': ('Psikolog Rojin Nazik', '/psikolog-rojin-nazik/', 'RN Psikoloji kurucusu · Psikolog ve Aile Danışmanı · 13 yıllık mesleki deneyim'),
     'elif': ('Psikolog Elif Erdoğan', '/psikolog-elif-erdogan/', 'Psikolog · çocuk, ergen ve genç yetişkin görüşmeleri'),
 }
 SEMT_NOTLARI = {

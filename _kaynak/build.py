@@ -553,7 +553,7 @@ def side_card(expert=None):
         who = '<p class="side-who">%s ile görüşmek için</p>' % esc(expert['name'])
         msg = 'Merhaba, %s ile görüşme için randevu bilgisi almak istiyorum.' % expert['name']
     else:
-        ig = ''; who = '<p class="side-who">Randevu ve bilgi için</p><p class="side-trust">Kurucumuz <a href="/psikolog-rojin-nazik/">Psikolog Rojin Nazik</a>: 15+ yıl deneyim · 3 kitap · CNN Türk, Milliyet ve Sabah\'ta uzman konuk</p>'; msg = 'Merhaba, randevu bilgisi almak istiyorum.'
+        ig = ''; who = '<p class="side-who">Randevu ve bilgi için</p><p class="side-trust">Kurucumuz <a href="/psikolog-rojin-nazik/">Psikolog Rojin Nazik</a>: 13 yıl deneyim · 3 kitap · CNN Türk, Milliyet ve Sabah\'ta uzman konuk</p>'; msg = 'Merhaba, randevu bilgisi almak istiyorum.'
     return '''<aside class="side-card">
   %(who)s
   <a class="side-phone" href="tel:%(raw)s">%(phone)s</a>
@@ -775,7 +775,7 @@ def home_page(recs, posts):
     </div>
     <div class="hero-media">
       <div class="hero-photo">%(hero_img)s</div>
-      <a class="hero-badge" href="/psikolog-rojin-nazik/"><span class="hb-k">Kurucu Psikolog</span><b>Rojin Nazik</b><span class="hb-s">15+ yıl deneyim · 3 kitap · CNN Türk, Milliyet, Sabah · AB Psikologlar Derneği Genel Başkanı</span></a>
+      <a class="hero-badge" href="/psikolog-rojin-nazik/"><span class="hb-k">Kurucu Psikolog</span><b>Rojin Nazik</b><span class="hb-s">13 yıl deneyim · 3 kitap · CNN Türk, Milliyet, Sabah · AB Psikologlar Derneği Genel Başkanı</span></a>
     </div>
   </div>
 </section>
@@ -873,7 +873,7 @@ def home_page(recs, posts):
        'h_blog': section_head('Blog', 'Son yazılar'), 'latest': latest} + footer_html()
 
 TRUST = '''<section class="trust-strip" aria-label="Neden RN Psikoloji"><ul>
-<li><b>15+ yıl</b>danışmanlık deneyimi</li>
+<li><b>13 yıl</b>danışmanlık deneyimi</li>
 <li><b>3 kitap</b>Psikolog Rojin Nazik</li>
 <li><b>CNN Türk · Beyaz TV</b>TV programları ve röportajlar</li>
 <li><b>Pzt – Paz</b>09:00 – 22:00 · ücretsiz otopark</li>
