@@ -26,7 +26,7 @@
     mins = (parseInt(get('hour'), 10) % 24) * 60 + parseInt(get('minute'), 10);
   } catch (e) { return; }
   var open = day >= 1 && day <= 6 && mins >= 600 && mins < (day === 6 ? 1080 : 1140);
-  var text = open ? 'Şu an açığız · Telefonu Selda Hanım açar.' : "Şu an mesai dışındayız. WhatsApp'tan mesaj bırakabilirsiniz, ilk mesaide dönüş yapılır.";
+  var text = open ? 'Şu an açığız · Telefonu Selda Hanım açar.' : "Ofis her gün 09:00–22:00 açık; telefon hattı şu an kapalı. WhatsApp'tan yazabilirsiniz, telefon saatinde dönüş yapılır.";
   for (var i = 0; i < els.length; i++) {
     els[i].innerHTML = '<span class="dot"></span><span></span>';
     els[i].lastChild.textContent = text;

@@ -151,7 +151,7 @@
     try { dismissed = sessionStorage.getItem('ah_kapat') === '1'; } catch (e) {}
     if (!dismissed) {
       var bar = document.createElement('div'); bar.className = 'ah-bar' + (POS === 'bottom' ? ' ah-bottom' : ''); bar.setAttribute('role', 'note');
-      bar.appendChild(btn('<span>🌙 Şu an mesai dışındayız.</span><b>' + kisa + ' Selda Hanım sizi arasın →</b>', 'ah-go', 'after_hours_bar'));
+      bar.appendChild(btn('<span>🌙 Telefon hattı şu an kapalı.</span><b>' + kisa + ' Selda Hanım sizi arasın →</b>', 'ah-go', 'after_hours_bar'));
       var x = document.createElement('button'); x.type = 'button'; x.className = 'ah-x'; x.setAttribute('aria-label', 'Kapat'); x.innerHTML = '×';
       x.onclick = function () { bar.parentNode && bar.parentNode.removeChild(bar); document.documentElement.classList.remove('ah-acik'); try { sessionStorage.setItem('ah_kapat', '1'); } catch (e) {} };
       bar.appendChild(x);

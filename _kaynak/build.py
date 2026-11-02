@@ -44,7 +44,7 @@ MAP_URL = 'https://www.google.com/maps/search/?api=1&query=' + quote('Dumlupına
 IG_ROJIN = 'https://www.instagram.com/psikologrojinnazik/'
 IG_ELIF = 'https://www.instagram.com/psikolog_eliferdogan/'
 GTM = 'GTM-KMR7XRJQ'
-ASSET_V = '8'
+ASSET_V = '9'
 
 def wa(msg):
     return 'https://wa.me/%s?text=%s' % (WA_NUM, quote(msg))
@@ -317,7 +317,7 @@ def head(title, desc, path, extra_ld='', og_img='/assets/img/opt/og-1200.webp', 
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-11469933181',{url_passthrough:true});</script>
 <script src="/assets/js/ads-conversion.js?v=6" defer></script>
 <script src="/assets/js/site.js?v=%(v)s" defer></script>
-<script src="/assets/js/after-hours.js?v=8" data-pos="bottom" defer></script>
+<script src="/assets/js/after-hours.js?v=9" data-pos="bottom" defer></script>
 <script>window.PUSULA_CFG={site:'cayyolu',foto:'/assets/img/opt/psikolog-rojin-nazik-720.webp',heroSecici:'.pu-yer'};</script>
 <script src="/assets/js/pusula.js?v=11" defer></script>
 %(ld)s

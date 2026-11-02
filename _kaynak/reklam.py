@@ -443,7 +443,7 @@ ROJIN_HEAD = '''<!doctype html><html lang="tr"><head><meta charset="utf-8">
 <link rel="preload" as="image" href="%(foto)s" fetchpriority="high">
 %(css)s
 <script src="/assets/js/ads-conversion.js?v=6" defer></script>
-<script src="/assets/js/after-hours.js?v=8" data-pos="bottom" defer></script>
+<script src="/assets/js/after-hours.js?v=9" data-pos="bottom" defer></script>
 <script>window.PUSULA_CFG=Object.assign(window.PUSULA_CFG||{},{heroSecici:'.lp-pu'});</script>
 <script src="/assets/js/pusula.js?v=11" defer></script>
 <script src="/assets/js/vitrin.js?v=8" defer></script>
