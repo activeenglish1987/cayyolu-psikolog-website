@@ -1413,3 +1413,49 @@ _ekle('/yasamkent-psikolog/', """
 
 # 28 Ekim paketi: 7 yaş kaygı yazısı güçlendirmesi (rakip boşluğu '7 yaş kaygı bozukluğu tedavisi' 210/ay; kullanıcı 'her şeyi onaylıyoruz' dedi)
 EKLER['/7-yasinda-cocukta-kaygi/'] = {'tarih': '2026-10-28', 'html': '\n<h2>Kaygı ne zaman olağan düzeyi aşar?</h2>\n<p>Her çocuk zaman zaman endişelenir; önemli olan kaygının sıklığı, süresi ve çocuğun hayatını ne kadar daralttığıdır. Ebeveynlerin kendi başına bir "kaygı bozukluğu" ayrımı yapması beklenmez; bu değerlendirme bir uzmanla birlikte yapılır. Yine de aşağıdaki işaretler, kaygının olağan düzeyin ötesine geçmiş olabileceğini düşündürebilir:</p>\n<ul>\n<li>Kaygı haftalardır neredeyse her gün sürüyor ve azalmak yerine artıyor.</li>\n<li>Çocuk okula gitmemek, arkadaş doğum gününe katılmamak gibi kaçınmalarla günlük hayatını belirgin biçimde sınırlıyor.</li>\n<li>Güvence ihtiyacı o kadar arttı ki gün boyu aynı sorular tekrarlanıyor ve verilen cevaplar onu rahatlatmıyor.</li>\n<li>Bedensel şikâyetler sık tekrarlıyor ve çocuk doktoru tıbbi bir neden bulmadı.</li>\n<li>Kaygı uykuyu, iştahı ya da aile düzenini belirgin biçimde etkilemeye başladı.</li>\n</ul>\n<p>Bu işaretlerden biri ya da birkaçı tanıdık geliyorsa, bir çocuk psikoloğuyla görüşmek durumu birlikte anlamanın en sağlıklı yoludur.</p>\n<h2>Destek süreci nasıl ilerler?</h2>\n<p>Bu yaştaki çocuklarla çalışmak, yetişkinlerle yapılan görüşmelerden farklıdır. Süreç genellikle şu adımlarla ilerler:</p>\n<p><b>Ebeveyn görüşmesi.</b> İlk görüşmeye çoğunlukla yalnızca ebeveynler gelir. Kaygının ne zaman başladığı, hangi durumlarda arttığı, okul ve ev düzeni, ailede yaşanan değişiklikler konuşulur.</p>\n<p><b>Çocukla tanışma.</b> Çocukla yapılan görüşmeler oyun, çizim ve hikâye üzerinden ilerler. Yedi yaşındaki bir çocuk duygusunu her zaman sözle anlatamaz; oyun ve resim, iç dünyasını anlamanın en doğal yoludur.</p>\n<p><b>Kaygıyı tanımak.</b> Çocuğa yaşına uygun bir dille kaygının ne olduğu, bedende nasıl hissedildiği ve neden "alarm" gibi çalıştığı anlatılır. Kaygıya bir isim ya da karakter vermek, çocuğun onunla arasına mesafe koymasına yardım eder.</p>\n<p><b>Küçük adımlarla yüzleşme.</b> Kaçınılan durumlar, çocuğun hızına uygun küçük adımlara bölünür. Her adım ebeveynle birlikte planlanır ve evde uygulanır.</p>\n<p><b>Okulla iş birliği.</b> Ailenin onayıyla öğretmen ve rehberlik servisiyle iletişim kurulabilir; sabah vedalaşması ya da sınıf içi destek gibi konularda ortak bir tutum belirlenir.</p>\n<p>Sürecin ne kadar süreceği çocuğa ve ailenin ihtiyacına göre değişir; ilerleme düzenli aralıklarla ebeveynle birlikte değerlendirilir.</p>\n', 'sss': [['Çocuğuma psikoloğa gideceğini nasıl anlatmalıyım?', '"Duygularımızı anlamamıza yardım eden biriyle tanışacağız; birlikte oyun oynayıp konuşacaksınız" gibi kısa ve sakin bir açıklama yeterlidir. Ceza ya da "sorunlu olduğun için" gibi bir çerçeveden kaçının.'], ['Görüşmelerde ebeveyn de yer alır mı?', 'Evet. Bu yaşta ebeveynin süreçteki rolü büyüktür; evde yapılacak küçük adımlar ve tutarlı yaklaşım, görüşmelerde konuşulanların günlük hayata taşınmasını sağlar.'], ['Kaygı kendiliğinden geçer mi?', 'Hafif ve kısa süreli kaygılar çoğu çocukta zamanla azalır. Ancak kaygı haftalardır sürüyor ve çocuğun hayatını daraltıyorsa beklemek yerine bir uzmanla görüşmek daha faydalı olur.'], ['Kardeşleri ya da diğer aile bireyleri bu süreçte ne yapmalı?', 'Kaygılı çocuğun durumu evdeki herkesi etkiler. Kardeşlerin çocuğu "korkak" diye etiketlememesi, aile bireylerinin aynı tutumu sürdürmesi ve küçük cesaret adımlarının fark edilip takdir edilmesi süreci destekler. Ebeveynler kendi aralarında farklı yaklaşıyorsa, bunu çocuğun yanında değil, kendi aralarında konuşmaları önemlidir.'], ['Okul öğretmenine kaygıyı anlatmalı mıyım?', 'Çoğu durumda evet. Öğretmenin çocuğun sabahları zorlandığını ya da söz almaktan çekindiğini bilmesi, sınıfta daha anlayışlı ve tutarlı bir yaklaşım geliştirmesini kolaylaştırır. Ne kadar bilgi paylaşılacağına aile karar verir; ayrıntıya girmeden kısa bir bilgilendirme çoğu zaman yeterlidir.']]}
+
+# 2 Kasım — semt rakip analizi: harita iğnesi + 'İnsanlar şunları da soruyor' cevapları (fiyat rakamı yok)
+_MQ = "RN+Psikoloji+%C3%87ayyolu,+Dumlup%C4%B1nar+Bulvar%C4%B1+No:399,+06810+%C3%87ankaya%2FAnkara"
+def _harita(semt, semt_q):
+    return ('\n<h2>%s\'ten ofisimize yol tarifi</h2>\n<p>RN Psikoloji Çayyolu · Konutkent, Dumlupınar Bulvarı No:399 Kat:28 D:121, 06810 Çankaya / Ankara. '
+            '<a href="https://www.google.com/maps/dir/?api=1&amp;origin=%s,+Ankara&amp;destination=%s" rel="noopener">%s\'ten yol tarifini Google Haritalar\'da aç</a>.</p>\n'
+            '<div style="position:relative;width:100%%;aspect-ratio:16/9;border-radius:16px;overflow:hidden;margin-top:12px"><iframe title="RN Psikoloji Çayyolu ofisi haritası" '
+            'src="https://www.google.com/maps?q=%s&amp;output=embed" style="position:absolute;inset:0;width:100%%;height:100%%;border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>\n'
+            ) % (semt, semt_q, _MQ, semt, _MQ)
+_UCRET_H = """
+<h2>1 seans psikolog ücreti neye göre değişir?</h2>
+<p>Bir görüşmenin ücreti; görüşmenin türüne (bireysel, çift, aile, çocuk-ergen), süresine, yüz yüze ya da online yapılmasına ve görüşmeyi yapan uzmana göre değişir. Bu yüzden internette gördüğünüz tek bir rakam sizin durumunuza uymayabilir. """ + _UC + """</p>
+"""
+_UCRETSIZ_H = """
+<h2>Ankara'da ücretsiz psikolojik destek nerede bulunur?</h2>
+<p>Bütçe nedeniyle özel bir ofise başvuramıyorsanız da destek almanın yolları vardır: devlet ve şehir hastanelerinin psikiyatri polikliniklerine MHRS üzerinden randevu alınabilir; bazı belediyelerin aile ve sosyal destek merkezlerinde psikolojik danışmanlık verilir; üniversite öğrencileri kendi üniversitelerinin psikolojik danışmanlık birimlerine başvurabilir. Hizmetin kimlere ve hangi koşullarla verildiğini başvurmadan önce ilgili kurumdan öğrenmenizi öneririz. Acil bir durumda 112'yi arayın.</p>
+"""
+_COCUK_H = """
+<h2>Çocuk ne zaman psikoloğa götürülmeli?</h2>
+<p>Uyku, iştah, okul ya da arkadaş ilişkilerinde haftalardır süren ve azalmayan bir değişiklik; yaşına uymayan öfke patlamaları, yoğun korku ya da kaçınma; okulun ya da öğretmenin dile getirdiği bir endişe; ailede boşanma, taşınma veya kayıp gibi büyük bir değişiklik sonrası zorlanma, bir uzmana danışmak için yeterli nedenlerdir. İlk görüşmeye çoğu zaman yalnızca ebeveynler gelir; ayrıntılar için <a href="/cayyolu-cocuk-psikologu/">çocuk ve ergen psikoloğu</a> sayfamıza bakabilirsiniz.</p>
+"""
+_CIFT_H = """
+<h2>Kimler çift terapisi almalı?</h2>
+<p>Çift terapisi yalnızca ayrılığın eşiğindeki çiftler için değildir. Aynı tartışmaları tekrar tekrar yaşayan, iletişimi kopmuş, güven sarsıntısı yaşamış, çocuk sonrası ya da taşınma gibi bir değişimle zorlanan ya da evlilik öncesi beklentilerini konuşmak isteyen çiftler de başvurur. Partnerlerden biri gelmek istemiyorsa önce bireysel görüşmeyle başlamak mümkündür. Ayrıntılar: <a href="/cayyolu-cift-terapisi/">Çayyolu çift terapisi</a>.</p>
+"""
+_PAA = {
+ '/umitkoy-psikolog/': ('Ümitköy', 'Ümitköy', _UCRET_H + _COCUK_H + _UCRETSIZ_H,
+    [("Ümitköy'de 1 seans psikolog ücreti ne kadar?", "Ücret; görüşmenin türüne, süresine, yüz yüze ya da online yapılmasına ve uzmana göre değişir. Güncel ücreti WhatsApp'tan yazarak ya da arayarak öğrenebilirsiniz."),
+     ("Ümitköy'den ofisinize ne kadar sürede gelinir?", "Ofisimiz Konutkent'te, Dumlupınar Bulvarı üzerindedir; Ümitköy'den araçla birkaç dakikada ulaşılır ve ücretsiz otopark vardır.")]),
+ '/yasamkent-psikolog/': ('Yaşamkent', 'Ya%C5%9Famkent', _UCRET_H + _CIFT_H + _UCRETSIZ_H,
+    [("Yaşamkent'te psikolog ücretleri neye göre değişir?", "Ücret; görüşmenin türüne, süresine, yüz yüze ya da online yapılmasına ve uzmana göre değişir. Güncel ücreti WhatsApp'tan yazarak ya da arayarak öğrenebilirsiniz.")]),
+ '/konutkent-psikolog/': ('Konutkent', 'Konutkent', _UCRET_H + _CIFT_H + _COCUK_H,
+    [("Konutkent'te psikolog var mı?", "Evet. Ofisimiz Konutkent'te, Dumlupınar Bulvarı No:399 Kat:28'dedir; ücretsiz otopark vardır ve görüşmeler Pazartesi'den Pazar'a 09:00 – 22:00 arasında randevuyla yapılır.")]),
+ '/beysukent-psikolog/': ('Beysukent', 'Beysukent', _UCRET_H + _UCRETSIZ_H,
+    [("Beysukent'te 1 seans psikolog ücreti ne kadar?", "Ücret; görüşmenin türüne, süresine, yüz yüze ya da online yapılmasına ve uzmana göre değişir. Güncel ücreti WhatsApp'tan yazarak ya da arayarak öğrenebilirsiniz.")]),
+ '/incek-psikolog/': ('İncek', '%C4%B0ncek', _COCUK_H + _UCRET_H,
+    [("İncek'te çocuk psikoloğu var mı?", "Ofisimiz İncek'e araçla kısa mesafede, Konutkent'tedir. Çocuk ve ergen görüşmeleri yapan psikologlarımız vardır; ilk görüşmeye çoğu zaman yalnızca ebeveynler gelir.")]),
+ '/bilkent-psikolog/': ('Bilkent', 'Bilkent', """
+<h2>Bilkent Şehir Hastanesi'nde psikolog var mı?</h2>
+<p>Ankara Bilkent Şehir Hastanesi'nde psikiyatri poliklinikleri bulunur; randevu MHRS üzerinden alınır. Hastanelerde psikolojik değerlendirme ve testler genellikle psikiyatri hekiminin yönlendirmesiyle yapılır ve düzenli, haftalık terapi görüşmesi için randevu bulmak zaman alabilir. Düzenli psikoterapi görüşmesi arayanlar özel bir ofise de başvurabilir; psikiyatri takibi sürerken psikolojik destek birlikte yürütülebilir. Acil bir durumda 112'yi arayın.</p>
+""" + _UCRET_H + _UCRETSIZ_H,
+    [("Bilkent Şehir Hastanesi'nde psikolog var mı?", "Hastanede psikiyatri poliklinikleri bulunur ve randevu MHRS üzerinden alınır; psikolojik değerlendirme genellikle hekimin yönlendirmesiyle yapılır. Düzenli psikoterapi için özel bir ofise de başvurulabilir; iki destek birlikte yürütülebilir.")]),
+}
+for _y, (_s, _q, _h, _f) in _PAA.items():
+    _ekle(_y, (_h + _harita(_s, _q)).replace('%', '%%'), _f)
+    EKLER[_y]['tarih'] = '2026-11-02'
