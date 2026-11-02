@@ -6,7 +6,7 @@ TUM = 'https://www.psikologrojinnazik.com/basinda-biz/'
 SAYAC = [('46', 'çevrimiçi haber'), ('19', 'gazete sayfası'), ('11', 'ulusal yayın'), ('7', 'TV ve video yayını'), ('3', 'kitap')]
 LOGO = [('CNN TÜRK', 'cnnturk', 146, 120), ('Hürriyet', None, 0, 0), ('Milliyet', 'milliyet', 480, 87), ('Sabah', 'sabah', 292, 105),
         ('Cumhuriyet', None, 0, 0), ('Posta', 'posta', 307, 91), ('Akşam', 'aksam', 480, 103), ('Takvim', 'takvim', 460, 120),
-        ('Vatan', 'vatan', 480, 102), ('Beyaz TV', 'beyaztv', 204, 70), ('TV8 INT', None, 0, 0)]
+        ('Vatan', 'vatan', 480, 102), ('Beyaz TV', 'beyaztv', 204, 70), ('TV8 INT', None, 0, 0), ('Psychology Times', 'psychologytimes', 480, 81)]
 H = {
  'miras': ('Hürriyet', 'Şubat 2024', 'Çocuğuma miras bırakmalı mıyım?', 'https://www.hurriyet.com.tr/aile/bir-sorudan-fazlasi-cocuguma-miras-birakmali-miyim-42399121'),
  'aldatan': ('Hürriyet', 'Aralık 2023', 'Aldatan eş itiraf etmeli mi yoksa saklamalı mı?', 'https://www.hurriyet.com.tr/aile/bir-sorudan-fazlasi-aldatan-es-itiraf-etmeli-mi-yoksa-saklamali-mi-42372630'),
@@ -53,6 +53,7 @@ CSS = ('<style>.bsov{background:linear-gradient(160deg,#1d1027 0%,#3d1e54 60%,#4
  '.bsov-lg{list-style:none;margin:30px 0 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:10px}'
  '.bsov-lg li{background:#fff;border-radius:12px;height:52px;padding:0 16px;display:flex;align-items:center;justify-content:center;min-width:96px}'
  '.bsov-lg img{max-height:30px;width:auto;height:auto;max-width:120px}'
+ '.bsov-lg img[alt="Psychology Times"]{max-width:190px;max-height:32px}'
  '.bsov-lg span{font:800 17px/1 Georgia,"Times New Roman",serif;color:#1d1027;letter-spacing:-.01em}'
  '.bsov-say{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:28px 0 0}'
  '.bsov-say div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:16px 8px;text-align:center;font-size:13px;color:rgba(255,255,255,.8)}'
@@ -75,7 +76,7 @@ CSS = ('<style>.bsov{background:linear-gradient(160deg,#1d1027 0%,#3d1e54 60%,#4
  '.bsov-pt a:hover{color:#6B3A8C}.bsov-pt a i{font-style:normal;color:#6B3A8C;flex:none}'
  '@media(max-width:560px){.bsov-pt{padding:18px 16px 6px}.bsov-pt a{font-size:15px;padding:14px 0}}'
  '@media(max-width:900px){.bsov-hb{grid-template-columns:1fr 1fr}.bsov-say{grid-template-columns:repeat(3,1fr)}}'
- '@media(max-width:560px){.bsov{padding:48px 16px}.bsov-hb{grid-template-columns:1fr}.bsov-say{grid-template-columns:repeat(2,1fr)}.bsov-say div:last-child{grid-column:span 2}.bsov-lg li{height:46px;padding:0 12px;min-width:0}.bsov-lg img{max-height:24px;max-width:96px}.bsov-hb a:nth-child(n+5){display:none}}'
+ '@media(max-width:560px){.bsov{padding:48px 16px}.bsov-hb{grid-template-columns:1fr}.bsov-say{grid-template-columns:repeat(2,1fr)}.bsov-say div:last-child{grid-column:span 2}.bsov-lg li{height:46px;padding:0 12px;min-width:0}.bsov-lg img{max-height:24px;max-width:96px}.bsov-lg img[alt="Psychology Times"]{max-width:160px;max-height:27px}.bsov-hb a:nth-child(n+5){display:none}}'
  '</style>')
 
 def pt_blok(site, logo_yol):
