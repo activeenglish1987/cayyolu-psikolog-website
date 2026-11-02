@@ -468,7 +468,7 @@ def faq_ld(faqs=FAQS):
     return {'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': plain(a)}} for q, a in faqs]}
 
 def business_ld():
-    return {'@type': 'Psychologist', '@id': SITE + '/#isletme', 'name': BRAND, 'url': SITE + '/', 'telephone': PHONE_RAW,
+    return {'@type': 'MedicalBusiness', '@id': SITE + '/#isletme', 'name': BRAND, 'url': SITE + '/', 'telephone': PHONE_RAW,
             'email': EMAIL, 'image': SITE + '/assets/img/opt/og-1200.webp', 'priceRange': '₺₺',
             'address': {'@type': 'PostalAddress', 'streetAddress': 'Konutkent, Dumlupınar Blv. No:399 Kat:28 Daire:121',
                         'addressLocality': 'Çankaya', 'addressRegion': 'Ankara', 'postalCode': '06810', 'addressCountry': 'TR'},
