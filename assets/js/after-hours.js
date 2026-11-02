@@ -1,4 +1,4 @@
-/* Mesai dışı yakalama: telefon saatleri (hafta içi 10:00–19:00, Cumartesi 10:00–18:00, İstanbul) dışında.
+/* Mesai dışı yakalama: telefon saatleri (Pazartesi–Cumartesi 10:00–19:00, İstanbul) dışında.
    Ofis 09:00–20:00 arası seans verir; bu dosya yalnız TELEFONUN açıldığı saatlere bakar.
    "Sabah Selda Hanım sizi arasın" düğmesi gösterir. Tıklanınca küçük bir pencere açılır:
    ziyaretçi cep numarasını bırakır, talep reklam kimliğiyle (gclid) birlikte psikologunubul
@@ -17,7 +17,7 @@
     day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(get('weekday'));
     mins = (parseInt(get('hour'), 10) % 24) * 60 + parseInt(get('minute'), 10);
   } catch (e) { return; }
-  var ACILIS = 600, KAPANIS = day === 6 ? 1080 : 1140; // 10:00; hafta içi 19:00, Cumartesi 18:00
+  var ACILIS = 600, KAPANIS = 1140; // 10:00–19:00, Pazartesi–Cumartesi
   var open = day >= 1 && day <= 6 && mins >= ACILIS && mins < KAPANIS;
   if (open) return;
 

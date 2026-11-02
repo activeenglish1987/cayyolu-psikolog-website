@@ -163,14 +163,14 @@
     w.dataLayer.push(p);
   }
 
-  /* ---------- Telefon mesaisi (hafta içi 10:00–19:00, Cumartesi 10:00–18:00, İstanbul; ofis seansları 09:00–20:00) ---------- */
+  /* ---------- Telefon mesaisi (Pazartesi–Cumartesi 10:00–19:00, İstanbul; ofis seansları 09:00–20:00) ---------- */
   function mesai() {
     try {
       var p = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Istanbul', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date());
       var g = function (t) { for (var i = 0; i < p.length; i++) if (p[i].type === t) return p[i].value; return ''; };
       var day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(g('weekday'));
       var m = (parseInt(g('hour'), 10) % 24) * 60 + parseInt(g('minute'), 10);
-      var kap = day === 6 ? 1080 : 1140;
+      var kap = 1140;
       return { acik: day >= 1 && day <= 6 && m >= 600 && m < kap, pazartesi: (day === 6 && m >= kap) || day === 0, sabahOnce: m < 600 };
     } catch (e) { return { acik: true }; }
   }
@@ -587,7 +587,7 @@
     ['cocuk', 'Çocuğum / ergenim için', 'Çocuklarda ilk görüşme genellikle ebeveynle yapılır; ardından çocuğun yaşına uygun görüşmeler planlanır. Küçük çocuklarla oyun terapisi, ergenlerle güvenli ve yargısız bir görüşme ortamı önceliklidir.'],
     ['gizlilik', 'Görüşmeler gizli mi?', 'Evet. Görüşmelerde konuşulanlar gizlidir; yalnız yasal zorunluluk ve can güvenliği gibi istisnalar vardır, bunlar ilk görüşmede açıkça anlatılır.'],
     ['ekip', 'Kimlerle görüşebilirim?', 'Ekibimizde ' + EKIP + ' var. Hangi uzmanın size daha uygun olduğunu Selda Hanım ihtiyacınıza göre birlikte belirler.'],
-    ['saat', 'Çalışma saatleri', 'Görüşmeler Pazartesi–Cumartesi 09:00–20:00. Telefon: hafta içi 10:00–19:00, Cumartesi 10:00–18:00. Bu saatler dışında numaranızı bırakırsanız Selda Hanım sabah ilk iş sizi arar.']
+    ['saat', 'Çalışma saatleri', 'Görüşmeler Pazartesi–Cumartesi 09:00–20:00. Telefon: Pazartesi–Cumartesi 10:00–19:00. Bu saatler dışında numaranızı bırakırsanız Selda Hanım sabah ilk iş sizi arar.']
   ];
   var KONU_DAVET = [
     [/cocuk|pedagog|okul|oyun-terapisi|bosanmayi-cocuga|kardes/, 'Çocuğunuz için 60 saniyede bir yol haritası çıkaralım mı?'],

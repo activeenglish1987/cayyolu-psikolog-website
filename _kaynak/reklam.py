@@ -35,7 +35,7 @@ CAYYOLU = {
 }
 
 # Telefonun açıldığı saatler (Google Ads reklam ve arama öğesi zaman planı da aynı). Pazar kapalı.
-SAAT_TXT = 'Hafta içi 10:00–19:00 · Cumartesi 10:00–18:00'
+SAAT_TXT = 'Pazartesi–Cumartesi 10:00–19:00'
 ROJIN_ETIKET = ['15+ yıllık mesleki deneyim', 'Şema terapi eğitimi', 'AB Psikologlar Derneği Genel Başkanı', '3 kitap yazarı']
 SUBELER = [
     ('Yaşamkent / Çayyolu', 'Konutkent, Dumlupınar Blv. No:399 Kat:28 D:121, Çankaya', 'Pazartesi–Pazar · ücretsiz otopark'),
@@ -396,7 +396,7 @@ def govde(S, P):
 <section class="kart son"><h2>İlk adım tek bir telefon</h2><p>Selda Hanım size en yakın uygun saati söylesin.</p><a class="ara" href="tel:%(tel)s" data-cta-area="lp_son"><span>📞</span><span><b class="nw">Hemen Ara · %(teltxt)s</b></span></a></section>
 </main>
 <footer class="w dip">%(marka)s · Psikologlar tanı koymaz ve ilaç yazmaz. Acil bir durumda 112'yi arayın.<br><a href="%(kvkk)s">KVKK aydınlatma metni</a> · <a href="%(gizlilik)s">Gizlilik</a></footer>
-<script>(function(){try{var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Istanbul',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()),g=function(t){for(var i=0;i<p.length;i++)if(p[i].type===t)return p[i].value},d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(g('weekday')),m=(+g('hour')%%24)*60+(+g('minute'));var e=document.querySelector('.acik');if((d>=1&&d<=5&&m>=600&&m<1140)||(d===6&&m>=600&&m<1080))e.innerHTML='<i></i>Şu an açığız · Telefonu Selda Hanım açar';else{e.innerHTML='<i style="background:#F59E0B;box-shadow:0 0 0 4px rgba(245,158,11,.2)"></i>Şu an mesai dışındayız · %(saat)s';e.style.color='var(--mut)'}}catch(x){}})();</script>
+<script>(function(){try{var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Istanbul',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()),g=function(t){for(var i=0;i<p.length;i++)if(p[i].type===t)return p[i].value},d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(g('weekday')),m=(+g('hour')%%24)*60+(+g('minute'));var e=document.querySelector('.acik');if((d>=1&&d<=6&&m>=600&&m<1140))e.innerHTML='<i></i>Şu an açığız · Telefonu Selda Hanım açar';else{e.innerHTML='<i style="background:#F59E0B;box-shadow:0 0 0 4px rgba(245,158,11,.2)"></i>Şu an mesai dışındayız · %(saat)s';e.style.color='var(--mut)'}}catch(x){}})();</script>
 <script>/* Aranan kelimeye göre başlık (mesaj uyumu). Google Ads > Hesap ayarları > "Nihai URL son eki": kw={keyword}
    Yalnız hazır tablodaki kalıplar kullanılır; aranan kelime sayfaya olduğu gibi yazılmaz. */
 (function(){try{var q=new URLSearchParams(location.search),k=(q.get('kw')||q.get('utm_term')||q.get('keyword')||'').toLocaleLowerCase('tr-TR').replace(/[+_]/g,' ');if(!k)return;
@@ -443,9 +443,9 @@ ROJIN_HEAD = '''<!doctype html><html lang="tr"><head><meta charset="utf-8">
 <link rel="preload" as="image" href="%(foto)s" fetchpriority="high">
 %(css)s
 <script src="/assets/js/ads-conversion.js?v=6" defer></script>
-<script src="/assets/js/after-hours.js?v=9" data-pos="bottom" defer></script>
+<script src="/assets/js/after-hours.js?v=10" data-pos="bottom" defer></script>
 <script>window.PUSULA_CFG=Object.assign(window.PUSULA_CFG||{},{heroSecici:'.lp-pu'});</script>
-<script src="/assets/js/pusula.js?v=11" defer></script>
+<script src="/assets/js/pusula.js?v=12" defer></script>
 <script src="/assets/js/vitrin.js?v=8" defer></script>
 </head><body>'''
 
@@ -463,8 +463,8 @@ def rojin_yaz(kok):
 # ---------------------------------------------------------------- Çayyolu sitesi: build.py içinden
 CAYYOLU_HEAD = ROJIN_HEAD.replace('<meta name="theme-color" content="#3d1e54">', '<meta name="theme-color" content="#14264A">').replace(
     '<link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png">', '<link rel="icon" href="/favicon.svg" type="image/svg+xml">').replace(
-    '<script src="/assets/js/pusula.js?v=11" defer></script>',
-    "<script>window.PUSULA_CFG={site:'cayyolu',foto:'/assets/img/opt/psikolog-rojin-nazik-720.webp'};</script>\n<script src=\"/assets/js/pusula.js?v=11\" defer></script>").replace(
+    '<script src="/assets/js/pusula.js?v=12" defer></script>',
+    "<script>window.PUSULA_CFG={site:'cayyolu',foto:'/assets/img/opt/psikolog-rojin-nazik-720.webp'};</script>\n<script src=\"/assets/js/pusula.js?v=12\" defer></script>").replace(
     '<script src="/assets/js/vitrin.js?v=8" defer></script>\n', '')  # vitrin.js yalnız Rojin sitesinde
 
 
