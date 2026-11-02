@@ -23,6 +23,18 @@ H = {
  'sinav': ('Milliyet', '', 'Psikolog Rojin Nazik sınav stresini aşmanın yollarını anlattı', 'https://www.milliyet.com.tr/pembenar/psikolog-rojin-nazik-sinav-stresini-asmanin-yollarini-anlatti-6441751'),
  'sosyal': ('CNN Türk', 'Haziran 2022', 'Evli kişilerde sosyal medya kullanımı aile sorununa sebep oluyor', 'https://www.cnnturk.com/iyilik-saglik/iliskiler/evli-kisilerde-sosyal-medya-kullanimi-aile-sorununa-sebep-oluyor-1802509'),
 }
+
+PT = {
+ 'pazar': ('Pazar Akşamı Kaygısı: Haftaya Başlamak Neden Bu Kadar Zor?', 'https://psychologytimes.com.tr/pazar-aksami-kaygisi-haftaya-baslamak-neden-bu-kadar-zor/'),
+ 'ebeveyn': ('Ebeveyn Tükenmişliği Nedir? Belirtileri ve Çalışan Anne Babalar İçin Öneriler', 'https://psychologytimes.com.tr/ebeveyn-tukenmisligi-nedir-belirtileri-ve-calisan-anne-babalar-icin-oneriler/'),
+ 'sessiz': ('Sessiz Ayrılık: Aynı Evde Birbirinden Uzaklaşan Çiftler', 'https://psychologytimes.com.tr/sessiz-ayrilik-ayni-evde-birbirinden-uzaklasan-ciftler/'),
+ 'erteleme': ('Erteleme Nedir? Ders Çalışmaya Başlayamamanın Psikolojisi', 'https://psychologytimes.com.tr/erteleme-nedir-ders-calismaya-baslayamamanin-psikolojisi/'),
+ 'bakim': ('Bakım Yükü: Yaşlanan Anne Baba ile Çocuklar Arasında Kalmak', 'https://psychologytimes.com.tr/bakim-yuku-yaslanan-anne-baba-ile-cocuklar-arasinda-kalmak/'),
+ 'yalan': ('Çocuklarda Yalan Söyleme: Neden Yalan Söyler, Ebeveyn Ne Yapmalı?', 'https://psychologytimes.com.tr/cocuklarda-yalan-soyleme-neden-yalan-soyler-ebeveyn-ne-yapmali/'),
+ 'sefkat': ('Öz Şefkat Nedir? Kendinize Bir Arkadaşınıza Davrandığınız Gibi Davranmak', 'https://psychologytimes.com.tr/oz-sefkat-nedir-kendinize-bir-arkadasiniza-davrandiginiz-gibi-davranmak/'),
+ 'gurbet': ('Gurbette Ruh Sağlığı: İki Yer Arasında Yaşamanın Görünmeyen Yükü', 'https://psychologytimes.com.tr/gurbette-ruh-sagligi-iki-yer-arasinda-yasamanin-gorunmeyen-yuku/'),
+}
+PT_SEC = {'rojin': ['sessiz', 'pazar', 'sefkat', 'gurbet', 'bakim'], 'cayyolu': ['ebeveyn', 'yalan', 'erteleme', 'bakim', 'sessiz'], 'elif': ['pazar', 'erteleme', 'sefkat', 'sessiz', 'ebeveyn']}
 SITE = {
  'rojin': dict(baslik='Ulusal basında <em>Psikolog Rojin Nazik</em>', kart=['miras', 'aldatan', 'makyaj', 'uyku', 'travma', 'asiri'], tum='/basinda-biz/',
                alt='Hürriyet’ten CNN Türk’e, ulusal gazetelerde ve televizyon programlarında uzman görüşleriyle.'),
@@ -53,9 +65,24 @@ CSS = ('<style>.bsov{background:linear-gradient(160deg,#1d1027 0%,#3d1e54 60%,#4
  '.bsov-hb b{font-size:16.5px;line-height:1.35;font-weight:600}'
  '.bsov-hb u{text-decoration:none;font-size:13px;color:#6B3A8C;margin-top:auto}'
  '.bsov-tum{display:block;width:max-content;max-width:100%;margin:26px auto 0;padding:13px 22px;border-radius:999px;background:#D9BF83;color:#1d1027!important;font-weight:700;text-decoration:none;text-align:center}'
+ '.bsov-pt{margin:30px 0 0;background:#FBF8F2;color:#1d1027;border-radius:22px;padding:22px 22px 10px}'
+ '.bsov-pt-h{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:6px}'
+ '.bsov-pt-h img{height:22px;width:auto}'
+ '.bsov-pt-h span{font-size:13.5px;color:#6b5f73}'
+ '.bsov-pt ul{list-style:none;margin:0;padding:0}'
+ '.bsov-pt li{border-top:1px solid #EAE1D2}.bsov-pt li:first-child{border-top:0}'
+ '.bsov-pt a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 2px;color:#1d1027;text-decoration:none;font-size:15.5px;font-weight:600;line-height:1.35}'
+ '.bsov-pt a:hover{color:#6B3A8C}.bsov-pt a i{font-style:normal;color:#6B3A8C;flex:none}'
+ '@media(max-width:560px){.bsov-pt{padding:18px 16px 6px}.bsov-pt a{font-size:15px;padding:14px 0}}'
  '@media(max-width:900px){.bsov-hb{grid-template-columns:1fr 1fr}.bsov-say{grid-template-columns:repeat(3,1fr)}}'
  '@media(max-width:560px){.bsov{padding:48px 16px}.bsov-hb{grid-template-columns:1fr}.bsov-say{grid-template-columns:repeat(2,1fr)}.bsov-say div:last-child{grid-column:span 2}.bsov-lg li{height:46px;padding:0 12px;min-width:0}.bsov-lg img{max-height:24px;max-width:96px}.bsov-hb a:nth-child(n+5){display:none}}'
  '</style>')
+
+def pt_blok(site, logo_yol):
+    li = ''.join('<li><a href="%s" target="_blank" rel="noopener"><span>%s</span><i>↗</i></a></li>' % (E(PT[k][1]), E(PT[k][0])) for k in PT_SEC[site])
+    return ('<div class="bsov-pt"><div class="bsov-pt-h"><img src="%spsychologytimes.webp" alt="Psychology Times" width="480" height="81" loading="lazy" decoding="async">'
+            '<span>Kurucusu olduğu Psychology Times’ta yazıyor · Kasım 2026</span></div><ul>%s</ul></div>') % (logo_yol, li)
+
 def bant(site, logo_yol='/assets/basin/logo/'):
     c = SITE[site]
     lg = ''.join(('<li><img src="%s%s.webp" alt="%s" width="%d" height="%d" loading="lazy" decoding="async"></li>' % (logo_yol, k, E(a), w, h)) if k else '<li><span>%s</span></li>' % E(a) for a, k, w, h in LOGO)
@@ -65,7 +92,7 @@ def bant(site, logo_yol='/assets/basin/logo/'):
             '<div class="bsov-k">EKRANDA VE BASINDA</div><h2>%s</h2><p class="bsov-alt">%s</p>'
             '<span class="bsov-unvan">Hürriyet’te: “Avrupa Birliği Psikologlar Derneği Genel Başkanı Psikolog Rojin Nazik”</span>'
             '<ul class="bsov-lg" aria-label="Yer aldığı yayınlar">%s</ul><div class="bsov-say">%s</div><div class="bsov-hb">%s</div>'
-            '<a class="bsov-tum" href="%s">Tüm haberler, gazete sayfaları ve TV programları →</a></div></section><!-- BASIN-SOV:SON -->') % (c['baslik'], E(c['alt']), lg, say, hb, c['tum'])
+            '%s<a class="bsov-tum" href="%s">Tüm haberler, gazete sayfaları ve TV programları →</a></div></section><!-- BASIN-SOV:SON -->') % (c['baslik'], E(c['alt']), lg, say, hb, pt_blok(site, logo_yol), c['tum'])
 import re
 def yerlestir(s, site, capa, once=True):
     s = re.sub(r'<!-- BASIN-SOV:BAS -->.*?<!-- BASIN-SOV:SON -->', '', s, flags=re.S)
