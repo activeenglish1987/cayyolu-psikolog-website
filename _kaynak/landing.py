@@ -12,7 +12,7 @@ LANDINGS = [
  'kw': 'Ümitköy psikolog',
  'h1': 'Ümitköy Psikolog',
  'title': 'Ümitköy Psikolog | RN Psikoloji – Yüz Yüze Danışmanlık, Randevu',
- 'desc': "Ümitköy'e birkaç dakika mesafedeki ofisimizde yetişkin, çift, çocuk ve ergen görüşmeleri. Pazartesi – Cumartesi 09:00 – 20:00. Randevu: 0552 418 79 73.",
+ 'desc': "Ümitköy'e birkaç dakika mesafedeki ofisimizde yetişkin, çift, çocuk ve ergen görüşmeleri. Pazartesi – Pazar 09:00 – 22:00. Randevu: 0552 418 79 73.",
  'lead': "Ümitköy'de yaşıyor ya da çalışıyorsanız, Dumlupınar Bulvarı üzerindeki ofisimiz size çok yakın. Yetişkin, çift, çocuk ve ergen görüşmeleri için hafta içi ve cumartesi randevu verebiliyoruz.",
  'body': '''
 <h2>Ümitköy'de psikolog arayanlar için kısa bilgi</h2>
@@ -42,7 +42,7 @@ LANDINGS = [
 ''',
  'faqs': [
   ("Ümitköy'e en yakın ofisiniz nerede?", "Ofisimiz Konutkent'te, Dumlupınar Bulvarı No:399 Kat:28 Daire:121 adresindedir. Ümitköy'e birkaç dakikalık sürüş mesafesindedir ve ücretsiz otopark vardır."),
-  ("Ümitköy'den akşam saatlerinde görüşmeye gelebilir miyim?", "Evet. Görüşmeler Pazartesi – Cumartesi 09:00 – 20:00 arasında yapılır; iş çıkışı saatleri için erken aramanızı öneririz."),
+  ("Ümitköy'den akşam saatlerinde görüşmeye gelebilir miyim?", "Evet. Görüşmeler Pazartesi – Pazar 09:00 – 22:00 arasında yapılır; iş çıkışı saatleri için erken aramanızı öneririz."),
   ("Ergen çocuğum için randevu alabilir miyim?", "Evet. Ergen görüşmelerinde önce ebeveynle kısa bir ön görüşme yapılır, ardından gencin kendisiyle görüşmeler planlanır."),
   ("Çift olarak birlikte gelebilir miyiz?", "Evet. Çift görüşmeleri iki tarafın birlikte katılımıyla yapılır; gerektiğinde bireysel görüşmeler de planlanabilir."),
   ("Randevu için ne yapmam gerekiyor?", "0552 418 79 73 numarasını arayabilir ya da WhatsApp'tan yazabilirsiniz. Kısaca başvuru nedeninizi paylaşmanız yeterli."),
@@ -53,7 +53,7 @@ LANDINGS = [
  'kw': 'Yaşamkent psikolog',
  'h1': 'Yaşamkent Psikolog',
  'title': 'Yaşamkent Psikolog | RN Psikoloji Yaşamkent Ofisi – Randevu',
- 'desc': "Yaşamkent ofisimizde yüz yüze psikolojik danışmanlık: yetişkin, çift, aile, çocuk ve ergen. Ücretsiz otopark. Pazartesi – Cumartesi 09:00 – 20:00. Tel: 0552 418 79 73.",
+ 'desc': "Yaşamkent ofisimizde yüz yüze psikolojik danışmanlık: yetişkin, çift, aile, çocuk ve ergen. Ücretsiz otopark. Pazartesi – Pazar 09:00 – 22:00. Tel: 0552 418 79 73.",
  'lead': "RN Psikoloji'nin Yaşamkent ofisi, Dumlupınar Bulvarı üzerinde, Yaşamkent ve Konutkent'in kesiştiği noktada. Yakınınızda, randevulu ve yüz yüze psikolojik danışmanlık.",
  'body': '''
 <h2>Yaşamkent'te, yürüme ve kısa sürüş mesafesinde</h2>
@@ -61,7 +61,7 @@ LANDINGS = [
 <p>Ofisimizde yetişkin bireysel görüşmeler, çift ve aile görüşmeleri ile çocuk ve ergen görüşmeleri yapılır. Sakin, aydınlık ve mahremiyete uygun seans odalarımızda, randevu saatinize göre sizi bekleme yaşatmadan karşılamaya özen gösteririz.</p>
 <div class="route-box"><h3>Ofis bilgileri</h3><ul>
 <li><b>Adres:</b> Konutkent, Dumlupınar Blv. No:399 Kat:28 Daire:121, Çankaya / Ankara</li>
-<li><b>Görüşme günleri:</b> Pazartesi – Cumartesi, 09:00 – 20:00</li>
+<li><b>Görüşme günleri:</b> Pazartesi – Pazar, 09:00 – 22:00</li>
 <li><b>Otopark:</b> Ücretsiz otopark mevcut</li>
 <li>Yaşamkent'in tüm sitelerinden ve Konutkent'ten kısa sürede ulaşılır.</li>
 </ul></div>
@@ -83,7 +83,7 @@ LANDINGS = [
 ''',
  'faqs': [
   ("Yaşamkent ofisiniz tam olarak nerede?", "Konutkent, Dumlupınar Bulvarı No:399 Kat:28 Daire:121, Çankaya / Ankara adresindeyiz. Yol tarifi için sayfadaki “Yol tarifi al” bağlantısını kullanabilirsiniz."),
-  ("Yaşamkent'te hangi günler görüşme yapılıyor?", "Pazartesi – Cumartesi, 09:00 – 20:00 saatleri arasında randevu ile görüşme yapılır."),
+  ("Yaşamkent'te hangi günler görüşme yapılıyor?", "Pazartesi – Pazar, 09:00 – 22:00 saatleri arasında randevu ile görüşme yapılır."),
   ("Otopark var mı?", "Evet, ücretsiz otopark mevcuttur."),
   ("Çocuğum için hangi uzmanla görüşmeliyim?", "Çocuk ve ergen görüşmeleri için Psikolog Elif Erdoğan ile randevu alabilirsiniz. Kısaca durumu paylaşırsanız size uygun uzmanı öneririz."),
   ("Ücret bilgisini nasıl öğrenebilirim?", "WhatsApp'tan yazarak ya da 0552 418 79 73 numarasını arayarak güncel ücret bilgisini öğrenebilirsiniz."),
@@ -94,7 +94,7 @@ LANDINGS = [
  'kw': 'Konutkent psikolog',
  'h1': 'Konutkent Psikolog',
  'title': 'Konutkent Psikolog | RN Psikoloji – Dumlupınar Bulvarı, Randevu',
- 'desc': "Konutkent'te, Dumlupınar Bulvarı üzerindeki ofisimizde yetişkin, çift, çocuk ve ergen görüşmeleri. Pazartesi – Cumartesi 09:00 – 20:00. Randevu: 0552 418 79 73.",
+ 'desc': "Konutkent'te, Dumlupınar Bulvarı üzerindeki ofisimizde yetişkin, çift, çocuk ve ergen görüşmeleri. Pazartesi – Pazar 09:00 – 22:00. Randevu: 0552 418 79 73.",
  'lead': "Ofisimiz Konutkent'in içinde, Dumlupınar Bulvarı No:399'da. Konutkent sitelerinden birkaç dakikada ulaşabileceğiniz, sakin ve mahremiyete önem veren bir ortamda görüşüyoruz.",
  'body': '''
 <h2>Konutkent'te mahallenizdeki psikolog</h2>
@@ -122,7 +122,7 @@ LANDINGS = [
 ''',
  'faqs': [
   ("Konutkent'te ofisiniz hangi binada?", "Dumlupınar Bulvarı No:399, Kat:28, Daire:121 adresindeyiz. Yol tarifi bağlantısıyla doğrudan navigasyon başlatabilirsiniz."),
-  ("Cumartesi günü görüşme yapılıyor mu?", "Evet, Cumartesi de dahil olmak üzere Pazartesi – Cumartesi 09:00 – 20:00 arasında randevu verilir."),
+  ("Cumartesi günü görüşme yapılıyor mu?", "Evet, Cumartesi de dahil olmak üzere Pazartesi – Pazar 09:00 – 22:00 arasında randevu verilir."),
   ("Görüşmeler gizli mi?", "Evet. Görüşmelerde konuşulanlar etik ilkeler ve gizlilik çerçevesinde korunur."),
   ("Çocuk ve ergen görüşmesi yapıyor musunuz?", "Evet. Çocuklarla oyun terapisi yaklaşımıyla, ergenlerle yaşlarına uygun yöntemlerle çalışılır; ebeveyn görüşmeleri de sürecin parçasıdır."),
  ],
@@ -132,7 +132,7 @@ LANDINGS = [
  'kw': 'İncek psikolog',
  'h1': 'İncek Psikolog',
  'title': 'İncek Psikolog | RN Psikoloji – Çocuk, Ergen, Aile ve Yetişkin',
- 'desc': "İncek'e yakın ofisimizde çocuk, ergen, aile, çift ve yetişkin görüşmeleri. Ücretsiz otopark, Pazartesi – Cumartesi 09:00 – 20:00. Randevu: 0552 418 79 73.",
+ 'desc': "İncek'e yakın ofisimizde çocuk, ergen, aile, çift ve yetişkin görüşmeleri. Ücretsiz otopark, Pazartesi – Pazar 09:00 – 22:00. Randevu: 0552 418 79 73.",
  'lead': "İncek'ten gelen danışanlarımız için Yaşamkent ofisimiz kısa bir sürüş mesafesinde. Özellikle çocuklu aileler, çiftler ve yetişkinler için randevulu, yüz yüze psikolojik danışmanlık.",
  'body': '''
 <h2>İncek'te yaşayan aileler için psikolojik destek</h2>
@@ -162,7 +162,7 @@ LANDINGS = [
   ("İncek'ten ofisinize ne kadar sürede ulaşırım?", "Trafiğe bağlı olarak değişmekle birlikte, İncek'ten Konutkent'teki ofisimize kısa bir sürüşle ulaşılır. Ücretsiz otopark mevcuttur."),
   ("Çocuğum için ilk görüşmeye kim gelmeli?", "Genellikle ilk görüşme ebeveynlerle yapılır. Çocuğunuzla görüşmeler bu ön değerlendirmeden sonra planlanır."),
   ("Oyun terapisi yapıyor musunuz?", "Evet. Küçük yaştaki çocuklarla oyun terapisi yaklaşımıyla çalışılır."),
-  ("Hafta sonu randevu var mı?", "Cumartesi günleri de 09:00 – 20:00 arasında randevu verilmektedir."),
+  ("Hafta sonu randevu var mı?", "Cumartesi günleri de 09:00 – 22:00 arasında randevu verilmektedir."),
  ],
 },
 {
@@ -170,7 +170,7 @@ LANDINGS = [
  'kw': 'Beysukent psikolog',
  'h1': 'Beysukent Psikolog',
  'title': 'Beysukent Psikolog | RN Psikoloji – Yetişkin, Öğrenci, Çift',
- 'desc': "Beysukent'e yakın ofisimizde yetişkin, üniversite öğrencisi, çift ve ergen görüşmeleri. Pazartesi – Cumartesi 09:00 – 20:00. Randevu: 0552 418 79 73.",
+ 'desc': "Beysukent'e yakın ofisimizde yetişkin, üniversite öğrencisi, çift ve ergen görüşmeleri. Pazartesi – Pazar 09:00 – 22:00. Randevu: 0552 418 79 73.",
  'lead': "Beysukent'e yakın Yaşamkent ofisimizde; yetişkinler, üniversite öğrencileri, çiftler ve ergenler için randevulu, yüz yüze psikolojik danışmanlık.",
  'body': '''
 <h2>Beysukent ve çevresinden gelen danışanlarımız</h2>
@@ -221,7 +221,7 @@ LANDINGS = [
 <li>Ofisimiz Konutkent, Dumlupınar Bulvarı No:399 Kat:28'dedir. Bilkent ve ODTÜ ile aynı bulvar (Eskişehir Yolu) üzerindedir.</li>
 <li><b>Metroyla:</b> M2 Kızılay–Koru hattında Bilkent ya da Beytepe durağından Koru yönüne binip son durak Koru'da inin. Koru metro çıkışındaki EGO duraklarından otobüsle ya da kısa bir taksi yolculuğuyla Konutkent'e ulaşabilirsiniz. Güncel hat ve saatleri EGO CEP'TE uygulamasından kontrol edebilirsiniz.</li>
 <li><b>Araçla:</b> Eskişehir Yolu (Dumlupınar Bulvarı) üzerinden Koru yönüne devam edin; binada ücretsiz otopark mevcuttur.</li>
-<li>Pazartesi – Cumartesi 09:00 – 20:00 arasında, akşam saatleri dahil randevu verilir.</li>
+<li>Pazartesi – Pazar 09:00 – 22:00 arasında, akşam saatleri dahil randevu verilir.</li>
 </ul></div>
 <h2>Üniversite döneminde sık başvurulan konular</h2>
 <ul class="topic-grid">
@@ -261,7 +261,7 @@ LANDINGS = [
 <li>Ofisimiz Konutkent, Dumlupınar Bulvarı No:399 Kat:28'dedir.</li>
 <li><b>Araçla:</b> Eryaman'da bulunduğunuz noktaya göre yaklaşık 17–23 km; trafiğe bağlı olarak genellikle 20–30 dakika sürer. Binada ücretsiz otopark mevcuttur.</li>
 <li><b>Toplu taşımayla:</b> Eryaman'dan Çayyolu–Konutkent yönüne aktarmalı güzergâhlar bulunur; bulunduğunuz yere en uygun hattı EGO CEP'TE uygulamasından ya da harita uygulamanızdan planlayabilirsiniz.</li>
-<li>Pazartesi – Cumartesi 09:00 – 20:00 arasında randevu verilir; akşam ve Cumartesi saatleri iş çıkışı gelmek isteyenler için uygundur.</li>
+<li>Pazartesi – Pazar 09:00 – 22:00 arasında randevu verilir; akşam ve Cumartesi saatleri iş çıkışı gelmek isteyenler için uygundur.</li>
 </ul></div>
 <h2>Eryaman ve Etimesgut'tan sık başvurulan konular</h2>
 <ul class="topic-grid">
@@ -278,7 +278,7 @@ LANDINGS = [
 """,
  'faqs': [
   ("Eryaman'a en yakın ofisiniz nerede?", "Konutkent, Dumlupınar Bulvarı No:399 Kat:28 Daire:121 adresindeki Yaşamkent ofisimiz Eryaman'dan araçla, trafiğe bağlı olarak genellikle 20–30 dakikalık mesafededir."),
-  ("Akşam ya da Cumartesi randevusu alabilir miyim?", "Evet. Pazartesi – Cumartesi 09:00 – 20:00 arasında, iş çıkışı saatleri dahil randevu verilir."),
+  ("Akşam ya da Cumartesi randevusu alabilir miyim?", "Evet. Pazartesi – Pazar 09:00 – 22:00 arasında, iş çıkışı saatleri dahil randevu verilir."),
   ("Çocuğum için görüşme yapıyor musunuz?", "Evet. Küçük çocuklarla oyun terapisi, ergenlerle görüşmeler ve ebeveyn danışmanlığı yapılır; ilk görüşme genellikle ebeveynlerle olur."),
   ("Online görüşme mümkün mü?", "Evet. Yetişkin, çift ve ebeveyn görüşmeleri online olarak da yapılabilir."),
  ],
@@ -289,7 +289,7 @@ LANDINGS = [
  'h1': 'Alacaatlı Psikolog',
  'title': 'Alacaatlı Psikolog | RN Psikoloji – Yüz Yüze Danışmanlık',
  'desc': "Alacaatlı'ya yakın Yaşamkent ofisimizde yetişkin, çift, aile, çocuk ve ergen görüşmeleri. Ücretsiz otopark. Randevu: 0552 418 79 73.",
- 'lead': "Alacaatlı'dan gelen danışanlarımız için Yaşamkent ofisimiz kısa bir mesafede. Yetişkin, çift, aile, çocuk ve ergen görüşmeleri; Pazartesi – Cumartesi.",
+ 'lead': "Alacaatlı'dan gelen danışanlarımız için Yaşamkent ofisimiz kısa bir mesafede. Yetişkin, çift, aile, çocuk ve ergen görüşmeleri; Pazartesi – Pazar.",
  'body': '''
 <h2>Alacaatlı'dan kısa mesafede psikolog</h2>
 <p>Alacaatlı, geniş bahçeli evleri ve yeni konut projeleriyle sakin bir yaşam arayan ailelerin tercih ettiği bir bölge. Sakin yaşamın içinde de iş yükü, çocukların okul dönemleri, çift ilişkisindeki gerginlikler ya da yaşam değişiklikleri zorlayıcı olabiliyor. Destek almak istediğinizde uzun yol gitmeden ulaşabileceğiniz bir ofis, sürece düzenli devam etmenizi kolaylaştırır.</p>
@@ -314,7 +314,7 @@ LANDINGS = [
 ''',
  'faqs': [
   ("Alacaatlı'ya en yakın ofisiniz hangisi?", "Konutkent, Dumlupınar Bulvarı No:399 adresindeki Yaşamkent ofisimizdir; kısa bir sürüş mesafesindedir."),
-  ("Hangi gün ve saatlerde görüşüyorsunuz?", "Pazartesi – Cumartesi 09:00 – 20:00 arasında randevu ile görüşme yapılır."),
+  ("Hangi gün ve saatlerde görüşüyorsunuz?", "Pazartesi – Pazar 09:00 – 22:00 arasında randevu ile görüşme yapılır."),
   ("Aile olarak birlikte görüşme yapabilir miyiz?", "Evet. Aile görüşmeleri ve ebeveyn danışmanlığı yapılmaktadır."),
   ("Ücret bilgisi nasıl alınır?", "WhatsApp'tan yazarak ya da arayarak güncel ücret bilgisini öğrenebilirsiniz."),
  ],
@@ -471,7 +471,7 @@ LANDINGS = [
  'kw': 'Çayyolu psikolojik danışmanlık merkezi',
  'h1': 'Çayyolu Psikolojik Danışmanlık Merkezi',
  'title': 'Çayyolu Psikolojik Danışmanlık Merkezi | RN Psikoloji Çayyolu',
- 'desc': "RN Psikoloji Çayyolu: bireysel, çift, aile, çocuk ve ergen psikolojik danışmanlık merkezi. Yaşamkent ofisi, ücretsiz otopark, Pazartesi – Cumartesi. Tel: 0552 418 79 73.",
+ 'desc': "RN Psikoloji Çayyolu: bireysel, çift, aile, çocuk ve ergen psikolojik danışmanlık merkezi. Yaşamkent ofisi, ücretsiz otopark, Pazartesi – Pazar. Tel: 0552 418 79 73.",
  'lead': "Bireysel, çift, aile, çocuk ve ergen görüşmelerinin bir arada yürütüldüğü, deneyimli psikologlardan oluşan ekibimizle Çayyolu bölgesinde hizmet veriyoruz.",
  'body': '''
 <h2>Tek adreste farklı yaş ve ihtiyaçlar</h2>
@@ -490,7 +490,7 @@ LANDINGS = [
 <h2>Kurucumuz: Psikolog Rojin Nazik</h2>
 <p><a href="/psikolog-rojin-nazik/">Psikolog Rojin Nazik</a>, RN Psikoloji'nin kurucusudur. Televizyon programlarına katılımları, ulusal gazetelerdeki röportajları ve yayımlanmış üç kitabıyla psikolojiyi geniş kitlelere anlaşılır bir dille ulaştırmaya çalışmaktadır. Basın çalışmalarını <a href="/basinda-biz/">Basında Biz</a>, kitaplarını <a href="/kitaplarimiz/">Kitaplarımız</a> sayfasında inceleyebilirsiniz.</p>
 <h2>Konum ve çalışma saatleri</h2>
-<p>Merkezimiz Konutkent, Dumlupınar Bulvarı No:399 Kat:28 Daire:121 adresindedir; Çayyolu, Ümitköy, Yaşamkent, İncek, Alacaatlı ve Beysukent'e yakındır. Görüşmeler Pazartesi – Cumartesi 09:00 – 20:00 saatleri arasında randevu ile yapılır. Ücretsiz otopark mevcuttur.</p>
+<p>Merkezimiz Konutkent, Dumlupınar Bulvarı No:399 Kat:28 Daire:121 adresindedir; Çayyolu, Ümitköy, Yaşamkent, İncek, Alacaatlı ve Beysukent'e yakındır. Görüşmeler Pazartesi – Pazar 09:00 – 22:00 saatleri arasında randevu ile yapılır. Ücretsiz otopark mevcuttur.</p>
 ''',
  'faqs': [
   ("Merkezinizde hangi hizmetler veriliyor?", "Bireysel danışmanlık, çift ve evlilik terapisi, aile terapisi, çocuk ve ergen danışmanlığı, evlilik öncesi ve boşanma sonrası danışmanlık hizmetleri verilmektedir."),
@@ -506,7 +506,7 @@ BOOST = {
  '/ankara-psikolog/': {
   'h1': 'Ankara Psikolog',
   'title': 'Ankara Psikolog | RN Psikoloji – Çayyolu, Yaşamkent Ofisi, Randevu',
-  'desc': "Ankara'da psikolog: RN Psikoloji Yaşamkent ofisinde yetişkin, çift, aile, çocuk ve ergen görüşmeleri. Pazartesi – Cumartesi 09:00 – 20:00. Randevu: 0552 418 79 73.",
+  'desc': "Ankara'da psikolog: RN Psikoloji Yaşamkent ofisinde yetişkin, çift, aile, çocuk ve ergen görüşmeleri. Pazartesi – Pazar 09:00 – 22:00. Randevu: 0552 418 79 73.",
   'lead': "Ankara'nın batı yakasında, Çayyolu – Yaşamkent bölgesindeki ofisimizde deneyimli psikologlarla yüz yüze görüşme. Randevu için arayın ya da WhatsApp'tan yazın.",
   'intro': '''<h2>Ankara'da psikolog seçerken dikkat edilmesi gerekenler</h2>
 <p>Ankara'da psikolog ararken çok sayıda seçenekle karşılaşırsınız. Doğru seçimi yapmak için uzmanın eğitimi ve deneyim alanı, sizin yaş grubunuz ve konunuzla ne kadar çalıştığı, görüşmelere düzenli devam edebileceğiniz bir konumda olması ve kendinizi rahat hissedip hissetmediğiniz önemlidir. İlk görüşme, bu uyumu değerlendirmek için de bir fırsattır.</p>
@@ -522,13 +522,13 @@ BOOST = {
    ("Ankara'da hangi semtlere hizmet veriyorsunuz?", "Yaşamkent'teki ofisimiz Çayyolu, Ümitköy, Konutkent, İncek, Alacaatlı ve Beysukent'e yakındır. Ankara'nın her yerinden danışanlarımız randevu ile görüşmeye gelebilir."),
    ("Ankara'da psikolog randevusu nasıl alınır?", "0552 418 79 73 numarasını arayabilir ya da WhatsApp'tan yazabilirsiniz; uygun uzman ve saat birlikte belirlenir."),
    ("Hangi yaş gruplarıyla çalışıyorsunuz?", "Çocuk, ergen, yetişkin, çift ve ailelerle görüşme yapılmaktadır."),
-   ("Görüşme saatleri nelerdir?", "Pazartesi – Cumartesi 09:00 – 20:00 arasında randevu ile görüşme yapılır."),
+   ("Görüşme saatleri nelerdir?", "Pazartesi – Pazar 09:00 – 22:00 arasında randevu ile görüşme yapılır."),
   ],
  },
  '/cayyolu-psikolog/': {
   'h1': 'Çayyolu Psikolog',
   'title': 'Çayyolu Psikolog | RN Psikoloji Çayyolu – Randevu 0552 418 79 73',
-  'desc': "Çayyolu psikolog: RN Psikoloji'nin Yaşamkent ofisinde yetişkin, çift, aile, çocuk ve ergen görüşmeleri. Ücretsiz otopark, Pazartesi – Cumartesi. Randevu: 0552 418 79 73.",
+  'desc': "Çayyolu psikolog: RN Psikoloji'nin Yaşamkent ofisinde yetişkin, çift, aile, çocuk ve ergen görüşmeleri. Ücretsiz otopark, Pazartesi – Pazar. Randevu: 0552 418 79 73.",
   'lead': "Çayyolu'na birkaç dakika mesafedeki ofisimizde, kurucu psikoloğumuz Rojin Nazik ve ekibiyle yüz yüze psikolojik danışmanlık.",
   'intro': '''<h2>Çayyolu'nda yakınınızda psikolojik destek</h2>
 <p>Çayyolu ve çevresinde yaşayanlar için RN Psikoloji'nin Yaşamkent ofisi, trafiğe ve uzun yollara takılmadan ulaşılabilecek bir konumda. Yetişkin bireysel görüşmelerden çift ve aile çalışmalarına, çocuk ve ergen görüşmelerinden evlilik öncesi danışmanlığa kadar geniş bir alanda deneyimli psikologlarımızla çalışıyoruz.</p>
@@ -542,7 +542,7 @@ BOOST = {
 ''',
   'faqs': [
    ("Çayyolu'na en yakın ofisiniz nerede?", "Konutkent, Dumlupınar Bulvarı No:399 Kat:28 Daire:121 adresindeki Yaşamkent ofisimiz Çayyolu'na birkaç dakika mesafededir."),
-   ("Çayyolu'nda hafta sonu psikolog randevusu alabilir miyim?", "Cumartesi günleri de 09:00 – 20:00 arasında randevu verilmektedir."),
+   ("Çayyolu'nda hafta sonu psikolog randevusu alabilir miyim?", "Cumartesi günleri de 09:00 – 22:00 arasında randevu verilmektedir."),
    ("Otopark var mı?", "Evet, ücretsiz otopark mevcuttur."),
    ("Çayyolu'ndan randevu almak için ne yapmalıyım?", "0552 418 79 73 numarasını arayabilir ya da WhatsApp'tan yazabilirsiniz."),
   ],
@@ -553,15 +553,15 @@ BOOST = {
 EXTRA = {
  '/yasamkent-psikolog/': {
   'html': '''<h2>Yaşamkent psikolog: iş çıkışı ve cumartesi randevusu</h2>
-<p>Yaşamkent'te yaşayanların büyük kısmı gün içinde şehrin merkezine ya da Eskişehir Yolu üzerindeki iş merkezlerine gidip geliyor. Bu yüzden görüşmeleri iş çıkışına ya da hafta sonuna sığdırmak çoğu zaman tek seçenek oluyor. Ofisimizde Pazartesi'den Cumartesi'ye 09:00 – 20:00 arasında randevu verdiğimiz için akşam saatlerinde ya da Cumartesi günü gelmeniz mümkün. Çocuğu olan aileler için okul çıkışı saatleri de planlanabiliyor.</p>
+<p>Yaşamkent'te yaşayanların büyük kısmı gün içinde şehrin merkezine ya da Eskişehir Yolu üzerindeki iş merkezlerine gidip geliyor. Bu yüzden görüşmeleri iş çıkışına ya da hafta sonuna sığdırmak çoğu zaman tek seçenek oluyor. Ofisimizde Pazartesi'den Pazar'a 09:00 – 22:00 arasında randevu verdiğimiz için akşam saatlerinde ya da Cumartesi günü gelmeniz mümkün. Çocuğu olan aileler için okul çıkışı saatleri de planlanabiliyor.</p>
 <h2>Yaşamkent'te psikolog fiyatları</h2>
 <p>Ücret; görüşmenin türüne (bireysel, çift, aile, çocuk ve ergen) ve görüşeceğiniz uzmana göre değişir. Güncel bilgiyi telefonda ya da WhatsApp'ta açıkça paylaşıyoruz; genel bir fikir edinmek için <a href="/cayyolu-psikolog-fiyatlari/">Çayyolu ve Yaşamkent psikolog fiyatları</a> sayfamıza göz atabilirsiniz.</p>''',
-  'faqs': [("Yaşamkent'te akşam saatlerinde görüşme yapılabiliyor mu?", "Evet. Pazartesi – Cumartesi 20:00'ye kadar randevu verilmektedir; iş çıkışı saatleri için önceden yazmanız yeterli."),
+  'faqs': [("Yaşamkent'te akşam saatlerinde görüşme yapılabiliyor mu?", "Evet. Pazartesi – Pazar 22:00'ye kadar randevu verilmektedir; iş çıkışı saatleri için önceden yazmanız yeterli."),
            ("Yaşamkent'ten online görüşme de yapabilir miyim?", "Evet. Ofise gelemediğiniz dönemlerde görüşmeleri online olarak sürdürmek mümkündür.")],
  },
  '/umitkoy-psikolog/': {
   'html': '''<h2>Ümitköy psikolog: öğrenciler ve çalışan aileler için esnek saatler</h2>
-<p>Ümitköy, ODTÜ, Bilkent ve Hacettepe Beytepe kampüslerine yakınlığı nedeniyle hem üniversite öğrencilerinin hem de çocuklu ailelerin yoğun yaşadığı bir semt. Sınav ve tez dönemleri, yurt dışı başvuruları, iş temposu ve çocukların okul düzeni aynı evin içinde üst üste binebiliyor. Akşam 20:00'ye kadar ve Cumartesi günleri randevu verebildiğimiz için ders ya da mesai saatlerinizi aksatmadan görüşmeye gelebilirsiniz.</p>
+<p>Ümitköy, ODTÜ, Bilkent ve Hacettepe Beytepe kampüslerine yakınlığı nedeniyle hem üniversite öğrencilerinin hem de çocuklu ailelerin yoğun yaşadığı bir semt. Sınav ve tez dönemleri, yurt dışı başvuruları, iş temposu ve çocukların okul düzeni aynı evin içinde üst üste binebiliyor. Akşam 22:00'ye kadar ve hafta sonu da randevu verebildiğimiz için ders ya da mesai saatlerinizi aksatmadan görüşmeye gelebilirsiniz.</p>
 <p>Yetişkinlerde kaygı, panik, tükenmişlik ve ilişki sorunları; gençlerde sınav kaygısı, sosyal kaygı ve motivasyon; çocuklarda ise uyum ve davranış konuları en sık başvuru nedenleri arasında. Psikologlar tanı koymaz ve ilaç yazmaz; ilaç değerlendirmesi gereken durumlarda sizi bir psikiyatri uzmanına yönlendiririz.</p>''',
   'faqs': [("Ümitköy'de üniversite öğrencileriyle görüşüyor musunuz?", "Evet. Sınav kaygısı, ders motivasyonu, aileden ayrı yaşama ve ilişki konularında genç yetişkinlerle görüşmeler yapılmaktadır."),
            ("Ümitköy'den gelmek yerine online görüşebilir miyim?", "Evet, uygun durumlarda görüşmeler online da yapılabilir; ilk görüşmede birlikte karar verilir.")],
@@ -573,7 +573,7 @@ EXTRA = {
 <h2>İncek psikolog fiyatları</h2>
 <p>Ücretler görüşmenin türüne ve uzmana göre değişir; güncel bilgi için arayabilir ya da WhatsApp'tan yazabilirsiniz. Genel bilgi: <a href="/cayyolu-psikolog-fiyatlari/">psikolog fiyatları</a>.</p>''',
   'faqs': [("İncek'te çocuk psikoloğu arıyorum, ilk adım ne olmalı?", "İlk görüşmeye genellikle ebeveynler gelir; çocuğun gelişim öyküsü ve yaşanan sorun konuşulur, ardından çocukla görüşmelerin nasıl planlanacağı belirlenir."),
-           ("İncek'ten cumartesi randevusu alabilir miyim?", "Evet, Cumartesi günleri de 09:00 – 20:00 arasında randevu verilmektedir.")],
+           ("İncek'ten cumartesi randevusu alabilir miyim?", "Evet, Cumartesi günleri de 09:00 – 22:00 arasında randevu verilmektedir.")],
  },
  '/konutkent-psikolog/': {
   'html': '''<h2>Konutkent psikolog fiyatları</h2>
@@ -593,6 +593,6 @@ EXTRA = {
 <p>Alacaatlı, Çayyolu'nun batısında yeni sitelerle hızla gelişen ve çocuklu ailelerin yoğun olduğu bir bölge. Taşınma, okul değişikliği, iş ve ev arasında sıkışan bir gündelik tempo; yetişkinlerde stres ve ilişki sorunlarını, çocuklarda ise uyum ve davranış konularını gündeme getirebiliyor. Ofisimiz Alacaatlı'ya yakın olduğu için görüşmeleri günlük düzeninizi bozmadan sürdürebilirsiniz.</p>
 <h2>Alacaatlı psikolog fiyatları</h2>
 <p>Ücretler görüşme türüne ve uzmana göre değişir. Güncel bilgi için arayabilir ya da WhatsApp'tan yazabilirsiniz; genel bilgi için <a href="/cayyolu-psikolog-fiyatlari/">psikolog fiyatları</a> sayfamıza bakabilirsiniz.</p>''',
-  'faqs': [("Alacaatlı'dan akşam saatinde gelebilir miyim?", "Evet. Pazartesi – Cumartesi 20:00'ye kadar randevu verilmektedir.")],
+  'faqs': [("Alacaatlı'dan akşam saatinde gelebilir miyim?", "Evet. Pazartesi – Pazar 22:00'ye kadar randevu verilmektedir.")],
  },
 }

@@ -630,11 +630,11 @@ MAKALELER = [
 <p><b>Bedeni ihmal etmeyin:</b> Düzenli uyku, beslenme ve fiziksel aktivite stresle baş etmenin temelidir.</p>
 <h2>Ne zaman destek almalı?</h2>
 <p>Belirtiler haftalardır sürüyor, işe gitmek ciddi zorlanma yaratıyor, uyku ve ilişkileriniz etkileniyor ya da mutsuzluk hissi işin dışına da taşıyorsa bir psikologla görüşmek faydalı olur. Görüşmelerde stresi sürdüren düşünce ve davranış kalıpları ele alınır; iş ve özel yaşam arasında daha sağlıklı bir denge kurmak hedeflenir.</p>
-<p>RN Psikoloji Çayyolu'nda yetişkinlerle <a href="/bireysel-danismanlik/">bireysel danışmanlık</a> görüşmeleri yapılmaktadır. Görüşmeler Pazartesi – Cumartesi 09:00 – 20:00 arasında planlanabilir; iş çıkışı saatleri için erken aramanızı öneririz. <a href="/kaygi-sorunlari/">Kaygı sorunları</a> sayfamız da ilginizi çekebilir.</p>
+<p>RN Psikoloji Çayyolu'nda yetişkinlerle <a href="/bireysel-danismanlik/">bireysel danışmanlık</a> görüşmeleri yapılmaktadır. Görüşmeler Pazartesi – Pazar 09:00 – 22:00 arasında planlanabilir; iş çıkışı saatleri için erken aramanızı öneririz. <a href="/kaygi-sorunlari/">Kaygı sorunları</a> sayfamız da ilginizi çekebilir.</p>
 ''',
  'faqs': [
   ("Tükenmişlik ile depresyon aynı şey mi?", "Hayır, ancak belirtileri örtüşebilir. Tükenmişlik iş bağlamıyla ilişkilidir; mutsuzluk ve isteksizlik hayatın tüm alanlarına yayıldıysa kapsamlı bir değerlendirme gerekir."),
-  ("İş çıkışı görüşme yapılabiliyor mu?", "Evet. Görüşmeler Pazartesi – Cumartesi 09:00 – 20:00 arasında planlanabilir."),
+  ("İş çıkışı görüşme yapılabiliyor mu?", "Evet. Görüşmeler Pazartesi – Pazar 09:00 – 22:00 arasında planlanabilir."),
  ],
 },
 {

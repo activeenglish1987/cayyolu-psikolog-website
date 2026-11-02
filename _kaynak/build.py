@@ -390,7 +390,7 @@ def footer_html():
     <div><h3>İletişim</h3>
       <p class="footer-line">%(pin)s<span>%(addr)s</span></p>
       <p class="footer-line">%(phone_ic)s<a href="tel:%(raw)s">%(phone)s</a></p>
-      <p class="footer-line">%(clock)s<span>Pazartesi – Cumartesi · 09:00 – 20:00</span></p>
+      <p class="footer-line">%(clock)s<span>Pazartesi – Pazar · 09:00 – 22:00</span></p>
       <p class="footer-line">%(ig)s<a href="%(igu)s" target="_blank" rel="noopener">@psikologrojinnazik</a></p>
       <p class="footer-line"><a href="mailto:%(email)s">%(email)s</a></p>
       <a class="text-link light" href="%(dir)s" target="_blank" rel="noopener">Yol tarifi al %(arrow)s</a>
@@ -414,7 +414,7 @@ def office_card(compact=False):
     <p class="eyebrow">Ofisimiz</p>
     <h2 class="office-title">Yaşamkent / Çayyolu</h2>
     <p class="office-line">%(pin)s<span>%(addr)s</span></p>
-    <p class="office-line">%(clock)s<span><b>Pazartesi – Cumartesi</b> · 09:00 – 20:00, randevulu görüşme</span></p>
+    <p class="office-line">%(clock)s<span><b>Pazartesi – Pazar</b> · 09:00 – 22:00, randevulu görüşme</span></p>
     <p class="office-line">%(car)s<span>Ücretsiz otopark mevcut</span></p>
     <p class="office-near">Çayyolu, Ümitköy, Konutkent, İncek ve Alacaatlı'ya yakın.</p>
     <div class="btn-row">
@@ -453,7 +453,7 @@ def service_cards():
 FAQS = [
     ('İlk görüşme nasıl ilerliyor?', 'Telefon veya WhatsApp üzerinden ulaşırsınız; uygun uzman, gün ve saat birlikte belirlenir. Yaklaşık 50 dakika süren ilk görüşmede başvuru nedeniniz, beklentileriniz ve yaşam öykünüz dinlenir; ardından size uygun görüşme planı oluşturulur.'),
     ('Ofisiniz nerede?', 'Ofisimiz Yaşamkent\'te, Konutkent Dumlupınar Bulvarı No:399 Kat:28 Daire:121 adresindedir. Çayyolu, Ümitköy, Konutkent, İncek ve Alacaatlı\'ya yakındır; ücretsiz otopark vardır.'),
-    ('Hangi gün ve saatlerde görüşme yapılıyor?', 'Görüşmeler Pazartesi – Cumartesi 09:00 – 20:00 saatleri arasında randevu ile yapılır.'),
+    ('Hangi gün ve saatlerde görüşme yapılıyor?', 'Görüşmeler Pazartesi – Pazar 09:00 – 22:00 saatleri arasında randevu ile yapılır.'),
     ('Hangi uzmanla görüşeceğime nasıl karar verebilirim?', 'Başvuru nedeninizi kısaca paylaşmanız yeterli; çocuk, ergen, yetişkin veya çift görüşmesi olmasına göre size uygun uzman önerilir. Belirli bir uzmanla görüşmek isterseniz bunu telefonda söylemeniz yeterli. İki uzmanımız da yüz yüze ve online görüşme yapar; ücret görüşme türüne ve uzmana göre değişebilir, telefonda net olarak söylenir. Profilleri <a href="/uzmanlarimiz/">Uzmanlarımız</a> sayfasında inceleyebilirsiniz.'),
     ('Seanslar ne kadar sürer?', 'Bireysel görüşmeler genellikle 45–50 dakika, çift ve aile görüşmeleri 60–90 dakika, çocuk görüşmeleri yaşa göre yaklaşık 45 dakika sürer. İlk görüşme yaklaşık 50 dakikadır.'),
     ('Ücret bilgisine nasıl ulaşabilirim?', 'Güncel ücret bilgisini WhatsApp\'tan yazarak ya da <a href="tel:%s">%s</a> numarasını arayarak öğrenebilirsiniz.' % (PHONE_RAW, PHONE)),
@@ -473,7 +473,7 @@ def business_ld():
             'address': {'@type': 'PostalAddress', 'streetAddress': 'Konutkent, Dumlupınar Blv. No:399 Kat:28 Daire:121',
                         'addressLocality': 'Çankaya', 'addressRegion': 'Ankara', 'postalCode': '06810', 'addressCountry': 'TR'},
             'geo': {'@type': 'GeoCoordinates', 'latitude': GEO[0], 'longitude': GEO[1]},
-            'openingHoursSpecification': [{'@type': 'OpeningHoursSpecification', 'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], 'opens': '09:00', 'closes': '20:00'}],
+            'openingHoursSpecification': [{'@type': 'OpeningHoursSpecification', 'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], 'opens': '09:00', 'closes': '22:00'}],
             'areaServed': ['Çayyolu', 'Ümitköy', 'Yaşamkent', 'Konutkent', 'İncek', 'Beysukent', 'Alacaatlı', 'Bilkent', 'Eryaman', 'Ankara'],
             'sameAs': [IG_ROJIN],
             'founder': {'@type': 'Person', '@id': 'https://www.psikologrojinnazik.com/#rojin-nazik', 'name': 'Rojin Nazik', 'jobTitle': 'Psikolog',
@@ -559,7 +559,7 @@ def side_card(expert=None):
   <a class="side-phone" href="tel:%(raw)s">%(phone)s</a>
   %(open)s
   <div class="btn-col">%(call)s%(wa)s</div>
-  <p class="office-line small">%(pin)s<span>Yaşamkent ofisi · Pazartesi – Cumartesi 09:00 – 20:00</span></p>
+  <p class="office-line small">%(pin)s<span>Yaşamkent ofisi · Pazartesi – Pazar 09:00 – 22:00</span></p>
   <a class="text-link" href="%(dir)s" target="_blank" rel="noopener">Yol tarifi al %(arrow)s</a>
   %(ig)s
 </aside>''' % {'who': who, 'raw': PHONE_RAW, 'phone': PHONE, 'open': OPEN_STATUS, 'call': btn_call('Hemen Ara'), 'wa': btn_wa(msg),
@@ -700,7 +700,7 @@ HOME_REHBER = """<h2>Çayyolu'nda psikolog seçerken</h2>
 </ul>
 <h3>Görüşme saatleri ve online seçenek</h3>
 <ul>
-<li>Görüşmeler Pazartesi–Cumartesi 09:00–20:00 arasında, randevuyla yapılır.</li>
+<li>Görüşmeler Pazartesi–Pazar 09:00–22:00 arasında, randevuyla yapılır.</li>
 <li>Telefon hafta içi 10:00–19:00, Cumartesi 10:00–18:00 arası açıktır.</li>
 <li>Ofise gelemediğiniz dönemlerde <a href="/online-terapi/">online görüşme</a> yapılabilir.</li>
 </ul>
@@ -769,7 +769,7 @@ def home_page(recs, posts):
       %(open)s
       <ul class="hero-facts">
         <li>Kurucu: <b>Psikolog Rojin Nazik</b> · CNN Türk, Milliyet, Sabah'ta uzman konuk</li>
-        <li>Pazartesi – Cumartesi · 09:00 – 20:00</li>
+        <li>Pazartesi – Pazar · 09:00 – 22:00</li>
         <li>Ücretsiz otopark</li>
       </ul>
     </div>
@@ -875,7 +875,7 @@ TRUST = '''<section class="trust-strip" aria-label="Neden RN Psikoloji"><ul>
 <li><b>15+ yıl</b>danışmanlık deneyimi</li>
 <li><b>3 kitap</b>Psikolog Rojin Nazik</li>
 <li><b>CNN Türk · Beyaz TV</b>TV programları ve röportajlar</li>
-<li><b>Pzt – Cmt</b>09:00 – 20:00 · ücretsiz otopark</li>
+<li><b>Pzt – Paz</b>09:00 – 22:00 · ücretsiz otopark</li>
 </ul></section>'''
 
 # ---------------------------------------------------------------- kardeş sitelere konu bağlantıları
@@ -1073,8 +1073,8 @@ def experts_page(rec):
 def contact_page(rec):
     bc, bld = breadcrumb([('Ana Sayfa', '/'), ('İletişim', None)])
     o1 = opt('wp-content/uploads/2024/05/seans-odasi-1.jpg', 900, 'seans-odasi')
-    return head('İletişim ve Randevu | %s' % BRAND, "RN Psikoloji Çayyolu iletişim: Yaşamkent ofisi, görüşmeler Pazartesi – Cumartesi 09:00 – 20:00. Telefon ve WhatsApp: 0552 418 79 73. Yol tarifi ve randevu.", rec['path'], ld(business_ld(), bld, faq_ld())) + nav_html(rec['path']) + '''
-<section class="page-hero"><div class="wrap">%(bc)s<p class="eyebrow">İletişim ve randevu</p><h1>Bize ulaşın</h1><p class="page-lead">Randevu ve bilgi için arayın ya da WhatsApp'tan yazın. Telefon hafta içi 10:00 – 19:00, Cumartesi 10:00 – 18:00 arası açık; görüşmeler Pazartesi – Cumartesi 09:00 – 20:00 arasında yapılır.</p>
+    return head('İletişim ve Randevu | %s' % BRAND, "RN Psikoloji Çayyolu iletişim: Yaşamkent ofisi, görüşmeler Pazartesi – Pazar 09:00 – 22:00. Telefon ve WhatsApp: 0552 418 79 73. Yol tarifi ve randevu.", rec['path'], ld(business_ld(), bld, faq_ld())) + nav_html(rec['path']) + '''
+<section class="page-hero"><div class="wrap">%(bc)s<p class="eyebrow">İletişim ve randevu</p><h1>Bize ulaşın</h1><p class="page-lead">Randevu ve bilgi için arayın ya da WhatsApp'tan yazın. Telefon hafta içi 10:00 – 19:00, Cumartesi 10:00 – 18:00 arası açık; görüşmeler Pazartesi – Pazar 09:00 – 22:00 arasında yapılır.</p>
 <div class="btn-row hero-btns">%(call)s%(wa)s</div>%(open)s
 <p class="contact-phone"><a href="tel:%(raw)s">%(phone)s</a> · <a href="mailto:%(email)s">%(email)s</a></p><p class="contact-note" style="margin-top:10px;font-size:14px">Bu telefon hattı danışan randevuları içindir. Basın, TV programı, reklam ve iş birliği teklifleri için lütfen e-posta ile yazın: <a href="mailto:%(email)s">%(email)s</a></p></div></section>
 <section class="section section-tight"><div class="wrap office-grid">%(office)s<div class="office-photos single">%(o1)s</div></div></section>

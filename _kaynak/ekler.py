@@ -21,7 +21,7 @@ EKLER = {'/alacaatli-psikolog/': {'html': "<h2>Alacaatlı'da çocukların okul v
                                   '<li>Her ebeveynin güçlü yanlarını fark etmek ve paylaşmak</li>\n'
                                   '</ul>\n'
                                   '<h2>Kendinize ayıracak zamanı planlamak</h2>\n'
-                                  '<p>Aile sorumlulukları yoğunken kendinize bir saat ayırmak bile zor görünebilir. Görüşmeler Pazartesi – Cumartesi 09:00 – 20:00 arasında yapılır; çocukların okulda '
+                                  '<p>Aile sorumlulukları yoğunken kendinize bir saat ayırmak bile zor görünebilir. Görüşmeler Pazartesi – Pazar 09:00 – 22:00 arasında yapılır; çocukların okulda '
                                   'olduğu saatler ya da cumartesi randevuları sık tercih ediliyor. Ofisimizde ücretsiz otopark bulunur. Gelmenin zor olduğu haftalarda görüşmeyi online '
                                   'yapabilirsiniz.</p>\n'
                                   '<h2>Aile görüşmesi mi, bireysel görüşme mi?</h2>\n'
@@ -44,7 +44,7 @@ EKLER = {'/alacaatli-psikolog/': {'html': "<h2>Alacaatlı'da çocukların okul v
                                   'arıyor.</p>\n'
                                   '<h2>Ders programı ile görüşmeleri dengelemek</h2>\n'
                                   '<p>Öğrenciler için en büyük zorluklardan biri, değişken ders ve sınav programı içinde görüşmeleri düzenli sürdürmek. Bu yüzden görüşme saatini dönem başında '
-                                  'birlikte planlamak, sınav haftalarında ise esnek davranmak işe yarar. Görüşmeler Pazartesi – Cumartesi 09:00 – 20:00 arasında yapılır; cumartesi saatleri '
+                                  'birlikte planlamak, sınav haftalarında ise esnek davranmak işe yarar. Görüşmeler Pazartesi – Pazar 09:00 – 22:00 arasında yapılır; cumartesi saatleri '
                                   'öğrenciler için çoğu zaman uygun bir seçenektir.</p>\n'
                                   '<ul>\n'
                                   '<li><b>Dönem başında planlayın:</b> Ders programınızı bildiğinizde sabit bir görüşme saati seçmek kolaylaşır.</li>\n'
@@ -83,7 +83,7 @@ EKLER = {'/alacaatli-psikolog/': {'html': "<h2>Alacaatlı'da çocukların okul v
                                 'ortamı yaratabilir. Bu baskı bazen ertelemeye, uykusuzluğa ya da hiçbir şeyden keyif alamamaya dönüşebilir. Görüşmelerde bu beklentilerin nereden geldiğini anlamak '
                                 've kendinize daha gerçekçi hedefler koymak üzerine çalışılır.</p>\n'
                                 '<h2>Görüşmeleri akademik takvime göre planlamak</h2>\n'
-                                '<p>Görüşmeler Pazartesi – Cumartesi 09:00 – 20:00 arasında yapılabilir; ders programınıza göre sabit bir saat seçmek süreci kolaylaştırır. Sınav dönemlerinde ve '
+                                '<p>Görüşmeler Pazartesi – Pazar 09:00 – 22:00 arasında yapılabilir; ders programınıza göre sabit bir saat seçmek süreci kolaylaştırır. Sınav dönemlerinde ve '
                                 'tatillerde görüşmeler online sürdürülebilir. İlk görüşmede derslerinizi, sınav takviminizi ve sizi en çok zorlayan durumları paylaşmanız planlamayı '
                                 'kolaylaştırır.</p>',
                         'sss': [('Kampüsteki psikolojik danışmanlık hizmetine gidiyorum, sizinle de görüşebilir miyim?',
@@ -91,7 +91,7 @@ EKLER = {'/alacaatli-psikolog/': {'html': "<h2>Alacaatlı'da çocukların okul v
                                  'birlikte değerlendiririz.'),
                                 ('Sınav döneminde kaygım çok artıyor, ne zaman başvurmalıyım?',
                                  'Sınav dönemi gelmeden başlamak daha rahat çalışma imkânı verir; ancak kaygı yoğunlaştığında da başvurabilirsiniz.'),
-                                ('Akşam saatlerinde görüşme yapılabiliyor mu?', "Evet. Görüşmeler 20:00'ye kadar planlanabilir; ders programınıza uygun saati birlikte seçeriz.")],
+                                ('Akşam saatlerinde görüşme yapılabiliyor mu?', "Evet. Görüşmeler 22:00'ye kadar planlanabilir; ders programınıza uygun saati birlikte seçeriz.")],
                         'tarih': '2026-10-27'},
  '/bireysel-danismanlik/': {'html': '<h2>İlk randevudan önce bilmeniz gerekenler</h2>\n'
                                     '<p>Bireysel görüşmeye başlamak için hazır bir sorun tanımı getirmeniz gerekmez. Randevu alırken yalnızca kısaca neden destek almak istediğinizi paylaşmanız '
@@ -107,7 +107,7 @@ EKLER = {'/alacaatli-psikolog/': {'html': "<h2>Alacaatlı'da çocukların okul v
                                     '<h2>Görüşme sıklığı ve düzen</h2>\n'
                                     '<p>Bireysel görüşmeler çoğunlukla haftada bir yapılır; süreç ilerledikçe aralık iki haftaya açılabilir. Burada önemli olan, görüşmelerin düzenli olmasıdır. Aynı '
                                     'gün ve saatte devam eden görüşmeler, hem sizin için bir rutin oluşturur hem de bir görüşmede konuşulanın bir sonrakine taşınmasını kolaylaştırır. Görüşmeler '
-                                    'pazartesiden cumartesiye 09:00 – 20:00 arasında planlanabildiği için çalışan danışanlarımız çoğu zaman akşam ya da cumartesi saatlerini tercih ediyor.</p>\n'
+                                    'pazartesiden pazara 09:00 – 22:00 arasında planlanabildiği için çalışan danışanlarımız çoğu zaman akşam ya da cumartesi saatlerini tercih ediyor.</p>\n'
                                     '<p>Bir dönem şehir dışında olacaksanız ya da gelmeniz zorlaşırsa, aynı uzmanla online görüşmeye geçebilirsiniz. Yüz yüze ve online görüşmeler arasında geçiş '
                                     'yapmak süreci bozmaz; önemli olan sürekliliğin korunmasıdır.</p>\n'
                                     '<h2>Süreç boyunca birlikte değerlendirme</h2>\n'
@@ -354,7 +354,7 @@ EKLER = {'/alacaatli-psikolog/': {'html': "<h2>Alacaatlı'da çocukların okul v
                                                       'netleştirilir.</p>\n'
                                                       '<h2>Yüz yüze ve online görüşme bir arada</h2>\n'
                                                       '<p>Görüşmeler Dumlupınar Bulvarı No:399, Konutkent adresindeki ofisimizde yüz yüze yapılır; binada ücretsiz otopark vardır. Pazartesi – '
-                                                      'Cumartesi 09:00 – 20:00 arasında randevu verilir. Seyahat, hastalık ya da yoğun dönemler nedeniyle ofise gelemediğiniz haftalarda aynı uzmanla '
+                                                      'Pazar 09:00 – 22:00 arasında randevu verilir. Seyahat, hastalık ya da yoğun dönemler nedeniyle ofise gelemediğiniz haftalarda aynı uzmanla '
                                                       'online görüşmeye geçebilirsiniz. Böylece görüşmelerin sürekliliği bozulmaz.</p>\n'
                                                       '<h2>Bir uzmana başvurmanın zamanı geldiğini gösteren işaretler</h2>\n'
                                                       '<p>Psikolojik destek almak için sorunun çok büyümesini beklemek gerekmez. Şu durumlardan biri sizin için tanıdıksa bir uzmanla görüşmek iyi '
@@ -388,7 +388,7 @@ EKLER = {'/alacaatli-psikolog/': {'html': "<h2>Alacaatlı'da çocukların okul v
  '/cift-iliski-terapisi/': {'html': '<h2>Çift olarak randevu almak: pratik adımlar</h2>\n'
                                     '<p>Çift görüşmesi için randevuyu iki taraftan biri alabilir. Randevu sırasında kısaca neden başvurduğunuzu ve iki tarafın da gelmeye istekli olup olmadığını '
                                     'paylaşmanız, görüşmenin planlanmasını kolaylaştırır. Çiftlerin ortak boş zamanı bulmak çoğu zaman zor olduğu için akşam ve cumartesi saatleri sık tercih '
-                                    'ediliyor; görüşmeler pazartesiden cumartesiye 09:00 – 20:00 arasında planlanabilir.</p>\n'
+                                    'ediliyor; görüşmeler pazartesiden pazara 09:00 – 22:00 arasında planlanabilir.</p>\n'
                                     '<ul>\n'
                                     "<li><b>Ayrı yerlerden gelmek:</b> İş çıkışı farklı yerlerden gelecekseniz, ofisimizin Konutkent'te Dumlupınar Bulvarı üzerinde olması ve binadaki ücretsiz "
                                     'otopark işinizi kolaylaştırır.</li>\n'
@@ -424,7 +424,7 @@ EKLER = {'/alacaatli-psikolog/': {'html': "<h2>Alacaatlı'da çocukların okul v
                                         'durumun ne zamandır sürdüğü, evde ve okulda nasıl göründüğü konuşulur. Ön görüşmeye mümkünse iki ebeveynin birlikte katılması önerilir; bu mümkün değilse '
                                         'diğer ebeveynle ayrıca görüşme planlanabilir. Ardından çocuğunuzla tanışma görüşmeleri yapılır.</p>\n'
                                         '<ul>\n'
-                                        '<li><b>Okul saatleriyle çakışmaması için:</b> Görüşmeler pazartesiden cumartesiye 09:00 – 20:00 arasında planlanabildiğinden, okul sonrası ve cumartesi '
+                                        '<li><b>Okul saatleriyle çakışmaması için:</b> Görüşmeler pazartesiden pazara 09:00 – 22:00 arasında planlanabildiğinden, okul sonrası ve cumartesi '
                                         'saatleri ailelerin sık tercih ettiği zamanlardır.</li>\n'
                                         "<li><b>Ulaşım:</b> Ofisimiz Konutkent'te, Dumlupınar Bulvarı No:399 adresindedir; binada ücretsiz otopark vardır.</li>\n"
                                         '</ul>\n'
@@ -584,7 +584,7 @@ EKLER = {'/alacaatli-psikolog/': {'html': "<h2>Alacaatlı'da çocukların okul v
                                 '<p>Görüşmelere başlamak için yaşadığınız zorluğun "yeterince büyük" olmasını beklemeniz gerekmez.</p>\n'
                                 "<h2>Eryaman'dan düzenli görüşme planlamak</h2>\n"
                                 "<p>Eryaman'dan gelen danışanlarımız için en önemli konu, görüşmeleri günlük düzene uygun ve sürdürülebilir biçimde planlamak. Terapide düzenlilik önemli olduğu için "
-                                'ilk görüşmede size en uygun gün ve saati birlikte belirliyoruz. Görüşmeler Pazartesi – Cumartesi 09:00 – 20:00 arasında yapılır ve ofisimizde ücretsiz otopark '
+                                'ilk görüşmede size en uygun gün ve saati birlikte belirliyoruz. Görüşmeler Pazartesi – Pazar 09:00 – 22:00 arasında yapılır ve ofisimizde ücretsiz otopark '
                                 'bulunur.</p>\n'
                                 '<ul>\n'
                                 '<li><b>Yüz yüze ve online görüşmeyi birleştirin:</b> Bazı haftalar yüz yüze, bazı haftalar online görüşmek mümkündür.</li>\n'
@@ -612,7 +612,7 @@ EKLER = {'/alacaatli-psikolog/': {'html': "<h2>Alacaatlı'da çocukların okul v
                                           'dönemdir. Bu dönemde çiftler hem birbirlerinin beklentilerini konuşmaya daha açık olur hem de konuşulanları günlük hayatta denemek için zaman bulur. '
                                           'Nişanlılık süreci kısa olan çiftler için de birkaç görüşme, önemli konuları masaya yatırmak için değerli bir fırsattır.</p>\n'
                                           "<p>Görüşmeler Konutkent'teki ofisimizde, iki tarafın birlikte katılımıyla yapılır. Çalışan çiftlerin ortak zamanı sınırlı olduğu için akşam ve cumartesi "
-                                          'saatleri sık tercih edilir; görüşmeler pazartesiden cumartesiye 09:00 – 20:00 arasında planlanabilir. Taraflardan biri farklı bir şehirdeyse görüşmeler '
+                                          'saatleri sık tercih edilir; görüşmeler pazartesiden pazara 09:00 – 22:00 arasında planlanabilir. Taraflardan biri farklı bir şehirdeyse görüşmeler '
                                           'online da yapılabilir.</p>\n'
                                           '<h2>Görüşmelere hazırlanırken konuşabileceğiniz sorular</h2>\n'
                                           '<p>Görüşmeler için bir hazırlık zorunlu değildir; yine de çiftlerin kendi aralarında düşünmeye başlayabileceği bazı sorular süreci verimli kılar:</p>\n'
@@ -725,7 +725,7 @@ EKLER = {'/alacaatli-psikolog/': {'html': "<h2>Alacaatlı'da çocukların okul v
                               '<p>Çocukla çalışırken aile her zaman sürecin bir parçasıdır. Ebeveynlerle yapılan görüşmeler, evde neyin işe yaradığını ve neyin zorlandığını birlikte anlamaya yardım '
                               'eder.</p>\n'
                               '<h2>Uzak hissettiğinizde düzenli görüşmeyi sürdürmek</h2>\n'
-                              "<p>İncek'ten gelen aileler için görüşme günlerini okul ve kurs programlarıyla uyumlu planlamak önemli. Görüşmeler Pazartesi – Cumartesi 09:00 – 20:00 arasında "
+                              "<p>İncek'ten gelen aileler için görüşme günlerini okul ve kurs programlarıyla uyumlu planlamak önemli. Görüşmeler Pazartesi – Pazar 09:00 – 22:00 arasında "
                               'yapılabildiği için hafta içi okul dönüşü ya da cumartesi saatleri sık tercih ediliyor. Ofisimizde ücretsiz otopark bulunur.</p>\n'
                               '<ul>\n'
                               '<li><b>Çocuk görüşmeleri:</b> Çocuğun yüz yüze gelmesi genellikle daha uygundur; oyun ve etkinlik temelli çalışmalar ofiste yapılır.</li>\n'
@@ -1063,7 +1063,7 @@ EKLER = {'/alacaatli-psikolog/': {'html': "<h2>Alacaatlı'da çocukların okul v
                                            'izleneceği konuşulur.</li>\n'
                                            '</ul>\n'
                                            '<h2>Ofisimize ulaşım</h2>\n'
-                                           "<p>Ofisimiz Konutkent'te, Dumlupınar Bulvarı No:399 adresindedir. Binada ücretsiz otopark bulunur. Görüşmeler Pazartesi – Cumartesi 09:00 – 20:00 saatleri "
+                                           "<p>Ofisimiz Konutkent'te, Dumlupınar Bulvarı No:399 adresindedir. Binada ücretsiz otopark bulunur. Görüşmeler Pazartesi – Pazar 09:00 – 22:00 saatleri "
                                            'arasında randevu ile yapılır. İlk görüşmenize birkaç dakika erken gelmeniz, görüşmeye daha sakin başlamanıza yardımcı olur.</p>\n'
                                            '<h2>Online görüşme tercih ediyorsanız</h2>\n'
                                            '<p>Ofise gelmeniz zor olduğunda, şehir dışında olduğunuzda ya da kendi ortamınızda görüşmeyi tercih ettiğinizde online görüşme bir seçenektir. Online '
@@ -1139,7 +1139,7 @@ EKLER = {'/alacaatli-psikolog/': {'html': "<h2>Alacaatlı'da çocukların okul v
                                 'önceliklerinizi yeniden düzenlemek için bir alan açabilir.</p>\n'
                                 '<h2>Görüşmeleri haftanıza nasıl yerleştirebilirsiniz?</h2>\n'
                                 "<p>Terapide süreklilik önemlidir; bu yüzden en baştan gerçekçi bir gün ve saat seçmek işinizi kolaylaştırır. Ümitköy'den gelen danışanlarımızın bir kısmı iş çıkışı "
-                                'saatlerini, bir kısmı ise cumartesi randevularını tercih ediyor. Görüşmeler Pazartesi – Cumartesi 09:00 – 20:00 arasında planlanabilir.</p>\n'
+                                'saatlerini, bir kısmı ise cumartesi randevularını tercih ediyor. Görüşmeler Pazartesi – Pazar 09:00 – 22:00 arasında planlanabilir.</p>\n'
                                 '<ul>\n'
                                 '<li><b>Sabit bir saat seçin:</b> Her hafta aynı gün ve saatte gelmek, görüşmeyi alışkanlık hâline getirir.</li>\n'
                                 '<li><b>Yoğun dönemleri önceden konuşun:</b> Seyahat ya da yoğun iş haftaları için randevuyu birlikte yeniden planlayabiliriz.</li>\n'
@@ -1225,7 +1225,7 @@ EKLER = {'/alacaatli-psikolog/': {'html': "<h2>Alacaatlı'da çocukların okul v
                                   'anlatabileceği bir alan açılır; kimse haklı ya da haksız ilan edilmez. Çocukla ilgili başvurularda ise genellikle önce ebeveynlerle bir ön görüşme yapılır, '
                                   'ardından çocuğun ihtiyacına göre süreç planlanır.</p><h2>Bağlıca, Dodurga ve çevre mahallelerden gelenler için</h2>\n'
                                   "<p>Ofisimiz Yaşamkent'e komşu Bağlıca, Dodurga ve Konutkent'ten gelenler için de kısa bir sürüş mesafesindedir. Binada ücretsiz otopark bulunur; bu sayfadaki yol "
-                                  "tarifi düğmesi, bulunduğunuz yerden güncel araç ve toplu taşıma tarifini Google Haritalar'da açar. Görüşmeler Pazartesi–Cumartesi 09:00–20:00 arasında yapılır; "
+                                  "tarifi düğmesi, bulunduğunuz yerden güncel araç ve toplu taşıma tarifini Google Haritalar'da açar. Görüşmeler Pazartesi–Pazar 09:00–22:00 arasında yapılır; "
                                   'akşam ve Cumartesi saatleri, iş ve okul programıyla uyumlu bir düzen kurmayı kolaylaştırır. Gelmenin zor olduğu haftalarda görüşmeyi online sürdürmek de '
                                   'mümkündür.</p>\n',
                           'sss': [('Eşimle birlikte gelmek istiyoruz ama eşim çekiniyor, ne yapabiliriz?',
@@ -1247,7 +1247,7 @@ EKLER = {'/alacaatli-psikolog/': {'html': "<h2>Alacaatlı'da çocukların okul v
                                 '<li>Özgüven, sınır koyma ve kendini ifade etme</li>\n'
                                 '</ul>\n'
                                 '<h2>Çalışan yetişkinler için görüşme planlaması</h2>\n'
-                                '<p>Yoğun çalışan yetişkinler için en büyük engel çoğu zaman zaman bulmaktır. Görüşmeler pazartesiden cumartesiye 09:00 – 20:00 arasında planlanabilir; akşam ve '
+                                '<p>Yoğun çalışan yetişkinler için en büyük engel çoğu zaman zaman bulmaktır. Görüşmeler pazartesiden pazara 09:00 – 22:00 arasında planlanabilir; akşam ve '
                                 "cumartesi saatleri bu nedenle en çok talep gören saatlerdir. Ofisimiz Konutkent'te, Dumlupınar Bulvarı No:399 adresinde yer alır ve binada ücretsiz otopark vardır. "
                                 'İş seyahati ya da yoğun dönemlerde aynı uzmanla online görüşmeye geçmek de mümkündür.</p>\n'
                                 '<p>Düzenli görüşmeler için her hafta aynı gün ve saati ayırmak, görüşmeleri günlük programın doğal bir parçası hâline getirir ve sürekliliği kolaylaştırır.</p>\n'
@@ -1265,7 +1265,7 @@ EKLER = {'/alacaatli-psikolog/': {'html': "<h2>Alacaatlı'da çocukların okul v
                         'sss': [('Belirgin bir sorunum yok, yine de görüşme alabilir miyim?',
                                  'Evet. Kendinizi daha iyi tanımak ya da bir karar sürecinde düşüncelerinizi netleştirmek de görüşme için geçerli bir nedendir.'),
                                 ('İş çıkışı görüşmeye gelebilir miyim?',
-                                 'Evet. Görüşmeler pazartesiden cumartesiye 09:00 – 20:00 arasında planlanabilir; akşam saatleri için erken randevu almanızı öneririz.'),
+                                 'Evet. Görüşmeler pazartesiden pazara 09:00 – 22:00 arasında planlanabilir; akşam saatleri için erken randevu almanızı öneririz.'),
                                 ('Psikiyatriste de gitmem gerekir mi?',
                                  'Her durumda gerekmez. Belirtiler çok yoğunsa ya da günlük hayatınızı belirgin biçimde etkiliyorsa psikiyatrik değerlendirme de önerilebilir.')],
                         'tarih': '2026-10-27'},
@@ -1321,7 +1321,7 @@ ACIKLAMA = {
     '/ilk-terapi-seansi-rehberi/': "Psikoloğa ilk kez gidecekler için rehber: ilk seansta neler konuşulur, nasıl hazırlanılır, gizlilik nasıl korunur? Merak edilenler yanıtlarıyla.",
     '/randevu-sik-sorulan-sorular/': "RN Psikoloji Çayyolu'nda randevu ve ilk görüşme: ilk görüşmede neler yapılır, hangi uzmanla görüşmeli, nasıl randevu alınır? En sık sorular.",
     '/yalnizlik-hissi-ve-sosyal-geri-cekilme/': "Kalabalıklar içinde yalnız hissetmek ve insanlardan uzaklaşmak: nedenleri, yalnızlıkla baş etme yolları ve psikolojik desteğin ne zaman gerektiği.",
-    '/yasamkent-psikolog/': "Yaşamkent'te yüz yüze psikolojik danışmanlık: yetişkin, çift, aile, çocuk ve ergen görüşmeleri. Ücretsiz otopark, Pazartesi–Cumartesi randevu.",
+    '/yasamkent-psikolog/': "Yaşamkent'te yüz yüze psikolojik danışmanlık: yetişkin, çift, aile, çocuk ve ergen görüşmeleri. Ücretsiz otopark, Pazartesi–Pazar randevu.",
     '/yurt-disi-online-ebeveyn-danismanligi/': "Yurt dışında çocuk büyüten Türk ailelere Türkçe online ebeveyn danışmanlığı: iki dil, iki kültür, okul uyumu ve ergenlik dönemi.",
     '/basinda-biz/': "Basında RN Psikoloji: kurucu psikoloğumuz Rojin Nazik'in katıldığı TV programları, gazete röportajları ve uzman görüşleri bir arada.",
     '/galeri/': "RN Psikoloji Çayyolu ofisinden görüntüler: seans odaları ve bekleme alanından kareler. İlk görüşmenizden önce ofisimize göz atabilirsiniz.",
@@ -1367,7 +1367,7 @@ EKLER['/cayyolu-psikolojik-danismanlik-merkezi/']['tarih'] = '2026-10-28'
 
 # 28 Ekim — Çayyolu müşteri kelimeleri: hizmet + semt, hizmet + fiyat, eksik aramalar (Search Console)
 _UC = "Ücreti nelerin belirlediğini <a href=\"/cayyolu-psikolog-fiyatlari/\">psikolog fiyatları</a> sayfamızda anlattık; güncel ücreti WhatsApp'tan yazarak ya da arayarak öğrenebilirsiniz."
-_OF = "Ofisimiz Konutkent'te, Dumlupınar Bulvarı üzerindedir; ücretsiz otopark vardır ve görüşmeler Pazartesi'den Cumartesi'ye 09:00 – 20:00 arasında randevuyla yapılır."
+_OF = "Ofisimiz Konutkent'te, Dumlupınar Bulvarı üzerindedir; ücretsiz otopark vardır ve görüşmeler Pazartesi'den Pazar'a 09:00 – 22:00 arasında randevuyla yapılır."
 def _ekle(yol, html, sss=()):
     EKLER[yol]['html'] += html
     EKLER[yol]['sss'] = EKLER[yol].get('sss', []) + [list(x) for x in sss]
@@ -1404,7 +1404,7 @@ _ekle('/bireysel-danismanlik/', """
 _ekle('/beysukent-psikolog/', """
 <h2>Beysukent psikoloji ve psikolojik danışmanlık</h2>
 <p>Beysukent'te psikolojik danışmanlık arayanlar için ofisimiz araçla kısa bir mesafededir. """ + _OF + """ Yetişkinler için bireysel görüşmeler, çiftler için çift terapisi, aileler için çocuk ve ergen görüşmeleri aynı ofiste planlanabilir; bu, bir aile içinde farklı ihtiyaçları olan kişilerin aynı yere gelebilmesini kolaylaştırır.</p>
-""", [("Beysukent'ten ofisinize nasıl gelebilirim?", "Ofisimiz Konutkent'te, Dumlupınar Bulvarı üzerindedir; Beysukent'ten araçla kısa sürede ulaşılır ve ücretsiz otopark vardır. Görüşmeler Pazartesi'den Cumartesi'ye randevuyla yapılır.")])
+""", [("Beysukent'ten ofisinize nasıl gelebilirim?", "Ofisimiz Konutkent'te, Dumlupınar Bulvarı üzerindedir; Beysukent'ten araçla kısa sürede ulaşılır ve ücretsiz otopark vardır. Görüşmeler Pazartesi'den Pazar'a randevuyla yapılır.")])
 
 _ekle('/yasamkent-psikolog/', """
 <h2>Yaşamkent psikolojik danışmanlık merkezi</h2>
