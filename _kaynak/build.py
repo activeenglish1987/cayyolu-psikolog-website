@@ -804,6 +804,7 @@ def home_page(recs, posts):
   </div>
 </section>
 
+%(sov)s
 <section class="section section-dark">
   <div class="wrap">
     <div class="section-head light"><p class="eyebrow light">Basında Rojin Nazik</p><h2>Ekranda, gazetelerde ve kitaplarda</h2><p>Psikolog Rojin Nazik; TV programları, gazete röportajları ve yayınlanmış üç kitabıyla psikolojiyi anlaşılır kılmak için çalışıyor.</p></div>
@@ -863,7 +864,7 @@ def home_page(recs, posts):
        'h_exp': section_head('Uzmanlarımız', 'Size uygun uzmanla görüşün', 'Çocuk, ergen, yetişkin ve çift görüşmelerinde deneyimli psikologlarımız.'),
        'experts': expert_cards(), 'h_svc': section_head('Hizmetler', 'Hangi konuda destek almak istersiniz?'), 'services': service_cards(),
        'wa_help': wa('Merhaba, hangi hizmetin bana uygun olduğunu öğrenmek istiyorum.'),
-       'press': press_html, 'books': books_html, 'arrow': ICON['arrow'],
+       'press': press_html, 'sov': __import__('basin_sov').bant('cayyolu'), 'books': books_html, 'arrow': ICON['arrow'],
        'h_rev': section_head('Danışan yorumları', 'Danışanlarımız ne diyor?'), 'reviews': reviews_html,
        'h_steps': section_head('Görüşme süreci', 'İlk adım nasıl işler?'),
        'h_area': section_head('Bölgeler', 'Çayyolu ve çevresinde psikolog', 'Yaşamkent ofisimize yakın semtlerden danışanlarımız için hazırladığımız rehberler.'), 'areas': areas_html,
