@@ -309,6 +309,7 @@ body.menu-open{overflow:hidden}
 .inline-cta .btn-row .btn{flex:1 1 180px}
 .inline-cta a.btn{color:#fff}
 .inline-cta a.btn-line{color:var(--navy)}
+.inline-cta a.btn-wa{color:#0B7A3E}.inline-cta a.btn-wa:hover{color:#fff}
 
 /* yerel sayfalar */
 .topic-grid{display:grid;grid-template-columns:1fr;gap:10px;list-style:none;padding:0;margin:0 0 1.2em}
