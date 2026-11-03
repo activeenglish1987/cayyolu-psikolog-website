@@ -1,8 +1,7 @@
 /* Mesai dışı yakalama: telefon saatleri (Pazartesi–Cumartesi 10:00–19:00, İstanbul) dışında.
    Ofis 09:00–20:00 arası seans verir; bu dosya yalnız TELEFONUN açıldığı saatlere bakar.
-   "Sabah Selda Hanım sizi arasın" düğmesi gösterir. Tıklanınca küçük bir pencere açılır:
-   ziyaretçi cep numarasını bırakır, talep reklam kimliğiyle (gclid) birlikte psikologunubul
-   panelindeki talepler listesine düşer ve sabah ilk iş aranır. WhatsApp ikinci seçenek olarak kalır.
+   "Sabah sizi arayalım" düğmesi gösterir. Tıklanınca WhatsApp hazır "beni arayın" mesajıyla açılır
+   (panel takip edilmediği için numara formu yok); Selda Hanım sabah WhatsApp'tan görüp arar.
    Rojin Nazik, Çayyolu ve Elif Erdoğan sitelerinde ortak dosya. */
 (function () {
   var WA = '905524187973';
@@ -83,45 +82,15 @@
     return out;
   }
 
+  // Ekip paneli takip etmediği için numara formu yok: düğme, hazır "beni arayın" mesajıyla WhatsApp'ı açar.
+  // Danışanın numarası WhatsApp'ta görünür; Selda Hanım sabah oradan arar.
   function sheet(area) {
-    track('callback_form_open', { cta_area: area });
-    var s = document.createElement('div');
-    s.className = 'ah-sheet';
-    s.setAttribute('role', 'dialog');
-    s.setAttribute('aria-modal', 'true');
-    s.innerHTML = '<div class="ah-card"><button type="button" class="ah-x" aria-label="Kapat">×</button>'
-      + '<h3>' + kisa + ' 10:00\'da sizi arayalım</h3>'
-      + '<div class="ah-who"><i>S</i><span><b>Selda Hanım</b> ' + when + ' ilk iş sizi arar, size uygun saati ve ücret bilgisini söyler.</span></div>'
-      + '<form novalidate><input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="05xx xxx xx xx" aria-label="Cep telefonunuz" maxlength="20">'
-      + '<input name="hp" type="text" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true">'
-      + '<div class="ah-err" aria-live="polite"></div>'
-      + '<button class="ah-send" type="submit">📞 Beni ' + kisa.toLowerCase() + ' arayın</button>'
-      + '<div class="ah-small">Telefon numaranızı yalnızca sizi aramak için kullanırız. <a href="' + AYDINLATMA + '" target="_blank" rel="noopener">Aydınlatma metni</a></div></form>'
-      + '<a class="ah-wa" href="' + waHref + '" target="_blank" rel="noopener" data-cta-area="after_hours_sheet">WhatsApp\'tan yazmayı tercih ederim</a></div>';
-    document.body.appendChild(s);
-    var kapat = function () { if (s.parentNode) s.parentNode.removeChild(s); };
-    s.querySelector('.ah-x').onclick = kapat;
-    s.addEventListener('click', function (e) { if (e.target === s) kapat(); });
-    var f = s.querySelector('form'), inp = f.querySelector('[name=phone]'), err = f.querySelector('.ah-err'), btn = f.querySelector('.ah-send');
-    setTimeout(function () { try { inp.focus(); } catch (e) {} }, 60);
-    f.onsubmit = function (e) {
-      e.preventDefault();
-      var digits = inp.value.replace(/\D/g, '').replace(/^90/, '').replace(/^0/, '');
-      if (!/^5\d{9}$/.test(digits)) { err.textContent = 'Lütfen 05 ile başlayan cep numaranızı yazın.'; inp.focus(); return; }
-      btn.disabled = true; err.textContent = '';
-      fetch(API, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ phone: '0' + digits, when: 'saat', at: saat, hp: f.querySelector('[name=hp]').value, landing: (location.hostname + location.pathname).slice(0, 120), attribution: attribution() }) })
-        .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
-        .then(function (x) {
-          if (!x.ok || !x.j || !x.j.ok) throw new Error((x.j && x.j.error) || 'hata');
-          track('callback_request', { cta_area: area });
-          s.querySelector('.ah-card').innerHTML = '<button type="button" class="ah-x" aria-label="Kapat">×</button><div class="ah-ok"><div style="font-size:40px">✅</div><b>Talebiniz alındı</b><p>Selda Hanım ' + when + ' 10:00\'dan itibaren sizi arayacak. İyi dinlenmeler.</p></div>';
-          s.querySelector('.ah-x').onclick = kapat;
-        })
-        .catch(function (ex) {
-          btn.disabled = false;
-          err.innerHTML = (ex && ex.message && ex.message !== 'hata' && ex.message.indexOf('Failed') < 0 ? ex.message : 'Şu an gönderilemedi.') + ' <a href="' + waHref + '" target="_blank" rel="noopener">WhatsApp\'tan yazın</a>.';
-        });
-    };
+    var ne = saat.replace(/^Bugün/, 'bugün').replace(/^Yarın/, 'yarın').replace(/^Pazartesi/, 'pazartesi').replace(' 10:00', " saat 10:00'da");
+    var u = 'https://wa.me/' + WA + '?text=' + encodeURIComponent('Merhaba, ' + ne + ' beni arayabilir misiniz? Randevu bilgisi almak istiyorum.');
+    if (typeof window.adsTrack === 'function') window.adsTrack('whatsapp_click', { cta_area: area, site: SITE });
+    else track('whatsapp_click', { cta_area: area });
+    var w = window.open(u, '_blank', 'noopener');
+    if (!w) location.href = u;
   }
 
   function btn(label, cls, area) {
@@ -151,7 +120,7 @@
     try { dismissed = sessionStorage.getItem('ah_kapat') === '1'; } catch (e) {}
     if (!dismissed) {
       var bar = document.createElement('div'); bar.className = 'ah-bar' + (POS === 'bottom' ? ' ah-bottom' : ''); bar.setAttribute('role', 'note');
-      bar.appendChild(btn('<span>🌙 Telefon hattı şu an kapalı.</span><b>' + kisa + ' Selda Hanım sizi arasın →</b>', 'ah-go', 'after_hours_bar'));
+      bar.appendChild(btn('<span>🌙 Telefon hattı şu an kapalı.</span><b>💬 ' + kisa + ' sizi arayalım · WhatsApp →</b>', 'ah-go', 'after_hours_bar'));
       var x = document.createElement('button'); x.type = 'button'; x.className = 'ah-x'; x.setAttribute('aria-label', 'Kapat'); x.innerHTML = '×';
       x.onclick = function () { bar.parentNode && bar.parentNode.removeChild(bar); document.documentElement.classList.remove('ah-acik'); try { sessionStorage.setItem('ah_kapat', '1'); } catch (e) {} };
       bar.appendChild(x);
@@ -168,7 +137,7 @@
     var spots = document.querySelectorAll('[data-open-status]');
     for (var i = 0; i < spots.length; i++) {
       if (spots[i].nextElementSibling && spots[i].nextElementSibling.classList && spots[i].nextElementSibling.classList.contains('ah-inline')) continue;
-      spots[i].parentNode.insertBefore(btn('📞 ' + kisa + ' Selda Hanım sizi arasın', 'ah-inline', 'after_hours_inline'), spots[i].nextSibling);
+      spots[i].parentNode.insertBefore(btn('💬 WhatsApp\'tan yazın, ' + kisa.toLowerCase() + ' sizi arayalım', 'ah-inline', 'after_hours_inline'), spots[i].nextSibling);
     }
     if (bar && POS === 'bottom' && bar.parentNode) {
       var gorunen = 0, root = document.documentElement;

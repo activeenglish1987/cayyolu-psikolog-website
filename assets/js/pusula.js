@@ -32,6 +32,13 @@
   var FOTO = CFG.foto || (SITE === 'elif' ? '/assets/elif/team-elif-erdogan.webp' : RN + '/images/brand/rojin-nazik-portrait-800.webp');
   var ELIF_FOTO = CFG.elifFoto || (SITE === 'elif' ? FOTO : SITE === 'cayyolu' ? '/assets/img/team-elif-erdogan.webp' : '/images/brand/elif-erdogan-720.webp');
   var TEL = 'tel:+905524187973', TEL_TXT = '0552 418 79 73', WA = '905524187973';
+  // "Beni arayın" isteği WhatsApp'tan gelir: danışanın numarası mesajda görünür, Selda Hanım oradan arar
+  function waAra(alan) {
+    var m = mesai(), ne = m.acik ? 'müsait olduğunuzda' : (m.pazartesi ? "pazartesi saat 10:00'da" : (m.sabahOnce ? "bugün saat 10:00'da" : "yarın saat 10:00'da"));
+    var u = 'https://wa.me/' + WA + '?text=' + encodeURIComponent('Merhaba, ' + ne + ' beni arayabilir misiniz? Randevu bilgisi almak istiyorum.');
+    if (typeof w.adsTrack === 'function') w.adsTrack('whatsapp_click', { cta_area: alan || 'soru_kutusu' });
+    var x = w.open(u, '_blank', 'noopener'); if (!x) location.href = u;
+  }
   // Telefonu açan gerçek kişi. Fotoğraf gelene kadar baş harf gösterilir: PUSULA_CFG.seldaFoto
   var SELDA = 'Selda Hanım', SELDA_FOTO = CFG.seldaFoto || '';
   var REDUCED = w.matchMedia && w.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -587,7 +594,7 @@
     ['cocuk', 'Çocuğum / ergenim için', 'Çocuklarda ilk görüşme genellikle ebeveynle yapılır; ardından çocuğun yaşına uygun görüşmeler planlanır. Küçük çocuklarla oyun terapisi, ergenlerle güvenli ve yargısız bir görüşme ortamı önceliklidir.'],
     ['gizlilik', 'Görüşmeler gizli mi?', 'Evet. Görüşmelerde konuşulanlar gizlidir; yalnız yasal zorunluluk ve can güvenliği gibi istisnalar vardır, bunlar ilk görüşmede açıkça anlatılır.'],
     ['ekip', 'Kimlerle görüşebilirim?', 'Ekibimizde ' + EKIP + ' var. Hangi uzmanın size daha uygun olduğunu Selda Hanım ihtiyacınıza göre birlikte belirler.'],
-    ['saat', 'Çalışma saatleri', 'Görüşmeler Pazartesi–Cumartesi 09:00–20:00. Telefon: Pazartesi–Cumartesi 10:00–19:00. Bu saatler dışında numaranızı bırakırsanız Selda Hanım sabah ilk iş sizi arar.']
+    ['saat', 'Çalışma saatleri', 'Görüşmeler Pazartesi–Cumartesi 09:00–20:00. Telefon: Pazartesi–Cumartesi 10:00–19:00. Bu saatler dışında WhatsApp’tan yazarsanız Selda Hanım sabah ilk iş sizi arar.']
   ];
   var KONU_DAVET = [
     [/cocuk|pedagog|okul|oyun-terapisi|bosanmayi-cocuga|kardes/, 'Çocuğunuz için 60 saniyede bir yol haritası çıkaralım mı?'],
@@ -704,53 +711,22 @@
           }, REDUCED ? 0 : 650);
         };
       }
-      mesaj('Merhaba 👋 Merak ettiğiniz soruyu seçin, hemen yanıtlayalım. İsterseniz numaranızı bırakın, Selda Hanım sizi arasın.');
+      mesaj('Merhaba 👋 Merak ettiğiniz soruyu seçin, hemen yanıtlayalım. İsterseniz WhatsApp’tan "beni arayın" yazın, Selda Hanım sizi arasın.');
       secenekler();
       altCiz();
       function altCiz() {
         var m2 = mesai();
         alt.innerHTML = (m2.acik ? '<a class="ara" href="' + TEL + '">📞 Selda Hanım\'ı Arayın</a>' : '')
-          + '<button type="button" class="geri">' + (m2.acik ? 'Numaramı bırakayım, beni arasınlar' : '📞 Sabah 10:00\'da beni arayın') + '</button>'
+          + '<button type="button" class="geri">' + (m2.acik ? '💬 WhatsApp\'tan "beni arayın" yazayım' : '💬 Sabah 10:00\'da beni arayın (WhatsApp)') + '</button>'
           + (m2.acik ? '' : '<a class="ara" style="background:none;color:var(--pu-mut)!important;font-weight:600;font-size:13px;text-decoration:underline;padding:0" href="' + TEL + '">Yine de ara · ' + TEL_TXT + '</a>');
-        alt.querySelector('.geri').onclick = function () { formCiz(m2); };
+        alt.querySelector('.geri').onclick = function () { waAra('soru_kutusu'); };
       }
-      function formCiz(m2) {
-        var saat = m2.acik ? null : (m2.pazartesi ? 'Pazartesi 10:00' : (m2.sabahOnce ? 'Bugün 10:00' : 'Yarın 10:00'));
-        alt.innerHTML = '<form class="pu-sb-form" novalidate><input type="tel" inputmode="tel" autocomplete="tel" placeholder="05xx xxx xx xx" aria-label="Cep telefonunuz" maxlength="20"><div class="err" aria-live="polite"></div><button type="submit">' + (m2.acik ? '📞 Beni arayın' : '📞 Sabah beni arayın') + '</button><small>Numaranızı yalnızca sizi aramak için kullanırız. <a href="' + AYDINLATMA + '" target="_blank" rel="noopener">Aydınlatma metni</a></small></form>';
-        var f = alt.querySelector('form'), inp = f.querySelector('input'), err = f.querySelector('.err'), btn = f.querySelector('button');
-        try { inp.focus(); } catch (e) {}
-        f.onsubmit = function (e) {
-          e.preventDefault();
-          var dg = inp.value.replace(/\D/g, '').replace(/^90/, '').replace(/^0/, '');
-          if (!/^5\d{9}$/.test(dg)) { err.textContent = 'Lütfen 05 ile başlayan cep numaranızı yazın.'; return; }
-          btn.disabled = true; err.textContent = '';
-          var a = {}; try { a = JSON.parse(localStorage.getItem('ads_attribution') || '{}') || {}; } catch (x) {}
-          var at = { site: SITE, landing: (a.landing_page || location.pathname).slice(0, 120) };
-          ['gclid', 'gbraid', 'wbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].forEach(function (k) { if (a[k]) at[k] = a[k]; });
-          var body = { phone: '0' + dg, when: m2.acik ? 'simdi' : 'saat', landing: (location.hostname + location.pathname).slice(0, 120), attribution: at };
-          if (saat) body.at = saat;
-          fetch(TALEP_API, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) })
-            .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
-            .then(function (x) {
-              if (!x.ok || !x.j || !x.j.ok) throw new Error((x.j && x.j.error) || 'hata');
-              // Numara bırakma gerçek bir talep: Google Ads'e de dönüşüm olarak gitsin (ads-conversion.js)
-              if (typeof w.adsTrack === 'function') w.adsTrack('callback_request', { cta_area: 'soru_kutusu', pusula_site: SITE });
-              else olay('callback_request', { cta_area: 'soru_kutusu' });
-              mesaj(m2.acik ? '✅ Talebiniz alındı. Selda Hanım birkaç dakika içinde sizi arayacak.' : '✅ Talebiniz alındı. Selda Hanım sabah 10:00\'dan itibaren sizi arayacak.');
-              alt.innerHTML = m2.acik ? '<a class="ara" href="' + TEL + '">📞 Beklemeden arayın</a>' : '';
-            })
-            .catch(function (ex) { btn.disabled = false; err.textContent = (ex && ex.message && ex.message !== 'hata' && ex.message.indexOf('etch') < 0 ? ex.message : 'Şu an gönderilemedi, lütfen arayın: ' + TEL_TXT); });
-        };
-      }
+
     }
     kutu.querySelector('.pu-sb-btn').onclick = function () { panelAc('balon'); };
-    // Sayfadaki [data-selda-geri] düğmesi kutuyu "numaramı bırakayım" adımıyla açar (reklam sayfalarında aramaya çekinenler için)
+    // Sayfadaki [data-selda-geri] düğmesi WhatsApp'ı hazır "beni arayın" mesajıyla açar (panel takip edilmediği için numara formu yok)
     w.SeldaKutusu = {
-      geriArama: function (kaynak) {
-        if (!panel) panelAc(kaynak || 'disaridan');
-        balonKonum();
-        var g = panel && panel.querySelector('.pu-sb-f .geri'); if (g) g.click();
-      }
+      geriArama: function (kaynak) { waAra(kaynak || 'disaridan'); }
     };
 
     // Ziyaretçi aradı, yazdı ya da Pusula'yı açtıysa davet gösterilmez
