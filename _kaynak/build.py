@@ -1243,7 +1243,8 @@ def main():
     posts = sorted([r for r in recs if r['type'] == 'post'], key=lambda r: r['date'], reverse=True)
     benzer = benzer_yazilar(posts)
     rojin = next(r for r in recs if r['path'] == '/psikolog-rojin-nazik/')
-    special = {'/': None, '/uzmanlarimiz/': experts_page, '/iletisim/': contact_page, '/basinda-biz/': press_page,
+    special = {'/': None, '/uzmanlarimiz/': experts_page, '/iletisim/': contact_page, '/basinda-biz/': lambda r: press_page(r, yeni=True),  # 3 Kasım: basın dosyası sahnesi onaylandı
+              
                '/kitaplarimiz/': books_page, '/galeri/': gallery_page}
     pages = []
     for r in recs:
@@ -1339,9 +1340,6 @@ def main():
     open(os.path.join(ROOT, '404.html'), 'w', encoding='utf-8').write(
         head('Sayfa bulunamadı | %s' % BRAND, 'Aradığınız sayfa bulunamadı.', '/404.html', noindex=True) + nav_html('') +
         '<section class="page-hero"><div class="wrap"><h1>Sayfa bulunamadı</h1><p class="page-lead">Aradığınız sayfa taşınmış olabilir. Ana sayfaya dönebilir ya da bize doğrudan ulaşabilirsiniz.</p><div class="btn-row hero-btns">%s%s</div><p><a class="text-link" href="/">Ana sayfa %s</a></p></div></section>' % (btn_call(), btn_wa(), ICON['arrow']) + footer_html())
-    # ÖN İZLEME (onaya kadar): Basında Biz "basın dosyası" sahnesi. noindex, nofollow; site haritasına eklenmez; kanonik canlı /basinda-biz/
-    _bz = next(r for r in recs if r['path'] == '/basinda-biz/')
-    write('/onizleme/basinda-biz/', press_page(_bz, yeni=True).replace('index, follow, max-image-preview:large', 'noindex, nofollow'))
     # Google Ads'e özel sade açılış sayfaları (noindex; site haritasına eklenmez) — _kaynak/reklam.py
     import reklam
     print('reklam sayfaları:', ', '.join(reklam.cayyolu_yaz(ROOT)))

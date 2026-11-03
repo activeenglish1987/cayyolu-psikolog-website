@@ -127,7 +127,7 @@ function kur(){if(kuruldu||zayif||az)return;kuruldu=true;if(tm){clearInterval(tm
 function dene(){if(etk&&(gor||yakin))kur();}
 if('IntersectionObserver' in w){new IntersectionObserver(function(es){gor=es[0].isIntersecting;if(pl&&hazir){try{gor||yakin?pl.playVideo():(sesli||pl.pauseVideo())}catch(e){}}dene();},{threshold:.35}).observe(ekr);
  new IntersectionObserver(function(es){yakin=es[0].isIntersecting;dene();},{rootMargin:'0px 0px 900px 0px'}).observe(ekr);}
-['scroll','touchstart','pointerdown','keydown','mousemove','wheel'].forEach(function(ev){w.addEventListener(ev,function(){if(!etk){etk=true;dene();}},{passive:true,once:true})});
+['scroll','touchstart','pointerdown','keydown','wheel'].forEach(function(ev){w.addEventListener(ev,function(){if(!etk){etk=true;dene();}},{passive:true,once:true})});
 akis();isaret();
 ses.addEventListener('click',function(){if(!pl)return;if(sesli){sesli=false;try{pl.mute()}catch(e){}basla=Date.now();ses.textContent='🔊 Sesi aç';ses.setAttribute('aria-pressed','false');return;}
  sesli=true;try{pl.unMute();pl.setVolume(100);pl.playVideo()}catch(e){}ses.textContent='🔇 Sesi kapat';ses.setAttribute('aria-pressed','true');});
