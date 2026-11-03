@@ -248,6 +248,7 @@ MAKALELER = [
 <p><b>Okulla işbirliği yapın.</b> Öğretmen ve okul rehber öğretmeni, sınıftaki durumu sizden daha yakından görür. Grup çalışmalarında çocuğunuzun uyumlu bir arkadaşla eşleştirilmesi gibi küçük adımlar büyük fark yaratabilir. Zorbalıktan şüpheleniyorsanız okulu vakit kaybetmeden bilgilendirin.</p>
 <p><b>Kardeş, kuzen ve komşu çocuklarıyla pratik yapın.</b> Tanıdık ve güvenli ilişkiler, çocuğun okulda deneyeceği becerilerin provası gibidir. Oyun sırasında araya girmek yerine uzaktan izleyin; sonrasında "Arkadaşın üzüldüğünde ona sarılman çok güzeldi" gibi somut ve olumlu geri bildirimler verin. Neyi iyi yaptığını bilmek, çocuğun o davranışı tekrar etmesini kolaylaştırır.</p>
 <p><b>Kendi kaygınızı yönetin.</b> Çocuğunuzun yalnız kalması sizi çok üzebilir; ama bu kaygıyı ona yansıtmamaya çalışın. "Neden hiç arkadaşın yok?" gibi sorular baskı yaratır.</p>
+<p>Çocuğunuzun ilgi duyduğu bir alanda küçük ve düzenli bir gruba katılması da arkadaşlık kurmayı kolaylaştırabilir. Spor, müzik ya da yabancı dil gibi ortak bir uğraş, çocukların konuşmak için hazır bir konu bulmasını sağlar. Ankara'da yaşa ve seviyeye göre ayrılan <a href="https://active-languages.com/cocuk-gruplari/">çocuklar için İngilizce grupları</a> bu tür seçeneklerden biridir; önemli olan, çocuğun kendini zorlanmış değil istekli hissettiği bir ortamı seçmektir.</p>
 <h2>Ne zaman destek almalı?</h2>
 <p>Şu durumlarda çocuk ve ergenlerle çalışan bir psikologla görüşmek faydalı olabilir:</p>
 <ul>

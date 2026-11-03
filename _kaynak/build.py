@@ -145,7 +145,7 @@ class Clean(HTMLParser):
             href = (a.get('href') or '').replace(SITE, '') or '#'
             if href.startswith('/') and not href.endswith('/') and '.' not in href.split('/')[-1] and '#' not in href:
                 href += '/'
-            ext = href.startswith('http')
+            ext = href.startswith('http') and 'active-languages.com' not in href  # Active English bağlantıları normal açılır (bağlantı görevi kuralı)
             self.out.append('<a href="%s"%s>' % (esc(href), ' target="_blank" rel="noopener"' if ext else ''))
         elif tag in VOID:
             self.out.append('<%s>' % tag); return
