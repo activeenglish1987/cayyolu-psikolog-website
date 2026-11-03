@@ -1095,7 +1095,7 @@ def contact_page(rec):
         'h_exp': section_head('Uzmanlarımız', 'Kiminle görüşmek istersiniz?'), 'experts': expert_cards(),
         'h_faq': section_head('Randevu öncesi', 'Sık sorulan sorular'), 'faq': faq_html()} + footer_html()
 
-def press_page(rec):
+def press_page(rec, yeni=False):
     # Logolu kartlar (eski WordPress görselleri). "Yılın En İyi Psikoloğu" yazılı ödül görseli bilerek çıkarıldı.
     items = [('wp-content/uploads/2024/05/cnn-1.png', 'CNN Türk – İşin Uzmanı'), ('wp-content/uploads/2024/05/milliyet-1.png', 'Milliyet'),
              ('wp-content/uploads/2024/05/sabah-1.png', 'Sabah'), ('wp-content/uploads/2024/05/posta-1.png', 'Posta'),
@@ -1137,7 +1137,18 @@ def press_page(rec):
             ('Psychology Times', 'Psikolog seçerken sorulması gereken 7 soru', 'https://psychologytimes.com.tr/psikolog-secerken-7-soru/'),
             ('Lezzet', 'Uzmanlar uyarıyor: Çocuklara deprem haberleri izletmeyin', 'https://www.lezzet.com.tr/lezzetten-haberler/cocuklara-deprem-haberleri-izletmeyin')]
     news_html = ''.join('<li><a href="%s" target="_blank" rel="noopener"><strong>%s</strong> – %s</a></li>' % (esc(u), esc(o), esc(t)) for o, t, u in news)
-    body = v_css + ('<h2>Psikolog Rojin Nazik</h2><p>Kurucumuz Psikolog Rojin Nazik, CNN Türk, Beyaz TV ve TV8 INT programlarında konuk uzman; söyleşileri Milliyet, Akşam, Takvim ve Vatan gibi gazetelerde yayımlandı.</p>'
+    if yeni:  # Basın dosyası sahnesi (ön izleme): içerik ve başlıklar aynı, üstüne gazete ön sayfası + yayın monitörü
+        import basin_sahne as bs
+        body = '<div class="bd">' + bs.on_sayfa(vids, news, btn_call=btn_call(), btn_wa=btn_wa()) + v_css + ('<h2>Psikolog Rojin Nazik</h2><p>Kurucumuz Psikolog Rojin Nazik, CNN Türk, Beyaz TV ve TV8 INT programlarında konuk uzman; söyleşileri Milliyet, Akşam, Takvim ve Vatan gibi gazetelerde yayımlandı.</p>'
+            '<h2>Ekranda</h2><div class="bz-vs">%s</div>'
+            '<div class="btn-row" style="margin:18px 0 6px">%s%s</div>'
+            '<h2>Gazete sayfalarında</h2>%s<div class="press-grid page bd-kay">%s</div>%s'
+            '<h2>Yayınlardan</h2>%s<div class="press-grid page bd-kay">%s</div>'
+            '<h2>Haberlerden seçmeler</h2><ul class="bd-hab">%s</ul>'
+            '<p>Tüm haber, röportaj ve TV yayınları için <a href="https://www.psikologrojinnazik.com/basinda-biz/">Psikolog Rojin Nazik\'in basın arşivi</a> sayfasına bakabilirsiniz.</p></div>') % (
+            v_html, btn_call(), btn_wa(), bs.ipucu(len(kupur)), g2, bs.orta_cta(btn_call(), btn_wa()), bs.ipucu(len(items)), g1, news_html) + bs.JS
+    else:
+      body = v_css + ('<h2>Psikolog Rojin Nazik</h2><p>Kurucumuz Psikolog Rojin Nazik, CNN Türk, Beyaz TV ve TV8 INT programlarında konuk uzman; söyleşileri Milliyet, Akşam, Takvim ve Vatan gibi gazetelerde yayımlandı.</p>'
             '<h2>Ekranda</h2><div class="bz-vs">%s</div>'
             '<div class="btn-row" style="margin:18px 0 6px">%s%s</div>'
             '<h2>Gazete sayfalarında</h2><div class="press-grid page">%s</div>'
@@ -1328,6 +1339,9 @@ def main():
     open(os.path.join(ROOT, '404.html'), 'w', encoding='utf-8').write(
         head('Sayfa bulunamadı | %s' % BRAND, 'Aradığınız sayfa bulunamadı.', '/404.html', noindex=True) + nav_html('') +
         '<section class="page-hero"><div class="wrap"><h1>Sayfa bulunamadı</h1><p class="page-lead">Aradığınız sayfa taşınmış olabilir. Ana sayfaya dönebilir ya da bize doğrudan ulaşabilirsiniz.</p><div class="btn-row hero-btns">%s%s</div><p><a class="text-link" href="/">Ana sayfa %s</a></p></div></section>' % (btn_call(), btn_wa(), ICON['arrow']) + footer_html())
+    # ÖN İZLEME (onaya kadar): Basında Biz "basın dosyası" sahnesi. noindex, nofollow; site haritasına eklenmez; kanonik canlı /basinda-biz/
+    _bz = next(r for r in recs if r['path'] == '/basinda-biz/')
+    write('/onizleme/basinda-biz/', press_page(_bz, yeni=True).replace('index, follow, max-image-preview:large', 'noindex, nofollow'))
     # Google Ads'e özel sade açılış sayfaları (noindex; site haritasına eklenmez) — _kaynak/reklam.py
     import reklam
     print('reklam sayfaları:', ', '.join(reklam.cayyolu_yaz(ROOT)))
