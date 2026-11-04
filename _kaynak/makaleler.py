@@ -257,6 +257,7 @@ MAKALELER = [
 <p><b>Kardeş, kuzen ve komşu çocuklarıyla pratik yapın.</b> Tanıdık ve güvenli ilişkiler, çocuğun okulda deneyeceği becerilerin provası gibidir. Oyun sırasında araya girmek yerine uzaktan izleyin; sonrasında "Arkadaşın üzüldüğünde ona sarılman çok güzeldi" gibi somut ve olumlu geri bildirimler verin. Neyi iyi yaptığını bilmek, çocuğun o davranışı tekrar etmesini kolaylaştırır.</p>
 <p><b>Kendi kaygınızı yönetin.</b> Çocuğunuzun yalnız kalması sizi çok üzebilir; ama bu kaygıyı ona yansıtmamaya çalışın. "Neden hiç arkadaşın yok?" gibi sorular baskı yaratır.</p>
 <p>Çocuğunuzun ilgi duyduğu bir alanda küçük ve düzenli bir gruba katılması da arkadaşlık kurmayı kolaylaştırabilir. Spor, müzik ya da yabancı dil gibi ortak bir uğraş, çocukların konuşmak için hazır bir konu bulmasını sağlar. Ankara'da yaşa ve seviyeye göre ayrılan <a href="https://active-languages.com/cocuk-gruplari/">çocuklar için İngilizce grupları</a> bu tür seçeneklerden biridir; önemli olan, çocuğun kendini zorlanmış değil istekli hissettiği bir ortamı seçmektir.</p>
+<p>Arkadaş ilişkilerini zorlayan durumlardan biri de okuldaki takım şakaları ve maç sonrası tartışmalardır. Tuttuğu takım kaybedince çok üzülen ya da alay edildiğini anlatan bir çocuğunuz varsa <a href="/takimi-kaybedince-aglayan-cocuk/">takımı kaybedince ağlayan çocuk</a> yazımızdaki önerilere göz atabilirsiniz.</p>
 <h2>Ne zaman destek almalı?</h2>
 <p>Şu durumlarda çocuk ve ergenlerle çalışan bir psikologla görüşmek faydalı olabilir:</p>
 <ul>
