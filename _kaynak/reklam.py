@@ -396,7 +396,7 @@ def govde(S, P):
 <section class="kart son"><h2>İlk adım tek bir telefon</h2><p>Selda Hanım size en yakın uygun saati söylesin.</p><a class="ara" href="tel:%(tel)s" data-cta-area="lp_son"><span>📞</span><span><b class="nw">Hemen Ara · %(teltxt)s</b></span></a></section>
 </main>
 <footer class="w dip">%(marka)s · Psikologlar tanı koymaz ve ilaç yazmaz. Acil bir durumda 112'yi arayın.<br><a href="%(kvkk)s">KVKK aydınlatma metni</a> · <a href="%(gizlilik)s">Gizlilik</a></footer>
-<script>(function(){try{var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Istanbul',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()),g=function(t){for(var i=0;i<p.length;i++)if(p[i].type===t)return p[i].value},d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(g('weekday')),m=(+g('hour')%%24)*60+(+g('minute'));var e=document.querySelector('.acik');if((d>=1&&d<=6&&m>=600&&m<1140))e.innerHTML='<i></i>Şu an açığız · Telefonu Selda Hanım açar';else{e.innerHTML='<i style="background:#F59E0B;box-shadow:0 0 0 4px rgba(245,158,11,.2)"></i>Telefon hattı şu an kapalı (ofis her gün 09:00–22:00) · Telefon %(saat)s';e.style.color='var(--mut)'}}catch(x){}})();</script>
+<script>(function(){try{var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Istanbul',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()),g=function(t){for(var i=0;i<p.length;i++)if(p[i].type===t)return p[i].value},d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(g('weekday')),m=(+g('hour')%%24)*60+(+g('minute'));var e=document.querySelector('.acik');if((d>=1&&d<=6&&m>=600&&m<1140))e.innerHTML='<i></i>Şu an açığız · Telefonu Selda Hanım açar';else{e.style.display='none'}}catch(x){}})();</script>
 <script>/* Aranan kelimeye göre başlık (mesaj uyumu). Google Ads > Hesap ayarları > "Nihai URL son eki": kw={keyword}
    Yalnız hazır tablodaki kalıplar kullanılır; aranan kelime sayfaya olduğu gibi yazılmaz. */
 (function(){try{var q=new URLSearchParams(location.search),k=(q.get('kw')||q.get('utm_term')||q.get('keyword')||'').toLocaleLowerCase('tr-TR').replace(/[+_]/g,' ');if(!k)return;
@@ -443,7 +443,7 @@ ROJIN_HEAD = '''<!doctype html><html lang="tr"><head><meta charset="utf-8">
 <link rel="preload" as="image" href="%(foto)s" fetchpriority="high">
 %(css)s
 <script src="/assets/js/ads-conversion.js?v=6" defer></script>
-<script src="/assets/js/after-hours.js?v=11" data-pos="bottom" defer></script>
+<script src="/assets/js/after-hours.js?v=12" data-pos="bottom" defer></script>
 <script>window.PUSULA_CFG=Object.assign(window.PUSULA_CFG||{},{heroSecici:'.lp-pu'});</script>
 <script src="/assets/js/pusula.js?v=13" defer></script>
 <script src="/assets/js/vitrin.js?v=8" defer></script>

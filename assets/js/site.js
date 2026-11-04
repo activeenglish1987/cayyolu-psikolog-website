@@ -28,6 +28,7 @@
   var open = day >= 1 && day <= 6 && mins >= 600 && mins < 1140;
   var text = open ? 'Şu an açığız · Telefonu Selda Hanım açar.' : "Ofis her gün 09:00–22:00 açık; telefon hattı şu an kapalı. WhatsApp'tan yazabilirsiniz, telefon saatinde dönüş yapılır.";
   for (var i = 0; i < els.length; i++) {
+    if (!open) { els[i].style.display = 'none'; continue; } // mesai dışında "kapalı" yazısı gösterilmez
     els[i].innerHTML = '<span class="dot"></span><span></span>';
     els[i].lastChild.textContent = text;
     if (open) els[i].classList.add('is-open');
