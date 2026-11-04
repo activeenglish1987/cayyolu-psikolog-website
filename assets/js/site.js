@@ -59,14 +59,20 @@
 /* Danışan yakalama: hat açıkken Ara önde; mesai dışında WhatsApp önde (üst düğmeler ve alt çubuk).
    Alt çubuk, sayfanın üstündeki büyük düğmeler ekrandayken gizli (aynı düğme iki kez görünmesin). */
 (function () {
-  var d = document.documentElement, open = true;
+  var d = document.documentElement, open = true, day = 1, m = 720;
   try {
     var parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Istanbul', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date());
     var g = function (t) { for (var i = 0; i < parts.length; i++) if (parts[i].type === t) return parts[i].value; return ''; };
-    var day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(g('weekday')), m = (parseInt(g('hour'), 10) % 24) * 60 + parseInt(g('minute'), 10);
+    day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(g('weekday')); m = (parseInt(g('hour'), 10) % 24) * 60 + parseInt(g('minute'), 10);
     open = day >= 1 && day <= 6 && m >= 600 && m < 1140;
   } catch (e) {}
   d.classList.add(open ? 'hat-acik' : 'hat-kapali');
+  if (!open) {
+    var gun = 'yarın';
+    try { if (day >= 1 && day <= 6 && m < 600) gun = 'bugün'; else if (day === 0 || (day === 6 && m >= 1140)) gun = 'Pazartesi'; } catch (e) {}
+    var rs = document.querySelectorAll('[data-rota]');
+    for (var r = 0; r < rs.length; r++) { var sp = rs[r].querySelectorAll('li span'); if (sp.length > 1) { sp[0].textContent = 'WhatsApp’tan yazın'; sp[1].textContent = 'Selda Hanım ' + gun + ' sizi arar'; } }
+  }
   var bar = document.querySelector('.sticky-bar');
   if (!open && bar) {
     var w = bar.querySelector('.sb-wa span'), c = bar.querySelector('.sb-call span');

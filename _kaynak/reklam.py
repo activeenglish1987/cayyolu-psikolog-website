@@ -306,7 +306,13 @@ details p{margin:8px 0 0;color:var(--mut)}
 @media(min-width:760px){.of img{height:280px}}
 main .pu-launch-w{margin:0 0 16px}
 .ic p{margin:0 0 10px;color:var(--ink);font-size:15.5px}.ic p:last-child{margin:0}
-.bar{transition:transform .3s,opacity .3s}.bar.gizli{transform:translateY(115%%);opacity:0;pointer-events:none}
+.bar{transition:transform .3s,opacity .3s}
+.rota{list-style:none;margin:2px 0 0;padding:12px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;max-width:440px;border-top:1px dashed var(--line)}
+.rota li{display:flex;flex-direction:column;gap:6px;font-size:13.5px;line-height:1.35;font-weight:600;color:var(--a2)}
+.rota b{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:var(--a);color:#fff;font-size:13px}
+.rota li:first-child b{background:#E8A33D;color:#14264A}
+.top a.tw{display:none}.hat-kapali .top a.t:not(.tw){display:none}.hat-kapali .top a.tw{display:inline-flex;color:#0B7A3E}
+.hat-acik .bar .ara:before{content:"";display:inline-block;width:9px;height:9px;margin-right:8px;border-radius:50%%;background:#3DDC84;box-shadow:0 0 0 3px rgba(255,255,255,.35);vertical-align:middle}.bar.gizli{transform:translateY(115%%);opacity:0;pointer-events:none}
 .hat-kapali .hero-actions .wa:not(.geri){order:-1;display:flex;align-items:center;justify-content:center;padding:15px 18px;border-radius:16px;background:#25D366;color:#073B1E!important;font-weight:800;font-size:17.5px;text-decoration:none;box-shadow:0 14px 30px -12px rgba(37,211,102,.7)}
 .hat-kapali .hero-actions .geri,.hat-kapali .hero-actions .ara small{display:none}
 .lp-bd .bd-ust{font-size:10px;letter-spacing:.1em}
@@ -377,7 +383,7 @@ def govde(S, P):
                  '</div></section>')
     ofis = ('<div class="of"><img src="/assets/lp/ofis-salon.webp" alt="RN Psikoloji ofisinden bekleme alanı" width="600" height="800" loading="lazy" decoding="async">'
             '<img src="/assets/lp/ofis-koltuk.webp" alt="RN Psikoloji ofisinden görüşme alanı" width="600" height="800" loading="lazy" decoding="async"></div>')
-    return '''<header class="w top"><a class="lgo" href="/" aria-label="%(marka)s – ana sayfa" style="display:inline-flex;text-decoration:none">%(logo)s</a><a class="t" href="tel:%(tel)s" data-cta-area="lp_header">📞 %(teltxt)s</a></header>
+    return '''<header class="w top"><a class="lgo" href="/" aria-label="%(marka)s – ana sayfa" style="display:inline-flex;text-decoration:none">%(logo)s</a><a class="t" href="tel:%(tel)s" data-cta-area="lp_header">📞 %(teltxt)s</a><a class="t tw" href="%(wa)s" target="_blank" rel="noopener" data-cta-area="lp_header">💬 WhatsApp’tan yazın</a></header>
 <section class="hero"><div class="w hi">
 <div>
 <div class="ey">Psikolog Rojin Nazik · RN Psikoloji</div>
@@ -389,6 +395,7 @@ def govde(S, P):
 <a class="wa" href="%(wa)s" target="_blank" rel="noopener">WhatsApp'tan yazmayı tercih ederim</a>
 <button type="button" class="wa geri" data-selda-geri="lp_hero">WhatsApp’tan yazın, Selda Hanım sizi arasın</button>
 </div>
+<ol class="rota" data-rota aria-label="Aradığınızda ne olur?"><li><b>1</b><span>Selda Hanım açar</span></li><li><b>2</b><span>Konunuzu kısaca dinler</span></li><li><b>3</b><span>Gün ve saati birlikte belirleriz</span></li></ol>
 <p class="guven">Aramanız sizi randevuya bağlamaz. Ne söyleyeceğinizi düşünmeyin; “Randevu bilgisi almak istiyorum” demeniz yeterli.</p>
 <div class="puan">%(puan)s</div>
 </div>
@@ -398,7 +405,6 @@ def govde(S, P):
 %(gosteri)s
 %(puan_kart)s
 <section class="kart"><h2>Hangi konularda destek alabilirsiniz?</h2><ul class="konu">%(konular)s</ul></section>
-<section class="kart"><h2>Randevu 3 adımda</h2><div class="adim">%(adimlar)s</div></section>
 <div class="lp-pu"></div>
 <section class="kart"><h2>Psikolog Rojin Nazik</h2><div class="etiket">%(etiket)s</div>%(ekip)s%(kitaplar)s</section>
 %(ekip_kart)s
@@ -410,7 +416,7 @@ def govde(S, P):
 <section class="kart son"><h2>İlk adım tek bir telefon</h2><p>Selda Hanım size en yakın uygun saati söylesin.</p><a class="ara" href="tel:%(tel)s" data-cta-area="lp_son"><span>📞</span><span><b class="nw">Hemen Ara · %(teltxt)s</b></span></a></section>
 </main>
 <footer class="w dip">%(marka)s · Psikologlar tanı koymaz ve ilaç yazmaz. Acil bir durumda 112'yi arayın.<br><a href="%(kvkk)s">KVKK aydınlatma metni</a> · <a href="%(gizlilik)s">Gizlilik</a></footer>
-<script>(function(){try{var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Istanbul',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()),g=function(t){for(var i=0;i<p.length;i++)if(p[i].type===t)return p[i].value},d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(g('weekday')),m=(+g('hour')%%24)*60+(+g('minute'));var e=document.querySelector('.acik'),ac=(d>=1&&d<=6&&m>=600&&m<1140);document.documentElement.classList.add(ac?'hat-acik':'hat-kapali');if(ac)e.innerHTML='<i></i>Şu an açığız · Telefonu Selda Hanım açar';else{e.style.display='none';var w=document.querySelector('.hero-actions .wa:not(.geri)');if(w)w.textContent='💬 WhatsApp’tan yazın, sabah sizi arayalım';document.addEventListener('DOMContentLoaded',function(){var b=document.querySelector('.bar');if(b){b.classList.add('off');b.querySelector('.w2').textContent='💬 WhatsApp’tan Yazın';b.querySelector('.ara').textContent='📞 Ara';}});}}catch(x){}})();
+<script>(function(){try{var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Istanbul',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()),g=function(t){for(var i=0;i<p.length;i++)if(p[i].type===t)return p[i].value},d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(g('weekday')),m=(+g('hour')%%24)*60+(+g('minute'));var e=document.querySelector('.acik'),ac=(d>=1&&d<=6&&m>=600&&m<1140);document.documentElement.classList.add(ac?'hat-acik':'hat-kapali');if(ac)e.innerHTML='<i></i>Şu an açığız · Telefonu Selda Hanım açar';else{e.style.display='none';var w=document.querySelector('.hero-actions .wa:not(.geri)');var gn=(d>=1&&d<=6&&m<600)?'bugün':((d===0||(d===6&&m>=1140))?'Pazartesi':'yarın');if(w)w.textContent='💬 WhatsApp’tan yazın, sizi arayalım';var ro=document.querySelectorAll('[data-rota] li span');if(ro.length>1){ro[0].textContent='WhatsApp’tan yazın';ro[1].textContent='Selda Hanım '+gn+' sizi arar';}document.addEventListener('DOMContentLoaded',function(){var b=document.querySelector('.bar');if(b){b.classList.add('off');b.querySelector('.w2').textContent='💬 WhatsApp’tan Yazın';b.querySelector('.ara').textContent='📞 Ara';}});}}catch(x){}})();
 /* Alt çubuk: üstteki büyük Ara düğmesi ya da sondaki arama kutusu ekrandayken gizli (aynı düğme iki kez görünmesin) */
 document.addEventListener('DOMContentLoaded',function(){var b=document.querySelector('.bar');if(!b||!('IntersectionObserver' in window))return;var g={};var io=new IntersectionObserver(function(es){es.forEach(function(x){g[x.target.dataset.k]=x.isIntersecting&&x.intersectionRatio>.6});b.classList.toggle('gizli',!!(g.h||g.s));},{threshold:[0,.6,1]});
 var h=document.querySelector('.hero-actions'),s=document.querySelector('.kart.son');if(h){h.dataset.k='h';io.observe(h)}if(s){s.dataset.k='s';io.observe(s)}});</script>
@@ -481,7 +487,7 @@ def rojin_yaz(kok):
 CAYYOLU_HEAD = ROJIN_HEAD.replace('<script src="/assets/js/after-hours.js?v=12" data-pos="bottom" defer></script>\n', '').replace('<meta name="theme-color" content="#3d1e54">', '<meta name="theme-color" content="#14264A">').replace(
     '<link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png">', '<link rel="icon" href="/favicon.svg" type="image/svg+xml">').replace(
     '<script src="/assets/js/pusula.js?v=13" defer></script>',
-    "<script>window.PUSULA_CFG={site:'cayyolu',foto:'/assets/img/opt/psikolog-rojin-nazik-720.webp'};</script>\n<script src=\"/assets/js/pusula.js?v=13\" defer></script>").replace(
+    "<script>window.PUSULA_CFG={site:'cayyolu',foto:'/assets/img/opt/psikolog-rojin-nazik-720.webp',heroSecici:'.lp-pu'};</script>\n<script src=\"/assets/js/pusula.js?v=13\" defer></script>").replace(
     '<script src="/assets/js/vitrin.js?v=8" defer></script>\n', '')  # vitrin.js yalnız Rojin sitesinde
 
 

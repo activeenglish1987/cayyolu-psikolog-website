@@ -44,7 +44,7 @@ MAP_URL = 'https://www.google.com/maps/search/?api=1&query=' + quote('Dumlupına
 IG_ROJIN = 'https://www.instagram.com/psikologrojinnazik/'
 IG_ELIF = 'https://www.instagram.com/psikolog_eliferdogan/'
 GTM = 'GTM-KMR7XRJQ'
-ASSET_V = '12'
+ASSET_V = '13'
 
 def wa(msg):
     return 'https://wa.me/%s?text=%s' % (WA_NUM, quote(msg))
@@ -274,6 +274,9 @@ def btn_wa(msg='Merhaba, randevu bilgisi almak istiyorum.', label="WhatsApp'tan 
 
 # Başlangıçta dolu gelir (yeri ayrılı kalsın, sayfa kaymasın); site.js saate göre metni değiştirir
 OPEN_STATUS = '<div class="open-status" data-open-status><span class="dot"></span><span>Telefonu Selda Hanım açar · Pazartesi–Cumartesi 10:00–19:00</span></div>'
+ROTA = ('<ol class="rota" data-rota aria-label="Aradığınızda ne olur?"><li><b>1</b><span>Selda Hanım açar</span></li>'
+        '<li><b>2</b><span>Konunuzu kısaca dinler</span></li><li><b>3</b><span>Yaşamkent ofisinde gün ve saati birlikte belirleriz</span></li></ol>')
+OPEN_ROTA = OPEN_STATUS + ROTA
 
 def inline_cta(msg='Merhaba, randevu bilgisi almak istiyorum.', title='Randevu için hemen ulaşın'):
     return '<aside class="inline-cta"><p><strong>%s</strong>Telefon Pazartesi–Cumartesi 10:00–19:00 · Yaşamkent ofisi · Ücretsiz otopark</p><div class="btn-row">%s%s</div></aside>' % (
@@ -359,11 +362,12 @@ def nav_html(current):
     </nav>
     <div class="header-cta">
       <a class="header-phone" href="tel:%(raw)s" aria-label="Ara: %(phone)s">%(ic)s<span>%(phone)s</span></a>
+      <a class="header-phone header-wa" href="%(hwa)s" target="_blank" rel="noopener" aria-label="WhatsApp'tan yazın">%(waic)s<span>WhatsApp'tan yazın</span></a>
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="ana-menu" aria-label="Menüyü aç"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
-<main id="icerik">''' % {'gtm': GTM, 'brand': esc(BRAND), 'exp': exp_links, 'svc': svc_links, 'raw': PHONE_RAW,
+<main id="icerik">''' % {'gtm': GTM, 'brand': esc(BRAND), 'exp': exp_links, 'svc': svc_links, 'hwa': wa('Merhaba, randevu bilgisi almak istiyorum.'), 'waic': ICON['wa'], 'raw': PHONE_RAW,
                          'phone': PHONE, 'ic': ICON['phone'], 'c_u': cur('/uzmanlarimiz/'), 'c_b': cur('/basinda-biz/'),
                          'c_bl': cur('/blog/'), 'c_i': cur('/iletisim/')}
 
@@ -609,7 +613,7 @@ def article_page(rec, body_html, crumbs, kicker='', expert=None, lead='', hero_i
 ''' % {'bc': bc_html, 'kicker': ('<p class="eyebrow">%s</p>' % esc(kicker)) if kicker else '', 'title': esc(title),
        'lead': ('<p class="page-lead">%s</p>' % lead) if lead else '', 'meta': meta, 'call': btn_call(),
        'wa': btn_wa(('Merhaba, %s ile görüşme için randevu bilgisi almak istiyorum.' % expert['name']) if expert else 'Merhaba, randevu bilgisi almak istiyorum.'),
-       'open': OPEN_STATUS, 'fig': hero_fig, 'body': body_html, 'side': side_card(expert), 'after': extra_after} + footer_html()
+       'open': OPEN_ROTA, 'fig': hero_fig, 'body': body_html, 'side': side_card(expert), 'after': extra_after} + footer_html()
 
 TR_MONTHS = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık']
 def fmt_date(d):
@@ -1075,7 +1079,7 @@ def experts_page(rec):
     bc, bld = breadcrumb([('Ana Sayfa', '/'), ('Uzmanlarımız', None)])
     return head('Uzmanlarımız | %s' % BRAND, ACIKLAMA['/uzmanlarimiz/'], rec['path'], ld(business_ld(), bld)) + nav_html(rec['path']) + '''
 <section class="page-hero"><div class="wrap">%s<h1>Uzmanlarımız</h1><div class="btn-row hero-btns">%s%s</div>%s</div></section>
-<section class="section section-tight"><div class="wrap">%s</div></section>''' % (bc, btn_call(), btn_wa(), OPEN_STATUS, body) + footer_html()
+<section class="section section-tight"><div class="wrap">%s</div></section>''' % (bc, btn_call(), btn_wa(), OPEN_ROTA, body) + footer_html()
 
 def contact_page(rec):
     bc, bld = breadcrumb([('Ana Sayfa', '/'), ('İletişim', None)])
@@ -1089,7 +1093,7 @@ def contact_page(rec):
 <section class="section section-tight"><div class="wrap narrow"><h2>Yaşamkent ofisi haritası</h2><p>RN Psikoloji Çayyolu · Konutkent, Dumlupınar Bulvarı No:399 Kat:28 D:121, 06810 Çankaya / Ankara</p><div style="position:relative;width:100%%;aspect-ratio:16/9;border-radius:16px;overflow:hidden;margin-top:12px"><iframe title="RN Psikoloji Çayyolu ofisi haritası" src="https://www.google.com/maps?q=RN+Psikoloji+%%C3%%87ayyolu,+Dumlup%%C4%%B1nar+Bulvar%%C4%%B1+No:399,+06810+%%C3%%87ankaya%%2FAnkara&amp;output=embed" style="position:absolute;inset:0;width:100%%;height:100%%;border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></div></section>
 <section class="section section-alt"><div class="wrap">%(h_exp)s%(experts)s</div></section>
 <section class="section"><div class="wrap narrow">%(h_faq)s%(faq)s</div></section>''' % {
-        'bc': bc, 'call': btn_call(), 'wa': btn_wa(), 'open': OPEN_STATUS, 'raw': PHONE_RAW, 'phone': PHONE, 'email': EMAIL,
+        'bc': bc, 'call': btn_call(), 'wa': btn_wa(), 'open': OPEN_ROTA, 'raw': PHONE_RAW, 'phone': PHONE, 'email': EMAIL,
         'office': office_card(), 'gy': GOOGLE_YORUM, 'o1': img(o1, 'RN Psikoloji Çayyolu seans odası'),
         'h_exp': section_head('Uzmanlarımız', 'Kiminle görüşmek istersiniz?'), 'experts': expert_cards(),
         'h_faq': section_head('Randevu öncesi', 'Sık sorulan sorular'), 'faq': faq_html()} + footer_html()

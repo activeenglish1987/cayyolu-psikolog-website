@@ -397,3 +397,18 @@ body.menu-open .sticky-bar{display:none}
 .hat-kapali .sticky-bar .sb-call{background:#fff;color:var(--navy);border:2px solid var(--navy)}
 .hat-kapali .hero-btns .btn-wa{order:-1;background:var(--wa);color:#fff;border-color:var(--wa);box-shadow:0 8px 20px -8px rgba(23,163,74,.55)}
 .hat-kapali .hero-btns .btn-call{background:#fff;color:var(--navy);border:2px solid var(--navy);box-shadow:none}
+/* Randevu rotası (Aradığınızda ne olur?): Çayyolu'nun kendi dili; lacivert numaralı kareler, ince çizgiyle bağlı */
+.rota{list-style:none;margin:6px 0 0;padding:12px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:560px;border-top:1px dashed #C9D3E6;position:relative}
+.rota li{display:flex;flex-direction:column;gap:6px;font:600 13.5px/1.35 var(--ff-b);color:var(--navy)}
+.rota b{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:var(--navy);color:#fff;font:800 13px/1 var(--ff-h);box-shadow:0 6px 14px -8px rgba(20,38,74,.6)}
+.rota li:first-child b{background:#E8A33D;color:#14264A}
+@media (min-width:700px){.rota li{flex-direction:row;align-items:center;gap:10px}}
+/* Üst menü: mesai dışında telefon yerine WhatsApp */
+.header-wa{display:none;background:#E9F7EF;color:#0B7A3E}
+.hat-kapali .header-phone:not(.header-wa){display:none}
+.hat-kapali .header-wa{display:inline-flex}
+/* Alt çubuk: hat açıkken canlı nokta */
+.hat-acik .sb-call{position:relative}
+.hat-acik .sb-call::before{content:"";width:9px;height:9px;border-radius:50%;background:#3DDC84;box-shadow:0 0 0 3px rgba(61,220,132,.28);animation:rnNabiz 2s infinite;flex:none}
+@keyframes rnNabiz{0%,100%{box-shadow:0 0 0 3px rgba(61,220,132,.28)}50%{box-shadow:0 0 0 6px rgba(61,220,132,.08)}}
+@media (prefers-reduced-motion:reduce){.hat-acik .sb-call::before{animation:none}}
