@@ -901,7 +901,7 @@ SISTER = {
  '/yalnizlik-hissi-ve-sosyal-geri-cekilme/': [(RN + '/sosyal-kaygi/', 'Sosyal kaygı'), (RN + '/depresyon-nedir/', 'Depresyon')],
  '/is-stresi-ve-tukenmislik/': [(RN + '/is-yerinde-tukenmislik-sendromu/', 'İş yerinde tükenmişlik sendromu'), (RN + '/ofke-kontrolu/', 'Öfke kontrolü')],
  '/travma-sonrasi-stres-belirtileri/': [(RN + '/travma-sonrasi-stres-bozuklugu/', 'Travma sonrası stres bozukluğu'), (RN + '/yas-terapisi/', 'Yas terapisi')],
- '/ilk-terapi-seansi-rehberi/': [(RN + '/ankara-psikolog-tavsiyesi/', 'Ankara psikolog tavsiyesi'), (RN + '/psikolog-tani-koyabilir-mi/', 'Psikolog tanı koyabilir mi?')],
+ '/ilk-terapi-seansi-rehberi/': [(RN + '/ankara-psikolog-tavsiyesi/', 'Psikolog seçme rehberi'), (RN + '/psikolog-tani-koyabilir-mi/', 'Psikolog tanı koyabilir mi?')],
  '/kaygi-sorunlari/': [(RN + '/anksiyete-bozukluklari/', 'Anksiyete bozuklukları'), (RN + '/panik-atak/', 'Panik atak')],
  '/cocuk-ergen-danismanligi/': [(RN + '/sinav-kaygisi/', 'Sınav kaygısı'), (RN + '/ankara-ergen-psikologu/', 'Ankara ergen psikoloğu')],
  '/umitkoy-psikolog/': [(RN + '/', 'Ankara psikolog – Psikolog Rojin Nazik')],
