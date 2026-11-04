@@ -44,7 +44,7 @@ MAP_URL = 'https://www.google.com/maps/search/?api=1&query=' + quote('Dumlupına
 IG_ROJIN = 'https://www.instagram.com/psikologrojinnazik/'
 IG_ELIF = 'https://www.instagram.com/psikolog_eliferdogan/'
 GTM = 'GTM-KMR7XRJQ'
-ASSET_V = '11'
+ASSET_V = '12'
 
 def wa(msg):
     return 'https://wa.me/%s?text=%s' % (WA_NUM, quote(msg))
@@ -317,7 +317,6 @@ def head(title, desc, path, extra_ld='', og_img='/assets/img/opt/og-1200.webp', 
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-11469933181',{url_passthrough:true});</script>
 <script src="/assets/js/ads-conversion.js?v=6" defer></script>
 <script src="/assets/js/site.js?v=%(v)s" defer></script>
-<script src="/assets/js/after-hours.js?v=12" data-pos="bottom" defer></script>
 <script>window.PUSULA_CFG={site:'cayyolu',foto:'/assets/img/opt/psikolog-rojin-nazik-720.webp',heroSecici:'.pu-yer'};</script>
 <script src="/assets/js/pusula.js?v=13" defer></script>
 %(ld)s
@@ -1127,15 +1126,8 @@ def press_page(rec, yeni=False):
              '.bz-vd i:after{content:"";position:absolute;left:23px;top:17px;border-left:17px solid #14264A;border-top:12px solid transparent;border-bottom:12px solid transparent}</style>'
              '<script>document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest(".bz-vd");if(!b||b.querySelector("iframe"))return;var f=document.createElement("iframe");'
              'f.src="https://www.youtube-nocookie.com/embed/"+b.getAttribute("data-yt")+"?autoplay=1&rel=0";f.title=b.getAttribute("aria-label");f.allow="autoplay; encrypted-media; picture-in-picture; fullscreen";f.allowFullscreen=true;b.innerHTML="";b.appendChild(f);});</script>')
-    news = [('CNN Türk', 'Kaygı bozukluğu nedir?', 'https://www.cnnturk.com/saglik/kaygi-bozuklugu-nedir'),
-            ('Milliyet', 'Psikolog Rojin Nazik sınav stresini aşmanın yollarını anlattı', 'https://www.milliyet.com.tr/pembenar/psikolog-rojin-nazik-sinav-stresini-asmanin-yollarini-anlatti-6441751'),
-            ('Sabah', 'Depresyon nedir? Depresyona yol açan faktörler nelerdir?', 'https://www.sabah.com.tr/roza/ruh-sagligi/depresyon-nedir-depresyona-yol-acan-faktorler-nelerdir'),
-            ('Posta', 'Psikolog Rojin Nazik: Kendinizi sevin', 'https://www.posta.com.tr/saglik/zihin-sagligi/psikolog-rojin-nazik-kendinizi-sevin-2306122'),
-            ('Cumhuriyet', 'Çocuklarda ve ergenlerde psikolojiye dikkat edilmeli', 'https://www.cumhuriyet.com.tr/saglik/cocuklarda-ve-ergenlerde-psikolojiye-dikkat-edilmeli-1994237'),
-            ('Cumhuriyet', 'Mevsimsel depresyon neden olur? Nelere dikkat etmeliyiz?', 'https://www.cumhuriyet.com.tr/saglik/mevsimsel-depresyon-neden-olur-nelere-dikkat-etmeliyiz-2008222'),
-            ('Haberler.com', 'Psikolog Rojin Nazik psiko-diyetin önemini anlattı', 'https://www.haberler.com/guncel/psikolog-rojin-nazik-psiko-diyetin-onemini-anlatti-13966347-haberi/'),
-            ('Psychology Times', 'Psikolog seçerken sorulması gereken 7 soru', 'https://psychologytimes.com.tr/psikolog-secerken-7-soru/'),
-            ('Lezzet', 'Uzmanlar uyarıyor: Çocuklara deprem haberleri izletmeyin', 'https://www.lezzet.com.tr/lezzetten-haberler/cocuklara-deprem-haberleri-izletmeyin')]
+    import basin_sahne as _bs
+    news = _bs.HABERLER
     news_html = ''.join('<li><a href="%s" target="_blank" rel="noopener"><strong>%s</strong> – %s</a></li>' % (esc(u), esc(o), esc(t)) for o, t, u in news)
     if yeni:  # Basın dosyası sahnesi (ön izleme): içerik ve başlıklar aynı, üstüne gazete ön sayfası + yayın monitörü
         import basin_sahne as bs

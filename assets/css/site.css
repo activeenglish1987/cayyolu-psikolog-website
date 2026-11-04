@@ -391,3 +391,9 @@ body.menu-open .sticky-bar{display:none}
 
 /* Erişilebilirlik: alt bilgi bağlantıları yalnız renkle ayırt edilmesin (PageSpeed, 14 Ekim 2026) */
 .footer-bottom a{text-decoration:underline;text-underline-offset:2px}
+/* Danışan yakalama: alt çubuk üst düğmeler görünürken gizli; mesai dışında WhatsApp önde */
+.sticky-bar{transition:transform .3s,opacity .3s}.sticky-bar.sb-gizli{transform:translateY(115%);opacity:0;pointer-events:none}
+.hat-kapali .sticky-bar{grid-template-columns:1.6fr 1fr}.hat-kapali .sticky-bar .sb-wa{order:-1}
+.hat-kapali .sticky-bar .sb-call{background:#fff;color:var(--navy);border:2px solid var(--navy)}
+.hat-kapali .hero-btns .btn-wa{order:-1;background:var(--wa);color:#fff;border-color:var(--wa);box-shadow:0 8px 20px -8px rgba(23,163,74,.55)}
+.hat-kapali .hero-btns .btn-call{background:#fff;color:var(--navy);border:2px solid var(--navy);box-shadow:none}

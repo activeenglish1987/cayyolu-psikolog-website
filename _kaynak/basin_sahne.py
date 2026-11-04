@@ -14,6 +14,16 @@ LOGO = [('CNN TÜRK', 'cnnturk', 146, 120), ('Milliyet', 'milliyet', 480, 87), (
         ('Akşam', 'aksam', 480, 103), ('Takvim', 'takvim', 460, 120), ('Vatan', 'vatan', 480, 102), ('Beyaz TV', 'beyaztv', 204, 70),
         ('Psychology Times', 'psychologytimes', 480, 81)]
 
+HABERLER = [('CNN Türk', 'Kaygı bozukluğu nedir?', 'https://www.cnnturk.com/saglik/kaygi-bozuklugu-nedir'),
+            ('Milliyet', 'Psikolog Rojin Nazik sınav stresini aşmanın yollarını anlattı', 'https://www.milliyet.com.tr/pembenar/psikolog-rojin-nazik-sinav-stresini-asmanin-yollarini-anlatti-6441751'),
+            ('Sabah', 'Depresyon nedir? Depresyona yol açan faktörler nelerdir?', 'https://www.sabah.com.tr/roza/ruh-sagligi/depresyon-nedir-depresyona-yol-acan-faktorler-nelerdir'),
+            ('Posta', 'Psikolog Rojin Nazik: Kendinizi sevin', 'https://www.posta.com.tr/saglik/zihin-sagligi/psikolog-rojin-nazik-kendinizi-sevin-2306122'),
+            ('Cumhuriyet', 'Çocuklarda ve ergenlerde psikolojiye dikkat edilmeli', 'https://www.cumhuriyet.com.tr/saglik/cocuklarda-ve-ergenlerde-psikolojiye-dikkat-edilmeli-1994237'),
+            ('Cumhuriyet', 'Mevsimsel depresyon neden olur? Nelere dikkat etmeliyiz?', 'https://www.cumhuriyet.com.tr/saglik/mevsimsel-depresyon-neden-olur-nelere-dikkat-etmeliyiz-2008222'),
+            ('Haberler.com', 'Psikolog Rojin Nazik psiko-diyetin önemini anlattı', 'https://www.haberler.com/guncel/psikolog-rojin-nazik-psiko-diyetin-onemini-anlatti-13966347-haberi/'),
+            ('Psychology Times', 'Psikolog seçerken sorulması gereken 7 soru', 'https://psychologytimes.com.tr/psikolog-secerken-7-soru/'),
+            ('Lezzet', 'Uzmanlar uyarıyor: Çocuklara deprem haberleri izletmeyin', 'https://www.lezzet.com.tr/lezzetten-haberler/cocuklara-deprem-haberleri-izletmeyin')]
+
 CSS = '''<style>
 .bd{--kg:#F6F1E6;--kg2:#EDE5D3;--mr:#14264A;--kr:#B3261E;font-family:var(--ff-b);color:var(--mr)}
 .bd *{box-sizing:border-box}

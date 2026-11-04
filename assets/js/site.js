@@ -55,3 +55,28 @@
   function scan() { var all = document.querySelectorAll('body > *, jdiv, jdiv *'); for (var i = 0; i < all.length; i++) if (candidate(all[i])) apply(all[i]); }
   var n = 0, t = setInterval(function () { scan(); if (++n > 20) clearInterval(t); }, 1000);
 })();
+
+/* Danışan yakalama: hat açıkken Ara önde; mesai dışında WhatsApp önde (üst düğmeler ve alt çubuk).
+   Alt çubuk, sayfanın üstündeki büyük düğmeler ekrandayken gizli (aynı düğme iki kez görünmesin). */
+(function () {
+  var d = document.documentElement, open = true;
+  try {
+    var parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Istanbul', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date());
+    var g = function (t) { for (var i = 0; i < parts.length; i++) if (parts[i].type === t) return parts[i].value; return ''; };
+    var day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(g('weekday')), m = (parseInt(g('hour'), 10) % 24) * 60 + parseInt(g('minute'), 10);
+    open = day >= 1 && day <= 6 && m >= 600 && m < 1140;
+  } catch (e) {}
+  d.classList.add(open ? 'hat-acik' : 'hat-kapali');
+  var bar = document.querySelector('.sticky-bar');
+  if (!open && bar) {
+    var w = bar.querySelector('.sb-wa span'), c = bar.querySelector('.sb-call span');
+    if (w) w.textContent = 'WhatsApp’tan Yazın';
+    if (c) c.textContent = 'Ara';
+  }
+  if (!open) { var hw = document.querySelectorAll('.hero-btns .btn-wa span'); for (var k = 0; k < hw.length; k++) hw[k].textContent = 'WhatsApp’tan yazın, sizi arayalım'; }
+  var hero = document.querySelector('.hero-btns');
+  if (!bar || !hero || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function (es) {
+    var x = es[0]; bar.classList.toggle('sb-gizli', x.isIntersecting && x.intersectionRatio > 0.6);
+  }, { threshold: [0, 0.6, 1] }).observe(hero);
+})();

@@ -306,7 +306,13 @@ details p{margin:8px 0 0;color:var(--mut)}
 @media(min-width:760px){.of img{height:280px}}
 main .pu-launch-w{margin:0 0 16px}
 .ic p{margin:0 0 10px;color:var(--ink);font-size:15.5px}.ic p:last-child{margin:0}
-.bar{transition:transform .25s,opacity .25s}
+.bar{transition:transform .3s,opacity .3s}.bar.gizli{transform:translateY(115%%);opacity:0;pointer-events:none}
+.hat-kapali .hero-actions .wa:not(.geri){order:-1;display:flex;align-items:center;justify-content:center;padding:15px 18px;border-radius:16px;background:#25D366;color:#073B1E!important;font-weight:800;font-size:17.5px;text-decoration:none;box-shadow:0 14px 30px -12px rgba(37,211,102,.7)}
+.hat-kapali .hero-actions .geri,.hat-kapali .hero-actions .ara small{display:none}
+.lp-bd .bd-ust{font-size:10px;letter-spacing:.1em}
+.hat-kapali .hero-actions .ara{background:#fff;color:var(--call)!important;border:2px solid var(--call);box-shadow:none}
+.bar.off .w2{order:-1;flex:1;width:auto;background:#25D366;border-color:#25D366;color:#073B1E;font-weight:800;font-size:16.5px}
+.bar.off .ara{flex:0 0 auto;padding:14px 16px;background:#fff;color:var(--call)!important;border:2px solid var(--call)}
 .dip{padding:18px 0 26px;font-size:12.5px;color:var(--mut);text-align:center}
 .bar{position:fixed;left:0;right:0;bottom:0;z-index:9990;display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid var(--line);backdrop-filter:blur(10px)}
 .bar .ara{flex:1;padding:14px;font-size:16.5px;box-shadow:none}
@@ -344,6 +350,14 @@ def govde(S, P):
                '<p class="vk"><b>%s</b> · %s</p><div class="vr">%s</div>%s'
                '<div class="say"><div><b>7</b>TV ve video yayını</div><div><b>19</b>gazete sayfası</div><div><b>3</b>kitap</div></div></section>') % (
         '' if rojin else logolar, vid, esc(vk[1]), vid, esc(vk[0]), esc(vk[0]), esc(vk[1]), digerleri, gazete)
+    if not rojin:  # Çayyolu: Basında Biz sayfasındaki "basın dosyası" (gazete ön sayfası + yayın monitörü) burada da; gazete sayfaları altında
+        import basin_sahne as bs
+        bvids = [(v, VIDEOLAR[v][0], VIDEOLAR[v][1]) for v in [vid] + [x for x in VIDEOLAR if x != vid]]
+        bcall = '<a class="ara" href="tel:%s"><span>📞</span><span><b class="nw">Hemen Ara · %s</b></span></a>' % (TEL, TEL_TXT)
+        bwa = '<a class="wa" href="%s" target="_blank" rel="noopener">WhatsApp’tan yazın</a>' % wa
+        gosteri = ('<div class="bd lp-bd">' + bs.on_sayfa(bvids, bs.HABERLER, btn_call=bcall, btn_wa=bwa) + '</div>'
+                   '<section class="kart gos">%s</section>' % gazete + bs.JS
+                   + '<style>.lp-bd .bd-on{margin:0 0 16px;border-radius:22px}.lp-bd .bd-cta .ara{flex:1 1 100%;max-width:none}.lp-bd .bd-cta .wa{flex:1 1 100%}</style>')
     if rojin:  # logolar sayfanın üstündeki akan şeritte (vitrin.js); burada tekrar edilmez
         gosteri = gosteri.replace('<ul class="lg"></ul>', '')
     ekip = ('<p style="margin:12px 0 0;color:var(--mut);font-size:15px">%s</p>' % esc(P['ekip'])) if P.get('ekip') else ''
@@ -396,7 +410,10 @@ def govde(S, P):
 <section class="kart son"><h2>İlk adım tek bir telefon</h2><p>Selda Hanım size en yakın uygun saati söylesin.</p><a class="ara" href="tel:%(tel)s" data-cta-area="lp_son"><span>📞</span><span><b class="nw">Hemen Ara · %(teltxt)s</b></span></a></section>
 </main>
 <footer class="w dip">%(marka)s · Psikologlar tanı koymaz ve ilaç yazmaz. Acil bir durumda 112'yi arayın.<br><a href="%(kvkk)s">KVKK aydınlatma metni</a> · <a href="%(gizlilik)s">Gizlilik</a></footer>
-<script>(function(){try{var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Istanbul',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()),g=function(t){for(var i=0;i<p.length;i++)if(p[i].type===t)return p[i].value},d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(g('weekday')),m=(+g('hour')%%24)*60+(+g('minute'));var e=document.querySelector('.acik');if((d>=1&&d<=6&&m>=600&&m<1140))e.innerHTML='<i></i>Şu an açığız · Telefonu Selda Hanım açar';else{e.style.display='none'}}catch(x){}})();</script>
+<script>(function(){try{var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Istanbul',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()),g=function(t){for(var i=0;i<p.length;i++)if(p[i].type===t)return p[i].value},d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(g('weekday')),m=(+g('hour')%%24)*60+(+g('minute'));var e=document.querySelector('.acik'),ac=(d>=1&&d<=6&&m>=600&&m<1140);document.documentElement.classList.add(ac?'hat-acik':'hat-kapali');if(ac)e.innerHTML='<i></i>Şu an açığız · Telefonu Selda Hanım açar';else{e.style.display='none';var w=document.querySelector('.hero-actions .wa:not(.geri)');if(w)w.textContent='💬 WhatsApp’tan yazın, sabah sizi arayalım';document.addEventListener('DOMContentLoaded',function(){var b=document.querySelector('.bar');if(b){b.classList.add('off');b.querySelector('.w2').textContent='💬 WhatsApp’tan Yazın';b.querySelector('.ara').textContent='📞 Ara';}});}}catch(x){}})();
+/* Alt çubuk: üstteki büyük Ara düğmesi ya da sondaki arama kutusu ekrandayken gizli (aynı düğme iki kez görünmesin) */
+document.addEventListener('DOMContentLoaded',function(){var b=document.querySelector('.bar');if(!b||!('IntersectionObserver' in window))return;var g={};var io=new IntersectionObserver(function(es){es.forEach(function(x){g[x.target.dataset.k]=x.isIntersecting&&x.intersectionRatio>.6});b.classList.toggle('gizli',!!(g.h||g.s));},{threshold:[0,.6,1]});
+var h=document.querySelector('.hero-actions'),s=document.querySelector('.kart.son');if(h){h.dataset.k='h';io.observe(h)}if(s){s.dataset.k='s';io.observe(s)}});</script>
 <script>/* Aranan kelimeye göre başlık (mesaj uyumu). Google Ads > Hesap ayarları > "Nihai URL son eki": kw={keyword}
    Yalnız hazır tablodaki kalıplar kullanılır; aranan kelime sayfaya olduğu gibi yazılmaz. */
 (function(){try{var q=new URLSearchParams(location.search),k=(q.get('kw')||q.get('utm_term')||q.get('keyword')||'').toLocaleLowerCase('tr-TR').replace(/[+_]/g,' ');if(!k)return;
@@ -461,7 +478,7 @@ def rojin_yaz(kok):
 
 
 # ---------------------------------------------------------------- Çayyolu sitesi: build.py içinden
-CAYYOLU_HEAD = ROJIN_HEAD.replace('<meta name="theme-color" content="#3d1e54">', '<meta name="theme-color" content="#14264A">').replace(
+CAYYOLU_HEAD = ROJIN_HEAD.replace('<script src="/assets/js/after-hours.js?v=12" data-pos="bottom" defer></script>\n', '').replace('<meta name="theme-color" content="#3d1e54">', '<meta name="theme-color" content="#14264A">').replace(
     '<link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png">', '<link rel="icon" href="/favicon.svg" type="image/svg+xml">').replace(
     '<script src="/assets/js/pusula.js?v=13" defer></script>',
     "<script>window.PUSULA_CFG={site:'cayyolu',foto:'/assets/img/opt/psikolog-rojin-nazik-720.webp'};</script>\n<script src=\"/assets/js/pusula.js?v=13\" defer></script>").replace(
