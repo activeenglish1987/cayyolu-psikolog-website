@@ -1090,11 +1090,12 @@ def contact_page(rec):
 <p class="contact-phone"><a href="tel:%(raw)s">%(phone)s</a> · <a href="mailto:%(email)s">%(email)s</a></p><p class="contact-note" style="margin-top:10px;font-size:14px">Bu telefon hattı danışan randevuları içindir. Basın, TV programı, reklam ve iş birliği teklifleri için lütfen e-posta ile yazın: <a href="mailto:%(email)s">%(email)s</a></p></div></section>
 <section class="section section-tight"><div class="wrap">%(gy)s</div></section>
 <section class="section section-tight"><div class="wrap office-grid">%(office)s<div class="office-photos single">%(o1)s</div></div></section>
+<section class="section section-tight"><div class="wrap">%(galeri)s</div></section>
 <section class="section section-tight"><div class="wrap narrow"><h2>Yaşamkent ofisi haritası</h2><p>RN Psikoloji Çayyolu · Konutkent, Dumlupınar Bulvarı No:399 Kat:28 D:121, 06810 Çankaya / Ankara</p><div style="position:relative;width:100%%;aspect-ratio:16/9;border-radius:16px;overflow:hidden;margin-top:12px"><iframe title="RN Psikoloji Çayyolu ofisi haritası" src="https://www.google.com/maps?q=RN+Psikoloji+%%C3%%87ayyolu,+Dumlup%%C4%%B1nar+Bulvar%%C4%%B1+No:399,+06810+%%C3%%87ankaya%%2FAnkara&amp;output=embed" style="position:absolute;inset:0;width:100%%;height:100%%;border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></div></section>
 <section class="section section-alt"><div class="wrap">%(h_exp)s%(experts)s</div></section>
 <section class="section"><div class="wrap narrow">%(h_faq)s%(faq)s</div></section>''' % {
         'bc': bc, 'call': btn_call(), 'wa': btn_wa(), 'open': OPEN_ROTA, 'raw': PHONE_RAW, 'phone': PHONE, 'email': EMAIL,
-        'office': office_card(), 'gy': GOOGLE_YORUM, 'o1': img(o1, 'RN Psikoloji Çayyolu seans odası'),
+        'office': office_card(), 'galeri': __import__('ofis_galeri').galeri('Ofisimizden kareler', 'Bekleme alanı, salon ve görüşme odaları. Fotoğrafa dokunup büyütebilirsiniz.'), 'gy': GOOGLE_YORUM, 'o1': img(o1, 'RN Psikoloji Çayyolu seans odası'),
         'h_exp': section_head('Uzmanlarımız', 'Kiminle görüşmek istersiniz?'), 'experts': expert_cards(),
         'h_faq': section_head('Randevu öncesi', 'Sık sorulan sorular'), 'faq': faq_html()} + footer_html()
 

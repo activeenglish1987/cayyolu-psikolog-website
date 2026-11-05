@@ -383,6 +383,9 @@ def govde(S, P):
                  '</div></section>')
     ofis = ('<div class="of"><img src="/assets/lp/ofis-salon.webp" alt="RN Psikoloji ofisinden bekleme alanı" width="600" height="800" loading="lazy" decoding="async">'
             '<img src="/assets/lp/ofis-koltuk.webp" alt="RN Psikoloji ofisinden görüşme alanı" width="600" height="800" loading="lazy" decoding="async"></div>')
+    if not rojin:  # Çayyolu: yeni ofis fotoğrafları (dergi düzeni + tam ekran görüntüleyici)
+        import ofis_galeri
+        ofis = '<div style="margin-top:18px">' + ofis_galeri.galeri('Ofisimizden kareler', 'Dokunup büyütebilirsiniz.', 'h3') + '</div>'
     return '''<header class="w top"><a class="lgo" href="/" aria-label="%(marka)s – ana sayfa" style="display:inline-flex;text-decoration:none">%(logo)s</a><a class="t" href="tel:%(tel)s" data-cta-area="lp_header">📞 %(teltxt)s</a><a class="t tw" href="%(wa)s" target="_blank" rel="noopener" data-cta-area="lp_header">💬 WhatsApp’tan yazın</a></header>
 <section class="hero"><div class="w hi">
 <div>
