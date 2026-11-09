@@ -40,7 +40,7 @@ RewriteRule ^cayyolu-psikolog-depresyon-panik-atak-sosyal-fobi-sinav-kaygisi-ve-
 RewriteRule ^cayyolu-bireysel-terapi-hizmetleri-ozguven-ofke-travma-bosanma-ve-yas-sureclerinde-uzman-destegi/?$ /bireysel-danismanlik/ [R=301,L]
 RewriteRule ^ankarada-psikologa-nasil-karar-verilir-emdrdan-oyun-terapisine-en-dogru-tercihi-yapin/?$ /ilk-terapi-seansi-rehberi/ [R=301,L]
 RewriteRule ^cayyolu-terapi-hizmetleri-emdr-bdt-sema-terapi-mindfulness-ve-daha-fazlasi/?$ /bireysel-danismanlik/ [R=301,L]
-RewriteRule ^ankara-psikolog-tavsiyesi-2025-cayyolu-ve-yakin-bolgelerde-guvenilir-terapi-hizmeti/?$ https://www.psikologrojinnazik.com/ankara-psikolog-tavsiyesi/ [R=301,L]
+RewriteRule ^ankara-psikolog-tavsiyesi-2025-cayyolu-ve-yakin-bolgelerde-guvenilir-terapi-hizmeti/?$ https://www.psikologrojinnazik.com/psikolog-tavsiyesi/ [R=301,L]
 RewriteRule ^ankara-bati-yakasi-psikolog-hizmeti-yasamkent-umitkoy-alacaatli-konutkent-incek-ve-bilkent/?$ /yasamkent-psikolog/ [R=301,L]
 RewriteRule ^ankara-psikolog-cayyolu-kizilay-umitkoy-yasamkent-incek-ve-cevresinde-guvenilir-psikolojik-destek/?$ /umitkoy-psikolog/ [R=301,L]
 RewriteRule ^ankarada-size-uygun-psikologu-secin-guvenilir-kadin-terapist-genc-ve-deneyimli-uzmanlar/?$ /uzmanlarimiz/ [R=301,L]
