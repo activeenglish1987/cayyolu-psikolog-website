@@ -22,7 +22,7 @@ ROJIN = 'https://www.psikologrojinnazik.com'
 # kelime -> (sahibi, başlığında geçmesine izin verilen diğer sayfalar)
 SAHIP = {
     'rojin': {
-        'ankara psikolog': ('/', ['/ankara-psikolog-fiyatlari/', '/ankara-psikolog-tavsiyesi/']),
+        'ankara psikolog': ('/', ['/ankara-psikolog-fiyatlari/', '/psikolog-tavsiyesi/']),
         'ankara cocuk psikolog': ('/ankara-cocuk-psikologu/', []),
         'ankara ergen psikolog': ('/ankara-ergen-psikologu/', []),
         'ankara yetiskin psikolog': ('/ankara-yetiskin-psikologu/', []),

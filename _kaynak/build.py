@@ -901,7 +901,7 @@ SISTER = {
  '/yalnizlik-hissi-ve-sosyal-geri-cekilme/': [(RN + '/sosyal-kaygi/', 'Sosyal kaygı'), (RN + '/depresyon-nedir/', 'Depresyon')],
  '/is-stresi-ve-tukenmislik/': [(RN + '/is-yerinde-tukenmislik-sendromu/', 'İş yerinde tükenmişlik sendromu'), (RN + '/ofke-kontrolu/', 'Öfke kontrolü')],
  '/travma-sonrasi-stres-belirtileri/': [(RN + '/travma-sonrasi-stres-bozuklugu/', 'Travma sonrası stres bozukluğu'), (RN + '/yas-terapisi/', 'Yas terapisi')],
- '/ilk-terapi-seansi-rehberi/': [(RN + '/ankara-psikolog-tavsiyesi/', 'Psikolog seçme rehberi'), (RN + '/psikolog-tani-koyabilir-mi/', 'Psikolog tanı koyabilir mi?')],
+ '/ilk-terapi-seansi-rehberi/': [(RN + '/psikolog-tavsiyesi/', 'Psikolog seçme rehberi'), (RN + '/psikolog-tani-koyabilir-mi/', 'Psikolog tanı koyabilir mi?')],
  '/kaygi-sorunlari/': [(RN + '/anksiyete-bozukluklari/', 'Anksiyete bozuklukları'), (RN + '/panik-atak/', 'Panik atak')],
  '/cocuk-ergen-danismanligi/': [(RN + '/sinav-kaygisi/', 'Sınav kaygısı'), (RN + '/ankara-ergen-psikologu/', 'Ankara ergen psikoloğu')],
  '/umitkoy-psikolog/': [(RN + '/', 'Ankara psikolog – Psikolog Rojin Nazik')],
@@ -1196,7 +1196,7 @@ def main():
                      'thumb': '/' + m['thumb'], 'categories': ['Blog'], 'faqs': m.get('faqs', []), 'uzman_kontrolu': m.get('uzman_kontrolu')})
     # 'Ankara psikolog' ana kelimesi Rojin Nazik ana sayfasına bırakıldı (yamyamlığı önlemek için)
     moved = {'/ankara-psikolog/': RN + '/',
-             '/ankara-psikolog-tavsiyesi-2025-cayyolu-ve-yakin-bolgelerde-guvenilir-terapi-hizmeti/': RN + '/ankara-psikolog-tavsiyesi/',
+             '/ankara-psikolog-tavsiyesi-2025-cayyolu-ve-yakin-bolgelerde-guvenilir-terapi-hizmeti/': RN + '/psikolog-tavsiyesi/',
              # 'Çayyolu psikolog' tek sayfada toplanır: yıllardır sıralanan ana sayfa (2026-10-05)
              '/cayyolu-psikolog/': '/',
              # Hazal Akşahin artık ekipte değil (2026-10-07)
