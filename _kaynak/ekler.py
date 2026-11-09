@@ -1485,3 +1485,6 @@ EKLER['/beysukent-psikolog/']['tarih'] = '2026-11-08'
 
 EKLER['/umitkoy-psikolog/']['html'] += '\n<h2>Ümitköy\'deki ebeveynler için: çocuk dışlandığında</h2>\n<p>Okulda bir doğum günü partisine çağrılmamak ya da oyunlara alınmamak, çocuklar için derin bir kırgınlık olabilir. Çocuğunuzun duygularına nasıl eşlik edebileceğinizi ve hangi durumlarda destek almanın iyi olacağını <a href="/cocuk-partiye-cagrilmadiginda/">çocuğunuz doğum günü partisine çağrılmadığında</a> yazımızda anlattık.</p>\n'
 EKLER['/umitkoy-psikolog/']['tarih'] = '2026-11-08'
+
+EKLER['/konutkent-psikolog/']['html'] += '\n<h2>Konutkent\'teki ebeveynler için: tırnak yeme</h2>\n<p>Tırnak yeme okul çağındaki pek çok çocukta görülür ve çoğu zaman geçici bir alışkanlıktır. Uyarmak yerine neyin işe yarayabileceğini, alışkanlığın ardındaki olası nedenleri ve hangi durumlarda bir uzmandan destek almanın iyi olacağını <a href="/cocugum-tirnak-yiyor/">çocuğum tırnak yiyor</a> yazımızda anlattık.</p>\n'
+EKLER['/konutkent-psikolog/']['tarih'] = '2026-11-09'
