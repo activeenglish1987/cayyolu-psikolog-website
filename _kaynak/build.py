@@ -389,7 +389,7 @@ def footer_html():
       <p class="footer-note">RN Psikoloji Çayyolu şubesinde çalışan uzmanlar klinik tanı veya tedavi hizmeti vermez; günlük yaşamda karşılaşılan zorluklar karşısında psikolojik destek ve danışmanlık hizmeti sunar. Tanı gerektiren durumlarda psikiyatriste yönlendirme yapılır.</p>
     </div>
     <div><h3>Uzmanlarımız</h3><ul>%(exp)s</ul><h3 class="mt">Bölgeler</h3><ul>%(areas)s</ul><h3 class="mt">Kurumsal</h3><ul><li><a href="/hakkimizda/">Hakkımızda</a></li><li><a href="/basinda-biz/">Basında Biz</a></li><li><a href="/kitaplarimiz/">Kitaplarımız</a></li><li><a href="/konferanslar/">Konferanslar</a></li><li><a href="/galeri/">Galeri</a></li><li><a href="/randevu-sik-sorulan-sorular/">Sık sorulan sorular</a></li><li><a href="/danisanlar-icin-el-kitabi/">Danışanlar İçin El Kitabı</a></li><li><a href="/blog/">Blog</a></li></ul></div>
-    <div><h3>Hizmetler</h3><ul>%(svc)s</ul><h3 class="mt">Çayyolu'nda</h3><ul>%(focus)s</ul></div>
+    <div><h3>Hizmetler</h3><ul>%(svc)s</ul><h3 class="mt">Çayyolu'nda</h3><ul>%(focus)s</ul><h3 class="mt">Ebeveynler için</h3><ul><li><a href="/cocugum-arkadas-edinemiyor/">Çocuğum arkadaş edinemiyor</a></li><li><a href="/ergen-cocuk-odasindan-cikmiyor/">Ergen odasından çıkmıyor</a></li><li><a href="/ogretmen-psikologa-gotur-dedi/">Öğretmen &quot;psikoloğa götür&quot; dedi</a></li><li><a href="/ortak-yazili-sinav-kaygisi/">Ortak yazılı sınav kaygısı</a></li><li><a href="/ergen-psikologa-gitmek-istemiyor/">Ergen psikoloğa gitmek istemiyor</a></li><li><a href="/cocugum-tirnak-yiyor/">Çocuğum tırnak yiyor</a></li></ul></div>
     <div><h3>İletişim</h3>
       <p class="footer-line">%(pin)s<span>%(addr)s</span></p>
       <p class="footer-line">%(phone_ic)s<a href="tel:%(raw)s">%(phone)s</a></p>
