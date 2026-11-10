@@ -1488,3 +1488,9 @@ EKLER['/umitkoy-psikolog/']['tarih'] = '2026-11-08'
 
 EKLER['/konutkent-psikolog/']['html'] += '\n<h2>Konutkent\'teki ebeveynler için: tırnak yeme</h2>\n<p>Tırnak yeme okul çağındaki pek çok çocukta görülür ve çoğu zaman geçici bir alışkanlıktır. Uyarmak yerine neyin işe yarayabileceğini, alışkanlığın ardındaki olası nedenleri ve hangi durumlarda bir uzmandan destek almanın iyi olacağını <a href="/cocugum-tirnak-yiyor/">çocuğum tırnak yiyor</a> yazımızda anlattık.</p>\n'
 EKLER['/konutkent-psikolog/']['tarih'] = '2026-11-09'
+
+# 10 Kasım: Search Console düşük tıklama oranı (gösterim var, tık yok) sayfaları
+ACIKLAMA['/psikolog-rojin-nazik/'] = 'Psikolog ve Aile Danışmanı Rojin Nazik: eğitimi, 13 yıllık deneyimi, kitapları, Çayyolu ve Kızılay ofisleri ve danışan yorumlarının nerede okunacağı.'
+ACIKLAMA['/hakkimizda/'] = "RN Psikoloji Çayyolu: Yaşamkent'te ücretsiz otoparklı ofiste yetişkin, çift, aile, çocuk ve ergen görüşmeleri. Ekibimiz, yaklaşımımız ve randevu süreci."
+ACIKLAMA['/cocugum-arkadas-edinemiyor/'] = 'Çocuğunuz okulda arkadaş edinemiyor mu? Utangaçlık mı, destek gerektiren bir durum mu? Ayırt etmenize yardım eden işaretler ve evde yapabilecekleriniz.'
+ACIKLAMA['/ortak-yazili-sinav-kaygisi/'] = 'Ortak yazılı sınav öncesi çocuğunuz kaygılı mı? Sınav kaygısının işaretleri, evde destek olmanın yolları ve ne zaman bir uzmandan yardım almalı.'
