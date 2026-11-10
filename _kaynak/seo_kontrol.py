@@ -13,6 +13,7 @@ Kontroller (yalnız Google'a açık sayfalar):
 - Site haritasındaki her adresin dosyası var ve hiçbiri noindex değil.
 """
 import glob, html, os, re, sys
+import json
 
 KOK, SITE = sys.argv[1], sys.argv[2]
 ALAN = {'rojin': 'https://www.psikologrojinnazik.com', 'cayyolu': 'https://www.cayyolupsikolog.com.tr',
@@ -122,6 +123,13 @@ for yol, f in dosyalar():
     can = g(r'<link rel="canonical" href="([^"]+)"')
     sayfa[yol] = dict(title=title, h1=h1ler, can=can)
     if not title: hata.append('%s: <title> yok' % yol)
+    # yapısal veri (JSON-LD) geçerli JSON olmalı: tırnak kaçmazsa Google "ayrıştırılamayan yapılandırılmış veri" der (10 Kasım)
+    for blok in re.findall(r'<script[^>]*application/ld\+json[^>]*>(.*?)</script>', s, re.S):
+        try:
+            _ciftler = []
+            json.loads(blok, object_pairs_hook=lambda p: (_ciftler.extend(k for k in {x for x, _ in p} if [x for x, _ in p].count(k) > 1), dict(p))[1])
+            if _ciftler: hata.append('%s: yapısal veride yinelenen alan %s' % (yol, sorted(set(_ciftler))))
+        except ValueError as e: hata.append('%s: yapısal veri bozuk (%s)' % (yol, str(e)[:60]))
     if len(h1ler) != 1: hata.append('%s: %d adet H1 %s' % (yol, len(h1ler), h1ler[:3]))
     for ad, metin in (('başlık', title), ('H1', ' '.join(h1ler)), ('açıklama', desc)):
         m = YASAK.search(metin)
