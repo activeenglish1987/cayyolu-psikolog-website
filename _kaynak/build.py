@@ -1312,14 +1312,16 @@ def main():
     for cfg in LANDINGS:
         write(cfg['path'], landing_page(cfg)); pages.append((cfg['path'], cfg.get('mod') or ('2026-10-01' if cfg['path'] in EXTRA else '2026-09-30')))
     # Elif Erdoğan – yeni sayfa
-    elif_rec = {'type': 'page', 'path': '/psikolog-elif-erdogan/', 'title': 'Psikolog Elif Erdoğan', 'date': '2026-09-30', 'modified': '2026-09-30', 'html': ELIF_BODY}
+    _elif_ek = EKLER.get('/psikolog-elif-erdogan/', {})
+    ELIF_TAM = ELIF_BODY + _elif_ek.get('html', '')
+    elif_rec = {'type': 'page', 'path': '/psikolog-elif-erdogan/', 'title': 'Psikolog Elif Erdoğan', 'date': '2026-09-30', 'modified': _elif_ek.get('tarih', '2026-09-30'), 'html': ELIF_TAM}
     ex = EXPERTS[1]
-    write(elif_rec['path'], article_page(elif_rec, ELIF_BODY.replace('<h2>Psikolog Elif Erdoğan</h2>', '<figure class="article-hero-img">%s</figure>' % img(opt(ex['img'], 720, 'psikolog-elif-erdogan'), ex['name'])),
+    write(elif_rec['path'], article_page(elif_rec, ELIF_TAM.replace('<h2>Psikolog Elif Erdoğan</h2>', '<figure class="article-hero-img">%s</figure>' % img(opt(ex['img'], 720, 'psikolog-elif-erdogan'), ex['name'])),
                                          [('Ana Sayfa', '/'), ('Uzmanlarımız', '/uzmanlarimiz/'), ('Psikolog Elif Erdoğan', None)], kicker='Psikolog', expert=ex,
                                          extra_after=related_block('Diğer uzmanlarımız', expert_cards(exclude=elif_rec['path'])),
-                                         desc='Psikolog Elif Erdoğan – RN Psikoloji Çayyolu: yetişkin, ergen ve çift görüşmeleri, oyun terapisi ve psikolojik test. Yaşamkent ofisi, randevu: 0552 418 79 73.',
-                                         title_tag='Psikolog Elif Erdoğan | RN Psikoloji Çayyolu'))
-    pages.append((elif_rec['path'], '2026-09-30'))
+                                         desc='Psikolog Elif Erdoğan: yetişkin, ergen ve çift görüşmeleri, oyun terapisi ve psikolojik test. Yorumlar nerede okunur, ilk görüşme nasıl geçer? Yaşamkent ofisi.',
+                                         title_tag='Psikolog Elif Erdoğan: Çalışma Alanları ve Yorumlar | RN Psikoloji'))
+    pages.append((elif_rec['path'], elif_rec['modified']))
     # blog listeleri
     write('/blog/', blog_index(posts, '/blog/')); pages.append(('/blog/', None))
     # /category/blog/ eski WordPress adresi: /blog/ ile aynı içerik olduğu için .htaccess'te /blog/'a 301 (2026-10-14)
