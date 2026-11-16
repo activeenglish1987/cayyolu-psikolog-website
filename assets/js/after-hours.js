@@ -1,5 +1,5 @@
-/* Mesai dışı yakalama: telefon saatleri (Pazartesi–Cumartesi 10:00–19:00, İstanbul) dışında.
-   Ofis 09:00–20:00 arası seans verir; bu dosya yalnız TELEFONUN açıldığı saatlere bakar.
+/* Mesai dışı yakalama: telefon saatleri (her gün 09:00–22:00, İstanbul) dışında.
+   Ofis 09:00–22:00 arası seans verir; bu dosya yalnız TELEFONUN açıldığı saatlere bakar.
    "Sabah sizi arayalım" düğmesi gösterir. Tıklanınca WhatsApp hazır "beni arayın" mesajıyla açılır
    (panel takip edilmediği için numara formu yok); Selda Hanım sabah WhatsApp'tan görüp arar.
    Rojin Nazik, Çayyolu ve Elif Erdoğan sitelerinde ortak dosya. */
@@ -16,17 +16,17 @@
     day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(get('weekday'));
     mins = (parseInt(get('hour'), 10) % 24) * 60 + parseInt(get('minute'), 10);
   } catch (e) { return; }
-  var ACILIS = 600, KAPANIS = 1140; // 10:00–19:00, Pazartesi–Cumartesi
-  var open = day >= 1 && day <= 6 && mins >= ACILIS && mins < KAPANIS;
+  var ACILIS = 540, KAPANIS = 1320; // 09:00–22:00, her gün
+  var open = mins >= ACILIS && mins < KAPANIS;
   if (open) return;
 
   // Ne zaman aranacağı: akşam/gece ise "yarın sabah", Cumartesi akşamı ve Pazar "Pazartesi sabahı"
   var when = 'sabah';
-  if ((day === 6 && mins >= KAPANIS) || day === 0) when = 'Pazartesi sabahı';
+  if (false) when = 'Pazartesi sabahı';
   else if (mins < ACILIS) when = 'bu sabah';
   var kisa = when === 'Pazartesi sabahı' ? 'Pazartesi' : 'Sabah';
   // Panelde arama hatırlatması bu saate kurulur (psikologunubul lib/hours.ts callbackAtFrom)
-  var saat = when === 'Pazartesi sabahı' ? 'Pazartesi 10:00' : when === 'bu sabah' ? 'Bugün 10:00' : 'Yarın 10:00';
+  var saat = when === 'Pazartesi sabahı' ? 'Pazartesi 09:00' : when === 'bu sabah' ? 'Bugün 09:00' : 'Yarın 09:00';
   var msg = 'Merhaba, mesai dışında yazıyorum. ' + kisa + ' aranmak istiyorum. Konu: ';
   var waHref = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg);
 
@@ -85,7 +85,7 @@
   // Ekip paneli takip etmediği için numara formu yok: düğme, hazır "beni arayın" mesajıyla WhatsApp'ı açar.
   // Danışanın numarası WhatsApp'ta görünür; Selda Hanım sabah oradan arar.
   function sheet(area) {
-    var ne = saat.replace(/^Bugün/, 'bugün').replace(/^Yarın/, 'yarın').replace(/^Pazartesi/, 'pazartesi').replace(' 10:00', " saat 10:00'da");
+    var ne = saat.replace(/^Bugün/, 'bugün').replace(/^Yarın/, 'yarın').replace(/^Pazartesi/, 'pazartesi').replace(' 09:00', " saat 09:00'da");
     var u = 'https://wa.me/' + WA + '?text=' + encodeURIComponent('Merhaba, ' + ne + ' beni arayabilir misiniz? Randevu bilgisi almak istiyorum.');
     if (typeof window.adsTrack === 'function') window.adsTrack('whatsapp_click', { cta_area: area, site: SITE });
     else track('whatsapp_click', { cta_area: area });

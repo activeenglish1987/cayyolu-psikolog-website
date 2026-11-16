@@ -15,7 +15,7 @@
     });
   }
 
-  // Telefon mesaisi: Pazartesi–Cumartesi 10:00–19:00 (İstanbul). Ofis seansları her gün 09:00–22:00.
+  // Telefon mesaisi: her gün 09:00–22:00 (İstanbul). Ofis seansları her gün 09:00–22:00.
   var els = document.querySelectorAll('[data-open-status]');
   if (!els.length) return;
   var day = 0, mins = 0;
@@ -25,7 +25,7 @@
     day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(get('weekday'));
     mins = (parseInt(get('hour'), 10) % 24) * 60 + parseInt(get('minute'), 10);
   } catch (e) { return; }
-  var open = day >= 1 && day <= 6 && mins >= 600 && mins < 1140;
+  var open = mins >= 540 && mins < 1320;
   var text = open ? 'Şu an açığız · Telefonu Selda Hanım açar.' : "Ofis her gün 09:00–22:00 açık; telefon hattı şu an kapalı. WhatsApp'tan yazabilirsiniz, telefon saatinde dönüş yapılır.";
   for (var i = 0; i < els.length; i++) {
     if (!open) { els[i].style.display = 'none'; continue; } // mesai dışında "kapalı" yazısı gösterilmez
@@ -64,12 +64,12 @@
     var parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Istanbul', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date());
     var g = function (t) { for (var i = 0; i < parts.length; i++) if (parts[i].type === t) return parts[i].value; return ''; };
     day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(g('weekday')); m = (parseInt(g('hour'), 10) % 24) * 60 + parseInt(g('minute'), 10);
-    open = day >= 1 && day <= 6 && m >= 600 && m < 1140;
+    open = m >= 540 && m < 1320;
   } catch (e) {}
   d.classList.add(open ? 'hat-acik' : 'hat-kapali');
   if (!open) {
     var gun = 'yarın';
-    try { if (day >= 1 && day <= 6 && m < 600) gun = 'bugün'; else if (day === 0 || (day === 6 && m >= 1140)) gun = 'Pazartesi'; } catch (e) {}
+    try { if (m < 540) gun = 'bugün'; else if (false) gun = 'Pazartesi'; } catch (e) {}
     var rs = document.querySelectorAll('[data-rota]');
     for (var r = 0; r < rs.length; r++) { var sp = rs[r].querySelectorAll('li span'); if (sp.length > 1) { sp[0].textContent = 'WhatsApp’tan yazın'; sp[1].textContent = 'Selda Hanım ' + gun + ' sizi arar'; } }
   }

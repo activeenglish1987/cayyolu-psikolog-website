@@ -34,7 +34,7 @@
   var TEL = 'tel:+905524187973', TEL_TXT = '0552 418 79 73', WA = '905524187973';
   // "Beni arayın" isteği WhatsApp'tan gelir: danışanın numarası mesajda görünür, Selda Hanım oradan arar
   function waAra(alan) {
-    var m = mesai(), ne = m.acik ? 'müsait olduğunuzda' : (m.pazartesi ? "pazartesi saat 10:00'da" : (m.sabahOnce ? "bugün saat 10:00'da" : "yarın saat 10:00'da"));
+    var m = mesai(), ne = m.acik ? 'müsait olduğunuzda' : (m.pazartesi ? "pazartesi saat 09:00'da" : (m.sabahOnce ? "bugün saat 09:00'da" : "yarın saat 09:00'da"));
     var u = 'https://wa.me/' + WA + '?text=' + encodeURIComponent('Merhaba, ' + ne + ' beni arayabilir misiniz? Randevu bilgisi almak istiyorum.');
     if (typeof w.adsTrack === 'function') w.adsTrack('whatsapp_click', { cta_area: alan || 'soru_kutusu' });
     var x = w.open(u, '_blank', 'noopener'); if (!x) location.href = u;
@@ -170,15 +170,15 @@
     w.dataLayer.push(p);
   }
 
-  /* ---------- Telefon mesaisi (Pazartesi–Cumartesi 10:00–19:00, İstanbul; ofis seansları 09:00–20:00) ---------- */
+  /* ---------- Telefon mesaisi (her gün 09:00–22:00, İstanbul; ofis seansları 09:00–22:00) ---------- */
   function mesai() {
     try {
       var p = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Istanbul', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date());
       var g = function (t) { for (var i = 0; i < p.length; i++) if (p[i].type === t) return p[i].value; return ''; };
       var day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(g('weekday'));
       var m = (parseInt(g('hour'), 10) % 24) * 60 + parseInt(g('minute'), 10);
-      var kap = 1140;
-      return { acik: day >= 1 && day <= 6 && m >= 600 && m < kap, pazartesi: (day === 6 && m >= kap) || day === 0, sabahOnce: m < 600 };
+      var kap = 1320;
+      return { acik: m >= 540 && m < 1320, pazartesi: false, sabahOnce: m < 540 };
     } catch (e) { return { acik: true }; }
   }
 
@@ -580,7 +580,7 @@
 
   /* ---------- Soru sorun kutusu ----------
      Sık sorulan sorulara anında yanıt; her yanıtın sonunda arama düğmesi; isteyen numarasını bırakır,
-     talep psikologunubul paneline düşer (mesai içinde "şimdi", dışında "sabah 10:00"). Canlı kişi gibi
+     talep psikologunubul paneline düşer (mesai içinde "şimdi", dışında "sabah 09:00"). Canlı kişi gibi
      davranmaz: yanıtlar RN Psikoloji'nin hazır bilgileridir, telefonu Selda Hanım açar. */
   var TALEP_API = CFG.talepApi || 'https://www.psikologunubul.com.tr/api/talep';
   var AYDINLATMA = 'https://www.psikologunubul.com.tr/kvkk-aydinlatma';
@@ -594,7 +594,7 @@
     ['cocuk', 'Çocuğum / ergenim için', 'Çocuklarda ilk görüşme genellikle ebeveynle yapılır; ardından çocuğun yaşına uygun görüşmeler planlanır. Küçük çocuklarla oyun terapisi, ergenlerle güvenli ve yargısız bir görüşme ortamı önceliklidir.'],
     ['gizlilik', 'Görüşmeler gizli mi?', 'Evet. Görüşmelerde konuşulanlar gizlidir; yalnız yasal zorunluluk ve can güvenliği gibi istisnalar vardır, bunlar ilk görüşmede açıkça anlatılır.'],
     ['ekip', 'Kimlerle görüşebilirim?', 'Ekibimizde ' + EKIP + ' var. Hangi uzmanın size daha uygun olduğunu Selda Hanım ihtiyacınıza göre birlikte belirler.'],
-    ['saat', 'Çalışma saatleri', 'Görüşmeler Pazartesi–Cumartesi 09:00–20:00. Telefon: Pazartesi–Cumartesi 10:00–19:00. Bu saatler dışında WhatsApp’tan yazarsanız Selda Hanım sabah ilk iş sizi arar.']
+    ['saat', 'Çalışma saatleri', 'Görüşmeler her gün 09:00–22:00. Telefon: her gün 09:00–22:00. Bu saatler dışında WhatsApp’tan yazarsanız Selda Hanım sabah ilk iş sizi arar.']
   ];
   var KONU_DAVET = [
     [/cocuk|pedagog|okul|oyun-terapisi|bosanmayi-cocuga|kardes/, 'Çocuğunuz için 60 saniyede bir yol haritası çıkaralım mı?'],
@@ -683,7 +683,7 @@
       if (panel) { panel.parentNode.removeChild(panel); panel = null; balonKonum(); return; }
       olay('soru_kutusu_acildi', { pusula_kaynak: kaynak || 'balon' });
       var mm = mesai();
-      panel = el('<div class="pu-sb-p" role="dialog" aria-label="Soru sorun"><div class="pu-sb-h">' + seldaAvatar() + '<div><b>RN Psikoloji</b><small>' + (mm.acik ? '🟢 Şu an açığız · Telefonu Selda Hanım açar' : '🌙 Mesai dışı · Sabah 10:00\'da arıyoruz') + '</small></div><button type="button" class="x" aria-label="Kapat">×</button></div><div class="pu-sb-b"></div><div class="pu-sb-f"></div></div>');
+      panel = el('<div class="pu-sb-p" role="dialog" aria-label="Soru sorun"><div class="pu-sb-h">' + seldaAvatar() + '<div><b>RN Psikoloji</b><small>' + (mm.acik ? '🟢 Şu an açığız · Telefonu Selda Hanım açar' : '🌙 Mesai dışı · Sabah 09:00\'da arıyoruz') + '</small></div><button type="button" class="x" aria-label="Kapat">×</button></div><div class="pu-sb-b"></div><div class="pu-sb-f"></div></div>');
       kutu.appendChild(panel);
       panel.querySelector('.x').onclick = function () { panelAc(); };
       var govde = panel.querySelector('.pu-sb-b'), alt = panel.querySelector('.pu-sb-f');
@@ -717,7 +717,7 @@
       function altCiz() {
         var m2 = mesai();
         alt.innerHTML = (m2.acik ? '<a class="ara" href="' + TEL + '">📞 Selda Hanım\'ı Arayın</a>' : '')
-          + '<button type="button" class="geri">' + (m2.acik ? '💬 WhatsApp\'tan "beni arayın" yazayım' : '💬 Sabah 10:00\'da beni arayın (WhatsApp)') + '</button>'
+          + '<button type="button" class="geri">' + (m2.acik ? '💬 WhatsApp\'tan "beni arayın" yazayım' : '💬 Sabah 09:00\'da beni arayın (WhatsApp)') + '</button>'
           + (m2.acik ? '' : '<a class="ara" style="background:none;color:var(--pu-mut)!important;font-weight:600;font-size:13px;text-decoration:underline;padding:0" href="' + TEL + '">Yine de ara · ' + TEL_TXT + '</a>');
         alt.querySelector('.geri').onclick = function () { waAra('soru_kutusu'); };
       }

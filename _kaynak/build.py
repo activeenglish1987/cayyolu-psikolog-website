@@ -273,13 +273,13 @@ def btn_wa(msg='Merhaba, randevu bilgisi almak istiyorum.', label="WhatsApp'tan 
     return '<a class="%s" href="%s" target="_blank" rel="noopener">%s<span>%s</span></a>' % (cls, wa(msg), ICON['wa'], label)
 
 # Başlangıçta dolu gelir (yeri ayrılı kalsın, sayfa kaymasın); site.js saate göre metni değiştirir
-OPEN_STATUS = '<div class="open-status" data-open-status><span class="dot"></span><span>Telefonu Selda Hanım açar · Pazartesi–Cumartesi 10:00–19:00</span></div>'
+OPEN_STATUS = '<div class="open-status" data-open-status><span class="dot"></span><span>Telefonu Selda Hanım açar · Her gün 09:00–22:00</span></div>'
 ROTA = ('<ol class="rota" data-rota aria-label="Aradığınızda ne olur?"><li><b>1</b><span>Selda Hanım açar</span></li>'
         '<li><b>2</b><span>Konunuzu kısaca dinler</span></li><li><b>3</b><span>Yaşamkent ofisinde gün ve saati birlikte belirleriz</span></li></ol>')
 OPEN_ROTA = OPEN_STATUS + ROTA
 
 def inline_cta(msg='Merhaba, randevu bilgisi almak istiyorum.', title='Randevu için hemen ulaşın'):
-    return '<aside class="inline-cta"><p><strong>%s</strong>Telefon Pazartesi–Cumartesi 10:00–19:00 · Yaşamkent ofisi · Ücretsiz otopark</p><div class="btn-row">%s%s</div></aside>' % (
+    return '<aside class="inline-cta"><p><strong>%s</strong>Telefon her gün 09:00–22:00 · Yaşamkent ofisi · Ücretsiz otopark</p><div class="btn-row">%s%s</div></aside>' % (
         esc(title), btn_call(), btn_wa(msg))
 
 def with_mid_cta(body, expert=None):
@@ -377,7 +377,7 @@ def footer_html():
     return '''</main>
 <section class="cta-band">
   <div class="wrap cta-band-inner">
-    <div><p class="eyebrow light">İlk adım</p><h2>Randevu ve bilgi için bize ulaşın.</h2><p>Kurucumuz Psikolog Rojin Nazik ve ekibi · Yaşamkent ofisi · Telefon Pazartesi–Cumartesi 10:00–19:00</p></div>
+    <div><p class="eyebrow light">İlk adım</p><h2>Randevu ve bilgi için bize ulaşın.</h2><p>Kurucumuz Psikolog Rojin Nazik ve ekibi · Yaşamkent ofisi · Telefon her gün 09:00–22:00</p></div>
     <div class="btn-row">%(call)s%(wa)s</div>
   </div>
 </section>
@@ -704,7 +704,7 @@ HOME_REHBER = """<h2>Çayyolu'nda psikolog seçerken</h2>
 <h3>Görüşme saatleri ve online seçenek</h3>
 <ul>
 <li>Görüşmeler Pazartesi–Pazar 09:00–22:00 arasında, randevuyla yapılır.</li>
-<li>Telefon Pazartesi–Cumartesi 10:00–19:00 arası açıktır.</li>
+<li>Telefon her gün 09:00–22:00 arası açıktır.</li>
 <li>Ofise gelemediğiniz dönemlerde <a href="/online-terapi/">online görüşme</a> yapılabilir.</li>
 </ul>
 <h3>İlk görüşmede ne olur, ücret nasıl öğrenilir?</h3>
@@ -1085,7 +1085,7 @@ def contact_page(rec):
     bc, bld = breadcrumb([('Ana Sayfa', '/'), ('İletişim', None)])
     o1 = opt('wp-content/uploads/2024/05/seans-odasi-1.jpg', 900, 'seans-odasi')
     return head('İletişim ve Randevu | %s' % BRAND, "RN Psikoloji Çayyolu iletişim: Yaşamkent ofisi, görüşmeler Pazartesi – Pazar 09:00 – 22:00. Telefon ve WhatsApp: 0552 418 79 73. Yol tarifi ve randevu.", rec['path'], ld(business_ld(), bld, faq_ld())) + nav_html(rec['path']) + '''
-<section class="page-hero"><div class="wrap">%(bc)s<p class="eyebrow">İletişim ve randevu</p><h1>Bize ulaşın</h1><p class="page-lead">Randevu ve bilgi için arayın ya da WhatsApp'tan yazın. Telefon Pazartesi – Cumartesi 10:00 – 19:00 arası açık; görüşmeler Pazartesi – Pazar 09:00 – 22:00 arasında yapılır.</p>
+<section class="page-hero"><div class="wrap">%(bc)s<p class="eyebrow">İletişim ve randevu</p><h1>Bize ulaşın</h1><p class="page-lead">Randevu ve bilgi için arayın ya da WhatsApp'tan yazın. Telefon ve görüşmeler her gün 09:00 – 22:00 arasında yapılır.</p>
 <div class="btn-row hero-btns">%(call)s%(wa)s</div>%(open)s
 <p class="contact-phone"><a href="tel:%(raw)s">%(phone)s</a> · <a href="mailto:%(email)s">%(email)s</a></p><p class="contact-note" style="margin-top:10px;font-size:14px">Bu telefon hattı danışan randevuları içindir. Basın, TV programı, reklam ve iş birliği teklifleri için lütfen e-posta ile yazın: <a href="mailto:%(email)s">%(email)s</a></p></div></section>
 <section class="section section-tight"><div class="wrap">%(gy)s</div></section>

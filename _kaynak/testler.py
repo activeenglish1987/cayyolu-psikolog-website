@@ -133,7 +133,7 @@ if(kriz)h+='<div class="ts-kriz" role="alert"><b>Kendinize zarar verme düşünc
 h+='<h2>'+V.ad+' sonucunuz</h2><div class="ts-puan">'+t+' <small style="font-size:18px;color:#6b5f73">/ '+max+'</small></div><div class="ts-bar"><i style="width:'+Math.round(t/max*100)+'%%"></i></div>';
 h+='<p><b>'+b[3]+'</b> Bu sonuç bir tanı değildir; son iki haftadaki belirtilerinizin yoğunluğu hakkında genel bir fikir verir.</p>';
 h+='<p>'+(dusuk?'Sizi zorlayan bir durum varsa bunu konuşmak için yüksek bir puan gerekmez.':'Bu belirtiler günlük hayatınızı etkiliyorsa bir uzmanla konuşmak faydalı olabilir. İlk görüşmede ne yaşadığınız ve sizi nasıl etkilediği konuşulur, çalışma planı birlikte oluşturulur.')+'</p>';
-h+='<a class="ts-ara" href="tel:+905524187973" data-cta-area="test_sonuc">📞 Selda Hanım\\'ı Arayın · 0552 418 79 73</a><p class="ts-not">Telefonu Selda Hanım açar; uygun saati ve ücret bilgisini söyler. Pazartesi–Cumartesi 10:00–19:00.</p>';
+h+='<a class="ts-ara" href="tel:+905524187973" data-cta-area="test_sonuc">📞 Selda Hanım\\'ı Arayın · 0552 418 79 73</a><p class="ts-not">Telefonu Selda Hanım açar; uygun saati ve ücret bilgisini söyler. Her gün 09:00–22:00.</p>';
 out.innerHTML=h;out.hidden=false;var k=out.querySelector('[data-112]');if(k)k.onclick=function(ev){ev.preventDefault();location.href='tel:112'};
 out.scrollIntoView({behavior:'smooth',block:'start'});
 (window.dataLayer=window.dataLayer||[]).push({event:'test_tamamlandi',test:V.olcek,test_duzey:b[2]});});
@@ -233,7 +233,7 @@ h1{font-size:clamp(28px,6vw,40px);line-height:1.15;margin:22px 0 10px;color:%(a2
 <main class="w"><h1>%(h1)s</h1><p class="lead">%(lead)s</p>%(form)s%(notu)s%(bilgi)s
 <p class="ts-not" style="margin-top:20px">Diğer test: %(diger)s</p>
 <p class="ts-not">Kaynak: %(kaynak)s Ölçek serbestçe kullanılabilir; buradaki Türkçe ifadeler bilgilendirme amaçlıdır. Bu test tanı koymaz. Acil bir durumda 112'yi arayın.</p></main>
-<footer class="w dip"><a href="%(ana)s">%(marka)s</a> · Telefonu Selda Hanım açar · Pazartesi–Cumartesi 10:00–19:00</footer>%(betik)s</body></html>
+<footer class="w dip"><a href="%(ana)s">%(marka)s</a> · Telefonu Selda Hanım açar · Her gün 09:00–22:00</footer>%(betik)s</body></html>
 """) % {'gtm': GTM_HEAD, 'title': esc(T['title'].replace('| Rojin Nazik', '| ' + ('Rojin Nazik' if M['marka'] == 'Psikolog Rojin Nazik' else M['marka']))), 'desc': esc(T['desc']), 'canon': SITE + T['yol'], 'ikon': M['ikon'],
          'cizgi': M['cizgi'], 'a': M['a'], 'a2': M['a2'], 'mut': M['mut'], 'css': css, 'betikler': M['betikler'], 'ana': M['ana'], 'logo': M['logo'],
          'h1': esc(T['h1']), 'lead': esc(T['lead']), 'form': form_html(T), 'notu': notu, 'bilgi': bilgi, 'diger': diger, 'kaynak': esc(T['kaynak']),
