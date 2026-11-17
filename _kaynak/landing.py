@@ -251,7 +251,7 @@ LANDINGS = [
  'mod': '2026-10-07',
  'h1': 'Eryaman ve Etimesgut Psikolog',
  'title': 'Eryaman Psikolog | Etimesgut, Yüz Yüze ve Online – RN Psikoloji',
- 'desc': "Eryaman ve Etimesgut'a yakın Yaşamkent ofisimizde yetişkin, çift, aile, çocuk ve ergen görüşmeleri; ücretsiz otopark, akşam ve Cumartesi randevusu. 0552 418 79 73.",
+ 'desc': "Eryaman ve Etimesgut'a yakın Yaşamkent ofisimizde yetişkin, çift, aile, çocuk ve ergen görüşmeleri; ücretsiz otopark, akşam ve hafta sonu randevusu. 0552 418 79 73.",
  'lead': "Eryaman ve Etimesgut'tan gelen danışanlar için Yaşamkent ofisimizde yüz yüze; yoğun günlerde online psikolojik danışmanlık.",
  'body': """
 <h2>Eryaman ve Etimesgut'tan gelen danışanlarımız</h2>
@@ -261,7 +261,7 @@ LANDINGS = [
 <li>Ofisimiz Konutkent, Dumlupınar Bulvarı No:399 Kat:28'dedir.</li>
 <li><b>Araçla:</b> Eryaman'da bulunduğunuz noktaya göre yaklaşık 17–23 km; trafiğe bağlı olarak genellikle 20–30 dakika sürer. Binada ücretsiz otopark mevcuttur.</li>
 <li><b>Toplu taşımayla:</b> Eryaman'dan Çayyolu–Konutkent yönüne aktarmalı güzergâhlar bulunur; bulunduğunuz yere en uygun hattı EGO CEP'TE uygulamasından ya da harita uygulamanızdan planlayabilirsiniz.</li>
-<li>Pazartesi – Pazar 09:00 – 22:00 arasında randevu verilir; akşam ve Cumartesi saatleri iş çıkışı gelmek isteyenler için uygundur.</li>
+<li>Pazartesi – Pazar 09:00 – 22:00 arasında randevu verilir; akşam ve hafta sonu saatleri iş çıkışı gelmek isteyenler için uygundur.</li>
 </ul></div>
 <h2>Eryaman ve Etimesgut'tan sık başvurulan konular</h2>
 <ul class="topic-grid">

@@ -1226,7 +1226,7 @@ EKLER = {'/alacaatli-psikolog/': {'html': "<h2>Alacaatlı'da çocukların okul v
                                   'ardından çocuğun ihtiyacına göre süreç planlanır.</p><h2>Bağlıca, Dodurga ve çevre mahallelerden gelenler için</h2>\n'
                                   "<p>Ofisimiz Yaşamkent'e komşu Bağlıca, Dodurga ve Konutkent'ten gelenler için de kısa bir sürüş mesafesindedir. Binada ücretsiz otopark bulunur; bu sayfadaki yol "
                                   "tarifi düğmesi, bulunduğunuz yerden güncel araç ve toplu taşıma tarifini Google Haritalar'da açar. Görüşmeler Pazartesi–Pazar 09:00–22:00 arasında yapılır; "
-                                  'akşam ve Cumartesi saatleri, iş ve okul programıyla uyumlu bir düzen kurmayı kolaylaştırır. Gelmenin zor olduğu haftalarda görüşmeyi online sürdürmek de '
+                                  'akşam ve hafta sonu saatleri, iş ve okul programıyla uyumlu bir düzen kurmayı kolaylaştırır. Gelmenin zor olduğu haftalarda görüşmeyi online sürdürmek de '
                                   'mümkündür.</p>\n',
                           'sss': [('Eşimle birlikte gelmek istiyoruz ama eşim çekiniyor, ne yapabiliriz?',
                                    'İlk görüşmeye tek başınıza gelmeniz de mümkündür. Eşinizin çekincelerini nasıl konuşabileceğinizi birlikte değerlendirebiliriz.'),
@@ -1308,13 +1308,13 @@ EKLER = {'/alacaatli-psikolog/': {'html': "<h2>Alacaatlı'da çocukların okul v
 # Meta açıklama düzeltmeleri (27 Ekim SEO denetimi): 100–165 karakter, telefon numarası yok.
 # Kaynaktaki açıklamanın yerine geçer (semt, hizmet ve içerik sayfaları).
 ACIKLAMA = {
-    '/umitkoy-psikolog/': "Ümitköy'e birkaç dakika mesafede, ücretsiz otoparklı ofisimizde yetişkin, çift, çocuk ve ergen görüşmeleri. Akşam ve Cumartesi randevu, online seçenek.",
-    '/konutkent-psikolog/': "Konutkent'te Dumlupınar Bulvarı üzerindeki ofisimizde yetişkin, çift, çocuk ve ergen görüşmeleri. Ücretsiz otopark, akşam ve Cumartesi randevu.",
-    '/incek-psikolog/': "İncek'e yakın ofisimizde çocuk, ergen, aile, çift ve yetişkin görüşmeleri. Ücretsiz otopark, akşam ve Cumartesi randevu, online görüşme seçeneği.",
-    '/beysukent-psikolog/': "Beysukent'e yakın ofisimizde yetişkin, üniversite öğrencisi, çift ve ergen görüşmeleri. Akşam ve Cumartesi randevu, yüz yüze ya da online.",
+    '/umitkoy-psikolog/': "Ümitköy'e birkaç dakika mesafede, ücretsiz otoparklı ofisimizde yetişkin, çift, çocuk ve ergen görüşmeleri. Akşam ve hafta sonu randevu, online seçenek.",
+    '/konutkent-psikolog/': "Konutkent'te Dumlupınar Bulvarı üzerindeki ofisimizde yetişkin, çift, çocuk ve ergen görüşmeleri. Ücretsiz otopark, akşam ve hafta sonu randevu.",
+    '/incek-psikolog/': "İncek'e yakın ofisimizde çocuk, ergen, aile, çift ve yetişkin görüşmeleri. Ücretsiz otopark, akşam ve hafta sonu randevu, online görüşme seçeneği.",
+    '/beysukent-psikolog/': "Beysukent'e yakın ofisimizde yetişkin, üniversite öğrencisi, çift ve ergen görüşmeleri. Akşam ve hafta sonu randevu, yüz yüze ya da online.",
     '/bilkent-psikolog/': "Bilkent ve Beytepe'ye yakın ofisimizde üniversite öğrencileri, akademisyenler ve yetişkinlerle yüz yüze ya da online görüşme. Akşam randevusu.",
-    '/alacaatli-psikolog/': "Alacaatlı'ya yakın ofisimizde yetişkin, çift, aile, çocuk ve ergen görüşmeleri. Ücretsiz otopark, akşam ve Cumartesi randevu, online seçenek.",
-    '/eryaman-psikolog/': "Eryaman ve Etimesgut'a yakın ofisimizde yetişkin, çift, aile, çocuk ve ergen görüşmeleri; ücretsiz otopark, akşam ve Cumartesi randevusu.",
+    '/alacaatli-psikolog/': "Alacaatlı'ya yakın ofisimizde yetişkin, çift, aile, çocuk ve ergen görüşmeleri. Ücretsiz otopark, akşam ve hafta sonu randevu, online seçenek.",
+    '/eryaman-psikolog/': "Eryaman ve Etimesgut'a yakın ofisimizde yetişkin, çift, aile, çocuk ve ergen görüşmeleri; ücretsiz otopark, akşam ve hafta sonu randevusu.",
     '/cayyolu-psikolog-fiyatlari/': "Çayyolu, Yaşamkent ve Konutkent'te psikolog seans ücretleri: bireysel, çift, aile, çocuk ve ergen görüşmelerinde ücreti belirleyen etkenler.",
     '/cayyolu-psikolojik-danismanlik-merkezi/': "RN Psikoloji Çayyolu: bireysel, çift, aile, çocuk ve ergen psikolojik danışmanlık merkezi. Konutkent ofisi, ücretsiz otopark, online görüşme.",
     '/cocuklarda-uyku-sorunlari/': "Çocuk yalnız uyuyamıyor, gece sık uyanıyor ya da kâbus görüyorsa ne yapmalı? Uyku düzeni, ekran ve kaygıyla ilişkisi üzerine ebeveyn rehberi.",
@@ -1375,7 +1375,7 @@ def _ekle(yol, html, sss=()):
 
 _ekle('/cayyolu-cift-terapisi/', """
 <h2>Ümitköy, Yaşamkent ve İncek'ten gelen çiftler için</h2>
-<p>Çift görüşmelerine Çayyolu'nun yanı sıra Ümitköy, Yaşamkent, Konutkent, İncek ve Beysukent'ten de pek çok çift geliyor. """ + _OF + """ İki kişinin de çalıştığı ailelerde ortak bir boş saat bulmak çoğu zaman en zor kısımdır; akşam ve Cumartesi randevuları bu yüzden çiftlerin en sık tercih ettiği saatlerdir. Bazı haftalarda biriniz şehir dışındaysa görüşme online da yapılabilir.</p>
+<p>Çift görüşmelerine Çayyolu'nun yanı sıra Ümitköy, Yaşamkent, Konutkent, İncek ve Beysukent'ten de pek çok çift geliyor. """ + _OF + """ İki kişinin de çalıştığı ailelerde ortak bir boş saat bulmak çoğu zaman en zor kısımdır; akşam ve hafta sonu randevuları bu yüzden çiftlerin en sık tercih ettiği saatlerdir. Bazı haftalarda biriniz şehir dışındaysa görüşme online da yapılabilir.</p>
 <h2>Çayyolu çift terapisi fiyatları</h2>
 <p>Çift terapisi ücreti; görüşmenin süresine, çift ya da bireysel görüşme olmasına ve yüz yüze ya da online yapılmasına göre değişir. Görüşmelerin hangi sıklıkla yapılacağı ilk görüşmede birlikte planlanır; bu da toplam maliyeti öngörmenizi kolaylaştırır. """ + _UC + """</p>
 """, [("Çayyolu'nda çift terapisi ücretleri neye göre değişir?", "Ücret; görüşmenin süresine, çift ya da bireysel görüşme olmasına ve yüz yüze ya da online yapılmasına göre değişir. Güncel ücreti WhatsApp'tan yazarak ya da arayarak öğrenebilirsiniz.")])
