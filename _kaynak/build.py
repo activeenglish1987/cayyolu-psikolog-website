@@ -238,7 +238,7 @@ AREAS = [
     ('Eryaman', '/eryaman-psikolog/'),
 ]
 SEMT_KISA = {
-    '/umitkoy-psikolog/': "Ümitköy'e birkaç dakika mesafede; çalışan aileler için akşam ve Cumartesi randevusu.",
+    '/umitkoy-psikolog/': "Ümitköy'e birkaç dakika mesafede; çalışan aileler için akşam ve hafta sonu randevusu.",
     '/yasamkent-psikolog/': "Yaşamkent'e en yakın ofisimiz; ücretsiz otopark, yüz yüze ve online görüşme.",
     '/konutkent-psikolog/': "Ofisimiz Konutkent'te, Dumlupınar Bulvarı üzerinde.",
     '/incek-psikolog/': "İncek'teki aileler için çocuk, ergen ve ebeveyn görüşmeleri.",
