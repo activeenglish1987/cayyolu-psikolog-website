@@ -552,7 +552,7 @@ BOOST = {
 # 2026-10-01: semt sayfalarına ek bölümler (her semte özgü) + ek sorular
 EXTRA = {
  '/yasamkent-psikolog/': {
-  'html': '''<h2>Yaşamkent psikolog: iş çıkışı ve cumartesi randevusu</h2>
+  'html': '''<h2>Yaşamkent psikolog: iş çıkışı ve hafta sonu randevusu</h2>
 <p>Yaşamkent'te yaşayanların büyük kısmı gün içinde şehrin merkezine ya da Eskişehir Yolu üzerindeki iş merkezlerine gidip geliyor. Bu yüzden görüşmeleri iş çıkışına ya da hafta sonuna sığdırmak çoğu zaman tek seçenek oluyor. Ofisimizde Pazartesi'den Pazar'a 09:00 – 22:00 arasında randevu verdiğimiz için akşam saatlerinde ya da Cumartesi günü gelmeniz mümkün. Çocuğu olan aileler için okul çıkışı saatleri de planlanabiliyor.</p>
 <h2>Yaşamkent'te psikolog fiyatları</h2>
 <p>Ücret; görüşmenin türüne (bireysel, çift, aile, çocuk ve ergen) ve görüşeceğiniz uzmana göre değişir. Güncel bilgiyi telefonda ya da WhatsApp'ta açıkça paylaşıyoruz; genel bir fikir edinmek için <a href="/cayyolu-psikolog-fiyatlari/">Çayyolu ve Yaşamkent psikolog fiyatları</a> sayfamıza göz atabilirsiniz.</p>''',
