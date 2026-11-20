@@ -11,7 +11,7 @@ LANDINGS = [
  'path': '/umitkoy-psikolog/',
  'kw': 'Ümitköy psikolog',
  'h1': 'Ümitköy Psikolog',
- 'title': 'Ümitköy Psikolog | RN Psikoloji – Yüz Yüze Danışmanlık, Randevu',
+ 'title': 'Ümitköy Psikolog | Otoparklı Ofis, Hafta Sonu – RN Psikoloji',
  'desc': "Ümitköy'e birkaç dakika mesafedeki ofisimizde yetişkin, çift, çocuk ve ergen görüşmeleri. Pazartesi – Pazar 09:00 – 22:00. Randevu: 0552 418 79 73.",
  'lead': "Ümitköy'de yaşıyor ya da çalışıyorsanız, Dumlupınar Bulvarı üzerindeki ofisimiz size çok yakın. Yetişkin, çift, çocuk ve ergen görüşmeleri için hafta içi ve cumartesi randevu verebiliyoruz.",
  'body': '''
