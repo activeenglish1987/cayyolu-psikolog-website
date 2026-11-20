@@ -468,7 +468,7 @@ ROJIN_HEAD = '''<!doctype html><html lang="tr"><head><meta charset="utf-8">
 <link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" as="image" href="%(foto)s" fetchpriority="high">
 %(css)s
-<script src="/assets/js/ads-conversion.js?v=6" defer></script>
+<script src="/assets/js/ads-conversion.js?v=7" defer></script>
 <script src="/assets/js/after-hours.js?v=12" data-pos="bottom" defer></script>
 <script>window.PUSULA_CFG=Object.assign(window.PUSULA_CFG||{},{heroSecici:'.lp-pu'});</script>
 <script src="/assets/js/pusula.js?v=13" defer></script>

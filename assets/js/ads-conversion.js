@@ -25,6 +25,15 @@
   w.dataLayer = w.dataLayer || [];
   var CFG = w.ADS_CONV_CFG || {};
 
+  /* ---------- 0. GA4 (20 Kasım 2026): ölçüm kimliği G-J2DE0MLYTC ----------
+     Üç site (Rojin, Çayyolu, Elif) aynı GA4 mülküne yazar; raporlarda "Ana makine adı" ile ayrılır.
+     Telefon / WhatsApp / geri arama olayları GA4'e de aynı adla gider (önemli etkinlik olarak işaretlenebilir). */
+  var GA4 = CFG.ga4Id === undefined ? 'G-J2DE0MLYTC' : CFG.ga4Id;
+  if (GA4 && typeof w.gtag === 'function' && !w.__rnGa4) {
+    w.__rnGa4 = true;
+    w.gtag('config', GA4);
+  }
+
   /* ---------- 1. Reklam tıklama kimliği ve UTM saklama ---------- */
   var STORE_KEY = 'ads_attribution';
   var TTL = 90 * 24 * 60 * 60 * 1000;
@@ -74,6 +83,12 @@
     if (extra) for (var k in extra) if (Object.prototype.hasOwnProperty.call(extra, k)) payload[k] = extra[k];
     w.dataLayer.push(payload);
     sendAdsConversion(eventName);
+    if (GA4 && typeof w.gtag === 'function') {
+      var ga = { send_to: GA4 };
+      for (var g in payload) if (g !== 'event' && Object.prototype.hasOwnProperty.call(payload, g)) ga[g] = payload[g];
+      if (eventName === 'virtual_page_view') w.gtag('event', 'page_view', { send_to: GA4, page_location: location.href, page_title: d.title });
+      else w.gtag('event', eventName, ga);
+    }
   }
 
   /* ---------- 2b. Google Ads dönüşümü (gtag) ----------

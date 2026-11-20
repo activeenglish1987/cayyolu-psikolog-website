@@ -318,7 +318,7 @@ def head(title, desc, path, extra_ld='', og_img='/assets/img/opt/og-1200.webp', 
 %(preload)s<style>%(css)s</style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11469933181"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-11469933181',{url_passthrough:true});</script>
-<script src="/assets/js/ads-conversion.js?v=6" defer></script>
+<script src="/assets/js/ads-conversion.js?v=7" defer></script>
 <script src="/assets/js/site.js?v=%(v)s" defer></script>
 <script>window.PUSULA_CFG={site:'cayyolu',foto:'/assets/img/opt/psikolog-rojin-nazik-720.webp',heroSecici:'.pu-yer'};</script>
 <script src="/assets/js/pusula.js?v=13" defer></script>
