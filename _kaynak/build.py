@@ -1352,9 +1352,32 @@ def main():
     sm.append('</urlset>')
     open(os.path.join(ROOT, 'sitemap.xml'), 'w', encoding='utf-8').write('\n'.join(sm))
     open(os.path.join(ROOT, 'robots.txt'), 'w').write('User-agent: *\nAllow: /\nDisallow: /_kaynak/\n\nSitemap: %s/sitemap.xml\n' % SITE)
+    # 23 Kas 2026: Çayyolu sunucusu yük altında ara sıra 502 veriyor; ölçüm ve form betikleri
+    # yüklenemezse 1,5 ve 4 sn sonra farklı adresle yeniden denenir (dönüşüm kaybını önler).
+    yedekli_betikler(ROOT)
     # sosyal paylaşım görseli
     opt('wp-content/uploads/2024/05/seans-odasi-1.jpg', 1200, 'og')
     print('sayfa:', len(pages))
+
+def yedekli_betikler(kok):
+    import re as _re
+    desen = _re.compile(r'<script src="(/assets/js/(?:ads-conversion|pusula|after-hours|vitrin|site)\.js\?v=[^"]+)"((?: data-pos="[^"]*")?) defer></script>')
+    def degis(m):
+        src, ek = m.group(1), m.group(2)
+        oe = ("var t=this,n=+(t.dataset.yd||0)+1;if(n>2)return;setTimeout(function(){var s=document.createElement('script');"
+              "s.src='%s&yd='+n;s.dataset.yd=n;%ss.onerror=t.onerror;document.head.appendChild(s)},n*1500)") % (src, "s.setAttribute('data-pos','bottom');" if 'bottom' in ek else '')
+        return '<script src="%s"%s defer onerror="%s"></script>' % (src, ek, oe)
+    n = 0
+    for kd, dirs, files in os.walk(kok):
+        dirs[:] = [x for x in dirs if not x.startswith(('_', '.'))]
+        for f in files:
+            if not f.endswith('.html'): continue
+            yol = os.path.join(kd, f); h = open(yol, encoding='utf-8').read()
+            if 'onerror="var t=this,n=' in h: continue
+            h2 = desen.sub(degis, h)
+            if h2 != h: open(yol, 'w', encoding='utf-8').write(h2); n += 1
+    print('yedekli betik:', n, 'sayfa')
+
 
 if __name__ == '__main__':
     main()
