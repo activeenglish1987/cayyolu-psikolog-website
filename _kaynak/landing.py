@@ -273,7 +273,7 @@ LANDINGS = [
 <li><b>Online görüşme:</b> yoğun programlar için</li>
 </ul>
 %(cta)s
-<h2>Uzman seçimi ve randevu</h2>
+<h2>Eryaman psikolog tavsiyesi: uzman seçimi ve randevu</h2>
 <p>Yetişkin, çift ve aile görüşmeleri için <a href="/psikolog-rojin-nazik/">Psikolog Rojin Nazik</a>; çocuklarla oyun terapisi ve ergenlerle görüşmeler için <a href="/psikolog-elif-erdogan/">Psikolog Elif Erdoğan</a> ile çalışabilirsiniz. Çocuğunuz için destek arıyorsanız <a href="/cayyolu-cocuk-psikologu/">çocuk psikoloğu</a> sayfamıza da göz atabilirsiniz.</p>
 """,
  'faqs': [
