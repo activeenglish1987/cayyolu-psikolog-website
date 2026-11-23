@@ -169,7 +169,7 @@ LANDINGS = [
  'path': '/beysukent-psikolog/',
  'kw': 'Beysukent psikolog',
  'h1': 'Beysukent Psikolog',
- 'title': 'Beysukent Psikolog | RN Psikoloji – Yetişkin, Öğrenci, Çift',
+ 'title': 'Beysukent Psikolog ve Psikolojik Danışmanlık | RN Psikoloji',
  'desc': "Beysukent'e yakın ofisimizde yetişkin, üniversite öğrencisi, çift ve ergen görüşmeleri. Pazartesi – Pazar 09:00 – 22:00. Randevu: 0552 418 79 73.",
  'lead': "Beysukent'e yakın Yaşamkent ofisimizde; yetişkinler, üniversite öğrencileri, çiftler ve ergenler için randevulu, yüz yüze psikolojik danışmanlık.",
  'body': '''
