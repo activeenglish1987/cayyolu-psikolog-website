@@ -1355,9 +1355,39 @@ def main():
     # 23 Kas 2026: Çayyolu sunucusu yük altında ara sıra 502 veriyor; ölçüm ve form betikleri
     # yüklenemezse 1,5 ve 4 sn sonra farklı adresle yeniden denenir (dönüşüm kaybını önler).
     yedekli_betikler(ROOT)
+    yeniyil_bandi(ROOT)
     # sosyal paylaşım görseli
     opt('wp-content/uploads/2024/05/seans-odasi-1.jpg', 1200, 'og')
     print('sayfa:', len(pages))
+
+# === YENİ YIL TEMASI (24 Kas 2026 kullanıcı kararı; 10 Ocak 2027'de kaldırılır) ===
+# Kaldırmak için: YENIYIL = False yapıp derleyin. 11 Ocak'tan sonra bant tarayıcıda da kendiliğinden gizlenir.
+YENIYIL = True
+def yeniyil_bandi(kok):
+    if not YENIYIL: return
+    css = ('<style>.yy-bant{position:relative;z-index:60;display:flex;align-items:center;justify-content:center;gap:10px 14px;flex-wrap:wrap;'
+           'padding:9px 44px 9px 16px;background:#14264A;background-image:radial-gradient(rgba(255,255,255,.6) 1px,transparent 1.6px),radial-gradient(rgba(255,255,255,.32) 1px,transparent 1.4px),linear-gradient(90deg,#14264A,#24407a 55%,#14264A);'
+           'background-size:46px 46px,29px 29px,100% 100%;background-position:0 0,14px 19px,0 0;color:#f2f6fb;font-size:14.5px;line-height:1.4;text-align:center;border-bottom:2px solid #E9A23B}'
+           '.yy-bant b{color:#ffd28a;font-weight:700}.yy-bant .yy-y{opacity:.92}.yy-bant .yy-s{color:#E9A23B;font-size:15px}'
+           '.yy-bant a.yy-btn{display:inline-block;padding:5px 14px;border-radius:999px;background:#E9A23B;color:#14264A;font-weight:700;text-decoration:none;white-space:nowrap}'
+           '.yy-bant a.yy-btn:hover{background:#ffd28a}.yy-bant button{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:30px;height:30px;border:0;border-radius:50%;'
+           'background:transparent;color:#f2f6fb;font-size:20px;line-height:1;cursor:pointer}.yy-bant button:hover{background:rgba(255,255,255,.12)}'
+           '@media(max-width:640px){.yy-bant{font-size:13.5px;padding:8px 40px 8px 12px}.yy-bant .yy-y{display:none}}</style>')
+    band = ('<div class="yy-bant" role="region" aria-label="Yeni yıl"><span class="yy-s" aria-hidden="true">✦</span><b>Aileyle yeni yıl.</b>'
+            '<span class="yy-y">Çocuğunuz, ergeniniz ve aileniz için yeni yılda bir adım; Yaşamkent ofisinde ya da online.</span>'
+            '<a class="yy-btn" href="https://wa.me/905524187973?text=Merhaba%2C%20yeni%20y%C4%B1l%20%C3%B6ncesi%20randevu%20planlamak%20istiyorum." target="_blank" rel="noopener">Randevu planla</a>'
+            '<button type="button" aria-label="Kapat" onclick="this.parentNode.remove();try{sessionStorage.setItem(\'yy\',\'1\')}catch(e){}">×</button></div>'
+            '<script>(function(){var b=document.currentScript.previousElementSibling;try{if(sessionStorage.getItem("yy")||Date.now()>Date.UTC(2027,0,10,21))b.remove()}catch(e){if(Date.now()>Date.UTC(2027,0,10,21))b.remove()}})()</script>')
+    n = 0
+    for kd, dirs, files in os.walk(kok):
+        dirs[:] = [x for x in dirs if not x.startswith(('_', '.')) and not (kd == kok and x == 'randevu')]
+        for f in files:
+            if not f.endswith('.html') or f == '404.html': continue
+            yol = os.path.join(kd, f); h = open(yol, encoding='utf-8').read()
+            if 'class="yy-bant"' in h or '<body' not in h: continue
+            i = h.find('<body'); j = h.find('>', i) + 1
+            open(yol, 'w', encoding='utf-8').write(h[:j] + css + band + h[j:]); n += 1
+    print('yeni yıl bandı:', n, 'sayfa')
 
 def yedekli_betikler(kok):
     import re as _re
