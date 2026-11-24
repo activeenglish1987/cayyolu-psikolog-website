@@ -1378,11 +1378,9 @@ def yeniyil_bandi(kok):
         for f in files:
             if not f.endswith('.html') or f == '404.html': continue
             yol = os.path.join(kd, f); h = open(yol, encoding='utf-8').read()
-            if 'class="yyL"' in h or '</head>' not in h or '</header>' not in h: continue
+            if 'class="yy-kart"' in h or '</head>' not in h or '</header>' not in h: continue
             h = h.replace('</head>', _YY_CSS + '</head>', 1)
-            h = h.replace('</header>', _YY_LED + '</header>', 1)
-            if '<div class="hero-media">' in h:
-                h = h.replace('<div class="hero-media">', '<div class="hero-media">' + _YY_TOP, 1)
+            # 24 Kas: kullanıcı 'yapmacık' dedi → LED dizisi ve asılı top kaldırıldı; yalnız davet kartı
             a = h.find('<div class="open-status"')
             if a > 0:
                 b = h.find('</div>', a) + 6
@@ -1390,7 +1388,7 @@ def yeniyil_bandi(kok):
             elif '<div class="btn-row hero-btns">' in h:
                 a = h.find('<div class="btn-row hero-btns">'); b = h.find('</div>', a) + 6
                 h = h[:b] + _YY_KART + h[b:]
-            h = h.replace('</body>', _YY_JS + '</body>', 1)
+            h = h.replace('</body>', '<script>(function(){if(Date.now()>Date.UTC(2027,0,10,21)){var a=document.querySelectorAll(".yy-kart");for(var i=0;i<a.length;i++)a[i].remove()}})()</script></body>', 1)
             open(yol, 'w', encoding='utf-8').write(h); n += 1
     print('yeni yıl süsleri:', n, 'sayfa')
 
