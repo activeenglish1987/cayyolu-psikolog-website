@@ -78,7 +78,9 @@
       event: eventName,
       page_path: location.pathname,
       page_title: d.title,
-      traffic_type: fromAds ? 'google_ads' : 'other'
+      traffic_type: fromAds ? 'google_ads' : 'other',
+      // Kış 2027 teması açıkken hangi tasarımla tıklandığı (kişisel veri değil)
+      site_tema: d.documentElement.classList.contains('k27') ? 'kis27' : 'standart'
     };
     if (extra) for (var k in extra) if (Object.prototype.hasOwnProperty.call(extra, k)) payload[k] = extra[k];
     w.dataLayer.push(payload);

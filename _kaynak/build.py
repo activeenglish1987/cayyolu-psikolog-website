@@ -318,7 +318,7 @@ def head(title, desc, path, extra_ld='', og_img='/assets/img/opt/og-1200.webp', 
 %(preload)s<style>%(css)s</style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11469933181"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-11469933181',{url_passthrough:true});</script>
-<script src="/assets/js/ads-conversion.js?v=7" defer></script>
+<script src="/assets/js/ads-conversion.js?v=8" defer></script>
 <script src="/assets/js/site.js?v=%(v)s" defer></script>
 <script>window.PUSULA_CFG={site:'cayyolu',foto:'/assets/img/opt/psikolog-rojin-nazik-720.webp',heroSecici:'.pu-yer'};</script>
 <script src="/assets/js/pusula.js?v=13" defer></script>
@@ -1355,39 +1355,56 @@ def main():
     # 23 Kas 2026: Çayyolu sunucusu yük altında ara sıra 502 veriyor; ölçüm ve form betikleri
     # yüklenemezse 1,5 ve 4 sn sonra farklı adresle yeniden denenir (dönüşüm kaybını önler).
     yedekli_betikler(ROOT)
-    yeniyil_bandi(ROOT)
+    kis27(ROOT)
     # sosyal paylaşım görseli
     opt('wp-content/uploads/2024/05/seans-odasi-1.jpg', 1200, 'og')
     print('sayfa:', len(pages))
 
-# === YENİ YIL TEMASI — PREMIUM (25 Kas 2026 kullanıcı onayı; 10 Ocak 2027'de kaldırılır) ===
-# İnce gece mavisi 'Mutlu Yıllar ✦ 2027' şeridi + arama düğmelerinin altında altın çerçeveli davet kartı (telefonda fotoğrafsız:
-# ilk görülen fotoğraf Rojin Nazik). Kar, girland, Noel Baba kartı ve açılır kart kaldırıldı. Reklam sayfaları hariç.
-# Kaldırmak için: YENIYIL = False yapıp derleyin. 11 Ocak'tan sonra tarayıcıda da kendiliğinden gizlenir.
-YENIYIL = True
-import yy_premium as _P
-_WA = 'Merhaba%2C%20yeni%20y%C4%B1l%20%C3%B6ncesi%20randevu%20planlamak%20istiyorum.'
-_YY_PCSS = _P.css('#0d1a33', '#16274a', '#d9b46a', '#f1e4c6', '/assets/img/yeniyil/cam-264.webp', cizgi='rgba(217,180,106,.6)').replace('</style>', '@media(max-width:640px){.yy-pk .f{display:none}}</style>', 1)
-_YY_BAR = _P.bar('Mutlu Yıllar<i>✦</i>2027', 'Yeni yıl randevusu →', _WA)
-_YY_PKART = _P.kart('Aileyle yeni yıl', 'Yeni yıla birlikte, hafiflemiş girin', 'Çocuğunuz, ergeniniz ya da aileniz için Yaşamkent ofisinde ya da online; her gün 09:00–22:00.', 'Randevu planla', _WA)
-def yeniyil_bandi(kok):
-    if not YENIYIL: return
+# === KIŞ 2027 — "KIŞ SABAHI, YAŞAMKENT" (24 Kas 2026 – 10 Oca 2027 dahil; 11 Oca 00:00 TR'de kendiliğinden kapanır) ===
+# Tek ayar: _kaynak/mevsim-ayar.json (mod: otomatik | acik | kapali). Kapatmak: mod "kapali" yapıp derleyin.
+# Tarih kararı ziyaretçinin tarayıcısında verilir (önbellekteki eski HTML de zamanında kapanır). Önizleme: ?kis27=1 / ?kis27=0
+# Başlık, H1, ana metin, bağlantılar ve yapılandırılmış veri değişmez; mevsim öğeleri .k27-y (yalnız temada görünür).
+import kis27_kapi as _K
+_K27 = _K.oku(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'mevsim-ayar.json'))
+_K27_CSS = '<style id="kis27">' + re.sub(r'\s*\n\s*', '', re.sub(r'/\*.*?\*/', '', open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'kis27_cayyolu.css'), encoding='utf-8').read(), flags=re.S)) + '</style>'
+_K27_ODA = ('<figure class="k27-y k27-oda" role="img" aria-label="RN Psikoloji Çayyolu, Yaşamkent ofisindeki seans odası">'
+            '<figcaption>Seans odası · Yaşamkent ofisi</figcaption></figure>')
+_K27_NOT = '<p class="k27-y k27-not">Kış 2026–27 · Yaşamkent ofisi</p>'
+_K27_ONYUKLE = [('/assets/img/kis27/oda-detay-480.webp', '(max-width:899px)', '/assets/img/kis27/oda-detay-480.webp 480w, /assets/img/kis27/oda-detay-780.webp 780w', '100vw'), ('/assets/img/kis27/oda-pencere-1100.webp', '(min-width:900px)')]
+def kis27(kok):
     n = 0
     for kd, dirs, files in os.walk(kok):
-        dirs[:] = [x for x in dirs if not x.startswith(('_', '.')) and not (kd == kok and x == 'randevu')]
+        dirs[:] = [x for x in dirs if not x.startswith(('_', '.'))]
         for f in files:
             if not f.endswith('.html') or f == '404.html': continue
             yol = os.path.join(kd, f); h = open(yol, encoding='utf-8').read()
-            if 'class="yy-bar"' in h or '</head>' not in h or '<body' not in h: continue
-            h = h.replace('</head>', _YY_PCSS + '</head>', 1)
-            b = h.find('<body'); b = h.find('>', b) + 1; h = h[:b] + _YY_BAR + h[b:]
-            a = h.find('<div class="open-status"')
-            if a > 0 and '<div' not in h[a + 5:h.find('</div>', a)]:
-                e = h.find('</div>', a) + 6; h = h[:e] + _YY_PKART + h[e:]
-            elif '<div class="btn-row hero-btns">' in h:
-                a = h.find('<div class="btn-row hero-btns">'); e = h.find('</div>', a) + 6; h = h[:e] + _YY_PKART + h[e:]
+            if 'id="kis27-kapi"' in h or '</head>' not in h or '<meta charset' not in h: continue
+            ev = os.path.relpath(yol, kok) == 'index.html'
+            # viewport etiketinden SONRA: önyükleme medya sorgusu telefonda doğru genişlikle değerlendirilsin
+            v = h.find('<meta name="viewport"')
+            m = h.index('>', v if 0 < v < h.index('</head>') else h.index('<meta charset')) + 1
+            h = h[:m] + _K.kapi(_K27, _K27_ONYUKLE if ev else None) + h[m:]
+            h = h.replace('</head>', _K27_CSS + '</head>', 1)
+            if ev:
+                h = h.replace('<section class="hero">\n  <div class="wrap hero-grid">', '<section class="hero k27-ev">\n  <div class="wrap hero-grid">' + _K27_ODA, 1)
+                h = h.replace('<p class="eyebrow">RN Psikoloji · Çayyolu Şubesi</p>', '<p class="eyebrow"><span class="k27-y">Kış 2026–27 · </span>RN Psikoloji · Çayyolu Şubesi</p>', 1)
+                a = h.index('<div class="btn-row hero-btns">', h.index('k27-ev'))
+                e = h.index('</div>', a)
+                blok = h[a:e].replace('<div class="btn-row hero-btns">', '<div class="btn-row hero-btns" data-cta-area="hero">', 1)
+                blok = blok.replace('<span>Hemen Ara · 0552 418 79 73</span>', '<span class="k27-g">Hemen Ara · 0552 418 79 73</span><span class="k27-y">Çayyolu ofisini ara<small>0552 418 79 73</small></span>', 1)
+                h = h[:a] + blok + h[e:]
+                assert 'k27-oda' in h and 'Çayyolu ofisini ara' in h, 'ana sayfa kancaları bulunamadı'
+            else:
+                # iç sayfa (page-hero) ve reklam sayfası (.acik): mevcut durum satırının hemen altına küçük not
+                for k in ('<div class="open-status" data-open-status>', '<p class="acik"', '<div class="acik"'):
+                    a = h.find(k)
+                    if a > 0:
+                        etiket = 'div' if k.startswith('<div') else 'p'
+                        e = h.index('</%s>' % etiket, a) + len(etiket) + 3
+                        h = h[:e] + _K27_NOT + h[e:]
+                        break
             open(yol, 'w', encoding='utf-8').write(h); n += 1
-    print('yeni yıl (premium):', n, 'sayfa')
+    print('kış 2027 kapısı:', n, 'sayfa · mod:', _K27['mod'])
 
 def yedekli_betikler(kok):
     import re as _re
