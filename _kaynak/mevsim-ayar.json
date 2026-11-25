@@ -1,7 +1,7 @@
 {
   "_aciklama": "KIŞ 2027 teması. mod: otomatik (tarihlere göre) | acik (hep açık) | kapali (hep kapalı). Değiştirince insa.py ile derleyip yayınlayın. Saatler Türkiye saati (+03:00).",
   "tema": "kis27",
-  "mod": "otomatik",
+  "mod":"kapali",
   "baslangic": "2026-11-24T00:00:00+03:00",
   "bitis": "2027-01-11T00:00:00+03:00"
 }
